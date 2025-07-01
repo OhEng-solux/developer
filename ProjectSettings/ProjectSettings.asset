@@ -897,11 +897,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: ded75aff-c14d-4aa1-8d72-01124169a846
+  cloudProjectId: 0442adad-9a40-4830-ac69-77441dc377b0
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: raspberry 2025-06-29_18-21-01
-  organizationId: unity_38b3315005d39b480ebe
+  projectName: strawberry
+  organizationId: nd2ghhzywm
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
