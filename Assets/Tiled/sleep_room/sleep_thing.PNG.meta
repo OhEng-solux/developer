@@ -1,31 +1,25 @@
 fileFormatVersion: 2
-guid: 3b092af97068f764cad042727416f43b
+guid: e123b77e80b12ec4db2171fb5395648d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7071522964116260520
-    second: direc_thing (1)_0
+      213: -1879628203543408591
+    second: sleep_thing_0
   - first:
-      213: 3752393436089081224
-    second: direc_thing (1)_1
+      213: 8507969094010318197
+    second: sleep_thing_1
   - first:
-      213: 1818032917731063879
-    second: direc_thing (1)_2
+      213: 1935041535503007232
+    second: sleep_thing_2
   - first:
-      213: 2621729958852963121
-    second: direc_thing (1)_3
+      213: 4829934946299487056
+    second: sleep_thing_3
   - first:
-      213: 338378985956288816
-    second: direc_thing (1)_4
+      213: 5203566083713342686
+    second: sleep_thing_4
   - first:
-      213: 2136173485065469050
-    second: direc_thing (1)_5
-  - first:
-      213: -4568488658566151299
-    second: direc_thing (1)_6
-  - first:
-      213: 8862308540015695878
-    second: direc_thing (1)_7
+      213: 2949386351578774066
+    second: sleep_thing_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -160,123 +154,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: direc_thing (1)_0
-      rect:
-        serializedVersion: 2
-        x: 79
-        y: 1829
-        width: 242
-        height: 532
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8a6ca295ba8132260800000000000000
-      internalID: 7071522964116260520
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: direc_thing (1)_1
-      rect:
-        serializedVersion: 2
-        x: 519
-        y: 1819
-        width: 302
-        height: 392
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 88dd897f2fd231430800000000000000
-      internalID: 3752393436089081224
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: direc_thing (1)_2
-      rect:
-        serializedVersion: 2
-        x: 949
-        y: 1819
-        width: 292
-        height: 382
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 748b35b6e43fa3910800000000000000
-      internalID: 1818032917731063879
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: direc_thing (1)_3
-      rect:
-        serializedVersion: 2
-        x: 1359
-        y: 1829
-        width: 292
-        height: 382
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 13b2e6ec181426420800000000000000
-      internalID: 2621729958852963121
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: direc_thing (1)_4
-      rect:
-        serializedVersion: 2
-        x: 1759
-        y: 649
-        width: 522
-        height: 1472
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 039a16915e922b400800000000000000
-      internalID: 338378985956288816
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: direc_thing (1)_5
+      name: sleep_thing_0
       rect:
         serializedVersion: 2
         x: 69
-        y: 409
-        width: 522
-        height: 1222
+        y: 1689
+        width: 462
+        height: 642
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -285,20 +169,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a7c7feb777635ad10800000000000000
-      internalID: 2136173485065469050
+      spriteID: 1305df98b183ae5e0800000000000000
+      internalID: -1879628203543408591
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: direc_thing (1)_6
+      name: sleep_thing_1
       rect:
         serializedVersion: 2
-        x: 679
-        y: 1209
-        width: 422
-        height: 252
+        x: 579
+        y: 909
+        width: 642
+        height: 1422
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -307,20 +191,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d7383c915c77990c0800000000000000
-      internalID: -4568488658566151299
+      spriteID: 57dac7850d0621670800000000000000
+      internalID: 8507969094010318197
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: direc_thing (1)_7
+      name: sleep_thing_2
       rect:
         serializedVersion: 2
-        x: 1249
-        y: 999
-        width: 352
-        height: 532
+        x: 1279
+        y: 1659
+        width: 792
+        height: 672
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -329,8 +213,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 608db81a9ae3dfa70800000000000000
-      internalID: 8862308540015695878
+      spriteID: 00e78453606aada10800000000000000
+      internalID: 1935041535503007232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sleep_thing_3
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 1029
+        width: 262
+        height: 432
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0532d6a5e30670340800000000000000
+      internalID: 4829934946299487056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sleep_thing_4
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 59
+        width: 1312
+        height: 672
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edc110198c7c63840800000000000000
+      internalID: 5203566083713342686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sleep_thing_5
+      rect:
+        serializedVersion: 2
+        x: 1419
+        y: 69
+        width: 972
+        height: 902
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23afc3f92435ee820800000000000000
+      internalID: 2949386351578774066
       vertices: []
       indices: 
       edges: []
@@ -348,15 +298,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      direc_thing (1)_0: 7071522964116260520
-      direc_thing (1)_1: 3752393436089081224
-      direc_thing (1)_2: 1818032917731063879
-      direc_thing (1)_3: 2621729958852963121
-      direc_thing (1)_4: 338378985956288816
-      direc_thing (1)_5: 2136173485065469050
-      direc_thing (1)_6: -4568488658566151299
-      direc_thing (1)_7: 8862308540015695878
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
