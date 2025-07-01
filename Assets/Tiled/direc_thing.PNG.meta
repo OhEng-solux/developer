@@ -1,28 +1,31 @@
 fileFormatVersion: 2
-guid: 7eea42c0daeaf93498c9e4cef73775e0
+guid: 3b092af97068f764cad042727416f43b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1617191671758300614
-    second: direc_thing_0
+      213: 7071522964116260520
+    second: direc_thing (1)_0
   - first:
-      213: -2688446315341980419
-    second: direc_thing_1
+      213: 3752393436089081224
+    second: direc_thing (1)_1
   - first:
-      213: -5302156965581843808
-    second: direc_thing_2
+      213: 1818032917731063879
+    second: direc_thing (1)_2
   - first:
-      213: 68486555751668383
-    second: direc_thing_3
+      213: 2621729958852963121
+    second: direc_thing (1)_3
   - first:
-      213: 2892506621142022600
-    second: direc_thing_4
+      213: 338378985956288816
+    second: direc_thing (1)_4
   - first:
-      213: -6203250955456163466
-    second: direc_thing_5
+      213: 2136173485065469050
+    second: direc_thing (1)_5
   - first:
-      213: -2826905903662648818
-    second: direc_thing_6
+      213: -4568488658566151299
+    second: direc_thing (1)_6
+  - first:
+      213: 8862308540015695878
+    second: direc_thing (1)_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -153,24 +156,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: direc_thing_0
+      name: direc_thing (1)_0
       rect:
         serializedVersion: 2
         x: 79
@@ -185,14 +175,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a3a50272eb49e89e0800000000000000
-      internalID: -1617191671758300614
+      spriteID: 8a6ca295ba8132260800000000000000
+      internalID: 7071522964116260520
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: direc_thing_1
+      name: direc_thing (1)_1
       rect:
         serializedVersion: 2
         x: 519
@@ -207,14 +197,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dfc5558f158b0bad0800000000000000
-      internalID: -2688446315341980419
+      spriteID: 88dd897f2fd231430800000000000000
+      internalID: 3752393436089081224
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: direc_thing_2
+      name: direc_thing (1)_2
       rect:
         serializedVersion: 2
         x: 949
@@ -229,14 +219,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0a29123f454fa66b0800000000000000
-      internalID: -5302156965581843808
+      spriteID: 748b35b6e43fa3910800000000000000
+      internalID: 1818032917731063879
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: direc_thing_3
+      name: direc_thing (1)_3
       rect:
         serializedVersion: 2
         x: 1359
@@ -251,14 +241,36 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f9ad77bd82053f000800000000000000
-      internalID: 68486555751668383
+      spriteID: 13b2e6ec181426420800000000000000
+      internalID: 2621729958852963121
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: direc_thing_4
+      name: direc_thing (1)_4
+      rect:
+        serializedVersion: 2
+        x: 1759
+        y: 649
+        width: 522
+        height: 1472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 039a16915e922b400800000000000000
+      internalID: 338378985956288816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: direc_thing (1)_5
       rect:
         serializedVersion: 2
         x: 69
@@ -273,14 +285,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8c9b2af527f342820800000000000000
-      internalID: 2892506621142022600
+      spriteID: a7c7feb777635ad10800000000000000
+      internalID: 2136173485065469050
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: direc_thing_5
+      name: direc_thing (1)_6
       rect:
         serializedVersion: 2
         x: 679
@@ -295,14 +307,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 671de6b4f10a9e9a0800000000000000
-      internalID: -6203250955456163466
+      spriteID: d7383c915c77990c0800000000000000
+      internalID: -4568488658566151299
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: direc_thing_6
+      name: direc_thing (1)_7
       rect:
         serializedVersion: 2
         x: 1249
@@ -317,8 +329,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e02bbb6ee00d4c8d0800000000000000
-      internalID: -2826905903662648818
+      spriteID: 608db81a9ae3dfa70800000000000000
+      internalID: 8862308540015695878
       vertices: []
       indices: 
       edges: []
@@ -337,13 +349,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      direc_thing_0: -1617191671758300614
-      direc_thing_1: -2688446315341980419
-      direc_thing_2: -5302156965581843808
-      direc_thing_3: 68486555751668383
-      direc_thing_4: 2892506621142022600
-      direc_thing_5: -6203250955456163466
-      direc_thing_6: -2826905903662648818
+      direc_thing (1)_0: 7071522964116260520
+      direc_thing (1)_1: 3752393436089081224
+      direc_thing (1)_2: 1818032917731063879
+      direc_thing (1)_3: 2621729958852963121
+      direc_thing (1)_4: 338378985956288816
+      direc_thing (1)_5: 2136173485065469050
+      direc_thing (1)_6: -4568488658566151299
+      direc_thing (1)_7: 8862308540015695878
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

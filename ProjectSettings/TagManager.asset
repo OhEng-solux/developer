@@ -8,11 +8,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - frame
+  - character
   - Water
   - UI
-  - inside
-  - 
+  - base
+  - funiture
   - 
   - 
   - 
@@ -40,6 +40,15 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: base
+    uniqueID: 3806927243
+    locked: 0
+  - name: funiture
+    uniqueID: 2222876795
+    locked: 0
+  - name: character
+    uniqueID: 3778356063
     locked: 0
   m_RenderingLayers:
   - Default
