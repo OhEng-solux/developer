@@ -9,7 +9,7 @@ public class CameraManager: MonoBehaviour
     public float moveSpeed; //카메라가 대상을 쫓을 속도
     private Vector3 targetPosition; //대상의 현재 위치값
 
-    public BoxCollider2D bound;
+    public PolygonCollider2D bound;
     private Vector3 minBound;
     private Vector3 maxBound;
     //박스 콜라이더 영역의 최소 최대 xyz값을 지님
@@ -54,7 +54,7 @@ public class CameraManager: MonoBehaviour
         }
     }
 
-    public void SetBound(BoxCollider2D newBound){
+    public void SetBound(PolygonCollider2D newBound){
         bound=newBound;
         minBound=bound.bounds.min;
         maxBound=bound.bounds.max;
