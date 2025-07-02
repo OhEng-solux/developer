@@ -35,7 +35,7 @@ public class PlayerManager : MovingObject
     {
         while (Input.GetAxisRaw("Vertical") != 0 || Input.GetAxisRaw("Horizontal") != 0)
         {
-            if (Input.GetKey(KeyCode.LeftShift))
+            if (Input.GetKey(KeyCode.Space))
             {
                 applyRunSpeed = runSpeed;
                 applyRunFlag = true;
