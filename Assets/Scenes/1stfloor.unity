@@ -915,8 +915,8 @@ Transform:
   m_GameObject: {fileID: 1643057821}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.7, y: -11.020452, z: -5.2910905}
-  m_LocalScale: {x: 1.14, y: 1, z: 0}
+  m_LocalPosition: {x: 9.237, y: -11.020452, z: -5.2910905}
+  m_LocalScale: {x: 1.6187999, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1040836588}
@@ -2049,7 +2049,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 519420031}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 10
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -2059,7 +2059,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 1814127615
-  m_SortingOrder: 3
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!224 &652910773
 RectTransform:
@@ -2911,8 +2911,8 @@ Transform:
   m_GameObject: {fileID: 865851063}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.66, y: -18.02045, z: -5.2910905}
-  m_LocalScale: {x: 1.504076, y: 1, z: 0}
+  m_LocalPosition: {x: -11.8, y: -18.02045, z: -5.2910905}
+  m_LocalScale: {x: 1.8048912, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1694554761}
