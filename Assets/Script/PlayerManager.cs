@@ -11,7 +11,6 @@ public class PlayerManager : MovingObject
     private float applyRunSpeed;
     private bool applyRunFlag = false;
     private bool canMove = true;
-    public bool notMove = false;
 
     private Rigidbody2D rigid;
 
@@ -31,7 +30,6 @@ public class PlayerManager : MovingObject
             Destroy(this.gameObject);
         }
     }
-
 
     IEnumerator MoveCoroutine()
     {
@@ -92,14 +90,12 @@ public class PlayerManager : MovingObject
 
     void Update()
     {
-        if (canMove && !notMove)
+        if (canMove)
         {
             if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
             {
-                // "Horizontal" 우 방향키가 눌리면 1 리턴, 좌 방향키가 눌리면 -1 리턴
-                // "Vertical"인 경우, 상은 1 리턴, 하는 -1 리턴
                 canMove = false;
-                StartCoroutine(MoveCoroutine()); // 방향키를 누르는 순간 동시에 여러 개 실행됨
+                StartCoroutine(MoveCoroutine());
             }
         }
     }
