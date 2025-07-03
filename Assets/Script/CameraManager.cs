@@ -31,7 +31,7 @@ public class CameraManager: MonoBehaviour
         }
     }
     void Start(){
-        theCamera=GetComponent<Camera>();
+        theCamera = Camera.main;
         //맵 이동 구현 시 활성화
         //minBound=bound.bounds.min;
         //maxBound=bound.bounds.max;
