@@ -1,10 +1,25 @@
 fileFormatVersion: 2
-guid: 063e213ef83cef649a8b3d3ab495d061
+guid: a001bef8a0da82347b09970e59c16a6d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5513119555903696623
-    second: FX - White_0
+      213: 5248913758929930935
+    second: sleep_object_0
+  - first:
+      213: 8829578322221178717
+    second: sleep_object_1
+  - first:
+      213: 6953911263586499200
+    second: sleep_object_2
+  - first:
+      213: -4070683320848008174
+    second: sleep_object_3
+  - first:
+      213: 8508323886776093613
+    second: sleep_object_4
+  - first:
+      213: 7208470183316764035
+    second: sleep_object_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +154,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FX - White_0
+      name: sleep_object_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 100
-        height: 100
+        x: 69
+        y: 1689
+        width: 462
+        height: 642
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +169,118 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 111d91249f67d73b0800000000000000
-      internalID: -5513119555903696623
+      spriteID: 7bacda9f043e7d840800000000000000
+      internalID: 5248913758929930935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sleep_object_1
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 909
+        width: 642
+        height: 1422
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5f9b74f3b6f88a70800000000000000
+      internalID: 8829578322221178717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sleep_object_2
+      rect:
+        serializedVersion: 2
+        x: 1279
+        y: 1659
+        width: 792
+        height: 672
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08a39a96371418060800000000000000
+      internalID: 6953911263586499200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sleep_object_3
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 1029
+        width: 262
+        height: 432
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21c3fbb46170287c0800000000000000
+      internalID: -4070683320848008174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sleep_object_4
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 59
+        width: 1312
+        height: 672
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dab8249fe73a31670800000000000000
+      internalID: 8508323886776093613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sleep_object_5
+      rect:
+        serializedVersion: 2
+        x: 1419
+        y: 69
+        width: 972
+        height: 902
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 385379a8071a90460800000000000000
+      internalID: 7208470183316764035
       vertices: []
       indices: 
       edges: []
@@ -173,8 +298,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      FX - White_0: -5513119555903696623
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
