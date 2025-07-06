@@ -16,10 +16,10 @@ public class TransferMap : MonoBehaviour
 
     void Start()
     {
-        thePlayer = FindObjectOfType<PlayerManager>();
-        theCamera = FindObjectOfType<CameraManager>();
-        theFade = FindObjectOfType<FadeManager>();
-        theOrder = FindObjectOfType<OrderManager>();
+        thePlayer = FindFirstObjectByType<PlayerManager>();
+        theCamera = FindFirstObjectByType<CameraManager>();
+        theFade = FindFirstObjectByType<FadeManager>();
+        theOrder = FindFirstObjectByType<OrderManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
