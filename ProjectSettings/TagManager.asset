@@ -44,11 +44,14 @@ TagManager:
   - name: base
     uniqueID: 3806927243
     locked: 0
-  - name: funiture
-    uniqueID: 2222876795
-    locked: 0
   - name: character
     uniqueID: 3778356063
+    locked: 0
+  - name: wall
+    uniqueID: 4235271999
+    locked: 0
+  - name: funiture
+    uniqueID: 2222876795
     locked: 0
   - name: UI
     uniqueID: 1814127615
