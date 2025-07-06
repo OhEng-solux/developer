@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 647bf5e8c25a74e42b071a9c1c7f4fec
+guid: e3659b33f9ade274ab0a7222890729c7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3355699148243905182
-    second: sleep_tile_0
+      213: -615375725458073326
+    second: sleep_tile (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,11 +139,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sleep_tile_0
+      name: sleep_tile (1)_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1280
+        y: 1600
         width: 320
         height: 320
       alignment: 0
@@ -152,20 +152,20 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e9aa8289896d19e20800000000000000
-      internalID: 3355699148243905182
+      spriteID: fdcafefbb43f8234797a0f0eff05ec3a
+      internalID: 1646149148
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sleep_tile_1
+      name: sleep_tile (1)_1
       rect:
         serializedVersion: 2
         x: 320
-        y: 1280
+        y: 1600
         width: 320
         height: 320
       alignment: 0
@@ -176,18 +176,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 651d8bc8136ec264d81f441717368b3e
-      internalID: -2005710425
+      spriteID: a3cd4e6aee4c7b642b0a35e61ddcb45b
+      internalID: 929373591
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sleep_tile_2
+      name: sleep_tile (1)_2
       rect:
         serializedVersion: 2
         x: 640
-        y: 1280
+        y: 1600
         width: 320
         height: 320
       alignment: 0
@@ -198,18 +198,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 991faafd6bda8404aa9e8ccd3b140be6
-      internalID: 55931498
+      spriteID: 6330add7718c57344836d77705f3d753
+      internalID: -1854109555
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sleep_tile_3
+      name: sleep_tile (1)_3
       rect:
         serializedVersion: 2
         x: 960
-        y: 1280
+        y: 1600
         width: 320
         height: 320
       alignment: 0
@@ -220,18 +220,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d279c6b20e5fa5940910d7f3e939faab
-      internalID: -1788049569
+      spriteID: 3c23f9c4fcf732a4f9f01a4c03989fa0
+      internalID: -1035142501
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sleep_tile_4
+      name: sleep_tile (1)_4
       rect:
         serializedVersion: 2
         x: 1280
-        y: 1280
+        y: 1600
         width: 320
         height: 320
       alignment: 0
@@ -242,17 +242,39 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67ea3dfd03e46c24ca524b0f15bd25b4
-      internalID: -1055292093
+      spriteID: 90d9a4f6f4eec254a8e9baf96e487a53
+      internalID: 1140685438
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sleep_tile_5
+      name: sleep_tile (1)_5
       rect:
         serializedVersion: 2
         x: 1600
+        y: 1600
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 186bd3dd2cfa07545925b6054a01c93f
+      internalID: -1211429830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sleep_tile (1)_6
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 1280
         width: 320
         height: 320
@@ -264,14 +286,102 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4720dd23250f214e85293c467a436bc
-      internalID: -2084059345
+      spriteID: e7ee55215e3866c49875a600cf5e3122
+      internalID: 545352234
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sleep_tile_6
+      name: sleep_tile (1)_7
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1280
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 711c8a50bb1901147a2710b8cb9ec3d7
+      internalID: -1725519305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sleep_tile (1)_8
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1280
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c92a403b6f3797439b9c5a69bd38105
+      internalID: -909841479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sleep_tile (1)_9
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1280
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5781672d1994419438844857c6058cc8
+      internalID: 1662372715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sleep_tile (1)_10
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1280
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4771738fce29bfe49a079f0f7966b7d6
+      internalID: -51378726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sleep_tile (1)_11
       rect:
         serializedVersion: 2
         x: 0
@@ -286,14 +396,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 387310fbd78b0f745af0384aac97d706
-      internalID: 1183158913
+      spriteID: 4fccdee95a6d12e428e0432ec85020c5
+      internalID: 1688250255
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sleep_tile_7
+      name: sleep_tile (1)_12
       rect:
         serializedVersion: 2
         x: 320
@@ -308,14 +418,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 193e3b53976a4b24198f1aa32cdfdb95
-      internalID: -1083919037
+      spriteID: fb6a79bc557ac874091f19b7a0b11d04
+      internalID: 1983681452
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sleep_tile_8
+      name: sleep_tile (1)_13
       rect:
         serializedVersion: 2
         x: 640
@@ -330,14 +440,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fc1ddb50a6bfd74da81c004b71f1a80
-      internalID: 19477567
+      spriteID: 4405610293b325e44991a8e4544e9ee3
+      internalID: 1300386844
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sleep_tile_9
+      name: sleep_tile (1)_14
       rect:
         serializedVersion: 2
         x: 960
@@ -352,14 +462,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b17b877897fbb2e448d3c1ec57392d64
-      internalID: -1930043241
+      spriteID: b2754e81bddc1954c8e3da0bbe2b346a
+      internalID: 1834932387
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sleep_tile_10
+      name: sleep_tile (1)_15
       rect:
         serializedVersion: 2
         x: 1280
@@ -374,14 +484,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ead5fab94e2026f4abbeb5e93db82816
-      internalID: 393209763
+      spriteID: fae7fa4636423b14aa72d849c21ae84d
+      internalID: -2051811186
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sleep_tile_11
+      name: sleep_tile (1)_16
       rect:
         serializedVersion: 2
         x: 0
@@ -396,14 +506,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 807b72bb1f9d9b3469aa655d0253351d
-      internalID: -199161577
+      spriteID: 7eb87965b3050b742b6989ee201d4309
+      internalID: 1079725576
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sleep_tile_12
+      name: sleep_tile (1)_17
       rect:
         serializedVersion: 2
         x: 320
@@ -418,14 +528,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5150b77f0f54fc42a55bfa7c49dd0eb
-      internalID: 1017906566
+      spriteID: ae3f573925ad5d14e982cda9cb0da8ab
+      internalID: 1823937834
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sleep_tile_13
+      name: sleep_tile (1)_18
       rect:
         serializedVersion: 2
         x: 640
@@ -440,14 +550,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2bd075a177bf5d545a54092d52ed5feb
-      internalID: -30466967
+      spriteID: 112a1f0a223c7854e92a141adba04395
+      internalID: 1955600564
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sleep_tile_14
+      name: sleep_tile (1)_19
       rect:
         serializedVersion: 2
         x: 960
@@ -462,14 +572,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 919080a85aae98d49b87eecd80841dd3
-      internalID: 1405769485
+      spriteID: 192a494144c1ebf48a244465c033eff5
+      internalID: 6236037
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sleep_tile_15
+      name: sleep_tile (1)_20
       rect:
         serializedVersion: 2
         x: 1280
@@ -484,14 +594,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c67a69cfd927cb4f9e44b2848645927
-      internalID: -245302037
+      spriteID: facdbedb7959f9249a4ea86479775271
+      internalID: 1189222014
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sleep_tile_16
+      name: sleep_tile (1)_21
       rect:
         serializedVersion: 2
         x: 0
@@ -506,14 +616,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20dc8c1dcef250b4e8bf7c1149fa48b9
-      internalID: 366815396
+      spriteID: 619d945145145dc4e8d5609b2838f038
+      internalID: 454479198
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sleep_tile_17
+      name: sleep_tile (1)_22
       rect:
         serializedVersion: 2
         x: 320
@@ -528,14 +638,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53d9179a0fb493b4ca2fda709efeb0cb
-      internalID: -1109160444
+      spriteID: af1896e8cf73ea6489d386041d51a927
+      internalID: 1120056647
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sleep_tile_18
+      name: sleep_tile (1)_23
       rect:
         serializedVersion: 2
         x: 640
@@ -550,14 +660,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4fb71f0aa0611647b7703210c3ca2e4
-      internalID: 1035027578
+      spriteID: 7793f61e2e7ddb6478efad74e58f9870
+      internalID: -513988236
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sleep_tile_19
+      name: sleep_tile (1)_24
       rect:
         serializedVersion: 2
         x: 960
@@ -572,14 +682,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 962c37312cb6e0f42aad65e8a14796c4
-      internalID: -1692441105
+      spriteID: 5f2e93ee790b52b45b560c2e852b934c
+      internalID: -536539129
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sleep_tile_20
+      name: sleep_tile (1)_25
       rect:
         serializedVersion: 2
         x: 1280
@@ -594,14 +704,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf7bb12c002ce0046be9792f07419f53
-      internalID: -1652831055
+      spriteID: 1cfb4f3eab7be704d9061dec632c5abc
+      internalID: 2043530920
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sleep_tile_21
+      name: sleep_tile (1)_26
       rect:
         serializedVersion: 2
         x: 0
@@ -616,14 +726,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e53d83061e097845af225a7c85dfee6
-      internalID: 351322206
+      spriteID: aaaa55ad9ee83df4dac36c757d1dc284
+      internalID: 1783383213
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sleep_tile_22
+      name: sleep_tile (1)_27
       rect:
         serializedVersion: 2
         x: 320
@@ -638,14 +748,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21a5995be3457b24a8c2ee2e68990882
-      internalID: 225827952
+      spriteID: ffb6517bbb1395a45ae4020a7c1f8c1a
+      internalID: 601708654
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sleep_tile_23
+      name: sleep_tile (1)_28
       rect:
         serializedVersion: 2
         x: 640
@@ -660,14 +770,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1fc823488ecb32409676a71cc0aaa1a
-      internalID: 1314531926
+      spriteID: d4b3dfb3e26a0c146aef2a2f70c0171e
+      internalID: -53434082
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sleep_tile_24
+      name: sleep_tile (1)_29
       rect:
         serializedVersion: 2
         x: 960
@@ -682,30 +792,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77aaa60d8ba1b614daa4ce2a072804f2
-      internalID: 1759388418
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sleep_tile_25
-      rect:
-        serializedVersion: 2
-        x: 1280
-        y: 0
-        width: 320
-        height: 320
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1ebf0c0ec0518994caa38f6bdddd0b75
-      internalID: -1038929648
+      spriteID: 49ddb619589a95440a3e7c2e727670f9
+      internalID: 1702219758
       vertices: []
       indices: 
       edges: []
@@ -714,7 +802,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: a0fe38eb13c7f9345b4cba12ab22a9d8
+    spriteID: fdf1b0c3b4a1c1e489c964a2a1e5e9a6
     internalID: 0
     vertices: []
     indices: 
@@ -724,32 +812,36 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      sleep_tile_0: 3355699148243905182
-      sleep_tile_1: -2005710425
-      sleep_tile_10: 393209763
-      sleep_tile_11: -199161577
-      sleep_tile_12: 1017906566
-      sleep_tile_13: -30466967
-      sleep_tile_14: 1405769485
-      sleep_tile_15: -245302037
-      sleep_tile_16: 366815396
-      sleep_tile_17: -1109160444
-      sleep_tile_18: 1035027578
-      sleep_tile_19: -1692441105
-      sleep_tile_2: 55931498
-      sleep_tile_20: -1652831055
-      sleep_tile_21: 351322206
-      sleep_tile_22: 225827952
-      sleep_tile_23: 1314531926
-      sleep_tile_24: 1759388418
-      sleep_tile_25: -1038929648
-      sleep_tile_3: -1788049569
-      sleep_tile_4: -1055292093
-      sleep_tile_5: -2084059345
-      sleep_tile_6: 1183158913
-      sleep_tile_7: -1083919037
-      sleep_tile_8: 19477567
-      sleep_tile_9: -1930043241
+      sleep_tile (1)_0: 1646149148
+      sleep_tile (1)_1: 929373591
+      sleep_tile (1)_10: -51378726
+      sleep_tile (1)_11: 1688250255
+      sleep_tile (1)_12: 1983681452
+      sleep_tile (1)_13: 1300386844
+      sleep_tile (1)_14: 1834932387
+      sleep_tile (1)_15: -2051811186
+      sleep_tile (1)_16: 1079725576
+      sleep_tile (1)_17: 1823937834
+      sleep_tile (1)_18: 1955600564
+      sleep_tile (1)_19: 6236037
+      sleep_tile (1)_2: -1854109555
+      sleep_tile (1)_20: 1189222014
+      sleep_tile (1)_21: 454479198
+      sleep_tile (1)_22: 1120056647
+      sleep_tile (1)_23: -513988236
+      sleep_tile (1)_24: -536539129
+      sleep_tile (1)_25: 2043530920
+      sleep_tile (1)_26: 1783383213
+      sleep_tile (1)_27: 601708654
+      sleep_tile (1)_28: -53434082
+      sleep_tile (1)_29: 1702219758
+      sleep_tile (1)_3: -1035142501
+      sleep_tile (1)_4: 1140685438
+      sleep_tile (1)_5: -1211429830
+      sleep_tile (1)_6: 545352234
+      sleep_tile (1)_7: -1725519305
+      sleep_tile (1)_8: -909841479
+      sleep_tile (1)_9: 1662372715
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
