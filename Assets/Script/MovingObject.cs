@@ -115,18 +115,18 @@ public class MovingObject : MonoBehaviour
     protected bool CheckCollision()
     {
         RaycastHit2D hit;
-            //A지점에서 B지점으로 레이저를 쏜다고 했을때
-            //도달하면 hit==NULL, 중간에 막히면 그 방해물을 반환한다
+        //A지점에서 B지점으로 레이저를 쏜다고 했을때
+        //도달하면 hit==NULL, 중간에 막히면 그 방해물을 반환한다
 
-            Vector2 start=transform.position; //A지점: 캐릭터의 현재 위치 값
-            Vector2 end=start+new Vector2(vector.x*speed*walkCount, vector.y*speed*walkCount); //B지점: 캐릭터가 이동하고자 하는 위치 값
+        Vector2 start=transform.position; //A지점: 캐릭터의 현재 위치 값
+        Vector2 end=start+new Vector2(vector.x*speed*walkCount, vector.y*speed*walkCount); //B지점: 캐릭터가 이동하고자 하는 위치 값
 
-            boxCollider.enabled=false;
-            hit=Physics2D.Raycast(start, end - start, (end - start).magnitude, layerMask); //레이저발사
-            boxCollider.enabled=true;
+        boxCollider.enabled=false;
+        hit=Physics2D.Raycast(start, end - start, (end - start).magnitude, layerMask); //레이저발사
+        boxCollider.enabled=true;
 
-            if(hit.transform!=null)
-                return true;
-            return false;
+        if(hit.transform!=null)
+            return true;
+        return false;
     }
 }
