@@ -33,8 +33,8 @@ public class CameraManager: MonoBehaviour
     void Start(){
         theCamera = Camera.main;
         //맵 이동 구현 시 활성화
-        //minBound=bound.bounds.min;
-        //maxBound=bound.bounds.max;
+        minBound=bound.bounds.min;
+        maxBound=bound.bounds.max;
         halfHeight =theCamera.orthographicSize;
         halfWidth=halfHeight * Screen.width / Screen.height;
     }
@@ -47,10 +47,10 @@ public class CameraManager: MonoBehaviour
             //1초에 movespeed만큼 이동
 
             //맵 이동 구현 시 활성화
-            //float clampedX=Mathf.Clamp(this.transform.position.x, minBound.x+halfWidth, maxBound.x-halfWidth);
-            //float clampedY=Mathf.Clamp(this.transform.position.y, minBound.y+halfHeight, maxBound.y-halfHeight);
+            float clampedX=Mathf.Clamp(this.transform.position.x, minBound.x+halfWidth, maxBound.x-halfWidth);
+            float clampedY=Mathf.Clamp(this.transform.position.y, minBound.y+halfHeight, maxBound.y-halfHeight);
 
-            //this.transform.position=new Vector3(clampedX, clampedY, this.transform.position.z);
+            this.transform.position=new Vector3(clampedX, clampedY, this.transform.position.z);
         }
     }
 
