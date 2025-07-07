@@ -50,14 +50,14 @@ TagManager:
   - name: under_funiture
     uniqueID: 2222876795
     locked: 0
-  - name: UI
-    uniqueID: 1814127615
-    locked: 0
   - name: character
     uniqueID: 3778356063
     locked: 0
   - name: upper_funiture
     uniqueID: 4010228985
+    locked: 0
+  - name: UI
+    uniqueID: 1814127615
     locked: 0
   m_RenderingLayers:
   - Default
