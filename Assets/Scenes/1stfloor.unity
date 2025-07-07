@@ -488,7 +488,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2072090501
   m_SortingLayer: 3
-  m_SortingOrder: 3
+  m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.7101679, y: 2.16, z: 0}
   m_MaxChunkCount: 16
@@ -509,7 +509,7 @@ Tilemap:
   - first: {x: -1, y: -10, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 0
+      m_TileIndex: 1
       m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
@@ -518,10 +518,10 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 2f2d6d97156e15349b9b99e1e4efceeb, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 2f2d6d97156e15349b9b99e1e4efceeb, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -944,14 +944,17 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 1.3143463, y: -8.105273}
+    - - {x: 1.6636051, y: -7.948107}
+      - {x: 1.0587316, y: -7.3027043}
       - {x: 0.38498616, y: -7.2650723}
+      - {x: -1.1495506, y: -7.5812907}
       - {x: -1.0835865, y: -8.505314}
       - {x: -1.1688013, y: -9.422359}
       - {x: -0.47210383, y: -10.164535}
       - {x: -1.1779014, y: -10.525599}
-      - {x: -1.0315979, y: -12.719335}
-      - {x: 1.2276713, y: -12.836068}
+      - {x: -1.1388359, y: -12.585288}
+      - {x: 0.16890523, y: -12.661266}
+      - {x: 1.3080988, y: -12.648402}
       - {x: 1.2149239, y: -10.3576145}
   m_UseDelaunayMesh: 0
 --- !u!1 &156381698
@@ -6674,9 +6677,7 @@ GameObject:
   - component: {fileID: 584944582}
   - component: {fileID: 584944588}
   - component: {fileID: 584944587}
-  - component: {fileID: 584944586}
   - component: {fileID: 584944585}
-  - component: {fileID: 584944584}
   - component: {fileID: 584944583}
   m_Layer: 7
   m_Name: dir_desk
@@ -6694,7 +6695,7 @@ Transform:
   m_GameObject: {fileID: 584944581}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.05, y: 7.54, z: 0}
+  m_LocalPosition: {x: 19.01, y: -10.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6746,85 +6747,16 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 9.267038, y: -13.486386}
-      - {x: 8.189263, y: -13.56655}
-      - {x: 6.05558, y: -13.651083}
-      - {x: 6.0344944, y: -12.389599}
-      - {x: 5.453924, y: -12.395733}
-      - {x: 5.5780067, y: -13.608402}
-      - {x: 3.9750423, y: -13.536855}
-      - {x: 3.958393, y: -24.548359}
-      - {x: 9.138435, y: -24.569159}
-      - {x: 9.045521, y: -18.670496}
+    - - {x: 1.1063137, y: 3.6650147}
+      - {x: -0.6998997, y: 3.7678432}
+      - {x: -3.9570026, y: 3.7997146}
+      - {x: -3.9199352, y: -6.6597977}
+      - {x: -3.1142502, y: -6.5895042}
+      - {x: -3.112793, y: -7.323303}
+      - {x: 2.5859737, y: -7.2928715}
+      - {x: 2.7938175, y: 3.6382198}
+      - {x: 2.1352844, y: 3.6505566}
   m_UseDelaunayMesh: 0
---- !u!66 &584944584
-CompositeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 584944581}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
-  m_GenerationType: 0
-  m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 584944586}
-    m_ColliderPaths:
-    - - X: 91283528
-        Y: -133511368
-      - X: 61611448
-        Y: -123700440
-      - X: 52638036
-        Y: -123700440
-      - X: 39118092
-        Y: -135664992
-      - X: 38878800
-        Y: -135904288
-      - X: 38878800
-        Y: -246097776
-      - X: 91283528
-        Y: -246097776
-  m_CompositePaths:
-    m_Paths:
-    - - {x: 9.128324, y: -24.609777}
-      - {x: 9.128334, y: -13.3511305}
-      - {x: 6.161141, y: -12.370044}
-      - {x: 5.2637963, y: -12.37005}
-      - {x: 3.911808, y: -13.566501}
-      - {x: 3.88788, y: -13.59044}
-      - {x: 3.8879092, y: -24.609777}
-  m_VertexDistance: 0.0005
-  m_OffsetDistance: 0.00005
-  m_UseDelaunayMesh: 0
-  m_CompositeGameObject: {fileID: 584944581}
 --- !u!50 &584944585
 Rigidbody2D:
   serializedVersion: 5
@@ -6852,44 +6784,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!19719996 &584944586
-TilemapCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 584944581}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 1
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_MaximumTileChangeCount: 1000
-  m_ExtrusionFactor: 0
-  m_UseDelaunayMesh: 0
 --- !u!483693784 &584944587
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -6931,16 +6825,16 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -2072090501
-  m_SortingLayer: 3
-  m_SortingOrder: 3
+  m_SortingLayerID: -284738311
+  m_SortingLayer: 6
+  m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 2.110362, y: 5.61, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
   m_Mode: 0
-  m_DetectChunkCullingBounds: 0
+  m_DetectChunkCullingBounds: 1
   m_MaskInteraction: 0
 --- !u!1839735485 &584944588
 Tilemap:
@@ -6951,7 +6845,7 @@ Tilemap:
   m_GameObject: {fileID: 584944581}
   m_Enabled: 1
   m_Tiles:
-  - first: {x: 6, y: -19, z: 0}
+  - first: {x: -1, y: -1, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 0
@@ -6993,8 +6887,8 @@ Tilemap:
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: 0, y: -24, z: 0}
-  m_Size: {x: 8, y: 24, z: 1}
+  m_Origin: {x: -1, y: -24, z: 0}
+  m_Size: {x: 9, y: 24, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -7094,7 +6988,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2072090501
   m_SortingLayer: 3
-  m_SortingOrder: 3
+  m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.96020246, y: 1.4100001, z: 0}
   m_MaxChunkCount: 16
@@ -7407,13 +7301,15 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 8.953289, y: -13.64326}
-      - {x: 8.189263, y: -13.56655}
-      - {x: 8.026644, y: -14.121338}
+    - - {x: 9.607741, y: -13.699578}
+      - {x: 9.1611395, y: -13.356699}
+      - {x: 8.920892, y: -13.031927}
+      - {x: 7.8620253, y: -12.84983}
+      - {x: 6.0590563, y: -13.125988}
       - {x: 6.078314, y: -14.348373}
       - {x: 6.0409775, y: -25.382496}
-      - {x: 8.979145, y: -25.488062}
-      - {x: 9.045521, y: -18.670496}
+      - {x: 9.508322, y: -25.365946}
+      - {x: 9.493288, y: -18.54838}
   m_UseDelaunayMesh: 0
 --- !u!1 &652910769
 GameObject:
@@ -9898,16 +9794,17 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 8.535582, y: -9.131311}
-      - {x: 5.9711914, y: -9.212239}
-      - {x: 5.860504, y: -10.203352}
-      - {x: 5.7518997, y: -13.311363}
-      - {x: 5.9940147, y: -14.143295}
+    - - {x: 8.528816, y: -8.844561}
+      - {x: 5.8699055, y: -8.955996}
+      - {x: 5.6326656, y: -10.211305}
+      - {x: 5.317684, y: -13.447057}
+      - {x: 6.02763, y: -14.227331}
       - {x: 8.456417, y: -14.194239}
       - {x: 8.744289, y: -13.381892}
-      - {x: 9.343209, y: -12.316229}
-      - {x: 9.2201, y: -8.854979}
-      - {x: 8.780165, y: -8.901646}
+      - {x: 9.695368, y: -13.036857}
+      - {x: 9.708535, y: -12.295933}
+      - {x: 9.7883835, y: -8.814387}
+      - {x: 9.202875, y: -8.330207}
   m_UseDelaunayMesh: 0
 --- !u!66 &1136760945
 CompositeCollider2D:
@@ -10268,7 +10165,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2072090501
   m_SortingLayer: 3
-  m_SortingOrder: 3
+  m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 1.260244, y: 2.16, z: 0}
   m_MaxChunkCount: 16
@@ -10713,7 +10610,7 @@ Transform:
   m_GameObject: {fileID: 1306316774}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.65, y: -10.39, z: 0}
+  m_LocalPosition: {x: 8.99, y: -9.97, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10805,7 +10702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: 
-  speed: 0.2
+  speed: 0.3
   walkCount: 5
   boxCollider: {fileID: 1306316779}
   layerMask:
@@ -10917,7 +10814,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2072090501
   m_SortingLayer: 3
-  m_SortingOrder: 3
+  m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 2.110362, y: 6.86, z: 0}
   m_MaxChunkCount: 16
@@ -17804,9 +17701,9 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -2072090501
-  m_SortingLayer: 3
-  m_SortingOrder: 2
+  m_SortingLayerID: -284738311
+  m_SortingLayer: 6
+  m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -18858,9 +18755,7 @@ GameObject:
   - component: {fileID: 1924333464}
   - component: {fileID: 1924333463}
   - component: {fileID: 1924333468}
-  - component: {fileID: 1924333465}
   - component: {fileID: 1924333467}
-  - component: {fileID: 1924333466}
   m_Layer: 7
   m_Name: dir_sofa_front
   m_TagString: Untagged
@@ -18924,9 +18819,9 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -2072090501
-  m_SortingLayer: 3
-  m_SortingOrder: 3
+  m_SortingLayerID: -284738311
+  m_SortingLayer: 6
+  m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 1.0102093, y: 1.4600002, z: 0}
   m_MaxChunkCount: 16
@@ -19007,118 +18902,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!19719996 &1924333465
-TilemapCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1924333461}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 1
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_MaximumTileChangeCount: 1000
-  m_ExtrusionFactor: 0
-  m_UseDelaunayMesh: 0
---- !u!66 &1924333466
-CompositeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1924333461}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
-  m_GenerationType: 0
-  m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 1924333465}
-    m_ColliderPaths:
-    - - X: 45295676
-        Y: -84167944
-      - X: 45176028
-        Y: -84048296
-      - X: 43381348
-        Y: -81655384
-      - X: 40270568
-        Y: -80339288
-      - X: 17418278
-        Y: -80339288
-      - X: 14905721
-        Y: -84048296
-      - X: 14905721
-        Y: -119463368
-      - X: 15025367
-        Y: -119583016
-      - X: 45295676
-        Y: -119583016
-  m_CompositePaths:
-    m_Paths:
-    - - {x: 4.5295386, y: -11.958302}
-      - {x: 4.52956, y: -8.416787}
-      - {x: 4.5176015, y: -8.404828}
-      - {x: 4.3381286, y: -8.165536}
-      - {x: 4.0270514, y: -8.033929}
-      - {x: 1.74182, y: -8.033941}
-      - {x: 1.4905721, y: -8.404838}
-      - {x: 1.4905797, y: -11.946344}
-      - {x: 1.5025475, y: -11.958302}
-  m_VertexDistance: 0.0005
-  m_OffsetDistance: 0.00005
-  m_UseDelaunayMesh: 0
-  m_CompositeGameObject: {fileID: 1924333461}
 --- !u!50 &1924333467
 Rigidbody2D:
   serializedVersion: 5
@@ -19180,7 +18963,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 2.975198, y: -9.979668}
+  m_Offset: {x: 3.2505982, y: -9.979668}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -19190,7 +18973,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.950396, y: 3.9593353}
+  m_Size: {x: 3.5011964, y: 3.9593353}
   m_EdgeRadius: 0
 --- !u!1 &1933651987
 GameObject:
@@ -19806,7 +19589,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2072090501
   m_SortingLayer: 3
-  m_SortingOrder: 3
+  m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.96020246, y: 1.4100001, z: 0}
   m_MaxChunkCount: 16
@@ -20128,12 +19911,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -2.0582304, y: -13.616867}
-      - {x: -2.9865808, y: -13.584986}
-      - {x: -2.8688827, y: -25.408642}
+    - - {x: -2.0437367, y: -13.182056}
+      - {x: -3.309453, y: -13.205375}
+      - {x: -3.3573537, y: -25.449345}
       - {x: -0.024986267, y: -25.44927}
       - {x: -0.021046162, y: -14.2086}
-      - {x: -2.0475836, y: -14.18928}
+      - {x: -1.634587, y: -13.644876}
   m_UseDelaunayMesh: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
