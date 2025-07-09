@@ -4,9 +4,9 @@ using System.Collections;
 
 public class OrderManager : MonoBehaviour
 {
-    private PlayerManager thePlayer; // ÀÌº¥Æ® µµÁß¿¡ Å° ÀÔ·Â Ã³¸® ¹æÁö
+    private PlayerManager thePlayer; // ï¿½Ìºï¿½Æ® ï¿½ï¿½ï¿½ß¿ï¿½ Å° ï¿½Ô·ï¿½ Ã³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     private List<MovingObject> characters;
-    // MovingObject[] -> ¹è¿­ÀÇ Å©±â °íÁ¤µÇ¸é º¯°æ ºÒ°¡ÇÑ ¹®Á¦°¡ »ý±â±â ¶§¹®¿¡, List »ç¿ë
+    // MovingObject[] -> ï¿½è¿­ï¿½ï¿½ Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ò°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, List ï¿½ï¿½ï¿½
     // Add(), Remove(), Clear()
 
     void Start()
@@ -24,7 +24,7 @@ public class OrderManager : MonoBehaviour
     public List<MovingObject> ToList()
     {
         List<MovingObject> tempList = new List<MovingObject>();
-        MovingObject[] temp = FindObjectsOfType<MovingObject>(); // MovingObject°¡ ´Þ¸° ¸ðµç °´Ã¼¸¦ Ã£¾Æ¼­ ¹ÝÈ¯ÇØ ÁÜ (objects)
+        MovingObject[] temp = FindObjectsOfType<MovingObject>(); // MovingObjectï¿½ï¿½ ï¿½Þ¸ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ Ã£ï¿½Æ¼ï¿½ ï¿½ï¿½È¯ï¿½ï¿½ ï¿½ï¿½ (objects)
 
         for (int i = 0; i < temp.Length; i++)
         {
@@ -44,11 +44,11 @@ public class OrderManager : MonoBehaviour
         thePlayer.notMove = false;
     }
 
-    // ÇÃ·¹ÀÌ¾î¸¦ ÂÑ°Ô ¸¸µé°í ½ÍÀ¸¸é NPC¿Í ÇÃ·¹ÀÌ¾îÀÇ À§Ä¡¸¦ ºñ±³ÇØ¼­ Á¶°Ç¹® ¼³Á¤
-    public void SetThorought(string _name) // º® ¶Õ±â
+    // ï¿½Ã·ï¿½ï¿½Ì¾î¸¦ ï¿½Ñ°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ NPCï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½Ç¹ï¿½ ï¿½ï¿½ï¿½ï¿½
+    public void SetThorought(string _name) // ï¿½ï¿½ ï¿½Õ±ï¿½
     {
         for (int i = 0; i < characters.Count; i++)
-        { // ¸®½ºÆ®ÀÇ Å©±â´Â Count
+        { // ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ Å©ï¿½ï¿½ï¿½ Count
             {
                 if (_name == characters[i].characterName)
                 {
@@ -57,10 +57,10 @@ public class OrderManager : MonoBehaviour
             }
         }
     }
-    public void SetUnThorought(string _name) // ´Ù½Ã Åë°ú ¸øÇÏ°Ô
+    public void SetUnThorought(string _name) // ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï°ï¿½
     {
         for (int i = 0; i < characters.Count; i++)
-        { // ¸®½ºÆ®ÀÇ Å©±â´Â Count
+        { // ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ Å©ï¿½ï¿½ï¿½ Count
             {
                 if (_name == characters[i].characterName)
                 {
@@ -70,10 +70,10 @@ public class OrderManager : MonoBehaviour
         }
     }
 
-    public void SetTransparent(string _name) // Åõ¸íµµ Á¶Àý (»ç¶óÁö°Ô)
+    public void SetTransparent(string _name) // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
     {
         for (int i = 0; i < characters.Count; i++)
-        { // ¸®½ºÆ®ÀÇ Å©±â´Â Count
+        { // ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ Å©ï¿½ï¿½ï¿½ Count
             {
                 if (_name == characters[i].characterName)
                 {
@@ -83,10 +83,10 @@ public class OrderManager : MonoBehaviour
         }
     }
 
-    public void SetUnTransparent(string _name) // Åõ¸íµµ Á¶Àý (´Ù½Ã »ý¼º)
+    public void SetUnTransparent(string _name) // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½ï¿½)
     {
         for (int i = 0; i < characters.Count; i++)
-        { // ¸®½ºÆ®ÀÇ Å©±â´Â Count
+        { // ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ Å©ï¿½ï¿½ï¿½ Count
             {
                 if (_name == characters[i].characterName)
                 {
@@ -99,11 +99,11 @@ public class OrderManager : MonoBehaviour
     public void Move(string _name, string _dir)
     {
         for (int i = 0; i < characters.Count; i++)
-        { // ¸®½ºÆ®ÀÇ Å©±â´Â Count
+        { // ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ Å©ï¿½ï¿½ï¿½ Count
             {
                 if (_name == characters[i].characterName)
                 {
-                    // ¹«ºê ÇÔ¼ö ½ÇÇà
+                    // ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½ ï¿½ï¿½ï¿½ï¿½
                     characters[i].Move(_dir);
                 }
             }
@@ -113,11 +113,11 @@ public class OrderManager : MonoBehaviour
     public void Turn(string _name, string _dir)
     {
         for (int i = 0; i < characters.Count; i++)
-        { // ¸®½ºÆ®ÀÇ Å©±â´Â Count
+        { // ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ Å©ï¿½ï¿½ï¿½ Count
             {
                 if (_name == characters[i].characterName)
                 {
-                    // ÃÊ±âÈ­
+                    // ï¿½Ê±ï¿½È­
                     characters[i].animator.SetFloat("DirX", 0f);
                     characters[i].animator.SetFloat("DirY", 0f);
                     switch (_dir)
