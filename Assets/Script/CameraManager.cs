@@ -30,14 +30,22 @@ public class CameraManager: MonoBehaviour
             instance=this;
         }
     }
-    void Start(){
+    void Start()
+    {
         theCamera = Camera.main;
-        //맵 이동 구현 시 활성화
-        minBound=bound.bounds.min;
-        maxBound=bound.bounds.max;
-        halfHeight =theCamera.orthographicSize;
-        halfWidth=halfHeight * Screen.width / Screen.height;
+
+        if (bound == null) // bound 체크
+        {
+            return;
+        }
+
+        minBound = bound.bounds.min;
+        maxBound = bound.bounds.max;
+
+        halfHeight = theCamera.orthographicSize;
+        halfWidth = halfHeight * Screen.width / Screen.height;
     }
+
     void Update(){
         if (target.gameObject != null)
         {
