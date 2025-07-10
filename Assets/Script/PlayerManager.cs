@@ -35,7 +35,7 @@ public class PlayerManager : MovingObject
 
     IEnumerator MoveCoroutine()
     {
-        while (Input.GetAxisRaw("Vertical") != 0 || Input.GetAxisRaw("Horizontal") != 0)
+        while (Input.GetAxisRaw("Vertical") != 0 || Input.GetAxisRaw("Horizontal") != 0 && !notMove)
         {
             if (Input.GetKey(KeyCode.Space))
             {
