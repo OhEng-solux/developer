@@ -4,10 +4,11 @@ using System.Collections;
 
 public class OrderManager : MonoBehaviour
 {
-    private PlayerManager thePlayer; // ì´ë²¤íŠ¸ ë„ì¤‘ì— í‚¤ ì…ë ¥ ì²˜ë¦¬ ë°©ì§€
-    // private MovingObject[] characters; -> ë°°ì—´ì€ ê³ ì •ëœ í¬ê¸°ë¥¼ ê°€ì§€ë¯€ë¡œ NPCì˜ ê°œìˆ˜ê°€ ë³€í•  ë•Œë§ˆë‹¤ í¬ê¸°ë¥¼ ì¡°ì •í•´ì•¼ í•¨
-    // -> ë°°ì—´ ëŒ€ì‹  list ì‚¬ìš©
+    private PlayerManager thePlayer; // ÀÌº¥Æ® µµÁß¿¡ Å° ÀÔ·Â Ã³¸® ¹æÁö
     private List<MovingObject> characters;
+    // MovingObject[] -> ¹è¿­ÀÇ Å©±â °íÁ¤µÇ¸é º¯°æ ºÒ°¡ÇÑ ¹®Á¦°¡ »ı±â±â ¶§¹®¿¡, List »ç¿ë
+    // Add(), Remove(), Clear()
+
     void Start()
     {
         thePlayer = FindAnyObjectByType<PlayerManager>();
@@ -23,12 +24,13 @@ public class OrderManager : MonoBehaviour
     public List<MovingObject> ToList()
     {
         List<MovingObject> tempList = new List<MovingObject>();
-        MovingObject[] temp = FindObjectsByType<MovingObject>(FindObjectsSortMode.None); // ì”¬ì— ìˆëŠ” ëª¨ë“  MovingObjectë¥¼ ì°¾ì•„ì„œ temp ë°°ì—´ì— ì €ì¥
+        MovingObject[] temp = FindObjectsOfType<MovingObject>(); // MovingObject°¡ ´Ş¸° ¸ğµç °´Ã¼¸¦ Ã£¾Æ¼­ ¹İÈ¯ÇØ ÁÜ (objects)
 
         for (int i = 0; i < temp.Length; i++)
         {
-            tempList.Add(temp[i]); // temp ë°°ì—´ì˜ ìš”ì†Œë¥¼ ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€
+            tempList.Add(temp[i]);
         }
+
         return tempList;
     }
 
@@ -42,57 +44,68 @@ public class OrderManager : MonoBehaviour
         thePlayer.notMove = false;
     }
 
-    public void SetThorought(string _name)
+    // ÇÃ·¹ÀÌ¾î¸¦ ÂÑ°Ô ¸¸µé°í ½ÍÀ¸¸é NPC¿Í ÇÃ·¹ÀÌ¾îÀÇ À§Ä¡¸¦ ºñ±³ÇØ¼­ Á¶°Ç¹® ¼³Á¤
+    public void SetThorought(string _name) // º® ¶Õ±â
     {
         for (int i = 0; i < characters.Count; i++)
-        {
-            if( _name == characters[i].characterName) // ì´ë¦„ì´ ì¼ì¹˜í•˜ëŠ” ì˜¤ë¸Œì íŠ¸ ì°¾ê¸°
+        { // ¸®½ºÆ®ÀÇ Å©±â´Â Count
             {
-                characters[i].boxCollider.enabled = false; // BoxCollider2D ë¹„í™œì„±í™”
+                if (_name == characters[i].characterName)
+                {
+                    characters[i].boxCollider.enabled = false;
+                }
+            }
+        }
+    }
+    public void SetUnThorought(string _name) // ´Ù½Ã Åë°ú ¸øÇÏ°Ô
+    {
+        for (int i = 0; i < characters.Count; i++)
+        { // ¸®½ºÆ®ÀÇ Å©±â´Â Count
+            {
+                if (_name == characters[i].characterName)
+                {
+                    characters[i].boxCollider.enabled = true;
+                }
             }
         }
     }
 
-     public void SetUnThorought(string _name)
+    public void SetTransparent(string _name) // Åõ¸íµµ Á¶Àı (»ç¶óÁö°Ô)
     {
         for (int i = 0; i < characters.Count; i++)
-        {
-            if( _name == characters[i].characterName) // ì´ë¦„ì´ ì¼ì¹˜í•˜ëŠ” ì˜¤ë¸Œì íŠ¸ ì°¾ê¸°
+        { // ¸®½ºÆ®ÀÇ Å©±â´Â Count
             {
-                characters[i].boxCollider.enabled = true; // BoxCollider2D í™œì„±í™”
+                if (_name == characters[i].characterName)
+                {
+                    characters[i].gameObject.SetActive(false);
+                }
             }
         }
     }
 
-    public void SetTransparent(string _name)
+    public void SetUnTransparent(string _name) // Åõ¸íµµ Á¶Àı (´Ù½Ã »ı¼º)
     {
         for (int i = 0; i < characters.Count; i++)
-        {
-            if( _name == characters[i].characterName) // ì´ë¦„ì´ ì¼ì¹˜í•˜ëŠ” ì˜¤ë¸Œì íŠ¸ ì°¾ê¸°
+        { // ¸®½ºÆ®ÀÇ Å©±â´Â Count
             {
-                characters[i].gameObject.SetActive(false);
+                if (_name == characters[i].characterName)
+                {
+                    characters[i].gameObject.SetActive(true);
+                }
             }
         }
     }
 
-    public void SetUnTransparent(string _name)
+    public void Move(string _name, string _dir)
     {
         for (int i = 0; i < characters.Count; i++)
-        {
-            if( _name == characters[i].characterName) // ì´ë¦„ì´ ì¼ì¹˜í•˜ëŠ” ì˜¤ë¸Œì íŠ¸ ì°¾ê¸°
+        { // ¸®½ºÆ®ÀÇ Å©±â´Â Count
             {
-                characters[i].gameObject.SetActive(true);
-            }
-        }
-    }
-
-     public void Move(string _name, string _dir)
-    {
-        for (int i = 0; i < characters.Count; i++)
-        {
-            if( _name == characters[i].characterName) // ì´ë¦„ì´ ì¼ì¹˜í•˜ëŠ” ì˜¤ë¸Œì íŠ¸ ì°¾ê¸°
-            {
-                characters[i].Move(_dir);
+                if (_name == characters[i].characterName)
+                {
+                    // ¹«ºê ÇÔ¼ö ½ÇÇà
+                    characters[i].Move(_dir);
+                }
             }
         }
     }
@@ -100,25 +113,28 @@ public class OrderManager : MonoBehaviour
     public void Turn(string _name, string _dir)
     {
         for (int i = 0; i < characters.Count; i++)
-        {
-            if( _name == characters[i].characterName) // ì´ë¦„ì´ ì¼ì¹˜í•˜ëŠ” ì˜¤ë¸Œì íŠ¸ ì°¾ê¸°
+        { // ¸®½ºÆ®ÀÇ Å©±â´Â Count
             {
-                characters[i].animator.SetFloat("DirX", 0f);
-                characters[i].animator.SetFloat("DirY", 0f);
-                switch(_dir)
+                if (_name == characters[i].characterName)
                 {
-                    case "UP":
-                        characters[i].animator.SetFloat("DirY", 1f);
-                        break;
-                    case "DOWN":
-                        characters[i].animator.SetFloat("DirY", -1f);
-                        break;
-                    case "LEFT":
-                        characters[i].animator.SetFloat("DirX", -1f);
-                        break;
-                    case "RIGHT":
-                        characters[i].animator.SetFloat("DirX", 1f);
-                        break;
+                    // ÃÊ±âÈ­
+                    characters[i].animator.SetFloat("DirX", 0f);
+                    characters[i].animator.SetFloat("DirY", 0f);
+                    switch (_dir)
+                    {
+                        case "UP":
+                            characters[i].animator.SetFloat("DirY", 1f);
+                            break;
+                        case "DOWN":
+                            characters[i].animator.SetFloat("DirY", -1f);
+                            break;
+                        case "LEFT":
+                            characters[i].animator.SetFloat("DirX", -1f);
+                            break;
+                        case "RIGHT":
+                            characters[i].animator.SetFloat("DirX", 1f);
+                            break;
+                    }
                 }
             }
         }
