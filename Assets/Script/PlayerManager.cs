@@ -24,6 +24,7 @@ public class PlayerManager : MovingObject
             DontDestroyOnLoad(this.gameObject);
             boxCollider = GetComponent<BoxCollider2D>();
             animator = GetComponent<Animator>();
+            theAudio = FindObjectOfType<AudioManager>();
             instance = this;
         }
         else
@@ -63,25 +64,46 @@ public class PlayerManager : MovingObject
             // boxCollider 위치 조정
             boxCollider.offset = new Vector2(vector.x * 0.7f * speed * walkCount, vector.y * 0.7f * speed * walkCount);
 
-            while (currentWalkCount < walkCount)
+            if (currentWalkCount%3==0)
             {
-                if (vector.x != 0)
+                int temp = Random.Range(1, 4);
+                switch (temp)
                 {
-                    transform.Translate(vector.x * (speed + applyRunSpeed), 0, 0);
+                    case 1:
+                        theAudio.Play(walkSound_1);
+                        break;
+                    case 2:
+                        theAudio.Play(walkSound_2);
+                        break;
+                    case 3:
+                        theAudio.Play(walkSound_3);
+                        break;
+                    case 4:
+                        theAudio.Play(walkSound_4);
+                        break;
                 }
-                else if (vector.y != 0)
-                {
-                    transform.Translate(0, vector.y * (speed + applyRunSpeed), 0);
-                }
-
-                if (applyRunFlag) currentWalkCount++;
-                currentWalkCount++;
-
-                if (currentWalkCount == 12)
-                    boxCollider.offset = Vector2.zero;
-
-                yield return new WaitForSeconds(0.01f);
             }
+
+            while (currentWalkCount < walkCount)
+                {
+                    if (vector.x != 0)
+                    {
+                        transform.Translate(vector.x * (speed + applyRunSpeed), 0, 0);
+                    }
+                    else if (vector.y != 0)
+                    {
+                        transform.Translate(0, vector.y * (speed + applyRunSpeed), 0);
+                    }
+
+                    if (applyRunFlag) currentWalkCount++;
+                    currentWalkCount++;
+
+                    if (currentWalkCount == 12)
+                        boxCollider.offset = Vector2.zero;
+
+                    yield return new WaitForSeconds(0.01f);
+
+                }
 
             currentWalkCount = 0;
         }
