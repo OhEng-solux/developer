@@ -13,6 +13,10 @@ public class PlayerManager : MovingObject
     private bool canMove = true;
     public bool notMove = false;
 
+    private float footstepInterval = 0.3f; // 발소리 간격 (초)
+    private float lastFootstepTime = 0f;
+
+
     private Rigidbody2D rigid;
 
     void Start()
@@ -64,9 +68,9 @@ public class PlayerManager : MovingObject
             // boxCollider 위치 조정
             boxCollider.offset = new Vector2(vector.x * 0.7f * speed * walkCount, vector.y * 0.7f * speed * walkCount);
 
-            if (currentWalkCount%3==0)
+            if (currentWalkCount % 3 == 0 && Time.time - lastFootstepTime > footstepInterval)
             {
-                int temp = Random.Range(1, 4);
+                int temp = Random.Range(1, 5);
                 switch (temp)
                 {
                     case 1:
@@ -82,6 +86,7 @@ public class PlayerManager : MovingObject
                         theAudio.Play(walkSound_4);
                         break;
                 }
+                lastFootstepTime = Time.time;
             }
 
             while (currentWalkCount < walkCount)

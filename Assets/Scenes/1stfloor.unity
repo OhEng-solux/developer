@@ -35143,22 +35143,22 @@ MonoBehaviour:
   - name: footsteps1
     clip: {fileID: 8300000, guid: f4bc9f0dc3b5a8d44b8b26b7037f2df5, type: 3}
     source: {fileID: 0}
-    Volume: 1
+    Volume: 0.1
     loop: 0
   - name: footsteps2
     clip: {fileID: 8300000, guid: 3815ac593c7329942b9979f270f55470, type: 3}
     source: {fileID: 0}
-    Volume: 1
+    Volume: 0.1
     loop: 0
   - name: footsteps3
     clip: {fileID: 8300000, guid: 3066da6eaa58bcb48b416f1a6f9bab5c, type: 3}
     source: {fileID: 0}
-    Volume: 1
+    Volume: 0.1
     loop: 0
   - name: footsteps4
     clip: {fileID: 8300000, guid: 24d812f3be4133e4c9319fe6e8c0314b, type: 3}
     source: {fileID: 0}
-    Volume: 1
+    Volume: 0.1
     loop: 0
   - name: type_sound
     clip: {fileID: 8300000, guid: 58a5dd5888761af4dbff225d52caf926, type: 3}
