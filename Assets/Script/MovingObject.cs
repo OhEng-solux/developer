@@ -20,6 +20,11 @@ public class MovingObject : MonoBehaviour
     
     public BoxCollider2D boxCollider;
     public LayerMask layerMask; //통과 불가능한 레이어 설정
+    public string walkSound_1;
+    public string walkSound_2;
+    public string walkSound_3;
+    public string walkSound_4;
+    protected AudioManager theAudio;
     public Animator animator;
 
     public void Move(string _dir, int _frequency=5)
