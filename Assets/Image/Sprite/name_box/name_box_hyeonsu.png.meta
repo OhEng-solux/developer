@@ -1,19 +1,13 @@
 fileFormatVersion: 2
-guid: fc5b755fc386a49d0acc8cdd6a2b23c3
+guid: a220da910d6e145dcbc77c5cf59ca1ba
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2352761484946720024
-    second: yoonji_sprite_0
+      213: -136702393621362964
+    second: name_box_hyeonsu_0
   - first:
-      213: 4776863853317693331
-    second: yoonji_sprite_1
-  - first:
-      213: -796771119717302413
-    second: yoonji_sprite_2
-  - first:
-      213: 1155197351192190498
-    second: yoonji_sprite_3
+      213: -4975592057035246422
+    second: name_box_hyeonsu_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -55,7 +49,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -109,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: yoonji_sprite_0
+      name: name_box_hyeonsu_0
       rect:
         serializedVersion: 2
-        x: 619
-        y: 1449
-        width: 202
-        height: 372
+        x: 77
+        y: 305
+        width: 449
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8eab78815ef495fd0800000000000000
-      internalID: -2352761484946720024
+      spriteID: ce6c044b5e55a1ef0800000000000000
+      internalID: -136702393621362964
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: yoonji_sprite_1
+      name: name_box_hyeonsu_1
       rect:
         serializedVersion: 2
-        x: 629
-        y: 969
-        width: 182
-        height: 372
+        x: 77
+        y: 31
+        width: 1766
+        height: 264
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,52 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 39f976d9d54da4240800000000000000
-      internalID: 4776863853317693331
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: yoonji_sprite_2
-      rect:
-        serializedVersion: 2
-        x: 629
-        y: 489
-        width: 182
-        height: 372
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 37fb5f953ec41f4f0800000000000000
-      internalID: -796771119717302413
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: yoonji_sprite_3
-      rect:
-        serializedVersion: 2
-        x: 619
-        y: 9
-        width: 202
-        height: 372
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 22e5843ded5180010800000000000000
-      internalID: 1155197351192190498
+      spriteID: aa4b82dc26523fab0800000000000000
+      internalID: -4975592057035246422
       vertices: []
       indices: 
       edges: []
@@ -200,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -209,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      name_box_hyeonsu_0: -136702393621362964
+      name_box_hyeonsu_1: -4975592057035246422
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
