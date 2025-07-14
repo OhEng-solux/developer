@@ -13258,7 +13258,6 @@ GameObject:
   - component: {fileID: 585007389}
   - component: {fileID: 585007388}
   - component: {fileID: 585007387}
-  - component: {fileID: 585007386}
   m_Layer: 0
   m_Name: npc_child1
   m_TagString: Untagged
@@ -13276,30 +13275,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -85.32, y: -74.53, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1418163046}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &585007386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 585007384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813481dc762d44bca937ff94ce09e711, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    sentences:
-    - "\uB09C \uD0DC\uC8FC \uB9D0 \uC798 \uB4E4\uC5B4"
-    sprites:
-    - {fileID: 0}
-    dialogueWindows:
-    - {fileID: 21300000, guid: 55f1520311a244404bdad6f4c7c91932, type: 3}
 --- !u!61 &585007387
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22963,7 +22943,6 @@ GameObject:
   - component: {fileID: 928166649}
   - component: {fileID: 928166648}
   - component: {fileID: 928166651}
-  - component: {fileID: 928166650}
   m_Layer: 0
   m_Name: npc_adult
   m_TagString: Untagged
@@ -23063,22 +23042,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &928166650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 928166646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813481dc762d44bca937ff94ce09e711, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    sentences: []
-    sprites: []
-    dialogueWindows: []
 --- !u!61 &928166651
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25127,7 +25090,6 @@ GameObject:
   - component: {fileID: 987074498}
   - component: {fileID: 987074499}
   - component: {fileID: 987074501}
-  - component: {fileID: 987074500}
   m_Layer: 0
   m_Name: hyeonsu
   m_TagString: Untagged
@@ -25145,7 +25107,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -101.89, y: -85.64, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1418163046}
@@ -25205,35 +25167,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &987074500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 987074497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813481dc762d44bca937ff94ce09e711, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    sentences:
-    - "\u201C\u2026\u3145,\uC11C,\uC120\uC0DD\uB2D8\u2026.\uC544\uB155..\u314E\uD558\uC138\uC5EC\u2026\u201D"
-    - "\u201C\uC5B4\uBA38! \uC18C\uC2EC\uD55C \uCE5C\uAD6C\uAC00 \uB4DC\uB514\uC5B4
-      \uB9D0\uC744 \uD558\uB124~\u201D"
-    - "\u201C\u2026..\u3134,\uB098\u2026\uC774\uB984\u2026\u314E\uD604..\uC218\uC5D0\uC5EC\u2026\u201D"
-    - "\u201C\uC548\uB155 \uD604\uC218\uC57C! \uB9D0 \uAC78\uC5B4\uC918\uC11C \uACE0\uB9C8\uC6CC~\u201D"
-    sprites:
-    - {fileID: 1124596813818630553, guid: 72fd1cd87395a4be0888128d6e27ba67, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    - {fileID: 1124596813818630553, guid: 72fd1cd87395a4be0888128d6e27ba67, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    dialogueWindows:
-    - {fileID: 21300000, guid: a220da910d6e145dcbc77c5cf59ca1ba, type: 3}
-    - {fileID: 21300000, guid: 4914c1061c47b494c938fefcf8b4adf5, type: 3}
-    - {fileID: 21300000, guid: a220da910d6e145dcbc77c5cf59ca1ba, type: 3}
-    - {fileID: 21300000, guid: 4914c1061c47b494c938fefcf8b4adf5, type: 3}
 --- !u!61 &987074501
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28766,7 +28699,6 @@ GameObject:
   - component: {fileID: 1174586197}
   - component: {fileID: 1174586196}
   - component: {fileID: 1174586199}
-  - component: {fileID: 1174586198}
   m_Layer: 0
   m_Name: seoa
   m_TagString: Untagged
@@ -28784,7 +28716,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -103.81, y: -93.99, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1418163046}
@@ -28866,45 +28798,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1174586198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1174586194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813481dc762d44bca937ff94ce09e711, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    sentences:
-    - "\u201C\uBB50 \uBB3C\uC5B4\uBCFC\uAC8C \uC788\uC5B4\u201D"
-    - "\u201C\uC751? \uBB58\uAE4C?\u201D"
-    - "\u201C\uB0B4\uAC00 \uBC8C\uB808\uB97C \uBCD1\uC5D0 \uAC00\uB450\uBA74 \uBC8C\uB808
-      \uC5B8\uC81C \uC8FD\uC5B4?\u201D"
-    - "\u201C\u2026\uC5B4? \uC11C\uC544\uB294 \uADF8\uAC8C \uC65C \uAD81\uAE08\uD574\uC84C\uC744\uAE4C..?\""
-    - "\"\uADF8\uB7F0\uAC70 \uBB3C\uC5B4\uBCF4\uB294\uAC70 \uC544\uB2C8\uC5D0\uC5EC~\u201D"
-    - "\u201C\u2026\uCCC7\u201D"
-    - "\u2019\uC11C\uC544\uB294 \uCC38 \uD2B9\uC774\uD55C \uC544\uC774\uC778 \uAC83
-      \uAC19\uB2E4\u2019"
-    sprites:
-    - {fileID: -4548211720714836524, guid: 0ed4d177aa50249ce841b99197def478, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    - {fileID: -4548211720714836524, guid: 0ed4d177aa50249ce841b99197def478, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    - {fileID: -4548211720714836524, guid: 0ed4d177aa50249ce841b99197def478, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    dialogueWindows:
-    - {fileID: 21300000, guid: 368608f2c7ec24ba6bff5c248ea5a5d8, type: 3}
-    - {fileID: 21300000, guid: 4914c1061c47b494c938fefcf8b4adf5, type: 3}
-    - {fileID: 21300000, guid: 368608f2c7ec24ba6bff5c248ea5a5d8, type: 3}
-    - {fileID: 21300000, guid: 4914c1061c47b494c938fefcf8b4adf5, type: 3}
-    - {fileID: 21300000, guid: 4914c1061c47b494c938fefcf8b4adf5, type: 3}
-    - {fileID: 21300000, guid: 368608f2c7ec24ba6bff5c248ea5a5d8, type: 3}
-    - {fileID: 21300000, guid: 4914c1061c47b494c938fefcf8b4adf5, type: 3}
 --- !u!61 &1174586199
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -29636,7 +29529,6 @@ GameObject:
   - component: {fileID: 1227193313}
   - component: {fileID: 1227193312}
   - component: {fileID: 1227193315}
-  - component: {fileID: 1227193314}
   m_Layer: 0
   m_Name: npc_child3
   m_TagString: Untagged
@@ -29654,7 +29546,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -83.73, y: -96.33, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1418163046}
@@ -29736,25 +29628,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1227193314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1227193310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813481dc762d44bca937ff94ce09e711, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    sentences:
-    - "\uB098 \uCE5C\uAD6C \uB9D0 \uC798 \uB4E4\uC5B4"
-    sprites:
-    - {fileID: 0}
-    dialogueWindows:
-    - {fileID: 21300000, guid: 74ce371d4810b4298bdabfc03d30ef96, type: 3}
 --- !u!61 &1227193315
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -31266,8 +31139,8 @@ Transform:
   m_GameObject: {fileID: 1306316774}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -60.6, y: -149.9, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 38, y: -25.5, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -34377,7 +34250,6 @@ GameObject:
   - component: {fileID: 1537731303}
   - component: {fileID: 1537731302}
   - component: {fileID: 1537731305}
-  - component: {fileID: 1537731304}
   m_Layer: 0
   m_Name: yoonji
   m_TagString: Untagged
@@ -34395,7 +34267,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -101.2, y: -72.91, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1418163046}
@@ -34477,40 +34349,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1537731304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1537731300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813481dc762d44bca937ff94ce09e711, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    sentences:
-    - "\u201C\uC120\uC0C8\uB2D8! \uC724\uC9C0\uB791 \uCE6D\uAD6C\uD574\u201D"
-    - "\u201C\uC751? \uADF8\uB7F4\uAE4C?\u201D"
-    - "\u201C\uC751 \uC6B0\uB9AC \uD3C9\uC0DD \uCE6D\uAD6C\uD574!\u201D"
-    - "\u201C\uC88B\uC544~\u201D"
-    - "\u201C\uC57D\uC18D!\u201D "
-    - "\uC0C8\uB07C\uC190\uAC00\uB77D\uC744 \uAC78\uC5C8\uB2E4"
-    sprites:
-    - {fileID: -9198540971893139065, guid: b804b919a78ad4474843d43a65cd85c1, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    - {fileID: -9198540971893139065, guid: b804b919a78ad4474843d43a65cd85c1, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    - {fileID: -9198540971893139065, guid: b804b919a78ad4474843d43a65cd85c1, type: 3}
-    - {fileID: 0}
-    dialogueWindows:
-    - {fileID: 21300000, guid: 5c033d981e40a4b3c8f10307fc4001b7, type: 3}
-    - {fileID: 21300000, guid: 4914c1061c47b494c938fefcf8b4adf5, type: 3}
-    - {fileID: 21300000, guid: 5c033d981e40a4b3c8f10307fc4001b7, type: 3}
-    - {fileID: 21300000, guid: 4914c1061c47b494c938fefcf8b4adf5, type: 3}
-    - {fileID: 21300000, guid: 5c033d981e40a4b3c8f10307fc4001b7, type: 3}
-    - {fileID: 2552797033274669965, guid: 5ef15771e5de141fab62faf3ade6d04d, type: 3}
 --- !u!61 &1537731305
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34704,7 +34542,6 @@ GameObject:
   - component: {fileID: 1550023141}
   - component: {fileID: 1550023140}
   - component: {fileID: 1550023143}
-  - component: {fileID: 1550023142}
   m_Layer: 0
   m_Name: taeju_origin
   m_TagString: Untagged
@@ -34722,7 +34559,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -77.95, y: -81.17, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1418163046}
@@ -34804,28 +34641,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1550023142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1550023138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813481dc762d44bca937ff94ce09e711, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    sentences:
-    - '"......"'
-    - '"......"'
-    sprites:
-    - {fileID: 3464973351320543932, guid: dca1726798fef45b2953ec024363abbc, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    dialogueWindows:
-    - {fileID: 21300000, guid: a79eda00445f44ae2bec6e030a030aa7, type: 3}
-    - {fileID: 21300000, guid: 4914c1061c47b494c938fefcf8b4adf5, type: 3}
 --- !u!61 &1550023143
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38339,7 +38154,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1814127615
   m_SortingLayer: 6
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -4012656024804308703, guid: 0287b2accd48540dfadf0a792713887a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -40507,7 +40322,6 @@ GameObject:
   - component: {fileID: 1718144746}
   - component: {fileID: 1718144745}
   - component: {fileID: 1718144744}
-  - component: {fileID: 1718144743}
   m_Layer: 0
   m_Name: npc_child2
   m_TagString: Untagged
@@ -40525,30 +40339,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -94.99, y: -93.7, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1418163046}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1718144743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1718144741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813481dc762d44bca937ff94ce09e711, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    sentences:
-    - "\uC800 \uB9D0 \uC798 \uB4E4\uC5B4\uC694"
-    sprites:
-    - {fileID: 0}
-    dialogueWindows:
-    - {fileID: 21300000, guid: b7acfd158106049a6bce1f7690718475, type: 3}
 --- !u!61 &1718144744
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -43921,7 +43716,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 345876c5e46254bfbbad81cdc2752a12, type: 3}
     m_FontSize: 10
     m_FontStyle: 0
     m_BestFit: 0
