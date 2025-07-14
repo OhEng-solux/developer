@@ -129,6 +129,32 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +435,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      taeju(origin)_sprite_0: 1725015202045144788
+      taeju(origin)_sprite_1: -2438413433945838275
+      taeju(origin)_sprite_10: -5479424167775960828
+      taeju(origin)_sprite_11: 7446861752848237232
+      taeju(origin)_sprite_2: -8271121898509731879
+      taeju(origin)_sprite_3: 2538048677746773897
+      taeju(origin)_sprite_4: 5862192213804514270
+      taeju(origin)_sprite_5: 5421883407098802343
+      taeju(origin)_sprite_6: 8435363850540078628
+      taeju(origin)_sprite_7: -2352927629495224900
+      taeju(origin)_sprite_8: -7240156434035624601
+      taeju(origin)_sprite_9: -2633836242141577114
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
