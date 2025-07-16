@@ -3110,7 +3110,8 @@ GameObject:
   - component: {fileID: 261503890}
   - component: {fileID: 261503889}
   - component: {fileID: 261503888}
-  - component: {fileID: 261503887}
+  - component: {fileID: 261503892}
+  - component: {fileID: 261503891}
   m_Layer: 0
   m_Name: seoa
   m_TagString: Untagged
@@ -3133,41 +3134,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 55500104}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &261503887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 261503885}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813481dc762d44bca937ff94ce09e711, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    sentences:
-    - "\uB098 \uC2EC\uC2EC\uD574 \uB180\uC544 \uC918"
-    - "\uC11C\uC544 \uC2EC\uC2EC\uD574\uC11C \uC120\uC0DD\uB2D8 \uBD80\uB978 \uAC70\uC57C?
-      \n\uBB50 \uD558\uACE0 \uB180\uACE0 \uC2F6\uC5B4?"
-    - "\uB098 \uBB38\uC81C \uB0BC\uAC8C \uB9DE\uD600 \uBD10!"
-    - "\uADF8\uB798~"
-    - "\uC138 \uAC1C \uB0BC \uAC70\uC57C \uB2E4 \uB9DE\uD600\uC57C \uD574?"
-    - "\uC54C\uC558\uC5B4!"
-    sprites:
-    - {fileID: -4548211720714836524, guid: 0ed4d177aa50249ce841b99197def478, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    - {fileID: -4548211720714836524, guid: 0ed4d177aa50249ce841b99197def478, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    - {fileID: -4548211720714836524, guid: 0ed4d177aa50249ce841b99197def478, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    dialogueWindows:
-    - {fileID: 21300000, guid: 32300abe9e8de1040b27ac8814419aa9, type: 3}
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    - {fileID: 21300000, guid: 32300abe9e8de1040b27ac8814419aa9, type: 3}
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    - {fileID: 21300000, guid: 32300abe9e8de1040b27ac8814419aa9, type: 3}
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
 --- !u!61 &261503888
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3291,6 +3257,103 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &261503891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261503885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ba00c2c914e97a4bb5ae38a9fe86520, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPoint: {fileID: 1520154231}
+  moveSpeed: 2
+--- !u!114 &261503892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261503885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96d8cc45a9c26724f98f51052617ecaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  choices:
+  - question: "\uACA8\uC6B8\uACFC \uBD04 \uC0AC\uC774 \uD0DC\uC5B4\uB098 \uC560\uC815\uD558\uC9C0\uB9CC,
+      \uD6C4\uD68C\uAC00 \uC788\uC9C0. \uC798\uBABB\uD558\uBA74 \uC544\uD50C \uC218\uB3C4
+      \uC788\uC5B4. \uBB50\uAC8C?"
+    answers:
+    - "\uCCB4\uB9AC"
+    - "\uB77C\uC988\uBCA0\uB9AC"
+    - "\uBE14\uB8E8\uBCA0\uB9AC"
+  - question: "\uB9CE\uC740 \uAC78 \uB2F4\uACE0 \uC788\uC5C8\uC5B4. \uAC11\uC790\uAE30
+      \uC0AC\uB77C\uC9C8 \uC218 \uC788\uC5B4. \uC608\uC058\uACE0 \uC704\uD5D8\uD574.
+      \uC774\uAC83\uB3C4 \uB9DE\uD600 \uBD10!"
+    answers:
+    - "\uAF43\uBCD1"
+    - "\uBA38\uADF8\uCEF5"
+    - "\uC720\uB9AC\uAD6C\uC2AC"
+  - question: "\uCF54\uB791 \uC785\uC5D0\uC11C\uB294 \uC5C6\uB294\uB370 \uB208\uC5D0\uC11C
+      \uC788\uC5B4. \uB204\uAD6C\uB294 \uD798\uC744 \uC783\uACE0 \uBA48\uCDB0. \uC774\uAC74
+      \uBB58\uAE4C?"
+    answers:
+    - "\uAC70\uC6B8"
+    - "\uB208\uBB3C"
+    - "\uBCF4\uC11D"
+  correctAnswerIndexes: 010000000000000002000000
+  preDialogue:
+    sentences:
+    - "\uB098 \uC2EC\uC2EC\uD574 \uB180\uC544 \uC918"
+    - "\uC11C\uC544 \uC2EC\uC2EC\uD574\uC11C \uC120\uC0DD\uB2D8 \uBD80\uB978 \uAC70\uC57C?
+      \n\uBB50 \uD558\uACE0 \uB180\uACE0 \uC2F6\uC5B4?"
+    - "\uB098 \uBB38\uC81C \uB0BC\uAC8C \uB9DE\uD600 \uBD10!"
+    - "\uADF8\uB798~"
+    - "\uC138 \uAC1C \uB0BC \uAC70\uC57C \uB2E4 \uB9DE\uD600\uC57C \uD574?"
+    - "\uC54C\uC558\uC5B4!"
+    sprites:
+    - {fileID: -4548211720714836524, guid: 0ed4d177aa50249ce841b99197def478, type: 3}
+    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: -4548211720714836524, guid: 0ed4d177aa50249ce841b99197def478, type: 3}
+    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: -4548211720714836524, guid: 0ed4d177aa50249ce841b99197def478, type: 3}
+    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: 32300abe9e8de1040b27ac8814419aa9, type: 3}
+    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    - {fileID: 21300000, guid: 32300abe9e8de1040b27ac8814419aa9, type: 3}
+    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    - {fileID: 21300000, guid: 32300abe9e8de1040b27ac8814419aa9, type: 3}
+    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+  successDialogue:
+    sentences:
+    - "\u2019\uBCF4\uC11D\uC0AC\uD0D5\u2019 \uC544\uC774\uD15C\uC744 \uD68D\uB4DD\uD558\uC600\uB2E4"
+    sprites:
+    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+  failDialogue:
+    sentences:
+    - "\uC73C\uC544 \uBBF8\uC548\uD574 \uC11C\uC544\uC57C.. \n\uC120\uC0DD\uB2D8\uC774
+      \uB2E4 \uB9DE\uD614\uC5B4\uC57C \uD588\uB294\uB370..!"
+    - "'\uD1A0\uB77C\uC9C4 \uAC70 \uC544\uB2C8\uACA0\uC9C0?'"
+    - "'\uBC8C\uC368 \uC2DC\uAC04\uC774 \uC774\uB807\uAC8C \uB410\uB124..'"
+    - "'\uC77C\uB2E8 \uD1F4\uADFC\uD558\uC790'"
+    sprites:
+    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+  npcObject: {fileID: 261503885}
 --- !u!1 &262870182
 GameObject:
   m_ObjectHideFlags: 0
@@ -4815,14 +4878,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2552797033274669965, guid: 5ef15771e5de141fab62faf3ade6d04d, type: 3}
+  m_Sprite: {fileID: -8422722579203585993, guid: 630bc2582d239294ea09ef28c0c82f03, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5706,7 +5769,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &626434405
 Transform:
   m_ObjectHideFlags: 0
@@ -8213,14 +8276,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2552797033274669965, guid: 5ef15771e5de141fab62faf3ade6d04d, type: 3}
+  m_Sprite: {fileID: -8422722579203585993, guid: 630bc2582d239294ea09ef28c0c82f03, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12540,6 +12603,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1072988739}
   - component: {fileID: 1072988738}
+  - component: {fileID: 1072988740}
   - component: {fileID: 1072988737}
   m_Layer: 0
   m_Name: MiniGame
@@ -12628,26 +12692,23 @@ MonoBehaviour:
     - "\uAC70\uC6B8"
     - "\uB208\uBB3C"
     - "\uBCF4\uC11D"
-  correctDialogue:
+  correctAnswerIndexes: 010000000000000002000000
+  preDialogue:
+    sentences: []
+    sprites: []
+    dialogueWindows: []
+  successDialogue:
     sentences:
     - "\u2019\uBCF4\uC11D\uC0AC\uD0D5\u2019 \uC544\uC774\uD15C\uC744 \uD68D\uB4DD\uD558\uC600\uB2E4"
     sprites:
     - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
     dialogueWindows:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-  wrongDialogue:
-    sentences:
-    - "\uC73C\uC544 \uBBF8\uC548\uD574 \uC11C\uC544\uC57C.. \n\uC120\uC0DD\uB2D8\uC774
-      \uB2E4 \uB9DE\uD614\uC5B4\uC57C \uD588\uB294\uB370..!"
-    - "\uD1A0\uB77C\uC9C4 \uAC70 \uC544\uB2C8\uACA0\uC9C0..? \n\uC77C\uB2E8 \uD1F4\uADFC\uD558\uC790.."
-    sprites:
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    dialogueWindows:
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-  correctAnswers: 010000000000000002000000
-  flag: 0
+  failDialogue:
+    sentences: []
+    sprites: []
+    dialogueWindows: []
+  npcObject: {fileID: 0}
 --- !u!4 &1072988739
 Transform:
   m_ObjectHideFlags: 0
@@ -12663,6 +12724,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1072988740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072988736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ba00c2c914e97a4bb5ae38a9fe86520, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPoint: {fileID: 0}
+  moveSpeed: 2
 --- !u!1 &1101154241
 GameObject:
   m_ObjectHideFlags: 0
@@ -13890,14 +13965,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2552797033274669965, guid: 5ef15771e5de141fab62faf3ade6d04d, type: 3}
+  m_Sprite: {fileID: -8422722579203585993, guid: 630bc2582d239294ea09ef28c0c82f03, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16866,14 +16941,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2552797033274669965, guid: 5ef15771e5de141fab62faf3ade6d04d, type: 3}
+  m_Sprite: {fileID: -8422722579203585993, guid: 630bc2582d239294ea09ef28c0c82f03, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

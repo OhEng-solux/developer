@@ -1,11 +1,10 @@
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.UI;
 
 public class ChoiceManager : MonoBehaviour
 {
-
     public static ChoiceManager instance;
 
     #region Singleton
@@ -19,17 +18,21 @@ public class ChoiceManager : MonoBehaviour
         else
         {
             Destroy(this.gameObject);
+            return;
         }
-    }
-    #endregion Singleton
 
-    private AudioManager theAudio; // 사운드 재생.
+        if (go != null) go.SetActive(false);
+        if (anim != null) anim.SetBool("Appear", false);
+    }
+    #endregion
+
+    private AudioManager theAudio;
+    private OrderManager theOrder;
 
     private string question;
     private List<string> answerList;
 
-    public GameObject go; // 평소에 비활성화 시킬 목적으로 선언. setActive.
-
+    public GameObject go;
     public Text question_Text;
     public Text[] answer_Text;
     public GameObject[] answer_Panel;
@@ -39,40 +42,46 @@ public class ChoiceManager : MonoBehaviour
     public string keySound;
     public string enterSound;
 
-    public bool choiceIng; // 대기. ()=> !choiceIng
-    private bool keyInput; // 키처리 활성화, 비 활성화.
+    public bool choiceIng = false;
+    private bool keyInput = false;
 
-    private int count; // 배열의 크기
-    private int result; // 선택한 선택창.
+    private int count;
+    private int result;
 
     private WaitForSeconds waitTime = new WaitForSeconds(0.01f);
 
-    // Use this for initialization
     void Start()
     {
         theAudio = FindObjectOfType<AudioManager>();
+        theOrder = FindObjectOfType<OrderManager>();
         answerList = new List<string>();
+
         for (int i = 0; i < answer_Text.Length; i++)
         {
             answer_Text[i].text = "";
             answer_Panel[i].SetActive(false);
         }
-        question_Text.text = "";
 
+        question_Text.text = "";
     }
 
     public void ShowChoice(Choice _choice)
     {
         choiceIng = true;
+        theOrder.NotMove(); // 퀴즈 중 이동 금지
+
         go.SetActive(true);
         result = 0;
         question = _choice.question;
+
+        answerList.Clear();
         for (int i = 0; i < _choice.answers.Length; i++)
         {
             answerList.Add(_choice.answers[i]);
             answer_Panel[i].SetActive(true);
             count = i;
         }
+
         anim.SetBool("Appear", true);
         Selection();
         StartCoroutine(ChoiceCoroutine());
@@ -91,10 +100,13 @@ public class ChoiceManager : MonoBehaviour
             answer_Text[i].text = "";
             answer_Panel[i].SetActive(false);
         }
+
         answerList.Clear();
         anim.SetBool("Appear", false);
-        choiceIng = false;
         go.SetActive(false);
+        choiceIng = false;
+
+        theOrder.Move(); // 퀴즈 끝나면 이동 허용
     }
 
     IEnumerator ChoiceCoroutine()
@@ -103,12 +115,9 @@ public class ChoiceManager : MonoBehaviour
 
         StartCoroutine(TypingQuestion());
         StartCoroutine(TypingAnswer_0());
-        if (count >= 1)
-            StartCoroutine(TypingAnswer_1());
-        if (count >= 2)
-            StartCoroutine(TypingAnswer_2());
-        if (count >= 3)
-            StartCoroutine(TypingAnswer_3());
+        if (count >= 1) StartCoroutine(TypingAnswer_1());
+        if (count >= 2) StartCoroutine(TypingAnswer_2());
+        if (count >= 3) StartCoroutine(TypingAnswer_3());
 
         yield return new WaitForSeconds(0.5f);
         keyInput = true;
@@ -122,6 +131,7 @@ public class ChoiceManager : MonoBehaviour
             yield return waitTime;
         }
     }
+
     IEnumerator TypingAnswer_0()
     {
         yield return new WaitForSeconds(0.4f);
@@ -131,6 +141,7 @@ public class ChoiceManager : MonoBehaviour
             yield return waitTime;
         }
     }
+
     IEnumerator TypingAnswer_1()
     {
         yield return new WaitForSeconds(0.5f);
@@ -140,6 +151,7 @@ public class ChoiceManager : MonoBehaviour
             yield return waitTime;
         }
     }
+
     IEnumerator TypingAnswer_2()
     {
         yield return new WaitForSeconds(0.6f);
@@ -149,6 +161,7 @@ public class ChoiceManager : MonoBehaviour
             yield return waitTime;
         }
     }
+
     IEnumerator TypingAnswer_3()
     {
         yield return new WaitForSeconds(0.7f);
@@ -158,38 +171,29 @@ public class ChoiceManager : MonoBehaviour
             yield return waitTime;
         }
     }
-    // Update is called once per frame
+
     void Update()
     {
+        if (!keyInput) return;
 
-        if (keyInput)
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow))
-            {
-                theAudio.Play(keySound);
-                if (result > 0)
-                    result--;
-                else
-                    result = count;
-                Selection();
-            }
-            else if (Input.GetKeyDown(KeyCode.DownArrow))
-            {
-                theAudio.Play(keySound);
-                if (result < count)
-                    result++;
-                else
-                    result = 0;
-                Selection();
-            }
-            else if (Input.GetKeyDown(KeyCode.Z))
-            {
-                theAudio.Play(enterSound);
-                keyInput = false;
-                ExitChoice();
-            }
+            theAudio.Play(keySound);
+            result = (result > 0) ? result - 1 : count;
+            Selection();
         }
-
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            theAudio.Play(keySound);
+            result = (result < count) ? result + 1 : 0;
+            Selection();
+        }
+        else if (Input.GetKeyDown(KeyCode.Z))
+        {
+            theAudio.Play(enterSound);
+            keyInput = false;
+            ExitChoice();
+        }
     }
 
     public void Selection()
