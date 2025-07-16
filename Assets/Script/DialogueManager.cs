@@ -48,7 +48,6 @@ public class DialogueManager : MonoBehaviour
     public delegate void SentenceFinishedHandler(int sentenceIndex);
     public event SentenceFinishedHandler OnSentenceFinished;
     //이름 입력을 위한 변수
-    private bool hasEnteredName = false;
     private bool isWaitingForName = false;
     private string playerName = ""; 
 
@@ -71,7 +70,7 @@ public class DialogueManager : MonoBehaviour
     //대화 중 입력창 표시
     private void HandleSentenceFinished(int sentenceIndex)
     {
-        if (sentenceIndex == 3 && !hasEnteredName)
+        if (sentenceIndex == 3 && !FindObjectOfType<PlayerManager>().hasEnteredName)
         {
             isWaitingForName = true;
             keyActivated = false;
@@ -100,7 +99,7 @@ public class DialogueManager : MonoBehaviour
         {
             playerName = inputName;
             // 대사 치환 등 추가 동작
-            hasEnteredName = true;           
+            FindObjectOfType<PlayerManager>().hasEnteredName = true;           
             isWaitingForName = false;
             HideNameInputPanel();
             count++;
@@ -137,6 +136,7 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(StartDialogueCoroutine());
     }
 
+
     public void ExitDialogue()
     {
         count = 0;
@@ -148,6 +148,7 @@ public class DialogueManager : MonoBehaviour
         animDialogueWindow.SetBool("Appear", false);
         talking = false;
         theOrder.Move();
+        DialogueProgressManager.instance.AddDialogueCount();
     }
 
     IEnumerator StartDialogueCoroutine()
@@ -186,11 +187,12 @@ public class DialogueManager : MonoBehaviour
         }
 
         keyActivated = false;
+        string processedLine = listSentences[count].Replace("$playerName",FindFirstObjectByType<PlayerManager>().characterName);//이름 대입
         text.text = "";
 
-        for (int i = 0; i < listSentences[count].Length; i++)
+        for (int i = 0; i < processedLine.Length; i++)
         {
-            text.text += listSentences[count][i];
+            text.text += processedLine[i];
             if (i % 7 == 1)
             {
                 theAudio.Play(typeSound);
