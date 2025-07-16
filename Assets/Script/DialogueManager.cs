@@ -57,6 +57,8 @@ public class DialogueManager : MonoBehaviour
         listSentences = new List<string>();
         theAudio = FindAnyObjectByType<AudioManager>();
         theOrder = FindAnyObjectByType<OrderManager>();
+
+        OnSentenceFinished += HandleSentenceEvents;
     }
 
     public void ShowDialogue(Dialogue dialogue)
@@ -147,6 +149,33 @@ public class DialogueManager : MonoBehaviour
 
         // 한 문장 출력 끝났을 때 이벤트 호출
         OnSentenceFinished?.Invoke(count);
+    }
+
+    void HandleSentenceEvents(int sentenceIndex)
+    {
+        // 특정 문장에서 NPC 이동 시작
+        if (sentenceIndex == 2) // 원하는 문장 인덱스로 조정 가능
+        {
+            // Tag가 "npc"인 오브젝트에서 NPCPathMover 찾기
+            GameObject npcObj = GameObject.FindWithTag("npc");
+            if (npcObj != null)
+            {
+                NPCPathMover mover = npcObj.GetComponent<NPCPathMover>();
+                if (mover != null)
+                {
+                    talking = false; // 대사 일시 정지
+                    mover.StartPath(); // 이동 시작
+                }
+                else
+                {
+                    Debug.LogWarning("NPCPathMover가 NPC에 붙어있지 않음!");
+                }
+            }
+            else
+            {
+                Debug.LogWarning("Tag가 'npc'인 오브젝트를 찾을 수 없음!");
+            }
+        }
     }
 
     void Update()

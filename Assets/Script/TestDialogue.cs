@@ -49,7 +49,7 @@ public class TestDialogue : MonoBehaviour
             yield return null;
         }
 
-        // 3. 안전하게 비활성화
-        gameObject.SetActive(false);
+        // // 3. 안전하게 비활성화
+        // gameObject.SetActive(false);
     }
 }
