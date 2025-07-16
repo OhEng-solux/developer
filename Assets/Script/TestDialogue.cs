@@ -15,6 +15,11 @@ public class TestDialogue : MonoBehaviour
         theDM = Object.FindAnyObjectByType<DialogueManager>(); // DialogueManager 인스턴스를 찾습니다.
         boxCollider = GetComponent<BoxCollider2D>();
     }
+    private string ReplacePlayerName(string original)
+    {
+        string name = PlayerManager.instance.characterName; // 혹은 FindObjectOfType<PlayerManager>().characterName;
+        return original.Replace("$playerName", name);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
