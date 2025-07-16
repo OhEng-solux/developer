@@ -70,6 +70,18 @@ public class DialogueManager : MonoBehaviour
         listSprites.Clear();
         listDialogueWindows.Clear();
 
+        // 💡 여기서 NPC를 찾아 방향 설정
+        GameObject npcObj = GameObject.FindWithTag("npc");
+        if (npcObj != null)
+        {
+            Animator npcAnimator = npcObj.GetComponent<Animator>();
+            if (npcAnimator != null)
+            {
+                npcAnimator.SetFloat("DirX", 0);
+                npcAnimator.SetFloat("DirY", -1); // 대화 시작하면 NPC가 아래를 바라보도록 설정
+            }
+        }
+        
         for (int i = 0; i < dialogue.sentences.Length; i++)
         {
             listSentences.Add(dialogue.sentences[i]);
