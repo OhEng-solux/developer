@@ -61,6 +61,7 @@ public class NPCPathMover : MonoBehaviour
                         animator.SetBool("Walking", false);
 
                     DialogueManager.instance?.ContinueDialogue();
+                    gameObject.SetActive(false); // 이동 완료 후 비활성화
                 }
             }
         }
