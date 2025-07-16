@@ -6922,7 +6922,7 @@ Camera:
   far clip plane: 1000
   field of view: 26.991467
   orthographic: 1
-  orthographic size: 20
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -6947,7 +6947,7 @@ Transform:
   m_GameObject: {fileID: 370457040}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.2, y: -26.8, z: -1}
+  m_LocalPosition: {x: -70.9, y: -153, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18407,7 +18407,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 370457043}
-  m_PlaneDistance: 10
+  m_PlaneDistance: 20
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -48120,7 +48120,7 @@ Transform:
   m_GameObject: {fileID: 1612566990}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.252369, y: -163.29614, z: -101.3562}
+  m_LocalPosition: {x: 2.252369, y: -92, z: 0}
   m_LocalScale: {x: 0.21039523, y: 0.20271245, z: 11.261803}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -48170,7 +48170,7 @@ SpriteRenderer:
   m_SortingLayerID: 1814127615
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2552797033274669965, guid: 7713fe2f52bae44a7aa185dc2569f415, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 690423c0df1c98841b2c00cfe289ea7f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

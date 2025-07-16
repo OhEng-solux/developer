@@ -1507,11 +1507,11 @@ MonoBehaviour:
     - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
     dialogueWindows:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    - {fileID: 21300000, guid: d9b63fe1a7e52e544b52cc9c2b35bf6b, type: 3}
+    - {fileID: 21300000, guid: a14fe528b952c47fea7b0e374f281365, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    - {fileID: 21300000, guid: d9b63fe1a7e52e544b52cc9c2b35bf6b, type: 3}
+    - {fileID: 21300000, guid: a14fe528b952c47fea7b0e374f281365, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    - {fileID: 21300000, guid: d9b63fe1a7e52e544b52cc9c2b35bf6b, type: 3}
+    - {fileID: 21300000, guid: a14fe528b952c47fea7b0e374f281365, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
 --- !u!61 &103949439
 BoxCollider2D:
@@ -2744,7 +2744,7 @@ MonoBehaviour:
     sprites:
     - {fileID: 0}
     dialogueWindows:
-    - {fileID: 21300000, guid: 6bfdf8f446f7a164aa574f0c06405112, type: 3}
+    - {fileID: 21300000, guid: 68313a2d6e7c84b169efe0cf8732e584, type: 3}
 --- !u!61 &235364545
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5814,11 +5814,11 @@ MonoBehaviour:
     - {fileID: -4548211720714836524, guid: 0ed4d177aa50249ce841b99197def478, type: 3}
     - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
     dialogueWindows:
-    - {fileID: 21300000, guid: 32300abe9e8de1040b27ac8814419aa9, type: 3}
+    - {fileID: 21300000, guid: 368608f2c7ec24ba6bff5c248ea5a5d8, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    - {fileID: 21300000, guid: 32300abe9e8de1040b27ac8814419aa9, type: 3}
+    - {fileID: 21300000, guid: 368608f2c7ec24ba6bff5c248ea5a5d8, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    - {fileID: 21300000, guid: 32300abe9e8de1040b27ac8814419aa9, type: 3}
+    - {fileID: 21300000, guid: 368608f2c7ec24ba6bff5c248ea5a5d8, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
 --- !u!61 &626434407
 BoxCollider2D:
@@ -16761,11 +16761,11 @@ MonoBehaviour:
     - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
     dialogueWindows:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    - {fileID: 21300000, guid: d9b63fe1a7e52e544b52cc9c2b35bf6b, type: 3}
+    - {fileID: 21300000, guid: a14fe528b952c47fea7b0e374f281365, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    - {fileID: 21300000, guid: d9b63fe1a7e52e544b52cc9c2b35bf6b, type: 3}
+    - {fileID: 21300000, guid: a14fe528b952c47fea7b0e374f281365, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    - {fileID: 21300000, guid: d9b63fe1a7e52e544b52cc9c2b35bf6b, type: 3}
+    - {fileID: 21300000, guid: a14fe528b952c47fea7b0e374f281365, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
 --- !u!61 &1285147963
 BoxCollider2D:
@@ -29894,7 +29894,7 @@ MonoBehaviour:
     dialogueWindows:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    - {fileID: 21300000, guid: 2b017f6c0c3d9ac4ca8fdccf4015b57a, type: 3}
+    - {fileID: 21300000, guid: 43cd6cfe9eabe46ada07907e4f4dbde2, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}

@@ -27,6 +27,7 @@ public class PlayerManager : MovingObject
         {
             DontDestroyOnLoad(this.gameObject);
             boxCollider = GetComponent<BoxCollider2D>();
+            rigid = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
             theAudio = FindObjectOfType<AudioManager>();
             instance = this;
