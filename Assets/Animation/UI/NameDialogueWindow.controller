@@ -21,7 +21,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 8afc22e86d8f645508fe7dc58e11a997, type: 2}
+  m_Motion: {fileID: 7400000, guid: f088720c9be8ab54c86e90b695424291, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -58,7 +58,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DialogueWindow 1
+  m_Name: NameDialogueWindow
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Appear
@@ -126,7 +126,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 960d1e519f94743f59cc7ccdea3348fd, type: 2}
+  m_Motion: {fileID: 7400000, guid: 710c22bcfa7bd604a94887a17e8cd59e, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
