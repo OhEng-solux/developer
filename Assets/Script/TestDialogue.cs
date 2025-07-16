@@ -1,28 +1,55 @@
 using UnityEngine;
-using System.Collections.Generic;
-using UnityEngine.UI;
 using System.Collections;
 
 public class TestDialogue : MonoBehaviour
 {
     [SerializeField]
-    public Dialogue dialogue; // Dialogue 스크립트의 인스턴스
-    private DialogueManager theDM; // DialogueManager 스크립트의 인스턴스
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public Dialogue dialogue; // 대화 데이터 (ScriptableObject)
+
+    private DialogueManager theDM;
+    private bool hasTalked = false;
+
     void Start()
     {
-        theDM = Object.FindAnyObjectByType<DialogueManager>(); // DialogueManager 인스턴스를 찾습니다.
+        theDM = Object.FindAnyObjectByType<DialogueManager>();
+
+        if (theDM == null)
+        {
+            Debug.LogWarning("DialogueManager를 찾을 수 없습니다.");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "player") // 플레이어가 충돌했을 때
+        // 이미 대화한 적 있으면 무시
+        if (hasTalked) return;
+
+        // 플레이어와 충돌했고, 대화가 가능한 상태일 때
+        if (collision.gameObject.name == "player" && theDM != null && !theDM.talking)
         {
-            if (!theDM.talking) // DialogueManager가 대화 중이 아닐 때 -> 대화가 두 번 반복되는 버그 해결
-            {
-                theDM.ShowDialogue(dialogue); 
-                // DialogueManager의 ShowDialogue 메서드를 호출하여 대화를 시작합니다.
-            }
+            theDM.ShowDialogue(dialogue);
+            hasTalked = true;
+            StartCoroutine(DisableAfterDialogue());
         }
+    }
+
+    IEnumerator DisableAfterDialogue()
+    {
+        // 1. 대화가 끝날 때까지 기다림
+        while (theDM.talking)
+            yield return null;
+
+        // 2. 플레이어가 트리거 밖으로 나갈 때까지 기다림
+        Collider2D playerCollider = GameObject.Find("player")?.GetComponent<Collider2D>();
+        Collider2D myCollider = GetComponent<Collider2D>();
+
+        // 둘 다 null이 아니고, 아직 충돌 중이면 대기
+        while (playerCollider != null && myCollider != null && myCollider.IsTouching(playerCollider))
+        {
+            yield return null;
+        }
+
+        // 3. 안전하게 비활성화
+        gameObject.SetActive(false);
     }
 }
