@@ -2242,6 +2242,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 355747244}
+  - {fileID: 928581276}
   m_Father: {fileID: 844021639}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &94714514
@@ -2705,9 +2706,9 @@ MonoBehaviour:
       \uCD9C\uC11D\uC77C\uC9C0\uC5D0 \uC11C\uBA85\uD558\uC2DC\uACE0 \uD1F4\uADFC\uD558\uC138\uC694.\r\n\uC81C\uAC00
       \uB9C8\uBB34\uB9AC\uD558\uACE0 \uC544\uC774\uB4E4 \uBCF4\uB0B4\uACA0\uC2B5\uB2C8\uB2E4~"
     - "\uB124 \uAC10\uC0AC\uD569\uB2C8\uB2E4!"
-    - "\uBA3C\uC800 \uD1F4\uADFC\uD574\uB3C4 \uB41C\uB2E4\uB2C8..! \uC6D0\uC7A5\uB2D8
-      \uC815\uB9D0 \uCE5C\uC808\uD558\uC2DC\uB124"
-    - "\uADF8\uB7FC \uC218\uBA74\uC2E4\uB85C \uC774\uB3D9\uD574\uBCFC\uAE4C?"
+    - "(\u2019\uBA3C\uC800 \uD1F4\uADFC\uD574\uB3C4 \uB41C\uB2E4\uB2C8..! \uC6D0\uC7A5\uB2D8
+      \uC815\uB9D0 \uCE5C\uC808\uD558\uC2DC\uB124\u2019)"
+    - "(\u2019\uADF8\uB7FC \uC218\uBA74\uC2E4\uB85C \uC774\uB3D9\uD574\uBCFC\uAE4C?\u2019)"
     sprites:
     - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
     - {fileID: -4012656024804308703, guid: 0287b2accd48540dfadf0a792713887a, type: 3}
@@ -24255,7 +24256,7 @@ MonoBehaviour:
     - "\uB108\uB3C4 \uC548 \uAC08\uAC70\uC57C?"
     - "..\uC751? \uC120\uC0DD\uB2D8\uC774 \uC5B4\uB51C\uAC00\uC694?"
     - "\uC544\uB0D0 \uB410\uC5B4"
-    - "\u2019..? \uC798\uBABB \uB4E4\uC5C8\uB098"
+    - "(\u2019..? \uC798\uBABB \uB4E4\uC5C8\uB098\u2019)"
     sprites:
     - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
     - {fileID: -4548211720714836524, guid: 0ed4d177aa50249ce841b99197def478, type: 3}
@@ -26529,8 +26530,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 94714512}
-  - {fileID: 928581276}
   - {fileID: 1278531856}
+  - {fileID: 1034054712}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &844321659
@@ -29917,7 +29918,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 74646690}
-  m_Father: {fileID: 844021639}
+  m_Father: {fileID: 94714512}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &928581278
 MonoBehaviour:
@@ -32835,11 +32836,11 @@ Transform:
   m_GameObject: {fileID: 1034054711}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -71.04, y: -67.46, z: 0}
+  m_LocalPosition: {x: 14.059998, y: 3.6399994, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1247992606}
+  m_Father: {fileID: 844021639}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1034054713
 MonoBehaviour:
@@ -39387,7 +39388,6 @@ Transform:
   - {fileID: 120867815}
   - {fileID: 360927539}
   - {fileID: 1767065520}
-  - {fileID: 1034054712}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1251784406
@@ -59191,7 +59191,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 675d1aed245608440a643034922d27fe, type: 3}
     m_FontSize: 10
     m_FontStyle: 0
     m_BestFit: 0
