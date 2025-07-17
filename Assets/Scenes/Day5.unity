@@ -2987,8 +2987,6 @@ MonoBehaviour:
   typeSound: type_sound
   enterSound: enter_sound
   talking: 0
-  nameInputPanel: {fileID: 0}
-  nameInputField: {fileID: 0}
 --- !u!114 &255334657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3040,7 +3038,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 1141041555}
-  m_PlaneDistance: 20
+  m_PlaneDistance: 10
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -13742,7 +13740,7 @@ Camera:
   far clip plane: 1000
   field of view: 26.991467
   orthographic: 1
-  orthographic size: 20
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
