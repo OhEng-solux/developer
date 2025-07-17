@@ -23,7 +23,8 @@ public class TestChoice : MonoBehaviour
         theOrder = FindObjectOfType<OrderManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
         theDM = FindObjectOfType<DialogueManager>();
-        npcMover = npcObject?.GetComponent<NPCMover>();
+        if (npcObject != null)
+            npcMover = npcObject.GetComponent<NPCMover>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -75,28 +76,43 @@ public class TestChoice : MonoBehaviour
 
     private void OnSentenceFinishedHandler(int sentenceIndex)
     {
+        // NPC 이동/사라짐은 첫 문장부터 실행되게 유지
         if (!npcMoved && sentenceIndex == 0)
         {
             npcMoved = true;
-            StartCoroutine(MoveNpcAndResumeDialogue());
+            StartCoroutine(MoveNpcAndWaitThenContinue());
+        }
+
+        // 2번째 문장(인덱스 1) 끝나면 2초 멈추고 다음 문장 진행
+        if (sentenceIndex == 1)
+        {
+            theDM.PauseDialogue();
+            StartCoroutine(PauseDialogueForSeconds(5f));
         }
     }
 
-    IEnumerator MoveNpcAndResumeDialogue()
+    IEnumerator MoveNpcAndWaitThenContinue()
     {
         theOrder.NotMove();
 
-        if (npcMover != null)
+        if (npcMover != null && npcObject != null)
         {
             npcMover.StartMoving();
-
             while (npcMover.isMoving)
-            {
                 yield return null;
-            }
+
+            npcObject.SetActive(false);
         }
 
         theOrder.Move();
+    }
+
+    IEnumerator PauseDialogueForSeconds(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+
+        theDM.SkipToNextSentence();  // 다음 문장으로 count 증가
+        theDM.SetKeyInputActive(true);
         theDM.ContinueDialogue();
     }
 }
