@@ -13,6 +13,8 @@ public class PlayerManager : MovingObject
     private bool canMove = true;
     public bool notMove = false;
 
+    public bool hasEnteredName = false;
+
     private float footstepInterval = 0.3f; // 발소리 간격 (초)
     private float lastFootstepTime = 0f;
 
