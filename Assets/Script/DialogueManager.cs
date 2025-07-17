@@ -298,8 +298,6 @@ public class DialogueManager : MonoBehaviour
         ContinueDialogue();
     }
 
-    //  ======== ★ 추가! WaitAndContinue 함수 (딱 이 부분만 새로 추가) ========
-
     public void WaitAndContinue(float seconds)
     {
         StartCoroutine(WaitAndContinueCoroutine(seconds));
@@ -313,4 +311,10 @@ public class DialogueManager : MonoBehaviour
         ContinueDialogue();
     }
 
+    // 이름 입력 완료 처리 함수
+    public void OnNameInputCompleted(string inputName)
+    {
+        Debug.Log("이름 입력 완료: " + inputName);
+        ContinueDialogue(); // 혹은 다른 처리
+    }
 }
