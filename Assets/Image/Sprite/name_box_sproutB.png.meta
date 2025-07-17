@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: ec57a2ace20673745b3a190235895980
+guid: 2b017f6c0c3d9ac4ca8fdccf4015b57a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2582513841147819156
-    second: name_box_player_0
+      213: -8282460712593784839
+    second: name_box_sproutB_0
   - first:
-      213: -6122280366411766621
-    second: name_box_player_1
+      213: -3168307013347981393
+    second: name_box_sproutB_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,7 +40,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -54,7 +54,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 1
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -142,7 +142,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: name_box_player_0
+      name: name_box_sproutB_0
       rect:
         serializedVersion: 2
         x: 77
@@ -157,14 +157,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4943521e7aee6d320800000000000000
-      internalID: 2582513841147819156
+      spriteID: 9fff7bf3dd9ce0d80800000000000000
+      internalID: -8282460712593784839
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: name_box_player_1
+      name: name_box_sproutB_1
       rect:
         serializedVersion: 2
         x: 77
@@ -179,8 +179,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3a4ada8a17a490ba0800000000000000
-      internalID: -6122280366411766621
+      spriteID: fa7c30ace89e704d0800000000000000
+      internalID: -3168307013347981393
       vertices: []
       indices: 
       edges: []
@@ -199,8 +199,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      name_box_player_0: 2582513841147819156
-      name_box_player_1: -6122280366411766621
+      name_box_sproutB_0: -8282460712593784839
+      name_box_sproutB_1: -3168307013347981393
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
