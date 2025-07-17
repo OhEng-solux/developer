@@ -211,9 +211,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      name_box_sproutB_0: -8282460712593784839
-      name_box_sproutB_1: -3168307013347981393
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
