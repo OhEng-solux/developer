@@ -56,6 +56,8 @@ public class DialogueManager : MonoBehaviour
         text.text = "";
         theAudio = FindAnyObjectByType<AudioManager>();
         theOrder = FindAnyObjectByType<OrderManager>();
+
+        OnSentenceFinished += HandleSentenceEvents;
     }
 
     public void ShowDialogue(Dialogue dialogue)
@@ -75,6 +77,18 @@ public class DialogueManager : MonoBehaviour
         listSprites.Clear();
         listDialogueWindows.Clear();
 
+        // 💡 여기서 NPC를 찾아 방향 설정
+        GameObject npcObj = GameObject.FindWithTag("npc");
+        if (npcObj != null)
+        {
+            Animator npcAnimator = npcObj.GetComponent<Animator>();
+            if (npcAnimator != null)
+            {
+                npcAnimator.SetFloat("DirX", 0);
+                npcAnimator.SetFloat("DirY", -1); // 대화 시작하면 NPC가 아래를 바라보도록 설정
+            }
+        }
+        
         for (int i = 0; i < dialogue.sentences.Length; i++)
         {
             listSentences.Add(dialogue.sentences[i]);
@@ -176,6 +190,33 @@ public class DialogueManager : MonoBehaviour
                 {
                     StartCoroutine(StartDialogueCoroutine());
                 }
+            }
+        }
+    }
+
+    void HandleSentenceEvents(int sentenceIndex)
+    {
+        // 특정 문장에서 NPC 이동 시작
+        if (sentenceIndex == 2) // 원하는 문장 인덱스로 조정 가능
+        {
+            // Tag가 "npc"인 오브젝트에서 NPCPathMover 찾기
+            GameObject npcObj = GameObject.FindWithTag("npc");
+            if (npcObj != null)
+            {
+                NPCPathMover mover = npcObj.GetComponent<NPCPathMover>();
+                if (mover != null)
+                {
+                    talking = false; // 대사 일시 정지
+                    mover.StartPath(); // 이동 시작
+                }
+                else
+                {
+                    Debug.LogWarning("NPCPathMover가 NPC에 붙어있지 않음!");
+                }
+            }
+            else
+            {
+                Debug.LogWarning("Tag가 'npc'인 오브젝트를 찾을 수 없음!");
             }
         }
     }
