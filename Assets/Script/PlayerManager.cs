@@ -17,8 +17,6 @@ public class PlayerManager : MovingObject
     private float lastFootstepTime = 0f;
 
 
-    private Rigidbody2D rigid;
-
     void Start()
     {
         queue = new Queue<string>();
@@ -27,7 +25,6 @@ public class PlayerManager : MovingObject
         {
             DontDestroyOnLoad(this.gameObject);
             boxCollider = GetComponent<BoxCollider2D>();
-            rigid = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
             theAudio = FindObjectOfType<AudioManager>();
             instance = this;

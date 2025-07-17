@@ -19,7 +19,6 @@ public class MovingObject : MonoBehaviour
     public Queue<string> queue; //선입선출 자료구조
     
     public BoxCollider2D boxCollider;
-    protected Rigidbody2D rigid;
     public LayerMask layerMask; //통과 불가능한 레이어 설정
     public string walkSound_1;
     public string walkSound_2;
@@ -101,17 +100,14 @@ public class MovingObject : MonoBehaviour
 
             boxCollider.offset = new Vector2(vector.x*0.7f*speed*walkCount, vector.y*0.7f*speed*walkCount);
 
-            while (currentWalkCount < walkCount)
-            {
-                Vector2 moveDelta = new Vector2(vector.x * speed, vector.y * speed) * Time.fixedDeltaTime * 100f; // 0.01초랑 맞춤
-                rigid.MovePosition(rigid.position + moveDelta);
+            while(currentWalkCount<walkCount){
+                transform.Translate(vector.x*speed,vector.y,0);
                 currentWalkCount++;
-                
-                if (currentWalkCount == 12)
-                    boxCollider.offset = Vector2.zero;
-
+                if(currentWalkCount==12)
+                    boxCollider.offset=Vector2.zero;
                 yield return new WaitForSeconds(0.01f);
             }
+
 
 
             currentWalkCount=0;
