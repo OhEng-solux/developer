@@ -65,6 +65,7 @@ public class TestChoice : MonoBehaviour
         else
         {
             npcMoved = false;
+            theDM.autoNext = false; // autoNext가 이 대화에서 OFF인지 꼭 체크
             theDM.OnSentenceFinished += OnSentenceFinishedHandler;
             theDM.ShowDialogue(failDialogue);
             yield return new WaitUntil(() => !theDM.talking);
@@ -76,18 +77,16 @@ public class TestChoice : MonoBehaviour
 
     private void OnSentenceFinishedHandler(int sentenceIndex)
     {
-        // NPC 이동/사라짐은 첫 문장부터 실행되게 유지
         if (!npcMoved && sentenceIndex == 0)
         {
             npcMoved = true;
             StartCoroutine(MoveNpcAndWaitThenContinue());
         }
 
-        // 2번째 문장(인덱스 1) 끝나면 2초 멈추고 다음 문장 진행
+        // 두 번째 문장(인덱스 1) 끝난 뒤 4초간 대기, 이후 3번째 문장으로
         if (sentenceIndex == 1)
         {
-            theDM.PauseDialogue();
-            StartCoroutine(PauseDialogueForSeconds(5f));
+            theDM.WaitAndContinue(4f);
         }
     }
 
@@ -95,24 +94,16 @@ public class TestChoice : MonoBehaviour
     {
         theOrder.NotMove();
 
-        if (npcMover != null && npcObject != null)
+        if (npcMover != null)
         {
             npcMover.StartMoving();
             while (npcMover.isMoving)
                 yield return null;
 
-            npcObject.SetActive(false);
+            if (npcObject != null)
+                npcObject.SetActive(false);
         }
 
         theOrder.Move();
-    }
-
-    IEnumerator PauseDialogueForSeconds(float seconds)
-    {
-        yield return new WaitForSeconds(seconds);
-
-        theDM.SkipToNextSentence();  // 다음 문장으로 count 증가
-        theDM.SetKeyInputActive(true);
-        theDM.ContinueDialogue();
     }
 }

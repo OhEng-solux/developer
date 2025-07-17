@@ -50,13 +50,14 @@ public class DialogueManager : MonoBehaviour
     public delegate void SentenceFinishedHandler(int sentenceIndex);
     public event SentenceFinishedHandler OnSentenceFinished;
 
+    private bool isPaused = false; // 대사 일시정지 상태 플래그
+
     void Start()
     {
         count = 0;
         text.text = "";
         theAudio = FindAnyObjectByType<AudioManager>();
         theOrder = FindAnyObjectByType<OrderManager>();
-
         OnSentenceFinished += HandleSentenceEvents;
     }
 
@@ -77,7 +78,7 @@ public class DialogueManager : MonoBehaviour
         listSprites.Clear();
         listDialogueWindows.Clear();
 
-        // 💡 여기서 NPC를 찾아 방향 설정
+        // NPC 방향 초기화
         GameObject npcObj = GameObject.FindWithTag("npc");
         if (npcObj != null)
         {
@@ -85,10 +86,10 @@ public class DialogueManager : MonoBehaviour
             if (npcAnimator != null)
             {
                 npcAnimator.SetFloat("DirX", 0);
-                npcAnimator.SetFloat("DirY", -1); // 대화 시작하면 NPC가 아래를 바라보도록 설정
+                npcAnimator.SetFloat("DirY", -1);
             }
         }
-        
+
         for (int i = 0; i < dialogue.sentences.Length; i++)
         {
             listSentences.Add(dialogue.sentences[i]);
@@ -119,10 +120,7 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator StartDialogueCoroutine()
     {
-        if (count < 0 ||
-            count >= listSentences.Count ||
-            count >= listSprites.Count ||
-            count >= listDialogueWindows.Count)
+        if (count < 0 || count >= listSentences.Count)
         {
             ExitDialogue();
             yield break;
@@ -196,10 +194,8 @@ public class DialogueManager : MonoBehaviour
 
     void HandleSentenceEvents(int sentenceIndex)
     {
-        // 특정 문장에서 NPC 이동 시작
-        if (sentenceIndex == 2) // 원하는 문장 인덱스로 조정 가능
+        if (sentenceIndex == 3)
         {
-            // Tag가 "npc"인 오브젝트에서 NPCPathMover 찾기
             GameObject npcObj = GameObject.FindWithTag("npc");
             if (npcObj != null)
             {
@@ -209,21 +205,13 @@ public class DialogueManager : MonoBehaviour
                     talking = false; // 대사 일시 정지
                     mover.StartPath(); // 이동 시작
                 }
-                else
-                {
-                    Debug.LogWarning("NPCPathMover가 NPC에 붙어있지 않음!");
-                }
-            }
-            else
-            {
-                Debug.LogWarning("Tag가 'npc'인 오브젝트를 찾을 수 없음!");
             }
         }
     }
 
     void Update()
     {
-        if (talking && keyActivated)
+        if (talking && keyActivated && !isPaused)
         {
             if (Input.GetKeyDown(KeyCode.Z))
             {
@@ -266,6 +254,12 @@ public class DialogueManager : MonoBehaviour
     public void PauseDialogue()
     {
         keyActivated = false;
+        isPaused = true;
+    }
+
+    public void PauseDialogue2()
+    {
+        keyActivated = false;
     }
 
     public void ContinueDialogue()
@@ -276,13 +270,47 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
+        talking = true; // 대사 재개를 위해 talking 활성화
+        isPaused = false;
+        SetKeyInputActive(true);
+
         StopAllCoroutines();
         StartCoroutine(StartDialogueCoroutine());
     }
 
-    // 추가: 다음 문장으로 건너뛰기용 공개 메서드
     public void SkipToNextSentence()
     {
         count++;
     }
+
+    public void PauseDialogueForSeconds(float seconds)
+    {
+        if (isPaused) return;
+        StartCoroutine(PauseAndContinueCoroutine(seconds));
+    }
+
+    private IEnumerator PauseAndContinueCoroutine(float seconds)
+    {
+        PauseDialogue();
+
+        yield return new WaitForSeconds(seconds);
+
+        ContinueDialogue();
+    }
+
+    //  ======== ★ 추가! WaitAndContinue 함수 (딱 이 부분만 새로 추가) ========
+
+    public void WaitAndContinue(float seconds)
+    {
+        StartCoroutine(WaitAndContinueCoroutine(seconds));
+    }
+
+    private IEnumerator WaitAndContinueCoroutine(float seconds)
+    {
+        PauseDialogue();
+        yield return new WaitForSeconds(seconds);
+        SkipToNextSentence();
+        ContinueDialogue();
+    }
+
 }
