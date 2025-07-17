@@ -50,12 +50,17 @@ public class DialogueManager : MonoBehaviour
     public delegate void SentenceFinishedHandler(int sentenceIndex);
     public event SentenceFinishedHandler OnSentenceFinished;
 
-    private bool isPaused = false; // 대사 일시정지 상태 플래그
+    private bool isPaused = false;
+    private bool isWaitingForName = false;
+    private string playerName = "";
 
     void Start()
     {
         count = 0;
         text.text = "";
+        listSentences = new List<string>();
+        listSprites = new List<Sprite>();
+        listDialogueWindows = new List<Sprite>();
         theAudio = FindAnyObjectByType<AudioManager>();
         theOrder = FindAnyObjectByType<OrderManager>();
         OnSentenceFinished += HandleSentenceEvents;
@@ -157,17 +162,27 @@ public class DialogueManager : MonoBehaviour
         }
 
         keyActivated = false;
-        text.text = "";
 
-        for (int i = 0; i < listSentences[count].Length; i++)
+        // ------------ 여기서 $playerName 치환 -------------
+        string playerNameForReplace = "";
+        var playerMgr = FindFirstObjectByType<PlayerManager>();
+        if (playerMgr != null && !string.IsNullOrEmpty(playerMgr.characterName))
+            playerNameForReplace = playerMgr.characterName;
+        else
+            playerNameForReplace = playerName;
+
+        string processedLine = listSentences[count].Replace("$playerName", playerNameForReplace);
+        text.text = "";
+        for (int i = 0; i < processedLine.Length; i++)
         {
-            text.text += listSentences[count][i];
+            text.text += processedLine[i];
             if (i % 7 == 1)
             {
                 theAudio.Play(typeSound);
             }
             yield return new WaitForSeconds(0.01f);
         }
+        // ------------ 치환 끝! ------------
 
         keyActivated = true;
         OnSentenceFinished?.Invoke(count);
@@ -202,12 +217,13 @@ public class DialogueManager : MonoBehaviour
                 NPCPathMover mover = npcObj.GetComponent<NPCPathMover>();
                 if (mover != null)
                 {
-                    talking = false; // 대사 일시 정지
-                    mover.StartPath(); // 이동 시작
+                    mover.StartPath();
+                    talking = false;
                 }
             }
         }
     }
+
 
     void Update()
     {
@@ -270,7 +286,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        talking = true; // 대사 재개를 위해 talking 활성화
+        talking = true;
         isPaused = false;
         SetKeyInputActive(true);
 
@@ -292,9 +308,7 @@ public class DialogueManager : MonoBehaviour
     private IEnumerator PauseAndContinueCoroutine(float seconds)
     {
         PauseDialogue();
-
         yield return new WaitForSeconds(seconds);
-
         ContinueDialogue();
     }
 
@@ -311,10 +325,10 @@ public class DialogueManager : MonoBehaviour
         ContinueDialogue();
     }
 
-    // 이름 입력 완료 처리 함수
+    // 이름 입력 예시용 함수(필요시)
     public void OnNameInputCompleted(string inputName)
     {
-        Debug.Log("이름 입력 완료: " + inputName);
-        ContinueDialogue(); // 혹은 다른 처리
+        playerName = inputName;
+        ContinueDialogue();
     }
 }

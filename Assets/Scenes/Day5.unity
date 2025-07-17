@@ -3273,6 +3273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPoint: {fileID: 1520154231}
   moveSpeed: 5
+  isMoving: 0
 --- !u!114 &261503892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3344,7 +3345,7 @@ MonoBehaviour:
       \uB2E4 \uB9DE\uD614\uC5B4\uC57C \uD588\uB294\uB370..!"
     - "\uC5B4\uB514 \uAC00, \uC11C\uC544\uC57C..!"
     - "'\uB9CE\uC774 \uD1A0\uB77C\uC9C4 \uAC78\uAE4C?'"
-    - "'\uBC8C\uC368 \uC2DC\uAC04\uC774 \uC774\uB807\uAC8C \uB410\uB124..'"
+    - "'\uADFC\uB370 \uBC8C\uC368 \uC2DC\uAC04\uC774 \uC774\uB807\uAC8C \uB410\uB124..'"
     - "'\uC77C\uB2E8 \uD1F4\uADFC\uD558\uC790'"
     sprites:
     - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
@@ -5333,7 +5334,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000011504, y: -77}
+  m_AnchoredPosition: {x: -88.8, y: -75.7}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &566881154
@@ -5371,11 +5372,11 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: New Text
 --- !u!1 &584282873
@@ -7232,7 +7233,7 @@ Transform:
   m_GameObject: {fileID: 811371037}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -145.78, y: -66.54, z: 0}
+  m_LocalPosition: {x: -144.98, y: -66.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -29792,7 +29793,7 @@ Transform:
   m_GameObject: {fileID: 1881225187}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -143.32187, y: -67.415726, z: 0}
+  m_LocalPosition: {x: -141.06, y: -67.415726, z: 0}
   m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -30610,6 +30611,7 @@ MonoBehaviour:
   currentMapName: 
   runSpeed: 0.1
   notMove: 0
+  hasEnteredName: 0
 --- !u!95 &1928187255
 Animator:
   serializedVersion: 7

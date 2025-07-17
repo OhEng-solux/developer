@@ -20,7 +20,6 @@ public class TestDialogue : MonoBehaviour
         string name = PlayerManager.instance.characterName; // 혹은 FindObjectOfType<PlayerManager>().characterName;
         return original.Replace("$playerName", name);
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "player") // 플레이어가 충돌했을 때
