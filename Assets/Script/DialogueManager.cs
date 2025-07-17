@@ -194,7 +194,7 @@ public class DialogueManager : MonoBehaviour
 
     void HandleSentenceEvents(int sentenceIndex)
     {
-        if (sentenceIndex == 2)
+        if (sentenceIndex == 3)
         {
             GameObject npcObj = GameObject.FindWithTag("npc");
             if (npcObj != null)
