@@ -50,6 +50,6 @@ public class TestDialogue : MonoBehaviour
         }
 
         // 3. 안전하게 비활성화
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 }
