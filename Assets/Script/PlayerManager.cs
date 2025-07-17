@@ -16,7 +16,6 @@ public class PlayerManager : MovingObject
     private float footstepInterval = 0.3f; // 발소리 간격 (초)
     private float lastFootstepTime = 0f;
 
-    public bool hasEnteredName = false;
 
     private Rigidbody2D rigid;
 

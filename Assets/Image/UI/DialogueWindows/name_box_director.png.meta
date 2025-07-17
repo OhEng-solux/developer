@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 29b271c226bec6448ae0ee37c70a3d88
+guid: d9b63fe1a7e52e544b52cc9c2b35bf6b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6133383502455821389
-    second: chatNname_box_0
+      213: -7296493093531794322
+    second: name_box_director_0
   - first:
-      213: -2802626348361368495
-    second: chatNname_box_1
+      213: -1495996235422585872
+    second: name_box_director_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +49,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -142,7 +142,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: chatNname_box_0
+      name: name_box_director_0
       rect:
         serializedVersion: 2
         x: 77
@@ -157,14 +157,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3bb21e85338d1eaa0800000000000000
-      internalID: -6133383502455821389
+      spriteID: e6442fd9036adba90800000000000000
+      internalID: -7296493093531794322
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: chatNname_box_1
+      name: name_box_director_1
       rect:
         serializedVersion: 2
         x: 77
@@ -179,8 +179,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 15c35c36f221b19d0800000000000000
-      internalID: -2802626348361368495
+      spriteID: 0fba05a99572d3be0800000000000000
+      internalID: -1495996235422585872
       vertices: []
       indices: 
       edges: []
@@ -189,7 +189,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -199,8 +199,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      chatNname_box_0: -6133383502455821389
-      chatNname_box_1: -2802626348361368495
+      name_box_director_0: -7296493093531794322
+      name_box_director_1: -1495996235422585872
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
