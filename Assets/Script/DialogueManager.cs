@@ -49,8 +49,8 @@ public class DialogueManager : MonoBehaviour
     public event SentenceFinishedHandler OnSentenceFinished;
     //이름 입력을 위한 변수
     private bool isWaitingForName = false;
-    private string playerName = ""; 
-
+    private string playerName = "";
+    public NameInputManager nameInputManager;
 
     void Start()
     {
@@ -70,14 +70,14 @@ public class DialogueManager : MonoBehaviour
     //대화 중 입력창 표시
     private void HandleSentenceFinished(int sentenceIndex)
     {
-        if (sentenceIndex == 3 && !FindObjectOfType<PlayerManager>().hasEnteredName)
+        if (sentenceIndex == 3 && !FindFirstObjectByType<PlayerManager>().hasEnteredName)
         {
             isWaitingForName = true;
             keyActivated = false;
-            ShowNameInputPanel();
+            nameInputManager.ShowPanel();
         }
     }
-
+    /*
     public GameObject nameInputPanel;
     public InputField nameInputField; // UI 캔버스에 붙일 위치 
 
@@ -91,26 +91,17 @@ public class DialogueManager : MonoBehaviour
     {
         nameInputPanel.SetActive(false);
     }
-
-    public void OnNameInputCompleted()
+    */
+    public void OnNameInputCompleted(string inputName)
     {
-        string inputName = nameInputField.text.Trim();
-        if (!string.IsNullOrEmpty(inputName))
-        {
-            playerName = inputName;
-            // 대사 치환 등 추가 동작
-            FindObjectOfType<PlayerManager>().hasEnteredName = true;           
-            isWaitingForName = false;
-            HideNameInputPanel();
-            count++;
-
-            ContinueDialogue();
-            
-        }
-
+        playerName = inputName;
+        FindFirstObjectByType<PlayerManager>().hasEnteredName = true;
+        isWaitingForName = false;
+        count++;
+        ContinueDialogue();
     }
 
-   
+
     //--입력 관련 함수
 
     public void ShowDialogue(Dialogue dialogue)

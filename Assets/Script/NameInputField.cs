@@ -22,7 +22,7 @@ public class NameInputField : MonoBehaviour
             {
                 thePlayer.characterName = enteredName;
 
-                DialogueManager.instance.OnNameInputCompleted();
+                DialogueManager.instance.OnNameInputCompleted(enteredName);
 
                 inputField.gameObject.SetActive(false);
             }
