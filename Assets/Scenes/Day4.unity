@@ -19012,7 +19012,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1999432125}
   - component: {fileID: 1999432124}
-  - component: {fileID: 1999432123}
+  - component: {fileID: 1999432126}
   m_Layer: 0
   m_Name: Story_dialogue
   m_TagString: Untagged
@@ -19020,72 +19020,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1999432123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1999432122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813481dc762d44bca937ff94ce09e711, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    sentences:
-    - "\u2019\uC624\uB298\uC740 \uC5B4\uB9B0\uC774\uC9D1\uC758 \uC5B8\uB2C8 \uC624\uBE60\uB4E4\uC744
-      \uB9E1\uC544\uC8FC\uB7EC \uD587\uB2D8\uBC18\uC5D0 \uC654\uB2E4\u2019"
-    - "\uD0DC\uC8FC\uC640 \uC544\uC774\uB4E4\uC774 \uD55C \uAD6C\uC11D\uC5D0 \uBAA8\uC5EC\uC11C
-      \uB180\uACE0 \uC788\uB2E4."
-    - "\u201C\uC598\uB4E4\uC544 \uBB50\uD558\uACE0 \uB180\uACE0 \uC788\uC5B4? \uC120\uC0DD\uB2D8
-      \uC654\uC5B4~\u201D"
-    - "\u2019\u2026? \uC65C \uB4E4\uC740 \uCC99\uB3C4 \uC548\uD558\uC9C0..\u2019"
-    - "\uADF8 \uC21C\uAC04 \uD0DC\uC8FC\uC640 \uB208\uC774 \uB9C8\uC8FC\uCE58\uACE0
-      \uC11C\uB85C\uB97C \uC624\uB7AB\uB3D9\uC548 \uBC14\uB77C\uBCF8\uB2E4."
-    - "\u201C\u2026\u2026\u201D"
-    - "\u201C\u2026\u2026\u201D"
-    - "\uC544\uC774\uB4E4\uC758 \uAD00\uC2EC\uC744 \uC0AC\uAE30 \uC704\uD574 \uAC04\uC2DD\uC744
-      \uAEBC\uB0B4\uBCF8\uB2E4."
-    - "\u201C\uC598\uB4E4\uC544 \uAC04\uC2DD \uBA39\uC744\uAE4C?\u201D"
-    - "\uBAA8\uB4E0 \uC544\uC774\uB4E4\uC774 %%\uC744(\uB97C) \uC751\uC2DC\uD55C\uB2E4"
-    - "\"\uD788\uC775\u201D"
-    - "\u201C..?\u201D"
-    - "\u2019\uBB50\uC9C0 \uC774 \uAE30\uC2DC\uAC10\uC740?\u2019"
-    - "\u2019\uAC04\uC2DD\uC774 \uC2EB\uC5C8\uB098..\u2019"
-    - "\u2019\uAD1C\uD788 \uC544\uC774\uB4E4\uC758 \uAE30\uC5D0 \uB20C\uB9AC\uB124..\u2019"
-    sprites:
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    - {fileID: 0}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    - {fileID: 0}
-    - {fileID: 3464973351320543932, guid: dca1726798fef45b2953ec024363abbc, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    - {fileID: 0}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    dialogueWindows:
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    - {fileID: 21300000, guid: 630bc2582d239294ea09ef28c0c82f03, type: 3}
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    - {fileID: 21300000, guid: 630bc2582d239294ea09ef28c0c82f03, type: 3}
-    - {fileID: 21300000, guid: a79eda00445f44ae2bec6e030a030aa7, type: 3}
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    - {fileID: 21300000, guid: 630bc2582d239294ea09ef28c0c82f03, type: 3}
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    - {fileID: 21300000, guid: 630bc2582d239294ea09ef28c0c82f03, type: 3}
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
 --- !u!61 &1999432124
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19147,6 +19081,73 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1999432126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999432122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b69270ea3b564dd39b0e379682438ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - "\u2019\uC624\uB298\uC740 \uD587\uB2D8\uBC18 \uC544\uC774\uB4E4\uACFC \uB180\uC544
+      \uC918\uC57C \uD55C\uB2E4.\u2019"
+    - "\uD0DC\uC8FC\uC640 \uC544\uC774\uB4E4\uC774 \uD55C \uAD6C\uC11D\uC5D0 \uBAA8\uC5EC\uC11C
+      \uB180\uACE0 \uC788\uB2E4"
+    - "\u201C\uC598\uB4E4\uC544 \uBB50 \uD558\uACE0 \uB180\uC544? \uC120\uC0DD\uB2D8
+      \uC654\uC5B4~\u201D"
+    - "'\u2026? \uC65C \uB4E4\uC740 \uCC99\uB3C4 \uC548 \uD558\uC9C0..\u2019"
+    - "\uD50C\uB808\uC774\uC5B4\uC640 \uD0DC\uC8FC\uB294 \uB208\uC774 \uB9C8\uC8FC\uCCE4\uACE0
+      \uD0DC\uC8FC\uAC00 \uD50C\uB808\uC774\uC5B4\uB97C \uC624\uB798 \uC751\uC2DC\uD55C\uB2E4"
+    - "\u201C\u2026\u2026\u201D"
+    - "\u201C\u2026\u2026\u201D"
+    - "\uC544\uC774\uB4E4\uC758 \uAD00\uC2EC\uC744 \uC0AC\uAE30 \uC704\uD574 \uAC04\uC2DD\uC744
+      \uAEBC\uB0B8\uB2E4"
+    - "\u201C\uC598\uB4E4\uC544 \uAC04\uC2DD \uBA39\uC744\uAE4C?\u201D"
+    - "\uBAA8\uB4E0 \uC544\uC774\uB4E4\uC774 \uD50C\uB808\uC774\uC5B4\uB97C \uC751\uC2DC\uD55C\uB2E4"
+    - "\u201C\u2026\u2026\u201D"
+    - "\u201C\u2026?\u201D"
+    - "\u2019\uBB50\uC9C0, \uC774 \uAE30\uC2DC\uAC10\uC740?\u2019"
+    - "\u2019\uAC04\uC2DD\uC774 \uC2EB\uC5C8\uB098..\u2019"
+    - "\u2019\uAD1C\uD788 \uC544\uC774\uB4E4\uC758 \uAE30\uC5D0 \uB20C\uB9AC\uB124..\u2019"
+    sprites:
+    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: 0}
+    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: 0}
+    - {fileID: 3464973351320543932, guid: dca1726798fef45b2953ec024363abbc, type: 3}
+    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: 0}
+    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    - {fileID: 21300000, guid: 630bc2582d239294ea09ef28c0c82f03, type: 3}
+    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    - {fileID: 21300000, guid: 630bc2582d239294ea09ef28c0c82f03, type: 3}
+    - {fileID: 21300000, guid: a79eda00445f44ae2bec6e030a030aa7, type: 3}
+    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    - {fileID: 21300000, guid: 630bc2582d239294ea09ef28c0c82f03, type: 3}
+    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    - {fileID: 21300000, guid: 630bc2582d239294ea09ef28c0c82f03, type: 3}
+    - {fileID: 21300000, guid: 630bc2582d239294ea09ef28c0c82f03, type: 3}
+    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+  npcToRemove: {fileID: 2147406751}
 --- !u!1 &2031198207
 GameObject:
   m_ObjectHideFlags: 0
@@ -19867,7 +19868,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
