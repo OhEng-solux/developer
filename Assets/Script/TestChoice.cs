@@ -23,7 +23,8 @@ public class TestChoice : MonoBehaviour
         theOrder = FindObjectOfType<OrderManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
         theDM = FindObjectOfType<DialogueManager>();
-        npcMover = npcObject?.GetComponent<NPCMover>();
+        if (npcObject != null)
+            npcMover = npcObject.GetComponent<NPCMover>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -64,6 +65,7 @@ public class TestChoice : MonoBehaviour
         else
         {
             npcMoved = false;
+            theDM.autoNext = false; // autoNext가 이 대화에서 OFF인지 꼭 체크
             theDM.OnSentenceFinished += OnSentenceFinishedHandler;
             theDM.ShowDialogue(failDialogue);
             yield return new WaitUntil(() => !theDM.talking);
@@ -78,25 +80,30 @@ public class TestChoice : MonoBehaviour
         if (!npcMoved && sentenceIndex == 0)
         {
             npcMoved = true;
-            StartCoroutine(MoveNpcAndResumeDialogue());
+            StartCoroutine(MoveNpcAndWaitThenContinue());
+        }
+
+        // 두 번째 문장(인덱스 1) 끝난 뒤 4초간 대기, 이후 3번째 문장으로
+        if (sentenceIndex == 1)
+        {
+            theDM.WaitAndContinue(4f);
         }
     }
 
-    IEnumerator MoveNpcAndResumeDialogue()
+    IEnumerator MoveNpcAndWaitThenContinue()
     {
         theOrder.NotMove();
 
         if (npcMover != null)
         {
             npcMover.StartMoving();
-
             while (npcMover.isMoving)
-            {
                 yield return null;
-            }
+
+            if (npcObject != null)
+                npcObject.SetActive(false);
         }
 
         theOrder.Move();
-        theDM.ContinueDialogue();
     }
 }

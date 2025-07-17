@@ -45,7 +45,7 @@ public class ChoiceManager : MonoBehaviour
     public bool choiceIng = false;
     private bool keyInput = false;
 
-    private int count;
+    private int lastAnswerIndex = -1;  // 이전 count 변수 대신 명확한 이름으로 변경
     private int result;
 
     private WaitForSeconds waitTime = new WaitForSeconds(0.01f);
@@ -68,24 +68,26 @@ public class ChoiceManager : MonoBehaviour
     public void ShowChoice(Choice _choice)
     {
         choiceIng = true;
-        theOrder.NotMove(); // 퀴즈 중 이동 금지
+        theOrder.NotMove();
 
         go.SetActive(true);
         result = 0;
         question = _choice.question;
 
         answerList.Clear();
-        for (int i = 0; i < _choice.answers.Length; i++)
+        int maxAnswers = Mathf.Min(answer_Text.Length, answer_Panel.Length, _choice.answers.Length);
+        for (int i = 0; i < maxAnswers; i++)
         {
             answerList.Add(_choice.answers[i]);
             answer_Panel[i].SetActive(true);
-            count = i;
         }
+        lastAnswerIndex = maxAnswers - 1;
 
         anim.SetBool("Appear", true);
         Selection();
         StartCoroutine(ChoiceCoroutine());
     }
+
 
     public int GetResult()
     {
@@ -95,18 +97,20 @@ public class ChoiceManager : MonoBehaviour
     public void ExitChoice()
     {
         question_Text.text = "";
-        for (int i = 0; i <= count; i++)
+        if (lastAnswerIndex >= 0)
         {
-            answer_Text[i].text = "";
-            answer_Panel[i].SetActive(false);
+            for (int i = 0; i <= lastAnswerIndex; i++)
+            {
+                answer_Text[i].text = "";
+                answer_Panel[i].SetActive(false);
+            }
         }
 
         answerList.Clear();
         anim.SetBool("Appear", false);
         go.SetActive(false);
         choiceIng = false;
-
-        theOrder.Move(); // 퀴즈 끝나면 이동 허용
+        theOrder.Move();
     }
 
     IEnumerator ChoiceCoroutine()
@@ -114,14 +118,16 @@ public class ChoiceManager : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
 
         StartCoroutine(TypingQuestion());
-        StartCoroutine(TypingAnswer_0());
-        if (count >= 1) StartCoroutine(TypingAnswer_1());
-        if (count >= 2) StartCoroutine(TypingAnswer_2());
-        if (count >= 3) StartCoroutine(TypingAnswer_3());
+
+        if (answerList.Count > 0) StartCoroutine(TypingAnswer_0());
+        if (answerList.Count > 1) StartCoroutine(TypingAnswer_1());
+        if (answerList.Count > 2) StartCoroutine(TypingAnswer_2());
+        if (answerList.Count > 3) StartCoroutine(TypingAnswer_3());
 
         yield return new WaitForSeconds(0.5f);
         keyInput = true;
     }
+
 
     IEnumerator TypingQuestion()
     {
@@ -179,13 +185,13 @@ public class ChoiceManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             theAudio.Play(keySound);
-            result = (result > 0) ? result - 1 : count;
+            result = (result > 0) ? result - 1 : lastAnswerIndex;
             Selection();
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             theAudio.Play(keySound);
-            result = (result < count) ? result + 1 : 0;
+            result = (result < lastAnswerIndex) ? result + 1 : 0;
             Selection();
         }
         else if (Input.GetKeyDown(KeyCode.Z))
@@ -200,7 +206,7 @@ public class ChoiceManager : MonoBehaviour
     {
         Color color = answer_Panel[0].GetComponent<Image>().color;
         color.a = 0.75f;
-        for (int i = 0; i <= count; i++)
+        for (int i = 0; i <= lastAnswerIndex; i++)
         {
             answer_Panel[i].GetComponent<Image>().color = color;
         }

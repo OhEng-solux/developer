@@ -32,14 +32,6 @@ public class TestDialogue : MonoBehaviour
                 // DialogueManager의 ShowDialogue 메서드를 호출하여 대화를 시작합니다.
             }
 
-
-<<<<<<< HEAD
-        // 3. 안전하게 비활성화
-        gameObject.SetActive(false);
-=======
-        // // 3. 안전하게 비활성화
-        // gameObject.SetActive(false);
-
->>>>>>> 36b962b14f7fe3447e8d2ad1a4dd72be535b280f
+        }
     }
 }

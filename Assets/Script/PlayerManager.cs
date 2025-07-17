@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerManager : MovingObject
 {
-    static public PlayerManager instance; //정적변수
+    static public PlayerManager instance; // 정적 변수
     public string currentMapName;
 
     public float runSpeed;
@@ -13,10 +13,10 @@ public class PlayerManager : MovingObject
     private bool canMove = true;
     public bool notMove = false;
 
+    public bool hasEnteredName = false;
+
     private float footstepInterval = 0.3f; // 발소리 간격 (초)
     private float lastFootstepTime = 0f;
-
-    public bool hasEnteredName = false;
 
     private Rigidbody2D rigid;
 
@@ -31,6 +31,8 @@ public class PlayerManager : MovingObject
             animator = GetComponent<Animator>();
             theAudio = FindObjectOfType<AudioManager>();
             instance = this;
+
+            boxCollider.offset = new Vector2(0, -2f);
         }
         else
         {
@@ -38,10 +40,9 @@ public class PlayerManager : MovingObject
         }
     }
 
-
     IEnumerator MoveCoroutine()
     {
-        while (Input.GetAxisRaw("Vertical") != 0 || Input.GetAxisRaw("Horizontal") != 0 && !notMove)
+        while ((Input.GetAxisRaw("Vertical") != 0 || Input.GetAxisRaw("Horizontal") != 0) && !notMove)
         {
             if (Input.GetKey(KeyCode.Space))
             {
@@ -66,8 +67,7 @@ public class PlayerManager : MovingObject
 
             animator.SetBool("Walking", true);
 
-            // boxCollider 위치 조정
-            boxCollider.offset = new Vector2(vector.x * 0.7f * speed * walkCount, vector.y * 0.7f * speed * walkCount);
+            // boxCollider offset 조정 코드 제거됨
 
             if (currentWalkCount % 3 == 0 && Time.time - lastFootstepTime > footstepInterval)
             {
@@ -91,25 +91,21 @@ public class PlayerManager : MovingObject
             }
 
             while (currentWalkCount < walkCount)
+            {
+                if (vector.x != 0)
                 {
-                    if (vector.x != 0)
-                    {
-                        transform.Translate(vector.x * (speed + applyRunSpeed), 0, 0);
-                    }
-                    else if (vector.y != 0)
-                    {
-                        transform.Translate(0, vector.y * (speed + applyRunSpeed), 0);
-                    }
-
-                    if (applyRunFlag) currentWalkCount++;
-                    currentWalkCount++;
-
-                    if (currentWalkCount == 12)
-                        boxCollider.offset = Vector2.zero;
-
-                    yield return new WaitForSeconds(0.01f);
-
+                    transform.Translate(vector.x * (speed + applyRunSpeed), 0, 0);
                 }
+                else if (vector.y != 0)
+                {
+                    transform.Translate(0, vector.y * (speed + applyRunSpeed), 0);
+                }
+
+                if (applyRunFlag) currentWalkCount++;
+                currentWalkCount++;
+
+                yield return new WaitForSeconds(0.01f);
+            }
 
             currentWalkCount = 0;
         }
@@ -124,10 +120,8 @@ public class PlayerManager : MovingObject
         {
             if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
             {
-                // "Horizontal" 우 방향키가 눌리면 1 리턴, 좌 방향키가 눌리면 -1 리턴
-                // "Vertical"인 경우, 상은 1 리턴, 하는 -1 리턴
                 canMove = false;
-                StartCoroutine(MoveCoroutine()); // 방향키를 누르는 순간 동시에 여러 개 실행됨
+                StartCoroutine(MoveCoroutine());
             }
         }
     }
