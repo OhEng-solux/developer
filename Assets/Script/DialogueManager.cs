@@ -47,6 +47,10 @@ public class DialogueManager : MonoBehaviour
     // 이벤트 선언
     public delegate void SentenceFinishedHandler(int sentenceIndex);
     public event SentenceFinishedHandler OnSentenceFinished;
+    //이름 입력을 위한 변수
+    private bool isWaitingForName = false;
+    private string playerName = "";
+    public NameInputManager nameInputManager;
 
     void Start()
     {
@@ -58,8 +62,49 @@ public class DialogueManager : MonoBehaviour
         theAudio = FindAnyObjectByType<AudioManager>();
         theOrder = FindAnyObjectByType<OrderManager>();
 
-        OnSentenceFinished += HandleSentenceEvents;
+
+
+        //이벤트 구독
+        OnSentenceFinished += HandleSentenceFinished;
+
     }
+
+    //대화 중 입력창 표시
+    private void HandleSentenceFinished(int sentenceIndex)
+    {
+        if (sentenceIndex == 3 && !FindFirstObjectByType<PlayerManager>().hasEnteredName)
+        {
+            isWaitingForName = true;
+            keyActivated = false;
+            nameInputManager.ShowPanel();
+        }
+    }
+    /*
+    public GameObject nameInputPanel;
+    public InputField nameInputField; // UI 캔버스에 붙일 위치 
+
+   private void ShowNameInputPanel()
+    {
+        nameInputPanel.SetActive(true);
+        nameInputField.text = "";             // 입력창 초기화 (선택)
+        nameInputField.ActivateInputField();   // 키보드 포커스 주기 (선택)
+    }
+    private void HideNameInputPanel()
+    {
+        nameInputPanel.SetActive(false);
+    }
+    */
+    public void OnNameInputCompleted(string inputName)
+    {
+        playerName = inputName;
+        FindFirstObjectByType<PlayerManager>().hasEnteredName = true;
+        isWaitingForName = false;
+        count++;
+        ContinueDialogue();
+    }
+
+
+    //--입력 관련 함수
 
     public void ShowDialogue(Dialogue dialogue)
     {
@@ -96,6 +141,7 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(StartDialogueCoroutine());
     }
 
+
     public void ExitDialogue()
     {
         count = 0;
@@ -107,6 +153,7 @@ public class DialogueManager : MonoBehaviour
         animDialogueWindow.SetBool("Appear", false);
         talking = false;
         theOrder.Move();
+        DialogueProgressManager.instance.AddDialogueCount();
     }
 
     IEnumerator StartDialogueCoroutine()
@@ -145,11 +192,12 @@ public class DialogueManager : MonoBehaviour
         }
 
         keyActivated = false;
+        string processedLine = listSentences[count].Replace("$playerName",FindFirstObjectByType<PlayerManager>().characterName);//이름 대입
         text.text = "";
 
-        for (int i = 0; i < listSentences[count].Length; i++)
+        for (int i = 0; i < processedLine.Length; i++)
         {
-            text.text += listSentences[count][i];
+            text.text += processedLine[i];
             if (i % 7 == 1)
             {
                 theAudio.Play(typeSound);
@@ -192,7 +240,7 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        if (talking && keyActivated)
+        if (talking && keyActivated && !isWaitingForName)
         {
             if (Input.GetKeyDown(KeyCode.Z))
             {
