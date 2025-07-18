@@ -8725,6 +8725,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 2a7509f284ae40c4cbc4bd250844e6a5, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+  npcMoveTriggerIndex: 3
 --- !u!61 &1099742526
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10194,6 +10195,7 @@ MonoBehaviour:
   currentMapName: 
   runSpeed: 0.1
   notMove: 0
+  hasEnteredName: 0
 --- !u!95 &1306316781
 Animator:
   serializedVersion: 7

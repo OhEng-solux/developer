@@ -51,6 +51,8 @@ public class DialogueManager : MonoBehaviour
     public event SentenceFinishedHandler OnSentenceFinished;
 
     private bool isPaused = false; // 대사 일시정지 상태 플래그
+    private int currentNpcMoveTriggerIndex = -1; // npc 이동 시점 설정을 위한 변수
+
 
     void Start()
     {
@@ -61,7 +63,7 @@ public class DialogueManager : MonoBehaviour
         OnSentenceFinished += HandleSentenceEvents;
     }
 
-    public void ShowDialogue(Dialogue dialogue)
+    public void ShowDialogue(Dialogue dialogue, int npcTriggerIndex = -1)
     {
         if (dialogue.sentences.Length != dialogue.sprites.Length ||
             dialogue.sentences.Length != dialogue.dialogueWindows.Length)
@@ -73,6 +75,8 @@ public class DialogueManager : MonoBehaviour
 
         talking = true;
         theOrder.NotMove();
+
+        currentNpcMoveTriggerIndex = npcTriggerIndex;
 
         listSentences.Clear();
         listSprites.Clear();
@@ -170,6 +174,12 @@ public class DialogueManager : MonoBehaviour
         }
 
         keyActivated = true;
+
+        int currentIndex = count;  // 현재 문장 인덱스를 복사
+        count++;                   // 다음 문장으로 미리 증가
+
+        HandleSentenceEvents(currentIndex);  // 복사한 인덱스로 이벤트 실행
+
         OnSentenceFinished?.Invoke(count);
 
         if (autoNext)
@@ -194,7 +204,7 @@ public class DialogueManager : MonoBehaviour
 
     void HandleSentenceEvents(int sentenceIndex)
     {
-        if (sentenceIndex == 3)
+        if (sentenceIndex == currentNpcMoveTriggerIndex)
         {
             GameObject npcObj = GameObject.FindWithTag("npc");
             if (npcObj != null)
