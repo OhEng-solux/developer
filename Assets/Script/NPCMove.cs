@@ -4,7 +4,9 @@ public class NPCMover : MonoBehaviour
 {
     public Transform targetPoint;
     public float moveSpeed = 2f;
-    public bool isMoving { get; private set; } = false;
+
+    // public 필드로 변경 (접근 문제 해결용)
+    public bool isMoving = false;
 
     public void StartMoving()
     {
@@ -21,9 +23,7 @@ public class NPCMover : MonoBehaviour
             if (Vector2.Distance(transform.position, targetPoint.position) < 0.05f)
             {
                 isMoving = false;
-
-                // NPC 도착 후 사라지기 (비활성화)
-                gameObject.SetActive(false);
+                gameObject.SetActive(false); // 도착 후 비활성화
             }
         }
     }
