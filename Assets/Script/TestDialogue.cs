@@ -9,7 +9,8 @@ public class TestDialogue : MonoBehaviour
     public Dialogue dialogue; // Dialogue 스크립트의 인스턴스
     private DialogueManager theDM; // DialogueManager 스크립트의 인스턴스
     private BoxCollider2D boxCollider;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public int npcMoveTriggerIndex = -1;
+    
     void Start()
     {
         theDM = Object.FindAnyObjectByType<DialogueManager>(); // DialogueManager 인스턴스를 찾습니다.
@@ -20,14 +21,13 @@ public class TestDialogue : MonoBehaviour
         string name = PlayerManager.instance.characterName; // 혹은 FindObjectOfType<PlayerManager>().characterName;
         return original.Replace("$playerName", name);
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "player") // 플레이어가 충돌했을 때
         {
             if (!theDM.talking) // DialogueManager가 대화 중이 아닐 때 -> 대화가 두 번 반복되는 버그 해결
             {
-                theDM.ShowDialogue(dialogue);
+                theDM.ShowDialogue(dialogue, npcMoveTriggerIndex); //인덱스도 같이 전달
                 boxCollider.enabled = false;
                 // DialogueManager의 ShowDialogue 메서드를 호출하여 대화를 시작합니다.
             }

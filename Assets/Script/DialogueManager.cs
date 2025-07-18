@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -50,12 +51,17 @@ public class DialogueManager : MonoBehaviour
     public delegate void SentenceFinishedHandler(int sentenceIndex);
     public event SentenceFinishedHandler OnSentenceFinished;
 
-    private bool isPaused = false; // 대사 일시정지 상태 플래그
+    private bool isPaused = false;
+    private bool isWaitingForName = false;
+    private string playerName = "";
 
     void Start()
     {
         count = 0;
         text.text = "";
+        listSentences = new List<string>();
+        listSprites = new List<Sprite>();
+        listDialogueWindows = new List<Sprite>();
         theAudio = FindAnyObjectByType<AudioManager>();
         theOrder = FindAnyObjectByType<OrderManager>();
         OnSentenceFinished += HandleSentenceEvents;
@@ -66,7 +72,7 @@ public class DialogueManager : MonoBehaviour
         if (dialogue.sentences.Length != dialogue.sprites.Length ||
             dialogue.sentences.Length != dialogue.dialogueWindows.Length)
         {
-            Debug.LogError($"[DialogueManager] Dialogue 배열 크기가 일치하지 않습니다. ({dialogue.sentences.Length}, {dialogue.sprites.Length}, {dialogue.dialogueWindows.Length})");
+            Debug.LogError("[DialogueManager] Dialogue 배열 크기가 일치하지 않습니다.");
             talking = false;
             return;
         }
@@ -78,7 +84,6 @@ public class DialogueManager : MonoBehaviour
         listSprites.Clear();
         listDialogueWindows.Clear();
 
-        // NPC 방향 초기화
         GameObject npcObj = GameObject.FindWithTag("npc");
         if (npcObj != null)
         {
@@ -157,11 +162,19 @@ public class DialogueManager : MonoBehaviour
         }
 
         keyActivated = false;
-        text.text = "";
 
-        for (int i = 0; i < listSentences[count].Length; i++)
+        string playerNameForReplace = "";
+        var playerMgr = FindFirstObjectByType<PlayerManager>();
+        if (playerMgr != null && !string.IsNullOrEmpty(playerMgr.characterName))
+            playerNameForReplace = playerMgr.characterName;
+        else
+            playerNameForReplace = playerName;
+
+        string processedLine = listSentences[count].Replace("$playerName", playerNameForReplace);
+        text.text = "";
+        for (int i = 0; i < processedLine.Length; i++)
         {
-            text.text += listSentences[count][i];
+            text.text += processedLine[i];
             if (i % 7 == 1)
             {
                 theAudio.Play(typeSound);
@@ -194,7 +207,23 @@ public class DialogueManager : MonoBehaviour
 
     void HandleSentenceEvents(int sentenceIndex)
     {
-        if (sentenceIndex == 3)
+        string currentScene = SceneManager.GetActiveScene().name;
+
+        // 이름 입력: Day1의 문장 인덱스 1에서만
+        if (currentScene == "Day1" && sentenceIndex == 3)
+        {
+            var namePanel = FindFirstObjectByType<NameInputManager>();
+            if (namePanel != null && !PlayerManager.instance.hasEnteredName)
+            {
+                isPaused = true;
+                SetKeyInputActive(false);
+                namePanel.ShowPanel();
+                return;
+            }
+        }
+
+        // 기존 Day3/Day5
+        if (currentScene == "Day3" && sentenceIndex == 3)
         {
             GameObject npcObj = GameObject.FindWithTag("npc");
             if (npcObj != null)
@@ -202,8 +231,8 @@ public class DialogueManager : MonoBehaviour
                 NPCPathMover mover = npcObj.GetComponent<NPCPathMover>();
                 if (mover != null)
                 {
-                    talking = false; // 대사 일시 정지
-                    mover.StartPath(); // 이동 시작
+                    mover.StartPath();
+                    talking = false;
                 }
             }
         }
@@ -257,11 +286,6 @@ public class DialogueManager : MonoBehaviour
         isPaused = true;
     }
 
-    public void PauseDialogue2()
-    {
-        keyActivated = false;
-    }
-
     public void ContinueDialogue()
     {
         if (count >= listSentences.Count)
@@ -270,7 +294,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        talking = true; // 대사 재개를 위해 talking 활성화
+        talking = true;
         isPaused = false;
         SetKeyInputActive(true);
 
@@ -281,21 +305,6 @@ public class DialogueManager : MonoBehaviour
     public void SkipToNextSentence()
     {
         count++;
-    }
-
-    public void PauseDialogueForSeconds(float seconds)
-    {
-        if (isPaused) return;
-        StartCoroutine(PauseAndContinueCoroutine(seconds));
-    }
-
-    private IEnumerator PauseAndContinueCoroutine(float seconds)
-    {
-        PauseDialogue();
-
-        yield return new WaitForSeconds(seconds);
-
-        ContinueDialogue();
     }
 
     public void WaitAndContinue(float seconds)
@@ -311,10 +320,19 @@ public class DialogueManager : MonoBehaviour
         ContinueDialogue();
     }
 
-    // 이름 입력 완료 처리 함수
     public void OnNameInputCompleted(string inputName)
     {
-        Debug.Log("이름 입력 완료: " + inputName);
-        ContinueDialogue(); // 혹은 다른 처리
+        playerName = inputName;
+
+        var player = FindFirstObjectByType<PlayerManager>();
+        if (player != null)
+        {
+            player.characterName = inputName;
+            player.hasEnteredName = true;
+        }
+
+        SkipToNextSentence(); // 현재 문장을 넘기고
+        ContinueDialogue();   // 다음 문장부터 이어서 출력
     }
+
 }

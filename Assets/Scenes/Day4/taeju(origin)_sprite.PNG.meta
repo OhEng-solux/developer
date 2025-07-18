@@ -1,0 +1,455 @@
+fileFormatVersion: 2
+guid: 98db25023ecf246818b8b4a87d9a78a6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1725015202045144788
+    second: taeju(origin)_sprite_0
+  - first:
+      213: -2438413433945838275
+    second: taeju(origin)_sprite_1
+  - first:
+      213: -8271121898509731879
+    second: taeju(origin)_sprite_2
+  - first:
+      213: 2538048677746773897
+    second: taeju(origin)_sprite_3
+  - first:
+      213: 5862192213804514270
+    second: taeju(origin)_sprite_4
+  - first:
+      213: 5421883407098802343
+    second: taeju(origin)_sprite_5
+  - first:
+      213: 8435363850540078628
+    second: taeju(origin)_sprite_6
+  - first:
+      213: -2352927629495224900
+    second: taeju(origin)_sprite_7
+  - first:
+      213: -7240156434035624601
+    second: taeju(origin)_sprite_8
+  - first:
+      213: -2633836242141577114
+    second: taeju(origin)_sprite_9
+  - first:
+      213: -5479424167775960828
+    second: taeju(origin)_sprite_10
+  - first:
+      213: 7446861752848237232
+    second: taeju(origin)_sprite_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: taeju(origin)_sprite_0
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 1449
+        width: 202
+        height: 372
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4deac0ecf2c70f710800000000000000
+      internalID: 1725015202045144788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: taeju(origin)_sprite_1
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 1449
+        width: 202
+        height: 372
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3d2e1ea6e3092ed0800000000000000
+      internalID: -2438413433945838275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: taeju(origin)_sprite_2
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 1449
+        width: 202
+        height: 372
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d77f51a472173d80800000000000000
+      internalID: -8271121898509731879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: taeju(origin)_sprite_3
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 969
+        width: 182
+        height: 372
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98f0fb343d5f83320800000000000000
+      internalID: 2538048677746773897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: taeju(origin)_sprite_4
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 969
+        width: 182
+        height: 372
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edbf0ec52c0ba5150800000000000000
+      internalID: 5862192213804514270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: taeju(origin)_sprite_5
+      rect:
+        serializedVersion: 2
+        x: 1109
+        y: 969
+        width: 182
+        height: 372
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a075bd7b366e3b40800000000000000
+      internalID: 5421883407098802343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: taeju(origin)_sprite_6
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 489
+        width: 182
+        height: 372
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 426dc96cabe601570800000000000000
+      internalID: 8435363850540078628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: taeju(origin)_sprite_7
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 489
+        width: 182
+        height: 372
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb53cbd89c8b85fd0800000000000000
+      internalID: -2352927629495224900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: taeju(origin)_sprite_8
+      rect:
+        serializedVersion: 2
+        x: 1109
+        y: 489
+        width: 182
+        height: 372
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7653c0f451cc58b90800000000000000
+      internalID: -7240156434035624601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: taeju(origin)_sprite_9
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 9
+        width: 202
+        height: 372
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6600a9674ebb27bd0800000000000000
+      internalID: -2633836242141577114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: taeju(origin)_sprite_10
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 9
+        width: 202
+        height: 372
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 401060a20cc25f3b0800000000000000
+      internalID: -5479424167775960828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: taeju(origin)_sprite_11
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 9
+        width: 202
+        height: 372
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b246fd1f41985760800000000000000
+      internalID: 7446861752848237232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      taeju(origin)_sprite_0: 1725015202045144788
+      taeju(origin)_sprite_1: -2438413433945838275
+      taeju(origin)_sprite_10: -5479424167775960828
+      taeju(origin)_sprite_11: 7446861752848237232
+      taeju(origin)_sprite_2: -8271121898509731879
+      taeju(origin)_sprite_3: 2538048677746773897
+      taeju(origin)_sprite_4: 5862192213804514270
+      taeju(origin)_sprite_5: 5421883407098802343
+      taeju(origin)_sprite_6: 8435363850540078628
+      taeju(origin)_sprite_7: -2352927629495224900
+      taeju(origin)_sprite_8: -7240156434035624601
+      taeju(origin)_sprite_9: -2633836242141577114
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

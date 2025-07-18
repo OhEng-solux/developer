@@ -108,6 +108,8 @@ public class MovingObject : MonoBehaviour
                 yield return new WaitForSeconds(0.01f);
             }
 
+
+
             currentWalkCount=0;
             if(_frequency!=5)
                 animator.SetBool("Walking", false);
