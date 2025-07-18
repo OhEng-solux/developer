@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -71,7 +72,7 @@ public class DialogueManager : MonoBehaviour
         if (dialogue.sentences.Length != dialogue.sprites.Length ||
             dialogue.sentences.Length != dialogue.dialogueWindows.Length)
         {
-            Debug.LogError($"[DialogueManager] Dialogue 배열 크기가 일치하지 않습니다. ({dialogue.sentences.Length}, {dialogue.sprites.Length}, {dialogue.dialogueWindows.Length})");
+            Debug.LogError("[DialogueManager] Dialogue 배열 크기가 일치하지 않습니다.");
             talking = false;
             return;
         }
@@ -83,7 +84,6 @@ public class DialogueManager : MonoBehaviour
         listSprites.Clear();
         listDialogueWindows.Clear();
 
-        // NPC 방향 초기화
         GameObject npcObj = GameObject.FindWithTag("npc");
         if (npcObj != null)
         {
@@ -163,7 +163,6 @@ public class DialogueManager : MonoBehaviour
 
         keyActivated = false;
 
-        // ------------ 여기서 $playerName 치환 -------------
         string playerNameForReplace = "";
         var playerMgr = FindFirstObjectByType<PlayerManager>();
         if (playerMgr != null && !string.IsNullOrEmpty(playerMgr.characterName))
@@ -182,7 +181,6 @@ public class DialogueManager : MonoBehaviour
             }
             yield return new WaitForSeconds(0.01f);
         }
-        // ------------ 치환 끝! ------------
 
         keyActivated = true;
         OnSentenceFinished?.Invoke(count);
@@ -209,7 +207,23 @@ public class DialogueManager : MonoBehaviour
 
     void HandleSentenceEvents(int sentenceIndex)
     {
-        if (sentenceIndex == 3)
+        string currentScene = SceneManager.GetActiveScene().name;
+
+        // 이름 입력: Day1의 문장 인덱스 1에서만
+        if (currentScene == "Day1" && sentenceIndex == 3)
+        {
+            var namePanel = FindFirstObjectByType<NameInputManager>();
+            if (namePanel != null && !PlayerManager.instance.hasEnteredName)
+            {
+                isPaused = true;
+                SetKeyInputActive(false);
+                namePanel.ShowPanel();
+                return;
+            }
+        }
+
+        // 기존 Day3/Day5
+        if (currentScene == "Day3" && sentenceIndex == 3)
         {
             GameObject npcObj = GameObject.FindWithTag("npc");
             if (npcObj != null)
@@ -223,7 +237,6 @@ public class DialogueManager : MonoBehaviour
             }
         }
     }
-
 
     void Update()
     {
@@ -273,11 +286,6 @@ public class DialogueManager : MonoBehaviour
         isPaused = true;
     }
 
-    public void PauseDialogue2()
-    {
-        keyActivated = false;
-    }
-
     public void ContinueDialogue()
     {
         if (count >= listSentences.Count)
@@ -299,19 +307,6 @@ public class DialogueManager : MonoBehaviour
         count++;
     }
 
-    public void PauseDialogueForSeconds(float seconds)
-    {
-        if (isPaused) return;
-        StartCoroutine(PauseAndContinueCoroutine(seconds));
-    }
-
-    private IEnumerator PauseAndContinueCoroutine(float seconds)
-    {
-        PauseDialogue();
-        yield return new WaitForSeconds(seconds);
-        ContinueDialogue();
-    }
-
     public void WaitAndContinue(float seconds)
     {
         StartCoroutine(WaitAndContinueCoroutine(seconds));
@@ -325,10 +320,19 @@ public class DialogueManager : MonoBehaviour
         ContinueDialogue();
     }
 
-    // 이름 입력 예시용 함수(필요시)
     public void OnNameInputCompleted(string inputName)
     {
         playerName = inputName;
-        ContinueDialogue();
+
+        var player = FindFirstObjectByType<PlayerManager>();
+        if (player != null)
+        {
+            player.characterName = inputName;
+            player.hasEnteredName = true;
+        }
+
+        SkipToNextSentence(); // 현재 문장을 넘기고
+        ContinueDialogue();   // 다음 문장부터 이어서 출력
     }
+
 }
