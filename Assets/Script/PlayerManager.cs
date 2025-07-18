@@ -32,7 +32,7 @@ public class PlayerManager : MovingObject
             theAudio = FindObjectOfType<AudioManager>();
             instance = this;
 
-            boxCollider.offset = new Vector2(0, -2f);
+            boxCollider.offset = new Vector2(0, -0.1f);
         }
         else
         {

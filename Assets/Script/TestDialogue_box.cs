@@ -8,10 +8,19 @@ public class TestDialogue_box : MonoBehaviour
     [SerializeField]
     public Dialogue dialogue; // Dialogue 스크립트의 인스턴스
     private DialogueManager theDM; // DialogueManager 스크립트의 인스턴스
+    private BoxCollider2D boxCollider;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        theDM = Object.FindAnyObjectByType<DialogueManager>(); // DialogueManager 인스턴스를 찾습니다.
+        theDM = Object.FindAnyObjectByType<DialogueManager>();
+        boxCollider = GetComponent<BoxCollider2D>();
+    }
+
+    private string ReplacePlayerName(string original)
+    {
+        string name = PlayerManager.instance.characterName;
+        return original.Replace("$playerName", name);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -6,7 +6,6 @@ public class NameInputManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public GameObject nameInputPanel;
     public InputField nameInputField;
-
     public DialogueManager dialogueManager;// Inspector¿¡ ¿¬°á
     void Start()
     {
