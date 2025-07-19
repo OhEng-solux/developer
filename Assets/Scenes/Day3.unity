@@ -4193,8 +4193,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transferMapName: Lobby
-  target: {fileID: 0}
-  targetBound: {fileID: 0}
+  target: {fileID: 1737183833}
+  targetBound: {fileID: 1863808540}
   thePlayer: {fileID: 0}
 --- !u!61 &327291385
 BoxCollider2D:

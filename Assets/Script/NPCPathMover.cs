@@ -7,9 +7,6 @@ public class NPCPathMover : MonoBehaviour
     public List<Vector2> waypoints;
     public float moveSpeed = 2f;
 
-    [Header("Day2 대사 연결")]
-    public Dialogue day2Dialogue; // 도착 후 플레이어에게 자동으로 시작할 대사
-
     private int currentIndex = 0;
     private bool isMoving = false;
     private Animator animator;
@@ -64,15 +61,18 @@ public class NPCPathMover : MonoBehaviour
                     string currentScene = SceneManager.GetActiveScene().name;
 
                     // Day3: 이동 후 대사 재개
-                    if (currentScene == "Day3")
+                    if (currentScene == "Day3" && DialogueManager.instance != null)
                     {
-                        if (DialogueManager.instance != null)
+                        if (DialogueManager.instance.HasMoreSentences())
                         {
                             DialogueManager.instance.talking = true;
                             DialogueManager.instance.ContinueDialogue();
                         }
+
+                        gameObject.SetActive(false);
                     }
-                  
+
+
 
                     // gameObject.SetActive(false); // 필요하다면 유지
                 }

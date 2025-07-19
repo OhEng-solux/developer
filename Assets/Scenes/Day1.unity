@@ -19217,7 +19217,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1814127615
   m_SortingLayer: 6
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -4012656024804308703, guid: 0287b2accd48540dfadf0a792713887a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -19852,8 +19852,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e30fbbe28cd22f8459065b1ba4e555bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundImage: {fileID: 1558422594}
-  dialogueTrigger: {fileID: 0}
 --- !u!4 &1793579490
 Transform:
   m_ObjectHideFlags: 0

@@ -281,6 +281,13 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    // DialogueManager.cs에 추가
+    public bool HasMoreSentences()
+    {
+        return count < listSentences.Count;
+    }
+
+
     void Update()
     {
         if (talking && keyActivated && !isPaused)
