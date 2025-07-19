@@ -2,6 +2,12 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
+    public AudioManager audioManager; // 오디오 매니저 직접 연결
+    public string keySound;
+    public string enterSound;
+    public string openSound;
+    public string beepSound;
+
     public GameObject inventoryPanel;
     public InventorySlot[] slots; // 슬롯 배열
     public Item[] items; // 아이템 데이터 배열 (슬롯에 들어갈 아이템 정보들)
@@ -18,15 +24,21 @@ public class InventoryManager : MonoBehaviour
         // X 키를 눌렀을 때 인벤토리 열고 닫기 토글
         if (Input.GetKeyDown(KeyCode.X))
         {
-            Debug.Log("X key pressed"); // 🔴 디버그 로그 추가
             isOpen = !isOpen;
             inventoryPanel.SetActive(isOpen);
 
             if (isOpen)
             {
-                Debug.Log("Inventory Opened"); // 🔴 디버그 로그 추가
+                audioManager.Play(openSound);
                 UpdateSlots(); // 인벤토리 열렸을 때 슬롯에 아이템 정보 갱신
                 HighlightSlot(currentIndex); // 현재 인덱스에 해당하는 슬롯에만 강조 표시
+
+                GameObject.FindWithTag("Player").GetComponent<PlayerManager>().canMove = false; //이동 제한
+            }
+            else
+            {
+                audioManager.Play(openSound);
+                GameObject.FindWithTag("Player").GetComponent<PlayerManager>().canMove = true;
             }
         }
 
@@ -35,11 +47,13 @@ public class InventoryManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            MoveHighlight(-1); // 왼쪽으로 이동
+            MoveCursor(-1); // 왼쪽으로 이동
+            audioManager.Play(keySound);
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            MoveHighlight(1); // 오른쪽으로 이동
+            MoveCursor(1); // 오른쪽으로 이동
+            audioManager.Play(keySound);
         }
     }
 
@@ -60,13 +74,15 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    void MoveHighlight(int direction) // 방향키 입력으로 슬롯 선택 이동
+    void MoveCursor(int direction) // 방향키 입력으로 슬롯 선택 이동
     {
         currentIndex += direction;
 
-        // 경계 체크: 0 ~ (슬롯 개수 - 1)
-        if (currentIndex < 0) currentIndex = 0;
-        if (currentIndex >= slots.Length) currentIndex = slots.Length - 1;
+        // 커서가 배열 범위를 넘으면 순환되도록 처리
+        if (currentIndex < 0)
+            currentIndex = slots.Length - 1;
+        else if (currentIndex >= slots.Length)
+            currentIndex = 0;
 
         HighlightSlot(currentIndex);
     }

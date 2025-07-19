@@ -10,7 +10,7 @@ public class PlayerManager : MovingObject
     public float runSpeed;
     private float applyRunSpeed;
     private bool applyRunFlag = false;
-    private bool canMove = true;
+    public bool canMove = true;
     public bool notMove = false;
 
     public bool hasEnteredName = false;

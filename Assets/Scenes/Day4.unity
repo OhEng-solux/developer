@@ -1102,6 +1102,16 @@ MonoBehaviour:
     source: {fileID: 0}
     Volume: 2
     loop: 0
+  - name: ok_sound
+    clip: {fileID: 8300000, guid: 3a3ede64940be364eacd3236df6480da, type: 3}
+    source: {fileID: 0}
+    Volume: 2
+    loop: 0
+  - name: beep_sound
+    clip: {fileID: 8300000, guid: 65889d2d8d24e4f43bff66afb409268e, type: 3}
+    source: {fileID: 0}
+    Volume: 2
+    loop: 0
 --- !u!4 &158991177
 Transform:
   m_ObjectHideFlags: 0
@@ -1998,12 +2008,13 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1381645203}
+  - {fileID: 882299281}
   m_Father: {fileID: 255334660}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 594, y: -198}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &248675656
 GameObject:
@@ -2380,6 +2391,7 @@ MonoBehaviour:
   talking: 0
   autoNext: 0
   autoNextDelay: 2
+  itemPanel: {fileID: 0}
 --- !u!114 &255334657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7757,6 +7769,74 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &882299280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 882299281}
+  - component: {fileID: 882299282}
+  m_Layer: 0
+  m_Name: InventoryManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &882299281
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882299280}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.000030517578, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 248663018}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &882299282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882299280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 380857be114b841c8b62481dad25c3f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioManager: {fileID: 158991176}
+  keySound: type_sound
+  enterSound: enter_sound
+  openSound: ok_sound
+  beepSound: beep_sound
+  inventoryPanel: {fileID: 1381645202}
+  slots:
+  - {fileID: 1268792638}
+  - {fileID: 2023563661}
+  - {fileID: 1487867484}
+  - {fileID: 668615855}
+  items:
+  - itemName: "\uC870\uB9AC\uC2E4 \uC0AC\uC6A9 \uADDC\uCE59"
+    icon: {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    isObtained: 1
+  - itemName: "\uAD75\uC740 \uC18C\uAE08"
+    icon: {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    isObtained: 0
+  - itemName: "\uBCF4\uC11D \uC0AC\uD0D5"
+    icon: {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    isObtained: 0
+  - itemName: "\uC9C0\uD558\uC2E4 \uC5F4\uC1E0"
+    icon: {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    isObtained: 1
 --- !u!1 &899793827
 GameObject:
   m_ObjectHideFlags: 0
@@ -10375,7 +10455,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1381645203}
   - component: {fileID: 1381645204}
-  - component: {fileID: 1381645205}
   m_Layer: 0
   m_Name: Inventory_UI
   m_TagString: Untagged
@@ -10392,8 +10471,8 @@ Transform:
   m_GameObject: {fileID: 1381645202}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalPosition: {x: -593, y: 198, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1606167621}
@@ -10455,29 +10534,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1381645205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1381645202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 380857be114b841c8b62481dad25c3f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventoryPanel: {fileID: 1381645202}
-  slots:
-  - {fileID: 1268792638}
-  - {fileID: 2023563661}
-  - {fileID: 1487867484}
-  - {fileID: 668615855}
-  items:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1 &1392430167
 GameObject:
   m_ObjectHideFlags: 0
@@ -17337,6 +17393,7 @@ MonoBehaviour:
   animator: {fileID: 1928187255}
   currentMapName: 
   runSpeed: 0.1
+  canMove: 1
   notMove: 0
   hasEnteredName: 0
 --- !u!95 &1928187255

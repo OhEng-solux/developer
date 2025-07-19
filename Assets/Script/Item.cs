@@ -1,6 +1,6 @@
 using UnityEngine;
 [System.Serializable]
-public class Item : MonoBehaviour
+public struct Item
 {
     public string itemName;
     public Sprite icon;
