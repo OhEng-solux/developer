@@ -46,7 +46,7 @@ public class NPCPathMover : MonoBehaviour
             {
                 animator.SetFloat("DirX", direction.x);
                 animator.SetFloat("DirY", direction.y);
-                animator.SetBool("Walking", true);
+                // animator.SetBool("Walking", true);
             }
 
             if (Vector2.Distance(current, target) < 0.01f)
@@ -55,8 +55,8 @@ public class NPCPathMover : MonoBehaviour
                 if (currentIndex >= waypoints.Count)
                 {
                     isMoving = false;
-                    if (animator != null)
-                        animator.SetBool("Walking", false);
+                    // if (animator != null)
+                        // animator.SetBool("Walking", false);
 
                     string currentScene = SceneManager.GetActiveScene().name;
 
