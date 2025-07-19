@@ -9,4 +9,5 @@ public class Dialogue
     public string[] sentences; //-> 대화 문장 배열
     public Sprite[] sprites;
     public Sprite[] dialogueWindows; //-> 대화창 이미지 배열 // 누구 대화창인지
+
 }

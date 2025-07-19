@@ -6,11 +6,15 @@ using System.Collections;
 public class TestDialogue_box : MonoBehaviour
 {
     [SerializeField]
-    public Dialogue dialogue; // Dialogue 스크립트의 인스턴스
-    private DialogueManager theDM; // DialogueManager 스크립트의 인스턴스
+    public Dialogue dialogue;
+
+    private DialogueManager theDM;
     private BoxCollider2D boxCollider;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private float talkCooldown = 1f; // 재대화 가능 시간 간격 (초)
+    private float lastTalkTime = -10f; // 마지막 대화 시간
+
+
     void Start()
     {
         theDM = Object.FindAnyObjectByType<DialogueManager>();
@@ -25,12 +29,14 @@ public class TestDialogue_box : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "player") // 플레이어가 충돌했을 때
+        if (collision.gameObject.name == "player")
         {
-            if (!theDM.talking) // DialogueManager가 대화 중이 아닐 때 -> 대화가 두 번 반복되는 버그 해결
+            float currentTime = Time.time;
+            if (!theDM.talking && currentTime - lastTalkTime > talkCooldown)
             {
-                theDM.ShowDialogue(dialogue);
-                // DialogueManager의 ShowDialogue 메서드를 호출하여 대화를 시작합니다.
+                lastTalkTime = currentTime;
+                theDM.ShowDialogue(dialogue, false); // 대화는 나오지만 카운트 안 올림
+
             }
         }
     }
