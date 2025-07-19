@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class NPCPathMover : MonoBehaviour
 {
@@ -9,10 +10,12 @@ public class NPCPathMover : MonoBehaviour
     private int currentIndex = 0;
     private bool isMoving = false;
     private Animator animator;
+    private string currentScene;
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        currentScene = SceneManager.GetActiveScene().name;
 
         if (animator != null)
         {
@@ -23,6 +26,11 @@ public class NPCPathMover : MonoBehaviour
         if (waypoints.Count > 0)
         {
             transform.position = new Vector3(waypoints[0].x, waypoints[0].y, transform.position.z);
+        }
+
+        if (currentScene == "Day2")
+        {
+            StartPath(); // Day2: 시작하자마자 걷기
         }
     }
 
@@ -40,7 +48,12 @@ public class NPCPathMover : MonoBehaviour
             {
                 animator.SetFloat("DirX", direction.x);
                 animator.SetFloat("DirY", direction.y);
-                animator.SetBool("Walking", true);
+
+                // Day3에서만 Walking 파라미터 사용
+                if (currentScene == "Day3")
+                {
+                    animator.SetBool("Walking", true);
+                }
             }
 
             if (Vector2.Distance(current, target) < 0.01f)
@@ -49,17 +62,25 @@ public class NPCPathMover : MonoBehaviour
                 if (currentIndex >= waypoints.Count)
                 {
                     isMoving = false;
-                    if (animator != null)
-                        animator.SetBool("Walking", false);
 
-                    // 이동 후 대사 재개
-                    if (DialogueManager.instance != null)
+                    if (animator != null && currentScene == "Day3")
                     {
-                        DialogueManager.instance.talking = true;
-                        DialogueManager.instance.ContinueDialogue();
+                        animator.SetBool("Walking", false);
                     }
 
-                    gameObject.SetActive(false);
+                    // Day3: 이동 후 대사 재개
+                    if (currentScene == "Day3" && DialogueManager.instance != null)
+                    {
+                        if (DialogueManager.instance.HasMoreSentences())
+                        {
+                            DialogueManager.instance.talking = true;
+                            DialogueManager.instance.ContinueDialogue();
+                        }
+
+                        gameObject.SetActive(false);
+                    }
+
+                    // gameObject.SetActive(false); // 필요하면 유지
                 }
             }
         }
@@ -67,11 +88,10 @@ public class NPCPathMover : MonoBehaviour
 
     public void StartPath()
     {
-        if (waypoints.Count > 0)
+        if (waypoints.Count > 1)
         {
             isMoving = true;
-            currentIndex = 0;
-            transform.position = new Vector3(waypoints[0].x, waypoints[0].y, transform.position.z);
+            currentIndex = 1;
         }
     }
 

@@ -15,6 +15,7 @@ public class DialogueManager : MonoBehaviour
         {
             DontDestroyOnLoad(this.gameObject);
             instance = this;
+            hasShownItemPanel = false; // 최초 1회 초기화
         }
         else
         {
@@ -52,10 +53,37 @@ public class DialogueManager : MonoBehaviour
     public event SentenceFinishedHandler OnSentenceFinished;
 
     private bool isPaused = false;
-    private bool isWaitingForName = false;
     private string playerName = "";
 
     private bool countUpOnFinish = true;
+
+    // 아이템 패널 변수
+    public GameObject itemPanel;
+    private bool shouldHideItemPanelNext = false;
+    private bool hasShownItemPanel = false;
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "Day2")
+        {
+            hasShownItemPanel = false;
+        }
+        else
+        {
+            // 필요 시 다른 씬에 맞춰 초기화 처리 가능
+        }
+
+        if (itemPanel != null)
+            itemPanel.SetActive(false);
+    }
 
     void Start()
     {
@@ -73,7 +101,6 @@ public class DialogueManager : MonoBehaviour
     {
         countUpOnFinish = shouldCount;
 
-        // 기존 내용 그대로 유지
         if (dialogue.sentences.Length != dialogue.sprites.Length ||
             dialogue.sentences.Length != dialogue.dialogueWindows.Length)
         {
@@ -115,7 +142,6 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(StartDialogueCoroutine());
     }
 
-
     public void ExitDialogue()
     {
         count = 0;
@@ -135,11 +161,29 @@ public class DialogueManager : MonoBehaviour
         }
 
         countUpOnFinish = true;
-    }
 
+        if (SceneManager.GetActiveScene().name == "Day2")
+        {
+            GameObject npcObj = GameObject.FindWithTag("npc");
+            if (npcObj != null)
+            {
+                NPCPathMover mover = npcObj.GetComponent<NPCPathMover>();
+                if (mover != null)
+                {
+                    mover.StartPath();
+                }
+            }
+        }
+    }
 
     IEnumerator StartDialogueCoroutine()
     {
+        if (shouldHideItemPanelNext && itemPanel != null)
+        {
+            itemPanel.SetActive(false);
+            shouldHideItemPanelNext = false;
+        }
+
         if (count < 0 || count >= listSentences.Count)
         {
             ExitDialogue();
@@ -224,7 +268,6 @@ public class DialogueManager : MonoBehaviour
     {
         string currentScene = SceneManager.GetActiveScene().name;
 
-        // 이름 입력: Day1의 문장 인덱스 1에서만
         if (currentScene == "Day1" && sentenceIndex == 3)
         {
             var namePanel = FindFirstObjectByType<NameInputManager>();
@@ -237,7 +280,30 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
-        // 기존 Day3/Day5
+        if (currentScene == "Day2" && sentenceIndex == 0)
+        {
+            GameObject npcObj = GameObject.FindWithTag("npc");
+            if (npcObj != null)
+            {
+                NPCPathMover mover = npcObj.GetComponent<NPCPathMover>();
+                if (mover != null)
+                {
+                    mover.StartPath();
+                    talking = false;
+                }
+            }
+        }
+
+        if (currentScene == "Day2" && sentenceIndex == 2)
+        {
+            if (!hasShownItemPanel && itemPanel != null)
+            {
+                itemPanel.SetActive(true);
+                shouldHideItemPanelNext = true;
+                hasShownItemPanel = true;
+            }
+        }
+
         if (currentScene == "Day3" && sentenceIndex == 3)
         {
             GameObject npcObj = GameObject.FindWithTag("npc");
@@ -251,6 +317,11 @@ public class DialogueManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public bool HasMoreSentences()
+    {
+        return count < listSentences.Count;
     }
 
     void Update()
@@ -346,8 +417,7 @@ public class DialogueManager : MonoBehaviour
             player.hasEnteredName = true;
         }
 
-        SkipToNextSentence(); // 현재 문장을 넘기고
-        ContinueDialogue();   // 다음 문장부터 이어서 출력
+        SkipToNextSentence();
+        ContinueDialogue();
     }
-
 }
