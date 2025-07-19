@@ -328,7 +328,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (talking && keyActivated && !isPaused)
         {
-            if (Input.GetKeyDown(KeyCode.Z))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 keyActivated = false;
                 count++;

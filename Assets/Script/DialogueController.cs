@@ -7,12 +7,12 @@ public class DialogueController : MonoBehaviour
 
     void Awake()
     {
-        theDM = FindObjectOfType<DialogueManager>();
+        theDM = FindFirstObjectByType<DialogueManager>();
     }
 
-    /// <summary>
-    /// ÀÏÁ¤ ½Ã°£ ¸ØÃá µÚ ´ÙÀ½ ¹®ÀåÀ¸·Î ÀÚµ¿ ÁøÇà
-    /// </summary>
+    // <summary>
+    // ì¼ì • ì‹œê°„ í›„ ë‹¤ìŒ ë¬¸ì¥ìœ¼ë¡œ ë„˜ì–´ê°
+    // </summary>
     public void WaitAndContinue(float seconds)
     {
         StartCoroutine(WaitAndContinueCoroutine(seconds));
@@ -22,7 +22,7 @@ public class DialogueController : MonoBehaviour
     {
         yield return new WaitForSeconds(seconds);
 
-        // ¹İµå½Ã talking º¹±¸!
+        // ï¿½İµï¿½ï¿½ talking ï¿½ï¿½ï¿½ï¿½!
         theDM.talking = true;
         theDM.SkipToNextSentence();
         theDM.SetKeyInputActive(true);

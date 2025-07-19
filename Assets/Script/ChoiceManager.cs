@@ -45,15 +45,15 @@ public class ChoiceManager : MonoBehaviour
     public bool choiceIng = false;
     private bool keyInput = false;
 
-    private int lastAnswerIndex = -1;  // ÀÌÀü count º¯¼ö ´ë½Å ¸íÈ®ÇÑ ÀÌ¸§À¸·Î º¯°æ
+    private int lastAnswerIndex = -1;  // ï¿½ï¿½ï¿½ï¿½ count ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½È®ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     private int result;
 
     private WaitForSeconds waitTime = new WaitForSeconds(0.01f);
 
     void Start()
     {
-        theAudio = FindObjectOfType<AudioManager>();
-        theOrder = FindObjectOfType<OrderManager>();
+        theAudio = FindFirstObjectByType<AudioManager>();
+        theOrder = FindFirstObjectByType<OrderManager>();
         answerList = new List<string>();
 
         for (int i = 0; i < answer_Text.Length; i++)

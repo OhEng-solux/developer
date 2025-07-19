@@ -29,7 +29,7 @@ public class PlayerManager : MovingObject
             DontDestroyOnLoad(this.gameObject);
             boxCollider = GetComponent<BoxCollider2D>();
             animator = GetComponent<Animator>();
-            theAudio = FindObjectOfType<AudioManager>();
+            theAudio = FindFirstObjectByType<AudioManager>();
             instance = this;
 
             boxCollider.offset = new Vector2(0, -0.1f);
@@ -44,7 +44,7 @@ public class PlayerManager : MovingObject
     {
         while ((Input.GetAxisRaw("Vertical") != 0 || Input.GetAxisRaw("Horizontal") != 0) && !notMove)
         {
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
             {
                 applyRunSpeed = runSpeed;
                 applyRunFlag = true;
