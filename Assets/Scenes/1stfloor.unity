@@ -17231,6 +17231,7 @@ MonoBehaviour:
   talking: 0
   autoNext: 0
   autoNextDelay: 2
+  itemPanel: {fileID: 0}
 --- !u!1 &663882602
 GameObject:
   m_ObjectHideFlags: 0
@@ -46816,7 +46817,7 @@ SpriteRenderer:
   m_Size: {x: 1764, y: 262}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1614142865
