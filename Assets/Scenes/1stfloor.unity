@@ -40270,7 +40270,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1347754430}
   m_Layer: 0
-  m_Name: wall
+  m_Name: moving_walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41915,7 +41915,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -3614244378596502130, guid: 356d4edf126cf4e79a15cd653c4407d3, type: 3}
       propertyPath: m_Name
-      value: base_BoxCollider
+      value: base_boxcollider
       objectReference: {fileID: 0}
     - target: {fileID: -3614244378596502130, guid: 356d4edf126cf4e79a15cd653c4407d3, type: 3}
       propertyPath: m_Layer
