@@ -17,7 +17,7 @@ public class NPCPathMover : MonoBehaviour
         if (animator != null)
         {
             animator.SetFloat("DirX", 0);
-            animator.SetFloat("DirY", -1);
+            animator.SetFloat("DirY", 1);
         }
 
         if (waypoints.Count > 0)

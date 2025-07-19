@@ -55,6 +55,8 @@ public class DialogueManager : MonoBehaviour
     private bool isWaitingForName = false;
     private string playerName = "";
 
+    private bool countUpOnFinish = true;
+
     void Start()
     {
         count = 0;
@@ -67,8 +69,11 @@ public class DialogueManager : MonoBehaviour
         OnSentenceFinished += HandleSentenceEvents;
     }
 
-    public void ShowDialogue(Dialogue dialogue)
+    public void ShowDialogue(Dialogue dialogue, bool shouldCount = true)
     {
+        countUpOnFinish = shouldCount;
+
+        // 기존 내용 그대로 유지
         if (dialogue.sentences.Length != dialogue.sprites.Length ||
             dialogue.sentences.Length != dialogue.dialogueWindows.Length)
         {
@@ -110,6 +115,7 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(StartDialogueCoroutine());
     }
 
+
     public void ExitDialogue()
     {
         count = 0;
@@ -121,7 +127,16 @@ public class DialogueManager : MonoBehaviour
         animDialogueWindow.SetBool("Appear", false);
         talking = false;
         theOrder.Move();
+
+        if (countUpOnFinish)
+        {
+            DialogueProgressManager.instance.AddDialogueCount();
+            Debug.Log("대화 완료! 현재 대화 수: " + DialogueProgressManager.instance.dialogueCount);
+        }
+
+        countUpOnFinish = true;
     }
+
 
     IEnumerator StartDialogueCoroutine()
     {
