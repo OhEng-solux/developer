@@ -5859,6 +5859,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iconImage: {fileID: 1209810456}
   highlightBorder: {fileID: 2001020421}
+  itemNameText: {fileID: 28285034}
 --- !u!1 &670927185
 GameObject:
   m_ObjectHideFlags: 0
@@ -9929,6 +9930,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iconImage: {fileID: 55691096}
   highlightBorder: {fileID: 1913442442}
+  itemNameText: {fileID: 1520488080}
 --- !u!1 &1271177466
 GameObject:
   m_ObjectHideFlags: 0
@@ -11416,6 +11418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iconImage: {fileID: 1345603311}
   highlightBorder: {fileID: 2037463899}
+  itemNameText: {fileID: 765851741}
 --- !u!1 &1488578590
 GameObject:
   m_ObjectHideFlags: 0
@@ -18124,16 +18127,16 @@ MonoBehaviour:
     - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
     dialogueWindows:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    - {fileID: 21300000, guid: 630bc2582d239294ea09ef28c0c82f03, type: 3}
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    - {fileID: 21300000, guid: 630bc2582d239294ea09ef28c0c82f03, type: 3}
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     - {fileID: 21300000, guid: a79eda00445f44ae2bec6e030a030aa7, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    - {fileID: 21300000, guid: 630bc2582d239294ea09ef28c0c82f03, type: 3}
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    - {fileID: 21300000, guid: 630bc2582d239294ea09ef28c0c82f03, type: 3}
-    - {fileID: 21300000, guid: 630bc2582d239294ea09ef28c0c82f03, type: 3}
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
@@ -18384,6 +18387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iconImage: {fileID: 1518691642}
   highlightBorder: {fileID: 678710773}
+  itemNameText: {fileID: 1482701077}
 --- !u!1 &2031198207
 GameObject:
   m_ObjectHideFlags: 0

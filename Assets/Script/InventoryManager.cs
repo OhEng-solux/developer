@@ -21,6 +21,13 @@ public class InventoryManager : MonoBehaviour
 
     void Update()
     {
+        // 대화 중일 때 인벤토리 열기 시도 → 막기 + 효과음
+        if (DialogueManager.instance != null && DialogueManager.instance.talking)
+        {
+            if (Input.GetKeyDown(KeyCode.X)) audioManager.Play(beepSound);
+            return; // 대화 중이면 더 이상 진행 X
+        }
+
         // X 키를 눌렀을 때 인벤토리 열고 닫기 토글
         if (Input.GetKeyDown(KeyCode.X))
         {
