@@ -135,6 +135,20 @@ public class DialogueManager : MonoBehaviour
         }
 
         countUpOnFinish = true;
+
+        // 여기서 Day2이고, NPC가 있으면 걷기 시작
+        if (SceneManager.GetActiveScene().name == "Day2")
+        {
+            GameObject npcObj = GameObject.FindWithTag("npc");
+            if (npcObj != null)
+            {
+                NPCPathMover mover = npcObj.GetComponent<NPCPathMover>();
+                if (mover != null)
+                {
+                    mover.StartPath();  // 대화 끝나고 걷기 시작
+                }
+            }
+        }
     }
 
 
@@ -234,6 +248,20 @@ public class DialogueManager : MonoBehaviour
                 SetKeyInputActive(false);
                 namePanel.ShowPanel();
                 return;
+            }
+        }
+
+        if (currentScene == "Day2" && sentenceIndex == 0)
+        {
+            GameObject npcObj = GameObject.FindWithTag("npc");
+            if (npcObj != null)
+            {
+                NPCPathMover mover = npcObj.GetComponent<NPCPathMover>();
+                if (mover != null)
+                {
+                    mover.StartPath(); // NPC가 걸어오기 시작
+                    talking = false;   // 대화 잠시 종료
+                }
             }
         }
 

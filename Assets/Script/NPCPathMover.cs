@@ -1,10 +1,14 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class NPCPathMover : MonoBehaviour
 {
     public List<Vector2> waypoints;
     public float moveSpeed = 2f;
+
+    [Header("Day2 대사 연결")]
+    public Dialogue day2Dialogue; // 도착 후 플레이어에게 자동으로 시작할 대사
 
     private int currentIndex = 0;
     private bool isMoving = false;
@@ -23,6 +27,11 @@ public class NPCPathMover : MonoBehaviour
         if (waypoints.Count > 0)
         {
             transform.position = new Vector3(waypoints[0].x, waypoints[0].y, transform.position.z);
+        }
+
+        if (SceneManager.GetActiveScene().name == "Day2")
+        {
+            StartPath(); // Day2: 시작하자마자 걷기
         }
     }
 
@@ -52,14 +61,20 @@ public class NPCPathMover : MonoBehaviour
                     if (animator != null)
                         animator.SetBool("Walking", false);
 
-                    // 이동 후 대사 재개
-                    if (DialogueManager.instance != null)
-                    {
-                        DialogueManager.instance.talking = true;
-                        DialogueManager.instance.ContinueDialogue();
-                    }
+                    string currentScene = SceneManager.GetActiveScene().name;
 
-                    gameObject.SetActive(false);
+                    // Day3: 이동 후 대사 재개
+                    if (currentScene == "Day3")
+                    {
+                        if (DialogueManager.instance != null)
+                        {
+                            DialogueManager.instance.talking = true;
+                            DialogueManager.instance.ContinueDialogue();
+                        }
+                    }
+                  
+
+                    // gameObject.SetActive(false); // 필요하다면 유지
                 }
             }
         }
@@ -67,11 +82,10 @@ public class NPCPathMover : MonoBehaviour
 
     public void StartPath()
     {
-        if (waypoints.Count > 0)
+        if (waypoints.Count > 1)
         {
             isMoving = true;
-            currentIndex = 0;
-            transform.position = new Vector3(waypoints[0].x, waypoints[0].y, transform.position.z);
+            currentIndex = 1;
         }
     }
 
