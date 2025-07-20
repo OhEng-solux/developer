@@ -6,6 +6,9 @@ public class PlayerManager : MovingObject
 {
     static public PlayerManager instance; // 정적 변수
     public string currentMapName;
+    public string currentSceneName;//씬 위치
+
+    //private SaveNLoad theSaveNLoad;
 
     public float runSpeed;
     private float applyRunSpeed;
@@ -24,13 +27,17 @@ public class PlayerManager : MovingObject
     {
         queue = new Queue<string>();
 
+        //theSaveNLoad = FindFirstObjectByType<SaveNLoad>();
+
         if (instance == null)
         {
             DontDestroyOnLoad(this.gameObject);
             boxCollider = GetComponent<BoxCollider2D>();
             animator = GetComponent<Animator>();
-            theAudio = FindObjectOfType<AudioManager>();
+            theAudio = FindFirstObjectByType<AudioManager>();
             instance = this;
+
+            //theSaveNLoad = FindFirstObjectByType<saveNLoad>();
 
             boxCollider.offset = new Vector2(0, -0.1f);
         }
@@ -116,6 +123,14 @@ public class PlayerManager : MovingObject
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.F5))//저장
+        {
+            //theSaveNLoad.CallSave();
+        }
+        if (Input.GetKeyDown(KeyCode.F9))//불러오기
+        {
+            //theSaveNLoad.CallLoad();
+        }
         if (canMove && !notMove)
         {
             if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
