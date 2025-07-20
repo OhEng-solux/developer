@@ -17,22 +17,31 @@ public class NPCPathMover : MonoBehaviour
         animator = GetComponent<Animator>();
         currentScene = SceneManager.GetActiveScene().name;
 
-        if (animator != null)
-        {
-            animator.SetFloat("DirX", 0);
-            animator.SetFloat("DirY", 1);
-        }
-
         if (waypoints.Count > 0)
         {
             transform.position = new Vector3(waypoints[0].x, waypoints[0].y, transform.position.z);
         }
 
+        if (animator != null)
+        {
+            if (currentScene == "Day2")
+            {
+                animator.SetFloat("DirX", 0);
+                animator.SetFloat("DirY", 1); 
+            }
+            else if (currentScene == "Day3")
+            {
+                animator.SetFloat("DirX", 0);
+                animator.SetFloat("DirY", 1); 
+            }
+        }
+
         if (currentScene == "Day2")
         {
-            StartPath(); // Day2: 시작하자마자 걷기
+            StartPath(); // Day2에서는 자동 걷기
         }
     }
+
 
     void Update()
     {
@@ -71,14 +80,14 @@ public class NPCPathMover : MonoBehaviour
                     // Day3: 이동 후 대사 재개
                     if (currentScene == "Day3" && DialogueManager.instance != null)
                     {
-                        if (DialogueManager.instance.HasMoreSentences())
+                        if (!DialogueManager.instance.talking && DialogueManager.instance.HasMoreSentences())
                         {
-                            DialogueManager.instance.talking = true;
                             DialogueManager.instance.ContinueDialogue();
                         }
 
                         gameObject.SetActive(false);
                     }
+
 
                     // gameObject.SetActive(false); // 필요하면 유지
                 }
