@@ -99,6 +99,8 @@ public class DialogueManager : MonoBehaviour
 
     public void ShowDialogue(Dialogue dialogue, bool shouldCount = true)
     {
+
+        if (talking) return;
         countUpOnFinish = shouldCount;
 
         if (dialogue.sentences.Length != dialogue.sprites.Length ||
@@ -116,7 +118,7 @@ public class DialogueManager : MonoBehaviour
         listSprites.Clear();
         listDialogueWindows.Clear();
 
-        GameObject npcObj = GameObject.FindWithTag("npc");
+        /*GameObject npcObj = GameObject.FindWithTag("npc");
         if (npcObj != null)
         {
             Animator npcAnimator = npcObj.GetComponent<Animator>();
@@ -125,7 +127,7 @@ public class DialogueManager : MonoBehaviour
                 npcAnimator.SetFloat("DirX", 0);
                 npcAnimator.SetFloat("DirY", -1);
             }
-        }
+        }*/
 
         for (int i = 0; i < dialogue.sentences.Length; i++)
         {
@@ -304,7 +306,7 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
-        if (currentScene == "Day3" && sentenceIndex == 3)
+        if (currentScene == "Day3" && sentenceIndex == 2)
         {
             GameObject npcObj = GameObject.FindWithTag("npc");
             if (npcObj != null)
