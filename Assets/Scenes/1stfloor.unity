@@ -2822,6 +2822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boundName: 
 --- !u!60 &151366517
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -10705,6 +10706,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boundName: 
 --- !u!60 &495379290
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -30115,6 +30117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boundName: 
 --- !u!60 &880547001
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -30992,6 +30995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boundName: 
 --- !u!4 &930786356
 Transform:
   m_ObjectHideFlags: 0
@@ -33744,6 +33748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boundName: 
 --- !u!60 &1067062550
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -41561,6 +41566,7 @@ MonoBehaviour:
   walkSound_4: footsteps4
   animator: {fileID: 1306316781}
   currentMapName: 
+  currentSceneName: 
   runSpeed: 0.1
   notMove: 0
   hasEnteredName: 0
@@ -46967,6 +46973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boundName: 
 --- !u!60 &1520178530
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -47332,6 +47339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boundName: 
 --- !u!1 &1551754428
 GameObject:
   m_ObjectHideFlags: 0
@@ -59052,6 +59060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boundName: 
 --- !u!60 &1777138788
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -64541,6 +64550,56 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1988745529
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1988745531}
+  - component: {fileID: 1988745530}
+  m_Layer: 3
+  m_Name: Database
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1988745530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988745529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dec08ac22fed2b849a6f064f5d698450, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  var_name:
+  - "\uACE8\uB4DC"
+  var:
+  - 500
+  vswitch_name: []
+  switches: 0
+--- !u!4 &1988745531
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988745529}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 45.3528, y: -36.42642, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1992020424
 GameObject:
   m_ObjectHideFlags: 0
@@ -65588,6 +65647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boundName: 
 --- !u!60 &2030433066
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -67217,6 +67277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boundName: 
 --- !u!60 &2104847872
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -67485,6 +67546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boundName: 
 --- !u!1 &2121511704
 GameObject:
   m_ObjectHideFlags: 0
@@ -68009,6 +68071,7 @@ SceneRoots:
   - {fileID: 370457044}
   - {fileID: 120867815}
   - {fileID: 2107776952}
+  - {fileID: 1988745531}
   - {fileID: 1926663925}
   - {fileID: 1306316776}
   - {fileID: 1058683039}

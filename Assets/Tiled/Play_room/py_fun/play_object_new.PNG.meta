@@ -222,6 +222,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -898,7 +911,37 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      play_object_new_0: -2571438763745840781
+      play_object_new_1: -5245820382268779259
+      play_object_new_10: -3658259658907071183
+      play_object_new_11: 1933143364112246640
+      play_object_new_12: -7492461417163873694
+      play_object_new_13: -4071449171833351097
+      play_object_new_14: 8040193975209717799
+      play_object_new_15: 5552274913135771963
+      play_object_new_16: -576893903320770693
+      play_object_new_17: 3671654766790826971
+      play_object_new_18: -5296109200292961910
+      play_object_new_19: -963794353807660315
+      play_object_new_2: 7448071107017318954
+      play_object_new_20: -846838077048574275
+      play_object_new_21: 4661627592264128434
+      play_object_new_22: 2948797426190925635
+      play_object_new_23: -6497105713462686636
+      play_object_new_24: -5990500148630180628
+      play_object_new_25: 97646639676754118
+      play_object_new_26: -4632682820308712257
+      play_object_new_27: -599909035527267133
+      play_object_new_28: 1413190270878837781
+      play_object_new_29: 5472133161333232593
+      play_object_new_3: 8645552453504738363
+      play_object_new_4: -8035395073261184279
+      play_object_new_5: 8642261683112437396
+      play_object_new_6: -3618104302926805975
+      play_object_new_7: 6758567962377822183
+      play_object_new_8: 4299861223285400310
+      play_object_new_9: 1392011933464774053
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
