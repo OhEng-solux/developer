@@ -158,8 +158,15 @@ public class DialogueManager : MonoBehaviour
 
         if (countUpOnFinish)
         {
-            DialogueProgressManager.instance.AddDialogueCount();
-            Debug.Log("대화 완료! 현재 대화 수: " + DialogueProgressManager.instance.dialogueCount);
+            if (DialogueProgressManager.instance == null)
+            {
+                Debug.LogWarning("DialogueProgressManager가 존재하지 않습니다.");
+            }
+            else
+            {
+                DialogueProgressManager.instance.AddDialogueCount();
+                Debug.Log("대화 완료! 현재 대화 수: " + DialogueProgressManager.instance.dialogueCount);
+            }            
         }
 
         countUpOnFinish = true;

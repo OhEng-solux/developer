@@ -21,10 +21,14 @@ public class InventoryManager : MonoBehaviour
 
     void Update()
     {
-        // 대화 중일 때 인벤토리 열기 시도 → 막기 + 효과음
+        // 대화 중일 때 인벤토리 열기 시도 제한: 효과음+팝업창
         if (DialogueManager.instance != null && DialogueManager.instance.talking)
         {
-            if (Input.GetKeyDown(KeyCode.X)) audioManager.Play(beepSound);
+            if (Input.GetKeyDown(KeyCode.X))
+            {
+                audioManager.Play(beepSound);
+                PopupManager.instance.ShowPopup("대화 중에는 인벤토리를 열 수 없습니다.");
+            }
             return; // 대화 중이면 더 이상 진행 X
         }
 
@@ -49,8 +53,8 @@ public class InventoryManager : MonoBehaviour
             }
         }
 
-        // 인벤토리가 열려 있을 때만 방향키 동작
-        if (!isOpen) return;
+        // 방향키 동작 우선순위: 팝업창>인벤토리>이동
+        if (!isOpen || PopupManager.instance.IsPopupActive()) return;
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
@@ -62,9 +66,48 @@ public class InventoryManager : MonoBehaviour
             MoveCursor(1); // 오른쪽으로 이동
             audioManager.Play(keySound);
         }
+
+        if (Input.GetKeyDown(KeyCode.Z)) //아이템 사용
+        {
+            Item selectedItem = items[currentIndex];
+
+            if (selectedItem.isObtained)
+            {
+                audioManager.Play(enterSound);
+                PopupManager.instance.ShowChoicePopup(
+                    "정말 사용하시겠습니까?",
+                    () => {
+                        UseItem(selectedItem); // 예
+                    },
+                    () => {
+                        Debug.Log("사용 취소");
+                    }
+                );
+            }
+            else
+            {
+                audioManager.Play(beepSound);
+                PopupManager.instance.ShowPopup("아직 획득하지 못한 아이템입니다");
+            }
+        }
     }
 
-    void UpdateSlots() // 모든 슬롯에 아이템 정보 적용
+    void UseItem(Item item)
+    {
+        // 실제 사용 효과 → 추후 이벤트 추가 예정
+        Debug.Log($"[아이템 사용] {item.itemName}을(를) 사용했습니다!");
+
+        // 소모성 아이템일 경우 사용 후 제거
+        if (item.itemType == ItemType.Consumable)
+        {
+            item.isObtained = false;
+            items[currentIndex] = item; // 배열 갱신
+            UpdateSlots(); // 슬롯 갱신
+        }
+    }
+
+
+    public void UpdateSlots() // 모든 슬롯에 아이템 정보 적용
     {
         for (int i = 0; i < slots.Length; i++)
         {

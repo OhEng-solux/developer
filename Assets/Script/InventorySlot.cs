@@ -5,7 +5,7 @@ public class InventorySlot : MonoBehaviour
 {
     public Image iconImage;
     public GameObject highlightBorder;
-    public Text itemNameText;         // 이름 텍스트
+    public Text itemNameText; // 이름 텍스트
 
     public void SetItem(Item item)
     {
