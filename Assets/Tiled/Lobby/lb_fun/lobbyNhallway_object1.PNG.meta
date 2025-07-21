@@ -1,0 +1,598 @@
+fileFormatVersion: 2
+guid: 82eecd77d1bdd9d43af5fa6ff179eb86
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4073109152984118714
+    second: lobbyNhallway_object1_0
+  - first:
+      213: -2574090312585158810
+    second: lobbyNhallway_object1_1
+  - first:
+      213: 2013741525872305181
+    second: lobbyNhallway_object1_2
+  - first:
+      213: -8951718760355272760
+    second: lobbyNhallway_object1_3
+  - first:
+      213: 7594210340592332860
+    second: lobbyNhallway_object1_4
+  - first:
+      213: 418250999652246210
+    second: lobbyNhallway_object1_5
+  - first:
+      213: 161197457450502309
+    second: lobbyNhallway_object1_6
+  - first:
+      213: 3184579761832122766
+    second: lobbyNhallway_object1_7
+  - first:
+      213: 673293007472589369
+    second: lobbyNhallway_object1_8
+  - first:
+      213: -4676026847073107772
+    second: lobbyNhallway_object1_9
+  - first:
+      213: -6674671557848471535
+    second: lobbyNhallway_object1_10
+  - first:
+      213: 2659568951119064984
+    second: lobbyNhallway_object1_11
+  - first:
+      213: -6181735738342610572
+    second: lobbyNhallway_object1_12
+  - first:
+      213: 7846926867705230956
+    second: lobbyNhallway_object1_13
+  - first:
+      213: 7842962268651037637
+    second: lobbyNhallway_object1_14
+  - first:
+      213: 1141309487524560649
+    second: lobbyNhallway_object1_15
+  - first:
+      213: 5967376447289203519
+    second: lobbyNhallway_object1_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: lobbyNhallway_object1_0
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 2989
+        width: 622
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab5b203c137968830800000000000000
+      internalID: 4073109152984118714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobbyNhallway_object1_1
+      rect:
+        serializedVersion: 2
+        x: 2329
+        y: 3129
+        width: 52
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66f5692bf7ef64cd0800000000000000
+      internalID: -2574090312585158810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobbyNhallway_object1_2
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 1749
+        width: 252
+        height: 872
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d14621f9f3f32fb10800000000000000
+      internalID: 2013741525872305181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobbyNhallway_object1_3
+      rect:
+        serializedVersion: 2
+        x: 1939
+        y: 1929
+        width: 1032
+        height: 442
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c7e2d7373b15c380800000000000000
+      internalID: -8951718760355272760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobbyNhallway_object1_4
+      rect:
+        serializedVersion: 2
+        x: 3389
+        y: 1709
+        width: 242
+        height: 792
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c30ba94a11e046960800000000000000
+      internalID: 7594210340592332860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobbyNhallway_object1_5
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 1129
+        width: 482
+        height: 392
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c26935711dedc500800000000000000
+      internalID: 418250999652246210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobbyNhallway_object1_6
+      rect:
+        serializedVersion: 2
+        x: 1629
+        y: 1369
+        width: 562
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a88806cb30bc3200800000000000000
+      internalID: 161197457450502309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobbyNhallway_object1_7
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 1069
+        width: 232
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e89d6e6bb66e13c20800000000000000
+      internalID: 3184579761832122766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobbyNhallway_object1_8
+      rect:
+        serializedVersion: 2
+        x: 1699
+        y: 889
+        width: 232
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93a782c4c64085900800000000000000
+      internalID: 673293007472589369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobbyNhallway_object1_9
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 119
+        width: 1502
+        height: 642
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c084047b5a6b1fb0800000000000000
+      internalID: -4676026847073107772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobbyNhallway_object1_10
+      rect:
+        serializedVersion: 2
+        x: 2569
+        y: 529
+        width: 112
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 118e902059dce53a0800000000000000
+      internalID: -6674671557848471535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobbyNhallway_object1_11
+      rect:
+        serializedVersion: 2
+        x: 3759
+        y: 649
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89f2c1bbedfa8e420800000000000000
+      internalID: 2659568951119064984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobbyNhallway_object1_12
+      rect:
+        serializedVersion: 2
+        x: 2219
+        y: 309
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47960c42910163aa0800000000000000
+      internalID: -6181735738342610572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobbyNhallway_object1_13
+      rect:
+        serializedVersion: 2
+        x: 3219
+        y: 469
+        width: 152
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c66f9005962e5ec60800000000000000
+      internalID: 7846926867705230956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobbyNhallway_object1_14
+      rect:
+        serializedVersion: 2
+        x: 3429
+        y: 339
+        width: 322
+        height: 292
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c3acb921acc7dc60800000000000000
+      internalID: 7842962268651037637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobbyNhallway_object1_15
+      rect:
+        serializedVersion: 2
+        x: 4119
+        y: 229
+        width: 292
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90f3fa69eeeb6df00800000000000000
+      internalID: 1141309487524560649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobbyNhallway_object1_16
+      rect:
+        serializedVersion: 2
+        x: 3959
+        y: 159
+        width: 142
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3b94b5234160d250800000000000000
+      internalID: 5967376447289203519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      lobbyNhallway_object1_0: 4073109152984118714
+      lobbyNhallway_object1_1: -2574090312585158810
+      lobbyNhallway_object1_10: -6674671557848471535
+      lobbyNhallway_object1_11: 2659568951119064984
+      lobbyNhallway_object1_12: -6181735738342610572
+      lobbyNhallway_object1_13: 7846926867705230956
+      lobbyNhallway_object1_14: 7842962268651037637
+      lobbyNhallway_object1_15: 1141309487524560649
+      lobbyNhallway_object1_16: 5967376447289203519
+      lobbyNhallway_object1_2: 2013741525872305181
+      lobbyNhallway_object1_3: -8951718760355272760
+      lobbyNhallway_object1_4: 7594210340592332860
+      lobbyNhallway_object1_5: 418250999652246210
+      lobbyNhallway_object1_6: 161197457450502309
+      lobbyNhallway_object1_7: 3184579761832122766
+      lobbyNhallway_object1_8: 673293007472589369
+      lobbyNhallway_object1_9: -4676026847073107772
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

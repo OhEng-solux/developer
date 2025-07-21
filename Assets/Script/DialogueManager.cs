@@ -183,6 +183,21 @@ public class DialogueManager : MonoBehaviour
                 }
             }
         }
+
+        if (SceneManager.GetActiveScene().name == "Day4"
+        && DialogueProgressManager.instance.dialogueCount == 2)
+        {
+            GameObject[] npcs = GameObject.FindGameObjectsWithTag("npc");
+            foreach (GameObject npc in npcs)
+            {
+                NPCPathMover mover = npc.GetComponent<NPCPathMover>();
+                if (mover != null)
+                {
+                    Debug.Log("ExitDialogue()에서 StartPath() 호출: " + npc.name);
+                    mover.StartPath();
+                }
+            }
+        }
     }
 
     IEnumerator StartDialogueCoroutine()
@@ -303,8 +318,15 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
+        
         if (currentScene == "Day2" && sentenceIndex == 2)
         {
+            GameObject target = GameObject.Find("paper"); // 오브젝트 이름
+            if (target != null)
+            {
+                target.SetActive(false);  // 오브젝트를 사라지게 함
+            }
+
             if (!hasShownItemPanel && itemPanel != null)
             {
                 itemPanel.SetActive(true);
@@ -312,6 +334,7 @@ public class DialogueManager : MonoBehaviour
                 hasShownItemPanel = true;
             }
         }
+
 
         if (currentScene == "Day3" && sentenceIndex == 2)
         {
@@ -326,6 +349,7 @@ public class DialogueManager : MonoBehaviour
                 }
             }
         }
+
     }
 
     public bool HasMoreSentences()
