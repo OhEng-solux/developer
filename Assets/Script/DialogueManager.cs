@@ -158,8 +158,15 @@ public class DialogueManager : MonoBehaviour
 
         if (countUpOnFinish)
         {
-            DialogueProgressManager.instance.AddDialogueCount();
-            Debug.Log("대화 완료! 현재 대화 수: " + DialogueProgressManager.instance.dialogueCount);
+            if (DialogueProgressManager.instance == null)
+            {
+                Debug.LogWarning("DialogueProgressManager가 존재하지 않습니다.");
+            }
+            else
+            {
+                DialogueProgressManager.instance.AddDialogueCount();
+                Debug.Log("대화 완료! 현재 대화 수: " + DialogueProgressManager.instance.dialogueCount);
+            }            
         }
 
         countUpOnFinish = true;
@@ -172,6 +179,21 @@ public class DialogueManager : MonoBehaviour
                 NPCPathMover mover = npcObj.GetComponent<NPCPathMover>();
                 if (mover != null)
                 {
+                    mover.StartPath();
+                }
+            }
+        }
+
+        if (SceneManager.GetActiveScene().name == "Day4"
+        && DialogueProgressManager.instance.dialogueCount == 2)
+        {
+            GameObject[] npcs = GameObject.FindGameObjectsWithTag("npc");
+            foreach (GameObject npc in npcs)
+            {
+                NPCPathMover mover = npc.GetComponent<NPCPathMover>();
+                if (mover != null)
+                {
+                    Debug.Log("ExitDialogue()에서 StartPath() 호출: " + npc.name);
                     mover.StartPath();
                 }
             }
@@ -296,8 +318,15 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
+        
         if (currentScene == "Day2" && sentenceIndex == 2)
         {
+            GameObject target = GameObject.Find("paper"); // 오브젝트 이름
+            if (target != null)
+            {
+                target.SetActive(false);  // 오브젝트를 사라지게 함
+            }
+
             if (!hasShownItemPanel && itemPanel != null)
             {
                 itemPanel.SetActive(true);
@@ -305,6 +334,7 @@ public class DialogueManager : MonoBehaviour
                 hasShownItemPanel = true;
             }
         }
+
 
         if (currentScene == "Day3" && sentenceIndex == 2)
         {
@@ -319,6 +349,7 @@ public class DialogueManager : MonoBehaviour
                 }
             }
         }
+
     }
 
     public bool HasMoreSentences()
@@ -330,7 +361,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (talking && keyActivated && !isPaused)
         {
-            if (Input.GetKeyDown(KeyCode.Z))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 keyActivated = false;
                 count++;

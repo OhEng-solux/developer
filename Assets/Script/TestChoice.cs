@@ -9,6 +9,8 @@ public class TestChoice : MonoBehaviour
     [SerializeField] private Dialogue successDialogue;
     [SerializeField] private Dialogue failDialogue;
     [SerializeField] private GameObject npcObject;
+    [SerializeField] private Item rewardItem;
+
 
     private NPCMover npcMover;
     private OrderManager theOrder;
@@ -20,9 +22,9 @@ public class TestChoice : MonoBehaviour
 
     void Start()
     {
-        theOrder = FindObjectOfType<OrderManager>();
-        theChoice = FindObjectOfType<ChoiceManager>();
-        theDM = FindObjectOfType<DialogueManager>();
+        theOrder = FindFirstObjectByType<OrderManager>();
+        theChoice = FindFirstObjectByType<ChoiceManager>();
+        theDM = FindFirstObjectByType<DialogueManager>();
         if (npcObject != null)
             npcMover = npcObject.GetComponent<NPCMover>();
     }
@@ -61,11 +63,16 @@ public class TestChoice : MonoBehaviour
         {
             theDM.ShowDialogue(successDialogue);
             yield return new WaitUntil(() => !theDM.talking);
+
+            //ì•„ì´í…œ íšë“
+            rewardItem.isObtained = true;
+            InventoryManager inv = FindFirstObjectByType<InventoryManager>();
+            inv.UpdateSlots(); // UI ë°˜ì˜
         }
         else
         {
             npcMoved = false;
-            theDM.autoNext = false; // autoNext°¡ ÀÌ ´ëÈ­¿¡¼­ OFFÀÎÁö ²À Ã¼Å©
+            theDM.autoNext = false; // autoNextï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½È­ï¿½ï¿½ï¿½ï¿½ OFFï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Ã¼Å©
             theDM.OnSentenceFinished += OnSentenceFinishedHandler;
             theDM.ShowDialogue(failDialogue);
             yield return new WaitUntil(() => !theDM.talking);
@@ -83,7 +90,7 @@ public class TestChoice : MonoBehaviour
             StartCoroutine(MoveNpcAndWaitThenContinue());
         }
 
-        // µÎ ¹øÂ° ¹®Àå(ÀÎµ¦½º 1) ³¡³­ µÚ 4ÃÊ°£ ´ë±â, ÀÌÈÄ 3¹øÂ° ¹®ÀåÀ¸·Î
+        // ï¿½ï¿½ ï¿½ï¿½Â° ï¿½ï¿½ï¿½ï¿½(ï¿½Îµï¿½ï¿½ï¿½ 1) ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ 4ï¿½Ê°ï¿½ ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ 3ï¿½ï¿½Â° ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if (sentenceIndex == 1)
         {
             theDM.WaitAndContinue(4f);
