@@ -1,0 +1,3328 @@
+fileFormatVersion: 2
+guid: b5749326278faa749b9c3e4049c42f62
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6674561559676473809
+    second: teach_object_dust2_0
+  - first:
+      213: -7635932695743234679
+    second: teach_object_dust2_1
+  - first:
+      213: -5027735280279391842
+    second: teach_object_dust2_2
+  - first:
+      213: -8231231276711783014
+    second: teach_object_dust2_3
+  - first:
+      213: 1881260471059683250
+    second: teach_object_dust2_4
+  - first:
+      213: 5492318549211925052
+    second: teach_object_dust2_5
+  - first:
+      213: -5574685887945066097
+    second: teach_object_dust2_6
+  - first:
+      213: 4789503081120069635
+    second: teach_object_dust2_7
+  - first:
+      213: 7279179833761829075
+    second: teach_object_dust2_8
+  - first:
+      213: 8992903873912262908
+    second: teach_object_dust2_9
+  - first:
+      213: -1648720726230366231
+    second: teach_object_dust2_10
+  - first:
+      213: -2107321012851450346
+    second: teach_object_dust2_11
+  - first:
+      213: -5761387892105971929
+    second: teach_object_dust2_12
+  - first:
+      213: -9120312807906331149
+    second: teach_object_dust2_13
+  - first:
+      213: -5754194363619101901
+    second: teach_object_dust2_14
+  - first:
+      213: 5855856269551489299
+    second: teach_object_dust2_15
+  - first:
+      213: 6824985126748420206
+    second: teach_object_dust2_16
+  - first:
+      213: 4930149635181321749
+    second: teach_object_dust2_17
+  - first:
+      213: 1828559877574709320
+    second: teach_object_dust2_18
+  - first:
+      213: -8078480099597650833
+    second: teach_object_dust2_19
+  - first:
+      213: -7543975189190630791
+    second: teach_object_dust2_20
+  - first:
+      213: -4842479143192132431
+    second: teach_object_dust2_21
+  - first:
+      213: 6711751083341844440
+    second: teach_object_dust2_22
+  - first:
+      213: 6907247149056109509
+    second: teach_object_dust2_23
+  - first:
+      213: -6504126797854990274
+    second: teach_object_dust2_24
+  - first:
+      213: -8454573279884108788
+    second: teach_object_dust2_25
+  - first:
+      213: -1557881354015083164
+    second: teach_object_dust2_26
+  - first:
+      213: 4417983138127566865
+    second: teach_object_dust2_27
+  - first:
+      213: -4991452965710776811
+    second: teach_object_dust2_28
+  - first:
+      213: -4854186983493405545
+    second: teach_object_dust2_29
+  - first:
+      213: -580932269946423199
+    second: teach_object_dust2_30
+  - first:
+      213: 4274943203376892512
+    second: teach_object_dust2_31
+  - first:
+      213: -2453663815847490259
+    second: teach_object_dust2_32
+  - first:
+      213: 5347475987344654834
+    second: teach_object_dust2_33
+  - first:
+      213: 3895655156017312854
+    second: teach_object_dust2_34
+  - first:
+      213: 5856986841420526891
+    second: teach_object_dust2_35
+  - first:
+      213: 3230539841658798780
+    second: teach_object_dust2_36
+  - first:
+      213: -6360635994054127583
+    second: teach_object_dust2_37
+  - first:
+      213: -3434332728960714578
+    second: teach_object_dust2_38
+  - first:
+      213: 2762634552673990018
+    second: teach_object_dust2_39
+  - first:
+      213: 7922355858056027895
+    second: teach_object_dust2_40
+  - first:
+      213: 591841867135453827
+    second: teach_object_dust2_41
+  - first:
+      213: 2085794471011835346
+    second: teach_object_dust2_42
+  - first:
+      213: 714460002187839205
+    second: teach_object_dust2_43
+  - first:
+      213: 7306802671259344018
+    second: teach_object_dust2_44
+  - first:
+      213: -7941232295356655543
+    second: teach_object_dust2_45
+  - first:
+      213: 7993439262161520986
+    second: teach_object_dust2_46
+  - first:
+      213: -5455917566944998714
+    second: teach_object_dust2_47
+  - first:
+      213: 8012865964927737367
+    second: teach_object_dust2_48
+  - first:
+      213: -2782393250523669226
+    second: teach_object_dust2_49
+  - first:
+      213: -6930649005625846113
+    second: teach_object_dust2_50
+  - first:
+      213: -3007636590137033615
+    second: teach_object_dust2_51
+  - first:
+      213: -2768695880977953824
+    second: teach_object_dust2_52
+  - first:
+      213: -7280370647370790022
+    second: teach_object_dust2_53
+  - first:
+      213: -2439983511822427371
+    second: teach_object_dust2_54
+  - first:
+      213: -5538785839998169050
+    second: teach_object_dust2_55
+  - first:
+      213: 8867711233527351308
+    second: teach_object_dust2_56
+  - first:
+      213: 7125769487279388711
+    second: teach_object_dust2_57
+  - first:
+      213: -6256647668045455465
+    second: teach_object_dust2_58
+  - first:
+      213: -6260620156309428016
+    second: teach_object_dust2_59
+  - first:
+      213: 5569686642727075097
+    second: teach_object_dust2_60
+  - first:
+      213: 8864273884214819435
+    second: teach_object_dust2_61
+  - first:
+      213: 8315067640281450290
+    second: teach_object_dust2_62
+  - first:
+      213: 4915191979931044809
+    second: teach_object_dust2_63
+  - first:
+      213: 4181390850499973235
+    second: teach_object_dust2_64
+  - first:
+      213: -7818297377076144959
+    second: teach_object_dust2_65
+  - first:
+      213: -6548735956550686345
+    second: teach_object_dust2_66
+  - first:
+      213: 3662477551636356279
+    second: teach_object_dust2_67
+  - first:
+      213: 6778994611142784329
+    second: teach_object_dust2_68
+  - first:
+      213: 8422380742502867809
+    second: teach_object_dust2_69
+  - first:
+      213: 5210906324448798139
+    second: teach_object_dust2_70
+  - first:
+      213: -1959189602308050337
+    second: teach_object_dust2_71
+  - first:
+      213: 6253925502152438788
+    second: teach_object_dust2_72
+  - first:
+      213: -592857486571208251
+    second: teach_object_dust2_73
+  - first:
+      213: 347880852783079382
+    second: teach_object_dust2_74
+  - first:
+      213: 4017355993440817206
+    second: teach_object_dust2_75
+  - first:
+      213: 6903789839080296265
+    second: teach_object_dust2_76
+  - first:
+      213: -37128743730810454
+    second: teach_object_dust2_77
+  - first:
+      213: -8051557073832310898
+    second: teach_object_dust2_78
+  - first:
+      213: -4381136841226304378
+    second: teach_object_dust2_79
+  - first:
+      213: 1803913851203316474
+    second: teach_object_dust2_80
+  - first:
+      213: -5863750138928287926
+    second: teach_object_dust2_81
+  - first:
+      213: 3995099420434732021
+    second: teach_object_dust2_82
+  - first:
+      213: 5552885166506280794
+    second: teach_object_dust2_83
+  - first:
+      213: -1458843679956588370
+    second: teach_object_dust2_84
+  - first:
+      213: 6032140140227095061
+    second: teach_object_dust2_85
+  - first:
+      213: -3749858069182405395
+    second: teach_object_dust2_86
+  - first:
+      213: -4932595479268613339
+    second: teach_object_dust2_87
+  - first:
+      213: 1316659245874461178
+    second: teach_object_dust2_88
+  - first:
+      213: 6260367012196706583
+    second: teach_object_dust2_89
+  - first:
+      213: -2207798327626320822
+    second: teach_object_dust2_90
+  - first:
+      213: 116491969085464803
+    second: teach_object_dust2_91
+  - first:
+      213: -637071843952870605
+    second: teach_object_dust2_92
+  - first:
+      213: 5668267514751895189
+    second: teach_object_dust2_93
+  - first:
+      213: 1136217145175882874
+    second: teach_object_dust2_94
+  - first:
+      213: 3369237244870514813
+    second: teach_object_dust2_95
+  - first:
+      213: -2937004264135070759
+    second: teach_object_dust2_96
+  - first:
+      213: 8432234514698236242
+    second: teach_object_dust2_97
+  - first:
+      213: 6654455074214876791
+    second: teach_object_dust2_98
+  - first:
+      213: -508774022745786231
+    second: teach_object_dust2_99
+  - first:
+      213: 1644677590856460449
+    second: teach_object_dust2_100
+  - first:
+      213: -3615423749661144687
+    second: teach_object_dust2_101
+  - first:
+      213: 5912945196630093089
+    second: teach_object_dust2_102
+  - first:
+      213: -4352990606057629644
+    second: teach_object_dust2_103
+  - first:
+      213: 1166311337834423388
+    second: teach_object_dust2_104
+  - first:
+      213: -5094809405009843063
+    second: teach_object_dust2_105
+  - first:
+      213: 6178241835707265158
+    second: teach_object_dust2_106
+  - first:
+      213: 4836796872936717076
+    second: teach_object_dust2_107
+  - first:
+      213: 6069607838371470365
+    second: teach_object_dust2_108
+  - first:
+      213: -7998018779284246725
+    second: teach_object_dust2_109
+  - first:
+      213: -8953273441181068410
+    second: teach_object_dust2_110
+  - first:
+      213: -6465198488051121384
+    second: teach_object_dust2_111
+  - first:
+      213: -3705332659196938914
+    second: teach_object_dust2_112
+  - first:
+      213: -3534701707996557366
+    second: teach_object_dust2_113
+  - first:
+      213: 5642784050502939588
+    second: teach_object_dust2_114
+  - first:
+      213: -3715779794896713427
+    second: teach_object_dust2_115
+  - first:
+      213: -1272590081084791571
+    second: teach_object_dust2_116
+  - first:
+      213: 2330100271237124293
+    second: teach_object_dust2_117
+  - first:
+      213: 1542383359462642669
+    second: teach_object_dust2_118
+  - first:
+      213: -2827990206219639598
+    second: teach_object_dust2_119
+  - first:
+      213: 2708886513027741893
+    second: teach_object_dust2_120
+  - first:
+      213: -6317015077096272279
+    second: teach_object_dust2_121
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: teach_object_dust2_0
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 3219
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2ea104ff913f53a0800000000000000
+      internalID: -6674561559676473809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_1
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 3149
+        width: 52
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98dfe6d8ba7b70690800000000000000
+      internalID: -7635932695743234679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_2
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 3199
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e917f329665e93ab0800000000000000
+      internalID: -5027735280279391842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_3
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 3189
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a955287c3cac4cd80800000000000000
+      internalID: -8231231276711783014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_4
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 3199
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b71f7b5e649b1a10800000000000000
+      internalID: 1881260471059683250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_5
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 3199
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3ac017fe92a83c40800000000000000
+      internalID: 5492318549211925052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_6
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 3179
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f89b6aa88bcb2a2b0800000000000000
+      internalID: -5574685887945066097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_7
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 3179
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 308fcc82dabb77240800000000000000
+      internalID: 4789503081120069635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_8
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 3169
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d09f87fd77d40560800000000000000
+      internalID: 7279179833761829075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_9
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 3169
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf056c74d663dcc70800000000000000
+      internalID: 8992903873912262908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_10
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 3149
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e7073b1c319e19e0800000000000000
+      internalID: -1648720726230366231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_11
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 3119
+        width: 22
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61ed54134ba41c2e0800000000000000
+      internalID: -2107321012851450346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_12
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 3139
+        width: 62
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72779cdbc307b00b0800000000000000
+      internalID: -5761387892105971929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_13
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 3149
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f53c4c92d32e6180800000000000000
+      internalID: -9120312807906331149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_14
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 3149
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 333bdeb96bef420b0800000000000000
+      internalID: -5754194363619101901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_15
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 3149
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3115c52604e244150800000000000000
+      internalID: 5855856269551489299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_16
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 3149
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e68f92dffc737be50800000000000000
+      internalID: 6824985126748420206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_17
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 3159
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51e118ed8f86b6440800000000000000
+      internalID: 4930149635181321749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_18
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 3139
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8405f514589506910800000000000000
+      internalID: 1828559877574709320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_19
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 3129
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f647b6aa62973ef80800000000000000
+      internalID: -8078480099597650833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_20
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 3129
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 972aeedf88a6e4790800000000000000
+      internalID: -7543975189190630791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_21
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 3139
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b48bc530ee0cccb0800000000000000
+      internalID: -4842479143192132431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_22
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 3139
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8df0f67cc0ee42d50800000000000000
+      internalID: 6711751083341844440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_23
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 3099
+        width: 22
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cba1579fa87bdf50800000000000000
+      internalID: 6907247149056109509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_24
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 3089
+        width: 32
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3021cf3323bcb5a0800000000000000
+      internalID: -6504126797854990274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_25
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 3129
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0c9ffc65625baa80800000000000000
+      internalID: -8454573279884108788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_26
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 3139
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 465f9bb992b416ae0800000000000000
+      internalID: -1557881354015083164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_27
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 3119
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11852c3b144df4d30800000000000000
+      internalID: 4417983138127566865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_28
+      rect:
+        serializedVersion: 2
+        x: 1009
+        y: 3129
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5163db939fbcabab0800000000000000
+      internalID: -4991452965710776811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_29
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 3129
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 794fc8738a672acb0800000000000000
+      internalID: -4854186983493405545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_30
+      rect:
+        serializedVersion: 2
+        x: 1149
+        y: 3139
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 168384bad2d10f7f0800000000000000
+      internalID: -580932269946423199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_31
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 3139
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06a0040a136a35b30800000000000000
+      internalID: 4274943203376892512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_32
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 3089
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2d4e2272c5d2fdd0800000000000000
+      internalID: -2453663815847490259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_33
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 3089
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f10c9e041d063a40800000000000000
+      internalID: 5347475987344654834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_34
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 3079
+        width: 32
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 654b4dd69b5201630800000000000000
+      internalID: 3895655156017312854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_35
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 3119
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b25f1092082384150800000000000000
+      internalID: 5856986841420526891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_36
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 3109
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb2c1deaede25dc20800000000000000
+      internalID: 3230539841658798780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_37
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 3109
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12017d4734b7ab7a0800000000000000
+      internalID: -6360635994054127583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_38
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 3109
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea87cc1349cc650d0800000000000000
+      internalID: -3434332728960714578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_39
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 3109
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2857a541d79d65620800000000000000
+      internalID: 2762634552673990018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_40
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 3109
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fe1aafadacd1fd60800000000000000
+      internalID: 7922355858056027895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_41
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 3099
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38a00ddda05a63800800000000000000
+      internalID: 591841867135453827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_42
+      rect:
+        serializedVersion: 2
+        x: 1119
+        y: 3089
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dd5227350b32fc10800000000000000
+      internalID: 2085794471011835346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_43
+      rect:
+        serializedVersion: 2
+        x: 1259
+        y: 3109
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e681ac26954ae900800000000000000
+      internalID: 714460002187839205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_44
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 2929
+        width: 72
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29cd940015af66560800000000000000
+      internalID: 7306802671259344018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_45
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 3099
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94818644d431bc190800000000000000
+      internalID: -7941232295356655543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_46
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 3089
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a594cca68a66eee60800000000000000
+      internalID: 7993439262161520986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_47
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 3039
+        width: 152
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ca0e6a21efa844b0800000000000000
+      internalID: -5455917566944998714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_48
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 3099
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71ed550242b633f60800000000000000
+      internalID: 8012865964927737367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_49
+      rect:
+        serializedVersion: 2
+        x: 989
+        y: 3099
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61d97159414f269d0800000000000000
+      internalID: -2782393250523669226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_50
+      rect:
+        serializedVersion: 2
+        x: 1009
+        y: 3089
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f96d1c4137361df90800000000000000
+      internalID: -6930649005625846113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_51
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 3089
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17c3a67d47ab246d0800000000000000
+      internalID: -3007636590137033615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_52
+      rect:
+        serializedVersion: 2
+        x: 1189
+        y: 3099
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ebc833f3cd9399d0800000000000000
+      internalID: -2768695880977953824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_53
+      rect:
+        serializedVersion: 2
+        x: 1229
+        y: 3089
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7b8842287de6fa90800000000000000
+      internalID: -7280370647370790022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_54
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 3079
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51b93007cef632ed0800000000000000
+      internalID: -2439983511822427371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_55
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 3059
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62012ffcf974223b0800000000000000
+      internalID: -5538785839998169050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_56
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 3079
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c08832d3260701b70800000000000000
+      internalID: 8867711233527351308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_57
+      rect:
+        serializedVersion: 2
+        x: 969
+        y: 3069
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 728fa904891d3e260800000000000000
+      internalID: 7125769487279388711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_58
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 3079
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79fdf55581ceb29a0800000000000000
+      internalID: -6256647668045455465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_59
+      rect:
+        serializedVersion: 2
+        x: 1259
+        y: 3079
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d8a685532fcd19a0800000000000000
+      internalID: -6260620156309428016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_60
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 3069
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91d3cf9fd708b4d40800000000000000
+      internalID: 5569686642727075097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_61
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 3059
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6a756cf12a340b70800000000000000
+      internalID: 8864273884214819435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_62
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 2989
+        width: 52
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2374256b6fd056370800000000000000
+      internalID: 8315067640281450290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_63
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 3009
+        width: 32
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cb83ae5015463440800000000000000
+      internalID: 4915191979931044809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_64
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 3029
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3709e1713d8470a30800000000000000
+      internalID: 4181390850499973235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_65
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 3019
+        width: 22
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c4120b65f3df7390800000000000000
+      internalID: -7818297377076144959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_66
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 3049
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 779e7fd18573e15a0800000000000000
+      internalID: -6548735956550686345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_67
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 3039
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bc9027bdebb3d230800000000000000
+      internalID: 3662477551636356279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_68
+      rect:
+        serializedVersion: 2
+        x: 989
+        y: 3039
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 945f373aea3d31e50800000000000000
+      internalID: 6778994611142784329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_69
+      rect:
+        serializedVersion: 2
+        x: 1019
+        y: 3059
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16369ff59ae42e470800000000000000
+      internalID: 8422380742502867809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_70
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 3059
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb56b9a81bbd05840800000000000000
+      internalID: 5210906324448798139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_71
+      rect:
+        serializedVersion: 2
+        x: 1129
+        y: 3049
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f523acadf6f8fc4e0800000000000000
+      internalID: -1959189602308050337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_72
+      rect:
+        serializedVersion: 2
+        x: 1159
+        y: 3049
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4047d870c186ac650800000000000000
+      internalID: 6253925502152438788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_73
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 3059
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c10e7ec14fb5c7f0800000000000000
+      internalID: -592857486571208251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_74
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 3049
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6df9b4edacbe3d400800000000000000
+      internalID: 347880852783079382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_75
+      rect:
+        serializedVersion: 2
+        x: 1219
+        y: 3049
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 630935dbdf380c730800000000000000
+      internalID: 4017355993440817206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_76
+      rect:
+        serializedVersion: 2
+        x: 1239
+        y: 3039
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94f0552e7403fcf50800000000000000
+      internalID: 6903789839080296265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_77
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 3029
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa1f7f2ba971c7ff0800000000000000
+      internalID: -37128743730810454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_78
+      rect:
+        serializedVersion: 2
+        x: 969
+        y: 3039
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e870175108f134090800000000000000
+      internalID: -8051557073832310898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_79
+      rect:
+        serializedVersion: 2
+        x: 1019
+        y: 3029
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 684445251431333c0800000000000000
+      internalID: -4381136841226304378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_80
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 3039
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afa6162171ac80910800000000000000
+      internalID: 1803913851203316474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_81
+      rect:
+        serializedVersion: 2
+        x: 1079
+        y: 3029
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4f288de056cf9ea0800000000000000
+      internalID: -5863750138928287926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_82
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 3029
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f3916581c1717730800000000000000
+      internalID: 3995099420434732021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_83
+      rect:
+        serializedVersion: 2
+        x: 1159
+        y: 3029
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a57842473afcf0d40800000000000000
+      internalID: 5552885166506280794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_84
+      rect:
+        serializedVersion: 2
+        x: 1279
+        y: 3019
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea82d51076521cbe0800000000000000
+      internalID: -1458843679956588370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_85
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 2999
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51a6c957f7776b350800000000000000
+      internalID: 6032140140227095061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_86
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 2999
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de4204424f3d5fbc0800000000000000
+      internalID: -3749858069182405395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_87
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 3009
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5232f7dab86eb8bb0800000000000000
+      internalID: -4932595479268613339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_88
+      rect:
+        serializedVersion: 2
+        x: 989
+        y: 3009
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af9b490bb96b54210800000000000000
+      internalID: 1316659245874461178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_89
+      rect:
+        serializedVersion: 2
+        x: 1009
+        y: 3009
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 719ee85f0aa41e650800000000000000
+      internalID: 6260367012196706583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_90
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 3009
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a44b1225e135c51e0800000000000000
+      internalID: -2207798327626320822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_91
+      rect:
+        serializedVersion: 2
+        x: 1109
+        y: 3009
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e0668424dcdd9100800000000000000
+      internalID: 116491969085464803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_92
+      rect:
+        serializedVersion: 2
+        x: 1129
+        y: 3019
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33b39c4888aa827f0800000000000000
+      internalID: -637071843952870605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_93
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 2989
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5964cacd54bb9ae40800000000000000
+      internalID: 5668267514751895189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_94
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 2989
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7cbaed3977a4cf00800000000000000
+      internalID: 1136217145175882874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_95
+      rect:
+        serializedVersion: 2
+        x: 1009
+        y: 2989
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d78d5885c6fe1ce20800000000000000
+      internalID: 3369237244870514813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_96
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 2989
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dbeb64ce2aad37d0800000000000000
+      internalID: -2937004264135070759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_97
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 2989
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 251706f7d90550570800000000000000
+      internalID: 8432234514698236242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_98
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 2999
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7769f5812af595c50800000000000000
+      internalID: 6654455074214876791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_99
+      rect:
+        serializedVersion: 2
+        x: 1229
+        y: 2999
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9887a4fc8b870f8f0800000000000000
+      internalID: -508774022745786231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_100
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 2999
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a86b051e8113d610800000000000000
+      internalID: 1644677590856460449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_101
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 2969
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 199cfe8414f63ddc0800000000000000
+      internalID: -3615423749661144687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_102
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 2979
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12d2d7504500f0250800000000000000
+      internalID: 5912945196630093089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_103
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 2969
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 438925f5b121793c0800000000000000
+      internalID: -4352990606057629644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_104
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 2979
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c54a12d7bf19f2010800000000000000
+      internalID: 1166311337834423388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_105
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 2979
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98ca110f6d99b49b0800000000000000
+      internalID: -5094809405009843063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_106
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 2969
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 680f9c147368db550800000000000000
+      internalID: 6178241835707265158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_107
+      rect:
+        serializedVersion: 2
+        x: 1189
+        y: 2979
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41bfc162121cf1340800000000000000
+      internalID: 4836796872936717076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_108
+      rect:
+        serializedVersion: 2
+        x: 1229
+        y: 2979
+        width: 32
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1cde0cbb249b3450800000000000000
+      internalID: 6069607838371470365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_109
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 2959
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3febd9ab44510190800000000000000
+      internalID: -7998018779284246725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_110
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 2949
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6839671ed359fb380800000000000000
+      internalID: -8953273441181068410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_111
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 2959
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 813025daa300746a0800000000000000
+      internalID: -6465198488051121384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_112
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 2929
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e55b9e10493049cc0800000000000000
+      internalID: -3705332659196938914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_113
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 2939
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acf06e3368732fec0800000000000000
+      internalID: -3534701707996557366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_114
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 2929
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c3b77a72323f4e40800000000000000
+      internalID: 5642784050502939588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_115
+      rect:
+        serializedVersion: 2
+        x: 1229
+        y: 2929
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d298b9da6f5ee6cc0800000000000000
+      internalID: -3715779794896713427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_116
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 2939
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de46140501ad65ee0800000000000000
+      internalID: -1272590081084791571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_117
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 2919
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c0512ee9dd265020800000000000000
+      internalID: 2330100271237124293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_118
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 2859
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de39e385e75a76510800000000000000
+      internalID: 1542383359462642669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_119
+      rect:
+        serializedVersion: 2
+        x: 1279
+        y: 2849
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d4aef904e5f0c8d0800000000000000
+      internalID: -2827990206219639598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_120
+      rect:
+        serializedVersion: 2
+        x: 1259
+        y: 2839
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c87dd96ee5e79520800000000000000
+      internalID: 2708886513027741893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teach_object_dust2_121
+      rect:
+        serializedVersion: 2
+        x: 1309
+        y: 2839
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96ec3e0a1447558a0800000000000000
+      internalID: -6317015077096272279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      teach_object_dust2_0: -6674561559676473809
+      teach_object_dust2_1: -7635932695743234679
+      teach_object_dust2_10: -1648720726230366231
+      teach_object_dust2_100: 1644677590856460449
+      teach_object_dust2_101: -3615423749661144687
+      teach_object_dust2_102: 5912945196630093089
+      teach_object_dust2_103: -4352990606057629644
+      teach_object_dust2_104: 1166311337834423388
+      teach_object_dust2_105: -5094809405009843063
+      teach_object_dust2_106: 6178241835707265158
+      teach_object_dust2_107: 4836796872936717076
+      teach_object_dust2_108: 6069607838371470365
+      teach_object_dust2_109: -7998018779284246725
+      teach_object_dust2_11: -2107321012851450346
+      teach_object_dust2_110: -8953273441181068410
+      teach_object_dust2_111: -6465198488051121384
+      teach_object_dust2_112: -3705332659196938914
+      teach_object_dust2_113: -3534701707996557366
+      teach_object_dust2_114: 5642784050502939588
+      teach_object_dust2_115: -3715779794896713427
+      teach_object_dust2_116: -1272590081084791571
+      teach_object_dust2_117: 2330100271237124293
+      teach_object_dust2_118: 1542383359462642669
+      teach_object_dust2_119: -2827990206219639598
+      teach_object_dust2_12: -5761387892105971929
+      teach_object_dust2_120: 2708886513027741893
+      teach_object_dust2_121: -6317015077096272279
+      teach_object_dust2_13: -9120312807906331149
+      teach_object_dust2_14: -5754194363619101901
+      teach_object_dust2_15: 5855856269551489299
+      teach_object_dust2_16: 6824985126748420206
+      teach_object_dust2_17: 4930149635181321749
+      teach_object_dust2_18: 1828559877574709320
+      teach_object_dust2_19: -8078480099597650833
+      teach_object_dust2_2: -5027735280279391842
+      teach_object_dust2_20: -7543975189190630791
+      teach_object_dust2_21: -4842479143192132431
+      teach_object_dust2_22: 6711751083341844440
+      teach_object_dust2_23: 6907247149056109509
+      teach_object_dust2_24: -6504126797854990274
+      teach_object_dust2_25: -8454573279884108788
+      teach_object_dust2_26: -1557881354015083164
+      teach_object_dust2_27: 4417983138127566865
+      teach_object_dust2_28: -4991452965710776811
+      teach_object_dust2_29: -4854186983493405545
+      teach_object_dust2_3: -8231231276711783014
+      teach_object_dust2_30: -580932269946423199
+      teach_object_dust2_31: 4274943203376892512
+      teach_object_dust2_32: -2453663815847490259
+      teach_object_dust2_33: 5347475987344654834
+      teach_object_dust2_34: 3895655156017312854
+      teach_object_dust2_35: 5856986841420526891
+      teach_object_dust2_36: 3230539841658798780
+      teach_object_dust2_37: -6360635994054127583
+      teach_object_dust2_38: -3434332728960714578
+      teach_object_dust2_39: 2762634552673990018
+      teach_object_dust2_4: 1881260471059683250
+      teach_object_dust2_40: 7922355858056027895
+      teach_object_dust2_41: 591841867135453827
+      teach_object_dust2_42: 2085794471011835346
+      teach_object_dust2_43: 714460002187839205
+      teach_object_dust2_44: 7306802671259344018
+      teach_object_dust2_45: -7941232295356655543
+      teach_object_dust2_46: 7993439262161520986
+      teach_object_dust2_47: -5455917566944998714
+      teach_object_dust2_48: 8012865964927737367
+      teach_object_dust2_49: -2782393250523669226
+      teach_object_dust2_5: 5492318549211925052
+      teach_object_dust2_50: -6930649005625846113
+      teach_object_dust2_51: -3007636590137033615
+      teach_object_dust2_52: -2768695880977953824
+      teach_object_dust2_53: -7280370647370790022
+      teach_object_dust2_54: -2439983511822427371
+      teach_object_dust2_55: -5538785839998169050
+      teach_object_dust2_56: 8867711233527351308
+      teach_object_dust2_57: 7125769487279388711
+      teach_object_dust2_58: -6256647668045455465
+      teach_object_dust2_59: -6260620156309428016
+      teach_object_dust2_6: -5574685887945066097
+      teach_object_dust2_60: 5569686642727075097
+      teach_object_dust2_61: 8864273884214819435
+      teach_object_dust2_62: 8315067640281450290
+      teach_object_dust2_63: 4915191979931044809
+      teach_object_dust2_64: 4181390850499973235
+      teach_object_dust2_65: -7818297377076144959
+      teach_object_dust2_66: -6548735956550686345
+      teach_object_dust2_67: 3662477551636356279
+      teach_object_dust2_68: 6778994611142784329
+      teach_object_dust2_69: 8422380742502867809
+      teach_object_dust2_7: 4789503081120069635
+      teach_object_dust2_70: 5210906324448798139
+      teach_object_dust2_71: -1959189602308050337
+      teach_object_dust2_72: 6253925502152438788
+      teach_object_dust2_73: -592857486571208251
+      teach_object_dust2_74: 347880852783079382
+      teach_object_dust2_75: 4017355993440817206
+      teach_object_dust2_76: 6903789839080296265
+      teach_object_dust2_77: -37128743730810454
+      teach_object_dust2_78: -8051557073832310898
+      teach_object_dust2_79: -4381136841226304378
+      teach_object_dust2_8: 7279179833761829075
+      teach_object_dust2_80: 1803913851203316474
+      teach_object_dust2_81: -5863750138928287926
+      teach_object_dust2_82: 3995099420434732021
+      teach_object_dust2_83: 5552885166506280794
+      teach_object_dust2_84: -1458843679956588370
+      teach_object_dust2_85: 6032140140227095061
+      teach_object_dust2_86: -3749858069182405395
+      teach_object_dust2_87: -4932595479268613339
+      teach_object_dust2_88: 1316659245874461178
+      teach_object_dust2_89: 6260367012196706583
+      teach_object_dust2_9: 8992903873912262908
+      teach_object_dust2_90: -2207798327626320822
+      teach_object_dust2_91: 116491969085464803
+      teach_object_dust2_92: -637071843952870605
+      teach_object_dust2_93: 5668267514751895189
+      teach_object_dust2_94: 1136217145175882874
+      teach_object_dust2_95: 3369237244870514813
+      teach_object_dust2_96: -2937004264135070759
+      teach_object_dust2_97: 8432234514698236242
+      teach_object_dust2_98: 6654455074214876791
+      teach_object_dust2_99: -508774022745786231
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

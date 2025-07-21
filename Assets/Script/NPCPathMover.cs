@@ -58,8 +58,7 @@ public class NPCPathMover : MonoBehaviour
                 animator.SetFloat("DirX", direction.x);
                 animator.SetFloat("DirY", direction.y);
 
-                // Day3에서만 Walking 파라미터 사용
-                if (currentScene == "Day3")
+                if (currentScene == "Day3" || currentScene == "Day4")
                 {
                     animator.SetBool("Walking", true);
                 }
@@ -72,12 +71,11 @@ public class NPCPathMover : MonoBehaviour
                 {
                     isMoving = false;
 
-                    if (animator != null && currentScene == "Day3")
+                    if (animator != null && (currentScene == "Day3" || currentScene == "Day4"))
                     {
                         animator.SetBool("Walking", false);
                     }
 
-                    // Day3: 이동 후 대사 재개
                     if (currentScene == "Day3" && DialogueManager.instance != null)
                     {
                         if (!DialogueManager.instance.talking && DialogueManager.instance.HasMoreSentences())
@@ -88,8 +86,10 @@ public class NPCPathMover : MonoBehaviour
                         gameObject.SetActive(false);
                     }
 
-
-                    // gameObject.SetActive(false); // 필요하면 유지
+                    if (currentScene == "Day4")
+                    {
+                        gameObject.SetActive(false);
+                    }
                 }
             }
         }
