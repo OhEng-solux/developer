@@ -121,14 +121,6 @@ public class PlayerManager : MovingObject
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F5))//저장
-        {
-            theSaveNLoad.CallSave();
-        }
-        if (Input.GetKeyDown(KeyCode.F9))//불러오기
-        {
-            theSaveNLoad.CallLoad();
-        }
         if (canMove && !notMove)
         {
             if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
