@@ -34,8 +34,9 @@ public class ChoiceManager : MonoBehaviour
 
     public GameObject go;
     public Text question_Text;
-    public Text[] answer_Text;
-    public GameObject[] answer_Panel;
+    public Text[] answer_Text;       // °¢ ¼±ÅÃÁö ÅØ½ºÆ®
+    public GameObject[] answer_Panel; // °¢ ¼±ÅÃÁö ÆÐ³Î
+    public RectTransform selectorImage; // "¢º" µî ÇÏ³ª¸¸ ÇÒ´ç
 
     public Animator anim;
 
@@ -45,7 +46,7 @@ public class ChoiceManager : MonoBehaviour
     public bool choiceIng = false;
     private bool keyInput = false;
 
-    private int lastAnswerIndex = -1;  // ï¿½ï¿½ï¿½ï¿½ count ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½È®ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    private int lastAnswerIndex = -1;
     private int result;
 
     private WaitForSeconds waitTime = new WaitForSeconds(0.01f);
@@ -63,6 +64,7 @@ public class ChoiceManager : MonoBehaviour
         }
 
         question_Text.text = "";
+        if (selectorImage != null) selectorImage.gameObject.SetActive(true);
     }
 
     public void ShowChoice(Choice _choice)
@@ -84,10 +86,9 @@ public class ChoiceManager : MonoBehaviour
         lastAnswerIndex = maxAnswers - 1;
 
         anim.SetBool("Appear", true);
-        Selection();
+        Selection(); // ¼±ÅÃÁö Ã³À½¿¡ selectorImage À§Ä¡ ¹Ù·Î ¸ÂÃß±â
         StartCoroutine(ChoiceCoroutine());
     }
-
 
     public int GetResult()
     {
@@ -110,6 +111,7 @@ public class ChoiceManager : MonoBehaviour
         anim.SetBool("Appear", false);
         go.SetActive(false);
         choiceIng = false;
+        if (selectorImage != null) selectorImage.gameObject.SetActive(false); // ²¨ÁÖ±â
         theOrder.Move();
     }
 
@@ -128,9 +130,9 @@ public class ChoiceManager : MonoBehaviour
         keyInput = true;
     }
 
-
     IEnumerator TypingQuestion()
     {
+        question_Text.text = "";
         for (int i = 0; i < question.Length; i++)
         {
             question_Text.text += question[i];
@@ -140,6 +142,7 @@ public class ChoiceManager : MonoBehaviour
 
     IEnumerator TypingAnswer_0()
     {
+        answer_Text[0].text = "";
         yield return new WaitForSeconds(0.4f);
         for (int i = 0; i < answerList[0].Length; i++)
         {
@@ -150,6 +153,7 @@ public class ChoiceManager : MonoBehaviour
 
     IEnumerator TypingAnswer_1()
     {
+        answer_Text[1].text = "";
         yield return new WaitForSeconds(0.5f);
         for (int i = 0; i < answerList[1].Length; i++)
         {
@@ -160,6 +164,7 @@ public class ChoiceManager : MonoBehaviour
 
     IEnumerator TypingAnswer_2()
     {
+        answer_Text[2].text = "";
         yield return new WaitForSeconds(0.6f);
         for (int i = 0; i < answerList[2].Length; i++)
         {
@@ -170,6 +175,7 @@ public class ChoiceManager : MonoBehaviour
 
     IEnumerator TypingAnswer_3()
     {
+        answer_Text[3].text = "";
         yield return new WaitForSeconds(0.7f);
         for (int i = 0; i < answerList[3].Length; i++)
         {
@@ -194,7 +200,7 @@ public class ChoiceManager : MonoBehaviour
             result = (result < lastAnswerIndex) ? result + 1 : 0;
             Selection();
         }
-        else if (Input.GetKeyDown(KeyCode.Z))
+        else if (Input.GetKeyDown(KeyCode.Return))
         {
             theAudio.Play(enterSound);
             keyInput = false;
@@ -204,13 +210,28 @@ public class ChoiceManager : MonoBehaviour
 
     public void Selection()
     {
-        Color color = answer_Panel[0].GetComponent<Image>().color;
-        color.a = 0.75f;
-        for (int i = 0; i <= lastAnswerIndex; i++)
+        if (selectorImage == null)
         {
-            answer_Panel[i].GetComponent<Image>().color = color;
+            Debug.LogWarning("SelectorImage°¡ ¿¬°áµÇÁö ¾Ê¾Ò½À´Ï´Ù!");
+            return;
         }
-        color.a = 1f;
-        answer_Panel[result].GetComponent<Image>().color = color;
+
+        Debug.Log($"Selector ÀÌµ¿: {result}, ±âÁ¸ ºÎ¸ð: {selectorImage.parent.name}");
+
+        selectorImage.SetParent(answer_Panel[result].transform, false);
+
+        Debug.Log($"Selector »õ ºÎ¸ð: {selectorImage.parent.name}");
+
+        selectorImage.localScale = Vector3.one;
+        selectorImage.localRotation = Quaternion.identity;
+
+        // var baseSize = new Vector2(7.4f, 8.4f);
+        // selectorImage.sizeDelta = baseSize;
+
+        // selectorImage.anchoredPosition = new Vector2(-25f, 0f);
     }
+
+
+
+
 }

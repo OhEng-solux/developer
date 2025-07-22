@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: b852eb81c7268f54783ac20497b2e1c5
+guid: da12a6d46b470c94190e4e55d281baaf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5188481944481412326
-    second: hallway2_object_0
-  - first:
-      213: -7304240550815467292
-    second: hallway2_object_1
-  - first:
-      213: -8148228440177704041
-    second: hallway2_object_2
-  - first:
-      213: 5464089312520602128
-    second: hallway2_object_3
-  - first:
-      213: -9133684346909516252
-    second: hallway2_object_4
+      213: 1286460246503515035
+    second: user_select_icon_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -63,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 1
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
@@ -151,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hallway2_object_0
+      name: user_select_icon_0
       rect:
         serializedVersion: 2
-        x: 309
-        y: 3029
-        width: 232
-        height: 232
+        x: 0
+        y: 1
+        width: 37
+        height: 41
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,96 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6e4b758b6d0310840800000000000000
-      internalID: 5188481944481412326
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hallway2_object_1
-      rect:
-        serializedVersion: 2
-        x: 279
-        y: 2369
-        width: 2832
-        height: 382
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4e8f3a62bef12aa90800000000000000
-      internalID: -7304240550815467292
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hallway2_object_2
-      rect:
-        serializedVersion: 2
-        x: 369
-        y: 1879
-        width: 562
-        height: 232
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7930972a76dabee80800000000000000
-      internalID: -8148228440177704041
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hallway2_object_3
-      rect:
-        serializedVersion: 2
-        x: 329
-        y: 1039
-        width: 792
-        height: 662
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0128ccd974854db40800000000000000
-      internalID: 5464089312520602128
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hallway2_object_4
-      rect:
-        serializedVersion: 2
-        x: 399
-        y: 619
-        width: 102
-        height: 202
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 42e99e39a72ae3180800000000000000
-      internalID: -9133684346909516252
+      spriteID: b93e08a37cc6ad110800000000000000
+      internalID: 1286460246503515035
       vertices: []
       indices: 
       edges: []
@@ -274,11 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      hallway2_object_0: 5188481944481412326
-      hallway2_object_1: -7304240550815467292
-      hallway2_object_2: -8148228440177704041
-      hallway2_object_3: 5464089312520602128
-      hallway2_object_4: -9133684346909516252
+      user_select_icon_0: 1286460246503515035
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
