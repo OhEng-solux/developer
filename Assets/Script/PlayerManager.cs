@@ -8,7 +8,7 @@ public class PlayerManager : MovingObject
     public string currentMapName;
     public string currentSceneName;//씬 위치
 
-    //private SaveNLoad theSaveNLoad;
+    private SaveNLoad theSaveNLoad;
 
     public float runSpeed;
     private float applyRunSpeed;
@@ -27,7 +27,7 @@ public class PlayerManager : MovingObject
     {
         queue = new Queue<string>();
 
-        //theSaveNLoad = FindFirstObjectByType<SaveNLoad>();
+        theSaveNLoad = FindFirstObjectByType<SaveNLoad>();
 
         if (instance == null)
         {
@@ -36,8 +36,6 @@ public class PlayerManager : MovingObject
             animator = GetComponent<Animator>();
             theAudio = FindFirstObjectByType<AudioManager>();
             instance = this;
-
-            //theSaveNLoad = FindFirstObjectByType<saveNLoad>();
 
             boxCollider.offset = new Vector2(0, -0.1f);
         }
@@ -125,11 +123,11 @@ public class PlayerManager : MovingObject
     {
         if (Input.GetKeyDown(KeyCode.F5))//저장
         {
-            //theSaveNLoad.CallSave();
+            theSaveNLoad.CallSave();
         }
         if (Input.GetKeyDown(KeyCode.F9))//불러오기
         {
-            //theSaveNLoad.CallLoad();
+            theSaveNLoad.CallLoad();
         }
         if (canMove && !notMove)
         {
