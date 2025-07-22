@@ -21,6 +21,8 @@ public class SaveNLoad : MonoBehaviour
         public string mapName;
         public string sceneName;
 
+        public string saveDate;   
+        public string saveTime;
     }
 
     private PlayerManager thePlayer;
@@ -30,7 +32,7 @@ public class SaveNLoad : MonoBehaviour
     private Vector3 vector;
 
 
-    public void CallSave()//저장
+    public void CallSave(int slotIndex)//저장
     {
         thePlayer = FindFirstObjectByType<PlayerManager>();
         InventoryManager theInventory = FindFirstObjectByType<InventoryManager>();
@@ -60,9 +62,15 @@ public class SaveNLoad : MonoBehaviour
                     data.playerItemNames.Add("");  // 빈칸으로 빈 슬롯 표현
             }
         }
+
+        System.DateTime now = System.DateTime.Now;
+        data.saveDate = now.ToString("yyyy-MM-dd");
+        data.saveTime = now.ToString("HH:mm:ss");
+
         //게임이 꺼져도 저장 가능하도록 물리 파일 생성
         BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Create(Application.persistentDataPath + "/SaveFile.dat");
+        string path = Path.Combine(Application.persistentDataPath, $"SaveFile_{slotIndex}.dat");
+        FileStream file = File.Create(path);
 
         bf.Serialize(file, data);//직렬화
         file.Close();//파일 내보내기 완료
@@ -71,13 +79,13 @@ public class SaveNLoad : MonoBehaviour
     }
 
 
-    public void CallLoad()//불러오기, 세이브의 역순 진행
+    public void CallLoad(int slotIndex)//불러오기, 세이브의 역순 진행
     {
         BinaryFormatter bf = new BinaryFormatter();
+        string path = Path.Combine(Application.persistentDataPath, $"SaveFile_{slotIndex}.dat");
         FileStream file = File.Open(Application.persistentDataPath + "/SaveFile.dat",FileMode.Open);
 
-
-        if (file!=null && file.Length > 0)//파일 존재시 로드
+        if (File.Exists(path))//파일 존재시 로드
         {
             data = (Data)bf.Deserialize(file);
 
@@ -100,6 +108,7 @@ public class SaveNLoad : MonoBehaviour
         else
         {
             Debug.Log("저장 세이브 파일이 없습니다");
+            return;
         }
         file.Close();
     }
