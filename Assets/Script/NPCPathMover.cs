@@ -80,11 +80,13 @@ public class NPCPathMover : MonoBehaviour
                     {
                         if (!DialogueManager.instance.talking && DialogueManager.instance.HasMoreSentences())
                         {
-                            DialogueManager.instance.ContinueDialogue();
+                            DialogueManager.instance.SkipToNextSentence();  // 중복 방지
+                            DialogueManager.instance.ContinueDialogue();     // 다음 문장부터 이어가기
                         }
 
                         gameObject.SetActive(false);
                     }
+
 
                     if (currentScene == "Day4")
                     {

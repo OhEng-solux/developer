@@ -12385,6 +12385,7 @@ MonoBehaviour:
   animator: {fileID: 1306316781}
   currentMapName: 
   runSpeed: 0.1
+  canMove: 1
   notMove: 0
   hasEnteredName: 0
 --- !u!95 &1306316781
@@ -17142,7 +17143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3190ce6888b7b9945879b29bee4a12d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredCount: 7
+  requiredCount: 6
 --- !u!114 &1915865008
 MonoBehaviour:
   m_ObjectHideFlags: 0
