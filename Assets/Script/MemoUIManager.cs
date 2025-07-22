@@ -19,6 +19,9 @@ public class MemoUIManager : MonoBehaviour
     private bool memoShown = false;
     private bool isWaitingContinue = false; // 추가
 
+    private int lastTriggeredDialogue = -1;
+    private int lastTriggeredSentence = -1;
+
     void Start()
     {
         foreach (var page in memoPages)
@@ -41,22 +44,30 @@ public class MemoUIManager : MonoBehaviour
 
         int currentDialogueCount = DialogueProgressManager.instance.dialogueCount;
 
+        // 중복 트리거 방지
+        if (currentDialogueCount == lastTriggeredDialogue && sentenceIndex == lastTriggeredSentence)
+            return;
+
         if (currentDialogueCount == memoTrigger.dialogueCount && sentenceIndex == memoTrigger.sentenceIndex)
         {
+            // 중복 방지용 저장
+            lastTriggeredDialogue = currentDialogueCount;
+            lastTriggeredSentence = sentenceIndex;
+
             memoShown = true;
             memoActive = true;
             currentPage = 0;
             ShowCurrentPage();
 
-            // 오토넥스트 무조건 강제 비활성
             DialogueManager.instance.autoNext = false;
             DialogueManager.instance.PauseDialogue();
         }
     }
 
+
     void Update()
     {
-        if (memoActive && !isWaitingContinue && Input.GetKeyDown(KeyCode.Z))
+        if (memoActive && !isWaitingContinue && Input.GetKeyDown(KeyCode.Space))
         {
             HideCurrentPage();
             currentPage++;
@@ -77,15 +88,15 @@ public class MemoUIManager : MonoBehaviour
 
     private IEnumerator ContinueAfterMemo()
     {
-        // Z연타 등 중복처리 막기
         DialogueManager.instance.SetKeyInputActive(false);
         yield return null;
 
-        DialogueManager.instance.SetKeyInputActive(true);
-        DialogueManager.instance.ContinueDialogue();
+        DialogueManager.instance.SkipToNextSentence();  // 추가
+        DialogueManager.instance.ContinueDialogue();    // 다음 문장부터 이어가기
 
         isWaitingContinue = false;
     }
+
 
 
     private void ShowCurrentPage()
