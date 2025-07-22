@@ -2651,9 +2651,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1457234773}
   - {fileID: 1352474123}
   - {fileID: 721013315}
-  - {fileID: 1457234773}
   - {fileID: 53571928}
   - {fileID: 1072330436}
   m_Father: {fileID: 0}
@@ -5833,6 +5833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boundName: Lobby
 --- !u!60 &721013317
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -15367,6 +15368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boundName: Sun
 --- !u!4 &1403641311
 Transform:
   m_ObjectHideFlags: 0
@@ -22511,6 +22513,7 @@ MonoBehaviour:
   walkSound_4: footsteps4
   animator: {fileID: 1928187255}
   currentMapName: 
+  currentSceneName: 
   runSpeed: 0.1
   canMove: 1
   notMove: 0

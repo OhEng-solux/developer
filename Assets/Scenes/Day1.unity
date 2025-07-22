@@ -14662,6 +14662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boundName: Lobby
 --- !u!60 &988115307
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -21061,6 +21062,7 @@ MonoBehaviour:
   walkSound_4: footsteps4
   animator: {fileID: 1306316781}
   currentMapName: 
+  currentSceneName: 
   runSpeed: 0.1
   canMove: 1
   notMove: 0
@@ -22576,6 +22578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boundName: Director Office
 --- !u!60 &1482960755
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -27927,6 +27930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boundName: Sleeping_room
 --- !u!60 &1933852807
 PolygonCollider2D:
   m_ObjectHideFlags: 0
