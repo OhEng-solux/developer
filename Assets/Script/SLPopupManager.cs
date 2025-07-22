@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PopupManager : MonoBehaviour
+public class SLPopupManager : MonoBehaviour
 {
-    public static PopupManager instance;
+    public static SLPopupManager instance;
 
     public GameObject popupPanel;
     public Text popupText;
@@ -82,10 +82,9 @@ public class PopupManager : MonoBehaviour
 
     public void ShowChoicePopup(string message, System.Action yesAction, System.Action noAction)
     {
-        Debug.Log("ShowChoicePopup ?");
         popupText.text = message;
         popupPanel.SetActive(true);
-        Debug.Log($"popupPanel activeSelf: {popupPanel.activeSelf}");
+
         confirmButton.gameObject.SetActive(false); // 확인 버튼 숨기고
         yesButton.gameObject.SetActive(true);      // 예 / 아니오 버튼 표시
         noButton.gameObject.SetActive(true);

@@ -65,4 +65,8 @@ public class GameManager : MonoBehaviour
 
         theInventory.UpdateSlots();
     }
+   void update()
+    {
+
+    }
 }

@@ -15,8 +15,24 @@ public class SaveManager : MonoBehaviour
 
     private int currentIndex = 0; // 현재 선택된 슬롯 인덱스
     private bool isOpen = false; // 인벤토리 열림 상태
-
+    private bool isSavePoint = false;
     private SaveNLoad saveNLoad;
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        // "SavePoint" 태그를 붙인 물체와 닿았을 때
+        if (other.CompareTag("SavePoint"))
+        {
+            isSavePoint = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("SavePoint"))
+        {
+            isSavePoint = false;
+        }
+    }
 
     void Start()
     {
@@ -26,58 +42,59 @@ public class SaveManager : MonoBehaviour
 
     void Update()
     {
-        if (currentIndex >= 3)
-        {
-            currentIndex%=3 ;
-        }
-
         // X 키를 눌렀을 때 세이브창 열고 닫기 토글
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
-            isOpen = !isOpen;
-            savePanel.SetActive(isOpen);
-
-            if (isOpen)
+            if (isSavePoint) // 근처일 때만 토글 허용
             {
-                audioManager.Play(openSound);
-                UpdateSlots(); // 인벤토리 열렸을 때 슬롯에 아이템 정보 갱신
-                HighlightSlot(currentIndex); // 현재 인덱스에 해당하는 슬롯에만 강조 표시
+                isOpen = !isOpen;
+                savePanel.SetActive(isOpen);
 
-                GameObject.FindWithTag("Player").GetComponent<PlayerManager>().canMove = false; //이동 제한
+                if (isOpen)
+                {
+                    audioManager.Play(openSound);
+                    UpdateSlots();
+                    HighlightSlot(currentIndex);
+                    GameObject.FindWithTag("Player").GetComponent<PlayerManager>().canMove = false;
+                }
+                else
+                {
+                    audioManager.Play(openSound);
+                    GameObject.FindWithTag("Player").GetComponent<PlayerManager>().canMove = true;
+                }
             }
-            else
-            {
-                audioManager.Play(openSound);
-                GameObject.FindWithTag("Player").GetComponent<PlayerManager>().canMove = true;
-            }
+            
         }
+    
 
         // 방향키 동작 우선순위: 팝업창>인벤토리>이동
         if (!isOpen || PopupManager.instance.IsPopupActive()) return;
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            MoveCursor(-1); // 왼쪽으로 이동
+            MoveCursor(-1); // 위쪽으로 이동
             audioManager.Play(keySound);
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            MoveCursor(1); // 오른쪽으로 이동
+            MoveCursor(1); // 아래쪽으로 이동
             audioManager.Play(keySound);
         }
 
         if (Input.GetKeyDown(KeyCode.S)) //세이브
         {
             string path = Application.persistentDataPath + $"/SaveFile_{currentIndex}.dat";
-
+       
             audioManager.Play(enterSound);
             if (!System.IO.File.Exists(path))
             {
+                Debug.Log("저장 ?");
                 PopupManager.instance.ShowChoicePopup(
                     "저장하시겠습니까?",
                     () =>
                     {
                         saveNLoad.CallSave(currentIndex);
+                        UpdateSlots();
                     },
                     () =>
                     {
@@ -86,11 +103,14 @@ public class SaveManager : MonoBehaviour
                 );
             }
             else {
+                Debug.Log("덮어 ?");
                 PopupManager.instance.ShowChoicePopup(
+
                     "덮어쓰시겠습니까?",
                     () =>
                     {
                         saveNLoad.CallSave(currentIndex);
+                        UpdateSlots();
                     },
                     () =>
                     {
@@ -126,8 +146,6 @@ public class SaveManager : MonoBehaviour
             }
         }
     }
-
-
 
     public void UpdateSlots()
     {

@@ -7,6 +7,7 @@ TagManager:
   - npc
   - paper
   - memo
+  - SavePoint
   layers:
   - Default
   - TransparentFX
@@ -61,6 +62,9 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 1814127615
+    locked: 0
+  - name: popup
+    uniqueID: 769219173
     locked: 0
   m_RenderingLayers:
   - Default

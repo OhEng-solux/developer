@@ -50,5 +50,6 @@ public class SaveSlot : MonoBehaviour
         currentPlaceText.text = "비어있음";
         dateText.text = "";
         timeText.text = "";
+
     }
 }
