@@ -1,22 +1,34 @@
 fileFormatVersion: 2
-guid: b852eb81c7268f54783ac20497b2e1c5
+guid: ed951e76ca23e404d896bbe811aa17d8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5188481944481412326
-    second: hallway2_object_0
+      213: 4943093188316415521
+    second: sparkle - 4_0
   - first:
-      213: -7304240550815467292
-    second: hallway2_object_1
+      213: -3115777474761612244
+    second: sparkle - 4_1
   - first:
-      213: -8148228440177704041
-    second: hallway2_object_2
+      213: 9219083902253468463
+    second: sparkle - 4_2
   - first:
-      213: 5464089312520602128
-    second: hallway2_object_3
+      213: -431645752285413942
+    second: sparkle - 4_3
   - first:
-      213: -9133684346909516252
-    second: hallway2_object_4
+      213: 8273615045060339537
+    second: sparkle - 4_4
+  - first:
+      213: -4274744090713441928
+    second: sparkle - 4_5
+  - first:
+      213: -7966706700429796851
+    second: sparkle - 4_6
+  - first:
+      213: 3316091072750890948
+    second: sparkle - 4_7
+  - first:
+      213: -5491394732205600384
+    second: sparkle - 4_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -58,7 +70,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -96,46 +108,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -151,13 +124,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hallway2_object_0
+      name: sparkle - 4_0
       rect:
         serializedVersion: 2
-        x: 309
-        y: 3029
-        width: 232
-        height: 232
+        x: 209
+        y: 279
+        width: 12
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6e4b758b6d0310840800000000000000
-      internalID: 5188481944481412326
+      spriteID: 126c04da015699440800000000000000
+      internalID: 4943093188316415521
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hallway2_object_1
+      name: sparkle - 4_1
       rect:
         serializedVersion: 2
-        x: 279
-        y: 2369
-        width: 2832
-        height: 382
+        x: 249
+        y: 279
+        width: 12
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4e8f3a62bef12aa90800000000000000
-      internalID: -7304240550815467292
+      spriteID: c24aba115e882c4d0800000000000000
+      internalID: -3115777474761612244
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hallway2_object_2
+      name: sparkle - 4_2
       rect:
         serializedVersion: 2
-        x: 369
-        y: 1879
-        width: 562
-        height: 232
+        x: 189
+        y: 259
+        width: 12
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,20 +183,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7930972a76dabee80800000000000000
-      internalID: -8148228440177704041
+      spriteID: f2b075cd6f3c0ff70800000000000000
+      internalID: 9219083902253468463
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hallway2_object_3
+      name: sparkle - 4_3
       rect:
         serializedVersion: 2
-        x: 329
-        y: 1039
-        width: 792
-        height: 662
+        x: 209
+        y: 219
+        width: 52
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -232,20 +205,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0128ccd974854db40800000000000000
-      internalID: 5464089312520602128
+      spriteID: acdb83aa97c720af0800000000000000
+      internalID: -431645752285413942
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hallway2_object_4
+      name: sparkle - 4_4
       rect:
         serializedVersion: 2
-        x: 399
-        y: 619
-        width: 102
-        height: 202
+        x: 269
+        y: 259
+        width: 12
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -254,8 +227,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 42e99e39a72ae3180800000000000000
-      internalID: -9133684346909516252
+      spriteID: 15726294c09c1d270800000000000000
+      internalID: 8273615045060339537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sparkle - 4_5
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 219
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8793357e5ee0da4c0800000000000000
+      internalID: -4274744090713441928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sparkle - 4_6
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 219
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0a58232772907190800000000000000
+      internalID: -7966706700429796851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sparkle - 4_7
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 199
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cf2922e24f150e20800000000000000
+      internalID: 3316091072750890948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sparkle - 4_8
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 199
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0811f61f595aac3b0800000000000000
+      internalID: -5491394732205600384
       vertices: []
       indices: 
       edges: []
@@ -264,7 +325,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -274,11 +335,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      hallway2_object_0: 5188481944481412326
-      hallway2_object_1: -7304240550815467292
-      hallway2_object_2: -8148228440177704041
-      hallway2_object_3: 5464089312520602128
-      hallway2_object_4: -9133684346909516252
+      sparkle - 4_0: 4943093188316415521
+      sparkle - 4_1: -3115777474761612244
+      sparkle - 4_2: 9219083902253468463
+      sparkle - 4_3: -431645752285413942
+      sparkle - 4_4: 8273615045060339537
+      sparkle - 4_5: -4274744090713441928
+      sparkle - 4_6: -7966706700429796851
+      sparkle - 4_7: 3316091072750890948
+      sparkle - 4_8: -5491394732205600384
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
