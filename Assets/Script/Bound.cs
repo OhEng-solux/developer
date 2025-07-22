@@ -2,23 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bound : MonoBehaviour
+public class Bound : MonoBehaviour
 {
-    private PolygonCollider2D Bound;
+    private PolygonCollider2D bound;
     public string boundName;//바운드 이름 불러오기
     private CameraManager theCamera;
 
     // Start is called before the first frame update
     void Start()
     {
-        Bound = GetComponent<PolygonCollider2D>();
+        bound = GetComponent<PolygonCollider2D>();
         var theCamera = FindFirstObjectByType<CameraManager>();
-        theCamera.SetBound(Bound);
+        theCamera.SetBound(bound);
     }
     public void setBound()
     {
         if (theCamera!=null) {
-            theCamera.SetBound(Bound); 
+            theCamera.SetBound(bound); 
         }
     }
     // Update is called once per frame
