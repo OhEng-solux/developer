@@ -20,6 +20,7 @@ public class TestDialogue : MonoBehaviour
     {
         if (collision.gameObject.name == "player" && !hasTriggered)
         {
+            Debug.Log("플레이어가 진입함");
             if (!theDM.talking)
             {
                 hasTriggered = true; //  한 번만 트리거 되게 함
