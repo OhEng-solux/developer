@@ -131,6 +131,32 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -138,10 +164,10 @@ TextureImporter:
       name: seoa_sprite_0
       rect:
         serializedVersion: 2
-        x: 619
-        y: 1449
-        width: 202
-        height: 372
+        x: 140
+        y: 1450
+        width: 200
+        height: 370
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,10 +186,10 @@ TextureImporter:
       name: seoa_sprite_1
       rect:
         serializedVersion: 2
-        x: 629
-        y: 969
-        width: 182
-        height: 372
+        x: 620
+        y: 1450
+        width: 200
+        height: 370
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,10 +208,10 @@ TextureImporter:
       name: seoa_sprite_2
       rect:
         serializedVersion: 2
-        x: 629
-        y: 489
-        width: 182
-        height: 372
+        x: 1110
+        y: 1450
+        width: 200
+        height: 370
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,10 +230,10 @@ TextureImporter:
       name: seoa_sprite_3
       rect:
         serializedVersion: 2
-        x: 619
-        y: 9
-        width: 202
-        height: 372
+        x: 150
+        y: 970
+        width: 180
+        height: 370
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -222,11 +248,187 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: seoa_sprite_4
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 970
+        width: 180
+        height: 370
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 296362917ba17fc4dba4daa4f50307bb
+      internalID: 1137479787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seoa_sprite_5
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 970
+        width: 180
+        height: 370
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22c5a867e3661c94db13203d37e24261
+      internalID: -1761078650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seoa_sprite_6
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 490
+        width: 180
+        height: 370
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53bb2269ec3682642a71a653bd31a187
+      internalID: -1902948922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seoa_sprite_7
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 490
+        width: 180
+        height: 370
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f909dc85f869f844991d77bd77e0b532
+      internalID: 1560007558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seoa_sprite_8
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 490
+        width: 180
+        height: 370
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 949c652b2d88a0e43bbffbc112438893
+      internalID: 119626185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seoa_sprite_9
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 10
+        width: 200
+        height: 370
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23002789a31218342b5ca472d6858d5c
+      internalID: -1672297673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seoa_sprite_10
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 10
+        width: 200
+        height: 370
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7549b4b58b4a6764fa989db94cf0a6a2
+      internalID: -1862273028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seoa_sprite_11
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 10
+        width: 200
+        height: 370
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec4de35cb089ab04590c4273763dc9d1
+      internalID: 295306939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 2f1ce01a90c60954692e449e828ab1b2
     internalID: 0
     vertices: []
     indices: 
@@ -238,8 +440,16 @@ TextureImporter:
     nameFileIdTable:
       seoa_sprite_0: -5556966923858349264
       seoa_sprite_1: -8228844267094205278
+      seoa_sprite_10: -1862273028
+      seoa_sprite_11: 295306939
       seoa_sprite_2: 4356574953058287825
       seoa_sprite_3: 9111442651626712476
+      seoa_sprite_4: 1137479787
+      seoa_sprite_5: -1761078650
+      seoa_sprite_6: -1902948922
+      seoa_sprite_7: 1560007558
+      seoa_sprite_8: 119626185
+      seoa_sprite_9: -1672297673
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
