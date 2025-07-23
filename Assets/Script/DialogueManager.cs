@@ -62,6 +62,12 @@ public class DialogueManager : MonoBehaviour
     private bool shouldHideItemPanelNext = false;
     private bool hasShownItemPanel = false;
 
+    // ★ 프롤로그에서만 사용할 다음 문장 화살표
+    public GameObject nextArrow;  // Inspector에서 연결하세요
+
+    // ★ 대화 UI 전체 캔버스 (필요시 연결해서 대화 종료 시 끌 수 있음)
+    public GameObject dialogueCanvas;
+
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -83,6 +89,10 @@ public class DialogueManager : MonoBehaviour
 
         if (itemPanel != null)
             itemPanel.SetActive(false);
+
+        // 씬 바뀔 때 화살표 숨기기 (안전하게)
+        if (nextArrow != null)
+            nextArrow.SetActive(false);
     }
 
     void Start()
@@ -95,11 +105,14 @@ public class DialogueManager : MonoBehaviour
         theAudio = FindAnyObjectByType<AudioManager>();
         theOrder = FindAnyObjectByType<OrderManager>();
         OnSentenceFinished += HandleSentenceEvents;
+
+        // 씬이 프롤로그일 경우 화살표는 기본 숨김
+        if (SceneManager.GetActiveScene().name == "Prologue" && nextArrow != null)
+            nextArrow.SetActive(false);
     }
 
     public void ShowDialogue(Dialogue dialogue, bool shouldCount = true)
     {
-
         if (talking) return;
         countUpOnFinish = shouldCount;
 
@@ -118,17 +131,6 @@ public class DialogueManager : MonoBehaviour
         listSprites.Clear();
         listDialogueWindows.Clear();
 
-        /*GameObject npcObj = GameObject.FindWithTag("npc");
-        if (npcObj != null)
-        {
-            Animator npcAnimator = npcObj.GetComponent<Animator>();
-            if (npcAnimator != null)
-            {
-                npcAnimator.SetFloat("DirX", 0);
-                npcAnimator.SetFloat("DirY", -1);
-            }
-        }*/
-
         for (int i = 0; i < dialogue.sentences.Length; i++)
         {
             listSentences.Add(dialogue.sentences[i]);
@@ -139,6 +141,10 @@ public class DialogueManager : MonoBehaviour
         animSprite.SetBool("Appear", true);
         animDialogueWindow.SetBool("Appear", true);
         count = 0;
+
+        // 대화 UI 캔버스 활성화 (필요시)
+        if (dialogueCanvas != null)
+            dialogueCanvas.SetActive(true);
 
         StopAllCoroutines();
         StartCoroutine(StartDialogueCoroutine());
@@ -166,7 +172,7 @@ public class DialogueManager : MonoBehaviour
             {
                 DialogueProgressManager.instance.AddDialogueCount();
                 Debug.Log("대화 완료! 현재 대화 수: " + DialogueProgressManager.instance.dialogueCount);
-            }            
+            }
         }
 
         countUpOnFinish = true;
@@ -197,6 +203,22 @@ public class DialogueManager : MonoBehaviour
                     mover.StartPath();
                 }
             }
+        }
+
+        // ★ 프롤로그 씬에서는 씬 전환 없이 캔버스만 꺼줌
+        if (SceneManager.GetActiveScene().name == "Prologue")
+        {
+            if (nextArrow != null)
+                nextArrow.SetActive(false);
+
+            if (dialogueCanvas != null)
+                dialogueCanvas.SetActive(false);
+
+            // 애니메이터도 꺼주기 (안전하게)
+            animDialogueWindow.SetBool("Appear", false);
+            animSprite.SetBool("Appear", false);
+
+            text.text = "";
         }
     }
 
@@ -255,6 +277,7 @@ public class DialogueManager : MonoBehaviour
 
         string processedLine = listSentences[count].Replace("$playerName", playerNameForReplace);
         text.text = "";
+
         for (int i = 0; i < processedLine.Length; i++)
         {
             text.text += processedLine[i];
@@ -266,6 +289,14 @@ public class DialogueManager : MonoBehaviour
         }
 
         keyActivated = true;
+
+        // ★ 프롤로그 씬에서만 삼각형 화살표 보이기
+        if (SceneManager.GetActiveScene().name == "Prologue")
+        {
+            if (nextArrow != null)
+                nextArrow.SetActive(true);
+        }
+
         OnSentenceFinished?.Invoke(count);
 
         if (autoNext)
@@ -318,7 +349,6 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
-        
         if (currentScene == "Day2" && sentenceIndex == 2)
         {
             GameObject target = GameObject.Find("paper"); // 오브젝트 이름
@@ -335,7 +365,6 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
-
         if (currentScene == "Day3" && sentenceIndex == 2)
         {
             GameObject npcObj = GameObject.FindWithTag("npc");
@@ -349,7 +378,6 @@ public class DialogueManager : MonoBehaviour
                 }
             }
         }
-
     }
 
     public bool HasMoreSentences()
@@ -364,6 +392,14 @@ public class DialogueManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 keyActivated = false;
+
+                // ★ 프롤로그 씬에서만 삼각형 화살표 숨기기
+                if (SceneManager.GetActiveScene().name == "Prologue")
+                {
+                    if (nextArrow != null)
+                        nextArrow.SetActive(false);
+                }
+
                 count++;
                 text.text = "";
                 theAudio.Play(enterSound);
