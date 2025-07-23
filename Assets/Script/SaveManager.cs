@@ -14,8 +14,10 @@ public class SaveManager : MonoBehaviour
     public SaveSlot[] slots; // 슬롯 배열
 
     private int currentIndex = 0; // 현재 선택된 슬롯 인덱스
-    private bool isOpen = false; // 인벤토리 열림 상태
+    private bool isOpen = false; // 열림 상태
     private bool isSavePoint = false;
+    private bool isStartPoint = false;
+
     private SaveNLoad saveNLoad;
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -42,6 +44,13 @@ public class SaveManager : MonoBehaviour
 
     void Update()
     {
+        string sceneName = gameObject.scene.name;
+        if (sceneName=="Start")
+        {
+            isStartPoint = true;
+            isOpen=true;
+        }
+
         // X 키를 눌렀을 때 세이브창 열고 닫기 토글
         if (Input.GetKeyDown(KeyCode.Z))
         {
@@ -81,7 +90,7 @@ public class SaveManager : MonoBehaviour
             audioManager.Play(keySound);
         }
 
-        if (Input.GetKeyDown(KeyCode.S)) //세이브
+        if (Input.GetKeyDown(KeyCode.Space) && !isStartPoint) //세이브
         {
             string path = Application.persistentDataPath + $"/SaveFile_{currentIndex}.dat";
        
@@ -121,7 +130,7 @@ public class SaveManager : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.L)) //로드
+        if (Input.GetKeyDown(KeyCode.Return) && isStartPoint) //로드
         {
             string path = Application.persistentDataPath + $"/SaveFile_{currentIndex}.dat";
 
