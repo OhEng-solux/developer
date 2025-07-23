@@ -84,16 +84,16 @@ public class TestChoice : MonoBehaviour
 
     private void OnSentenceFinishedHandler(int sentenceIndex)
     {
-        if (!npcMoved && sentenceIndex == 0)
+        if (!npcMoved && sentenceIndex == 1)
         {
             npcMoved = true;
             StartCoroutine(MoveNpcAndWaitThenContinue());
         }
 
-        // �� ��° ����(�ε��� 1) ���� �� 4�ʰ� ���, ���� 3��° ��������
-        if (sentenceIndex == 1)
+        
+        if (sentenceIndex == 2)
         {
-            theDM.WaitAndContinue(4f);
+            theDM.WaitAndContinue(3f);
         }
     }
 
