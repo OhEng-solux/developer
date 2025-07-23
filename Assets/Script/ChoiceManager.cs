@@ -216,20 +216,15 @@ public class ChoiceManager : MonoBehaviour
             return;
         }
 
-        Debug.Log($"Selector 이동: {result}, 기존 부모: {selectorImage.parent.name}");
-
+        selectorImage.gameObject.SetActive(true);
         selectorImage.SetParent(answer_Panel[result].transform, false);
 
-        Debug.Log($"Selector 새 부모: {selectorImage.parent.name}");
-
-        selectorImage.localScale = Vector3.one;
+        // selectorImage.localScale = Vector3.one; // 반드시 1로 고정
         selectorImage.localRotation = Quaternion.identity;
 
-        // var baseSize = new Vector2(7.4f, 8.4f);
-        // selectorImage.sizeDelta = baseSize;
-
-        // selectorImage.anchoredPosition = new Vector2(-25f, 0f);
+        selectorImage.anchoredPosition = new Vector2(-25f, 0f); // 텍스트 왼쪽 정렬
     }
+
 
 
 
