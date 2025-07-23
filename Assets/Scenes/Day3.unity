@@ -15501,7 +15501,7 @@ MonoBehaviour:
   enter_sound: enter_sound
   cancel_sound: beep_sound
   correct_sound: ok_sound
-  moveX: 30
+  moveX: 0
   superObject: {fileID: 1328619810}
   panel:
   - {fileID: 1180869489}
