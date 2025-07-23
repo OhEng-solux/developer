@@ -1,44 +1,35 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
 public class LightController : MonoBehaviour
 {
-    private PlayerManager thePlayer; // 플레이어가 바라보고 있는 방향
+    private PlayerManager thePlayer;
     private Vector2 vector;
-
-    private Quaternion rotation; // 회전(각도)을 담당하는 Vector4 x y z w
+    private Quaternion rotation;
 
     void Start()
     {
+        gameObject.SetActive(false);
         thePlayer = FindFirstObjectByType<PlayerManager>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        this.transform.position = thePlayer.transform.position; // 플레이어의 위치에 따라 라이트 위치 변경
+        // 오브젝트가 비활성화되었을 경우 실행 X
+        if (!gameObject.activeInHierarchy || thePlayer == null) return;
+
+        transform.position = thePlayer.transform.position;
+
         vector.Set(thePlayer.animator.GetFloat("DirX"), thePlayer.animator.GetFloat("DirY"));
 
-        if(vector.x == 1f)
-        {
-            rotation = Quaternion.Euler(0, 0, 90); // 오른쪽
-            this.transform.rotation = rotation;
-        }
-        else if(vector.x == -1f)
-        {
-            rotation = Quaternion.Euler(0, 0, -90); // 왼쪽
-            this.transform.rotation = rotation;
-        }
-        else if(vector.y == 1f)
-        {
-            rotation = Quaternion.Euler(0, 0, 180); // 위쪽
-            this.transform.rotation = rotation;
-        }
-        else if(vector.y == -1f)
-        {
-            rotation = Quaternion.Euler(0, 0, 0); // 아래쪽
-            this.transform.rotation = rotation;
-        }
+        if (vector.x == 1f)
+            rotation = Quaternion.Euler(0, 0, 90);
+        else if (vector.x == -1f)
+            rotation = Quaternion.Euler(0, 0, -90);
+        else if (vector.y == 1f)
+            rotation = Quaternion.Euler(0, 0, 180);
+        else if (vector.y == -1f)
+            rotation = Quaternion.Euler(0, 0, 0);
+
+        transform.rotation = rotation;
     }
 }
