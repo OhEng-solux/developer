@@ -30,7 +30,7 @@ public class NumberSystem : MonoBehaviour {
     private bool correctFlag; // 정답인지 아닌지 여부
 
     void Start () {
-        theAudio = FindObjectOfType<AudioManager>();
+        theAudio = FindFirstObjectByType<AudioManager>();
 	}
 
     public void ShowNumber(int _correctNumber)
@@ -187,7 +187,7 @@ public class NumberSystem : MonoBehaviour {
 
         yield return new WaitForSeconds(0.1f);
 
-        for(int i = 0; i <= count; i++)
+        for (int i = 0; i <= count; i++)
         {
             panel[i].SetActive(false);
         }
@@ -196,5 +196,6 @@ public class NumberSystem : MonoBehaviour {
                                                      superObject.transform.position.z);
 
         activated = false;
+        PlayerManager.instance.canMove = true;   // 이동 다시 허용
     }
 }

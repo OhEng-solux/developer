@@ -78,6 +78,7 @@ public class TestNumber : MonoBehaviour
         if (isWaitingForZ && Input.GetKeyDown(KeyCode.Z))
         {
             isPuzzleStarted = true;
+            PlayerManager.instance.canMove = false;  // 이동 막기
         }   
     }
 }
