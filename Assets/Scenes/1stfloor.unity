@@ -21887,6 +21887,8 @@ MonoBehaviour:
   autoNext: 0
   autoNextDelay: 2
   itemPanel: {fileID: 0}
+  nextArrow: {fileID: 0}
+  dialogueCanvas: {fileID: 0}
 --- !u!1 &663882602
 GameObject:
   m_ObjectHideFlags: 0
@@ -28618,7 +28620,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.02, y: 3.72}
+    oldSize: {x: 2, y: 3.7}
     newSize: {x: 2.02, y: 3.72}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
