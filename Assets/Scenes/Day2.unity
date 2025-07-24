@@ -12237,6 +12237,8 @@ MonoBehaviour:
   autoNext: 0
   autoNextDelay: 2
   itemPanel: {fileID: 12480629}
+  nextArrow: {fileID: 0}
+  dialogueCanvas: {fileID: 0}
 --- !u!114 &652910775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13662,7 +13664,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.02, y: 3.72}
+    oldSize: {x: 2, y: 3.7}
     newSize: {x: 2.02, y: 3.72}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -26540,7 +26542,7 @@ Animator:
   m_GameObject: {fileID: 1686770279}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 85fd587ea1207413e8ca350fac2a0d7b, type: 2}
+  m_Controller: {fileID: 9100000, guid: d2d3795dc733d477890962838399d649, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
