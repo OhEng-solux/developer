@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5722f9cf4a43049fe96e1717b360d14a
+guid: c1110bf8c682045c9b506911e5bf3282
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5030861369318747099
-    second: sparkle - 2_0
+      213: -6724446191801914125
+    second: sparkle - 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sparkle - 2_0
+      name: sparkle - 1_0
       rect:
         serializedVersion: 2
-        x: 189
-        y: 199
-        width: 92
-        height: 92
+        x: 199
+        y: 209
+        width: 72
+        height: 72
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 524558f3d3ace2ab0800000000000000
-      internalID: -5030861369318747099
+      spriteID: 3fc2b62f0d7fda2a0800000000000000
+      internalID: -6724446191801914125
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      sparkle - 2_0: -5030861369318747099
+      sparkle - 1_0: -6724446191801914125
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
