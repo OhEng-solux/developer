@@ -104,6 +104,7 @@ public class DialogueManager : MonoBehaviour
         count = 0;
         text.text = "";
         blueText.text = ""; // 파란색 대화 문장 초기화
+        yellowText.text = ""; // 노란색 대화 문장 초기화
         listSentences = new List<string>();
         listSprites = new List<Sprite>();
         listDialogueWindows = new List<Sprite>();
@@ -304,7 +305,7 @@ public class DialogueManager : MonoBehaviour
         else
             playerNameForReplace = playerName;
 
-        // 파란색 대화 문장 처리
+        // 파란색/노란색 대화 문장 처리
         string currentSentence = "";
         bool useBlue = false;
         bool useYellow = false;
@@ -331,14 +332,21 @@ public class DialogueManager : MonoBehaviour
 
         string processedLine = currentSentence.Replace("$playerName", playerNameForReplace);
 
-        // 텍스트 출력 준비
+        // 텍스트 초기화 및 활성화 제어
         text.text = "";
         blueText.text = "";
         yellowText.text = "";
 
-        text.gameObject.SetActive(!useBlue && !useYellow);
-        blueText.gameObject.SetActive(useBlue);
-        yellowText.gameObject.SetActive(useYellow);
+        text.gameObject.SetActive(false);
+        blueText.gameObject.SetActive(false);
+        yellowText.gameObject.SetActive(false);
+
+        if (useBlue)
+            blueText.gameObject.SetActive(true);
+        else if (useYellow)
+            yellowText.gameObject.SetActive(true);
+        else
+            text.gameObject.SetActive(true);
 
         // 텍스트 타이핑 출력
         for (int i = 0; i < processedLine.Length; i++)
@@ -356,28 +364,9 @@ public class DialogueManager : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
 
-        // 텍스트 출력
-        text.text = "";
-        blueText.text = "";
-        text.gameObject.SetActive(!useBlue);
-        blueText.gameObject.SetActive(useBlue);
-
-        for (int i = 0; i < processedLine.Length; i++)
-        {
-            if (useBlue)
-                blueText.text += processedLine[i];
-            else
-                text.text += processedLine[i];
-
-            if (i % 7 == 1)
-                theAudio.Play(typeSound);
-
-            yield return new WaitForSeconds(0.01f);
-        }
-
         keyActivated = true;
 
-        // 프롤로그 삼각형 화살표
+        // 프롤로그 삼각형 화살표 표시
         if (SceneManager.GetActiveScene().name == "Prologue")
         {
             if (nextArrow != null)
@@ -395,14 +384,8 @@ public class DialogueManager : MonoBehaviour
                 count++;
                 text.text = "";
                 blueText.text = "";
-                if (count == listSentences.Count)
-                {
-                    ExitDialogue();
-                }
-                else
-                {
-                    StartCoroutine(StartDialogueCoroutine());
-                }
+                yellowText.text = "";
+                StartCoroutine(StartDialogueCoroutine());
             }
         }
     }
