@@ -26,11 +26,13 @@ public class DialogueManager : MonoBehaviour
 
     public Text text;
     public Text blueText; // 파란색 대화 문장용
+    public Text yellowText; // 노란색 대화 문장용
     public SpriteRenderer rendererSprite;
     public SpriteRenderer rendererDialogueWindow;
 
     private List<string> listSentences = new List<string>();
     private List<string> listBlueSentences = new List<string>(); // 파란색 대화 문장용
+    private List<string> listYellowSentences = new List<string>(); // 노란색 대화 문장용
     private List<Sprite> listSprites = new List<Sprite>();
     private List<Sprite> listDialogueWindows = new List<Sprite>();
 
@@ -132,6 +134,7 @@ public class DialogueManager : MonoBehaviour
 
         listSentences.Clear();
         listBlueSentences.Clear(); // 파란색 대화 문장 초기화
+        listYellowSentences.Clear(); // 노란색 대화 문장 초기화
         listSprites.Clear();
         listDialogueWindows.Clear();
 
@@ -147,6 +150,14 @@ public class DialogueManager : MonoBehaviour
             foreach (var line in dialogue.blueSentences)
             {
                 listBlueSentences.Add(line);
+            }
+        }
+
+        if (dialogue.yellowSentences != null)
+        {
+            foreach (var line in dialogue.yellowSentences)
+            {
+                listYellowSentences.Add(line);
             }
         }
 
@@ -167,9 +178,12 @@ public class DialogueManager : MonoBehaviour
         count = 0;
         text.text = "";
         blueText.text = ""; // 파란색 대화 문장 초기화
+        yellowText.text = "";
         blueText.gameObject.SetActive(false); // 파란색 텍스트 숨김
+        yellowText.gameObject.SetActive(false);
         listSentences.Clear();
         listBlueSentences.Clear(); // 파란색 대화 문장 초기화
+        listYellowSentences.Clear();
         listSprites.Clear();
         listDialogueWindows.Clear();
         animSprite.SetBool("Appear", false);
@@ -293,8 +307,14 @@ public class DialogueManager : MonoBehaviour
         // 파란색 대화 문장 처리
         string currentSentence = "";
         bool useBlue = false;
+        bool useYellow = false;
 
-        if (count < listBlueSentences.Count && !string.IsNullOrEmpty(listBlueSentences[count]))
+        if (count < listYellowSentences.Count && !string.IsNullOrEmpty(listYellowSentences[count]))
+        {
+            currentSentence = listYellowSentences[count];
+            useYellow = true;
+        }
+        else if (count < listBlueSentences.Count && !string.IsNullOrEmpty(listBlueSentences[count]))
         {
             currentSentence = listBlueSentences[count];
             useBlue = true;
@@ -302,7 +322,6 @@ public class DialogueManager : MonoBehaviour
         else if (count < listSentences.Count)
         {
             currentSentence = listSentences[count];
-            useBlue = false;
         }
         else
         {
@@ -311,6 +330,31 @@ public class DialogueManager : MonoBehaviour
         }
 
         string processedLine = currentSentence.Replace("$playerName", playerNameForReplace);
+
+        // 텍스트 출력 준비
+        text.text = "";
+        blueText.text = "";
+        yellowText.text = "";
+
+        text.gameObject.SetActive(!useBlue && !useYellow);
+        blueText.gameObject.SetActive(useBlue);
+        yellowText.gameObject.SetActive(useYellow);
+
+        // 텍스트 타이핑 출력
+        for (int i = 0; i < processedLine.Length; i++)
+        {
+            if (useBlue)
+                blueText.text += processedLine[i];
+            else if (useYellow)
+                yellowText.text += processedLine[i];
+            else
+                text.text += processedLine[i];
+
+            if (i % 7 == 1)
+                theAudio.Play(typeSound);
+
+            yield return new WaitForSeconds(0.01f);
+        }
 
         // 텍스트 출력
         text.text = "";
