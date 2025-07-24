@@ -20,6 +20,8 @@ public class HiddenNoteEvent : MonoBehaviour
     private bool isZKeyReady = false;
     private bool isDone = false;
 
+    public static HiddenNoteEvent current; // 현재 범위 안의 이벤트
+
     void Update()
     {
         if (!isPlayerInRange) return;
@@ -33,38 +35,19 @@ public class HiddenNoteEvent : MonoBehaviour
 
     void HandleZKeyEvent()
     {
-        switch (eventType)
+        if (eventType != HiddenEventType.Refrigerator) return;
+
+        imageUI.SetActive(true); // 쪽지 이미지 보여주기
+
+        if (itemToAdd != null)
         {
-            case HiddenEventType.Refrigerator:
-                imageUI.SetActive(true); // 쪽지 이미지 보여주기
-
-                // 아이템 획득 처리
-                if (itemToAdd != null)
-                {
-                    itemToAdd.isObtained = true;
-                    Debug.Log("[냉장고] 아이템 획득: " + itemToAdd.itemName);
-                    InventoryManager.instance.UpdateSlots(); // UI 갱신
-                }
-
-                DialogueManager.instance.ShowDialogue(endDialogue); // 대사 출력 시작
-                StartCoroutine(HideImageWhenDialogueEnds()); // 끝날 때 이미지도 꺼짐
-                break;
-
-            case HiddenEventType.Sterilizer:
-                if (InventoryManager.instance.HasItem(itemToReplace.itemName))
-                {
-                    InventoryManager.instance.ReplaceItem(itemToReplace.itemName, itemToAdd); // 아이템 교체
-                    imageUI.SetActive(true); // 쪽지 이미지 보여주기
-                    DialogueManager.instance.ShowDialogue(endDialogue); // 대사 출력                    
-                    StartCoroutine(HideImageWhenDialogueEnds()); // 대사 끝나면 이미지 사라지게
-                }
-                else
-                {
-                    Debug.Log("[살균기] 아이템이 없어 교체 불가");
-                    PopupManager.instance.ShowPopup("쪽지가 없다면 아무 일도 일어나지 않는다...");
-                }
-                break;
+            itemToAdd.isObtained = true;
+            Debug.Log("[냉장고] 아이템 획득: " + itemToAdd.itemName);
+            InventoryManager.instance.UpdateSlots(); // UI 갱신
         }
+
+        DialogueManager.instance.ShowDialogue(endDialogue);
+        StartCoroutine(HideImageWhenDialogueEnds());
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -75,8 +58,11 @@ public class HiddenNoteEvent : MonoBehaviour
         {
             isPlayerInRange = true;
             isZKeyReady = false;
+            current = this;
             DialogueManager.instance.ShowDialogue(preDialogue);
-            isZKeyReady = true;
+            
+            if (eventType == HiddenEventType.Refrigerator)
+                isZKeyReady = true;
         }
     }
 
@@ -85,6 +71,8 @@ public class HiddenNoteEvent : MonoBehaviour
         if (col.CompareTag("Player"))
         {
             isPlayerInRange = false;
+            if (eventType == HiddenEventType.Sterilizer && current == this)
+            current = null;
         }
     }
 
@@ -96,4 +84,25 @@ public class HiddenNoteEvent : MonoBehaviour
         imageUI.SetActive(false);
         isDone = true;
     }
+
+    public void TriggerHiddenNoteEvent()
+    {
+        if (eventType != HiddenEventType.Sterilizer) return;
+
+        if (isDone) return;
+
+        if (InventoryManager.instance.HasItem(itemToReplace.itemName))
+        {
+            InventoryManager.instance.ReplaceItem(itemToReplace.itemName, itemToAdd);
+            imageUI.SetActive(true);
+            DialogueManager.instance.ShowDialogue(endDialogue);
+            StartCoroutine(HideImageWhenDialogueEnds());
+        }
+        else
+        {
+            Debug.Log("[살균기] 아이템이 없어 교체 불가");
+            PopupManager.instance.ShowPopup("쪽지가 없다면 아무 일도 일어나지 않는다...");
+        }
+    }
+
 }

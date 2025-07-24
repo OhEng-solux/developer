@@ -105,8 +105,13 @@ public class InventoryManager : MonoBehaviour
 
     void UseItem(Item item)
     {
-        // 실제 사용 효과 → 추후 이벤트 추가 예정
         Debug.Log($"[아이템 사용] {item.itemName}을(를) 사용했습니다!");
+
+        // 아이템 사용 로직
+        if (item.itemName == "조리실 사용 규칙" && HiddenNoteEvent.current != null && HiddenNoteEvent.current.eventType == HiddenEventType.Sterilizer)
+        {
+            HiddenNoteEvent.current.TriggerHiddenNoteEvent();
+        }
 
         // 소모성 아이템일 경우 사용 후 제거
         if (item.itemType == ItemType.Consumable)
@@ -115,6 +120,10 @@ public class InventoryManager : MonoBehaviour
             items[currentIndex] = item; // 배열 갱신
             UpdateSlots(); // 슬롯 갱신
         }
+
+        isOpen = false;
+        inventoryPanel.SetActive(false);
+        GameObject.FindWithTag("Player").GetComponent<PlayerManager>().canMove = true;
     }
 
 

@@ -132,7 +132,7 @@ public class NumberSystem : MonoBehaviour {
                     selectedTextBox = count;
                 SetColor();
             }
-            else if (Input.GetKeyDown(KeyCode.Z)) // 결정키
+            else if (Input.GetKeyDown(KeyCode.Return)) // 결정키
             {
                 theAudio.Play(key_sound);
                 keyInput = false;
