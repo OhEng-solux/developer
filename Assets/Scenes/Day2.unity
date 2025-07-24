@@ -5026,8 +5026,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transferMapName: Play_room
-  target: {fileID: 0}
-  targetBound: {fileID: 0}
+  target: {fileID: 1879165141}
+  targetBound: {fileID: 1099703034}
   thePlayer: {fileID: 0}
 --- !u!61 &245640492
 BoxCollider2D:
@@ -7452,7 +7452,7 @@ Transform:
   m_GameObject: {fileID: 322477289}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -76.8, y: -47.8, z: 0}
+  m_LocalPosition: {x: -77.1, y: -48.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7483,7 +7483,7 @@ MonoBehaviour:
     sprites:
     - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
     - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    - {fileID: 0}
+    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
     - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
     dialogueWindows:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
@@ -9752,8 +9752,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transferMapName: Lobby
-  target: {fileID: 0}
-  targetBound: {fileID: 0}
+  target: {fileID: 1504929031}
+  targetBound: {fileID: 1526319386}
   thePlayer: {fileID: 0}
 --- !u!61 &473741271
 BoxCollider2D:
@@ -14026,39 +14026,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!1 &703104727
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 703104728}
-  m_Layer: 0
-  m_Name: sprout
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &703104728
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 703104727}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1977893476}
-  - {fileID: 1599395548}
-  m_Father: {fileID: 1171885886}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &709108626
 GameObject:
   m_ObjectHideFlags: 0
@@ -16199,9 +16166,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d72a7c550e315449bfe76999adab307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transferMapName: Sleeping_room
-  target: {fileID: 0}
-  targetBound: {fileID: 0}
+  transferMapName: Teacher_office
+  target: {fileID: 887662759}
+  targetBound: {fileID: 2036172312}
   thePlayer: {fileID: 0}
 --- !u!61 &855066063
 BoxCollider2D:
@@ -20097,7 +20064,6 @@ GameObject:
   - component: {fileID: 1092557562}
   - component: {fileID: 1092557567}
   - component: {fileID: 1092557566}
-  - component: {fileID: 1092557565}
   - component: {fileID: 1092557564}
   - component: {fileID: 1092557563}
   m_Layer: 5
@@ -20155,23 +20121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c39ed4d8ba8a60488e8918c8b247cc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1092557565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1092557561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9b61aaadb4b74269883732d9ab743b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  popupPanel: {fileID: 1092557561}
-  popupText: {fileID: 1829716600}
-  confirmButton: {fileID: 770351597}
-  yesButton: {fileID: 1670891477}
-  noButton: {fileID: 444431629}
 --- !u!114 &1092557566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21798,9 +21747,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d72a7c550e315449bfe76999adab307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transferMapName: Director Office
-  target: {fileID: 0}
-  targetBound: {fileID: 0}
+  transferMapName: Director_Office
+  target: {fileID: 1269973774}
+  targetBound: {fileID: 1167572860}
   thePlayer: {fileID: 0}
 --- !u!61 &1167036823
 BoxCollider2D:
@@ -21893,7 +21842,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundName: Director Office
+  boundName: Director_Office
 --- !u!60 &1167572860
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -21992,7 +21941,6 @@ Transform:
   - {fileID: 1333519312}
   - {fileID: 1918946357}
   - {fileID: 958378277}
-  - {fileID: 703104728}
   m_Father: {fileID: 396807301}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1172891844
@@ -22582,8 +22530,9 @@ GameObject:
   - component: {fileID: 1232114788}
   - component: {fileID: 1232114790}
   - component: {fileID: 1232114791}
+  - component: {fileID: 1232114792}
   m_Layer: 0
-  m_Name: TP to lb2
+  m_Name: TP to Dir
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -22675,6 +22624,22 @@ MonoBehaviour:
   targetMapName: Lobby
   targetBound: {fileID: 1526319386}
   requiredDialogueCount: 7
+--- !u!114 &1232114792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232114787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d72a7c550e315449bfe76999adab307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transferMapName: Director Office
+  target: {fileID: 1256413341}
+  targetBound: {fileID: 1167572860}
+  thePlayer: {fileID: 0}
 --- !u!1 &1238723591
 GameObject:
   m_ObjectHideFlags: 0
@@ -29138,101 +29103,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587449783}
   m_CullTransparentMesh: 1
---- !u!1 &1599395547
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1599395548}
-  - component: {fileID: 1599395550}
-  - component: {fileID: 1599395549}
-  m_Layer: 0
-  m_Name: TP to sprout
-  m_TagString: Untagged
-  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1599395548
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1599395547}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -50.2892, y: -21.5, z: -5.6107035}
-  m_LocalScale: {x: 2.4185543, y: 0.66076624, z: 0}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 703104728}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
---- !u!114 &1599395549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1599395547}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d72a7c550e315449bfe76999adab307, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transferMapName: Sprout
-  target: {fileID: 0}
-  targetBound: {fileID: 0}
-  thePlayer: {fileID: 0}
---- !u!61 &1599395550
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1599395547}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0.09234285, y: -0.3324356}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1.4063082, y: 6.392845}
-  m_EdgeRadius: 0
 --- !u!1 &1604779933
 GameObject:
   m_ObjectHideFlags: 0
@@ -37343,84 +37213,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &1977893475
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1977893476}
-  - component: {fileID: 1977893477}
-  m_Layer: 0
-  m_Name: SP from sprout
-  m_TagString: Untagged
-  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1977893476
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1977893475}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -50.645454, y: -15.7, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 0}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 703104728}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
---- !u!61 &1977893477
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1977893475}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!1 &1984504794
 GameObject:
   m_ObjectHideFlags: 0
