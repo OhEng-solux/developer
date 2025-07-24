@@ -79,6 +79,7 @@ public class TestNumber : MonoBehaviour
         {
             isPuzzleStarted = true;
             PlayerManager.instance.canMove = false;  // 이동 막기
+            dialSystemObject.SetActive(true); // 다이얼 UI 보이기
         }   
     }
 }

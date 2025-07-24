@@ -18,6 +18,7 @@ public class NumberSystem : MonoBehaviour {
     private int correctNumber; // 정답.
 
     private string tempNumber;
+    [SerializeField] private GameObject dialSystemObject; // NumberSystem이 붙은 오브젝트
 
     public GameObject superObject; // 화면 가운데 정렬
     public GameObject[] panel;
@@ -197,5 +198,6 @@ public class NumberSystem : MonoBehaviour {
 
         activated = false;
         PlayerManager.instance.canMove = true;   // 이동 다시 허용
+        dialSystemObject.SetActive(false);
     }
 }

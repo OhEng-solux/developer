@@ -54,13 +54,15 @@ public class DialogueManager : MonoBehaviour
 
     private bool isPaused = false;
     private string playerName = "";
-
     private bool countUpOnFinish = true;
 
     // 아이템 패널 변수
     public GameObject itemPanel;
     private bool shouldHideItemPanelNext = false;
     private bool hasShownItemPanel = false;
+
+    // 지금 대화를 실행 중인 오브젝트 저장을 위한 변수
+    private string currentDialogueObjectName = "";
 
     // ★ 프롤로그에서만 사용할 다음 문장 화살표
     public GameObject nextArrow;  // Inspector에서 연결하세요
@@ -113,6 +115,7 @@ public class DialogueManager : MonoBehaviour
 
     public void ShowDialogue(Dialogue dialogue, bool shouldCount = true)
     {
+
         if (talking) return;
         countUpOnFinish = shouldCount;
 
@@ -378,6 +381,22 @@ public class DialogueManager : MonoBehaviour
                 }
             }
         }
+
+        if (currentScene == "Day3" && currentDialogueObjectName == "Hint_Dialogue" && sentenceIndex == 0)
+        {
+            GameObject target = GameObject.Find("memo"); // 오브젝트 이름
+            if (target != null)
+            {
+                target.SetActive(false);  // 오브젝트를 사라지게 함
+            }
+
+            if (!hasShownItemPanel && itemPanel != null)
+            {
+                itemPanel.SetActive(true);
+                shouldHideItemPanelNext = true;
+                hasShownItemPanel = true;
+            }
+        }
     }
 
     public bool HasMoreSentences()
@@ -488,5 +507,10 @@ public class DialogueManager : MonoBehaviour
 
         SkipToNextSentence();
         ContinueDialogue();
+    }
+
+    public void SetCurrentDialogueObjectName(string name) //오브젝트 이름 저장용 메소드
+    {
+        currentDialogueObjectName = name;
     }
 }

@@ -1,7 +1,18 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
+    public static InventoryManager instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject); // 중복 방지
+    }
+
     public AudioManager audioManager; // 오디오 매니저 직접 연결
     public string keySound;
     public string enterSound;
@@ -113,6 +124,36 @@ public class InventoryManager : MonoBehaviour
         {
             slots[i].SetItem(items[i]);
         }
+    }
+
+    // 아이템 존재 여부 확인용 함수
+    public bool HasItem(string itemName)
+    {
+        foreach (var item in items)
+        {
+            if (item != null && item.itemName == itemName && item.isObtained)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void ReplaceItem(string oldItemName, Item newItem)
+    {
+        for (int i = 0; i < items.Length; i++)
+        {
+            if (items[i] != null && items[i].itemName == oldItemName)
+            {
+                items[i] = newItem;
+                newItem.isObtained = true;
+                UpdateSlots();
+                Debug.Log($"[인벤토리] {oldItemName} → {newItem.itemName}으로 교체 완료");
+                return;
+            }
+        }
+
+        Debug.LogWarning("[인벤토리] 교체할 아이템을 찾지 못함: " + oldItemName);
     }
 
     void HighlightSlot(int index) // 현재 선택된 슬롯만 Outline 활성화

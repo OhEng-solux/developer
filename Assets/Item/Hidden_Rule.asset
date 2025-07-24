@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b73f9a4719c8445bcaece91484dd5f8e, type: 3}
-  m_Name: Kitchen_Rule
+  m_Name: Hidden_Rule
   m_EditorClassIdentifier: 
-  itemName: "\uC870\uB9AC\uC2E4 \uC0AC\uC6A9 \uADDC\uCE59"
-  icon: {fileID: 1124596813818630553, guid: 72fd1cd87395a4be0888128d6e27ba67, type: 3}
+  itemName: "\uC228\uACA8\uC9C4 \uAE00\uC790\uAC00 \uB098\uD0C0\uB09C \uC870\uB9AC\uC2E4
+    \uC0AC\uC6A9 \uADDC\uCE59"
+  icon: {fileID: 3464973351320543932, guid: dca1726798fef45b2953ec024363abbc, type: 3}
   isObtained: 0
   itemType: 1
