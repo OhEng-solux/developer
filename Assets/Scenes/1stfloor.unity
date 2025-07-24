@@ -9438,8 +9438,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1306316774}
-  moveSpeed: 3
-  bound: {fileID: 0}
+  moveSpeed: 0
+  bound: {fileID: 2108248198}
   moveSmoothTime: 0.15
 --- !u!81 &370457042
 AudioListener:

@@ -1428,8 +1428,8 @@ MonoBehaviour:
     - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
     - {fileID: -4012656024804308703, guid: 0287b2accd48540dfadf0a792713887a, type: 3}
     - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: 5ae991cb18aff104d8e017ef03c28e9a, type: 3}
@@ -1442,8 +1442,8 @@ MonoBehaviour:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: 5ae991cb18aff104d8e017ef03c28e9a, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
 --- !u!61 &120867814
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2877,7 +2877,7 @@ Transform:
   m_GameObject: {fileID: 223080973}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 102.2, y: 33, z: -0.38937816}
+  m_LocalPosition: {x: 20.19999, y: 33, z: -0.38937816}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3686,7 +3686,7 @@ Transform:
   m_GameObject: {fileID: 286244710}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 223.2, y: 6.1486053, z: -0.38937816}
+  m_LocalPosition: {x: 141.19998, y: 6.1486053, z: -0.38937816}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3941,7 +3941,7 @@ Transform:
   m_GameObject: {fileID: 317241230}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 102.11, y: 51.799995, z: -0.38937816}
+  m_LocalPosition: {x: 20.109993, y: 51.799995, z: -0.38937816}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4406,9 +4406,9 @@ MonoBehaviour:
     - "\u2019\uC544\uC774\uB4E4\uC774 \uB2E4 \uAE68\uC5B4 \uC788\uB124. \uB204\uAD6C\uD55C\uD14C
       \uBA3C\uC800 \uB9D0\uC744 \uAC78\uC5B4 \uBCFC\uAE4C?'"
     sprites:
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: 0}
     dialogueWindows:
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
 --- !u!61 &360927541
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6308,7 +6308,7 @@ Transform:
   m_GameObject: {fileID: 584762129}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -49.3, y: -10.3, z: -0.7675802}
+  m_LocalPosition: {x: -131.3, y: -10.3, z: -0.7675802}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7108,7 +7108,7 @@ Transform:
   m_GameObject: {fileID: 658763494}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 127.28656, y: 51.5, z: -0.38937816}
+  m_LocalPosition: {x: 45.286552, y: 51.5, z: -0.38937816}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7569,7 +7569,7 @@ MonoBehaviour:
     - {fileID: -4548211720714836524, guid: 0ed4d177aa50249ce841b99197def478, type: 3}
     - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
     - {fileID: -4548211720714836524, guid: 0ed4d177aa50249ce841b99197def478, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: 257174c7cc0623149982ea535b381e8a, type: 3}
@@ -7579,7 +7579,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 257174c7cc0623149982ea535b381e8a, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: 257174c7cc0623149982ea535b381e8a, type: 3}
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
 --- !u!61 &780213548
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7618,7 +7618,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.02, y: 3.72}
+    oldSize: {x: 2, y: 3.7}
     newSize: {x: 2.02, y: 3.72}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -11458,7 +11458,7 @@ Transform:
   m_GameObject: {fileID: 844021638}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -85.1, y: -71.1, z: 0}
+  m_LocalPosition: {x: -167.1, y: -71.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14837,7 +14837,6 @@ GameObject:
   - component: {fileID: 992325169}
   - component: {fileID: 992325168}
   - component: {fileID: 992325167}
-  - component: {fileID: 992325166}
   m_Layer: 3
   m_Name: director
   m_TagString: npc
@@ -14860,34 +14859,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1058683039}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &992325166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 992325164}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813481dc762d44bca937ff94ce09e711, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    sentences:
-    - gg
-    - zzz
-    - "\u314E\u314E"
-    - "\u314E\u314B\u314B"
-    sprites:
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    - {fileID: -4012656024804308703, guid: 0287b2accd48540dfadf0a792713887a, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    - {fileID: -4012656024804308703, guid: 0287b2accd48540dfadf0a792713887a, type: 3}
-    dialogueWindows:
-    - {fileID: 21300000, guid: 5ae991cb18aff104d8e017ef03c28e9a, type: 3}
-    - {fileID: 21300000, guid: 5ae991cb18aff104d8e017ef03c28e9a, type: 3}
-    - {fileID: 21300000, guid: 5ae991cb18aff104d8e017ef03c28e9a, type: 3}
-    - {fileID: 21300000, guid: 5ae991cb18aff104d8e017ef03c28e9a, type: 3}
 --- !u!61 &992325167
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16202,14 +16173,14 @@ MonoBehaviour:
     - {fileID: -9198540971893139065, guid: b804b919a78ad4474843d43a65cd85c1, type: 3}
     - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
     - {fileID: -9198540971893139065, guid: b804b919a78ad4474843d43a65cd85c1, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: 81ac32a6702cf0d45957b95862220d27, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: 81ac32a6702cf0d45957b95862220d27, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: 81ac32a6702cf0d45957b95862220d27, type: 3}
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
 --- !u!61 &1085346668
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22254,11 +22225,11 @@ MonoBehaviour:
     sprites:
     - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
     - {fileID: 1124596813818630553, guid: 72fd1cd87395a4be0888128d6e27ba67, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: 3ca16878e50ace24d802b634871dbc5f, type: 3}
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
 --- !u!61 &1460067275
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24390,7 +24361,7 @@ Transform:
   m_GameObject: {fileID: 1648226567}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 222.28656, y: 51.5, z: -0.38937816}
+  m_LocalPosition: {x: 140.28656, y: 51.5, z: -0.38937816}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -26778,7 +26749,7 @@ Transform:
   m_GameObject: {fileID: 1854604961}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 127.4, y: 33, z: -0.38937816}
+  m_LocalPosition: {x: 45.399994, y: 33, z: -0.38937816}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
