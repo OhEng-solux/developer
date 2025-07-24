@@ -7,17 +7,19 @@ public class TestNumber : MonoBehaviour
     [SerializeField] private Dialogue successDialogue;
     [SerializeField] private Dialogue failDialogue;
     [SerializeField] private GameObject dialSystemObject; // NumberSystem이 붙은 오브젝트
-    [SerializeField] private int correctNumber = 2235; // 정답
-    [SerializeField] private Item rewardItem;
+    [SerializeField] private int correctNumber = 2235; // 정답 숫자
+    [SerializeField] private Item rewardItem; // 성공 시 획득할 아이템
 
     private DialogueManager theDM;
     private OrderManager theOrder;
     private NumberSystem theNumber;
     private InventoryManager theInventory;
 
-    private bool hasInteracted = false;
-    private bool isWaitingForZ = false;
-    private bool isPuzzleStarted = false;
+    // 상태 변수
+    private bool isPlayerInTrigger = false; // 플레이어가 퍼즐 콜라이더에 들어와 있는가
+    private bool hasInteracted = false;     // 성공 or 실패로 이미 시도한 적이 있는가
+    private bool isWaitingForZ = false;     // Z 키를 기다리는 상태인가 (대화 이후)
+    private bool isPuzzleStarted = false;   // Z 키를 눌러 퍼즐을 시작했는가
 
     void Start()
     {
@@ -27,45 +29,64 @@ public class TestNumber : MonoBehaviour
         theInventory = FindFirstObjectByType<InventoryManager>();
     }
 
+    // 플레이어가 콜라이더에 들어오면 퍼즐 시도 조건 확인
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!hasInteracted && collision.CompareTag("Player"))
         {
-            hasInteracted = true;
+            isPlayerInTrigger = true;
             StartCoroutine(TriggerPuzzleStart());
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            isPlayerInTrigger = false;
         }
     }
 
     IEnumerator TriggerPuzzleStart()
     {
-        theOrder.NotMove();
+        // 상태 초기화
+        isPuzzleStarted = false;
+        isWaitingForZ = true;
+        dialSystemObject.SetActive(false); // 혹시 이전 UI 남아 있을 경우 꺼주기
         PlayerManager.instance.canMove = false;
 
-        // preDialogue 출력
+        theOrder.NotMove();
+
+        // 사전 대사 출력
         if (preDialogue != null)
         {
             theDM.ShowDialogue(preDialogue);
             yield return new WaitUntil(() => !theDM.talking);
         }
 
-        // Z키 입력 대기
-        isWaitingForZ = true;
+        // Z 키가 눌릴 때까지 대기
         yield return new WaitUntil(() => isPuzzleStarted);
-        isWaitingForZ = false;
-
-        // 다이얼 UI 실행
+        
+        // 퍼즐 시작
         theNumber.ShowNumber(correctNumber);
-        yield return new WaitUntil(() => !theNumber.activated);
+        yield return new WaitUntil(() => !theNumber.activated); // 퍼즐 종료 대기
 
-        if (theNumber.GetResult()) // 성공
+        // 퍼즐 결과에 따라 처리
+        if (theNumber.GetResult()) // 정답
         {
             theDM.ShowDialogue(successDialogue);
             rewardItem.isObtained = true;
             theInventory.UpdateSlots();
+            hasInteracted = true; // 재시도 불가
         }
-        else // 실패
+        else if (!theNumber.WasCancelled()) // 오답
         {
             theDM.ShowDialogue(failDialogue);
+            hasInteracted = true; // 재시도 불가
+        }
+        else // 취소 (ESC) → 재도전 허용
+        {
+            hasInteracted = false;
         }
 
         yield return new WaitUntil(() => !theDM.talking);
@@ -75,11 +96,14 @@ public class TestNumber : MonoBehaviour
 
     void Update()
     {
-        if (isWaitingForZ && Input.GetKeyDown(KeyCode.Z))
+        // Z 키를 눌러 퍼즐 시작 조건 만족 시
+        if (isWaitingForZ && isPlayerInTrigger && Input.GetKeyDown(KeyCode.Z))
         {
+            Debug.Log("[Update] 퍼즐 시작 조건 만족!");
             isPuzzleStarted = true;
-            PlayerManager.instance.canMove = false;  // 이동 막기
-            dialSystemObject.SetActive(true); // 다이얼 UI 보이기
-        }   
+            isWaitingForZ = false;
+            PlayerManager.instance.canMove = false;
+            dialSystemObject.SetActive(true);
+        }
     }
 }

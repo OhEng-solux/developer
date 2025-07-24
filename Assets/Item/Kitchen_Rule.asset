@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: "\uC870\uB9AC\uC2E4 \uC0AC\uC6A9 \uADDC\uCE59"
   icon: {fileID: 1124596813818630553, guid: 72fd1cd87395a4be0888128d6e27ba67, type: 3}
-  isObtained: 0
+  isObtained: 1
   itemType: 1

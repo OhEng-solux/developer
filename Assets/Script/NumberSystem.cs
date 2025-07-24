@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NumberSystem : MonoBehaviour {
+public class NumberSystem : MonoBehaviour
+{
 
     private AudioManager theAudio;
     public string key_sound; // 방향키 사운드
@@ -29,10 +30,12 @@ public class NumberSystem : MonoBehaviour {
     public bool activated; // return new waitUntil
     private bool keyInput; // 키처리 활성화, 비활성화.
     private bool correctFlag; // 정답인지 아닌지 여부
+    private bool wasCancelled = false; // 중도 취소
 
-    void Start () {
+    void Start()
+    {
         theAudio = FindFirstObjectByType<AudioManager>();
-	}
+    }
 
     public void ShowNumber(int _correctNumber)
     {
@@ -66,19 +69,24 @@ public class NumberSystem : MonoBehaviour {
         return correctFlag;
     }
 
+    public bool WasCancelled()
+    {
+        return wasCancelled;
+    }
+
     public void SetNumber(string _arrow)
     {
 
         int temp = int.Parse(Number_Text[selectedTextBox].text); // 선택된 자리수의 텍스트를 Integer 숫자 형식으로 강제 형변환.
-        
-        if(_arrow == "DOWN")
+
+        if (_arrow == "DOWN")
         {
             if (temp == 0)
                 temp = 9;
             else
                 temp--;
         }
-        else if(_arrow == "UP")
+        else if (_arrow == "UP")
         {
             if (temp == 9)
                 temp = 0;
@@ -92,7 +100,7 @@ public class NumberSystem : MonoBehaviour {
     {
         Color color = Number_Text[0].color;
         color.a = 0.3f;
-        for(int i = 0; i <= count; i++)
+        for (int i = 0; i <= count; i++)
         {
             Number_Text[i].color = color;
         }
@@ -100,8 +108,9 @@ public class NumberSystem : MonoBehaviour {
         Number_Text[selectedTextBox].color = color;
     }
 
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update()
+    {
         if (keyInput)
         {
             if (Input.GetKeyDown(KeyCode.DownArrow))
@@ -139,18 +148,20 @@ public class NumberSystem : MonoBehaviour {
                 StartCoroutine(OXCoroutine());
 
             }
-            else if (Input.GetKeyDown(KeyCode.X)) // 취소키
+            else if (Input.GetKeyDown(KeyCode.Escape)) // 취소키
             {
-                theAudio.Play(key_sound);
+                theAudio.Play(cancel_sound);
                 keyInput = false;
-                StartCoroutine(ExitCoroutine());
+                correctFlag = false; // 취소했으므로 정답 아님 (단, 실패 대사는 X)
+                StartCoroutine(CancelCoroutine());
             }
 
         }
-	}
+    }
 
     IEnumerator OXCoroutine()
     {
+        wasCancelled = false;
         tempNumber = ""; //초기화
 
         Color color = Number_Text[0].color;
@@ -198,6 +209,28 @@ public class NumberSystem : MonoBehaviour {
 
         activated = false;
         PlayerManager.instance.canMove = true;   // 이동 다시 허용
+        dialSystemObject.SetActive(false);
+    }
+    
+    IEnumerator CancelCoroutine()
+    {
+        wasCancelled = true;
+        result = 0;
+        tempNumber = "";
+        anim.SetBool("Appear", false);
+
+        yield return new WaitForSeconds(0.1f);
+
+        for (int i = 0; i <= count; i++)
+        {
+            panel[i].SetActive(false);
+        }
+        superObject.transform.position = new Vector3(superObject.transform.position.x - (moveX * count),
+                                                    superObject.transform.position.y,
+                                                    superObject.transform.position.z);
+
+        activated = false;
+        PlayerManager.instance.canMove = true;
         dialSystemObject.SetActive(false);
     }
 }
