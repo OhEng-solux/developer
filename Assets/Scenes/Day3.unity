@@ -1520,9 +1520,9 @@ MonoBehaviour:
     - "\u2019\uB0C9\uC7A5\uACE0\uC5D0 \uC885\uC774\uAC00 \uBD99\uC5B4 \uC788\uB2E4.
       \uD655\uC778\uD574 \uBCF4\uC790.\u2019"
     sprites:
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: 0}
     dialogueWindows:
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
   endDialogue:
     sentences:
     - "\u2019\uC870\uB9AC\uC2E4 \uC0AC\uC6A9 \uADDC\uCE59\u2019 \uC544\uC774\uD15C\uC744
@@ -1534,13 +1534,13 @@ MonoBehaviour:
       \uBE5B \uC790\uC678\uC120\uC744 \uBC1B\uC544\uC57C \uBAA8\uC2B5\uC744 \uB4DC\uB7EC\uB0B8\uB2E4"
     sprites:
     - {fileID: 0}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
   clueImage: {fileID: -5513119555903696623, guid: 063e213ef83cef649a8b3d3ab495d061, type: 3}
   imageUI: {fileID: 1668196492}
@@ -3467,9 +3467,9 @@ MonoBehaviour:
     sentences:
     - "'\uC774\uC81C\uBCF4\uB2C8 \uC11C\uB78D\uC774 \uC790\uBB3C\uC1E0\uB85C \uC7A0\uACA8\uC788\uB124...?'"
     sprites:
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: 0}
     dialogueWindows:
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
   successDialogue:
     sentences:
     - "\u2018\uC18C\uAE08 \uC8FC\uBA38\uB2C8\u2019 \uC544\uC774\uD15C\uC744 \uD68D\uB4DD\uD558\uC600\uB2E4"
@@ -3483,10 +3483,10 @@ MonoBehaviour:
     - "\u2019\uC5B4\uCA54 \uC218 \uC5C6\uC9C0, \uBB50. \uBCC4\uAC70 \uC544\uB2C8\uC5C8\uACA0\uC9C0..?\u2019"
     sprites:
     - {fileID: 0}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
   dialSystemObject: {fileID: 1505339112}
   correctNumber: 2235
   rewardItem: {fileID: 11400000, guid: 161fe014eab3b4f3f8eaf9bf93d4be8e, type: 2}
@@ -8078,9 +8078,9 @@ MonoBehaviour:
     - "\uC5B4\uC81C \uBD24\uB358 \uBE44\uBC00\uD39C\uC774\uC796\uC544?\r\n\uC774\uAC8C
       \uC65C \uC870\uB9AC\uC2E4\uC5D0 \uC788\uB294 \uAC70\uC9C0?"
     sprites:
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: 0}
     dialogueWindows:
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
 --- !u!61 &997453149
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8934,18 +8934,18 @@ MonoBehaviour:
     - "\uC11C\uB78D \uC704\uC5D0 \uBB34\uC5B8\uAC00 \uB193\uC5EC \uC788\uB294 \uAC83
       \uAC19\uB2E4."
     sprites:
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: 0}
     - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
     - {fileID: 3464973351320543932, guid: dca1726798fef45b2953ec024363abbc, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
     - {fileID: 0}
     dialogueWindows:
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: 2a7509f284ae40c4cbc4bd250844e6a5, type: 3}
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
 --- !u!61 &1099742526
 BoxCollider2D:
@@ -20269,9 +20269,9 @@ MonoBehaviour:
     sentences:
     - "'\uCEF5 \uC0B4\uADE0\uAE30\uC5D0 \uCABD\uC9C0\uB97C \uAC00\uAE4C\uC774 \uB300\uBCFC\uAE4C...?'"
     sprites:
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: 0}
     dialogueWindows:
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
   endDialogue:
     sentences:
     - "\u2019\uC870\uB9AC\uC2E4 \uC0AC\uC6A9 \uADDC\uCE59\u2019 \uC544\uC774\uD15C\uC774
