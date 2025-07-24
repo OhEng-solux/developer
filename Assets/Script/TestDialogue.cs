@@ -23,7 +23,8 @@ public class TestDialogue : MonoBehaviour
             Debug.Log("플레이어가 진입함");
             if (!theDM.talking)
             {
-                hasTriggered = true; //  한 번만 트리거 되게 함
+                hasTriggered = true; // 한 번만 트리거 되게 함
+                theDM.SetCurrentDialogueObjectName(this.gameObject.name); // 대화 실행 중인 오브젝트 이름 전달
                 theDM.ShowDialogue(dialogue);
                 boxCollider.enabled = false;
             }
