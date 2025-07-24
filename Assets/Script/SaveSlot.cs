@@ -5,6 +5,7 @@ public class SaveSlot : MonoBehaviour
 {
     public Text timeText;
     public Text dateText;
+    public Text dayText;
     public Text currentPlaceText;
     public GameObject highlightBorder;
 
@@ -15,6 +16,7 @@ public class SaveSlot : MonoBehaviour
             currentPlaceText.text = "---";
             dateText.text = "---";
             timeText.text = "---";
+            dayText.text = "---";
             return;
         }
 
@@ -38,9 +40,10 @@ public class SaveSlot : MonoBehaviour
         highlightBorder.SetActive(isOn);
     }
 
-    public void SetSaveInfo(string mapName, string saveDate, string saveTime)
+    public void SetSaveInfo(string mapName, string saveDate, string saveTime,string sceneName)
     {
         currentPlaceText.text = mapName;
+        dayText.text = sceneName;
         dateText.text = saveDate;
         timeText.text = saveTime;
     }

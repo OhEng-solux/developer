@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour
 {
@@ -17,7 +18,6 @@ public class StartMenu : MonoBehaviour
     void Start()
     {
         theAudio = FindFirstObjectByType<AudioManager>();
-
         HighlightButton();
     }
 
@@ -53,26 +53,21 @@ public class StartMenu : MonoBehaviour
     }
     void OnSelect(int idx)
     {
-        for(int i = 0; i < 3; i++)
-        {
-            //buttons[i].gameObject.SetActive(false);
-        }
-        //icon.gameObject.SetActive(false);
+
         Panel.gameObject.SetActive(false);
         switch (idx)
         {
           
             case 0: // 처음부터 시작
-                Debug.Log("처음부터 시작!");
-
-                UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene"); // 원하는 게임씬명으로
+                Debug.Log("처음부터 시작");
+                SceneManager.LoadScene("Prologue");
                 break;
             case 1: //  SavePanel 팝업
-                Debug.Log("세이브 패널 팝업!");
+                Debug.Log("세이브 패널 팝업");//불러오기 진행
                 savePanel.SetActive(true);
                 break;
             case 2: //  종료
-                Debug.Log("게임 종료!");
+                Debug.Log("게임 종료");
                 Application.Quit();
                 UnityEditor.EditorApplication.isPlaying = false; // 에디터에서는 이 명령 필요
                 break;

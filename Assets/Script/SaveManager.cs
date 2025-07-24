@@ -16,7 +16,7 @@ public class SaveManager : MonoBehaviour
     private int currentIndex = 0; // 현재 선택된 슬롯 인덱스
     private bool isOpen = false; // 열림 상태
     private bool isSavePoint = false;
-    private bool isStartPoint = false;
+    private bool isStartMenu = false;
 
     private SaveNLoad saveNLoad;
 
@@ -38,8 +38,9 @@ public class SaveManager : MonoBehaviour
 
     void Start()
     {
-        savePanel.SetActive(false); // 시작 시 인벤토리 패널 비활성화
+        savePanel.SetActive(false); // 시작 시 패널 비활성화
         saveNLoad = FindFirstObjectByType<SaveNLoad>();
+        
     }
 
     void Update()
@@ -47,11 +48,13 @@ public class SaveManager : MonoBehaviour
         string sceneName = gameObject.scene.name;
         if (sceneName=="Start")
         {
-            isStartPoint = true;
+            isStartMenu = true;
             isOpen=true;
+            UpdateSlots();
+            HighlightSlot(currentIndex);
         }
 
-        // X 키를 눌렀을 때 세이브창 열고 닫기 토글
+        // 눌렀을 때 세이브창 열고 닫기 토글
         if (Input.GetKeyDown(KeyCode.Z))
         {
             if (isSavePoint) // 근처일 때만 토글 허용
@@ -90,11 +93,11 @@ public class SaveManager : MonoBehaviour
             audioManager.Play(keySound);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && !isStartPoint) //세이브
+        if (Input.GetKeyDown(KeyCode.Space) && !isStartMenu) //세이브는 게임 중간에서만
         {
             string path = Application.persistentDataPath + $"/SaveFile_{currentIndex}.dat";
-       
             audioManager.Play(enterSound);
+
             if (!System.IO.File.Exists(path))
             {
                 Debug.Log("저장 ?");
@@ -130,7 +133,7 @@ public class SaveManager : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.Return) && isStartPoint) //로드
+        if (Input.GetKeyDown(KeyCode.Return) && isStartMenu) //로드는 메인메뉴에서만
         {
             string path = Application.persistentDataPath + $"/SaveFile_{currentIndex}.dat";
 
@@ -166,7 +169,8 @@ public class SaveManager : MonoBehaviour
             {
                 // 저장 파일이 존재하면 파일에서 메타 정보만 읽어와 UI에 전달
                 SaveNLoad.Data data = LoadSaveDataFromFile(path);
-                slots[i].SetSaveInfo(data.mapName, data.saveDate, data.saveTime);
+                Debug.Log("업데이트중");
+                slots[i].SetSaveInfo(data.mapName, data.saveDate, data.saveTime,data.sceneName);
             }
             else
             {

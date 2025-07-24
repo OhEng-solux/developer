@@ -23,6 +23,7 @@ public class SaveNLoad : MonoBehaviour
 
         public string saveDate;   
         public string saveTime;
+
     }
 
     private PlayerManager thePlayer;
@@ -101,9 +102,6 @@ public class SaveNLoad : MonoBehaviour
             theGM.LoadStart();
 
             SceneManager.LoadScene(data.sceneName);
-
-            
-
         }
         else
         {

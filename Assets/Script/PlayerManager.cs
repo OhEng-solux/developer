@@ -25,6 +25,12 @@ public class PlayerManager : MovingObject
 
     void Start()
     {
+        Debug.Log($"씬 이름: {gameObject.scene.name}");
+        if (gameObject.scene.name == "Start")
+        {
+            Debug.Log("시작화면");
+            return;
+        }
         queue = new Queue<string>();
 
         theSaveNLoad = FindFirstObjectByType<SaveNLoad>();
@@ -121,6 +127,12 @@ public class PlayerManager : MovingObject
 
     void Update()
     {
+        if (gameObject.scene.name == "Start")
+        {
+            Debug.Log("시작화면");
+            return;
+        }
+
         if (canMove && !notMove)
         {
             if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)

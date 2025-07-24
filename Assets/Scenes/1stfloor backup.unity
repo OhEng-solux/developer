@@ -6968,11 +6968,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c39ed4d8ba8a60488e8918c8b247cc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popupPanel: {fileID: 238204290}
-  popupText: {fileID: 147920308}
-  confirmButton: {fileID: 905250111}
-  yesButton: {fileID: 494583292}
-  noButton: {fileID: 327335152}
 --- !u!1 &247144126
 GameObject:
   m_ObjectHideFlags: 0
@@ -15116,7 +15111,7 @@ Transform:
   m_GameObject: {fileID: 507088493}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 29.77, y: -56.63, z: 0}
+  m_LocalPosition: {x: -22.1, y: -85, z: 0}
   m_LocalScale: {x: 12, y: 12, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21018,6 +21013,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeText: {fileID: 130594087}
   dateText: {fileID: 1518685708}
+  dayText: {fileID: 0}
   currentPlaceText: {fileID: 865684568}
   highlightBorder: {fileID: 1438600518}
 --- !u!1 &578650195
@@ -30987,6 +30983,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeText: {fileID: 947495950}
   dateText: {fileID: 270582740}
+  dayText: {fileID: 0}
   currentPlaceText: {fileID: 1573914641}
   highlightBorder: {fileID: 953973}
 --- !u!1 &791661388
@@ -40340,6 +40337,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeText: {fileID: 480894962}
   dateText: {fileID: 974422833}
+  dayText: {fileID: 0}
   currentPlaceText: {fileID: 861107296}
   highlightBorder: {fileID: 1143005460}
 --- !u!1 &1111667566
@@ -54158,7 +54156,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1480350861}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ccaf293e195ff1418dd20d790dbc5a8, type: 3}
   m_Name: 
