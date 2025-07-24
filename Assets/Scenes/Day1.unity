@@ -24505,7 +24505,7 @@ Animator:
   m_GameObject: {fileID: 1686770279}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 85fd587ea1207413e8ca350fac2a0d7b, type: 2}
+  m_Controller: {fileID: 9100000, guid: d2d3795dc733d477890962838399d649, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -26069,7 +26069,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1793579490}
-  - component: {fileID: 1793579489}
   m_Layer: 0
   m_Name: StartObject
   m_TagString: Untagged
@@ -26077,18 +26076,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1793579489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1793579488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e30fbbe28cd22f8459065b1ba4e555bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1793579490
 Transform:
   m_ObjectHideFlags: 0
