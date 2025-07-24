@@ -27,7 +27,7 @@ public class SaveNLoad : MonoBehaviour
     }
 
     private PlayerManager thePlayer;
-
+    private Vector3 playerPositionToLoad;
     public Data data;
 
     private Vector3 vector;
@@ -37,7 +37,7 @@ public class SaveNLoad : MonoBehaviour
     {
         thePlayer = FindFirstObjectByType<PlayerManager>();
         InventoryManager theInventory = FindFirstObjectByType<InventoryManager>();
-
+        
         data.playerX = thePlayer.transform.position.x;
         data.playerY = thePlayer.transform.position.y;
         data.playerZ = thePlayer.transform.position.z;
@@ -84,7 +84,7 @@ public class SaveNLoad : MonoBehaviour
     {
         BinaryFormatter bf = new BinaryFormatter();
         string path = Path.Combine(Application.persistentDataPath, $"SaveFile_{slotIndex}.dat");
-        FileStream file = File.Open(Application.persistentDataPath + "/SaveFile.dat",FileMode.Open);
+        FileStream file = File.Open(path, FileMode.Open);
 
         if (File.Exists(path))//파일 존재시 로드
         {
@@ -94,14 +94,14 @@ public class SaveNLoad : MonoBehaviour
 
             thePlayer.currentMapName = data.mapName;
             thePlayer.currentSceneName = data.sceneName;
-
-            vector.Set(data.playerX, data.playerY, data.playerZ);
-            thePlayer.transform.position = vector;
-
-            GameManager theGM = FindFirstObjectByType<GameManager>();
-            theGM.LoadStart();
-
+            playerPositionToLoad = new Vector3(data.playerX, data.playerY, data.playerZ);
+            
+            Debug.Log($"로드중..??");
+            
+            Debug.Log($"로드할 씬 이름: {data.sceneName}");
+            SceneManager.sceneLoaded += OnSceneLoaded;
             SceneManager.LoadScene(data.sceneName);
+
         }
         else
         {
@@ -110,5 +110,28 @@ public class SaveNLoad : MonoBehaviour
         }
         file.Close();
     }
-    
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // 씬 로드 완료 후 호출됨
+        if (scene.name == data.sceneName)
+        {
+            PlayerManager thePlayer = FindObjectOfType<PlayerManager>();
+            if (thePlayer != null)
+            {
+                thePlayer.currentMapName = data.mapName;
+                thePlayer.currentSceneName = data.sceneName;
+                thePlayer.transform.position = playerPositionToLoad;
+            }
+
+            GameManager theGM = FindObjectOfType<GameManager>();
+            if (theGM != null)
+            {
+                theGM.LoadStart();
+            }
+        }
+
+        // 이벤트 해제 (중복 실행 방지)
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
 }
+    

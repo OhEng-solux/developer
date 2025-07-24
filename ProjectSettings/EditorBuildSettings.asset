@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/1stfloor.unity
     guid: 9c1312646daf330478e3bb10eae9db19
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/1stfloor backup.unity
     guid: 65ab40cdf45cb824fa9f2da145e6740b
   - enabled: 1
@@ -35,6 +35,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Day5.unity
     guid: fafe978de92a3414881401b73bc1c3d9
+  - enabled: 1
+    path: Assets/Scenes/Day6.unity
+    guid: 42dbf621847a64028899886fbc091087
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
   m_UseUCBPForAssetBundles: 0

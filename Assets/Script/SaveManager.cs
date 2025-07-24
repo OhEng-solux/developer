@@ -1,23 +1,25 @@
 using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using System;
 
 public class SaveManager : MonoBehaviour
 {
-    public AudioManager audioManager; // 오디오 매니저 직접 연결
-    public string keySound;
-    public string enterSound;
-    public string openSound;
-    public string beepSound;
+    private string keySound = "type_Sound";
+    private string enterSound = "enter_Sound";
+    private string openSound = "ok_Sound";
+    private string beepSound = "beep_Sound";
 
     public GameObject savePanel;
     public SaveSlot[] slots; // 슬롯 배열
+
 
     private int currentIndex = 0; // 현재 선택된 슬롯 인덱스
     private bool isOpen = false; // 열림 상태
     private bool isSavePoint = false;
     private bool isStartMenu = false;
-
+    private bool isMenu = false;
+    private AudioManager audioManager;
     private SaveNLoad saveNLoad;
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -38,9 +40,10 @@ public class SaveManager : MonoBehaviour
 
     void Start()
     {
-        savePanel.SetActive(false); // 시작 시 패널 비활성화
+        audioManager = FindFirstObjectByType<AudioManager>();
+        savePanel.SetActive(false); // 시작 시 패널 비활성화r.so
         saveNLoad = FindFirstObjectByType<SaveNLoad>();
-        
+
     }
 
     void Update()
@@ -77,7 +80,14 @@ public class SaveManager : MonoBehaviour
             }
             
         }
-    
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            isMenu = true;
+            isOpen = true;
+            UpdateSlots();
+            HighlightSlot(currentIndex);
+        }
+
 
         // 방향키 동작 우선순위: 팝업창>인벤토리>이동
         if (!isOpen || PopupManager.instance.IsPopupActive()) return;
@@ -133,7 +143,7 @@ public class SaveManager : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.Return) && isStartMenu) //로드는 메인메뉴에서만
+        if (Input.GetKeyDown(KeyCode.Return) && (isStartMenu|| isMenu)) //로드는 메인메뉴에서만
         {
             string path = Application.persistentDataPath + $"/SaveFile_{currentIndex}.dat";
 
