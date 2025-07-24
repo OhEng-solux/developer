@@ -25,14 +25,10 @@ public class DialogueManager : MonoBehaviour
     #endregion
 
     public Text text;
-    public Text blueText; // 파란색 대화 문장용
-    public Text yellowText; // 노란색 대화 문장용
     public SpriteRenderer rendererSprite;
     public SpriteRenderer rendererDialogueWindow;
 
     private List<string> listSentences = new List<string>();
-    private List<string> listBlueSentences = new List<string>(); // 파란색 대화 문장용
-    private List<string> listYellowSentences = new List<string>(); // 노란색 대화 문장용
     private List<Sprite> listSprites = new List<Sprite>();
     private List<Sprite> listDialogueWindows = new List<Sprite>();
 
@@ -105,8 +101,6 @@ public class DialogueManager : MonoBehaviour
     {
         count = 0;
         text.text = "";
-        blueText.text = ""; // 파란색 대화 문장 초기화
-        yellowText.text = ""; // 노란색 대화 문장 초기화
         listSentences = new List<string>();
         listSprites = new List<Sprite>();
         listDialogueWindows = new List<Sprite>();
@@ -137,8 +131,6 @@ public class DialogueManager : MonoBehaviour
         theOrder.NotMove();
 
         listSentences.Clear();
-        listBlueSentences.Clear(); // 파란색 대화 문장 초기화
-        listYellowSentences.Clear(); // 노란색 대화 문장 초기화
         listSprites.Clear();
         listDialogueWindows.Clear();
 
@@ -147,22 +139,6 @@ public class DialogueManager : MonoBehaviour
             listSentences.Add(dialogue.sentences[i]);
             listSprites.Add(dialogue.sprites[i]);
             listDialogueWindows.Add(dialogue.dialogueWindows[i]);
-        }
-
-        if (dialogue.blueSentences != null)
-        {
-            foreach (var line in dialogue.blueSentences)
-            {
-                listBlueSentences.Add(line);
-            }
-        }
-
-        if (dialogue.yellowSentences != null)
-        {
-            foreach (var line in dialogue.yellowSentences)
-            {
-                listYellowSentences.Add(line);
-            }
         }
 
         animSprite.SetBool("Appear", true);
@@ -181,13 +157,7 @@ public class DialogueManager : MonoBehaviour
     {
         count = 0;
         text.text = "";
-        blueText.text = ""; // 파란색 대화 문장 초기화
-        yellowText.text = "";
-        blueText.gameObject.SetActive(false); // 파란색 텍스트 숨김
-        yellowText.gameObject.SetActive(false);
         listSentences.Clear();
-        listBlueSentences.Clear(); // 파란색 대화 문장 초기화
-        listYellowSentences.Clear();
         listSprites.Clear();
         listDialogueWindows.Clear();
         animSprite.SetBool("Appear", false);
@@ -308,68 +278,22 @@ public class DialogueManager : MonoBehaviour
         else
             playerNameForReplace = playerName;
 
-        // 파란색/노란색 대화 문장 처리
-        string currentSentence = "";
-        bool useBlue = false;
-        bool useYellow = false;
-
-        if (count < listYellowSentences.Count && !string.IsNullOrEmpty(listYellowSentences[count]))
-        {
-            currentSentence = listYellowSentences[count];
-            useYellow = true;
-        }
-        else if (count < listBlueSentences.Count && !string.IsNullOrEmpty(listBlueSentences[count]))
-        {
-            currentSentence = listBlueSentences[count];
-            useBlue = true;
-        }
-        else if (count < listSentences.Count)
-        {
-            currentSentence = listSentences[count];
-        }
-        else
-        {
-            ExitDialogue();
-            yield break;
-        }
-
-        string processedLine = currentSentence.Replace("$playerName", playerNameForReplace);
-
-        // 텍스트 초기화 및 활성화 제어
+        string processedLine = listSentences[count].Replace("$playerName", playerNameForReplace);
         text.text = "";
-        blueText.text = "";
-        yellowText.text = "";
 
-        text.gameObject.SetActive(false);
-        blueText.gameObject.SetActive(false);
-        yellowText.gameObject.SetActive(false);
-
-        if (useBlue)
-            blueText.gameObject.SetActive(true);
-        else if (useYellow)
-            yellowText.gameObject.SetActive(true);
-        else
-            text.gameObject.SetActive(true);
-
-        // 텍스트 타이핑 출력
         for (int i = 0; i < processedLine.Length; i++)
         {
-            if (useBlue)
-                blueText.text += processedLine[i];
-            else if (useYellow)
-                yellowText.text += processedLine[i];
-            else
-                text.text += processedLine[i];
-
+            text.text += processedLine[i];
             if (i % 7 == 1)
+            {
                 theAudio.Play(typeSound);
-
+            }
             yield return new WaitForSeconds(0.01f);
         }
 
         keyActivated = true;
 
-        // 프롤로그 삼각형 화살표 표시
+        // ★ 프롤로그 씬에서만 삼각형 화살표 보이기
         if (SceneManager.GetActiveScene().name == "Prologue")
         {
             if (nextArrow != null)
@@ -386,8 +310,6 @@ public class DialogueManager : MonoBehaviour
                 keyActivated = false;
                 count++;
                 text.text = "";
-                // blueText.text = "";
-                // yellowText.text = "";
                 if (count == listSentences.Count)
                 {
                     ExitDialogue();
@@ -396,7 +318,6 @@ public class DialogueManager : MonoBehaviour
                 {
                     StartCoroutine(StartDialogueCoroutine());
                 }
-                // StartCoroutine(StartDialogueCoroutine());
             }
         }
     }
