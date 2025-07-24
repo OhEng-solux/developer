@@ -1,32 +1,63 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class PuzzleManager : MonoBehaviour
 {
-    public List<string> correctAnswer = new List<string> { "○", "△", "□", "☆" };
+    [Header("Answer")]
+    public List<Transform> correctAnswerButtons;
+
+    private List<string> correctAnswer = new List<string>();
     private List<string> playerInput = new List<string>();
 
+    [Header("UI")]
     public GameObject puzzlePanel;
     public Dialogue successDialogue;
     public Dialogue failDialogue;
+    public GameObject keyObject;
+
     private DialogueManager dm;
 
-    public GameObject keyObject; // 열쇠 프리팹 또는 이미지
-    public Light spotlight; // 조명 효과 (Optional)
+    // 퍼즐 활성화 상태 플래그
+    private bool _isPuzzleActive = false;
+    private bool _isPuzzleSolved = false; // 추가: 퍼즐이 이미 성공했는가
+
+    public bool IsPuzzleActive() => _isPuzzleActive;
+    public bool IsPuzzleSolved() => _isPuzzleSolved;
 
     private void Start()
     {
         dm = FindObjectOfType<DialogueManager>();
         keyObject.SetActive(false);
+
+        correctAnswer.Clear();
+        foreach (Transform btnTransform in correctAnswerButtons)
+        {
+            AnswerButton btn = btnTransform.GetComponent<AnswerButton>();
+            if (btn != null)
+                correctAnswer.Add(btn.shapeValue);
+            else
+                Debug.LogWarning($"{btnTransform.name}에 AnswerButton 컴포넌트가 없습니다.");
+        }
+    }
+
+
+    // 퍼즐 시작 함수
+    public void StartPuzzle()
+    {
+        playerInput.Clear();
+        puzzlePanel.SetActive(true);
+        Time.timeScale = 0f;
+        _isPuzzleActive = true;
     }
 
     public void ButtonPressed(string shape)
     {
+        if (!_isPuzzleActive) return; // 퍼즐 활성 중일 때만 입력
+
         playerInput.Add(shape);
 
-        if (playerInput.Count == 4)
+        if (playerInput.Count == correctAnswer.Count)
         {
             if (IsCorrect())
                 StartCoroutine(SuccessSequence());
@@ -37,7 +68,7 @@ public class PuzzleManager : MonoBehaviour
 
     bool IsCorrect()
     {
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < correctAnswer.Count; i++)
             if (playerInput[i] != correctAnswer[i]) return false;
         return true;
     }
@@ -48,18 +79,25 @@ public class PuzzleManager : MonoBehaviour
         puzzlePanel.SetActive(false);
         Time.timeScale = 1f;
         dm.ShowDialogue(successDialogue);
+        keyObject.SetActive(true);
 
-        keyObject.SetActive(true); // 열쇠 보여주기
-        if (spotlight != null) spotlight.intensity = 0.2f; // 조명 어둡게
-        // 열쇠 인벤토리에 추가하는 로직도 여기서 호출 가능
+        _isPuzzleActive = false;
+        _isPuzzleSolved = true; // 성공시 플래그 true
+        playerInput.Clear();
     }
 
     IEnumerator FailSequence()
     {
         yield return new WaitForSecondsRealtime(0.3f);
+
         puzzlePanel.SetActive(false);
+
+        DialogueManager.instance.ShowDialogue(failDialogue);
+
+        _isPuzzleActive = false;
+        playerInput.Clear();
+
         Time.timeScale = 1f;
-        dm.ShowDialogue(failDialogue);
-        playerInput.Clear(); // 초기화
     }
+
 }
