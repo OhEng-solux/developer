@@ -383,9 +383,17 @@ public class DialogueManager : MonoBehaviour
                 keyActivated = false;
                 count++;
                 text.text = "";
-                blueText.text = "";
-                yellowText.text = "";
-                StartCoroutine(StartDialogueCoroutine());
+                // blueText.text = "";
+                // yellowText.text = "";
+                if (count == listSentences.Count)
+                {
+                    ExitDialogue();
+                }
+                else
+                {
+                    StartCoroutine(StartDialogueCoroutine());
+                }
+                // StartCoroutine(StartDialogueCoroutine());
             }
         }
     }
