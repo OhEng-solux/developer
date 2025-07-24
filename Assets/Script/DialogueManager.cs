@@ -105,8 +105,12 @@ public class DialogueManager : MonoBehaviour
     {
         count = 0;
         text.text = "";
-        blueText.text = ""; // 파란색 대화 문장 초기화
-        yellowText.text = ""; // 노란색 대화 문장 초기화
+        // Day6일 때만 blue/yellow 텍스트 초기화
+        if (SceneManager.GetActiveScene().name == "Day6")
+        {
+            if (blueText != null) blueText.text = "";
+            if (yellowText != null) yellowText.text = "";
+        }
         listSentences = new List<string>();
         listSprites = new List<Sprite>();
         listDialogueWindows = new List<Sprite>();
@@ -181,13 +185,16 @@ public class DialogueManager : MonoBehaviour
     {
         count = 0;
         text.text = "";
-        blueText.text = ""; // 파란색 대화 문장 초기화
-        yellowText.text = "";
-        blueText.gameObject.SetActive(false); // 파란색 텍스트 숨김
-        yellowText.gameObject.SetActive(false);
+        if (SceneManager.GetActiveScene().name == "Day6")
+        {
+            if (blueText != null) blueText.text = "";
+            if (yellowText != null) yellowText.text = "";
+            if (blueText != null) blueText.gameObject.SetActive(false);
+            if (yellowText != null) yellowText.gameObject.SetActive(false);
+        }
         listSentences.Clear();
-        listBlueSentences.Clear(); // 파란색 대화 문장 초기화
-        listYellowSentences.Clear();
+        // listBlueSentences.Clear(); // 파란색 대화 문장 초기화
+        // listYellowSentences.Clear();
         listSprites.Clear();
         listDialogueWindows.Clear();
         animSprite.SetBool("Appear", false);
@@ -308,26 +315,31 @@ public class DialogueManager : MonoBehaviour
         else
             playerNameForReplace = playerName;
 
-        // 파란색/노란색 대화 문장 처리
+        // === 문장 선택 ===
         string currentSentence = "";
         bool useBlue = false;
         bool useYellow = false;
+        bool isDay6 = SceneManager.GetActiveScene().name == "Day6";
 
-        if (count < listYellowSentences.Count && !string.IsNullOrEmpty(listYellowSentences[count]))
+        if (isDay6)
         {
-            currentSentence = listYellowSentences[count];
-            useYellow = true;
+            if (count < listYellowSentences.Count && !string.IsNullOrEmpty(listYellowSentences[count]))
+            {
+                currentSentence = listYellowSentences[count];
+                useYellow = true;
+            }
+            else if (count < listBlueSentences.Count && !string.IsNullOrEmpty(listBlueSentences[count]))
+            {
+                currentSentence = listBlueSentences[count];
+                useBlue = true;
+            }
         }
-        else if (count < listBlueSentences.Count && !string.IsNullOrEmpty(listBlueSentences[count]))
-        {
-            currentSentence = listBlueSentences[count];
-            useBlue = true;
-        }
-        else if (count < listSentences.Count)
+
+        if (string.IsNullOrEmpty(currentSentence) && count < listSentences.Count)
         {
             currentSentence = listSentences[count];
         }
-        else
+        else if (string.IsNullOrEmpty(currentSentence))
         {
             ExitDialogue();
             yield break;
@@ -335,31 +347,45 @@ public class DialogueManager : MonoBehaviour
 
         string processedLine = currentSentence.Replace("$playerName", playerNameForReplace);
 
-        // 텍스트 초기화 및 활성화 제어
+        // === 텍스트 초기화 및 표시 제어 ===
         text.text = "";
-        blueText.text = "";
-        yellowText.text = "";
-
         text.gameObject.SetActive(false);
-        blueText.gameObject.SetActive(false);
-        yellowText.gameObject.SetActive(false);
 
-        if (useBlue)
-            blueText.gameObject.SetActive(true);
-        else if (useYellow)
-            yellowText.gameObject.SetActive(true);
+        if (isDay6)
+        {
+            if (blueText != null) blueText.text = "";
+            if (yellowText != null) yellowText.text = "";
+            if (blueText != null) blueText.gameObject.SetActive(false);
+            if (yellowText != null) yellowText.gameObject.SetActive(false);
+
+            if (useBlue && blueText != null)
+                blueText.gameObject.SetActive(true);
+            else if (useYellow && yellowText != null)
+                yellowText.gameObject.SetActive(true);
+            else
+                text.gameObject.SetActive(true);
+        }
         else
+        {
             text.gameObject.SetActive(true);
+        }
 
-        // 텍스트 타이핑 출력
+        // === 텍스트 타이핑 출력 ===
         for (int i = 0; i < processedLine.Length; i++)
         {
-            if (useBlue)
-                blueText.text += processedLine[i];
-            else if (useYellow)
-                yellowText.text += processedLine[i];
+            if (isDay6)
+            {
+                if (useBlue && blueText != null)
+                    blueText.text += processedLine[i];
+                else if (useYellow && yellowText != null)
+                    yellowText.text += processedLine[i];
+                else
+                    text.text += processedLine[i];
+            }
             else
+            {
                 text.text += processedLine[i];
+            }
 
             if (i % 7 == 1)
                 theAudio.Play(typeSound);
