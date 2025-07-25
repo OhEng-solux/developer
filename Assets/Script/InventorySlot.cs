@@ -9,12 +9,26 @@ public class InventorySlot : MonoBehaviour
 
     public void SetItem(Item item)
     {
-        iconImage.sprite = item.icon;
-        iconImage.color = item.isObtained ? new Color(1,1,1,1f) : new Color(1,1,1,0.3f); //투명도 조절
-        // 이름 설정
-        if (itemNameText != null)
+        // 아이콘 이미지 설정 (습득 여부에 따라 분기)
+        if (item != null)
         {
-            itemNameText.text = item.isObtained ? item.itemName : "???";
+            iconImage.sprite = item.isObtained ? item.obtainedIcon : item.silhouetteIcon;
+            iconImage.color = Color.white;
+
+            // 이름 설정
+            if (itemNameText != null)
+            {
+                itemNameText.text = item.isObtained ? item.itemName : "???";
+            }
+        }
+        else
+        {
+            iconImage.sprite = null;
+            iconImage.color = Color.clear;
+            if (itemNameText != null)
+            {
+                itemNameText.text = "";
+            }
         }
     }
 

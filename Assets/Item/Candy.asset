@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Candy
   m_EditorClassIdentifier: 
   itemName: "\uBCF4\uC11D \uC0AC\uD0D5"
-  icon: {fileID: 3022057770043687863, guid: b2924fe9222b9474bbea133b0e89042c, type: 3}
+  obtainedIcon: {fileID: 3022057770043687863, guid: b2924fe9222b9474bbea133b0e89042c, type: 3}
+  silhouetteIcon: {fileID: 4593769925483136239, guid: 37f6e41a0a6a0403eae8f39431cc8d09, type: 3}
   isObtained: 1
   itemType: 0
+  description: "\uD658\uD558\uAC8C \uBE5B\uB098\uB294 \uC0AC\uD0D5.\n\uBA39\uC740
+    \uC790\uB294 \uD55C\uB3D9\uC548 \uB9D0\uC744 \uC783\uB294\uB2E4."

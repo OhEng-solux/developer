@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Kitchen_Rule
   m_EditorClassIdentifier: 
   itemName: "\uC870\uB9AC\uC2E4 \uC0AC\uC6A9 \uADDC\uCE59"
-  icon: {fileID: 2760881543072293757, guid: 6159e12b98be64d3b8574bf01c914ad1, type: 3}
-  isObtained: 1
+  obtainedIcon: {fileID: 2760881543072293757, guid: 6159e12b98be64d3b8574bf01c914ad1, type: 3}
+  silhouetteIcon: {fileID: -5273250443779059801, guid: 2156ebee03d4d4e748aa0b3e41e080a6, type: 3}
+  isObtained: 0
   itemType: 1
+  description: "\uAD70\uB370\uAD70\uB370 \uBC11\uC904\uC774 \uADF8\uC5B4\uC9C4 \uADDC\uCE59\uBB38.\n\uC789\uD06C
+    \uC544\uB798\uC5D0 \uBB34\uC5B8\uAC00 \uC228\uACA8\uC838 \uC788\uB294 \uB4EF\uD558\uB2E4."
