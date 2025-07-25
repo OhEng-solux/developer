@@ -83,7 +83,7 @@ public class InventoryManager : MonoBehaviour
             UpdateDescription(); // 설명 갱신
         }
 
-        if (Input.GetKeyDown(KeyCode.Z)) //아이템 사용
+        if (Input.GetKeyDown(KeyCode.Return)) //아이템 사용
         {
             Item selectedItem = items[currentIndex];
 
@@ -146,19 +146,6 @@ public class InventoryManager : MonoBehaviour
         {
             slots[i].SetItem(items[i]);
         }
-    }
-
-    // 아이템 존재 여부 확인용 함수
-    public bool HasItem(string itemName)
-    {
-        foreach (var item in items)
-        {
-            if (item != null && item.itemName == itemName && item.isObtained)
-            {
-                return true;
-            }
-        }
-        return false;
     }
 
     public void AcquireItem(Item item)

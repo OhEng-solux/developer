@@ -39,7 +39,7 @@ public class PuzzleManager : MonoBehaviour
 
     private void Start()
     {
-        dm = FindObjectOfType<DialogueManager>();
+        dm = FindFirstObjectByType<DialogueManager>();
         keyObject.SetActive(false);
         theInventory = FindFirstObjectByType<InventoryManager>(); // InventoryManager 연결
     }
