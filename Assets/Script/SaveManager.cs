@@ -84,7 +84,7 @@ public class SaveManager : MonoBehaviour
 
 
         // 방향키 동작 우선순위: 팝업창>인벤토리>이동
-        if (!isOpen || PopupManager.instance.IsPopupActive()) return;
+        if(!isOpen || PopupManager.instance == null || PopupManager.instance.IsPopupActive()) return;
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {

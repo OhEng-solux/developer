@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
@@ -81,9 +82,14 @@ public class Menu : MonoBehaviour
             PlayerManager.instance.canMove = true;
 
         theAudio.Play(cancel_sound);
-
+        StartCoroutine(ResetInputsNextFrame());
     }
 
+    IEnumerator ResetInputsNextFrame()
+    {
+        yield return null; // 한 프레임 대기
+        Input.ResetInputAxes();
+    }
     void HandleInput()
     {
         // 방향키 위/아래로 메뉴 선택 변경

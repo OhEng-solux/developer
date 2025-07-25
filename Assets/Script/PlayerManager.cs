@@ -21,6 +21,7 @@ public class PlayerManager : MovingObject
 
     private Rigidbody2D rigid;
 
+
     void Start()
     {
         if (gameObject.scene.name == "Start")
@@ -125,6 +126,9 @@ public class PlayerManager : MovingObject
 
     void Update()
     {
+
+
+        if (!canMove) return;
         if (gameObject.scene.name == "Start")
         {
             Debug.Log("시작화면");
