@@ -170,8 +170,6 @@ MonoBehaviour:
   dialogue:
     sentences:
     - "\uC624\uB298\uC740 \uC774\uB9CC\uD558\uBA74 \uB410\uB2E4."
-    blueSentences: []
-    yellowSentences: []
     sprites:
     - {fileID: 0}
     dialogueWindows:
@@ -408,8 +406,6 @@ MonoBehaviour:
   dialogue:
     sentences:
     - "\uC774 \uBC29\uC740 \uB4E4\uC5B4\uAC08 \uD544\uC694\uAC00 \uC5C6\uC5B4 \uBCF4\uC778\uB2E4."
-    blueSentences: []
-    yellowSentences: []
     sprites:
     - {fileID: 0}
     dialogueWindows:
@@ -735,8 +731,6 @@ MonoBehaviour:
   dialogue:
     sentences:
     - "\uC774 \uBC29\uC740 \uB4E4\uC5B4\uAC08 \uD544\uC694\uAC00 \uC5C6\uC5B4 \uBCF4\uC778\uB2E4."
-    blueSentences: []
-    yellowSentences: []
     sprites:
     - {fileID: 0}
     dialogueWindows:
@@ -1525,8 +1519,6 @@ MonoBehaviour:
     sentences:
     - "\u2019\uB0C9\uC7A5\uACE0\uC5D0 \uC885\uC774\uAC00 \uBD99\uC5B4 \uC788\uB2E4.
       \uD655\uC778\uD574 \uBCF4\uC790.\u2019"
-    blueSentences: []
-    yellowSentences: []
     sprites:
     - {fileID: 0}
     dialogueWindows:
@@ -1540,8 +1532,6 @@ MonoBehaviour:
       \uC54A\uC558\uB294\uC9C0 \uD655\uC778\uD574 \uBD10\uC57C\uACA0\uB2E4.\u2019"
     - "Hint. \uBE44\uBC00\uD39C\uC73C\uB85C \uC4F4 \uAE00\uC790\uB294 \uD30C\uB780
       \uBE5B \uC790\uC678\uC120\uC744 \uBC1B\uC544\uC57C \uBAA8\uC2B5\uC744 \uB4DC\uB7EC\uB0B8\uB2E4"
-    blueSentences: []
-    yellowSentences: []
     sprites:
     - {fileID: 0}
     - {fileID: 0}
@@ -2535,7 +2525,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC548\uB0B4\uBB38\uAD6C"
+  m_Text: "\uC548\uB0B4 \uBB38\uAD6C"
 --- !u!222 &224699705
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3475,28 +3465,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   preDialogue:
     sentences:
-    - "'\uC774\uC81C\uBCF4\uB2C8 \uC11C\uB78D\uC774 \uC790\uBB3C\uC1E0\uB85C \uC7A0\uACA8\uC788\uB124...?'"
-    blueSentences: []
-    yellowSentences: []
+    - "'\uC774\uC81C \uBCF4\uB2C8 \uC11C\uB78D\uC774 \uC790\uBB3C\uC1E0\uB85C \uC7A0\uACA8
+      \uC788\uB124...?'"
     sprites:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
   successDialogue:
     sentences:
-    - "\u2018\uC18C\uAE08 \uC8FC\uBA38\uB2C8\u2019 \uC544\uC774\uD15C\uC744 \uD68D\uB4DD\uD558\uC600\uB2E4"
-    blueSentences: []
-    yellowSentences: []
+    - "'\uC18C\uAE08 \uC8FC\uBA38\uB2C8' \uC544\uC774\uD15C\uC744 \uD68D\uB4DD\uD558\uC600\uB2E4."
     sprites:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
   failDialogue:
     sentences:
-    - "\uC790\uBB3C\uC1E0\uB97C \uD478\uB294 \uB370 \uC2E4\uD328\uD588\uB2E4"
-    - "\u2019\uC5B4\uCA54 \uC218 \uC5C6\uC9C0, \uBB50. \uBCC4\uAC70 \uC544\uB2C8\uC5C8\uACA0\uC9C0..?\u2019"
-    blueSentences: []
-    yellowSentences: []
+    - "\uC790\uBB3C\uC1E0\uB97C \uD478\uB294 \uB370 \uC2E4\uD328\uD588\uB2E4."
+    - "'\uC5B4\uCA54 \uC218 \uC5C6\uC9C0, \uBB50. \uBCC4\uAC70 \uC544\uB2C8\uC5C8\uACA0\uC9C0..?'"
     sprites:
     - {fileID: 0}
     - {fileID: 0}
@@ -3561,7 +3546,7 @@ Transform:
   m_GameObject: {fileID: 307892987}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.71, y: 9.4, z: -19.20187}
+  m_LocalPosition: {x: 5.4, y: 10.02, z: -19.20187}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4739,12 +4724,12 @@ SpriteRenderer:
   m_SortingLayerID: 1814127615
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2432162976680951554, guid: 68382683c6de4491a88fb0bb9193c707, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 68382683c6de4491a88fb0bb9193c707, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 17.26, y: 8.75}
+  m_Size: {x: 120, y: 67.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -5823,8 +5808,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1382472038}
-  blueText: {fileID: 0}
-  yellowText: {fileID: 0}
   rendererSprite: {fileID: 280718284}
   rendererDialogueWindow: {fileID: 13892336}
   animSprite: {fileID: 280718283}
@@ -5983,7 +5966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6036,7 +6019,7 @@ RectTransform:
   m_GameObject: {fileID: 694111503}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.7, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 283838715}
@@ -6901,8 +6884,6 @@ MonoBehaviour:
   dialogue:
     sentences:
     - "\uC624\uB298\uC740 \uC774\uB9CC\uD558\uBA74 \uB410\uB2E4."
-    blueSentences: []
-    yellowSentences: []
     sprites:
     - {fileID: 0}
     dialogueWindows:
@@ -7207,8 +7188,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -20}
-  m_SizeDelta: {x: 500, y: 50}
+  m_AnchoredPosition: {x: 0, y: -13}
+  m_SizeDelta: {x: 513.3906, y: 80.7873}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &814248387
 MonoBehaviour:
@@ -7226,7 +7207,7 @@ MonoBehaviour:
     m_Left: 60
     m_Right: 60
     m_Top: 0
-    m_Bottom: 1
+    m_Bottom: 0
   m_ChildAlignment: 3
   m_StartCorner: 0
   m_StartAxis: 0
@@ -8097,8 +8078,6 @@ MonoBehaviour:
     sentences:
     - "\uC5B4\uC81C \uBD24\uB358 \uBE44\uBC00\uD39C\uC774\uC796\uC544?\r\n\uC774\uAC8C
       \uC65C \uC870\uB9AC\uC2E4\uC5D0 \uC788\uB294 \uAC70\uC9C0?"
-    blueSentences: []
-    yellowSentences: []
     sprites:
     - {fileID: 0}
     dialogueWindows:
@@ -8318,10 +8297,6 @@ MonoBehaviour:
     sentences:
     - "\uD0DC\uC8FC\uAC00 \uC11C\uB78D \uC55E\uC5D0 \uC11C \uC788\uB2E4. \uAC00\uAE4C\uC774
       \uAC00 \uBCF4\uC790."
-    blueSentences:
-    - 
-    yellowSentences:
-    - 
     sprites:
     - {fileID: 0}
     dialogueWindows:
@@ -8959,8 +8934,6 @@ MonoBehaviour:
     - "'\uD0DC\uC8FC\uB294 \uBB50 \uD558\uACE0 \uC788\uC5C8\uB358 \uAC70\uC9C0?'"
     - "\uC11C\uB78D \uC704\uC5D0 \uBB34\uC5B8\uAC00 \uB193\uC5EC \uC788\uB294 \uAC83
       \uAC19\uB2E4."
-    blueSentences: []
-    yellowSentences: []
     sprites:
     - {fileID: 0}
     - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
@@ -12961,8 +12934,6 @@ MonoBehaviour:
   dialogue:
     sentences:
     - "\uC774 \uBC29\uC740 \uB4E4\uC5B4\uAC08 \uD544\uC694\uAC00 \uC5C6\uC5B4 \uBCF4\uC778\uB2E4."
-    blueSentences: []
-    yellowSentences: []
     sprites:
     - {fileID: 0}
     dialogueWindows:
@@ -14248,8 +14219,6 @@ MonoBehaviour:
   dialogue:
     sentences:
     - "\uC774 \uBC29\uC740 \uB4E4\uC5B4\uAC08 \uD544\uC694\uAC00 \uC5C6\uC5B4 \uBCF4\uC778\uB2E4."
-    blueSentences: []
-    yellowSentences: []
     sprites:
     - {fileID: 0}
     dialogueWindows:
@@ -14708,8 +14677,6 @@ MonoBehaviour:
   dialogue:
     sentences:
     - "\uC774 \uBC29\uC740 \uB4E4\uC5B4\uAC08 \uD544\uC694\uAC00 \uC5C6\uC5B4 \uBCF4\uC778\uB2E4."
-    blueSentences: []
-    yellowSentences: []
     sprites:
     - {fileID: 0}
     dialogueWindows:
@@ -15593,7 +15560,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7910900999031636524, guid: 4522326e286d649ccb20e74eda481f16, type: 3}
+  m_Sprite: {fileID: 1674495834064359898, guid: db89ca60470384b0397198a7950084ac, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16826,8 +16793,6 @@ MonoBehaviour:
   dialogue:
     sentences:
     - "\uC624\uB298\uC740 \uC774\uB9CC\uD558\uBA74 \uB410\uB2E4."
-    blueSentences: []
-    yellowSentences: []
     sprites:
     - {fileID: 0}
     dialogueWindows:
@@ -17203,8 +17168,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   warningDialogue:
     sentences: []
-    blueSentences: []
-    yellowSentences: []
     sprites: []
     dialogueWindows: []
   targetPosition: {fileID: 1935750051}
@@ -18481,6 +18444,7 @@ GameObject:
   - component: {fileID: 1743930254}
   - component: {fileID: 1743930257}
   - component: {fileID: 1743930256}
+  - component: {fileID: 1743930255}
   m_Layer: 5
   m_Name: Map
   m_TagString: Untagged
@@ -18497,16 +18461,40 @@ RectTransform:
   m_GameObject: {fileID: 1743930253}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.3, z: 0.2}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 476377804}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 5}
-  m_SizeDelta: {x: 300, y: 100}
+  m_AnchoredPosition: {x: -0.5378, y: 6.6792}
+  m_SizeDelta: {x: 405.3829, y: 137.6947}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1743930255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743930253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 50
+    m_Right: 50
+    m_Top: 5
+    m_Bottom: 5
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 65, y: 70}
+  m_Spacing: {x: 45, y: 0}
+  m_Constraint: 2
+  m_ConstraintCount: 1
 --- !u!114 &1743930256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18520,15 +18508,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5822273078885155796, guid: a86d85999a3e64f25b0ca998848583dd, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -18602,7 +18590,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4866744656731468116, guid: b053db927d1cb4741bdfbd882fd6f4a9, type: 3}
+  m_Sprite: {fileID: 1124596813818630553, guid: 72fd1cd87395a4be0888128d6e27ba67, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -19517,8 +19505,6 @@ MonoBehaviour:
     sentences:
     - "\uC624\uB298 \uD560 \uC77C\uC740 \uB2E4 \uB05D\uB09C \uAC83 \uAC19\uB2E4."
     - "\uB85C\uBE44\uB85C \uAC00 \uBCF4\uC790."
-    blueSentences: []
-    yellowSentences: []
     sprites:
     - {fileID: 0}
     - {fileID: 0}
@@ -19628,7 +19614,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2760881543072293757, guid: 6159e12b98be64d3b8574bf01c914ad1, type: 3}
+  m_Sprite: {fileID: 1124596813818630553, guid: 72fd1cd87395a4be0888128d6e27ba67, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -19727,7 +19713,7 @@ RectTransform:
   m_GameObject: {fileID: 1871810688}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.7, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 204360613}
@@ -20182,8 +20168,6 @@ MonoBehaviour:
     sentences:
     - "'\uCD9C\uC11D \uC77C\uC9C0\uC5D0 \uC11C\uBA85\uD558\uB77C\uACE0 \uD588\uC5C8\uC9C0'"
     - "'\uC5BC\uB978 \uC11C\uBA85\uD558\uACE0 \uD1F4\uADFC\uD574\uC57C\uACA0\uB2E4'"
-    blueSentences: []
-    yellowSentences: []
     sprites:
     - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
     - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
@@ -20284,20 +20268,17 @@ MonoBehaviour:
   eventType: 1
   preDialogue:
     sentences:
-    - "'\uCEF5 \uC0B4\uADE0\uAE30\uC5D0 \uCABD\uC9C0\uB97C \uAC00\uAE4C\uC774 \uB300\uBCFC\uAE4C...?'"
-    blueSentences: []
-    yellowSentences: []
+    - "'\uCEF5 \uC0B4\uADE0\uAE30\uC5D0 \uCABD\uC9C0\uB97C \uAC00\uAE4C\uC774 \uB300
+      \uBCFC\uAE4C...?'"
     sprites:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
   endDialogue:
     sentences:
-    - "\u2019\uC870\uB9AC\uC2E4 \uC0AC\uC6A9 \uADDC\uCE59\u2019 \uC544\uC774\uD15C\uC774
-      \u2018\uC228\uACA8\uC9C4 \uAE00\uC790\uAC00 \uB098\uD0C0\uB09C \uC870\uB9AC\uC2E4
-      \uC0AC\uC6A9 \uADDC\uCE59\u2019\uC73C\uB85C \uBCC0\uACBD\uB418\uC5C8\uB2E4"
-    blueSentences: []
-    yellowSentences: []
+    - "'\uC870\uB9AC\uC2E4 \uC0AC\uC6A9 \uADDC\uCE59' \uC544\uC774\uD15C\uC774 '\uC228\uACA8\uC9C4
+      \uAE00\uC790\uAC00 \uB098\uD0C0\uB09C \uC870\uB9AC\uC2E4 \uC0AC\uC6A9 \uADDC\uCE59'\uC73C\uB85C
+      \uBCC0\uACBD\uB418\uC5C8\uB2E4."
     sprites:
     - {fileID: 0}
     dialogueWindows:
@@ -20531,7 +20512,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -937841446949748726, guid: 2b169383179c74ceea90687ccf7db555, type: 3}
+  m_Sprite: {fileID: 1124596813818630553, guid: 72fd1cd87395a4be0888128d6e27ba67, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -20856,8 +20837,6 @@ MonoBehaviour:
   dialogue:
     sentences:
     - "\uC774 \uBC29\uC740 \uB4E4\uC5B4\uAC08 \uD544\uC694\uAC00 \uC5C6\uC5B4 \uBCF4\uC778\uB2E4."
-    blueSentences: []
-    yellowSentences: []
     sprites:
     - {fileID: 0}
     dialogueWindows:
@@ -21298,7 +21277,7 @@ RectTransform:
   m_GameObject: {fileID: 2055057929}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.7, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 82877039}
@@ -21421,7 +21400,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3022057770043687863, guid: b2924fe9222b9474bbea133b0e89042c, type: 3}
+  m_Sprite: {fileID: 1124596813818630553, guid: 72fd1cd87395a4be0888128d6e27ba67, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -21713,8 +21692,6 @@ MonoBehaviour:
   dialogue:
     sentences:
     - "\uC774 \uBC29\uC740 \uB4E4\uC5B4\uAC08 \uD544\uC694\uAC00 \uC5C6\uC5B4 \uBCF4\uC778\uB2E4."
-    blueSentences: []
-    yellowSentences: []
     sprites:
     - {fileID: 0}
     dialogueWindows:
@@ -21953,7 +21930,7 @@ RectTransform:
   m_GameObject: {fileID: 2136525490}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.7, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1755500630}
