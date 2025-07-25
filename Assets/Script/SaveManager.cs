@@ -64,28 +64,22 @@ public class SaveManager : MonoBehaviour
             {
                 isOpen = !isOpen;
                 savePanel.SetActive(isOpen);
-
-                if (isOpen)
-                {
-                    audioManager.Play(openSound);
-                    UpdateSlots();
-                    HighlightSlot(currentIndex);
-                    GameObject.FindWithTag("Player").GetComponent<PlayerManager>().canMove = false;
-                }
-                else
-                {
-                    audioManager.Play(openSound);
-                    GameObject.FindWithTag("Player").GetComponent<PlayerManager>().canMove = true;
-                }
+               
             }
             
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
+
+        if (isOpen)
         {
-            isMenu = true;
-            isOpen = true;
+            audioManager.Play(openSound);
             UpdateSlots();
             HighlightSlot(currentIndex);
+            GameObject.FindWithTag("Player").GetComponent<PlayerManager>().canMove = false;
+        }
+        else
+        {
+            audioManager.Play(openSound);
+            GameObject.FindWithTag("Player").GetComponent<PlayerManager>().canMove = true;
         }
 
 

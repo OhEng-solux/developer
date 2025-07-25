@@ -3396,6 +3396,8 @@ MonoBehaviour:
     - "\u314B\uC548\uB155\uD558\uC138\uC694 22\n\u314E\u314E"
     - "\uBB50\uD558\uC138\uC694?"
     - "\uADF8\uB0E5 \uC0DD\uAC01\uD558\uACE0 \uC787\uC5B4\uC694 \u314E"
+    blueSentences: []
+    yellowSentences: []
     sprites:
     - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
     - {fileID: -4012656024804308703, guid: 0287b2accd48540dfadf0a792713887a, type: 3}
@@ -22199,7 +22201,7 @@ GameObject:
   - component: {fileID: 604880539}
   - component: {fileID: 604880538}
   m_Layer: 0
-  m_Name: Button
+  m_Name: con
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23895,6 +23897,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1869083072}
+  blueText: {fileID: 0}
+  yellowText: {fileID: 0}
   rendererSprite: {fileID: 1686770282}
   rendererDialogueWindow: {fileID: 1612566993}
   animSprite: {fileID: 1686770281}
@@ -30876,6 +30880,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences: []
+    blueSentences: []
+    yellowSentences: []
     sprites: []
     dialogueWindows: []
 --- !u!61 &780213548
@@ -37587,6 +37593,8 @@ MonoBehaviour:
     - zzz
     - "\u314E\u314E"
     - "\u314E\u314B\u314B"
+    blueSentences: []
+    yellowSentences: []
     sprites:
     - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
     - {fileID: -4012656024804308703, guid: 0287b2accd48540dfadf0a792713887a, type: 3}
@@ -39590,6 +39598,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences: []
+    blueSentences: []
+    yellowSentences: []
     sprites: []
     dialogueWindows: []
 --- !u!61 &1085346668
@@ -40007,6 +40017,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences: []
+    blueSentences: []
+    yellowSentences: []
     sprites: []
     dialogueWindows: []
 --- !u!61 &1099742526
@@ -48351,8 +48363,8 @@ MonoBehaviour:
   walkSound_3: footsteps3
   walkSound_4: footsteps4
   animator: {fileID: 1306316781}
-  currentMapName: 
-  currentSceneName: 
+  currentMapName: Sun
+  currentSceneName: 1stfloor
   runSpeed: 0.1
   canMove: 1
   notMove: 0
@@ -48425,11 +48437,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ccaf293e195ff1418dd20d790dbc5a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioManager: {fileID: 2107776951}
-  keySound: enter_sound
-  enterSound: enter_sound
-  openSound: enter_sound
-  beepSound: beep_sound
   savePanel: {fileID: 16737311}
   slots:
   - {fileID: 844508630}
@@ -53702,6 +53709,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences: []
+    blueSentences: []
+    yellowSentences: []
     sprites: []
     dialogueWindows: []
 --- !u!61 &1460067275
@@ -54487,7 +54496,7 @@ GameObject:
   - component: {fileID: 1496504559}
   - component: {fileID: 1496504558}
   m_Layer: 0
-  m_Name: Button (1)
+  m_Name: main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54555,7 +54564,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1496504559}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2074466343}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: LoadStartScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1496504559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59103,8 +59124,8 @@ RectTransform:
   m_LocalScale: {x: 4.3799, y: 2.56, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 604880537}
   - {fileID: 1496504557}
+  - {fileID: 604880537}
   m_Father: {fileID: 2074466342}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -70017,6 +70038,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences: []
+    blueSentences: []
+    yellowSentences: []
     sprites: []
     dialogueWindows: []
 --- !u!61 &1871895951
@@ -72503,6 +72526,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences: []
+    blueSentences: []
+    yellowSentences: []
     sprites: []
     dialogueWindows: []
 --- !u!61 &1934082425
@@ -76725,11 +76750,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eee2d9fd70f8a948b9bd3afdc3988d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  go: {fileID: 1607324376}
+  menuPanel: {fileID: 1607324376}
   theAudio: {fileID: 2107776951}
   call_sound: enter_sound
   cancel_sound: enter_sound
+  select_sound: enter_sound
   theOrder: {fileID: 1519425386}
+  menuButtons:
+  - {fileID: 1496504558}
+  - {fileID: 604880538}
 --- !u!1 &2076896296
 GameObject:
   m_ObjectHideFlags: 0

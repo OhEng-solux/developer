@@ -34,24 +34,27 @@ public class Menu : MonoBehaviour
 
     void Update()
     {
-        // ESC 키로 메뉴 켜고 끄기
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (DialogueManager.instance != null && DialogueManager.instance.talking)
         {
-            activated = !activated;
+            // ESC 키로 메뉴 켜고 끄기
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                activated = !activated;
+
+                if (activated)
+                {
+                    OpenMenu();
+                }
+                else
+                {
+                    CloseMenu();
+                }
+            }
 
             if (activated)
             {
-                OpenMenu();
+                HandleInput();
             }
-            else
-            {
-                CloseMenu();
-            }
-        }
-
-        if (activated)
-        {
-            HandleInput();
         }
     }
 
@@ -151,11 +154,10 @@ public class Menu : MonoBehaviour
         menuPanel.SetActive(false);
         Time.timeScale = 1f;
 
-        if (PlayerManager.instance != null)
-            PlayerManager.instance.canMove = true;
-
         theAudio.Play(cancel_sound);
+        CloseMenu();
     }
+
     public void LoadStartScene()
     {
         PopupManager.instance.ShowChoicePopup(

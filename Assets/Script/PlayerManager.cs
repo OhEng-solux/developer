@@ -31,6 +31,7 @@ public class PlayerManager : MovingObject
             Debug.Log("시작화면");
             return;
         }
+        rigid = GetComponent<Rigidbody2D>();
         queue = new Queue<string>();
 
         theSaveNLoad = FindFirstObjectByType<SaveNLoad>();
@@ -124,7 +125,23 @@ public class PlayerManager : MovingObject
         animator.SetBool("Walking", false);
         canMove = true;
     }
+    void FixedUpdate()
+    {
+        if (gameObject.scene.name == "Start")
+        {
+            Debug.Log("시작화면");
+            return;
+        }
+        Vector2 newPosition = rigid.position;
 
+        if (vector.x != 0)
+            newPosition += new Vector2(vector.x * (speed + applyRunSpeed), 0);
+        else if (vector.y != 0)
+            newPosition += new Vector2(0, vector.y * (speed + applyRunSpeed));
+
+        rigid.MovePosition(newPosition);
+    }
+    /*
     void Update()
     {
         if (gameObject.scene.name == "Start")
@@ -132,7 +149,7 @@ public class PlayerManager : MovingObject
             Debug.Log("시작화면");
             return;
         }
-
+        Debug.Log($"현재 속도 speed: {speed}, runSpeed: {runSpeed}, applyRunSpeed: {applyRunSpeed}, canMove: {canMove}");
         if (canMove && !notMove)
         {
             if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
@@ -141,5 +158,5 @@ public class PlayerManager : MovingObject
                 StartCoroutine(MoveCoroutine());
             }
         }
-    }
+    }*/
 }
