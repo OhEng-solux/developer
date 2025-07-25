@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Candy
   m_EditorClassIdentifier: 
   itemName: "\uBCF4\uC11D \uC0AC\uD0D5"
-  icon: {fileID: 1124596813818630553, guid: 72fd1cd87395a4be0888128d6e27ba67, type: 3}
+  icon: {fileID: 3022057770043687863, guid: b2924fe9222b9474bbea133b0e89042c, type: 3}
   isObtained: 1
   itemType: 0

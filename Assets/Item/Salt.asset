@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Salt
   m_EditorClassIdentifier: 
   itemName: "\uAD75\uC740 \uC18C\uAE08"
-  icon: {fileID: 1124596813818630553, guid: 72fd1cd87395a4be0888128d6e27ba67, type: 3}
+  icon: {fileID: 4866744656731468116, guid: b053db927d1cb4741bdfbd882fd6f4a9, type: 3}
   isObtained: 0
   itemType: 0

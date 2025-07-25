@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Kitchen_Rule
   m_EditorClassIdentifier: 
   itemName: "\uC870\uB9AC\uC2E4 \uC0AC\uC6A9 \uADDC\uCE59"
-  icon: {fileID: 1124596813818630553, guid: 72fd1cd87395a4be0888128d6e27ba67, type: 3}
+  icon: {fileID: 2760881543072293757, guid: 6159e12b98be64d3b8574bf01c914ad1, type: 3}
   isObtained: 1
   itemType: 1
