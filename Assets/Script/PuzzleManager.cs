@@ -1,14 +1,17 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
 public class PuzzleManager : MonoBehaviour
 {
-    [Header("Answer")]
+    [Header("Button List")]
     public List<Transform> correctAnswerButtons;
 
-    private List<string> correctAnswer = new List<string>();
-    private List<string> playerInput = new List<string>();
+    [Header("정답 인덱스 순서! (ex: 2,0,3)")]
+    public List<int> answerSequence; // 정답 버튼의 인덱스 순서로 입력
+
+    private List<int> playerInputSequence = new List<int>();
 
     [Header("UI")]
     public GameObject puzzlePanel;
@@ -17,47 +20,79 @@ public class PuzzleManager : MonoBehaviour
     public GameObject keyObject;
 
     private DialogueManager dm;
-
-    // 퍼즐 활성화 상태 플래그
     private bool _isPuzzleActive = false;
-    private bool _isPuzzleSolved = false; // 추가: 퍼즐이 이미 성공했는가
+    private bool _isPuzzleSolved = false;
+
+    private int selectedButtonIndex = 0;
+    private Color normalColor = Color.white;
+    private Color selectedColor = Color.yellow;
 
     public bool IsPuzzleActive() => _isPuzzleActive;
     public bool IsPuzzleSolved() => _isPuzzleSolved;
+
+    private Color pressedColor = new Color(0.7f, 0.7f, 0.7f); // 어두운 회색 등
+    private HashSet<int> pressedIndices = new HashSet<int>();
 
     private void Start()
     {
         dm = FindObjectOfType<DialogueManager>();
         keyObject.SetActive(false);
+    }
 
-        correctAnswer.Clear();
-        foreach (Transform btnTransform in correctAnswerButtons)
+    private void Update()
+    {
+        if (!_isPuzzleActive) return;
+        HandleKeyboardInput();
+    }
+
+    void HandleKeyboardInput()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftArrow)) MoveSelection(-1);
+        if (Input.GetKeyDown(KeyCode.RightArrow)) MoveSelection(1);
+
+        if (Input.GetKeyDown(KeyCode.Return))
+            PressSelectedButton();
+    }
+
+    void MoveSelection(int direction)
+    {
+        // 선택 해제 시 이전 색 복구
+        // 이미 입력했다면 pressedColor, 아니면 normalColor
+        SetButtonColor(selectedButtonIndex, pressedIndices.Contains(selectedButtonIndex) ? pressedColor : normalColor);
+
+        selectedButtonIndex += direction;
+        if (selectedButtonIndex < 0) selectedButtonIndex = correctAnswerButtons.Count - 1;
+        if (selectedButtonIndex >= correctAnswerButtons.Count) selectedButtonIndex = 0;
+
+        // 현재 커서는 노란색
+        SetButtonColor(selectedButtonIndex, selectedColor);
+    }
+
+    void SetButtonColor(int index, Color color)
+    {
+        if (index >= 0 && index < correctAnswerButtons.Count)
         {
-            AnswerButton btn = btnTransform.GetComponent<AnswerButton>();
-            if (btn != null)
-                correctAnswer.Add(btn.shapeValue);
-            else
-                Debug.LogWarning($"{btnTransform.name}에 AnswerButton 컴포넌트가 없습니다.");
+            var img = correctAnswerButtons[index].GetComponent<Image>();
+            if (img != null)
+            {
+                img.color = color;
+            }
         }
     }
 
-
-    // 퍼즐 시작 함수
-    public void StartPuzzle()
+    void PressSelectedButton()
     {
-        playerInput.Clear();
-        puzzlePanel.SetActive(true);
-        Time.timeScale = 0f;
-        _isPuzzleActive = true;
-    }
+        // 선택 시 pressed로 표시
+        SetButtonColor(selectedButtonIndex, pressedColor);
+        pressedIndices.Add(selectedButtonIndex);
 
-    public void ButtonPressed(string shape)
-    {
-        if (!_isPuzzleActive) return; // 퍼즐 활성 중일 때만 입력
+        playerInputSequence.Add(selectedButtonIndex);
 
-        playerInput.Add(shape);
+        var btn = correctAnswerButtons[selectedButtonIndex].GetComponent<AnswerButton>();
+        if (btn != null && !string.IsNullOrEmpty(btn.button_sound) && AudioManager.instance != null)
+            AudioManager.instance.Play(btn.button_sound);
 
-        if (playerInput.Count == correctAnswer.Count)
+        if (playerInputSequence.Count == answerSequence.Count)
         {
             if (IsCorrect())
                 StartCoroutine(SuccessSequence());
@@ -68,8 +103,8 @@ public class PuzzleManager : MonoBehaviour
 
     bool IsCorrect()
     {
-        for (int i = 0; i < correctAnswer.Count; i++)
-            if (playerInput[i] != correctAnswer[i]) return false;
+        for (int i = 0; i < answerSequence.Count; i++)
+            if (playerInputSequence[i] != answerSequence[i]) return false;
         return true;
     }
 
@@ -82,22 +117,44 @@ public class PuzzleManager : MonoBehaviour
         keyObject.SetActive(true);
 
         _isPuzzleActive = false;
-        _isPuzzleSolved = true; // 성공시 플래그 true
-        playerInput.Clear();
+        _isPuzzleSolved = true;
+        playerInputSequence.Clear();
+        pressedIndices.Clear();
+
+        if (PlayerManager.instance != null)
+            PlayerManager.instance.canMove = true;
     }
 
     IEnumerator FailSequence()
     {
         yield return new WaitForSecondsRealtime(0.3f);
-
         puzzlePanel.SetActive(false);
-
         DialogueManager.instance.ShowDialogue(failDialogue);
-
         _isPuzzleActive = false;
-        playerInput.Clear();
-
+        playerInputSequence.Clear();
+        pressedIndices.Clear();
         Time.timeScale = 1f;
+
+        if (PlayerManager.instance != null)
+            PlayerManager.instance.canMove = true;
+    }
+
+
+    public void StartPuzzle()
+    {
+        playerInputSequence.Clear();
+        pressedIndices.Clear();
+        puzzlePanel.SetActive(true);
+        Time.timeScale = 0f;
+        _isPuzzleActive = true;
+
+        selectedButtonIndex = 0;
+        for (int i = 0; i < correctAnswerButtons.Count; i++)
+            SetButtonColor(i, i == selectedButtonIndex ? selectedColor : normalColor);
+
+        // 플레이어 이동 차단
+        if (PlayerManager.instance != null)
+            PlayerManager.instance.canMove = false;
     }
 
 }

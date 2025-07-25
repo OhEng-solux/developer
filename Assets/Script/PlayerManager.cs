@@ -30,6 +30,7 @@ public class PlayerManager : MovingObject
             boxCollider = GetComponent<BoxCollider2D>();
             animator = GetComponent<Animator>();
             theAudio = FindFirstObjectByType<AudioManager>();
+            rigid = GetComponent<Rigidbody2D>(); // ✅ Rigidbody2D 초기화
             instance = this;
 
             boxCollider.offset = new Vector2(0, -0.1f);
@@ -67,8 +68,6 @@ public class PlayerManager : MovingObject
 
             animator.SetBool("Walking", true);
 
-            // boxCollider offset 조정 코드 제거됨
-
             if (currentWalkCount % 3 == 0 && Time.time - lastFootstepTime > footstepInterval)
             {
                 int temp = Random.Range(1, 5);
@@ -92,14 +91,18 @@ public class PlayerManager : MovingObject
 
             while (currentWalkCount < walkCount)
             {
+                Vector2 newPosition = rigid.position;
+
                 if (vector.x != 0)
                 {
-                    transform.Translate(vector.x * (speed + applyRunSpeed), 0, 0);
+                    newPosition += new Vector2(vector.x * (speed + applyRunSpeed), 0);
                 }
                 else if (vector.y != 0)
                 {
-                    transform.Translate(0, vector.y * (speed + applyRunSpeed), 0);
+                    newPosition += new Vector2(0, vector.y * (speed + applyRunSpeed));
                 }
+
+                rigid.MovePosition(newPosition); // 충돌 감지를 포함한 이동
 
                 if (applyRunFlag) currentWalkCount++;
                 currentWalkCount++;
