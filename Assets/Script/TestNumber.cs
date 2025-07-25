@@ -75,8 +75,10 @@ public class TestNumber : MonoBehaviour
         if (theNumber.GetResult()) // 정답
         {
             theDM.ShowDialogue(successDialogue);
-            rewardItem.isObtained = true;
-            theInventory.UpdateSlots();
+            if (rewardItem != null && theInventory != null)
+            { // 아이템 획득 처리
+                theInventory.AcquireItem(rewardItem); 
+            }
             hasInteracted = true; // 재시도 불가
         }
         else if (!theNumber.WasCancelled()) // 오답

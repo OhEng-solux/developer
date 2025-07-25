@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Key
   m_EditorClassIdentifier: 
   itemName: "\uC9C0\uD558\uC2E4 \uC5F4\uC1E0"
-  icon: {fileID: 1124596813818630553, guid: 72fd1cd87395a4be0888128d6e27ba67, type: 3}
+  obtainedIcon: {fileID: -937841446949748726, guid: 2b169383179c74ceea90687ccf7db555, type: 3}
+  silhouetteIcon: {fileID: -4240122461023693027, guid: 2bdbebe13f3ca48d38a19afc3a027cc4, type: 3}
   isObtained: 0
   itemType: 1
+  description: "\uB179\uC774 \uC2A8 \uC5F4\uC1E0.\n\uC9C0\uD558\uB85C \uD5A5\uD558\uB294
+    \uBB34\uC5B8\uAC00\uB97C \uC5F4 \uC218 \uC788\uC744 \uAC83 \uAC19\uB2E4."

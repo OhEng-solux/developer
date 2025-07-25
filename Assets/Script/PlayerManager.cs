@@ -8,8 +8,6 @@ public class PlayerManager : MovingObject
     public string currentMapName;
     public string currentSceneName;//씬 위치
 
-    private SaveNLoad theSaveNLoad;
-
     public float runSpeed;
     private float applyRunSpeed;
     private bool applyRunFlag = false;
@@ -22,18 +20,16 @@ public class PlayerManager : MovingObject
     private float lastFootstepTime = 0f;
 
     private Rigidbody2D rigid;
+    private SaveNLoad theSaveNLoad;
 
     void Start()
     {
-        Debug.Log($"씬 이름: {gameObject.scene.name}");
+        queue = new Queue<string>();
         if (gameObject.scene.name == "Start")
         {
             Debug.Log("시작화면");
             return;
         }
-        rigid = GetComponent<Rigidbody2D>();
-        queue = new Queue<string>();
-
         theSaveNLoad = FindFirstObjectByType<SaveNLoad>();
 
         if (instance == null)
@@ -42,6 +38,7 @@ public class PlayerManager : MovingObject
             boxCollider = GetComponent<BoxCollider2D>();
             animator = GetComponent<Animator>();
             theAudio = FindFirstObjectByType<AudioManager>();
+            rigid = GetComponent<Rigidbody2D>(); // ✅ Rigidbody2D 초기화
             instance = this;
 
             boxCollider.offset = new Vector2(0, -0.1f);
@@ -79,8 +76,6 @@ public class PlayerManager : MovingObject
 
             animator.SetBool("Walking", true);
 
-            // boxCollider offset 조정 코드 제거됨
-
             if (currentWalkCount % 3 == 0 && Time.time - lastFootstepTime > footstepInterval)
             {
                 int temp = Random.Range(1, 5);
@@ -104,14 +99,18 @@ public class PlayerManager : MovingObject
 
             while (currentWalkCount < walkCount)
             {
+                Vector2 newPosition = rigid.position;
+
                 if (vector.x != 0)
                 {
-                    transform.Translate(vector.x * (speed + applyRunSpeed), 0, 0);
+                    newPosition += new Vector2(vector.x * (speed + applyRunSpeed), 0);
                 }
                 else if (vector.y != 0)
                 {
-                    transform.Translate(0, vector.y * (speed + applyRunSpeed), 0);
+                    newPosition += new Vector2(0, vector.y * (speed + applyRunSpeed));
                 }
+
+                rigid.MovePosition(newPosition); // 충돌 감지를 포함한 이동
 
                 if (applyRunFlag) currentWalkCount++;
                 currentWalkCount++;
@@ -125,23 +124,7 @@ public class PlayerManager : MovingObject
         animator.SetBool("Walking", false);
         canMove = true;
     }
-    void FixedUpdate()
-    {
-        if (gameObject.scene.name == "Start")
-        {
-            Debug.Log("시작화면");
-            return;
-        }
-        Vector2 newPosition = rigid.position;
 
-        if (vector.x != 0)
-            newPosition += new Vector2(vector.x * (speed + applyRunSpeed), 0);
-        else if (vector.y != 0)
-            newPosition += new Vector2(0, vector.y * (speed + applyRunSpeed));
-
-        rigid.MovePosition(newPosition);
-    }
-    /*
     void Update()
     {
         if (gameObject.scene.name == "Start")
@@ -149,7 +132,6 @@ public class PlayerManager : MovingObject
             Debug.Log("시작화면");
             return;
         }
-        Debug.Log($"현재 속도 speed: {speed}, runSpeed: {runSpeed}, applyRunSpeed: {applyRunSpeed}, canMove: {canMove}");
         if (canMove && !notMove)
         {
             if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
@@ -158,5 +140,5 @@ public class PlayerManager : MovingObject
                 StartCoroutine(MoveCoroutine());
             }
         }
-    }*/
+    }
 }

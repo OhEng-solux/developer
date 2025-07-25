@@ -14,7 +14,7 @@ public class LightController : MonoBehaviour
 
     void Update()
     {
-        // ì˜¤ë¸Œì íŠ¸ê°€ ë¹„í™œì„±í™”ë˜ì—ˆì„ ê²½ìš° ì‹¤í–‰ X
+        // ¿ÀºêÁ§Æ®°¡ ºñÈ°¼ºÈ­µÇ¾úÀ» °æ¿ì ½ÇÇà X
         if (!gameObject.activeInHierarchy || thePlayer == null) return;
 
         transform.position = thePlayer.transform.position;

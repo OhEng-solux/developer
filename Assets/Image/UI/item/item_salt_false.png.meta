@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: db89ca60470384b0397198a7950084ac
+guid: ff46f870c3d8447ea9f37f32a9d2d3b2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1674495834064359898
-    second: ui_confirm_0
+      213: 1610988125175676518
+    second: item_salt_false_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,19 +97,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -123,7 +110,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WindowsStoreApps
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -139,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ui_confirm_0
+      name: item_salt_false_0
       rect:
         serializedVersion: 2
-        x: 788
-        y: 67
-        width: 345
-        height: 78
+        x: 2
+        y: 9
+        width: 172
+        height: 159
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ad11747d6110d3710800000000000000
-      internalID: 1674495834064359898
+      spriteID: 66ef77a1a216b5610800000000000000
+      internalID: 1610988125175676518
       vertices: []
       indices: 
       edges: []
@@ -174,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ui_confirm_0: 1674495834064359898
+      item_salt_false_0: 1610988125175676518
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

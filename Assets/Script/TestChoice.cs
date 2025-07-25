@@ -65,9 +65,11 @@ public class TestChoice : MonoBehaviour
             yield return new WaitUntil(() => !theDM.talking);
 
             //아이템 획득
-            rewardItem.isObtained = true;
             InventoryManager inv = FindFirstObjectByType<InventoryManager>();
-            inv.UpdateSlots(); // UI 반영
+            if (rewardItem != null && inv != null)
+            {
+                inv.AcquireItem(rewardItem);
+            }
         }
         else
         {

@@ -10466,8 +10466,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1306316774}
-  moveSpeed: 3
-  bound: {fileID: 0}
+  moveSpeed: 0
+  bound: {fileID: 2108248198}
   moveSmoothTime: 0.15
 --- !u!81 &370457042
 AudioListener:
@@ -64541,9 +64541,53 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths: []
+  m_ColliderPaths:
+  - m_Collider: {fileID: 1699111616}
+    m_ColliderPaths:
+    - - X: 310000000
+        Y: -540000000
+      - X: 360000000
+        Y: -540000000
+      - X: 360000000
+        Y: -490000000
+      - X: 310000000
+        Y: -490000000
+      - X: 310000000
+        Y: -240000000
+      - X: 510000000
+        Y: -240000000
+      - X: 510000000
+        Y: 60000000
+      - X: -90000000
+        Y: 60000000
+      - X: -90000000
+        Y: -490000000
+      - X: -140000000
+        Y: -490000000
+      - X: -140000000
+        Y: -540000000
+      - X: -90000000
+        Y: -540000000
+      - X: -90000000
+        Y: -590000000
+      - X: 310000000
+        Y: -590000000
   m_CompositePaths:
-    m_Paths: []
+    m_Paths:
+    - - {x: 30.999971, y: -59}
+      - {x: 31.000029, y: -54}
+      - {x: 36, y: -53.99997}
+      - {x: 35.999973, y: -49}
+      - {x: 31, y: -48.999973}
+      - {x: 31.000029, y: -24}
+      - {x: 51, y: -23.999971}
+      - {x: 50.999973, y: 6}
+      - {x: -9, y: 5.999971}
+      - {x: -9.00003, y: -49}
+      - {x: -14, y: -49.00003}
+      - {x: -13.999971, y: -54}
+      - {x: -9, y: -54.000034}
+      - {x: -8.99997, y: -59}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
@@ -64580,7 +64624,7 @@ TilemapCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_CompositeOperation: 0
+  m_CompositeOperation: 1
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
@@ -69968,7 +70012,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -69976,7 +70020,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 675d1aed245608440a643034922d27fe, type: 3}
     m_FontSize: 10
     m_FontStyle: 0
     m_BestFit: 0
