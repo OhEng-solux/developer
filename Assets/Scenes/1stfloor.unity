@@ -44856,6 +44856,9 @@ GameObject:
   - component: {fileID: 1306316779}
   - component: {fileID: 1306316781}
   - component: {fileID: 1306316780}
+  - component: {fileID: 1306316784}
+  - component: {fileID: 1306316783}
+  - component: {fileID: 1306316782}
   m_Layer: 3
   m_Name: player
   m_TagString: Player
@@ -44918,21 +44921,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &1306316776
-Transform:
+--- !u!224 &1306316776
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1306316774}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -74.2, y: -157.7, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -74.2, y: -157.7}
+  m_SizeDelta: {x: 2.02, y: 4.52}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!50 &1306316777
 Rigidbody2D:
   serializedVersion: 5
@@ -45058,6 +45065,57 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1306316782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1306316774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48dbe3b666c255b489c62455df057b24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data:
+    playerX: 0
+    playerY: 0
+    playerZ: 0
+    playerItemNames: []
+    playerEquipItem: 
+    mapName: 
+    sceneName: 
+    saveDate: 
+    saveTime: 
+--- !u!114 &1306316783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1306316774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ccaf293e195ff1418dd20d790dbc5a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  savePanel: {fileID: 0}
+  slots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &1306316784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1306316774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb2ec98eb61c814ab1cff7fb1a22a4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1312210080
 GameObject:
   m_ObjectHideFlags: 0
@@ -72372,7 +72430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eee2d9fd70f8a948b9bd3afdc3988d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuPanel: {fileID: 2074466338}
+  menuPanel: {fileID: 1607324376}
   theAudio: {fileID: 2107776951}
   call_sound: enter_sound
   cancel_sound: enter_sound
@@ -75519,5 +75577,5 @@ SceneRoots:
   - {fileID: 2107776952}
   - {fileID: 1926663925}
   - {fileID: 2074466342}
-  - {fileID: 1306316776}
   - {fileID: 1058683039}
+  - {fileID: 1306316776}
