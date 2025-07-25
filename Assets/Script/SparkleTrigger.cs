@@ -9,7 +9,7 @@ public class SparkleTrigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             ImagePopupManager.instance.ShowPopup(popupImage);
-            Destroy(this); // ë°˜ë³µ ë°©ì§€ìš©, ì›í•˜ë©´ ì œê±°
+            Destroy(this); // ¹İº¹ ¹æÁö¿ë, ¿øÇÏ¸é Á¦°Å
         }
     }
 }

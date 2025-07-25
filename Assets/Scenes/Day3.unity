@@ -2525,7 +2525,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC548\uB0B4\uBB38\uAD6C"
+  m_Text: "\uC548\uB0B4 \uBB38\uAD6C"
 --- !u!222 &224699705
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3465,22 +3465,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   preDialogue:
     sentences:
-    - "'\uC774\uC81C\uBCF4\uB2C8 \uC11C\uB78D\uC774 \uC790\uBB3C\uC1E0\uB85C \uC7A0\uACA8\uC788\uB124...?'"
+    - "'\uC774\uC81C \uBCF4\uB2C8 \uC11C\uB78D\uC774 \uC790\uBB3C\uC1E0\uB85C \uC7A0\uACA8
+      \uC788\uB124...?'"
     sprites:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
   successDialogue:
     sentences:
-    - "\u2018\uC18C\uAE08 \uC8FC\uBA38\uB2C8\u2019 \uC544\uC774\uD15C\uC744 \uD68D\uB4DD\uD558\uC600\uB2E4"
+    - "'\uC18C\uAE08 \uC8FC\uBA38\uB2C8' \uC544\uC774\uD15C\uC744 \uD68D\uB4DD\uD558\uC600\uB2E4."
     sprites:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
   failDialogue:
     sentences:
-    - "\uC790\uBB3C\uC1E0\uB97C \uD478\uB294 \uB370 \uC2E4\uD328\uD588\uB2E4"
-    - "\u2019\uC5B4\uCA54 \uC218 \uC5C6\uC9C0, \uBB50. \uBCC4\uAC70 \uC544\uB2C8\uC5C8\uACA0\uC9C0..?\u2019"
+    - "\uC790\uBB3C\uC1E0\uB97C \uD478\uB294 \uB370 \uC2E4\uD328\uD588\uB2E4."
+    - "'\uC5B4\uCA54 \uC218 \uC5C6\uC9C0, \uBB50. \uBCC4\uAC70 \uC544\uB2C8\uC5C8\uACA0\uC9C0..?'"
     sprites:
     - {fileID: 0}
     - {fileID: 0}
@@ -3545,7 +3546,7 @@ Transform:
   m_GameObject: {fileID: 307892987}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.71, y: 9.4, z: -19.20187}
+  m_LocalPosition: {x: 5.4, y: 10.02, z: -19.20187}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20267,16 +20268,17 @@ MonoBehaviour:
   eventType: 1
   preDialogue:
     sentences:
-    - "'\uCEF5 \uC0B4\uADE0\uAE30\uC5D0 \uCABD\uC9C0\uB97C \uAC00\uAE4C\uC774 \uB300\uBCFC\uAE4C...?'"
+    - "'\uCEF5 \uC0B4\uADE0\uAE30\uC5D0 \uCABD\uC9C0\uB97C \uAC00\uAE4C\uC774 \uB300
+      \uBCFC\uAE4C...?'"
     sprites:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
   endDialogue:
     sentences:
-    - "\u2019\uC870\uB9AC\uC2E4 \uC0AC\uC6A9 \uADDC\uCE59\u2019 \uC544\uC774\uD15C\uC774
-      \u2018\uC228\uACA8\uC9C4 \uAE00\uC790\uAC00 \uB098\uD0C0\uB09C \uC870\uB9AC\uC2E4
-      \uC0AC\uC6A9 \uADDC\uCE59\u2019\uC73C\uB85C \uBCC0\uACBD\uB418\uC5C8\uB2E4"
+    - "'\uC870\uB9AC\uC2E4 \uC0AC\uC6A9 \uADDC\uCE59' \uC544\uC774\uD15C\uC774 '\uC228\uACA8\uC9C4
+      \uAE00\uC790\uAC00 \uB098\uD0C0\uB09C \uC870\uB9AC\uC2E4 \uC0AC\uC6A9 \uADDC\uCE59'\uC73C\uB85C
+      \uBCC0\uACBD\uB418\uC5C8\uB2E4."
     sprites:
     - {fileID: 0}
     dialogueWindows:
