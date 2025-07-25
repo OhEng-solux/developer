@@ -91,7 +91,7 @@ public class HiddenNoteEvent : MonoBehaviour
 
         if (isDone) return;
 
-        if (InventoryManager.instance.HasItem(itemToReplace.itemName))
+        if (itemToReplace != null && itemToReplace.isObtained)
         {
             InventoryManager.instance.ReplaceItem(itemToReplace.itemName, itemToAdd);
             imageUI.SetActive(true);

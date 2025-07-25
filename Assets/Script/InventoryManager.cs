@@ -22,8 +22,10 @@ public class InventoryManager : MonoBehaviour
     public GameObject inventoryPanel;
     public InventorySlot[] slots; // 슬롯 배열
     public Item[] items; // 아이템 데이터 배열 (슬롯에 들어갈 아이템 정보들)
+    public Text descriptionText;
     private int currentIndex = 0; // 현재 선택된 슬롯 인덱스
     private bool isOpen = false; // 인벤토리 열림 상태
+    public bool isChaseMode = false; // 추격전 중 여부
 
     void Start()
     {
@@ -54,6 +56,7 @@ public class InventoryManager : MonoBehaviour
                 audioManager.Play(openSound);
                 UpdateSlots(); // 인벤토리 열렸을 때 슬롯에 아이템 정보 갱신
                 HighlightSlot(currentIndex); // 현재 인덱스에 해당하는 슬롯에만 강조 표시
+                UpdateDescription();
 
                 GameObject.FindWithTag("Player").GetComponent<PlayerManager>().canMove = false; //이동 제한
             }
@@ -71,24 +74,34 @@ public class InventoryManager : MonoBehaviour
         {
             MoveCursor(-1); // 왼쪽으로 이동
             audioManager.Play(keySound);
+            UpdateDescription(); // 설명 갱신
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             MoveCursor(1); // 오른쪽으로 이동
             audioManager.Play(keySound);
+            UpdateDescription(); // 설명 갱신
         }
 
-        if (Input.GetKeyDown(KeyCode.Z)) //아이템 사용
+        if (Input.GetKeyDown(KeyCode.Return)) //아이템 사용
         {
             Item selectedItem = items[currentIndex];
 
             if (selectedItem.isObtained)
             {
+                // 소모성 아이템(보석사탕, 소금)은 추격전 중에만 사용 가능
+                if (selectedItem.itemType == ItemType.Consumable && !isChaseMode)
+                {
+                    audioManager.Play(beepSound);
+                    PopupManager.instance.ShowPopup("아직 사용할 수 없습니다.");
+                    return;
+                }
+
                 audioManager.Play(enterSound);
                 PopupManager.instance.ShowChoicePopup(
                     "정말 사용하시겠습니까?",
                     () => {
-                        UseItem(selectedItem); // 예
+                        UseItem(selectedItem);
                     },
                     () => {
                         Debug.Log("사용 취소");
@@ -135,18 +148,23 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    // 아이템 존재 여부 확인용 함수
-    public bool HasItem(string itemName)
+    public void AcquireItem(Item item)
     {
-        foreach (var item in items)
+        // 아이템을 획득 처리하고 UI 업데이트
+        for (int i = 0; i < items.Length; i++)
         {
-            if (item != null && item.itemName == itemName && item.isObtained)
+            if (items[i] == item)
             {
-                return true;
+                item.isObtained = true; // 획득 상태로 설정
+                slots[i].SetItem(item); // 슬롯 UI 업데이트
+                Debug.Log("[인벤토리] 아이템 획득: " + item.itemName);
+                return;
             }
         }
-        return false;
+
+        Debug.LogWarning("[인벤토리] 해당 아이템이 인벤토리 배열에 없습니다: " + item.itemName);
     }
+
 
     public void ReplaceItem(string oldItemName, Item newItem)
     {
@@ -163,6 +181,20 @@ public class InventoryManager : MonoBehaviour
         }
 
         Debug.LogWarning("[인벤토리] 교체할 아이템을 찾지 못함: " + oldItemName);
+    }
+
+    void UpdateDescription()
+    {
+        Item currentItem = items[currentIndex];
+
+        if (currentItem != null && currentItem.isObtained)
+        { // 슬롯에 아이템이 있고, 획득된 경우에만 설명 표시
+            descriptionText.text = currentItem.description;
+        }
+        else
+        {
+            descriptionText.text = "???";
+        }
     }
 
     void HighlightSlot(int index) // 현재 선택된 슬롯만 Outline 활성화
