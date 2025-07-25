@@ -161,6 +161,24 @@ public class InventoryManager : MonoBehaviour
         return false;
     }
 
+    public void AcquireItem(Item item)
+    {
+        // 아이템을 획득 처리하고 UI 업데이트
+        for (int i = 0; i < items.Length; i++)
+        {
+            if (items[i] == item)
+            {
+                item.isObtained = true; // 획득 상태로 설정
+                slots[i].SetItem(item); // 슬롯 UI 업데이트
+                Debug.Log("[인벤토리] 아이템 획득: " + item.itemName);
+                return;
+            }
+        }
+
+        Debug.LogWarning("[인벤토리] 해당 아이템이 인벤토리 배열에 없습니다: " + item.itemName);
+    }
+
+
     public void ReplaceItem(string oldItemName, Item newItem)
     {
         for (int i = 0; i < items.Length; i++)

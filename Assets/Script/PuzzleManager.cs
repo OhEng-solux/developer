@@ -8,8 +8,8 @@ public class PuzzleManager : MonoBehaviour
     [Header("Button List")]
     public List<Transform> correctAnswerButtons;
 
-    [Header("Á¤´ä ÀÎµ¦½º ¼ø¼­! (ex: 2,0,3)")]
-    public List<int> answerSequence; // Á¤´ä ¹öÆ°ÀÇ ÀÎµ¦½º ¼ø¼­·Î ÀÔ·Â
+    [Header("ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½! (ex: 2,0,3)")]
+    public List<int> answerSequence; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ°ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½
 
     private List<int> playerInputSequence = new List<int>();
 
@@ -18,6 +18,10 @@ public class PuzzleManager : MonoBehaviour
     public Dialogue successDialogue;
     public Dialogue failDialogue;
     public GameObject keyObject;
+    [Header("Item")]
+    private InventoryManager theInventory;
+    [SerializeField] private Item rewardItem; // ë³´ìƒ ì•„ì´í…œ
+
 
     private DialogueManager dm;
     private bool _isPuzzleActive = false;
@@ -30,13 +34,14 @@ public class PuzzleManager : MonoBehaviour
     public bool IsPuzzleActive() => _isPuzzleActive;
     public bool IsPuzzleSolved() => _isPuzzleSolved;
 
-    private Color pressedColor = new Color(0.7f, 0.7f, 0.7f); // ¾îµÎ¿î È¸»ö µî
+    private Color pressedColor = new Color(0.7f, 0.7f, 0.7f); // ï¿½ï¿½Î¿ï¿½ È¸ï¿½ï¿½ ï¿½ï¿½
     private HashSet<int> pressedIndices = new HashSet<int>();
 
     private void Start()
     {
         dm = FindObjectOfType<DialogueManager>();
         keyObject.SetActive(false);
+        theInventory = FindFirstObjectByType<InventoryManager>(); // InventoryManager ì—°ê²°
     }
 
     private void Update()
@@ -56,15 +61,15 @@ public class PuzzleManager : MonoBehaviour
 
     void MoveSelection(int direction)
     {
-        // ¼±ÅÃ ÇØÁ¦ ½Ã ÀÌÀü »ö º¹±¸
-        // ÀÌ¹Ì ÀÔ·ÂÇß´Ù¸é pressedColor, ¾Æ´Ï¸é normalColor
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        // ï¿½Ì¹ï¿½ ï¿½Ô·ï¿½ï¿½ß´Ù¸ï¿½ pressedColor, ï¿½Æ´Ï¸ï¿½ normalColor
         SetButtonColor(selectedButtonIndex, pressedIndices.Contains(selectedButtonIndex) ? pressedColor : normalColor);
 
         selectedButtonIndex += direction;
         if (selectedButtonIndex < 0) selectedButtonIndex = correctAnswerButtons.Count - 1;
         if (selectedButtonIndex >= correctAnswerButtons.Count) selectedButtonIndex = 0;
 
-        // ÇöÀç Ä¿¼­´Â ³ë¶õ»ö
+        // ï¿½ï¿½ï¿½ï¿½ Ä¿ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
         SetButtonColor(selectedButtonIndex, selectedColor);
     }
 
@@ -82,7 +87,7 @@ public class PuzzleManager : MonoBehaviour
 
     void PressSelectedButton()
     {
-        // ¼±ÅÃ ½Ã pressed·Î Ç¥½Ã
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ pressedï¿½ï¿½ Ç¥ï¿½ï¿½
         SetButtonColor(selectedButtonIndex, pressedColor);
         pressedIndices.Add(selectedButtonIndex);
 
@@ -113,9 +118,17 @@ public class PuzzleManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.3f);
         puzzlePanel.SetActive(false);
         Time.timeScale = 1f;
-        dm.ShowDialogue(successDialogue);
-        keyObject.SetActive(true);
+        dm.ShowDialogue(successDialogue); // ëŒ€í™” ì¶œë ¥
+        keyObject.SetActive(true); // ì‹œê°ì  ë³´ìƒ ì˜¤ë¸Œì íŠ¸ í‘œì‹œ
 
+        // ì‹¤ì œ ì•„ì´í…œ íšë“ ì²˜ë¦¬
+        if (rewardItem != null && theInventory != null)
+        {
+            theInventory.AcquireItem(rewardItem); // ì•„ì´í…œ ì§€ê¸‰
+            Debug.Log("[í¼ì¦ ì„±ê³µ] ì•„ì´í…œ ì§€ê¸‰ ì™„ë£Œ: " + rewardItem.itemName);
+        }
+
+        // ìƒíƒœ ì´ˆê¸°í™”
         _isPuzzleActive = false;
         _isPuzzleSolved = true;
         playerInputSequence.Clear();
@@ -152,7 +165,7 @@ public class PuzzleManager : MonoBehaviour
         for (int i = 0; i < correctAnswerButtons.Count; i++)
             SetButtonColor(i, i == selectedButtonIndex ? selectedColor : normalColor);
 
-        // ÇÃ·¹ÀÌ¾î ÀÌµ¿ Â÷´Ü
+        // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½
         if (PlayerManager.instance != null)
             PlayerManager.instance.canMove = false;
     }
