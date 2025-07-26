@@ -7,7 +7,7 @@ public class TestNumber : MonoBehaviour
     [SerializeField] private Dialogue successDialogue;
     [SerializeField] private Dialogue failDialogue;
     [SerializeField] private GameObject dialSystemObject; // NumberSystem이 붙은 오브젝트
-    [SerializeField] private int correctNumber = 2235; // 정답 숫자
+    [SerializeField] private int correctNumber = 2265; // 정답 숫자
     [SerializeField] private Item rewardItem; // 성공 시 획득할 아이템
 
     private DialogueManager theDM;

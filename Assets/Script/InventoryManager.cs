@@ -148,9 +148,8 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public void AcquireItem(Item item)
+    public void AcquireItem(Item item) // 아이템을 획득 처리하고 UI 업데이트
     {
-        // 아이템을 획득 처리하고 UI 업데이트
         for (int i = 0; i < items.Length; i++)
         {
             if (items[i] == item)
@@ -161,8 +160,6 @@ public class InventoryManager : MonoBehaviour
                 return;
             }
         }
-
-        Debug.LogWarning("[인벤토리] 해당 아이템이 인벤토리 배열에 없습니다: " + item.itemName);
     }
 
 
