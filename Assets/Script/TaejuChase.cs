@@ -1,53 +1,96 @@
 using UnityEngine;
+using System.Collections.Generic;
 
+[RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
 public class TaejuChase : MonoBehaviour
 {
-    public Transform player;           // 추격 대상 (플레이어)
-    public float moveSpeed = 2.5f;     // 추격 속도 (플레이어랑 동일하게)
-    public float stoppingDistance = 0.1f; // 너무 가까워지면 멈춤
+    public Transform player;
+    public float moveSpeed = 2.5f;
+    public float delaySeconds = 2f;           // 지연 시간
+    public float recordInterval = 0.05f;      // 위치 기록 주기
+    public float followThreshold = 0.05f;
 
     private Rigidbody2D rb;
     private Animator animator;
-
-    private Vector2 movement;
+    private Queue<Vector3> recordedPositions = new Queue<Vector3>();
+    private float timer;
     private bool isChasing = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        player = GameObject.FindGameObjectWithTag("Player")?.transform;
 
         if (player == null)
-            Debug.LogError("Player를 찾을 수 없습니다. Tag가 'Player'인지 확인하세요.");
+        {
+            var found = GameObject.FindGameObjectWithTag("Player");
+            if (found) player = found.transform;
+        }
+
+        // 회전 금지
+        rb.freezeRotation = true;
+
+        // 태주-플레이어 충돌 무시
+        Physics2D.IgnoreLayerCollision(
+            LayerMask.NameToLayer("character"),
+            LayerMask.NameToLayer("character"),
+            true
+        );
     }
 
     void Update()
     {
         if (!isChasing || player == null) return;
 
-        Vector2 direction = (player.position - transform.position).normalized;
-        float distance = Vector2.Distance(player.position, transform.position);
+        timer += Time.deltaTime;
 
-        if (distance > stoppingDistance)
+        // 일정 시간 간격으로 플레이어 위치 기록
+        if (timer >= recordInterval)
         {
-            movement = direction;
-            animator.SetBool("Walking", true);
-            animator.SetFloat("DirX", direction.x);
-            animator.SetFloat("DirY", direction.y);
+            recordedPositions.Enqueue(player.position);
+            timer = 0f;
         }
-        else
+
+        // 오래된 위치 제거 (딜레이보다 오래된 거)
+        while (recordedPositions.Count > Mathf.Round(delaySeconds / recordInterval))
         {
-            movement = Vector2.zero;
-            animator.SetBool("Walking", false);
+            recordedPositions.Dequeue();
         }
     }
 
     void FixedUpdate()
     {
-        if (isChasing && movement != Vector2.zero)
+        if (!isChasing || recordedPositions.Count == 0) return;
+
+        Vector2 target = recordedPositions.Peek();
+        Vector2 current = rb.position;
+        Vector2 dir = (target - current);
+
+        if (dir.magnitude > followThreshold)
         {
-            rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+            Vector2 movement = dir.normalized * moveSpeed * Time.fixedDeltaTime;
+            rb.MovePosition(current + movement);
+            UpdateAnimation(dir);
+        }
+        else
+        {
+            recordedPositions.Dequeue();
+        }
+    }
+
+    void UpdateAnimation(Vector2 direction)
+    {
+        animator.SetBool("Walking", true);
+
+        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+        {
+            animator.SetFloat("DirX", direction.x > 0 ? 1 : -1);
+            animator.SetFloat("DirY", 0);
+        }
+        else
+        {
+            animator.SetFloat("DirX", 0);
+            animator.SetFloat("DirY", direction.y > 0 ? 1 : -1);
         }
     }
 

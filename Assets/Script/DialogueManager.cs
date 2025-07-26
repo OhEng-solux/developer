@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance;
+    private Dialogue currentDialogueData; // 현재 대화 데이터 저장용
 
     #region Singleton
     private void Awake()
@@ -129,6 +130,7 @@ public class DialogueManager : MonoBehaviour
 
         if (talking) return;
         countUpOnFinish = shouldCount;
+        currentDialogueData = dialogue; // 현재 대화 데이터 저장
 
         if (dialogue.sentences.Length != dialogue.sprites.Length ||
             dialogue.sentences.Length != dialogue.dialogueWindows.Length)
@@ -251,13 +253,23 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
-        // Day6 종료 시 NPC 모두 비활성화
         if (SceneManager.GetActiveScene().name == "Day6")
         {
-            foreach (var npc in listNPCs)
+            GameObject taejuDemon = GameObject.Find("taeju_demon");
+            GameObject taejuOrigin = GameObject.Find("taeju_origin");
+
+            if (taejuDemon != null && taejuOrigin != null)
             {
-                if (npc != null)
-                    npc.SetActive(false);
+                taejuOrigin.SetActive(false);     // 기존 NPC는 숨기고
+                taejuDemon.SetActive(true);       // 추격용 NPC는 등장시켜
+
+                var chaseScript = taejuDemon.GetComponent<TaejuChase>();
+                if (chaseScript != null)
+                {
+                    chaseScript.StartChase();  // 추격 시작 (추격 스크립트에서 직접 구현해둔 메서드)
+                }
+
+                Debug.Log("[DialogueManager] 대화 종료 후 태주 추격 시작됨.");
             }
         }
 
@@ -420,6 +432,27 @@ public class DialogueManager : MonoBehaviour
         }
 
         keyActivated = true;
+
+        if (SceneManager.GetActiveScene().name == "Day6")
+        {
+            var taejuNPC = GameObject.Find("taeju_origin"); 
+
+            if (taejuNPC != null && currentDialogueData.npcAppearances.Length > count)
+            {
+                // Animator 꺼주기 (덮어쓰지 않게)
+                Animator npcAnimator = taejuNPC.GetComponent<Animator>();
+                if (npcAnimator != null)
+                    npcAnimator.enabled = false;
+
+                // SpriteRenderer로 직접 sprite 교체
+                SpriteRenderer npcSprite = taejuNPC.GetComponent<SpriteRenderer>();
+                if (npcSprite != null && currentDialogueData.npcAppearances[count] != null)
+                {
+                    npcSprite.sprite = currentDialogueData.npcAppearances[count];
+                    Debug.Log($"[DialogueManager] NPC sprite changed to: {currentDialogueData.npcAppearances[count].name}");
+                }
+            }
+        }
 
         // 프롤로그 삼각형 화살표 표시
         if (SceneManager.GetActiveScene().name == "Prologue")

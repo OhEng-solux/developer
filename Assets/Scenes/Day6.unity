@@ -3773,6 +3773,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     npcObjects: []
+    npcAppearances: []
     blueSentences:
     - "[\uC77C\uAE30 \uC870\uAC01 - \uC6D0\uC7A5\uB2D8\uC758 \uBA54\uBAA8]\n\n'\uC815\uBB38
       \uC55E\uC5D0... \uC774\uC0C1\uD55C \uAF43\uBCD1\uC774 \uB193\uC5EC \uC788\uC5C8\uB2E4.\n\uB204\uAC00
@@ -9680,6 +9681,7 @@ MonoBehaviour:
     dialogueWindows:
     - {fileID: 21300000, guid: 8d4f9fb6702697047a6242b8ca6c975c, type: 3}
     npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &342390016
@@ -25135,6 +25137,7 @@ MonoBehaviour:
     dialogueWindows:
     - {fileID: 21300000, guid: b7acfd158106049a6bce1f7690718475, type: 3}
     npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &715098153
@@ -30862,6 +30865,7 @@ MonoBehaviour:
     dialogueWindows:
     - {fileID: 21300000, guid: 74ce371d4810b4298bdabfc03d30ef96, type: 3}
     npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &771285938
@@ -31117,6 +31121,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 257174c7cc0623149982ea535b381e8a, type: 3}
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &780213548
@@ -31618,6 +31623,7 @@ MonoBehaviour:
     dialogueWindows:
     - {fileID: 21300000, guid: 065ad03fe468b4c4698642cac73d2ef2, type: 3}
     npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &790741695
@@ -37821,6 +37827,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: a14fe528b952c47fea7b0e374f281365, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &992325167
@@ -40015,6 +40022,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 5909025c944d0964287d5ff5cae546e0, type: 3}
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &1085346668
@@ -40458,7 +40466,7 @@ Transform:
   m_GameObject: {fileID: 1099742523}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -115.5, y: -168.9, z: 0}
+  m_LocalPosition: {x: -107.53, y: -169.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -48288,6 +48296,7 @@ MonoBehaviour:
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &1301036694
@@ -49184,6 +49193,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
   failDialogue:
@@ -49194,6 +49204,7 @@ MonoBehaviour:
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
   keyObject: {fileID: 73690548}
@@ -49633,6 +49644,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &1322112180
@@ -50039,18 +50051,56 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chaseDialogues:
   - sentences:
-    - "\u3147\u3147"
+    - "\uB2E4 \uC54C\uC544\uBC84\uB838\uB124?"
+    - "...\uD0DC\uC8FC?"
+    - "\uC774\uC81C \uB108 \uD544\uC694 \uC5C6\uC5B4\uC84C\uAC70\uB4E0"
+    - "\uD0DC\uC8FC\uC57C, \uB2C8\uAC00 \uC65C \uC5EC\uAE30\uC5D0"
+    - "\uB9C8\uCE68 \uBC30\uACE0\uD320\uB294\uB370"
+    - "\uB2EC\uC9C0\uB3C4 \uC54A\uACE0, \uCC28\uAC11\uC9C0\uB3C4 \uC54A\uACE0..."
+    - "\uB531 \uC801\uB2F9\uD560 \uAC83 \uAC19\uB124"
+    - "\uC774\uC81C \uC7A1\uC73C\uB7EC \uAC08\uAC8C, \uC120\uC0DD\uB2D8"
     sprites:
-    - {fileID: 3464973351320543932, guid: dca1726798fef45b2953ec024363abbc, type: 3}
+    - {fileID: -8136328407312270134, guid: 4eec1ecf4dfbc40ad9b21fe25c354789, type: 3}
+    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: -8136328407312270134, guid: 4eec1ecf4dfbc40ad9b21fe25c354789, type: 3}
+    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: -8136328407312270134, guid: 4eec1ecf4dfbc40ad9b21fe25c354789, type: 3}
+    - {fileID: -9039139932308263390, guid: a940bf47367e44f7da0ebce8e8cd3726, type: 3}
+    - {fileID: -9039139932308263390, guid: a940bf47367e44f7da0ebce8e8cd3726, type: 3}
+    - {fileID: -5220195240741735751, guid: b02bbea4adff641578459667b9f53c98, type: 3}
     dialogueWindows:
     - {fileID: 21300000, guid: a79eda00445f44ae2bec6e030a030aa7, type: 3}
-    npcObjects: []
+    - {fileID: 21300000, guid: 5909025c944d0964287d5ff5cae546e0, type: 3}
+    - {fileID: 21300000, guid: a79eda00445f44ae2bec6e030a030aa7, type: 3}
+    - {fileID: 21300000, guid: 5909025c944d0964287d5ff5cae546e0, type: 3}
+    - {fileID: 21300000, guid: a79eda00445f44ae2bec6e030a030aa7, type: 3}
+    - {fileID: 21300000, guid: a79eda00445f44ae2bec6e030a030aa7, type: 3}
+    - {fileID: 21300000, guid: a79eda00445f44ae2bec6e030a030aa7, type: 3}
+    - {fileID: 21300000, guid: a79eda00445f44ae2bec6e030a030aa7, type: 3}
+    npcObjects:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    npcAppearances:
+    - {fileID: -2352927629495224900, guid: 815342b4848c747bb8740c419f538d1c, type: 3}
+    - {fileID: -2352927629495224900, guid: 815342b4848c747bb8740c419f538d1c, type: 3}
+    - {fileID: -2352927629495224900, guid: 815342b4848c747bb8740c419f538d1c, type: 3}
+    - {fileID: -2352927629495224900, guid: 815342b4848c747bb8740c419f538d1c, type: 3}
+    - {fileID: -2352927629495224900, guid: 815342b4848c747bb8740c419f538d1c, type: 3}
+    - {fileID: -1679451836902636637, guid: 8c96099c48f86431097e574b328d2606, type: 3}
+    - {fileID: -1679451836902636637, guid: 8c96099c48f86431097e574b328d2606, type: 3}
+    - {fileID: 295395027, guid: 080654f496d784192bf52c4f694e4c61, type: 3}
     blueSentences:
     - 
     yellowSentences:
     - 
   taejuNPC: {fileID: 1099742523}
-  chaseDelay: 3
+  chaseDelay: 2
   fadeInDuration: 1
 --- !u!4 &1331207161
 Transform:
@@ -50495,6 +50545,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences:
     - "[\uC624\uB798\uB41C \uBA54\uBAA8\uC9C0 - \uC5F0\uAD6C \uBB38\uC11C \uC77C\uBD80]\n\n...'\uD0DC\uC8FC'\uB294
@@ -54781,6 +54832,7 @@ MonoBehaviour:
     dialogueWindows:
     - {fileID: 21300000, guid: f19da707bdd574a749be84691f2d9b3e, type: 3}
     npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &1418908888
@@ -55408,6 +55460,7 @@ MonoBehaviour:
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!1 &1447393424
@@ -55792,6 +55845,7 @@ MonoBehaviour:
     dialogueWindows:
     - {fileID: 21300000, guid: 68313a2d6e7c84b169efe0cf8732e584, type: 3}
     npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &1457823603
@@ -55986,6 +56040,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: b8c6bdd4fdb8741e6959f477c68acf4a, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &1460067275
@@ -58423,6 +58478,7 @@ MonoBehaviour:
     dialogueWindows:
     - {fileID: 21300000, guid: 7ef108d4243654fc2b7cfd4ffe5878fd, type: 3}
     npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &1541870517
@@ -68148,9 +68204,10 @@ GameObject:
   - component: {fileID: 1716327532}
   - component: {fileID: 1716327536}
   - component: {fileID: 1716327535}
-  m_Layer: 0
-  m_Name: taeju(demon)
-  m_TagString: Untagged
+  - component: {fileID: 1716327537}
+  m_Layer: 3
+  m_Name: taeju_demon
+  m_TagString: npc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68241,8 +68298,8 @@ Transform:
   m_GameObject: {fileID: 1716327531}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 25.606396, y: -202.1848, z: 0}
-  m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 0}
+  m_LocalPosition: {x: -105.78, y: -169.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1058683039}
@@ -68285,13 +68342,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.1, y: 4.1}
+    oldSize: {x: 2.4, y: 4.1}
     newSize: {x: 2.4, y: 4.1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.1, y: 4.1}
+  m_Size: {x: 0.5, y: 3}
   m_EdgeRadius: 0
 --- !u!50 &1716327536
 Rigidbody2D:
@@ -68316,10 +68373,27 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &1716327537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716327531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3da073a3a3f9449dcb25508b876e00ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1306316776}
+  moveSpeed: 20
+  delaySeconds: 1.5
+  recordInterval: 0.1
+  followThreshold: 0.05
 --- !u!1 &1719459671
 GameObject:
   m_ObjectHideFlags: 0
@@ -74775,6 +74849,7 @@ MonoBehaviour:
     dialogueWindows:
     - {fileID: 21300000, guid: 55f1520311a244404bdad6f4c7c91932, type: 3}
     npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &1871895951
@@ -77121,6 +77196,7 @@ MonoBehaviour:
     sprites: []
     dialogueWindows: []
     npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &1934082425
@@ -79573,6 +79649,7 @@ MonoBehaviour:
     dialogueWindows:
     - {fileID: 21300000, guid: 43cd6cfe9eabe46ada07907e4f4dbde2, type: 3}
     npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &2012316469
