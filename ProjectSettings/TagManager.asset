@@ -7,6 +7,7 @@ TagManager:
   - npc
   - paper
   - memo
+  - SavePoint
   layers:
   - Default
   - TransparentFX
