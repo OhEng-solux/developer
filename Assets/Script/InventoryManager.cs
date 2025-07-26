@@ -170,14 +170,10 @@ public class InventoryManager : MonoBehaviour
             if (items[i] != null && items[i].itemName == oldItemName)
             {
                 items[i] = newItem;
-                newItem.isObtained = true;
-                UpdateSlots();
-                Debug.Log($"[인벤토리] {oldItemName} → {newItem.itemName}으로 교체 완료");
+                AcquireItem(newItem);
                 return;
             }
         }
-
-        Debug.LogWarning("[인벤토리] 교체할 아이템을 찾지 못함: " + oldItemName);
     }
 
     void UpdateDescription()
