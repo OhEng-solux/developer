@@ -2197,7 +2197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundName: 
+  boundName: Hallway
 --- !u!60 &116029401
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -18706,7 +18706,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundName: 
+  boundName: Sprout
 --- !u!60 &846267135
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -31600,7 +31600,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1141041555}
   m_PlaneDistance: 20
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -32586,7 +32586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundName: 
+  boundName: Lobby
 --- !u!60 &1677067858
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -37939,7 +37939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundName: 
+  boundName: Director_Office
 --- !u!60 &1864324173
 PolygonCollider2D:
   m_ObjectHideFlags: 0

@@ -1284,7 +1284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundName: 
+  boundName: Kitchen
 --- !u!60 &142939181
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2875,7 +2875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundName: 
+  boundName: Lobby
 --- !u!60 &252222577
 PolygonCollider2D:
   m_ObjectHideFlags: 0

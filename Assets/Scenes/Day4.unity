@@ -7132,7 +7132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundName: 
+  boundName: Lobby
 --- !u!60 &721013317
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -16878,7 +16878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundName: 
+  boundName: Sun
 --- !u!4 &1403641311
 Transform:
   m_ObjectHideFlags: 0

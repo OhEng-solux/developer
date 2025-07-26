@@ -4591,7 +4591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundName: 
+  boundName: Kitchen
 --- !u!60 &151366517
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -15621,7 +15621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundName: 
+  boundName: outside_toilet
 --- !u!60 &495379290
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -23554,7 +23554,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundName: 
+  boundName: Basement
 --- !u!60 &626540212
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -34915,7 +34915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundName: 
+  boundName: Play_room
 --- !u!60 &880547001
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -36166,7 +36166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundName: 
+  boundName: Sun
 --- !u!4 &930786356
 Transform:
   m_ObjectHideFlags: 0
@@ -39697,7 +39697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundName: 
+  boundName: inside_toilet
 --- !u!60 &1067062550
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -57767,7 +57767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundName: 
+  boundName: Sprout
 --- !u!60 &1520178530
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -58548,7 +58548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundName: 
+  boundName: Sleeping_room
 --- !u!1 &1554604011
 GameObject:
   m_ObjectHideFlags: 0
@@ -70108,7 +70108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundName: 
+  boundName: Hallway
 --- !u!60 &1777138788
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -80526,7 +80526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundName: 
+  boundName: eacher_office
 --- !u!60 &2030433066
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -81996,7 +81996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundName: 
+  boundName: Lobby
 --- !u!60 &2104847872
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -82265,7 +82265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e359643df8d59ad41b9d8edb7d393c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundName: 
+  boundName: Director_Office
 --- !u!1 &2111525090
 GameObject:
   m_ObjectHideFlags: 0

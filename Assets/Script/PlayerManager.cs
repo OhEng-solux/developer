@@ -24,6 +24,7 @@ public class PlayerManager : MovingObject
 
     void Start()
     {
+
         if (gameObject.scene.name == "Start")
         {
             Debug.Log("시작화면");
