@@ -6,6 +6,7 @@ public class PlayerManager : MovingObject
 {
     static public PlayerManager instance; // 정적 변수
     public string currentMapName;
+    public string currentSceneName;
 
     public float runSpeed;
     private float applyRunSpeed;
@@ -20,8 +21,15 @@ public class PlayerManager : MovingObject
 
     private Rigidbody2D rigid;
 
+
     void Start()
     {
+
+        if (gameObject.scene.name == "Start")
+        {
+            Debug.Log("시작화면");
+            return;
+        }
         queue = new Queue<string>();
 
         if (instance == null)
@@ -119,6 +127,15 @@ public class PlayerManager : MovingObject
 
     void Update()
     {
+
+
+        if (!canMove) return;
+        if (gameObject.scene.name == "Start")
+        {
+            Debug.Log("시작화면");
+            return;
+        }
+
         if (canMove && !notMove)
         {
             if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
