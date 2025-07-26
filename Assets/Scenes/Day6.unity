@@ -3650,6 +3650,7 @@ GameObject:
   - component: {fileID: 125039322}
   - component: {fileID: 125039326}
   - component: {fileID: 125039325}
+  - component: {fileID: 125039327}
   m_Layer: 5
   m_Name: clue1
   m_TagString: Untagged
@@ -3743,7 +3744,7 @@ Transform:
   m_GameObject: {fileID: 125039321}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 68.3, y: -97.8, z: 0.94110584}
+  m_LocalPosition: {x: -66.3, y: -15.5, z: 0.94110584}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3825,6 +3826,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.7, y: 0.7}
   m_EdgeRadius: 0
+--- !u!114 &125039327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125039321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 829b466eebeb1453ca9f015b2392a726, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clueIndex: 0
 --- !u!1 &131271325
 GameObject:
   m_ObjectHideFlags: 0
@@ -5157,6 +5171,7 @@ GameObject:
   - component: {fileID: 180102788}
   - component: {fileID: 180102787}
   - component: {fileID: 180102791}
+  - component: {fileID: 180102792}
   m_Layer: 5
   m_Name: clue4
   m_TagString: Untagged
@@ -5315,6 +5330,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupImage: {fileID: -553273078325290454, guid: 17fa73002fa084864b314d8ab45df661, type: 3}
+--- !u!114 &180102792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180102784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 829b466eebeb1453ca9f015b2392a726, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clueIndex: 3
 --- !u!1 &184765834
 GameObject:
   m_ObjectHideFlags: 0
@@ -40405,7 +40433,6 @@ GameObject:
   - component: {fileID: 1099742528}
   - component: {fileID: 1099742527}
   - component: {fileID: 1099742526}
-  - component: {fileID: 1099742525}
   m_Layer: 0
   m_Name: taeju_origin
   m_TagString: Untagged
@@ -40422,30 +40449,12 @@ Transform:
   m_GameObject: {fileID: 1099742523}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -111.7, y: -168.7, z: 0}
+  m_LocalPosition: {x: -115.5, y: -168.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1058683039}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1099742525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1099742523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813481dc762d44bca937ff94ce09e711, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    sentences: []
-    sprites: []
-    dialogueWindows: []
-    blueSentences: []
-    yellowSentences: []
 --- !u!61 &1099742526
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -40874,6 +40883,7 @@ GameObject:
   - component: {fileID: 1109566067}
   - component: {fileID: 1109566066}
   - component: {fileID: 1109566069}
+  - component: {fileID: 1109566070}
   m_Layer: 5
   m_Name: clue3
   m_TagString: Untagged
@@ -40890,7 +40900,7 @@ Transform:
   m_GameObject: {fileID: 1109566063}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -63.4, y: -94.1, z: 0.94110584}
+  m_LocalPosition: {x: -74.4, y: -16.3, z: 0.94110584}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -41032,6 +41042,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupImage: {fileID: 0}
+--- !u!114 &1109566070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109566063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 829b466eebeb1453ca9f015b2392a726, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clueIndex: 2
 --- !u!1 &1111667566
 GameObject:
   m_ObjectHideFlags: 0
@@ -48894,7 +48917,7 @@ Transform:
   m_GameObject: {fileID: 1306316774}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 71.2, y: -424.8, z: 0}
+  m_LocalPosition: {x: -88.1, y: -288.6, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -49972,6 +49995,63 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1331207159
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1331207161}
+  - component: {fileID: 1331207160}
+  m_Layer: 0
+  m_Name: ChaseTriggerManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1331207160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331207159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dd023e183f0a42f7b983f8a4e552327, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseDialogues:
+  - sentences:
+    - "\u3147\u3147"
+    sprites:
+    - {fileID: 3464973351320543932, guid: dca1726798fef45b2953ec024363abbc, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: a79eda00445f44ae2bec6e030a030aa7, type: 3}
+    blueSentences:
+    - 
+    yellowSentences:
+    - 
+  taejuNPC: {fileID: 1099742523}
+  chaseDelay: 3
+--- !u!4 &1331207161
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331207159}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1331958618
 GameObject:
   m_ObjectHideFlags: 0
@@ -50354,6 +50434,7 @@ GameObject:
   - component: {fileID: 1348053325}
   - component: {fileID: 1348053324}
   - component: {fileID: 1348053323}
+  - component: {fileID: 1348053327}
   m_Layer: 5
   m_Name: clue2
   m_TagString: Untagged
@@ -50370,7 +50451,7 @@ Transform:
   m_GameObject: {fileID: 1348053321}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20.8, y: -118.4, z: 0.94110584}
+  m_LocalPosition: {x: -69.1, y: -17.9, z: 0.94110584}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -50532,6 +50613,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1348053327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348053321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 829b466eebeb1453ca9f015b2392a726, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clueIndex: 1
 --- !u!1 &1351051828
 GameObject:
   m_ObjectHideFlags: 0
@@ -74714,6 +74808,50 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!1 &1884847161
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1884847163}
+  - component: {fileID: 1884847162}
+  m_Layer: 0
+  m_Name: ClueManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1884847162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884847161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 480f7dfb1e6414d7498c008bcc081334, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1884847163
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884847161}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 13.8, y: -10.9, z: 90}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1887234666
 GameObject:
   m_ObjectHideFlags: 0
@@ -85102,7 +85240,9 @@ SceneRoots:
   - {fileID: 483608152}
   - {fileID: 652910773}
   - {fileID: 2073124388}
+  - {fileID: 1331207161}
   - {fileID: 1519425387}
+  - {fileID: 1884847163}
   - {fileID: 370457044}
   - {fileID: 2107776952}
   - {fileID: 1712721387}
