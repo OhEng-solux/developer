@@ -16,7 +16,7 @@ MonoBehaviour:
     \uC0AC\uC6A9 \uADDC\uCE59"
   obtainedIcon: {fileID: -5273250443779059801, guid: 2156ebee03d4d4e748aa0b3e41e080a6, type: 3}
   silhouetteIcon: {fileID: -5273250443779059801, guid: 2156ebee03d4d4e748aa0b3e41e080a6, type: 3}
-  isObtained: 0
+  isObtained: 1
   itemType: 1
   description: "\uC228\uACA8\uC9C4 \uAE00\uC790\uAC00 \uB4DC\uB7EC\uB09C \uBB38\uC11C.\n\uC870\uB9AC\uC2E4\uC758
     \uC9C4\uC9DC \uADDC\uCE59\uC774 \uBC1D\uD600\uC84C\uB2E4."
