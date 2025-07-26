@@ -3650,7 +3650,6 @@ GameObject:
   - component: {fileID: 125039322}
   - component: {fileID: 125039326}
   - component: {fileID: 125039325}
-  - component: {fileID: 125039327}
   m_Layer: 5
   m_Name: clue1
   m_TagString: Untagged
@@ -3744,7 +3743,7 @@ Transform:
   m_GameObject: {fileID: 125039321}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -37, y: -92.6, z: 0.94110584}
+  m_LocalPosition: {x: 68.3, y: -97.8, z: 0.94110584}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3826,19 +3825,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.7, y: 0.7}
   m_EdgeRadius: 0
---- !u!114 &125039327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 125039321}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4b1df0e4ca355347a05ac2d1b76dbfe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  popupImage: {fileID: 0}
 --- !u!1 &131271325
 GameObject:
   m_ObjectHideFlags: 0
@@ -5187,7 +5173,7 @@ Transform:
   m_GameObject: {fileID: 180102784}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 81.3, y: -159.3, z: 0.94110584}
+  m_LocalPosition: {x: -80.3, y: -16.2, z: 0.94110584}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5328,7 +5314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4b1df0e4ca355347a05ac2d1b76dbfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popupImage: {fileID: 0}
+  popupImage: {fileID: -553273078325290454, guid: 17fa73002fa084864b314d8ab45df661, type: 3}
 --- !u!1 &184765834
 GameObject:
   m_ObjectHideFlags: 0
@@ -35394,13 +35380,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 887561881}
+  - component: {fileID: 887561882}
   m_Layer: 5
   m_Name: ImagePopupPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &887561881
 RectTransform:
   m_ObjectHideFlags: 0
@@ -35422,6 +35409,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &887561882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 887561880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2548203ad8d7eb140aa95cbf62bb7516, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popupPanel: {fileID: 887561880}
+  popupImage: {fileID: 275500142}
 --- !u!1 &893036832
 GameObject:
   m_ObjectHideFlags: 0
@@ -40889,7 +40890,7 @@ Transform:
   m_GameObject: {fileID: 1109566063}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 53.5, y: -78, z: 0.94110584}
+  m_LocalPosition: {x: -63.4, y: -94.1, z: 0.94110584}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -48893,7 +48894,7 @@ Transform:
   m_GameObject: {fileID: 1306316774}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -19.8, y: -110, z: 0}
+  m_LocalPosition: {x: 71.2, y: -424.8, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -50353,7 +50354,6 @@ GameObject:
   - component: {fileID: 1348053325}
   - component: {fileID: 1348053324}
   - component: {fileID: 1348053323}
-  - component: {fileID: 1348053327}
   m_Layer: 5
   m_Name: clue2
   m_TagString: Untagged
@@ -50370,7 +50370,7 @@ Transform:
   m_GameObject: {fileID: 1348053321}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.9, y: -118, z: 0.94110584}
+  m_LocalPosition: {x: 20.8, y: -118.4, z: 0.94110584}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -50532,19 +50532,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1348053327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1348053321}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4b1df0e4ca355347a05ac2d1b76dbfe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  popupImage: {fileID: 0}
 --- !u!1 &1351051828
 GameObject:
   m_ObjectHideFlags: 0
