@@ -7,7 +7,7 @@ public class TestNumber : MonoBehaviour
     [SerializeField] private Dialogue successDialogue;
     [SerializeField] private Dialogue failDialogue;
     [SerializeField] private GameObject dialSystemObject; // NumberSystem이 붙은 오브젝트
-    [SerializeField] private int correctNumber = 2235; // 정답 숫자
+    [SerializeField] private int correctNumber = 2265; // 정답 숫자
     [SerializeField] private Item rewardItem; // 성공 시 획득할 아이템
 
     private DialogueManager theDM;
@@ -18,6 +18,7 @@ public class TestNumber : MonoBehaviour
     // 상태 변수
     private bool isPlayerInTrigger = false; // 플레이어가 퍼즐 콜라이더에 들어와 있는가
     private bool hasInteracted = false;     // 성공 or 실패로 이미 시도한 적이 있는가
+    private bool hasPlayedPreDialogue = false; // preDialogue는 한 번만 출력
     private bool isWaitingForZ = false;     // Z 키를 기다리는 상태인가 (대화 이후)
     private bool isPuzzleStarted = false;   // Z 키를 눌러 퍼즐을 시작했는가
 
@@ -35,6 +36,10 @@ public class TestNumber : MonoBehaviour
         if (!hasInteracted && collision.CompareTag("Player"))
         {
             isPlayerInTrigger = true;
+
+            Vector3 pushBack = new Vector3(-0.03f, 0f, 0f); // 왼쪽으로 살짝 밀기
+            collision.transform.position += pushBack;
+
             StartCoroutine(TriggerPuzzleStart());
         }
     }
@@ -44,6 +49,15 @@ public class TestNumber : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             isPlayerInTrigger = false;
+
+            // 퍼즐 대기 상태 초기화
+            if (isWaitingForZ)
+            {
+                isWaitingForZ = false;
+                isPuzzleStarted = false;
+                PlayerManager.instance.canMove = true; // 다시 이동 가능하게
+                theOrder.Move();
+            }
         }
     }
 
@@ -53,13 +67,14 @@ public class TestNumber : MonoBehaviour
         isPuzzleStarted = false;
         isWaitingForZ = true;
         dialSystemObject.SetActive(false); // 혹시 이전 UI 남아 있을 경우 꺼주기
-        PlayerManager.instance.canMove = false;
 
-        theOrder.NotMove();
+        // PlayerManager.instance.canMove = false;
+        // theOrder.NotMove();
 
-        // 사전 대사 출력
-        if (preDialogue != null)
+        // 사전 대사는 처음 한 번만 출력
+        if (!hasPlayedPreDialogue && preDialogue != null)
         {
+            hasPlayedPreDialogue = true;
             theDM.ShowDialogue(preDialogue);
             yield return new WaitUntil(() => !theDM.talking);
         }

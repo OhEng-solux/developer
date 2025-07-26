@@ -148,7 +148,7 @@ public class NumberSystem : MonoBehaviour
                 StartCoroutine(OXCoroutine());
 
             }
-            else if (Input.GetKeyDown(KeyCode.Escape)) // 취소키
+            else if (Input.GetKeyDown(KeyCode.Z)) // 취소키
             {
                 theAudio.Play(cancel_sound);
                 keyInput = false;
