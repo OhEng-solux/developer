@@ -35,6 +35,7 @@ public class DialogueManager : MonoBehaviour
     private List<string> listYellowSentences = new List<string>(); // 노란색 대화 문장용
     private List<Sprite> listSprites = new List<Sprite>();
     private List<Sprite> listDialogueWindows = new List<Sprite>();
+    private List<GameObject> listNPCs = new List<GameObject>(); // Day6 전용 NPC 리스트
 
     private int count;
 
@@ -169,6 +170,11 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
+        if (SceneManager.GetActiveScene().name == "Day6" && dialogue.npcObjects != null)
+        {
+            listNPCs.AddRange(dialogue.npcObjects);
+        }
+
         animSprite.SetBool("Appear", true);
         animDialogueWindow.SetBool("Appear", true);
         count = 0;
@@ -245,6 +251,16 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
+        // Day6 종료 시 NPC 모두 비활성화
+        if (SceneManager.GetActiveScene().name == "Day6")
+        {
+            foreach (var npc in listNPCs)
+            {
+                if (npc != null)
+                    npc.SetActive(false);
+            }
+        }
+
         // ★ 프롤로그 씬에서는 씬 전환 없이 캔버스만 꺼줌
         if (SceneManager.GetActiveScene().name == "Prologue")
         {
@@ -264,6 +280,16 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator StartDialogueCoroutine()
     {
+        // Day6 전용: NPC 오브젝트 등장 제어
+        if (SceneManager.GetActiveScene().name == "Day6")
+        {
+            for (int i = 0; i < listNPCs.Count; i++)
+            {
+                if (listNPCs[i] != null)
+                    listNPCs[i].SetActive(i == count); // 해당 대사에 맞는 NPC만 활성화
+            }
+        }
+
         if (shouldHideItemPanelNext && itemPanel != null)
         {
             itemPanel.SetActive(false);
@@ -425,6 +451,7 @@ public class DialogueManager : MonoBehaviour
                 // StartCoroutine(StartDialogueCoroutine());
             }
         }
+        yield break;
     }
 
     void HandleSentenceEvents(int sentenceIndex)

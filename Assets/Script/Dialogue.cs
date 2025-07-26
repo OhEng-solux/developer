@@ -9,6 +9,7 @@ public class Dialogue
     public string[] sentences;
     public Sprite[] sprites;
     public Sprite[] dialogueWindows;
+    public GameObject[] npcObjects; // 대화 오브젝트 배열
 
     [TextArea(1, 2)] // 대화 문장 길이 제한
     public string[] blueSentences; // 파란색 대화 문장 배열
