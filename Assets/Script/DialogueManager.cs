@@ -13,7 +13,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (instance == null)
         {
-            DontDestroyOnLoad(this.gameObject);
+            //DontDestroyOnLoad(this.gameObject);
             instance = this;
             hasShownItemPanel = false; // 최초 1회 초기화
         }
