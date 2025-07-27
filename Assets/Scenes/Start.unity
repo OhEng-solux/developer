@@ -1507,7 +1507,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: -3.3549, y: 202}
-  m_SizeDelta: {x: 340, y: 75}
+  m_SizeDelta: {x: 338, y: 73}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &707763235
 MonoBehaviour:
@@ -1575,7 +1575,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 7687183779163881509, guid: 533e0adc0769e3444aa4a7c5b3ec9ebf, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1782,7 +1782,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: -3.3549, y: 154.24}
-  m_SizeDelta: {x: 340, y: 75}
+  m_SizeDelta: {x: 340, y: 73}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &867783716
 MonoBehaviour:
@@ -1850,7 +1850,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: -3373945897622598358, guid: fd03c72f09803ca418b9db8f56d1cdde, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1917,7 +1917,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: -3.7625, y: 106.479996}
-  m_SizeDelta: {x: 340, y: 75}
+  m_SizeDelta: {x: 340, y: 73}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &868997910
 MonoBehaviour:
@@ -1985,7 +1985,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 2276654932631699220, guid: 8795c6af204ffc44eb2a1cdfbdedf6f0, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -3616,8 +3616,8 @@ Transform:
   m_GameObject: {fileID: 1860762491}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.4341, y: 0.572041, z: 0}
-  m_LocalScale: {x: 21.782991, y: 31.32422, z: 0}
+  m_LocalPosition: {x: -0.4341, y: 0.2, z: 0}
+  m_LocalScale: {x: 21.782991, y: 32.107327, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 707763234}
