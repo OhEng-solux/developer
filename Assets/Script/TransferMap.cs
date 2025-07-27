@@ -32,7 +32,7 @@ public class TransferMap : MonoBehaviour
 
     IEnumerator TransferCoroutine()
     {
-       theOrder.NotMove();
+        theOrder.NotMove();
         theFade.FadeOut();
         yield return new WaitForSeconds(1f);
         thePlayer.currentMapName = transferMapName;
