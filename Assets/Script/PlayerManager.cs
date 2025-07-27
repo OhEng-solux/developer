@@ -26,7 +26,7 @@ public class PlayerManager : MovingObject
     IEnumerator Start()
     {
 
-        if (gameObject.scene.name == "Start")
+        if (gameObject.scene.name == "Start"|| gameObject.scene.name == "Prologue")
         {
             Debug.Log("시작화면");
             yield break;
@@ -157,7 +157,7 @@ public class PlayerManager : MovingObject
 
 
         if (!canMove) return;
-        if (gameObject.scene.name == "Start")
+        if (gameObject.scene.name == "Start" || gameObject.scene.name == "Prologue")
         {
             Debug.Log("시작화면");
             return;
