@@ -13,7 +13,7 @@ public class PlayerManager : MovingObject
     private bool applyRunFlag = false;
     public bool canMove = true;
     public bool notMove = false;
-
+    private FadeManager theFade;
     public bool hasEnteredName = false;
 
     private float footstepInterval = 0.3f; // 발소리 간격 (초)
@@ -30,11 +30,12 @@ public class PlayerManager : MovingObject
             Debug.Log("시작화면");
             return;
         }
+
         queue = new Queue<string>();
 
         if (instance == null)
         {
-            DontDestroyOnLoad(this.gameObject);
+            //DontDestroyOnLoad(this.gameObject);
             boxCollider = GetComponent<BoxCollider2D>();
             animator = GetComponent<Animator>();
             theAudio = FindFirstObjectByType<AudioManager>();
@@ -42,11 +43,15 @@ public class PlayerManager : MovingObject
             instance = this;
 
             boxCollider.offset = new Vector2(0, -0.1f);
+            
         }
         else
         {
             Destroy(this.gameObject);
         }
+
+        theFade = FindFirstObjectByType<FadeManager>();
+        theFade.FadeIn();
     }
 
     IEnumerator MoveCoroutine()
