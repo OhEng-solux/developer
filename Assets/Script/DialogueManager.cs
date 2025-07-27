@@ -138,7 +138,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         talking = true;
-        theOrder.NotMove();
+        //theOrder.NotMove();
 
         listSentences.Clear();
         listBlueSentences.Clear(); // 파란색 대화 문장 초기화
@@ -200,7 +200,7 @@ public class DialogueManager : MonoBehaviour
         animSprite.SetBool("Appear", false);
         animDialogueWindow.SetBool("Appear", false);
         talking = false;
-        theOrder.Move();
+        //theOrder.Move();
 
         if (countUpOnFinish)
         {
