@@ -37,7 +37,7 @@ public class Menu : MonoBehaviour
     {
         if (DialogueManager.instance == null || !DialogueManager.instance.talking)
         {
-            if (!PopupManager.instance.IsPopupActive()&& !SaveManager.instance.IsSaveActive())
+            if (!PopupManager.instance.IsPopupActive()&& !SaveManager.instance.IsSaveActive() && !InventoryManager.instance.IsInventoryActive())
             {
                 // ESC 키로 메뉴 켜고 끄기
                 if (Input.GetKeyDown(KeyCode.Escape))
