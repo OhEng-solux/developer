@@ -23,7 +23,7 @@ public class PlayerManager : MovingObject
     private float footstepInterval = 0.3f; // 발소리 간격 (초)
     private float lastFootstepTime = 0f;
 
-    private TestDialogue[] allDialogues;
+    private GameObject startDialogues;
     private Rigidbody2D rigid;
 
     // **추가: queue, currentWalkCount 필드 선언**
@@ -37,11 +37,8 @@ public class PlayerManager : MovingObject
             yield break;
         }
 
-        TestDialogue[] allDialogues = FindObjectsOfType<TestDialogue>(true);
-        foreach (var dialogue in allDialogues)
-        {
-            dialogue.gameObject.SetActive(false); // 각 오브젝트 비활성화
-        }
+        GameObject startDialogues = GameObject.FindWithTag("Start Dialogue");
+        startDialogues.gameObject.SetActive(false); // 각 오브젝트 비활성화
 
         dayStartImage.SetActive(true); // day N 켜기
         Time.timeScale = 0f; // 게임 일시정지
@@ -59,10 +56,7 @@ public class PlayerManager : MovingObject
         yield return new WaitForSecondsRealtime(1f);
 
         Debug.Log("대화 가능");
-        foreach (var dialogue in allDialogues)
-        {
-            dialogue.gameObject.SetActive(true); // 각 오브젝트 활성화
-        }
+        startDialogues.gameObject.SetActive(true);
 
         if (instance == null)
         {
