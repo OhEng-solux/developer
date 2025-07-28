@@ -42,6 +42,8 @@ public class Menu : MonoBehaviour
                 // ESC 키로 메뉴 켜고 끄기
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
+                    Debug.Log("SaveManager.instance: " + (SaveManager.instance != null));
+                    Debug.Log("IsSaveActive Open: " + SaveManager.instance?.IsSaveActive());
                     activated = !activated;
 
                     if (activated)

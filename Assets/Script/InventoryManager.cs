@@ -59,11 +59,14 @@ public class InventoryManager : MonoBehaviour
                 UpdateDescription();
 
                 GameObject.FindWithTag("Player").GetComponent<PlayerManager>().canMove = false; //이동 제한
+                Debug.Log("[인벤토리] X키 눌림. isOpen: " + isOpen + ", inventoryPanel.activeSelf: " + inventoryPanel.activeSelf);
+
             }
             else
             {
                 audioManager.Play(openSound);
                 GameObject.FindWithTag("Player").GetComponent<PlayerManager>().canMove = true;
+                Debug.Log("[인벤토리] X키 눌림. isOpen: " + isOpen + ", inventoryPanel.activeSelf: " + inventoryPanel.activeSelf);
             }
         }
 
@@ -75,6 +78,8 @@ public class InventoryManager : MonoBehaviour
                 isOpen = !isOpen;
                 inventoryPanel.SetActive(isOpen);
                 GameObject.FindWithTag("Player").GetComponent<PlayerManager>().canMove = true;
+                Debug.Log("[인벤토리] esc키 눌림. isOpen: " + isOpen + ", inventoryPanel.activeSelf: " + inventoryPanel.activeSelf);
+                return;
             }
         }
 
@@ -226,7 +231,7 @@ public class InventoryManager : MonoBehaviour
 
     public bool IsInventoryActive() //팝업이 떠있는지 외부에서 확인할 수 있도록 함
     {
-        return inventoryPanel.activeSelf;
+        return isOpen;
     }
 
 }
