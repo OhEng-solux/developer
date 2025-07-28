@@ -82202,6 +82202,7 @@ MonoBehaviour:
   menuButtons:
   - {fileID: 1496504558}
   - {fileID: 604880538}
+  activated: 0
 --- !u!1 &2076896296
 GameObject:
   m_ObjectHideFlags: 0
