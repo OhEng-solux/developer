@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
@@ -108,5 +109,31 @@ public class TaejuChase : MonoBehaviour
     {
         isChasing = false;
         animator.SetBool("Walking", false);
+    }
+
+    public bool IsChasing()
+    {
+        return isChasing;
+    }
+
+    public void SpawnAtWithDelay(Vector3 position, float delay)
+    {
+        StartCoroutine(SpawnAfterDelay(position, delay));
+    }
+
+    private IEnumerator SpawnAfterDelay(Vector3 position, float delay)
+    {
+        var spriteRenderer = GetComponent<SpriteRenderer>();
+        if (spriteRenderer != null)
+            spriteRenderer.enabled = false;
+
+        transform.position = position;
+
+        yield return new WaitForSeconds(delay);
+
+        if (spriteRenderer != null)
+            spriteRenderer.enabled = true;
+
+        StartChase();
     }
 }
