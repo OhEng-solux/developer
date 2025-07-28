@@ -6,6 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    public static Menu instance;
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject); // 중복 방지
+    }
+
     public GameObject menuPanel; // 메뉴 전체 패널
     public AudioManager theAudio;
 
@@ -17,7 +26,7 @@ public class Menu : MonoBehaviour
 
     public List<Button> menuButtons; // 메뉴 항목 버튼들 (인스펙터에 할당)
 
-    private bool activated;
+    public bool activated;
 
     private int currentIndex = 0; // 현재 선택된 버튼 인덱스
     private Color normalColor = Color.white;
@@ -37,11 +46,13 @@ public class Menu : MonoBehaviour
     {
         if (DialogueManager.instance == null || !DialogueManager.instance.talking)
         {
-            if (!PopupManager.instance.IsPopupActive()&& !SaveManager.instance.IsSaveActive())
+            if (!PopupManager.instance.IsPopupActive()&& !SaveManager.instance.IsSaveActive() && !InventoryManager.instance.IsInventoryActive())
             {
                 // ESC 키로 메뉴 켜고 끄기
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
+                    Debug.Log("SaveManager.instance: " + (SaveManager.instance != null));
+                    Debug.Log("IsSaveActive Open: " + SaveManager.instance?.IsSaveActive());
                     activated = !activated;
 
                     if (activated)

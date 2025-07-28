@@ -45,6 +45,9 @@ public class InventoryManager : MonoBehaviour
             return; // 대화 중이면 더 이상 진행 X
         }
 
+        if (!isOpen &&( SaveManager.instance == null || SaveManager.instance.IsSaveActive())) return;
+
+        if (!isOpen &&(Menu.instance == null || Menu.instance.activated)) return;
         // X 키를 눌렀을 때 인벤토리 열고 닫기 토글
         if (Input.GetKeyDown(KeyCode.X))
         {
@@ -59,13 +62,30 @@ public class InventoryManager : MonoBehaviour
                 UpdateDescription();
 
                 GameObject.FindWithTag("Player").GetComponent<PlayerManager>().canMove = false; //이동 제한
+                Debug.Log("[인벤토리] X키 눌림. isOpen: " + isOpen + ", inventoryPanel.activeSelf: " + inventoryPanel.activeSelf);
+
             }
             else
             {
                 audioManager.Play(openSound);
                 GameObject.FindWithTag("Player").GetComponent<PlayerManager>().canMove = true;
+                Debug.Log("[인벤토리] X키 눌림. isOpen: " + isOpen + ", inventoryPanel.activeSelf: " + inventoryPanel.activeSelf);
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isOpen)
+            {
+                audioManager.Play(openSound);
+                isOpen = !isOpen;
+                inventoryPanel.SetActive(isOpen);
+                GameObject.FindWithTag("Player").GetComponent<PlayerManager>().canMove = true;
+                Debug.Log("[인벤토리] esc키 눌림. isOpen: " + isOpen + ", inventoryPanel.activeSelf: " + inventoryPanel.activeSelf);
+                return;
+            }
+        }
+
 
         // 방향키 동작 우선순위: 팝업창>인벤토리>이동
         if (!isOpen || PopupManager.instance.IsPopupActive()) return;
@@ -211,4 +231,10 @@ public class InventoryManager : MonoBehaviour
 
         HighlightSlot(currentIndex);
     }
+
+    public bool IsInventoryActive() //팝업이 떠있는지 외부에서 확인할 수 있도록 함
+    {
+        return isOpen;
+    }
+
 }

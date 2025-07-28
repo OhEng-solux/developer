@@ -26133,7 +26133,7 @@ GameObject:
   - component: {fileID: 1999432126}
   m_Layer: 0
   m_Name: Story_dialogue
-  m_TagString: Untagged
+  m_TagString: Start Dialogue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
