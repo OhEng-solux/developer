@@ -47,6 +47,7 @@ public class InventoryManager : MonoBehaviour
 
         if (!isOpen &&( SaveManager.instance == null || SaveManager.instance.IsSaveActive())) return;
 
+        if (!isOpen &&(Menu.instance == null || Menu.instance.activated)) return;
         // X 키를 눌렀을 때 인벤토리 열고 닫기 토글
         if (Input.GetKeyDown(KeyCode.X))
         {

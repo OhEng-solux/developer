@@ -76,6 +76,7 @@ public class SaveManager : MonoBehaviour
         }
 
         if (!isOpen &&( InventoryManager.instance == null || InventoryManager.instance.IsInventoryActive())) return;
+        if (!isOpen && (Menu.instance == null || Menu.instance.activated)) return;
 
         // Z키 눌렀을 때 세이브창 열기/닫기 토글 (저장지점 근처일 때만)
         if (Input.GetKeyDown(KeyCode.Z))
