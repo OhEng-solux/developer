@@ -97,6 +97,11 @@ public class TaejuChase : MonoBehaviour
     public void StartChase()
     {
         isChasing = true;
+        var spriteRenderer = GetComponent<SpriteRenderer>();
+        if (spriteRenderer != null)
+            spriteRenderer.enabled = true;
+
+        animator.SetBool("Walking", true);
     }
 
     public void StopChase()
