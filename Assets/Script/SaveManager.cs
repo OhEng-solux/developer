@@ -85,6 +85,17 @@ public class SaveManager : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isOpen)
+            {
+                audioManager.Play(openSound);
+                isOpen = !isOpen;
+                savePanel.SetActive(isOpen);
+                GameObject.FindWithTag("Player").GetComponent<PlayerManager>().canMove = true;
+            }
+        }
+
         // isOpen 상태가 이전 상태와 다를 때만 처리
         if (isOpen != prevIsOpen)
         {
