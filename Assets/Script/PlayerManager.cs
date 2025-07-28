@@ -7,34 +7,59 @@ public class PlayerManager : MovingObject
     static public PlayerManager instance; // 정적 변수
     public string currentMapName;
     public string currentSceneName;
+    public GameObject dayStartImage;
 
     public float runSpeed;
     private float applyRunSpeed;
     private bool applyRunFlag = false;
     public bool canMove = true;
     public bool notMove = false;
-
+    private FadeManager theFade;
     public bool hasEnteredName = false;
 
     private float footstepInterval = 0.3f; // 발소리 간격 (초)
     private float lastFootstepTime = 0f;
-
+    private TestDialogue[] allDialogues;
     private Rigidbody2D rigid;
 
 
-    void Start()
+    IEnumerator Start()
     {
 
-        if (gameObject.scene.name == "Start")
+        if (gameObject.scene.name == "Start"|| gameObject.scene.name == "Prologue")
         {
             Debug.Log("시작화면");
-            return;
+            yield break;
         }
+        TestDialogue[] allDialogues = FindObjectsOfType<TestDialogue>(true);
+        foreach (var dialogue in allDialogues)
+        {
+            dialogue.gameObject.SetActive(false); // 각 오브젝트에 대해 SetActive 호출
+        }
+        dayStartImage.SetActive(true);//day N 킴
+        Time.timeScale = 0f;//게임 일시정지
         queue = new Queue<string>();
+        
+
+        yield return new WaitForSecondsRealtime(2.5f);//1초 대기
+        dayStartImage.SetActive(false);//day N 끔
+
+        
+        Time.timeScale = 1f;//게임 재개
+
+        theFade = FindFirstObjectByType<FadeManager>();
+        Debug.Log("fadein");
+        theFade.FadeIn();
+        yield return new WaitForSecondsRealtime(1f);
+        Debug.Log("대화 가능");
+        foreach (var dialogue in allDialogues)
+        {
+            dialogue.gameObject.SetActive(true); // 각 오브젝트에 대해 SetActive 호출
+        }
 
         if (instance == null)
         {
-            DontDestroyOnLoad(this.gameObject);
+            //DontDestroyOnLoad(this.gameObject);
             boxCollider = GetComponent<BoxCollider2D>();
             animator = GetComponent<Animator>();
             theAudio = FindFirstObjectByType<AudioManager>();
@@ -42,11 +67,13 @@ public class PlayerManager : MovingObject
             instance = this;
 
             boxCollider.offset = new Vector2(0, -0.1f);
+            
         }
         else
         {
             Destroy(this.gameObject);
         }
+        
     }
 
     IEnumerator MoveCoroutine()
@@ -130,7 +157,7 @@ public class PlayerManager : MovingObject
 
 
         if (!canMove) return;
-        if (gameObject.scene.name == "Start")
+        if (gameObject.scene.name == "Start" || gameObject.scene.name == "Prologue")
         {
             Debug.Log("시작화면");
             return;
