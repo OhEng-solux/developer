@@ -425,6 +425,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 719215324}
+  blueText: {fileID: 0}
+  yellowText: {fileID: 0}
   rendererSprite: {fileID: 701574326}
   rendererDialogueWindow: {fileID: 701574326}
   animSprite: {fileID: 701574324}
@@ -806,6 +808,8 @@ GameObject:
   - component: {fileID: 1015715350}
   - component: {fileID: 1015715349}
   - component: {fileID: 1015715348}
+  - component: {fileID: 1015715354}
+  - component: {fileID: 1015715355}
   m_Layer: 3
   m_Name: player
   m_TagString: Player
@@ -837,7 +841,9 @@ MonoBehaviour:
   walkSound_3: footsteps3
   walkSound_4: footsteps4
   animator: {fileID: 1015715349}
-  currentMapName: 
+  currentMapName: prologue
+  currentSceneName: Prologue
+  dayStartImage: {fileID: 0}
   runSpeed: 0.1
   canMove: 1
   notMove: 0
@@ -982,7 +988,7 @@ SpriteRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 2
   m_Sprite: {fileID: 3804577782815295143, guid: 6c941c9e4b33f46e0972dfb2d22e54da, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1001,12 +1007,41 @@ Transform:
   m_GameObject: {fileID: 1015715347}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 31.6, y: -25.1, z: 0}
+  m_LocalPosition: {x: 32.9, y: -26.9, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1015715354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015715347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04233b58d0c39bd41a6e2b6558f89918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  requiredCount: 1
+--- !u!114 &1015715355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015715347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ba00c2c914e97a4bb5ae38a9fe86520, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPoint: {fileID: 0}
+  moveSpeed: 20
+  isMoving: 0
 --- !u!1 &1104828217
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,6 +1053,8 @@ GameObject:
   - component: {fileID: 1104828220}
   - component: {fileID: 1104828219}
   - component: {fileID: 1104828221}
+  - component: {fileID: 1104828222}
+  - component: {fileID: 1104828223}
   m_Layer: 0
   m_Name: Prologue_Dialogue
   m_TagString: Untagged
@@ -1135,7 +1172,34 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
+    blueSentences: []
+    yellowSentences: []
   prologueCanvas: {fileID: 0}
+--- !u!114 &1104828222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104828217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2353369fc72a20344984e1725b7344bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueCount: 0
+--- !u!114 &1104828223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104828217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae8c998c84511e54cbb2b972b32ee56c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1113897435
 GameObject:
   m_ObjectHideFlags: 0
@@ -1288,7 +1352,7 @@ SpriteRenderer:
   m_SortingLayer: 6
   m_SortingOrder: 2
   m_Sprite: {fileID: -637298209465472926, guid: 8987e278486862343846f7ae97b07604, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

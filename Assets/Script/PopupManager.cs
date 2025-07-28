@@ -48,13 +48,20 @@ public class PopupManager : MonoBehaviour
 
                 if (selectedIndex == 0) onYes?.Invoke();
                 else onNo?.Invoke();
+
+                // ▶ 팝업 닫힐 때 플레이어 움직임 다시 허용
+                if (PlayerManager.instance != null)
+                    PlayerManager.instance.canMove = true;
             }
         }
-
         else if (isPopupOpen && Input.GetKeyDown(KeyCode.Return))
         {
             popupPanel.SetActive(false);
             isPopupOpen = false;
+
+            // ▶ 팝업 닫힐 때 플레이어 움직임 다시 허용
+            if (PlayerManager.instance != null)
+                PlayerManager.instance.canMove = true;
         }
     }
 
@@ -72,10 +79,14 @@ public class PopupManager : MonoBehaviour
         confirmButton?.onClick.AddListener(() =>
         {
             popupPanel.SetActive(false);
+
+            // ▶ 팝업 닫힐 때 플레이어 움직임 다시 허용
+            if (PlayerManager.instance != null)
+                PlayerManager.instance.canMove = true;
         });
     }
 
-    public bool IsPopupActive() //팝업이 떠있는지 외부에서 확인할 수 있도록 함
+    public bool IsPopupActive() // 팝업이 떠있는지 외부에서 확인할 수 있도록 함
     {
         return popupPanel.activeSelf;
     }
@@ -98,7 +109,6 @@ public class PopupManager : MonoBehaviour
         HighlightButton(); // 시작 시 '예' 강조
     }
 
-
     private void HighlightButton()
     {
         ColorBlock yesColor = yesButton.colors;
@@ -110,5 +120,4 @@ public class PopupManager : MonoBehaviour
         yesButton.colors = yesColor;
         noButton.colors = noColor;
     }
-
 }

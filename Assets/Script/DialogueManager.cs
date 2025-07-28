@@ -14,7 +14,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (instance == null)
         {
-            DontDestroyOnLoad(this.gameObject);
+            //DontDestroyOnLoad(this.gameObject);
             instance = this;
             hasShownItemPanel = false; // 최초 1회 초기화
         }
@@ -127,7 +127,6 @@ public class DialogueManager : MonoBehaviour
 
     public void ShowDialogue(Dialogue dialogue, bool shouldCount = true)
     {
-
         if (talking) return;
         countUpOnFinish = shouldCount;
         currentDialogueData = dialogue; // 현재 대화 데이터 저장
@@ -141,7 +140,10 @@ public class DialogueManager : MonoBehaviour
         }
 
         talking = true;
-        theOrder.NotMove();
+        // ▶ [추가] 대화 시작시 움직임 금지
+        if (PlayerManager.instance != null)
+            PlayerManager.instance.notMove = true;
+        //theOrder.NotMove();
 
         listSentences.Clear();
         listBlueSentences.Clear(); // 파란색 대화 문장 초기화
@@ -208,7 +210,11 @@ public class DialogueManager : MonoBehaviour
         animSprite.SetBool("Appear", false);
         animDialogueWindow.SetBool("Appear", false);
         talking = false;
-        theOrder.Move();
+        // ▶ [추가] 대화 종료시 움직임 허용
+        if (PlayerManager.instance != null)
+            PlayerManager.instance.notMove = false;
+
+        //theOrder.Move();
 
         if (countUpOnFinish)
         {
@@ -678,4 +684,17 @@ public class DialogueManager : MonoBehaviour
     {
         currentDialogueObjectName = name;
     }
+
+    public void HideDialogueUI()
+    {
+        if (dialogueCanvas != null)
+            dialogueCanvas.SetActive(false);
+    }
+
+    public void ShowDialogueUI()
+    {
+        if (dialogueCanvas != null)
+            dialogueCanvas.SetActive(true);
+    }
+
 }

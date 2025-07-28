@@ -96,7 +96,7 @@ public class SaveNLoad : MonoBehaviour
             thePlayer.currentSceneName = data.sceneName;
             playerPositionToLoad = new Vector3(data.playerX, data.playerY, data.playerZ);
             
-            Debug.Log($"로드중..??");
+            Debug.Log($"로드 중..??");
             
             Debug.Log($"로드할 씬 이름: {data.sceneName}");
             SceneManager.sceneLoaded += OnSceneLoaded;
