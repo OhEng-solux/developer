@@ -25716,6 +25716,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 79d600898f7b04a2dadef7b42bf3f88f, type: 2}
   - {fileID: 11400000, guid: 61d66e1e234b148e1a8d9066f13df469, type: 2}
   descriptionText: {fileID: 1913632960}
+  isOpen: 0
   isChaseMode: 0
 --- !u!1 &729706388
 GameObject:
@@ -37830,7 +37831,7 @@ GameObject:
   - component: {fileID: 992325166}
   m_Layer: 3
   m_Name: director
-  m_TagString: npc
+  m_TagString: Start Dialogue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
