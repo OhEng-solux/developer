@@ -28,7 +28,6 @@ public class PlayerManager : MovingObject
 
     // **추가: queue, currentWalkCount 필드 선언**
     private Queue<string> queue;
-    private int currentWalkCount = 0;
 
     IEnumerator Start()
     {

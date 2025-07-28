@@ -627,4 +627,17 @@ public class DialogueManager : MonoBehaviour
     {
         currentDialogueObjectName = name;
     }
+
+    public void HideDialogueUI()
+    {
+        if (dialogueCanvas != null)
+            dialogueCanvas.SetActive(false);
+    }
+
+    public void ShowDialogueUI()
+    {
+        if (dialogueCanvas != null)
+            dialogueCanvas.SetActive(true);
+    }
+
 }
