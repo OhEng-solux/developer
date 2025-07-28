@@ -20201,6 +20201,7 @@ MonoBehaviour:
   menuButtons:
   - {fileID: 367466979}
   - {fileID: 94043289}
+  activated: 0
 --- !u!114 &1643901438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25276,7 +25277,7 @@ Animator:
   m_GameObject: {fileID: 1926547520}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 85fd587ea1207413e8ca350fac2a0d7b, type: 2}
+  m_Controller: {fileID: 9100000, guid: b6349164df58c6a4184fbd3eee9e3873, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
