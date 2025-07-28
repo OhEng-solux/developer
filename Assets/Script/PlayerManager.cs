@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerManager : MovingObject
 {
     static public PlayerManager instance; // 정적 변수
+
     public string currentMapName;
     public string currentSceneName;
     public GameObject dayStartImage;
@@ -12,72 +13,78 @@ public class PlayerManager : MovingObject
     public float runSpeed;
     private float applyRunSpeed;
     private bool applyRunFlag = false;
+
     public bool canMove = true;
     public bool notMove = false;
+
     private FadeManager theFade;
     public bool hasEnteredName = false;
 
     private float footstepInterval = 0.3f; // 발소리 간격 (초)
     private float lastFootstepTime = 0f;
+
     private TestDialogue[] allDialogues;
     private Rigidbody2D rigid;
 
+    // **추가: queue, currentWalkCount 필드 선언**
+    private Queue<string> queue;
+    private int currentWalkCount = 0;
 
     IEnumerator Start()
     {
-
-        if (gameObject.scene.name == "Start"|| gameObject.scene.name == "Prologue")
+        if (gameObject.scene.name == "Start" || gameObject.scene.name == "Prologue")
         {
             Debug.Log("시작화면");
             yield break;
         }
+
         TestDialogue[] allDialogues = FindObjectsOfType<TestDialogue>(true);
         foreach (var dialogue in allDialogues)
         {
-            dialogue.gameObject.SetActive(false); // 각 오브젝트에 대해 SetActive 호출
+            dialogue.gameObject.SetActive(false); // 각 오브젝트 비활성화
         }
-        dayStartImage.SetActive(true);//day N 킴
-        Time.timeScale = 0f;//게임 일시정지
-        queue = new Queue<string>();
-        
 
-        yield return new WaitForSecondsRealtime(2.5f);//1초 대기
-        dayStartImage.SetActive(false);//day N 끔
+        dayStartImage.SetActive(true); // day N 켜기
+        Time.timeScale = 0f; // 게임 일시정지
 
-        
-        Time.timeScale = 1f;//게임 재개
+        queue = new Queue<string>(); // 필드 변수 초기화
+
+        yield return new WaitForSecondsRealtime(2.5f); // 2.5초 대기
+        dayStartImage.SetActive(false); // day N 끄기
+
+        Time.timeScale = 1f; // 게임 재개
 
         theFade = FindFirstObjectByType<FadeManager>();
         Debug.Log("fadein");
         theFade.FadeIn();
         yield return new WaitForSecondsRealtime(1f);
+
         Debug.Log("대화 가능");
         foreach (var dialogue in allDialogues)
         {
-            dialogue.gameObject.SetActive(true); // 각 오브젝트에 대해 SetActive 호출
+            dialogue.gameObject.SetActive(true); // 각 오브젝트 활성화
         }
 
         if (instance == null)
         {
-            //DontDestroyOnLoad(this.gameObject);
             boxCollider = GetComponent<BoxCollider2D>();
             animator = GetComponent<Animator>();
             theAudio = FindFirstObjectByType<AudioManager>();
-            rigid = GetComponent<Rigidbody2D>(); // ✅ Rigidbody2D 초기화
+            rigid = GetComponent<Rigidbody2D>();
             instance = this;
 
             boxCollider.offset = new Vector2(0, -0.1f);
-            
         }
         else
         {
             Destroy(this.gameObject);
         }
-        
     }
 
     IEnumerator MoveCoroutine()
     {
+        currentWalkCount = 0; // 이동 카운트 초기화
+
         while ((Input.GetAxisRaw("Vertical") != 0 || Input.GetAxisRaw("Horizontal") != 0) && !notMove)
         {
             if (Input.GetKey(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
@@ -137,7 +144,7 @@ public class PlayerManager : MovingObject
                     newPosition += new Vector2(0, vector.y * (speed + applyRunSpeed));
                 }
 
-                rigid.MovePosition(newPosition); // 충돌 감지를 포함한 이동
+                rigid.MovePosition(newPosition);
 
                 if (applyRunFlag) currentWalkCount++;
                 currentWalkCount++;
@@ -154,9 +161,16 @@ public class PlayerManager : MovingObject
 
     void Update()
     {
-
+        // UI 팝업, 세이브, 인벤토리 등 활성화 상태 일 때 입력 완전히 차단
+        if ((PopupManager.instance != null && PopupManager.instance.IsPopupActive())
+            || (SaveManager.instance != null && SaveManager.instance.IsSaveActive())
+            || (InventoryManager.instance != null && InventoryManager.instance.isOpen))
+        {
+            return;
+        }
 
         if (!canMove) return;
+
         if (gameObject.scene.name == "Start" || gameObject.scene.name == "Prologue")
         {
             Debug.Log("시작화면");

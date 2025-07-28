@@ -99,12 +99,18 @@ public class SaveManager : MonoBehaviour
             }
             else
             {
+                // 닫힐 때도 팝업이 떠 있으면 이동 복구 X
                 if (playerManager != null)
-                    playerManager.canMove = true;
+                {
+                    if (PopupManager.instance == null || !PopupManager.instance.IsPopupActive())
+                        playerManager.canMove = true;
+                    // else 이동 금지 유지!
+                }
             }
 
             prevIsOpen = isOpen;
         }
+
 
         // 팝업창이 활성화되어 있으면 입력 무시
         if (!isOpen || PopupManager.instance == null || PopupManager.instance.IsPopupActive()) return;

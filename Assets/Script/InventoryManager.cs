@@ -24,7 +24,7 @@ public class InventoryManager : MonoBehaviour
     public Item[] items; // 아이템 데이터 배열 (슬롯에 들어갈 아이템 정보들)
     public Text descriptionText;
     private int currentIndex = 0; // 현재 선택된 슬롯 인덱스
-    private bool isOpen = false; // 인벤토리 열림 상태
+    public bool isOpen = false; // 인벤토리 열림 상태
     public bool isChaseMode = false; // 추격전 중 여부
 
     void Start()

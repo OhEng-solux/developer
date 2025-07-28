@@ -125,7 +125,6 @@ public class DialogueManager : MonoBehaviour
 
     public void ShowDialogue(Dialogue dialogue, bool shouldCount = true)
     {
-
         if (talking) return;
         countUpOnFinish = shouldCount;
 
@@ -138,6 +137,11 @@ public class DialogueManager : MonoBehaviour
         }
 
         talking = true;
+
+        // ▶ [추가] 대화 시작시 움직임 금지
+        if (PlayerManager.instance != null)
+            PlayerManager.instance.notMove = true;
+
         //theOrder.NotMove();
 
         listSentences.Clear();
@@ -200,6 +204,11 @@ public class DialogueManager : MonoBehaviour
         animSprite.SetBool("Appear", false);
         animDialogueWindow.SetBool("Appear", false);
         talking = false;
+
+        // ▶ [추가] 대화 종료시 움직임 허용
+        if (PlayerManager.instance != null)
+            PlayerManager.instance.notMove = false;
+
         //theOrder.Move();
 
         if (countUpOnFinish)
