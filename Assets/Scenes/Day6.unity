@@ -40568,7 +40568,7 @@ Transform:
   m_GameObject: {fileID: 1099742523}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -105, y: -170, z: 0}
+  m_LocalPosition: {x: -107.53, y: -169.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -68344,7 +68344,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1716327531}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -68401,7 +68401,7 @@ Transform:
   m_GameObject: {fileID: 1716327531}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -105, y: -170, z: 0}
+  m_LocalPosition: {x: -105.78, y: -169.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -68494,9 +68494,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1306316776}
   moveSpeed: 20
-  delaySeconds: 0.5
+  delaySeconds: 1.5
   recordInterval: 0.1
-  followThreshold: 0.1
+  followThreshold: 0.05
 --- !u!1 &1719459671
 GameObject:
   m_ObjectHideFlags: 0
