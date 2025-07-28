@@ -1457,15 +1457,15 @@ SpriteRenderer:
   m_SortingLayerID: 1814127615
   m_SortingLayer: 6
   m_SortingOrder: 1
-  m_Sprite: {fileID: 9212275650587600386, guid: 64134e6456c53498b9900f5cbcdc9bc0, type: 3}
+  m_Sprite: {fileID: 7984926430384324971, guid: 5315eb5922f9e4c76bab59801c2d4c57, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 19.2, y: 19.2}
+  m_Size: {x: 19.2, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &29963691
@@ -1477,7 +1477,7 @@ Transform:
   m_GameObject: {fileID: 29963689}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -129.4, y: -290.2, z: 0}
+  m_LocalPosition: {x: 73.1, y: -426.8, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -49038,7 +49038,7 @@ Transform:
   m_GameObject: {fileID: 1306316774}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -88.1, y: -288.6, z: 0}
+  m_LocalPosition: {x: -87.5, y: -291.8, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -49716,7 +49716,7 @@ Transform:
   m_GameObject: {fileID: 1322112177}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 99.7, y: -151.1, z: 1.2607193}
+  m_LocalPosition: {x: 93.6, y: -151.1, z: 1.2607193}
   m_LocalScale: {x: 2, y: 2, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -49784,7 +49784,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.41075134, y: -0.293396}
+  m_Offset: {x: 0.41075134, y: -0.32474518}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -49794,7 +49794,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.8215027, y: 6.586792}
+  m_Size: {x: 1.8215027, y: 12.040512}
   m_EdgeRadius: 0
 --- !u!1 &1327896780
 GameObject:
@@ -50203,7 +50203,7 @@ MonoBehaviour:
     yellowSentences:
     - 
   taejuNPC: {fileID: 1099742523}
-  chaseDelay: 2
+  chaseDelay: 0.3
   fadeInDuration: 1
 --- !u!4 &1331207161
 Transform:
