@@ -45,6 +45,8 @@ public class InventoryManager : MonoBehaviour
             return; // 대화 중이면 더 이상 진행 X
         }
 
+        if (!isOpen &&( SaveManager.instance == null || SaveManager.instance.IsSaveActive())) return;
+
         // X 키를 눌렀을 때 인벤토리 열고 닫기 토글
         if (Input.GetKeyDown(KeyCode.X))
         {
