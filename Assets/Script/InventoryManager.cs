@@ -24,7 +24,7 @@ public class InventoryManager : MonoBehaviour
     public Item[] items; // 아이템 데이터 배열 (슬롯에 들어갈 아이템 정보들)
     public Text descriptionText;
     private int currentIndex = 0; // 현재 선택된 슬롯 인덱스
-    private bool isOpen = false; // 인벤토리 열림 상태
+    public bool isOpen = false; // 인벤토리 열림 상태
     public bool isChaseMode = false; // 추격전 중 여부
 
     void Start()
@@ -45,6 +45,9 @@ public class InventoryManager : MonoBehaviour
             return; // 대화 중이면 더 이상 진행 X
         }
 
+        if (!isOpen &&( SaveManager.instance == null || SaveManager.instance.IsSaveActive())) return;
+
+        if (!isOpen &&(Menu.instance == null || Menu.instance.activated)) return;
         // X 키를 눌렀을 때 인벤토리 열고 닫기 토글
         if (Input.GetKeyDown(KeyCode.X))
         {
@@ -59,13 +62,30 @@ public class InventoryManager : MonoBehaviour
                 UpdateDescription();
 
                 GameObject.FindWithTag("Player").GetComponent<PlayerManager>().canMove = false; //이동 제한
+                Debug.Log("[인벤토리] X키 눌림. isOpen: " + isOpen + ", inventoryPanel.activeSelf: " + inventoryPanel.activeSelf);
+
             }
             else
             {
                 audioManager.Play(openSound);
                 GameObject.FindWithTag("Player").GetComponent<PlayerManager>().canMove = true;
+                Debug.Log("[인벤토리] X키 눌림. isOpen: " + isOpen + ", inventoryPanel.activeSelf: " + inventoryPanel.activeSelf);
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isOpen)
+            {
+                audioManager.Play(openSound);
+                isOpen = !isOpen;
+                inventoryPanel.SetActive(isOpen);
+                GameObject.FindWithTag("Player").GetComponent<PlayerManager>().canMove = true;
+                Debug.Log("[인벤토리] esc키 눌림. isOpen: " + isOpen + ", inventoryPanel.activeSelf: " + inventoryPanel.activeSelf);
+                return;
+            }
+        }
+
 
         // 방향키 동작 우선순위: 팝업창>인벤토리>이동
         if (!isOpen || PopupManager.instance.IsPopupActive()) return;
@@ -148,9 +168,8 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public void AcquireItem(Item item)
+    public void AcquireItem(Item item) // 아이템을 획득 처리하고 UI 업데이트
     {
-        // 아이템을 획득 처리하고 UI 업데이트
         for (int i = 0; i < items.Length; i++)
         {
             if (items[i] == item)
@@ -161,8 +180,6 @@ public class InventoryManager : MonoBehaviour
                 return;
             }
         }
-
-        Debug.LogWarning("[인벤토리] 해당 아이템이 인벤토리 배열에 없습니다: " + item.itemName);
     }
 
 
@@ -173,14 +190,10 @@ public class InventoryManager : MonoBehaviour
             if (items[i] != null && items[i].itemName == oldItemName)
             {
                 items[i] = newItem;
-                newItem.isObtained = true;
-                UpdateSlots();
-                Debug.Log($"[인벤토리] {oldItemName} → {newItem.itemName}으로 교체 완료");
+                AcquireItem(newItem);
                 return;
             }
         }
-
-        Debug.LogWarning("[인벤토리] 교체할 아이템을 찾지 못함: " + oldItemName);
     }
 
     void UpdateDescription()
@@ -218,4 +231,10 @@ public class InventoryManager : MonoBehaviour
 
         HighlightSlot(currentIndex);
     }
+
+    public bool IsInventoryActive() //팝업이 떠있는지 외부에서 확인할 수 있도록 함
+    {
+        return isOpen;
+    }
+
 }

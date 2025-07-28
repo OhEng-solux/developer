@@ -8,6 +8,7 @@ TagManager:
   - paper
   - memo
   - SavePoint
+  - Start Dialogue
   layers:
   - Default
   - TransparentFX

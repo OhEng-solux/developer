@@ -1,14 +1,14 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;  // ¾À °ü·Ã
+using UnityEngine.SceneManagement;  // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-public class PrlogueManager : MonoBehaviour
+public class PrologueManager : MonoBehaviour
 {
     [SerializeField] public Dialogue dialogue;
     private DialogueManager theDM;
     private BoxCollider2D boxCollider;
     private bool hasTriggered = false;
 
-    public GameObject prologueCanvas; // ¿¡µðÅÍ¿¡¼­ ¿¬°á
+    public GameObject prologueCanvas; // ï¿½ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
     void Start()
     {
@@ -24,7 +24,7 @@ public class PrlogueManager : MonoBehaviour
             {
                 hasTriggered = true;
 
-                // Äµ¹ö½º ºñÈ°¼ºÈ­
+                // Äµï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­
                 if (prologueCanvas != null)
                     prologueCanvas.SetActive(false);
 
