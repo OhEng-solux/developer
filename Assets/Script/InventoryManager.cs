@@ -67,6 +67,18 @@ public class InventoryManager : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isOpen)
+            {
+                audioManager.Play(openSound);
+                isOpen = !isOpen;
+                inventoryPanel.SetActive(isOpen);
+                GameObject.FindWithTag("Player").GetComponent<PlayerManager>().canMove = true;
+            }
+        }
+
+
         // 방향키 동작 우선순위: 팝업창>인벤토리>이동
         if (!isOpen || PopupManager.instance.IsPopupActive()) return;
 
@@ -211,4 +223,10 @@ public class InventoryManager : MonoBehaviour
 
         HighlightSlot(currentIndex);
     }
+
+    public bool IsInventoryActive() //팝업이 떠있는지 외부에서 확인할 수 있도록 함
+    {
+        return inventoryPanel.activeSelf;
+    }
+
 }
