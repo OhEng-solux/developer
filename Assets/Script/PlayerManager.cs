@@ -5,66 +5,40 @@ using UnityEngine;
 public class PlayerManager : MovingObject
 {
     static public PlayerManager instance; // 정적 변수
-
     public string currentMapName;
     public string currentSceneName;
-    public GameObject dayStartImage;
 
     public float runSpeed;
     private float applyRunSpeed;
     private bool applyRunFlag = false;
-
     public bool canMove = true;
     public bool notMove = false;
 
-    private FadeManager theFade;
     public bool hasEnteredName = false;
 
     private float footstepInterval = 0.3f; // 발소리 간격 (초)
     private float lastFootstepTime = 0f;
 
-    private GameObject startDialogues;
     private Rigidbody2D rigid;
 
-    // **추가: queue, currentWalkCount 필드 선언**
-    private Queue<string> queue;
 
-    IEnumerator Start()
+    void Start()
     {
-        if (gameObject.scene.name == "Start" || gameObject.scene.name == "Prologue")
+
+        if (gameObject.scene.name == "Start")
         {
             Debug.Log("시작화면");
-            yield break;
+            return;
         }
-
-        GameObject startDialogues = GameObject.FindWithTag("Start Dialogue");
-        startDialogues.gameObject.SetActive(false); // 각 오브젝트 비활성화
-
-
-        dayStartImage.SetActive(true); // day N 켜기
-        Time.timeScale = 0f; // 게임 일시정지
-
-        queue = new Queue<string>(); // 필드 변수 초기화
-
-        yield return new WaitForSecondsRealtime(2.5f); // 2.5초 대기
-        dayStartImage.SetActive(false); // day N 끄기
-
-        Time.timeScale = 1f; // 게임 재개
-
-        theFade = FindFirstObjectByType<FadeManager>();
-        Debug.Log("fadein");
-        theFade.FadeIn();
-        yield return new WaitForSecondsRealtime(1f);
-
-        Debug.Log("대화 가능");
-        startDialogues.gameObject.SetActive(true);
+        queue = new Queue<string>();
 
         if (instance == null)
         {
+            DontDestroyOnLoad(this.gameObject);
             boxCollider = GetComponent<BoxCollider2D>();
             animator = GetComponent<Animator>();
             theAudio = FindFirstObjectByType<AudioManager>();
-            rigid = GetComponent<Rigidbody2D>();
+            rigid = GetComponent<Rigidbody2D>(); // ✅ Rigidbody2D 초기화
             instance = this;
 
             boxCollider.offset = new Vector2(0, -0.1f);
@@ -77,8 +51,6 @@ public class PlayerManager : MovingObject
 
     IEnumerator MoveCoroutine()
     {
-        currentWalkCount = 0; // 이동 카운트 초기화
-
         while ((Input.GetAxisRaw("Vertical") != 0 || Input.GetAxisRaw("Horizontal") != 0) && !notMove)
         {
             if (Input.GetKey(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
@@ -138,7 +110,7 @@ public class PlayerManager : MovingObject
                     newPosition += new Vector2(0, vector.y * (speed + applyRunSpeed));
                 }
 
-                rigid.MovePosition(newPosition);
+                rigid.MovePosition(newPosition); // 충돌 감지를 포함한 이동
 
                 if (applyRunFlag) currentWalkCount++;
                 currentWalkCount++;
@@ -155,17 +127,10 @@ public class PlayerManager : MovingObject
 
     void Update()
     {
-        // UI 팝업, 세이브, 인벤토리 등 활성화 상태 일 때 입력 완전히 차단
-        if ((PopupManager.instance != null && PopupManager.instance.IsPopupActive())
-            || (SaveManager.instance != null && SaveManager.instance.IsSaveActive())
-            || (InventoryManager.instance != null && InventoryManager.instance.isOpen))
-        {
-            return;
-        }
+
 
         if (!canMove) return;
-
-        if (gameObject.scene.name == "Start" || gameObject.scene.name == "Prologue")
+        if (gameObject.scene.name == "Start")
         {
             Debug.Log("시작화면");
             return;

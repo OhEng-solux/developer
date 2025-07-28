@@ -56,7 +56,7 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
-            //DontDestroyOnLoad(this.gameObject); // 씬이 바뀌어도 파괴되지 않음
+            DontDestroyOnLoad(this.gameObject); // 씬이 바뀌어도 파괴되지 않음
             instance = this; // instance에 자기 자신을 대입
         }
     }

@@ -58,7 +58,6 @@ public class FadeManager : MonoBehaviour
     public void FadeIn(float _speed = 0.02f)
     {
         StopAllCoroutines();
-        color.a = 1f;
         StartCoroutine(FadeInCoroutine(_speed));
     }
     IEnumerator FadeInCoroutine(float _speed)

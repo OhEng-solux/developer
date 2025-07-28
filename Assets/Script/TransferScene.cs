@@ -1,40 +1,30 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class TransferScene : MonoBehaviour
 {
-    public string transferSceneName;
+    public string transferMapName;
 
+    private PlayerManager thePlayer;
     private CameraManager theCamera;
-    [SerializeField] private PlayerManager thePlayer;
-    private FadeManager theFade;
-    private OrderManager theOrder;
 
+    public Transform target;
+
+    public bool flag;
     // Start is called before the first frame update
     void Start()
     {
-        theFade = FindFirstObjectByType<FadeManager>();
-        theOrder = FindFirstObjectByType<OrderManager>();
+        thePlayer = FindFirstObjectByType<PlayerManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.gameObject.name == "Player")
         {
-            StartCoroutine(TransferCoroutine());
-        }
-    }
+            thePlayer.currentMapName = transferMapName;
+            SceneManager.LoadScene(transferMapName);
 
-    IEnumerator TransferCoroutine()
-    {
-        theOrder.NotMove();
-        theFade.FadeOut();
-        yield return new WaitForSeconds(1f);
-        thePlayer.currentSceneName = transferSceneName;
-        AsyncOperation ao = SceneManager.LoadSceneAsync(transferSceneName);
-        while (!ao.isDone)
-            yield return null;
+        }
     }
 
 }

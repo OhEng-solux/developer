@@ -50,7 +50,7 @@ public class SaveSlot : MonoBehaviour
 
     public void SetEmpty()
     {
-        currentPlaceText.text = "비어 있음";
+        currentPlaceText.text = "비어있음";
         dateText.text = "";
         timeText.text = "";
 

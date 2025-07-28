@@ -5,8 +5,6 @@ using System;
 
 public class SaveManager : MonoBehaviour
 {
-    public static SaveManager instance;
-
     private string keySound = "type_Sound";
     private string enterSound = "enter_Sound";
     private string openSound = "ok_Sound";
@@ -25,16 +23,6 @@ public class SaveManager : MonoBehaviour
 
     private PlayerManager playerManager;
     private bool prevIsOpen = false; // 이전 isOpen 상태 저장용
-
-    private void Awake()
-    {
-        if (instance == null)
-            instance = this;
-        else
-            Destroy(gameObject);
-
-        savePanel.SetActive(false);
-    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -75,9 +63,6 @@ public class SaveManager : MonoBehaviour
             HighlightSlot(currentIndex);
         }
 
-        if (!isOpen &&( InventoryManager.instance == null || InventoryManager.instance.IsInventoryActive())) return;
-        if (!isOpen && (Menu.instance == null || Menu.instance.activated)) return;
-
         // Z키 눌렀을 때 세이브창 열기/닫기 토글 (저장지점 근처일 때만)
         if (Input.GetKeyDown(KeyCode.Z))
         {
@@ -85,17 +70,6 @@ public class SaveManager : MonoBehaviour
             {
                 isOpen = !isOpen;
                 savePanel.SetActive(isOpen);
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (isOpen)
-            {
-                audioManager.Play(openSound);
-                isOpen = !isOpen;
-                savePanel.SetActive(isOpen);
-                GameObject.FindWithTag("Player").GetComponent<PlayerManager>().canMove = true;
             }
         }
 
@@ -113,18 +87,12 @@ public class SaveManager : MonoBehaviour
             }
             else
             {
-                // 닫힐 때도 팝업이 떠 있으면 이동 복구 X
                 if (playerManager != null)
-                {
-                    if (PopupManager.instance == null || !PopupManager.instance.IsPopupActive())
-                        playerManager.canMove = true;
-                    // else 이동 금지 유지!
-                }
+                    playerManager.canMove = true;
             }
 
             prevIsOpen = isOpen;
         }
-
 
         // 팝업창이 활성화되어 있으면 입력 무시
         if (!isOpen || PopupManager.instance == null || PopupManager.instance.IsPopupActive()) return;
@@ -255,9 +223,5 @@ public class SaveManager : MonoBehaviour
             currentIndex = 0;
 
         HighlightSlot(currentIndex);
-    }
-    public bool IsSaveActive() //팝업이 떠있는지 외부에서 확인할 수 있도록 함
-    {
-        return savePanel.activeSelf;
     }
 }

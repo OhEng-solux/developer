@@ -25,7 +25,6 @@ public class CameraManager: MonoBehaviour
 
     private void Awake()
     {
-        /*
         if(instance!=null){
             Destroy(this.gameObject);
         }
@@ -33,7 +32,6 @@ public class CameraManager: MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
             instance=this;
         }
-        */
     }
     void Start()
     {
