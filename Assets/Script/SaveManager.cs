@@ -5,6 +5,8 @@ using System;
 
 public class SaveManager : MonoBehaviour
 {
+    public static SaveManager instance;
+
     private string keySound = "type_Sound";
     private string enterSound = "enter_Sound";
     private string openSound = "ok_Sound";
@@ -23,6 +25,16 @@ public class SaveManager : MonoBehaviour
 
     private PlayerManager playerManager;
     private bool prevIsOpen = false; // 이전 isOpen 상태 저장용
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+
+        savePanel.SetActive(false);
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -223,5 +235,9 @@ public class SaveManager : MonoBehaviour
             currentIndex = 0;
 
         HighlightSlot(currentIndex);
+    }
+    public bool IsSaveActive() //팝업이 떠있는지 외부에서 확인할 수 있도록 함
+    {
+        return savePanel.activeSelf;
     }
 }

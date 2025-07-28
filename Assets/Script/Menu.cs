@@ -37,24 +37,27 @@ public class Menu : MonoBehaviour
     {
         if (DialogueManager.instance == null || !DialogueManager.instance.talking)
         {
-            // ESC 키로 메뉴 켜고 끄기
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (!PopupManager.instance.IsPopupActive()&& !SaveManager.instance.IsSaveActive())
             {
-                activated = !activated;
+                // ESC 키로 메뉴 켜고 끄기
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    activated = !activated;
+
+                    if (activated)
+                    {
+                        OpenMenu();
+                    }
+                    else
+                    {
+                        CloseMenu();
+                    }
+                }
 
                 if (activated)
                 {
-                    OpenMenu();
+                    HandleInput();
                 }
-                else
-                {
-                    CloseMenu();
-                }
-            }
-
-            if (activated)
-            {
-                HandleInput();
             }
         }
     }
