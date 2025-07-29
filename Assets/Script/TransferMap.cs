@@ -57,13 +57,6 @@ public class TransferMap : MonoBehaviour
             }
         }
 
-        // === 추격자 재배치 처리 ===
-        TaejuChase chase = FindFirstObjectByType<TaejuChase>();
-        if (chase != null && chase.IsChasing())
-        {
-            chase.SpawnAtWithDelay(thePlayer.transform.position, 2f);
-        }
-
         theFade.FadeIn();
         yield return new WaitForSeconds(0.5f);
         theOrder.Move();
