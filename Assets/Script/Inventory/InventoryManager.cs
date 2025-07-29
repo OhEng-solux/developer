@@ -146,6 +146,14 @@ public class InventoryManager : MonoBehaviour
             HiddenNoteEvent.current.TriggerHiddenNoteEvent();
         }
 
+<<<<<<< Updated upstream:Assets/Script/InventoryManager.cs
+=======
+        else if (item.useHandler != null) // 아이템 전용 로직 실행
+        {
+            item.useHandler.Use();
+        }
+
+>>>>>>> Stashed changes:Assets/Script/Inventory/InventoryManager.cs
         // 소모성 아이템일 경우 사용 후 제거
         if (item.itemType == ItemType.Consumable)
         {
