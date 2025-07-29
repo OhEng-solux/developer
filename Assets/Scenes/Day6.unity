@@ -22751,7 +22751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 380857be114b841c8b62481dad25c3f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioManager: {fileID: 0}
+  audioManager: {fileID: 2107776951}
   keySound: type_sound
   enterSound: enter_sound
   openSound: ok_sound

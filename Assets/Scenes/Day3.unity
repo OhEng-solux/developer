@@ -1972,7 +1972,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     blueSentences: []
     yellowSentences: []
-  clueImage: {fileID: -5513119555903696623, guid: 063e213ef83cef649a8b3d3ab495d061, type: 3}
+  clueImage: {fileID: -8144128230576158, guid: cbd0ca332395b43bf95406ec06de8a12, type: 3}
   imageUI: {fileID: 1668196492}
   itemToAdd: {fileID: 11400000, guid: d56e0a4aecfef45a3bf38f2ae423cba2, type: 2}
   itemToReplace: {fileID: 0}
@@ -6890,7 +6890,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1575881594}
   - {fileID: 2030210257}
   - {fileID: 576362357}
   - {fileID: 1431492073}
@@ -6899,6 +6898,7 @@ RectTransform:
   - {fileID: 1668196493}
   - {fileID: 309493963}
   - {fileID: 1292866664}
+  - {fileID: 1575881594}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -19366,8 +19366,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0, y: 25}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1668196494
 MonoBehaviour:
@@ -19389,7 +19389,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5513119555903696623, guid: 063e213ef83cef649a8b3d3ab495d061, type: 3}
+  m_Sprite: {fileID: -8144128230576158, guid: cbd0ca332395b43bf95406ec06de8a12, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -22631,7 +22631,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     blueSentences: []
     yellowSentences: []
-  clueImage: {fileID: -5513119555903696623, guid: 063e213ef83cef649a8b3d3ab495d061, type: 3}
+  clueImage: {fileID: 6721211905236489645, guid: f413d712f44e04cf48549d7b4f3bad54, type: 3}
   imageUI: {fileID: 1668196492}
   itemToAdd: {fileID: 11400000, guid: b5410d70fa7a84411b6d7d8fe7556726, type: 2}
   itemToReplace: {fileID: 11400000, guid: d56e0a4aecfef45a3bf38f2ae423cba2, type: 2}
