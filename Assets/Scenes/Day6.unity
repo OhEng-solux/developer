@@ -943,7 +943,6 @@ MonoBehaviour:
   transferMapName: Basement
   target: {fileID: 1051970573}
   targetBound: {fileID: 626540212}
-  thePlayer: {fileID: 0}
 --- !u!61 &17956027
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1621,7 +1620,6 @@ MonoBehaviour:
   transferMapName: Lobby
   target: {fileID: 1516049572}
   targetBound: {fileID: 2104847872}
-  thePlayer: {fileID: 0}
 --- !u!61 &39341255
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3626,7 +3624,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.48335648, y: -0.03717041}
+  m_Offset: {x: 0.086639404, y: -0.03717041}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3636,7 +3634,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.6692581, y: 4.3463135}
+  m_Size: {x: 2.4626923, y: 4.3463135}
   m_EdgeRadius: 0
 --- !u!114 &115792182
 MonoBehaviour:
@@ -3653,7 +3651,6 @@ MonoBehaviour:
   transferMapName: sun
   target: {fileID: 214817079}
   targetBound: {fileID: 930786354}
-  thePlayer: {fileID: 0}
 --- !u!1 &120717238
 GameObject:
   m_ObjectHideFlags: 0
@@ -8035,7 +8032,6 @@ MonoBehaviour:
   transferMapName: inside_toilet
   target: {fileID: 1507117709}
   targetBound: {fileID: 1067062550}
-  thePlayer: {fileID: 0}
 --- !u!61 &264756878
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9308,7 +9304,6 @@ MonoBehaviour:
   transferMapName: Director_office
   target: {fileID: 86090244}
   targetBound: {fileID: 2108248198}
-  thePlayer: {fileID: 0}
 --- !u!61 &303515486
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9403,7 +9398,6 @@ MonoBehaviour:
   transferMapName: Sleeping_room
   target: {fileID: 769572676}
   targetBound: {fileID: 1545106927}
-  thePlayer: {fileID: 0}
 --- !u!61 &315912723
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12335,7 +12329,6 @@ MonoBehaviour:
   transferMapName: outside_toilet
   target: {fileID: 1336191325}
   targetBound: {fileID: 495379290}
-  thePlayer: {fileID: 0}
 --- !u!61 &440159322
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16887,7 +16880,6 @@ MonoBehaviour:
   transferMapName: Lobby
   target: {fileID: 597601489}
   targetBound: {fileID: 2104847872}
-  thePlayer: {fileID: 0}
 --- !u!61 &521219815
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -23480,7 +23472,6 @@ MonoBehaviour:
   transferMapName: Toilet
   target: {fileID: 2140717342}
   targetBound: {fileID: 495379290}
-  thePlayer: {fileID: 0}
 --- !u!61 &611781445
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -23653,7 +23644,6 @@ MonoBehaviour:
   transferMapName: Lobby
   target: {fileID: 1472900797}
   targetBound: {fileID: 2104847872}
-  thePlayer: {fileID: 0}
 --- !u!61 &624069124
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24870,7 +24860,6 @@ MonoBehaviour:
   transferMapName: Play_room
   target: {fileID: 31862105}
   targetBound: {fileID: 880547001}
-  thePlayer: {fileID: 0}
 --- !u!61 &680219452
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25585,7 +25574,6 @@ MonoBehaviour:
   transferMapName: TEacher
   target: {fileID: 370155698}
   targetBound: {fileID: 2030433066}
-  thePlayer: {fileID: 0}
 --- !u!61 &715535232
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26600,7 +26588,6 @@ MonoBehaviour:
   transferMapName: Lobby
   target: {fileID: 995396954}
   targetBound: {fileID: 2104847872}
-  thePlayer: {fileID: 0}
 --- !u!61 &756594661
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34034,7 +34021,6 @@ MonoBehaviour:
   transferMapName: Director Office
   target: {fileID: 156381700}
   targetBound: {fileID: 2108248198}
-  thePlayer: {fileID: 0}
 --- !u!61 &853145871
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34686,7 +34672,6 @@ MonoBehaviour:
   transferMapName: Sleeping_room
   target: {fileID: 1359376827}
   targetBound: {fileID: 2030433066}
-  thePlayer: {fileID: 0}
 --- !u!61 &865851065
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -36817,7 +36802,6 @@ MonoBehaviour:
   transferMapName: Lobby
   target: {fileID: 884051203}
   targetBound: {fileID: 2104847872}
-  thePlayer: {fileID: 0}
 --- !u!61 &954515882
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -36912,7 +36896,6 @@ MonoBehaviour:
   transferMapName: Lobby
   target: {fileID: 1737677211}
   targetBound: {fileID: 2104847872}
-  thePlayer: {fileID: 0}
 --- !u!61 &962465820
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -41116,7 +41099,6 @@ MonoBehaviour:
   transferMapName: Sleeping_room
   target: {fileID: 279480309}
   targetBound: {fileID: 1545106927}
-  thePlayer: {fileID: 0}
 --- !u!61 &1107032637
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -44788,7 +44770,6 @@ MonoBehaviour:
   transferMapName: Kitchen
   target: {fileID: 1383138054}
   targetBound: {fileID: 151366517}
-  thePlayer: {fileID: 0}
 --- !u!61 &1179716717
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -49212,7 +49193,7 @@ Transform:
   m_GameObject: {fileID: 1306316774}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -86.8, y: -290.4, z: 0}
+  m_LocalPosition: {x: 73.1, y: -424.3, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -55513,7 +55494,6 @@ MonoBehaviour:
   transferMapName: Director Office
   target: {fileID: 156381700}
   targetBound: {fileID: 2108248198}
-  thePlayer: {fileID: 0}
 --- !u!61 &1431864263
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -56020,7 +56000,6 @@ MonoBehaviour:
   transferMapName: Sprout
   target: {fileID: 769437539}
   targetBound: {fileID: 1520178530}
-  thePlayer: {fileID: 0}
 --- !u!61 &1453848072
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -58313,7 +58292,6 @@ MonoBehaviour:
   transferMapName: sun
   target: {fileID: 1440287503}
   targetBound: {fileID: 930786354}
-  thePlayer: {fileID: 0}
 --- !u!61 &1530533007
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -63474,7 +63452,6 @@ MonoBehaviour:
   transferMapName: Hallway
   target: {fileID: 1689970373}
   targetBound: {fileID: 1777138788}
-  thePlayer: {fileID: 0}
 --- !u!61 &1643057823
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -75668,7 +75645,6 @@ MonoBehaviour:
   transferMapName: Lobby
   target: {fileID: 1787519483}
   targetBound: {fileID: 2104847872}
-  thePlayer: {fileID: 0}
 --- !u!61 &1891165528
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -76533,7 +76509,6 @@ MonoBehaviour:
   transferMapName: Director Office
   target: {fileID: 1995514160}
   targetBound: {fileID: 930786354}
-  thePlayer: {fileID: 0}
 --- !u!61 &1910921135
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -80178,7 +80153,6 @@ MonoBehaviour:
   transferMapName: Class_Sun
   target: {fileID: 4791812}
   targetBound: {fileID: 1777138788}
-  thePlayer: {fileID: 0}
 --- !u!61 &2014049965
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -82503,7 +82477,6 @@ MonoBehaviour:
   transferMapName: Lobby
   target: {fileID: 1166942204}
   targetBound: {fileID: 2104847872}
-  thePlayer: {fileID: 0}
 --- !u!61 &2085035707
 BoxCollider2D:
   m_ObjectHideFlags: 0

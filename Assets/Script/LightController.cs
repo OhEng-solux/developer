@@ -5,22 +5,19 @@ public class LightController : MonoBehaviour
     private PlayerManager thePlayer;
     private Vector2 vector;
 
-    void Start()
+    void Awake()
     {
-        gameObject.SetActive(false);
         thePlayer = FindFirstObjectByType<PlayerManager>();
+        // gameObject.SetActive(false); // 처음엔 꺼진 상태
     }
 
     void Update()
     {
-        // 오브젝트가 비활성화되었을 경우 실행 X
-        if (!gameObject.activeInHierarchy || thePlayer == null) return;
+        if (!gameObject.activeSelf || thePlayer == null) return;
 
         transform.position = thePlayer.transform.position;
 
-        // 플레이어 방향 값 가져오기 (필요 시 다른 처리에 사용)
         vector.Set(thePlayer.animator.GetFloat("DirX"), thePlayer.animator.GetFloat("DirY"));
-
-        // 이미지 변경 방식이라면 방향에 따른 Sprite 교체 처리 등을 여기에 작성
+        // 필요 시 방향에 따른 조명 회전/스프라이트 교체
     }
 }
