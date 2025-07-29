@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: 080654f496d784192bf52c4f694e4c61
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8331426671879114604
+    second: taeju(demon)_3_run_sprite_0
+  - first:
+      213: 5179443671570122649
+    second: taeju(demon)_3_run_sprite_1
+  - first:
+      213: -1244414657742414400
+    second: taeju(demon)_3_run_sprite_2
+  - first:
+      213: -6539030240306149345
+    second: taeju(demon)_3_run_sprite_3
+  - first:
+      213: 8057396438629774801
+    second: taeju(demon)_3_run_sprite_4
+  - first:
+      213: 1259664660246012240
+    second: taeju(demon)_3_run_sprite_5
+  - first:
+      213: 2001753258193778514
+    second: taeju(demon)_3_run_sprite_6
+  - first:
+      213: -6270337411658433767
+    second: taeju(demon)_3_run_sprite_7
+  - first:
+      213: -6985988646726248500
+    second: taeju(demon)_3_run_sprite_8
+  - first:
+      213: -35771095321917021
+    second: taeju(demon)_3_run_sprite_9
+  - first:
+      213: -5944901068095457471
+    second: taeju(demon)_3_run_sprite_10
+  - first:
+      213: -5872102601121644932
+    second: taeju(demon)_3_run_sprite_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: taeju(demon)_3_run_sprite_0
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 1450
+        width: 240
+        height: 410
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5dff593c78684204b1667cf9b8d71f6
+      internalID: -2085410990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: taeju(demon)_3_run_sprite_1
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1450
+        width: 240
+        height: 410
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd28a9eb05c014f52a1f805d34078d30
+      internalID: -155319480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: taeju(demon)_3_run_sprite_2
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1450
+        width: 240
+        height: 410
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ca26a9b4212e4e94a8bce99b3ad81f2
+      internalID: 292975162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: taeju(demon)_3_run_sprite_3
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 980
+        width: 350
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b21f15a28456a44e4a36e3c36fff9cbd
+      internalID: 405138021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: taeju(demon)_3_run_sprite_4
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 970
+        width: 210
+        height: 410
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e39a5dce984114749bedb0cc1acc1de2
+      internalID: 326320307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: taeju(demon)_3_run_sprite_5
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 980
+        width: 350
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 470a96c3402944cfabe77685e72c6fb7
+      internalID: 551842412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: taeju(demon)_3_run_sprite_6
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 500
+        width: 350
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91bb32b72052040d697d9f5f20cfb82a
+      internalID: 118023979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: taeju(demon)_3_run_sprite_7
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 490
+        width: 210
+        height: 410
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40ee5772369fa4f708e46b7ac34a93c2
+      internalID: 295395027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: taeju(demon)_3_run_sprite_8
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 500
+        width: 350
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d62d1cb8047e48af8b6207b8481d3b6
+      internalID: -307392736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: taeju(demon)_3_run_sprite_9
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 20
+        width: 240
+        height: 390
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40018fdc713c840d6a6d9dad396fa2e8
+      internalID: 1201819518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: taeju(demon)_3_run_sprite_10
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 10
+        width: 240
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8519e8a5473a84e8695913b3517c8488
+      internalID: 111871895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: taeju(demon)_3_run_sprite_11
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 20
+        width: 240
+        height: 390
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 976166c0ac3864897aff447a6e8b2f18
+      internalID: 816882002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 6d617686ca6e24ad79924a94d459502b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      taeju(demon)_3_run_sprite_0: -2085410990
+      taeju(demon)_3_run_sprite_1: -155319480
+      taeju(demon)_3_run_sprite_10: 111871895
+      taeju(demon)_3_run_sprite_11: 816882002
+      taeju(demon)_3_run_sprite_2: 292975162
+      taeju(demon)_3_run_sprite_3: 405138021
+      taeju(demon)_3_run_sprite_4: 326320307
+      taeju(demon)_3_run_sprite_5: 551842412
+      taeju(demon)_3_run_sprite_6: 118023979
+      taeju(demon)_3_run_sprite_7: 295395027
+      taeju(demon)_3_run_sprite_8: -307392736
+      taeju(demon)_3_run_sprite_9: 1201819518
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

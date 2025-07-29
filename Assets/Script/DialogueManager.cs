@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance;
+    private Dialogue currentDialogueData; // 현재 대화 데이터 저장용
 
     #region Singleton
     private void Awake()
@@ -35,6 +36,7 @@ public class DialogueManager : MonoBehaviour
     private List<string> listYellowSentences = new List<string>(); // 노란색 대화 문장용
     private List<Sprite> listSprites = new List<Sprite>();
     private List<Sprite> listDialogueWindows = new List<Sprite>();
+    private List<GameObject> listNPCs = new List<GameObject>(); // Day6 전용 NPC 리스트
 
     private int count;
 
@@ -127,6 +129,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (talking) return;
         countUpOnFinish = shouldCount;
+        currentDialogueData = dialogue; // 현재 대화 데이터 저장
 
         if (dialogue.sentences.Length != dialogue.sprites.Length ||
             dialogue.sentences.Length != dialogue.dialogueWindows.Length)
@@ -169,6 +172,11 @@ public class DialogueManager : MonoBehaviour
             {
                 listYellowSentences.Add(line);
             }
+        }
+
+        if (SceneManager.GetActiveScene().name == "Day6" && dialogue.npcObjects != null)
+        {
+            listNPCs.AddRange(dialogue.npcObjects);
         }
 
         animSprite.SetBool("Appear", true);
@@ -251,6 +259,26 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
+        if (SceneManager.GetActiveScene().name == "Day6")
+        {
+            GameObject taejuDemon = GameObject.Find("taeju_demon");
+            GameObject taejuOrigin = GameObject.Find("taeju_origin");
+
+            if (taejuDemon != null && taejuOrigin != null)
+            {
+                taejuOrigin.SetActive(false);     // 기존 NPC는 숨기고
+                taejuDemon.SetActive(true);       // 추격용 NPC는 등장시켜
+
+                var chaseScript = taejuDemon.GetComponent<TaejuChase>();
+                if (chaseScript != null)
+                {
+                    chaseScript.StartChase();  // 추격 시작 (추격 스크립트에서 직접 구현해둔 메서드)
+                }
+
+                Debug.Log("[DialogueManager] 대화 종료 후 태주 추격 시작됨.");
+            }
+        }
+
         // ★ 프롤로그 씬에서는 씬 전환 없이 캔버스만 꺼줌
         if (SceneManager.GetActiveScene().name == "Prologue")
         {
@@ -270,6 +298,16 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator StartDialogueCoroutine()
     {
+        // Day6 전용: NPC 오브젝트 등장 제어
+        if (SceneManager.GetActiveScene().name == "Day6")
+        {
+            for (int i = 0; i < listNPCs.Count; i++)
+            {
+                if (listNPCs[i] != null)
+                    listNPCs[i].SetActive(i == count); // 해당 대사에 맞는 NPC만 활성화
+            }
+        }
+
         if (shouldHideItemPanelNext && itemPanel != null)
         {
             itemPanel.SetActive(false);
@@ -401,6 +439,27 @@ public class DialogueManager : MonoBehaviour
 
         keyActivated = true;
 
+        if (SceneManager.GetActiveScene().name == "Day6")
+        {
+            var taejuNPC = GameObject.Find("taeju_origin"); 
+
+            if (taejuNPC != null && currentDialogueData.npcAppearances.Length > count)
+            {
+                // Animator 꺼주기 (덮어쓰지 않게)
+                Animator npcAnimator = taejuNPC.GetComponent<Animator>();
+                if (npcAnimator != null)
+                    npcAnimator.enabled = false;
+
+                // SpriteRenderer로 직접 sprite 교체
+                SpriteRenderer npcSprite = taejuNPC.GetComponent<SpriteRenderer>();
+                if (npcSprite != null && currentDialogueData.npcAppearances[count] != null)
+                {
+                    npcSprite.sprite = currentDialogueData.npcAppearances[count];
+                    Debug.Log($"[DialogueManager] NPC sprite changed to: {currentDialogueData.npcAppearances[count].name}");
+                }
+            }
+        }
+
         // 프롤로그 삼각형 화살표 표시
         if (SceneManager.GetActiveScene().name == "Prologue")
         {
@@ -431,6 +490,7 @@ public class DialogueManager : MonoBehaviour
                 // StartCoroutine(StartDialogueCoroutine());
             }
         }
+        yield break;
     }
 
     void HandleSentenceEvents(int sentenceIndex)
