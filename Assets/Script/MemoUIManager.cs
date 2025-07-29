@@ -12,13 +12,17 @@ public class MemoUIManager : MonoBehaviour
 {
     public List<GameObject> memoPages;
 
-    // Inspector에서 트리거 지정 가능
+    // Inspector에서 트리거 지정
     public MemoTrigger memoTrigger = new MemoTrigger() { dialogueCount = 5, sentenceIndex = 2 };
 
     private int currentPage = 0;
-    private bool memoActive = false;
     private bool memoShown = false;
+
     private int pausedNextSentenceIndex = -1;
+
+    // 상태머신(대기/메모 등)
+    private enum Phase { None, AwaitingSpaceAtDialogueEnd, ShowingMemo }
+    private Phase memoPhase = Phase.None;
 
     void Start()
     {
@@ -29,7 +33,7 @@ public class MemoUIManager : MonoBehaviour
                 page.SetActive(false);
         }
 
-        // DialogueManager에 문장 끝 이벤트 구독
+        // OnSentenceFinished 구독
         if (DialogueManager.instance != null)
             DialogueManager.instance.OnSentenceFinished += OnSentenceFinished;
     }
@@ -47,50 +51,58 @@ public class MemoUIManager : MonoBehaviour
 
         int currentDialogueCount = DialogueProgressManager.instance.dialogueCount;
 
-        // 메모 조건 만족 시
+        // 트리거 조건 충족
         if (currentDialogueCount == memoTrigger.dialogueCount && sentenceIndex == memoTrigger.sentenceIndex)
         {
             memoShown = true;
-            memoActive = true;
-            currentPage = 0;
-            pausedNextSentenceIndex = sentenceIndex + 1;  // 이후 이어질 인덱스 저장
 
-            // 대화 패널 숨기고 메모 패널 띄우기
-            if (DialogueManager.instance != null)
-            {
-                DialogueManager.instance.HideDialogueUI();
-                DialogueManager.instance.PauseDialogue();
-            }
+            pausedNextSentenceIndex = sentenceIndex + 1;
 
-            ShowCurrentPage();
+            // 대화 잠시 멈춤, 스페이스 대기 상태 진입
+            DialogueManager.instance.PauseDialogue();
+            memoPhase = Phase.AwaitingSpaceAtDialogueEnd;
         }
     }
 
     void Update()
     {
-        if (memoActive && Input.GetKeyDown(KeyCode.Space))
+        // 1. 대사 끝 후 스페이스 받고 메모로 진입
+        if (memoPhase == Phase.AwaitingSpaceAtDialogueEnd)
         {
-            HideCurrentPage();
-            currentPage++;
-
-            if (currentPage >= memoPages.Count)
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                memoActive = false;
-
-                // 메모 패널 닫기
-                HideCurrentPage();
-
-                // 대화 UI 다시 띄우고 pause된 다음 문장부터 이어줌
-                if (DialogueManager.instance != null && pausedNextSentenceIndex >= 0)
-                {
-                    DialogueManager.instance.ShowDialogueUI();
-                    DialogueManager.instance.ContinueFrom(pausedNextSentenceIndex);
-                    pausedNextSentenceIndex = -1;
-                }
-            }
-            else
-            {
+                DialogueManager.instance.HideDialogueUI();
+                currentPage = 0;
                 ShowCurrentPage();
+                memoPhase = Phase.ShowingMemo;
+            }
+        }
+
+        // 2. 메모 단계: 스페이스로 메모 넘기기
+        else if (memoPhase == Phase.ShowingMemo)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                HideCurrentPage();
+                currentPage++;
+
+                // 모든 메모 페이지 다 넘기면 → 대화 재개
+                if (currentPage >= memoPages.Count)
+                {
+                    memoPhase = Phase.None;
+                    DialogueManager.instance.ShowDialogueUI();
+
+                    // 다음 문장부터 대화 이어짐
+                    if (pausedNextSentenceIndex >= 0)
+                    {
+                        DialogueManager.instance.ContinueFrom(pausedNextSentenceIndex);
+                        pausedNextSentenceIndex = -1;
+                    }
+                }
+                else
+                {
+                    ShowCurrentPage();
+                }
             }
         }
     }
