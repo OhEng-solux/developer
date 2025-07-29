@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b02bbea4adff641578459667b9f53c98
+guid: a940bf47367e44f7da0ebce8e8cd3726
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5220195240741735751
-    second: taeju_demon_3_chat_0
+      213: -9039139932308263390
+    second: taeju_demon_2_chat_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: taeju_demon_3_chat_0
+      name: taeju_demon_2_chat_0
       rect:
         serializedVersion: 2
-        x: 1415
+        x: 1529
         y: 104
-        width: 403
-        height: 769
+        width: 229
+        height: 579
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9b2776916142e87b0800000000000000
-      internalID: -5220195240741735751
+      spriteID: 22ea7bb7f168e8280800000000000000
+      internalID: -9039139932308263390
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      taeju_demon_3_chat_0: -5220195240741735751
+      taeju_demon_2_chat_0: -9039139932308263390
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

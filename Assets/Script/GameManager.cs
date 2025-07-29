@@ -46,11 +46,9 @@ public class GameManager : MonoBehaviour
             if (string.IsNullOrEmpty(itemName))
             {
                 theInventory.items[i].isObtained = false;
-                // 슬롯 빈 상태 표시 등 처리
             }
             else
             {
-                // 이름으로 Item 찾아서 isObtained = true
                 foreach (var item in allItems)
                 {
                     if (item.itemName == itemName)
