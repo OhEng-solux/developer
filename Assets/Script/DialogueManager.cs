@@ -637,4 +637,10 @@ public class DialogueManager : MonoBehaviour
             dialogueCanvas.SetActive(true);
     }
 
+    public void ContinueFrom(int nextSentenceIndex)
+    {
+        count = nextSentenceIndex;   
+        ContinueDialogue();
+    }
+
 }

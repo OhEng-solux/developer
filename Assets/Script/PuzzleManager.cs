@@ -8,8 +8,8 @@ public class PuzzleManager : MonoBehaviour
     [Header("Button List")]
     public List<Transform> correctAnswerButtons;
 
-    [Header("���� �ε��� ����! (ex: 2,0,3)")]
-    public List<int> answerSequence; // ���� ��ư�� �ε��� ������ �Է�
+    [Header("정답 (ex: 2,0,3)")]
+    public List<int> answerSequence; // 정답
 
     private List<int> playerInputSequence = new List<int>();
 
@@ -34,7 +34,7 @@ public class PuzzleManager : MonoBehaviour
     public bool IsPuzzleActive() => _isPuzzleActive;
     public bool IsPuzzleSolved() => _isPuzzleSolved;
 
-    private Color pressedColor = new Color(0.7f, 0.7f, 0.7f); // ��ο� ȸ�� ��
+    private Color pressedColor = new Color(0.7f, 0.7f, 0.7f); 
     private HashSet<int> pressedIndices = new HashSet<int>();
 
     private void Start()
@@ -61,15 +61,14 @@ public class PuzzleManager : MonoBehaviour
 
     void MoveSelection(int direction)
     {
-        // ���� ���� �� ���� �� ����
-        // �̹� �Է��ߴٸ� pressedColor, �ƴϸ� normalColor
+      
         SetButtonColor(selectedButtonIndex, pressedIndices.Contains(selectedButtonIndex) ? pressedColor : normalColor);
 
         selectedButtonIndex += direction;
         if (selectedButtonIndex < 0) selectedButtonIndex = correctAnswerButtons.Count - 1;
         if (selectedButtonIndex >= correctAnswerButtons.Count) selectedButtonIndex = 0;
 
-        // ���� Ŀ���� �����
+   
         SetButtonColor(selectedButtonIndex, selectedColor);
     }
 
@@ -87,7 +86,7 @@ public class PuzzleManager : MonoBehaviour
 
     void PressSelectedButton()
     {
-        // ���� �� pressed�� ǥ��
+
         SetButtonColor(selectedButtonIndex, pressedColor);
         pressedIndices.Add(selectedButtonIndex);
 

@@ -14,6 +14,7 @@ public class TestDialogue_box : MonoBehaviour
     private float talkCooldown = 1f; // 재대화 가능 시간 간격 (초)
     private float lastTalkTime = -10f; // 마지막 대화 시간
 
+    private bool hasTalked = false; // 이미 대화했는지 여부
 
     void Start()
     {
@@ -31,12 +32,15 @@ public class TestDialogue_box : MonoBehaviour
     {
         if (collision.gameObject.name == "player")
         {
+            //  이미 대화한 경우 무시
+            if (hasTalked) return;
+
             float currentTime = Time.time;
             if (!theDM.talking && currentTime - lastTalkTime > talkCooldown)
             {
                 lastTalkTime = currentTime;
-                theDM.ShowDialogue(dialogue, false); // 대화는 나오지만 카운트 안 올림
-
+                hasTalked = true; // 대화했음을 기록
+                theDM.ShowDialogue(dialogue, false);
             }
         }
     }
