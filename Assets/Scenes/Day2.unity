@@ -358,6 +358,8 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &20428354
@@ -2974,6 +2976,8 @@ MonoBehaviour:
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &74557589
@@ -4862,7 +4866,6 @@ MonoBehaviour:
   transferMapName: Play_room
   target: {fileID: 1879165141}
   targetBound: {fileID: 1099703034}
-  thePlayer: {fileID: 0}
 --- !u!61 &245640492
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7375,6 +7378,8 @@ MonoBehaviour:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &322477292
@@ -9451,7 +9456,6 @@ MonoBehaviour:
   transferMapName: Lobby
   target: {fileID: 1504929031}
   targetBound: {fileID: 1526319386}
-  thePlayer: {fileID: 0}
 --- !u!61 &473741271
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13813,6 +13817,8 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &709108629
@@ -15929,7 +15935,6 @@ MonoBehaviour:
   transferMapName: Teacher_office
   target: {fileID: 887662759}
   targetBound: {fileID: 2036172312}
-  thePlayer: {fileID: 0}
 --- !u!61 &855066063
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16143,6 +16148,8 @@ MonoBehaviour:
     - {fileID: -4548211720714836524, guid: 0ed4d177aa50249ce841b99197def478, type: 3}
     dialogueWindows:
     - {fileID: 21300000, guid: 368608f2c7ec24ba6bff5c248ea5a5d8, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &873363358
@@ -18279,6 +18286,8 @@ MonoBehaviour:
     - {fileID: 2552797033274669965, guid: 5ef15771e5de141fab62faf3ade6d04d, type: 3}
     - {fileID: 2552797033274669965, guid: 5ef15771e5de141fab62faf3ade6d04d, type: 3}
     - {fileID: 2552797033274669965, guid: 5ef15771e5de141fab62faf3ade6d04d, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &992325167
@@ -19777,6 +19786,8 @@ MonoBehaviour:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: 81ac32a6702cf0d45957b95862220d27, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &1085346668
@@ -19813,7 +19824,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.02803874}
+  m_Offset: {x: 0, y: -0.051707387}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -19823,7 +19834,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.02, y: 3.7760773}
+  m_Size: {x: 2.02, y: 3.9355695}
   m_EdgeRadius: 0
 --- !u!95 &1085346669
 Animator:
@@ -20367,7 +20378,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -2.6644638}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -20377,7 +20388,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.02, y: 3.72}
+  m_Size: {x: 2.02, y: 9.048931}
   m_EdgeRadius: 0
 --- !u!95 &1099742527
 Animator:
@@ -20482,6 +20493,8 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 2a7509f284ae40c4cbc4bd250844e6a5, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!114 &1099742530
@@ -20616,6 +20629,8 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &1124523167
@@ -21041,6 +21056,8 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &1133239449
@@ -21644,7 +21661,6 @@ MonoBehaviour:
   transferMapName: Director_Office
   target: {fileID: 804071736}
   targetBound: {fileID: 1167572860}
-  thePlayer: {fileID: 0}
 --- !u!61 &1167036823
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22466,6 +22482,8 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
   targetPosition: {fileID: 1256413341}
@@ -22681,6 +22699,8 @@ MonoBehaviour:
     - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
     dialogueWindows:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &1248696748
@@ -23997,7 +24017,7 @@ Transform:
   m_GameObject: {fileID: 1306316774}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -76.5, y: -49.9, z: 0}
+  m_LocalPosition: {x: -73.8, y: -49.2, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24369,6 +24389,8 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
   targetPosition: {fileID: 1690771512}
@@ -25510,6 +25532,8 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &1378051678
@@ -25611,6 +25635,8 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &1385199902
@@ -25794,7 +25820,6 @@ MonoBehaviour:
   transferMapName: Teacher
   target: {fileID: 804071736}
   targetBound: {fileID: 2036172312}
-  thePlayer: {fileID: 0}
 --- !u!61 &1412187889
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25896,6 +25921,8 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!114 &1418064412
@@ -26961,6 +26988,8 @@ MonoBehaviour:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &1475921274
@@ -30416,7 +30445,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1694605734}
   - component: {fileID: 1694605736}
-  - component: {fileID: 1694605735}
+  - component: {fileID: 1694605737}
   m_Layer: 0
   m_Name: TP to lb
   m_TagString: Untagged
@@ -30439,22 +30468,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 423964670}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!114 &1694605735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1694605733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d72a7c550e315449bfe76999adab307, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transferMapName: Lobby
-  target: {fileID: 700843925}
-  targetBound: {fileID: 1526319386}
-  thePlayer: {fileID: 0}
 --- !u!61 &1694605736
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30501,6 +30514,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.4063082, y: 6.392845}
   m_EdgeRadius: 0
+--- !u!114 &1694605737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694605733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75260060ac855014e96260adc8258bd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  warningDialogue:
+    sentences:
+    - "\uB204\uAD70\uAC00 \uBD80\uB978 \uAC83 \uAC19\uB2E4."
+    sprites:
+    - {fileID: 0}
+    dialogueWindows:
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    npcObjects: []
+    npcAppearances: []
+    blueSentences: []
+    yellowSentences: []
+  targetPosition: {fileID: 700843925}
+  targetMapName: Lobby
+  targetBound: {fileID: 1526319386}
+  requiredDialogueCount: 2
 --- !u!1 &1703858422
 GameObject:
   m_ObjectHideFlags: 0
@@ -31481,6 +31521,8 @@ MonoBehaviour:
     - {fileID: 1124596813818630553, guid: 72fd1cd87395a4be0888128d6e27ba67, type: 3}
     dialogueWindows:
     - {fileID: 21300000, guid: 3ca16878e50ace24d802b634871dbc5f, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &1784628556
@@ -36298,6 +36340,8 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 43cd6cfe9eabe46ada07907e4f4dbde2, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &1874821558
@@ -39604,6 +39648,8 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &2038907470
@@ -39863,6 +39909,8 @@ MonoBehaviour:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &2046747563
@@ -40076,6 +40124,8 @@ MonoBehaviour:
     dialogueWindows:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &2067467022
