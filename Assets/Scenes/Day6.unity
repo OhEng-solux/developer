@@ -1721,7 +1721,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &29963690
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -24332,7 +24332,7 @@ GameObject:
   - component: {fileID: 629933922}
   - component: {fileID: 629933924}
   - component: {fileID: 629933923}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: sixth_day
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25210,10 +25210,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 629933922}
   - {fileID: 847258737}
   - {fileID: 1149449630}
   - {fileID: 1490060208}
-  - {fileID: 629933922}
   - {fileID: 576362357}
   - {fileID: 1103371898}
   - {fileID: 887561881}
@@ -34771,6 +34771,125 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &845660050
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 845660051}
+  - component: {fileID: 845660053}
+  - component: {fileID: 845660052}
+  m_Layer: 0
+  m_Name: dir_Dialogue
+  m_TagString: Start Dialogue
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &845660051
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845660050}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.56, y: 53.06, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1058683039}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &845660052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845660050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813481dc762d44bca937ff94ce09e711, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - "\uC624\uB298\uC740 \uD0DC\uC8FC\uC758 \uC0DD\uC77C\uC744 \uAE30\uB150\uD558\uC5EC
+      \uD30C\uC790\uB9C8 \uD30C\uD2F0\uB97C \uC9C4\uD589\uD569\uB2C8\uB2E4!\n\uC800\uB294
+      \uCD9C\uC7A5\uC774 \uC788\uC5B4\uC11C \uC120\uC0DD\uB2D8\uAED8\uC11C \uC800\uB141\uAE4C\uC9C0
+      \uC544\uC774\uB4E4\uC744 \uC798 \uCF00\uC5B4\uD574 \uC8FC\uC138\uC694!"
+    - "\uC55E\uC11C \uC8FC\uC758\uC0AC\uD56D \uB450 \uAC00\uC9C0\uB9CC \uC54C\uB824\uB4DC\uB9B4\uAC8C\uC694."
+    - "\uCCAB\uC9F8, \uC9C0\uD558\uC2E4\uC740 \uCD9C\uC785\uC744 \uD53C\uD574 \uC8FC\uC138\uC694.
+      \n\uAD00\uACC4\uC790 \uC678 \uCD9C\uC785 \uAE08\uC9C0 \uAD6C\uC5ED\uC785\uB2C8\uB2E4."
+    - "\uB458\uC9F8, \uCCAD\uC18C\uD558\uB2E4\uAC00 \uAF43\uBCD1\uC774 \uAE68\uC9C0\uC9C0
+      \uC54A\uB3C4\uB85D \uAF2D \uC870\uC2EC\uD574 \uC8FC\uC138\uC694."
+    - "\uB124, \uBA85\uC2EC\uD558\uACA0\uC2B5\uB2C8\uB2E4!"
+    sprites:
+    - {fileID: -4012656024804308703, guid: 0287b2accd48540dfadf0a792713887a, type: 3}
+    - {fileID: -4012656024804308703, guid: 0287b2accd48540dfadf0a792713887a, type: 3}
+    - {fileID: -4012656024804308703, guid: 0287b2accd48540dfadf0a792713887a, type: 3}
+    - {fileID: -4012656024804308703, guid: 0287b2accd48540dfadf0a792713887a, type: 3}
+    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: a14fe528b952c47fea7b0e374f281365, type: 3}
+    - {fileID: 21300000, guid: a14fe528b952c47fea7b0e374f281365, type: 3}
+    - {fileID: 21300000, guid: a14fe528b952c47fea7b0e374f281365, type: 3}
+    - {fileID: 21300000, guid: a14fe528b952c47fea7b0e374f281365, type: 3}
+    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    npcObjects: []
+    npcAppearances: []
+    blueSentences: []
+    yellowSentences: []
+--- !u!61 &845660053
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845660050}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.104038656, y: -0.7698785}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 2.4565253, y: 2.539757}
+  m_EdgeRadius: 0
 --- !u!1 &847258736
 GameObject:
   m_ObjectHideFlags: 0
@@ -39150,7 +39269,7 @@ GameObject:
   - component: {fileID: 992325170}
   m_Layer: 3
   m_Name: director
-  m_TagString: Start Dialogue
+  m_TagString: npc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39178,7 +39297,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 992325164}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 813481dc762d44bca937ff94ce09e711, type: 3}
   m_Name: 
@@ -40832,6 +40951,7 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1.5, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 845660051}
   - {fileID: 992325165}
   - {fileID: 1934082423}
   - {fileID: 1460067273}
@@ -50491,7 +50611,7 @@ Transform:
   m_GameObject: {fileID: 1306316774}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 45.5, y: 43.1, z: 0}
+  m_LocalPosition: {x: 44.42, y: 43.1, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
