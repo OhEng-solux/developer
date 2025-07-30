@@ -41,6 +41,18 @@ public class PopupManager : MonoBehaviour
 
             if (isChoicePopup)
         {
+            if ( Menu.instance.closePopup)
+            {
+                popupPanel.SetActive(false);
+                isChoicePopup = false;
+
+                // ▶ 팝업 닫힐 때 플레이어 움직임 다시 허용
+                if (PlayerManager.instance != null)
+                    PlayerManager.instance.canMove = true;
+                Menu.instance.closePopup = false;
+                return;
+            }
+
             Debug.Log("isChoicePopup 팝업 열림, isChoicePopup: " + isChoicePopup);
             // 방향키 선택
             if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))

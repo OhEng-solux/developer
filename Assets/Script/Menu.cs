@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
@@ -12,10 +12,10 @@ public class Menu : MonoBehaviour
         if (instance == null)
             instance = this;
         else
-            Destroy(gameObject); // Áßº¹ ¹æÁö
+            Destroy(gameObject); // ì¤‘ë³µ ë°©ì§€
     }
 
-    public GameObject menuPanel; // ¸Ş´º ÀüÃ¼ ÆĞ³Î
+    public GameObject menuPanel; // ë©”ë‰´ ì „ì²´ íŒ¨ë„
     public AudioManager theAudio;
 
     public string call_sound;
@@ -24,11 +24,11 @@ public class Menu : MonoBehaviour
 
     public OrderManager theOrder;
 
-    public List<Button> menuButtons; // ¸Ş´º Ç×¸ñ ¹öÆ°µé (ÀÎ½ºÆåÅÍ¿¡ ÇÒ´ç)
+    public List<Button> menuButtons; // ë©”ë‰´ í•­ëª© ë²„íŠ¼ë“¤ (ì¸ìŠ¤í™í„°ì— í• ë‹¹)
 
     public bool activated;
-
-    private int currentIndex = 0; // ÇöÀç ¼±ÅÃµÈ ¹öÆ° ÀÎµ¦½º
+    public bool closePopup=false;
+    private int currentIndex = 0; // í˜„ì¬ ì„ íƒëœ ë²„íŠ¼ ì¸ë±ìŠ¤
 
     void Start()
     {
@@ -36,7 +36,7 @@ public class Menu : MonoBehaviour
         menuPanel.SetActive(false);
         Time.timeScale = 1f;
 
-        // ¹öÆ° »ö»ó ÃÊ±âÈ­
+        // ë²„íŠ¼ ìƒ‰ìƒ ì´ˆê¸°í™”
         UpdateButtonColors();
     }
 
@@ -46,7 +46,7 @@ public class Menu : MonoBehaviour
         {
             if (!PopupManager.instance.IsPopupActive()&& !SaveManager.instance.IsSaveActive() && !InventoryManager.instance.IsInventoryActive())
             {
-                // ESC Å°·Î ¸Ş´º ÄÑ°í ²ô±â
+                // ESC í‚¤ë¡œ ë©”ë‰´ ì¼œê³  ë„ê¸°
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
                     Debug.Log("SaveManager.instance: " + (SaveManager.instance != null));
@@ -99,12 +99,12 @@ public class Menu : MonoBehaviour
 
     IEnumerator ResetInputsNextFrame()
     {
-        yield return null; // ÇÑ ÇÁ·¹ÀÓ ´ë±â
+        yield return null; // í•œ í”„ë ˆì„ ëŒ€ê¸°
         Input.ResetInputAxes();
     }
     void HandleInput()
     {
-        // ¹æÇâÅ° À§/¾Æ·¡·Î ¸Ş´º ¼±ÅÃ º¯°æ
+        // ë°©í–¥í‚¤ ìœ„/ì•„ë˜ë¡œ ë©”ë‰´ ì„ íƒ ë³€ê²½
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             currentIndex--;
@@ -124,7 +124,7 @@ public class Menu : MonoBehaviour
             UpdateButtonColors();
         }
 
-        // ¼±ÅÃ È®Á¤ : ½ºÆäÀÌ½º ¶Ç´Â ¿£ÅÍ
+        // ì„ íƒ í™•ì • : ìŠ¤í˜ì´ìŠ¤ ë˜ëŠ” ì—”í„°
         if (Input.GetKeyDown(KeyCode.Return))
         {
             theAudio.Play(select_sound);
@@ -140,7 +140,7 @@ public class Menu : MonoBehaviour
 
             cb.normalColor = (i == currentIndex) ? Color.white : Color.gray;
 
-            // ¼±ÅÃµÈ ¹öÆ°À» °­Á¶ÇÏ°í, ³ª¸ÓÁö´Â ºñÈ°¼º »öÀ¸·Î
+            // ì„ íƒëœ ë²„íŠ¼ì„ ê°•ì¡°í•˜ê³ , ë‚˜ë¨¸ì§€ëŠ” ë¹„í™œì„± ìƒ‰ìœ¼ë¡œ
             cb.highlightedColor = cb.normalColor;
             cb.pressedColor = cb.normalColor;
             cb.selectedColor = cb.normalColor;
@@ -158,7 +158,7 @@ public class Menu : MonoBehaviour
         CloseMenu();
     }
 
-    // ±âÁ¸ ÇÔ¼öµé 
+    // ê¸°ì¡´ í•¨ìˆ˜ë“¤ 
     public void Exit()
     {
         Application.Quit();
@@ -177,18 +177,18 @@ public class Menu : MonoBehaviour
     public void LoadStartScene()
     {
         PopupManager.instance.ShowChoicePopup(
-                "¸Ş´º È­¸éÀ¸·Î ÀÌµ¿ÇÏ½Ã°Ú½À´Ï±î?",
+                "ë©”ë‰´ í™”ë©´ìœ¼ë¡œ ì´ë™í•˜ì‹œê² ìŠµë‹ˆê¹Œ?",
                 () =>
                 {
-                    // »ç¿ëÀÚ°¡ '¿¹' ´­·¶À» °æ¿ì ¾À ÀÌµ¿
-                    Debug.Log("¸Ş´º ÀÌµ¿ È®ÀÎ");
+                    // ì‚¬ìš©ìê°€ 'ì˜ˆ' ëˆŒë €ì„ ê²½ìš° ì”¬ ì´ë™
+                    Debug.Log("ë©”ë‰´ ì´ë™ í™•ì¸");
                     UnityEngine.SceneManagement.SceneManager.LoadScene("Start");
                 },
                 () =>
                 {
-                    // »ç¿ëÀÚ°¡ '¾Æ´Ï¿À' ´­·¶À» °æ¿ì Ãë¼Ò Ã³¸®¸¸
-                    Debug.Log("¸Ş´º ÀÌµ¿ Ãë¼Ò");
-                    // ÆË¾÷ ´İÀ¸¸é ¸Ş´º ±×´ë·Î À¯Áö °¡´É
+                    // ì‚¬ìš©ìê°€ 'ì•„ë‹ˆì˜¤' ëˆŒë €ì„ ê²½ìš° ì·¨ì†Œ ì²˜ë¦¬ë§Œ
+                    Debug.Log("ë©”ë‰´ ì´ë™ ì·¨ì†Œ");
+                    closePopup = true;
                 }
             );
     }
