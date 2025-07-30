@@ -8,6 +8,8 @@ public class ClueManager : MonoBehaviour
     private bool[] clueRead = new bool[4];
     private int clueCount = 0;
 
+    public bool chaseStarted = false; // 추격 시작 여부
+
     public bool flowerBroken = false; // 꽃병 깨짐 상태
 
     private void Awake()
@@ -39,7 +41,7 @@ public class ClueManager : MonoBehaviour
 
     private IEnumerator DelayedStartChaseDialogue()
     {
-        yield return new WaitForSeconds(1.5f); // ⏱️ 2초 대기
+        yield return new WaitForSeconds(1.5f);
 
         var chaseTrigger = FindFirstObjectByType<ChaseTriggerManager>();
         if (chaseTrigger != null)
