@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
@@ -8,15 +8,15 @@ using UnityEngine.SceneManagement;
 
 public class SaveNLoad : MonoBehaviour
 {
-    [System.Serializable]//Á÷·ÄÈ­
-    public class Data//¸ğµç ¼¼ÀÌºê µ¥ÀÌÅÍ
+    [System.Serializable]//ì§ë ¬í™”
+    public class Data//ëª¨ë“  ì„¸ì´ë¸Œ ë°ì´í„°
     {
-        public float playerX;//Á÷·ÄÈ­ º¤ÅÍ »ç¿ë ºÒ°¡
-        public float playerY;//Á÷·ÄÈ­ º¤ÅÍ »ç¿ë ºÒ°¡
-        public float playerZ;//ÇÃ·¹ÀÌ¾î À§Ä¡ ÀúÀå
+        public float playerX;//ì§ë ¬í™” ë²¡í„° ì‚¬ìš© ë¶ˆê°€
+        public float playerY;//ì§ë ¬í™” ë²¡í„° ì‚¬ìš© ë¶ˆê°€
+        public float playerZ;//í”Œë ˆì´ì–´ ìœ„ì¹˜ ì €ì¥
 
         public List<string> playerItemNames;
-        public List<int> playerEquipItem;//ÀåÂø ¾ÆÀÌÅÛ
+        public List<int> playerEquipItem;//ì¥ì°© ì•„ì´í…œ
 
         public string mapName;
         public string sceneName;
@@ -33,7 +33,7 @@ public class SaveNLoad : MonoBehaviour
     private Vector3 vector;
 
 
-    public void CallSave(int slotIndex)//ÀúÀå
+    public void CallSave(int slotIndex)//ì €ì¥
     {
         thePlayer = FindFirstObjectByType<PlayerManager>();
         InventoryManager theInventory = FindFirstObjectByType<InventoryManager>();
@@ -45,22 +45,22 @@ public class SaveNLoad : MonoBehaviour
         data.mapName = thePlayer.currentMapName;
         data.sceneName = thePlayer.currentSceneName;
 
-        Debug.Log("±âÃÊ µ¥ÀÌÅÍ ¼º°ø");
+        Debug.Log("ê¸°ì´ˆ ë°ì´í„° ì„±ê³µ");
 
         if (theInventory == null)
         {
-            Debug.LogError("InventoryManager ÀÎ½ºÅÏ½º¸¦ Ã£Áö ¸øÇß½À´Ï´Ù.");
+            Debug.LogError("InventoryManager ì¸ìŠ¤í„´ìŠ¤ë¥¼ ì°¾ì§€ ëª»í–ˆìŠµë‹ˆë‹¤.");
         }
         else
         {
             data.playerItemNames = new List<string>();
             foreach (var item in theInventory.items)
             {
-                // È¹µæÇÑ ¾ÆÀÌÅÛ¸¸ ÀúÀåÇÏ°Å³ª, ¾ÆÀÌÅÛ ÀÌ¸§ ÀÚÃ¼¸¦ ¸ğµÎ ÀúÀå
+                // íšë“í•œ ì•„ì´í…œë§Œ ì €ì¥í•˜ê±°ë‚˜, ì•„ì´í…œ ì´ë¦„ ìì²´ë¥¼ ëª¨ë‘ ì €ì¥
                 if (item.isObtained)
                     data.playerItemNames.Add(item.itemName);
                 else
-                    data.playerItemNames.Add("");  // ºóÄ­À¸·Î ºó ½½·Ô Ç¥Çö
+                    data.playerItemNames.Add("");  // ë¹ˆì¹¸ìœ¼ë¡œ ë¹ˆ ìŠ¬ë¡¯ í‘œí˜„
             }
         }
 
@@ -68,25 +68,25 @@ public class SaveNLoad : MonoBehaviour
         data.saveDate = now.ToString("yyyy-MM-dd");
         data.saveTime = now.ToString("HH:mm:ss");
 
-        //°ÔÀÓÀÌ ²¨Á®µµ ÀúÀå °¡´ÉÇÏµµ·Ï ¹°¸® ÆÄÀÏ »ı¼º
+        //ê²Œì„ì´ êº¼ì ¸ë„ ì €ì¥ ê°€ëŠ¥í•˜ë„ë¡ ë¬¼ë¦¬ íŒŒì¼ ìƒì„±
         BinaryFormatter bf = new BinaryFormatter();
         string path = Path.Combine(Application.persistentDataPath, $"SaveFile_{slotIndex}.dat");
         FileStream file = File.Create(path);
 
-        bf.Serialize(file, data);//Á÷·ÄÈ­
-        file.Close();//ÆÄÀÏ ³»º¸³»±â ¿Ï·á
+        bf.Serialize(file, data);//ì§ë ¬í™”
+        file.Close();//íŒŒì¼ ë‚´ë³´ë‚´ê¸° ì™„ë£Œ
 
-        Debug.Log(Application.dataPath + " ÀÇ À§Ä¡¿¡ ÀúÀåÇß½À´Ï´Ù.");
+        Debug.Log(Application.dataPath + " ì˜ ìœ„ì¹˜ì— ì €ì¥í–ˆìŠµë‹ˆë‹¤.");
     }
 
 
-    public void CallLoad(int slotIndex)//ºÒ·¯¿À±â, ¼¼ÀÌºêÀÇ ¿ª¼ø ÁøÇà
+    public void CallLoad(int slotIndex)//ë¶ˆëŸ¬ì˜¤ê¸°, ì„¸ì´ë¸Œì˜ ì—­ìˆœ ì§„í–‰
     {
         BinaryFormatter bf = new BinaryFormatter();
         string path = Path.Combine(Application.persistentDataPath, $"SaveFile_{slotIndex}.dat");
         FileStream file = File.Open(path, FileMode.Open);
 
-        if (File.Exists(path))//ÆÄÀÏ Á¸Àç½Ã ·Îµå
+        if (File.Exists(path))//íŒŒì¼ ì¡´ì¬ì‹œ ë¡œë“œ
         {
             data = (Data)bf.Deserialize(file);
 
@@ -96,23 +96,23 @@ public class SaveNLoad : MonoBehaviour
             thePlayer.currentSceneName = data.sceneName;
             playerPositionToLoad = new Vector3(data.playerX, data.playerY, data.playerZ);
             
-            Debug.Log($"·Îµå Áß..??");
+            Debug.Log($"ë¡œë“œ ì¤‘..??");
             
-            Debug.Log($"·ÎµåÇÒ ¾À ÀÌ¸§: {data.sceneName}");
+            Debug.Log($"ë¡œë“œí•  ì”¬ ì´ë¦„: {data.sceneName}");
             SceneManager.sceneLoaded += OnSceneLoaded;
             SceneManager.LoadScene(data.sceneName);
 
         }
         else
         {
-            Debug.Log("ÀúÀå ¼¼ÀÌºê ÆÄÀÏÀÌ ¾ø½À´Ï´Ù");
+            Debug.Log("ì €ì¥ ì„¸ì´ë¸Œ íŒŒì¼ì´ ì—†ìŠµë‹ˆë‹¤");
             return;
         }
         file.Close();
     }
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // ¾À ·Îµå ¿Ï·á ÈÄ È£ÃâµÊ
+        // ì”¬ ë¡œë“œ ì™„ë£Œ í›„ í˜¸ì¶œë¨
         if (scene.name == data.sceneName)
         {
             PlayerManager thePlayer = FindObjectOfType<PlayerManager>();
@@ -130,7 +130,7 @@ public class SaveNLoad : MonoBehaviour
             }
         }
 
-        // ÀÌº¥Æ® ÇØÁ¦ (Áßº¹ ½ÇÇà ¹æÁö)
+        // ì´ë²¤íŠ¸ í•´ì œ (ì¤‘ë³µ ì‹¤í–‰ ë°©ì§€)
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }

@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 public class StartMenu : MonoBehaviour
 {
     public Button[] buttons;   // Inspector에 버튼 3개 연결
-    public GameObject[] highlightImgs;
     public GameObject savePanel;
     public GameObject icon;
     public GameObject Panel;
@@ -14,6 +13,9 @@ public class StartMenu : MonoBehaviour
     private AudioManager theAudio;
     public string keySound;
     public string enterSound;
+
+    private Color selectedColor = Color.white;
+    private Color unselectedColor = Color.gray;
 
     void Start()
     {
@@ -25,51 +27,57 @@ public class StartMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            selectedIndex = (selectedIndex + 3 - 1) % 3;
+            selectedIndex = (selectedIndex + buttons.Length - 1) % buttons.Length;
             theAudio.Play(keySound);
             HighlightButton();
-
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            selectedIndex = (selectedIndex + 1) %3;
+            selectedIndex = (selectedIndex + 1) % buttons.Length;
             theAudio.Play(keySound);
             HighlightButton();
-
         }
         else if (Input.GetKeyDown(KeyCode.Return))
         {
             theAudio.Play(enterSound);
             OnSelect(selectedIndex);
-
         }
     }
+
     void HighlightButton()
     {
-        for (int i = 0; i < highlightImgs.Length; i++)
+        for (int i = 0; i < buttons.Length; i++)
         {
-            highlightImgs[i].SetActive(i == selectedIndex);
+            ColorBlock cb = buttons[i].colors;
+
+            cb.normalColor = (i == selectedIndex) ? selectedColor : unselectedColor;
+            cb.highlightedColor = cb.normalColor;
+            cb.pressedColor = cb.normalColor;
+            cb.selectedColor = cb.normalColor;
+
+            buttons[i].colors = cb;
         }
     }
+
     void OnSelect(int idx)
     {
-
         Panel.gameObject.SetActive(false);
         switch (idx)
         {
-          
             case 0: // 처음부터 시작
                 Debug.Log("처음부터 시작");
                 SceneManager.LoadScene("Prologue");
                 break;
-            case 1: //  SavePanel 팝업
-                Debug.Log("세이브 패널 팝업");//불러오기 진행
+            case 1: // SavePanel 팝업
+                Debug.Log("세이브 패널 팝업");
                 savePanel.SetActive(true);
                 break;
-            case 2: //  종료
+            case 2: // 종료
                 Debug.Log("게임 종료");
                 Application.Quit();
-                UnityEditor.EditorApplication.isPlaying = false; // 에디터에서는 이 명령 필요
+#if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+#endif
                 break;
         }
     }
