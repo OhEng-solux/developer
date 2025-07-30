@@ -50,7 +50,7 @@ public class ImagePopupManager : MonoBehaviour
 
     public bool IsImageActive() //팝업이 떠있는지 외부에서 확인할 수 있도록 함
     {
-        Debug.Log("popupPanel.activeSelf" + popupPanel.activeSelf);
+        //Debug.Log("popupPanel.activeSelf" + popupPanel.activeSelf);
         return popupPanel.activeSelf;
     }
 }
