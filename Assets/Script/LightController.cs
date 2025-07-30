@@ -4,32 +4,20 @@ public class LightController : MonoBehaviour
 {
     private PlayerManager thePlayer;
     private Vector2 vector;
-    private Quaternion rotation;
 
-    void Start()
+    void Awake()
     {
-        gameObject.SetActive(false);
         thePlayer = FindFirstObjectByType<PlayerManager>();
+        // gameObject.SetActive(false); // ì²˜ìŒì—” êº¼ì§„ ìƒíƒœ
     }
 
     void Update()
     {
-        // ¿ÀºêÁ§Æ®°¡ ºñÈ°¼ºÈ­µÇ¾úÀ» °æ¿ì ½ÇÇà X
-        if (!gameObject.activeInHierarchy || thePlayer == null) return;
+        if (!gameObject.activeSelf || thePlayer == null) return;
 
         transform.position = thePlayer.transform.position;
 
         vector.Set(thePlayer.animator.GetFloat("DirX"), thePlayer.animator.GetFloat("DirY"));
-
-        if (vector.x == 1f)
-            rotation = Quaternion.Euler(0, 0, 90);
-        else if (vector.x == -1f)
-            rotation = Quaternion.Euler(0, 0, -90);
-        else if (vector.y == 1f)
-            rotation = Quaternion.Euler(0, 0, 180);
-        else if (vector.y == -1f)
-            rotation = Quaternion.Euler(0, 0, 0);
-
-        transform.rotation = rotation;
+        // í•„ìš” ì‹œ ë°©í–¥ì— ë”°ë¥¸ ì¡°ëª… íšŒì „/ìŠ¤í”„ë¼ì´íŠ¸ êµì²´
     }
 }
