@@ -82,13 +82,14 @@ public class SaveManager : MonoBehaviour
         if (!isOpen &&( InventoryManager.instance == null || InventoryManager.instance.IsInventoryActive())) return;
         if (!isOpen && (Menu.instance == null || Menu.instance.activated)) return;
 
-        // Z키 눌렀을 때 세이브창 열기/닫기 토글 (저장지점 근처일 때만)
-        if (Input.GetKeyDown(KeyCode.Z))
+        // Z키 눌렀을 때 세이브창 열기/닫기 토글 (저장지점 근처일 때만) or 자동 저장
+        if (Input.GetKeyDown(KeyCode.Z)||AutoSave.instance.IsAutoSave())
         {
-            if (isSavePoint)
+            if ((isSavePoint || AutoSave.instance.IsAutoSave()) && !isOpen)
             {
                 isOpen = !isOpen;
                 savePanel.SetActive(isOpen);
+                AutoSave.instance.autoSave = false;
             }
         }
 
