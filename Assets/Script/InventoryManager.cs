@@ -31,9 +31,18 @@ public class InventoryManager : MonoBehaviour
     {
         inventoryPanel.SetActive(false); // 시작 시 인벤토리 패널 비활성화
     }
+    private float popupInputBlockedUntil = 0f;
+
+    public void BlockInputForPopup(float seconds)
+    {
+        popupInputBlockedUntil = Time.time + seconds;
+    }
 
     void Update()
     {
+        if (Time.time < popupInputBlockedUntil)
+            return;
+
         // 대화 중일 때 인벤토리 열기 시도 제한: 효과음+팝업창
         if (DialogueManager.instance != null && DialogueManager.instance.talking)
         {
@@ -46,7 +55,10 @@ public class InventoryManager : MonoBehaviour
         }
 
         if (!isOpen &&( SaveManager.instance == null || SaveManager.instance.IsSaveActive())) return;
+        //Debug.Log("inv  IsPopupActive()"+ PopupManager.instance.IsPopupActive());
+        // 방향키 동작 우선순위: 팝업창>인벤토리>이동
 
+        if (PopupManager.instance.IsPopupActive()) return;
         if (!isOpen &&(Menu.instance == null || Menu.instance.activated)) return;
         // X 키를 눌렀을 때 인벤토리 열고 닫기 토글
         if (Input.GetKeyDown(KeyCode.X))
@@ -88,7 +100,8 @@ public class InventoryManager : MonoBehaviour
 
 
         // 방향키 동작 우선순위: 팝업창>인벤토리>이동
-        if (!isOpen || PopupManager.instance.IsPopupActive()) return;
+        if (!isOpen) return;
+
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
@@ -103,8 +116,9 @@ public class InventoryManager : MonoBehaviour
             UpdateDescription(); // 설명 갱신
         }
 
-        if (Input.GetKeyDown(KeyCode.Return)) //아이템 사용
+        if (Input.GetKeyDown(KeyCode.Return) && !PopupManager.instance.IsPopupActive()) //아이템 사용
         {
+            Debug.Log("inv enter");
             Item selectedItem = items[currentIndex];
 
             if (selectedItem.isObtained)
@@ -241,7 +255,7 @@ public class InventoryManager : MonoBehaviour
 
     public bool IsInventoryActive() //팝업이 떠있는지 외부에서 확인할 수 있도록 함
     {
-        return isOpen;
+        return inventoryPanel.activeSelf;
     }
 
 }
