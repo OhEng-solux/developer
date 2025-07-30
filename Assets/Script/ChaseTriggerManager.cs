@@ -14,6 +14,18 @@ public class ChaseTriggerManager : MonoBehaviour
     public float chaseDelay = 1.0f;
     public float fadeInDuration = 1.0f;
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject); // 중복 방지
+        }
+    }
+    
     void Update()
     {
         if (!isChasing && dialogueStarted && DialogueManager.instance != null && !DialogueManager.instance.talking)
