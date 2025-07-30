@@ -41,8 +41,8 @@ public class ClueManager : MonoBehaviour
 
     private IEnumerator DelayedStartChaseDialogue()
     {
-        yield return new WaitForSeconds(2f); // ⏱️ 2초 대기
         yield return new WaitWhile(() => ((SaveManager.instance != null && SaveManager.instance.IsSaveActive())|| (ImagePopupManager.instance != null && ImagePopupManager.instance.IsImageActive())));
+        yield return new WaitForSeconds(2f); // ⏱️ 2초 대기
         var chaseTrigger = FindFirstObjectByType<ChaseTriggerManager>();
         if (chaseTrigger != null)
         {
