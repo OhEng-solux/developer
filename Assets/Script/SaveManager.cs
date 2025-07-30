@@ -56,6 +56,28 @@ public class SaveManager : MonoBehaviour
         }
     }
 
+    public IEnumerator OpenSave()
+    {
+        // 팝업 모두 닫힐 때까지 대기
+        yield return WaitForPopupClose();
+
+        // 대기 후 팝업 토글
+        isOpen = !isOpen;
+        savePanel.SetActive(isOpen);
+    }
+    private IEnumerator WaitForPopupClose()
+    {
+        // 세이브 창이나 이미지 팝업이 열려있는 동안 대기  
+        yield return new WaitWhile(() =>
+            (SaveManager.instance != null && SaveManager.instance.isOpen)
+            || (ImagePopupManager.instance != null && ImagePopupManager.instance.IsImageActive())
+        );
+
+        // 팝업이 모두 닫혔을 때 실행할 작업  
+        Debug.Log("팝업 모두 닫힘, 다음 작업 진행");
+    }
+
+
     void Start()
     {
         audioManager = FindFirstObjectByType<AudioManager>();
@@ -66,6 +88,16 @@ public class SaveManager : MonoBehaviour
         if (playerObj != null)
             playerManager = playerObj.GetComponent<PlayerManager>();
     }
+
+    /*private IEnumerator WaitForSavePanelClose()
+    {
+        // isOpen이 false가 될 때까지 기다림 (즉, 세이브 창이 닫힐 때까지)
+        yield return new WaitWhile(() => isOpen);
+
+        // 세이브 창이 닫힌 이후 실행할 작업 작성
+        Debug.Log("세이브 창 닫힘, 다음 작업 시작");
+    }*/
+    
 
     void Update()
     {
@@ -80,17 +112,19 @@ public class SaveManager : MonoBehaviour
         }
 
         if (!isOpen &&( InventoryManager.instance == null || InventoryManager.instance.IsInventoryActive())) return;
-        if (!isOpen && (Menu.instance == null || Menu.instance.activated)) return;
+        if (!isOpen && (Menu.instance == null || Menu.instance.activated|| ImagePopupManager.instance.IsImageActive())) return;
 
         // Z키 눌렀을 때 세이브창 열기/닫기 토글 (저장지점 근처일 때만) or 자동 저장
-        if (Input.GetKeyDown(KeyCode.Z)||AutoSave.instance.IsAutoSave())
+        if (Input.GetKeyDown(KeyCode.Z))
         {
-            if ((isSavePoint || AutoSave.instance.IsAutoSave()) && !isOpen)
+            Debug.Log("세이브 메니저 팝업");
+            if ((isSavePoint) && !isOpen)
             {
                 isOpen = !isOpen;
                 savePanel.SetActive(isOpen);
-                AutoSave.instance.autoSave = false;
+                //StartCoroutine(WaitForSavePanelClose());//
             }
+
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
