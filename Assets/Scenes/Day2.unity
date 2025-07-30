@@ -16596,7 +16596,7 @@ GameObject:
   - component: {fileID: 1232114790}
   - component: {fileID: 1232114791}
   m_Layer: 0
-  m_Name: TP to Dir
+  m_Name: TP to lb2
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -16687,9 +16687,9 @@ MonoBehaviour:
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
-  targetPosition: {fileID: 0}
-  targetMapName: Director_office
-  targetBound: {fileID: 0}
+  targetPosition: {fileID: 1690771512}
+  targetMapName: Lobby
+  targetBound: {fileID: 1526319386}
   requiredDialogueCount: 7
 --- !u!1 &1238723591
 GameObject:
