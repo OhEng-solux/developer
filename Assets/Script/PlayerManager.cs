@@ -132,6 +132,10 @@ public class PlayerManager : MovingObject
 
             while (currentWalkCount < walkCount)
             {
+                // 매 프레임 충돌 검사
+                bool collision = base.CheckCollision();
+                if (collision) break;
+
                 Vector2 newPosition = rigid.position;
 
                 if (vector.x != 0)
@@ -144,14 +148,11 @@ public class PlayerManager : MovingObject
                 }
 
                 rigid.MovePosition(newPosition);
-
-                // 현재는 매 프레임 항상 currentWalkCount 1씩 증가 (불필요한 중복 제거)
                 currentWalkCount++;
-
-                // 달리기 여부에 따라 speed만 조정, 카운트는 일정하게 유지
 
                 yield return new WaitForSeconds(0.01f);
             }
+
 
             currentWalkCount = 0;
         }

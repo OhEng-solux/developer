@@ -29,8 +29,6 @@ public class Menu : MonoBehaviour
     public bool activated;
 
     private int currentIndex = 0; // 현재 선택된 버튼 인덱스
-    private Color normalColor = Color.white;
-    private Color selectedColor = Color.yellow;
 
     void Start()
     {
@@ -139,16 +137,14 @@ public class Menu : MonoBehaviour
         for (int i = 0; i < menuButtons.Count; i++)
         {
             ColorBlock cb = menuButtons[i].colors;
-            if (i == currentIndex)
-            {
-                cb.normalColor = selectedColor;
-                cb.highlightedColor = selectedColor;
-            }
-            else
-            {
-                cb.normalColor = normalColor;
-                cb.highlightedColor = normalColor;
-            }
+
+            cb.normalColor = (i == currentIndex) ? Color.white : Color.gray;
+
+            // 선택된 버튼을 강조하고, 나머지는 비활성 색으로
+            cb.highlightedColor = cb.normalColor;
+            cb.pressedColor = cb.normalColor;
+            cb.selectedColor = cb.normalColor;
+
             menuButtons[i].colors = cb;
         }
     }
