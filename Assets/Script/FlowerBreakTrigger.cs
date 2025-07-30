@@ -22,10 +22,14 @@ public class FlowerBreakTrigger : MonoBehaviour
         if (intactFlower != null) intactFlower.SetActive(false);
         if (brokenFlower != null) brokenFlower.SetActive(true);
 
+        if (ClueManager.instance != null)
+        {
+            ClueManager.instance.flowerBroken = true; // 꽃병 깨짐 상태 업데이트
+        }
+
         hasBroken = true;
 
         Debug.Log("꽃병 깨짐");
-        // 필요하면 추후 추가 이벤트 호출 가능
     }
 
     void OnTriggerEnter2D(Collider2D other)

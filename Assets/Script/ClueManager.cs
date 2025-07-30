@@ -8,6 +8,8 @@ public class ClueManager : MonoBehaviour
     private bool[] clueRead = new bool[4];
     private int clueCount = 0;
 
+    public bool flowerBroken = false; // 꽃병 깨짐 상태
+
     private void Awake()
     {
         if (instance == null)
