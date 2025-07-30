@@ -1,33 +1,39 @@
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
 [System.Serializable]
 public class MemoTrigger
 {
-    public int dialogueCount;
-    public int sentenceIndex;
+    public int dialogueCount;    // 몇 번째 ShowDialogue에서
+    public int sentenceIndex;    // 그 안의 몇 번째 메시지(0부터)
 }
 
 public class MemoUIManager : MonoBehaviour
 {
     public List<GameObject> memoPages;
+
+    // Inspector에서 트리거 지정
     public MemoTrigger memoTrigger = new MemoTrigger() { dialogueCount = 5, sentenceIndex = 2 };
 
     private int currentPage = 0;
-    private bool memoActive = false;
     private bool memoShown = false;
-    private bool isWaitingContinue = false;
 
-    private int lastTriggeredDialogue = -1;
-    private int lastTriggeredSentence = -1;
+    private int pausedNextSentenceIndex = -1;
+
+    // 상태머신(대기/메모 등)
+    private enum Phase { None, AwaitingSpaceAtDialogueEnd, ShowingMemo }
+    private Phase memoPhase = Phase.None;
 
     void Start()
     {
-        // 메모 페이지 모두 비활성화
+        // 모든 메모 페이지 비활성화
         foreach (var page in memoPages)
-            if (page != null) page.SetActive(false);
+        {
+            if (page != null)
+                page.SetActive(false);
+        }
 
+        // OnSentenceFinished 구독
         if (DialogueManager.instance != null)
             DialogueManager.instance.OnSentenceFinished += OnSentenceFinished;
     }
@@ -42,80 +48,82 @@ public class MemoUIManager : MonoBehaviour
     {
         if (memoShown) return;
         if (DialogueProgressManager.instance == null) return;
-        if (DialogueManager.instance == null) return;
 
         int currentDialogueCount = DialogueProgressManager.instance.dialogueCount;
 
-        // 중복 트리거 방지
-        if (currentDialogueCount == lastTriggeredDialogue && sentenceIndex == lastTriggeredSentence)
-            return;
-
+        // 트리거 조건 충족
         if (currentDialogueCount == memoTrigger.dialogueCount && sentenceIndex == memoTrigger.sentenceIndex)
         {
-            lastTriggeredDialogue = currentDialogueCount;
-            lastTriggeredSentence = sentenceIndex;
-
             memoShown = true;
-            memoActive = true;
-            currentPage = 0;
 
-            // 메모가 뜰 때 대화 UI 숨김
-            DialogueManager.instance.autoNext = false;
+            pausedNextSentenceIndex = sentenceIndex + 1;
+
+            // 대화 잠시 멈춤, 스페이스 대기 상태 진입
             DialogueManager.instance.PauseDialogue();
-            DialogueManager.instance.HideDialogueUI();
-
-            ShowCurrentPage();
+            memoPhase = Phase.AwaitingSpaceAtDialogueEnd;
         }
     }
 
     void Update()
     {
-        if (memoActive && !isWaitingContinue && Input.GetKeyDown(KeyCode.Space))
+        // 1. 대사 끝 후 스페이스 받고 메모로 진입
+        if (memoPhase == Phase.AwaitingSpaceAtDialogueEnd)
         {
-            HideCurrentPage();
-            currentPage++;
-
-            if (currentPage >= memoPages.Count)
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                memoActive = false;
-                isWaitingContinue = true;
-
-                // 메모 끝난 뒤 다음 프레임에 대화 이어가기
-                StartCoroutine(ContinueAfterMemo());
-            }
-            else
-            {
+                DialogueManager.instance.HideDialogueUI();
+                currentPage = 0;
                 ShowCurrentPage();
+                memoPhase = Phase.ShowingMemo;
+            }
+        }
+
+        // 2. 메모 단계: 스페이스로 메모 넘기기
+        else if (memoPhase == Phase.ShowingMemo)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                HideCurrentPage();
+                currentPage++;
+
+                // 모든 메모 페이지 다 넘기면 → 대화 재개
+                if (currentPage >= memoPages.Count)
+                {
+                    memoPhase = Phase.None;
+                    DialogueManager.instance.ShowDialogueUI();
+
+                    // 다음 문장부터 대화 이어짐
+                    if (pausedNextSentenceIndex >= 0)
+                    {
+                        DialogueManager.instance.ContinueFrom(pausedNextSentenceIndex);
+                        pausedNextSentenceIndex = -1;
+                    }
+                }
+                else
+                {
+                    ShowCurrentPage();
+                }
             }
         }
     }
 
-    private IEnumerator ContinueAfterMemo()
-    {
-        DialogueManager.instance.SetKeyInputActive(false);
-        yield return null;
-
-        // 3번째 대화부터 진행하도록 설정 (인덱스 기준이라면 2 또는 3으로 조정할 것)
-        DialogueProgressManager.instance.dialogueCount = 2;
-
-        DialogueManager.instance.SkipToNextSentence();
-        DialogueManager.instance.ContinueDialogue();
-
-        DialogueManager.instance.ShowDialogueUI();
-
-        isWaitingContinue = false;
-    }
-
-
     private void ShowCurrentPage()
     {
         if (currentPage < memoPages.Count && memoPages[currentPage] != null)
+        {
             memoPages[currentPage].SetActive(true);
+        }
+        else if (currentPage < memoPages.Count)
+        {
+            Debug.LogWarning("메모 페이지가 null입니다!");
+        }
     }
 
     private void HideCurrentPage()
     {
         if (currentPage < memoPages.Count && memoPages[currentPage] != null)
+        {
             memoPages[currentPage].SetActive(false);
+        }
     }
 }

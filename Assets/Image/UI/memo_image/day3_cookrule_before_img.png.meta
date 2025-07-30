@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f2a9dcf3d87574918b49037ac90dc6c6
+guid: cbd0ca332395b43bf95406ec06de8a12
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8481889655787491124
-    second: taeju(demon)_3_sprite_0
+      213: -8144128230576158
+    second: day3_cookrule_before_img_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: taeju(demon)_3_sprite_0
+      name: day3_cookrule_before_img_0
       rect:
         serializedVersion: 2
-        x: 599
-        y: 489
-        width: 212
-        height: 422
+        x: 514
+        y: 64
+        width: 895
+        height: 955
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 43f0645f3b9b5b570800000000000000
-      internalID: 8481889655787491124
+      spriteID: 2efafc165f013eff0800000000000000
+      internalID: -8144128230576158
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      taeju(demon)_3_sprite_0: 8481889655787491124
+      day3_cookrule_before_img_0: -8144128230576158
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

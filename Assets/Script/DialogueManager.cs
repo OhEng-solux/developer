@@ -689,12 +689,37 @@ public class DialogueManager : MonoBehaviour
     {
         if (dialogueCanvas != null)
             dialogueCanvas.SetActive(false);
+
+        if (text != null)
+            text.gameObject.SetActive(false);
+
+        // 추가: 애니메이션 해제
+        if (animSprite != null)
+            animSprite.SetBool("Appear", false);
+
+        if (animDialogueWindow != null)
+            animDialogueWindow.SetBool("Appear", false);
     }
+
 
     public void ShowDialogueUI()
     {
         if (dialogueCanvas != null)
             dialogueCanvas.SetActive(true);
+
+        // 추가: 애니메이션 트리거
+        if (animSprite != null)
+            animSprite.SetBool("Appear", true);
+
+        if (animDialogueWindow != null)
+            animDialogueWindow.SetBool("Appear", true);
+    }
+
+
+    public void ContinueFrom(int nextSentenceIndex)
+    {
+        count = nextSentenceIndex;   
+        ContinueDialogue();
     }
 
 }

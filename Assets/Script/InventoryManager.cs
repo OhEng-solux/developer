@@ -146,6 +146,13 @@ public class InventoryManager : MonoBehaviour
             HiddenNoteEvent.current.TriggerHiddenNoteEvent();
         }
 
+        // 변환된 쪽지 아이템을 어디서든 다시 보기
+        else if (item.itemName == "숨겨진 규칙")
+        {
+            //HiddenNoteViewerManager.instance.ShowNote();
+            return; // 인벤토리 닫지 않음 (보여주기만 하고 다시 ESC로 닫게)
+        }
+
         // 소모성 아이템일 경우 사용 후 제거
         if (item.itemType == ItemType.Consumable)
         {

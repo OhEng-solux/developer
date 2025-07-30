@@ -26,7 +26,7 @@ public class PlayerManager : MovingObject
     private GameObject startDialogues;
     private Rigidbody2D rigid;
 
-    // **추가: queue, currentWalkCount 필드 선언**
+    // 추가: queue, currentWalkCount 필드 선언
     private Queue<string> queue;
 
     IEnumerator Start()
@@ -37,19 +37,21 @@ public class PlayerManager : MovingObject
             yield break;
         }
 
+        // --- 이동 차단 (게임 시작 강조)
+        canMove = false;
+
         GameObject startDialogues = GameObject.FindWithTag("Start Dialogue");
-        startDialogues.gameObject.SetActive(false); // 각 오브젝트 비활성화
+        startDialogues.gameObject.SetActive(false);
 
+        dayStartImage.SetActive(true);
+        Time.timeScale = 0f;
 
-        dayStartImage.SetActive(true); // day N 켜기
-        Time.timeScale = 0f; // 게임 일시정지
+        queue = new Queue<string>();
 
-        queue = new Queue<string>(); // 필드 변수 초기화
+        yield return new WaitForSecondsRealtime(2.5f);
+        dayStartImage.SetActive(false);
 
-        yield return new WaitForSecondsRealtime(2.5f); // 2.5초 대기
-        dayStartImage.SetActive(false); // day N 끄기
-
-        Time.timeScale = 1f; // 게임 재개
+        Time.timeScale = 1f;
 
         theFade = FindFirstObjectByType<FadeManager>();
         Debug.Log("fadein");
@@ -58,6 +60,9 @@ public class PlayerManager : MovingObject
 
         Debug.Log("대화 가능");
         startDialogues.gameObject.SetActive(true);
+
+        // --- 여기서부터 이동 허용
+        canMove = true;
 
         if (instance == null)
         {
@@ -81,7 +86,7 @@ public class PlayerManager : MovingObject
 
         while ((Input.GetAxisRaw("Vertical") != 0 || Input.GetAxisRaw("Horizontal") != 0) && !notMove)
         {
-            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
+            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
             {
                 applyRunSpeed = runSpeed;
                 applyRunFlag = true;
@@ -140,8 +145,10 @@ public class PlayerManager : MovingObject
 
                 rigid.MovePosition(newPosition);
 
-                if (applyRunFlag) currentWalkCount++;
+                // 현재는 매 프레임 항상 currentWalkCount 1씩 증가 (불필요한 중복 제거)
                 currentWalkCount++;
+
+                // 달리기 여부에 따라 speed만 조정, 카운트는 일정하게 유지
 
                 yield return new WaitForSeconds(0.01f);
             }

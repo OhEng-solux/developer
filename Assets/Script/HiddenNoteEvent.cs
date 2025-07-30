@@ -13,6 +13,7 @@ public class HiddenNoteEvent : MonoBehaviour
 
     public Sprite clueImage; // 냉장고용
     public GameObject imageUI; // 이미지 띄우는 UI
+
     public Item itemToAdd; // 얻을 아이템
     public Item itemToReplace; // 기존 아이템 (살균기용)
     [SerializeField] private GameObject objectToDisable; // 쪽지 습득 시 사라질 오브젝트
@@ -53,7 +54,8 @@ public class HiddenNoteEvent : MonoBehaviour
             Debug.Log("[냉장고] 관련 오브젝트 비활성화됨: " + objectToDisable.name);
         }
 
-        imageUI.SetActive(true); // 쪽지 이미지 보여주기
+        imageUI.GetComponent<Image>().sprite = clueImage; // 쪽지 이미지 설정
+        imageUI.SetActive(true);               // 이미지 UI 띄우기
         DialogueManager.instance.ShowDialogue(endDialogue);
         StartCoroutine(HideImageWhenDialogueEnds());
     }
@@ -120,7 +122,10 @@ public class HiddenNoteEvent : MonoBehaviour
         if (itemToReplace != null && itemToReplace.isObtained)
         {
             InventoryManager.instance.ReplaceItem(itemToReplace.itemName, itemToAdd);
+
+            imageUI.GetComponent<Image>().sprite = clueImage;
             imageUI.SetActive(true);
+
             DialogueManager.instance.ShowDialogue(endDialogue);
             StartCoroutine(HideImageWhenDialogueEnds());
         }

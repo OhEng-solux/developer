@@ -16,6 +16,7 @@ public class TransferScene : MonoBehaviour
     {
         theFade = FindFirstObjectByType<FadeManager>();
         theOrder = FindFirstObjectByType<OrderManager>();
+        theCamera = FindFirstObjectByType<CameraManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
