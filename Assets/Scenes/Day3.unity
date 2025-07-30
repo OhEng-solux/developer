@@ -174,6 +174,8 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!114 &4545340
@@ -412,6 +414,8 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &24061268
@@ -1026,6 +1030,8 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &109318149
@@ -1943,23 +1949,24 @@ MonoBehaviour:
   eventType: 0
   preDialogue:
     sentences:
-    - "\u2019\uB0C9\uC7A5\uACE0\uC5D0 \uC885\uC774\uAC00 \uBD99\uC5B4 \uC788\uB2E4.
-      \uD655\uC778\uD574 \uBCF4\uC790.\u2019"
+    - "'\uB0C9\uC7A5\uACE0\uC5D0 \uC885\uC774\uAC00 \uBD99\uC5B4 \uC788\uB2E4. \uD655\uC778\uD574
+      \uBCF4\uC790.'"
     sprites:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
   endDialogue:
     sentences:
-    - "\u2019\uC870\uB9AC\uC2E4 \uC0AC\uC6A9 \uADDC\uCE59\u2019 \uC544\uC774\uD15C\uC744
-      \uD68D\uB4DD\uD588\uB2E4"
-    - "\u2019\uC22B\uC790 \uC544\uB798\uC5D0 \uC65C \uBC11\uC904\uC774 \uC788\uC9C0?\u2019"
-    - "\u2019\uB204\uAC00 \uBAB0\uB798 \uADF8\uB9BC\uC744 \uADF8\uB824 \uB193\uC9C4
-      \uC54A\uC558\uB294\uC9C0 \uD655\uC778\uD574 \uBD10\uC57C\uACA0\uB2E4.\u2019"
+    - "'\uC870\uB9AC\uC2E4 \uC0AC\uC6A9 \uADDC\uCE59' \uC544\uC774\uD15C\uC744 \uD68D\uB4DD\uD588\uB2E4."
+    - "'\uC22B\uC790 \uC544\uB798\uC5D0 \uC65C \uBC11\uC904\uC774 \uC788\uC9C0?'"
+    - "'\uB204\uAC00 \uBAB0\uB798 \uADF8\uB9BC\uC744 \uADF8\uB824 \uB193\uC9C4 \uC54A\uC558\uB294\uC9C0
+      \uD655\uC778\uD574 \uBD10\uC57C\uACA0\uB2E4.'"
     - "Hint. \uBE44\uBC00\uD39C\uC73C\uB85C \uC4F4 \uAE00\uC790\uB294 \uD30C\uB780
-      \uBE5B \uC790\uC678\uC120\uC744 \uBC1B\uC544\uC57C \uBAA8\uC2B5\uC744 \uB4DC\uB7EC\uB0B8\uB2E4"
+      \uBE5B \uC790\uC678\uC120\uC744 \uBC1B\uC544\uC57C \uBAA8\uC2B5\uC744 \uB4DC\uB7EC\uB0B8\uB2E4."
     sprites:
     - {fileID: 0}
     - {fileID: 0}
@@ -1970,6 +1977,8 @@ MonoBehaviour:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
   clueImage: {fileID: -8144128230576158, guid: cbd0ca332395b43bf95406ec06de8a12, type: 3}
@@ -3853,6 +3862,8 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
   successDialogue:
@@ -3862,6 +3873,8 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
   failDialogue:
@@ -3874,6 +3887,8 @@ MonoBehaviour:
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
   dialSystemObject: {fileID: 1505339112}
@@ -7958,6 +7973,8 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &794900231
@@ -9089,6 +9106,8 @@ MonoBehaviour:
     sentences: []
     sprites: []
     dialogueWindows: []
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &960024737
@@ -9420,6 +9439,8 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &997453149
@@ -9735,6 +9756,8 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &1046440516
@@ -10463,6 +10486,8 @@ MonoBehaviour:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &1099742526
@@ -14490,6 +14515,8 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &1183968829
@@ -16135,6 +16162,8 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &1324566200
@@ -16934,6 +16963,8 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &1386971648
@@ -18512,7 +18543,6 @@ MonoBehaviour:
   transferMapName: Kitchen
   target: {fileID: 1077311721}
   targetBound: {fileID: 142939181}
-  thePlayer: {fileID: 0}
 --- !u!61 &1506368370
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19546,6 +19576,8 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &1625476361
@@ -19763,7 +19795,6 @@ MonoBehaviour:
   transferMapName: Lobby
   target: {fileID: 1935750051}
   targetBound: {fileID: 252222577}
-  thePlayer: {fileID: 0}
 --- !u!61 &1689707474
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19826,6 +19857,8 @@ MonoBehaviour:
     sentences: []
     sprites: []
     dialogueWindows: []
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
   targetPosition: {fileID: 1935750051}
@@ -22128,6 +22161,8 @@ MonoBehaviour:
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &1853597561
@@ -22778,6 +22813,8 @@ MonoBehaviour:
     dialogueWindows:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &1915865009
@@ -22880,6 +22917,8 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
   endDialogue:
@@ -22891,6 +22930,8 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
   clueImage: {fileID: 6721211905236489645, guid: f413d712f44e04cf48549d7b4f3bad54, type: 3}
@@ -23127,6 +23168,8 @@ MonoBehaviour:
     sentences: []
     sprites: []
     dialogueWindows: []
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &1934097121
@@ -23828,6 +23871,8 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &1987833287
@@ -24830,6 +24875,8 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
 --- !u!61 &2089207514
