@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class ImagePopupManager : MonoBehaviour
@@ -46,5 +46,11 @@ public class ImagePopupManager : MonoBehaviour
     {
         if (popupPanel != null)
             popupPanel.SetActive(false);
+    }
+
+    public bool IsImageActive() //팝업이 떠있는지 외부에서 확인할 수 있도록 함
+    {
+        Debug.Log("popupPanel.activeSelf" + popupPanel.activeSelf);
+        return popupPanel.activeSelf;
     }
 }
