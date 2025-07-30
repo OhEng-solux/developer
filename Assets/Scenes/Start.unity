@@ -1123,10 +1123,6 @@ MonoBehaviour:
   - {fileID: 707763235}
   - {fileID: 867783716}
   - {fileID: 868997910}
-  highlightImgs:
-  - {fileID: 1860762491}
-  - {fileID: 702927175}
-  - {fileID: 1591719600}
   savePanel: {fileID: 369165323}
   icon: {fileID: 1123897833}
   Panel: {fileID: 1863027365}
@@ -1235,7 +1231,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &702927176
 Transform:
   m_ObjectHideFlags: 0
@@ -2796,7 +2792,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1591719601
 Transform:
   m_ObjectHideFlags: 0
@@ -3487,7 +3483,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1860762492
 Transform:
   m_ObjectHideFlags: 0
@@ -3655,10 +3651,6 @@ MonoBehaviour:
   - {fileID: 707763235}
   - {fileID: 867783716}
   - {fileID: 868997910}
-  highlightImgs:
-  - {fileID: 1860762491}
-  - {fileID: 702927175}
-  - {fileID: 1591719600}
   savePanel: {fileID: 369165323}
   icon: {fileID: 1123897833}
   Panel: {fileID: 1863027365}
