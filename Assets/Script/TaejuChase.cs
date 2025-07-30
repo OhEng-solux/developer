@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
 public class TaejuChase : MonoBehaviour
@@ -32,11 +33,13 @@ public class TaejuChase : MonoBehaviour
         rb.freezeRotation = true;
 
         // 태주-플레이어 충돌 무시
+        /*
         Physics2D.IgnoreLayerCollision(
             LayerMask.NameToLayer("character"),
             LayerMask.NameToLayer("character"),
             true
         );
+        */
     }
 
     void Update()
@@ -136,4 +139,13 @@ public class TaejuChase : MonoBehaviour
 
         StartChase();
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            SceneManager.LoadSceneAsync("Ending_Bad");
+        }
+    }
+
 }
