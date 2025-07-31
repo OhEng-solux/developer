@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -6,7 +6,7 @@ public class StartNEndMenu : MonoBehaviour
 {
     public static StartNEndMenu instance;
 
-    public Button[] buttons;   // Inspector¿¡ ¹öÆ° 3°³ ¿¬°á
+    public Button[] buttons;   // Inspectorì— ë²„íŠ¼ 3ê°œ ì—°ê²°
     public GameObject savePanel;
     public GameObject icon;
     public GameObject Panel;
@@ -36,12 +36,12 @@ public class StartNEndMenu : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("ÇöÀç ¾À ÀÌ¸§: " + gameObject.scene.name);
+        Debug.Log("í˜„ì¬ ì”¬ ì´ë¦„: " + gameObject.scene.name);
 
         if (gameObject.scene.name=="Ending_Bad"&&(DialogueManager.instance == null || DialogueManager.instance.talking))
         {
             Panel.gameObject.SetActive(false);
-            return; // ´ëÈ­ ÁßÀÌ¸é ´õ ÀÌ»ó ÁøÇà X
+            return; // ëŒ€í™” ì¤‘ì´ë©´ ë” ì´ìƒ ì§„í–‰ X
         }
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
@@ -81,20 +81,20 @@ public class StartNEndMenu : MonoBehaviour
     void OnSelect(int idx)
     {
         if (gameObject.scene.name == "Start")
-        {
-            Panel.gameObject.SetActive(false);
+        {           
             switch (idx)
             {
-                case 0: // Ã³À½ºÎÅÍ ½ÃÀÛ
-                    Debug.Log("Ã³À½ºÎÅÍ ½ÃÀÛ");
+                case 0: // ì²˜ìŒë¶€í„° ì‹œì‘
+                    Debug.Log("ì²˜ìŒë¶€í„° ì‹œì‘");
                     SceneManager.LoadScene("Prologue");
                     break;
-                case 1: // SavePanel ÆË¾÷
-                    Debug.Log("¼¼ÀÌºê ÆĞ³Î ÆË¾÷");
+                case 1: // SavePanel íŒì—…
+                    Debug.Log("ì„¸ì´ë¸Œ íŒ¨ë„ íŒì—…");
                     SaveManager.instance.StartCoroutine(SaveManager.instance.OpenSave());
+                    Panel.gameObject.SetActive(false);
                     break;
-                case 2: // Á¾·á
-                    Debug.Log("°ÔÀÓ Á¾·á");
+                case 2: // ì¢…ë£Œ
+                    Debug.Log("ê²Œì„ ì¢…ë£Œ");
                     Application.Quit();
 #if UNITY_EDITOR
                 UnityEditor.EditorApplication.isPlaying = false;
@@ -107,17 +107,23 @@ public class StartNEndMenu : MonoBehaviour
             //Panel.gameObject.SetActive(false);
             switch (idx)
             {
-                case 0: // ´Ù½ÃÇÏ±â
-                    Debug.Log("´Ù½Ã ½ÃÀÛ");
+                case 0: // ë‹¤ì‹œí•˜ê¸°
+                    Debug.Log("ë‹¤ì‹œ ì‹œì‘");
                     SaveManager.instance.StartCoroutine(SaveManager.instance.OpenSave());
                     Panel.gameObject.SetActive(false);
                     break;
                 case 1: // 
-                    Debug.Log("¸ŞÀÎÀ¸·Î");
+                    Debug.Log("ë©”ì¸ìœ¼ë¡œ");
                     SceneManager.LoadScene("Start");
                     break;
             }
         }
+        return;
+    }
+    public bool IsPanelActive() //íŒì—…ì´ ë– ìˆëŠ”ì§€ ì™¸ë¶€ì—ì„œ í™•ì¸í•  ìˆ˜ ìˆë„ë¡ í•¨
+    {
+        Debug.Log("IsPanelActive íŒì—…ì¤‘"+ Panel.activeSelf);
+        return Panel.activeSelf;
     }
 
 }

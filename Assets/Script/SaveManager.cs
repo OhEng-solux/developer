@@ -72,7 +72,7 @@ public class SaveManager : MonoBehaviour
     {
         // 이미지 팝업이 열려있는 동안 대기  
         yield return new WaitWhile(() =>
-            (ImagePopupManager.instance != null && ImagePopupManager.instance.IsImageActive())&& (PopupManager.instance != null && PopupManager.instance.IsPopupActive())
+            (ImagePopupManager.instance != null && ImagePopupManager.instance.IsImageActive()) && (PopupManager.instance != null && PopupManager.instance.IsPopupActive())
         );
 
         // 팝업이 모두 닫혔을 때 실행할 작업  
@@ -99,7 +99,7 @@ public class SaveManager : MonoBehaviour
         // 세이브 창이 닫힌 이후 실행할 작업 작성
         Debug.Log("세이브 창 닫힘, 다음 작업 시작");
     }*/
-    
+
 
     void Update()
     {
@@ -118,16 +118,15 @@ public class SaveManager : MonoBehaviour
         if (sceneName == "Start")
         {
             isStartMenu = true;
-            isOpen = true;
             UpdateSlots();
             HighlightSlot(currentIndex);
         }
 
-        if (!isOpen &&( InventoryManager.instance == null || InventoryManager.instance.IsInventoryActive())) return;
-        
+        if (!isOpen && (InventoryManager.instance == null || InventoryManager.instance.IsInventoryActive())) return;
+        if (!isOpen && (StartNEndMenu.instance == null || StartNEndMenu.instance.IsPanelActive())) return;
         if (!isOpen && (Menu.instance == null || Menu.instance.activated)) return;
 
-        if (sceneName=="Day6"&&(ImagePopupManager.instance == null || ImagePopupManager.instance.IsImageActive())) return;
+        if (sceneName == "Day6" && (ImagePopupManager.instance == null || ImagePopupManager.instance.IsImageActive())) return;
 
 
         // Z키 눌렀을 때 세이브창 열기/닫기 토글 (저장지점 근처일 때만) or 자동 저장
@@ -183,7 +182,7 @@ public class SaveManager : MonoBehaviour
         // 팝업창이 활성화되어 있으면 입력 무시
 
         if (!isOpen || PopupManager.instance == null || PopupManager.instance.IsPopupActive()) return;
-        
+
         // 방향키 입력 처리
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
@@ -237,7 +236,7 @@ public class SaveManager : MonoBehaviour
         }
 
         // 엔터키로 로드 (시작 메뉴 혹은 메뉴에서만)
-        if (Input.GetKeyDown(KeyCode.Return) && (isStartMenu || isMenu|| isEnding))
+        if (Input.GetKeyDown(KeyCode.Return) && (isStartMenu || isMenu || isEnding))
         {
             string path = Application.persistentDataPath + $"/SaveFile_{currentIndex}.dat";
             inputBlocked = true;

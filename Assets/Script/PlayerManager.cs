@@ -163,6 +163,7 @@ public class PlayerManager : MovingObject
 
     void Update()
     {
+        Debug.Log("PlayerManagerUpdate 도는 중");
         // UI 팝업, 세이브, 인벤토리 등 활성화 상태 일 때 입력 완전히 차단
         if ((PopupManager.instance != null && PopupManager.instance.IsPopupActive())
             || (SaveManager.instance != null && SaveManager.instance.IsSaveActive())
