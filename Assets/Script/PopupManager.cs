@@ -95,9 +95,9 @@ public class PopupManager : MonoBehaviour
 
     public void ClosePopupAndDelayInput()
     {
-        popupPanel.SetActive(false);
         isPopupOpen = false;
         StartCoroutine(DelayInputForPopup());
+        popupPanel.SetActive(false);
     }
 
     private IEnumerator DelayInputForPopup()
