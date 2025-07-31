@@ -42,6 +42,10 @@ public class TestChoice : MonoBehaviour
         hasInteracted = true;
         theOrder.NotMove();
 
+        // 플레이어 이동 금지
+        if (PlayerManager.instance != null)
+            PlayerManager.instance.canMove = false;
+
         if (preDialogue != null)
         {
             theDM.ShowDialogue(preDialogue);
@@ -64,7 +68,6 @@ public class TestChoice : MonoBehaviour
             theDM.ShowDialogue(successDialogue);
             yield return new WaitUntil(() => !theDM.talking);
 
-            //아이템 획득
             InventoryManager inv = FindFirstObjectByType<InventoryManager>();
             if (rewardItem != null && inv != null)
             {
@@ -74,7 +77,7 @@ public class TestChoice : MonoBehaviour
         else
         {
             npcMoved = false;
-            theDM.autoNext = false; // autoNext�� �� ��ȭ���� OFF���� �� üũ
+            theDM.autoNext = false;
             theDM.OnSentenceFinished += OnSentenceFinishedHandler;
             theDM.ShowDialogue(failDialogue);
             yield return new WaitUntil(() => !theDM.talking);
@@ -82,7 +85,12 @@ public class TestChoice : MonoBehaviour
         }
 
         theOrder.Move();
+
+        // 대화 끝났으니 이동 가능하게
+        if (PlayerManager.instance != null)
+            PlayerManager.instance.canMove = true;
     }
+
 
     private void OnSentenceFinishedHandler(int sentenceIndex)
     {
