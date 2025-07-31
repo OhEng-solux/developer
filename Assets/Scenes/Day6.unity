@@ -1714,7 +1714,6 @@ GameObject:
   m_Component:
   - component: {fileID: 29963691}
   - component: {fileID: 29963690}
-  - component: {fileID: 29963692}
   m_Layer: 0
   m_Name: Light
   m_TagString: Untagged
@@ -1792,18 +1791,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &29963692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 29963689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d8a3847be73e5b4f864a80d3739b2c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &31862104
 GameObject:
   m_ObjectHideFlags: 0
@@ -51325,6 +51312,7 @@ GameObject:
   - component: {fileID: 1306316783}
   - component: {fileID: 1306316782}
   - component: {fileID: 1306316785}
+  - component: {fileID: 1306316786}
   m_Layer: 3
   m_Name: player
   m_TagString: Player
@@ -51562,11 +51550,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ccaf293e195ff1418dd20d790dbc5a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  closePopup: 0
   savePanel: {fileID: 1557405765}
   slots:
   - {fileID: 769315442}
   - {fileID: 1317206798}
   - {fileID: 1802009424}
+  isEnding: 0
 --- !u!114 &1306316784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51589,6 +51579,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e13cf7aa774b3f849ab1c1fd75227e05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1306316786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1306316774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d8a3847be73e5b4f864a80d3739b2c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1311648079
@@ -52305,6 +52307,7 @@ MonoBehaviour:
   - {fileID: 1030386431}
   - {fileID: 474994897}
   activated: 0
+  closePopup: 0
 --- !u!114 &1325817282
 MonoBehaviour:
   m_ObjectHideFlags: 0
