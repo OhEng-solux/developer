@@ -35,6 +35,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Day6.unity
     guid: 354ecda7aa384544eb836c56bc6108cf
+  - enabled: 1
+    path: Assets/Scenes/Ending_Bad.unity
+    guid: 08b4fab6f062b40b780422a9e00d2d33
+  - enabled: 1
+    path: Assets/Scenes/Ending_Hidden.unity
+    guid: e1d758ed9f20844ec9a0b44fe66c69b0
+  - enabled: 1
+    path: Assets/Scenes/Ending_True.unity
+    guid: cb261499d063c4d44bedaed6ae62c81f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
   m_UseUCBPForAssetBundles: 0
