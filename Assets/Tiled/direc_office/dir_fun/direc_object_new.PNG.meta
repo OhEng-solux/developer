@@ -73,7 +73,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -178,10 +178,10 @@ TextureImporter:
       name: direc_object_new_0
       rect:
         serializedVersion: 2
-        x: 209
-        y: 2589
-        width: 242
-        height: 792
+        x: 208
+        y: 2587
+        width: 243
+        height: 795
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,10 +200,10 @@ TextureImporter:
       name: direc_object_new_1
       rect:
         serializedVersion: 2
-        x: 559
-        y: 2869
-        width: 1032
-        height: 442
+        x: 558
+        y: 2866
+        width: 1033
+        height: 448
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -222,10 +222,10 @@ TextureImporter:
       name: direc_object_new_2
       rect:
         serializedVersion: 2
-        x: 1829
-        y: 3029
-        width: 792
-        height: 232
+        x: 1828
+        y: 3028
+        width: 796
+        height: 234
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,10 +244,10 @@ TextureImporter:
       name: direc_object_new_3
       rect:
         serializedVersion: 2
-        x: 259
-        y: 2049
-        width: 522
-        height: 362
+        x: 216
+        y: 2050
+        width: 610
+        height: 364
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,10 +266,10 @@ TextureImporter:
       name: direc_object_new_4
       rect:
         serializedVersion: 2
-        x: 1139
-        y: 2339
-        width: 402
-        height: 402
+        x: 1136
+        y: 2337
+        width: 406
+        height: 406
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -288,10 +288,10 @@ TextureImporter:
       name: direc_object_new_5
       rect:
         serializedVersion: 2
-        x: 1829
-        y: 2169
-        width: 102
-        height: 202
+        x: 1828
+        y: 2168
+        width: 104
+        height: 205
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,10 +310,10 @@ TextureImporter:
       name: direc_object_new_6
       rect:
         serializedVersion: 2
-        x: 219
-        y: 2209
-        width: 52
-        height: 72
+        x: 218
+        y: 2207
+        width: 55
+        height: 75
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -332,10 +332,10 @@ TextureImporter:
       name: direc_object_new_7
       rect:
         serializedVersion: 2
-        x: 1189
-        y: 2059
-        width: 262
-        height: 152
+        x: 1188
+        y: 2058
+        width: 263
+        height: 156
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -354,10 +354,10 @@ TextureImporter:
       name: direc_object_new_8
       rect:
         serializedVersion: 2
-        x: 2119
-        y: 2099
-        width: 232
-        height: 232
+        x: 2117
+        y: 2097
+        width: 237
+        height: 237
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -376,10 +376,10 @@ TextureImporter:
       name: direc_object_new_9
       rect:
         serializedVersion: 2
-        x: 759
-        y: 2159
-        width: 52
-        height: 42
+        x: 757
+        y: 2158
+        width: 55
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -398,10 +398,10 @@ TextureImporter:
       name: direc_object_new_10
       rect:
         serializedVersion: 2
-        x: 789
-        y: 2099
-        width: 32
-        height: 22
+        x: 786
+        y: 2097
+        width: 36
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -420,10 +420,10 @@ TextureImporter:
       name: direc_object_new_11
       rect:
         serializedVersion: 2
-        x: 189
-        y: 1539
-        width: 952
-        height: 382
+        x: 188
+        y: 1538
+        width: 955
+        height: 383
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -442,10 +442,10 @@ TextureImporter:
       name: direc_object_new_12
       rect:
         serializedVersion: 2
-        x: 1249
-        y: 1639
-        width: 492
-        height: 282
+        x: 1247
+        y: 1636
+        width: 497
+        height: 285
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -464,7 +464,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 823c1b2bd15ee4e1793c4831ef652f5a
     internalID: 0
     vertices: []
     indices: 
