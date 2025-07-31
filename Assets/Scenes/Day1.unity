@@ -1914,7 +1914,7 @@ MonoBehaviour:
     - "\uB124, \uAC10\uC0AC\uD569\uB2C8\uB2E4!"
     - "'\uBA3C\uC800 \uD1F4\uADFC\uD574\uB3C4 \uB41C\uB2E4\uB2C8..! \uC6D0\uC7A5\uB2D8
       \uC815\uB9D0 \uCE5C\uC808\uD558\uC2DC\uB124.'"
-    - "\u2019\uADF8\uB7FC \uC218\uBA74\uC2E4\uB85C \uC774\uB3D9\uD574 \uBCFC\uAE4C?\u2019"
+    - "'\uADF8\uB7FC \uC218\uBA74\uC2E4\uB85C \uC774\uB3D9\uD574 \uBCFC\uAE4C?\u2019"
     sprites:
     - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
     - {fileID: -4012656024804308703, guid: 0287b2accd48540dfadf0a792713887a, type: 3}
