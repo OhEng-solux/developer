@@ -36,7 +36,7 @@ public class KeyUseManager : MonoBehaviour
         if (!playerInZone)
         {
             Debug.Log("[KeyUseManager] 열쇠 사용 불가 - 범위 밖");
-            PopupManager.instance?.ShowPopup("아직 사용할 수 없습니다");
+            PopupManager.instance?.ShowPopup("아무 일도 일어나지 않았습니다.");
             return;
         }
 
