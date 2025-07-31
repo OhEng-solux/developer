@@ -9,7 +9,7 @@ public class PuzzleManager : MonoBehaviour
     public List<Transform> correctAnswerButtons;
 
     [Header("정답 (ex: 2,0,3)")]
-    public List<int> answerSequence; // 정답
+    public List<int> answerSequence;
 
     private List<int> playerInputSequence = new List<int>();
 
@@ -17,24 +17,23 @@ public class PuzzleManager : MonoBehaviour
     public GameObject puzzlePanel;
     public Dialogue successDialogue;
     public Dialogue failDialogue;
+
     [Header("Item")]
     private InventoryManager theInventory;
-    [SerializeField] private Item rewardItem; // 보상 아이템
-
+    [SerializeField] private Item rewardItem;
 
     private DialogueManager dm;
     private bool _isPuzzleActive = false;
     private bool _isPuzzleSolved = false;
 
     private int selectedButtonIndex = 0;
-    private Color normalColor = Color.white;
-    private Color selectedColor = Color.yellow;
+    private HashSet<int> pressedIndices = new HashSet<int>();
+
+    [Header("선택 강조 투명도 (0.0 ~ 1.0)")]
+    [Range(0f, 1f)] public float selectedAlpha = 0.6f;
 
     public bool IsPuzzleActive() => _isPuzzleActive;
     public bool IsPuzzleSolved() => _isPuzzleSolved;
-
-    private Color pressedColor = new Color(0.7f, 0.7f, 0.7f); 
-    private HashSet<int> pressedIndices = new HashSet<int>();
 
     private void Start()
     {
@@ -52,54 +51,69 @@ public class PuzzleManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow)) MoveSelection(-1);
         if (Input.GetKeyDown(KeyCode.RightArrow)) MoveSelection(1);
-
-        if (Input.GetKeyDown(KeyCode.Return))
-            PressSelectedButton();
+        if (Input.GetKeyDown(KeyCode.Return)) PressSelectedButton();
     }
 
     void MoveSelection(int direction)
     {
-      
-        SetButtonColor(selectedButtonIndex, pressedIndices.Contains(selectedButtonIndex) ? pressedColor : normalColor);
+        // 이전 버튼이 눌린 게 아니라면 투명하게 만들기
+        if (!pressedIndices.Contains(selectedButtonIndex))
+            SetButtonVisual(selectedButtonIndex, selectedAlpha, false);
 
         selectedButtonIndex += direction;
         if (selectedButtonIndex < 0) selectedButtonIndex = correctAnswerButtons.Count - 1;
         if (selectedButtonIndex >= correctAnswerButtons.Count) selectedButtonIndex = 0;
 
-   
-        SetButtonColor(selectedButtonIndex, selectedColor);
+        // 새 선택 버튼이 눌린 버튼이 아니라면 완전 불투명하게 강조
+        if (!pressedIndices.Contains(selectedButtonIndex))
+            SetButtonVisual(selectedButtonIndex, 1f, false);
     }
 
-    void SetButtonColor(int index, Color color)
+    void SetButtonVisual(int index, float alpha, bool pressed = false)
     {
         if (index >= 0 && index < correctAnswerButtons.Count)
         {
             var img = correctAnswerButtons[index].GetComponent<Image>();
-            if (img != null)
+            var btn = correctAnswerButtons[index].GetComponent<AnswerButton>();
+            if (img != null && btn != null)
             {
-                img.color = color;
+                img.sprite = pressed ? btn.pressedSprite : btn.normalSprite;
+                Color c = img.color;
+                c.a = alpha;
+                img.color = c;
             }
         }
     }
 
     void PressSelectedButton()
     {
-
-        SetButtonColor(selectedButtonIndex, pressedColor);
-        pressedIndices.Add(selectedButtonIndex);
-
-        playerInputSequence.Add(selectedButtonIndex);
-
-        var btn = correctAnswerButtons[selectedButtonIndex].GetComponent<AnswerButton>();
-        if (btn != null && !string.IsNullOrEmpty(btn.button_sound) && AudioManager.instance != null)
-            AudioManager.instance.Play(btn.button_sound);
-
-        if (playerInputSequence.Count == answerSequence.Count)
+        if (pressedIndices.Contains(selectedButtonIndex))
         {
-            if (IsCorrect())
-                StartCoroutine(SuccessSequence());
-            else
-                StartCoroutine(FailSequence());
+            SetButtonVisual(
+                selectedButtonIndex,
+                selectedButtonIndex == this.selectedButtonIndex ? 1f : selectedAlpha,
+                false
+            );
+            pressedIndices.Remove(selectedButtonIndex);
+            playerInputSequence.RemoveAll(x => x == selectedButtonIndex);
+        }
+        else
+        {
+            SetButtonVisual(selectedButtonIndex, 1f, true);
+            pressedIndices.Add(selectedButtonIndex);
+            playerInputSequence.Add(selectedButtonIndex);
+
+            var btn = correctAnswerButtons[selectedButtonIndex].GetComponent<AnswerButton>();
+            if (btn != null && !string.IsNullOrEmpty(btn.button_sound) && AudioManager.instance != null)
+                AudioManager.instance.Play(btn.button_sound);
+
+            if (playerInputSequence.Count == answerSequence.Count)
+            {
+                if (IsCorrect())
+                    StartCoroutine(SuccessSequence());
+                else
+                    StartCoroutine(FailSequence());
+            }
         }
     }
 
@@ -117,14 +131,12 @@ public class PuzzleManager : MonoBehaviour
         Time.timeScale = 1f;
         dm.ShowDialogue(successDialogue); // 대화 출력
 
-        // 실제 아이템 획득 처리
         if (rewardItem != null && theInventory != null)
         {
-            theInventory.AcquireItem(rewardItem); // 아이템 지급
+            theInventory.AcquireItem(rewardItem);
             Debug.Log("[퍼즐 성공] 아이템 지급 완료: " + rewardItem.itemName);
         }
 
-        // 상태 초기화
         _isPuzzleActive = false;
         _isPuzzleSolved = true;
         playerInputSequence.Clear();
@@ -148,7 +160,6 @@ public class PuzzleManager : MonoBehaviour
             PlayerManager.instance.canMove = true;
     }
 
-
     public void StartPuzzle()
     {
         playerInputSequence.Clear();
@@ -158,12 +169,16 @@ public class PuzzleManager : MonoBehaviour
         _isPuzzleActive = true;
 
         selectedButtonIndex = 0;
-        for (int i = 0; i < correctAnswerButtons.Count; i++)
-            SetButtonColor(i, i == selectedButtonIndex ? selectedColor : normalColor);
 
-        // �÷��̾� �̵� ����
+        for (int i = 0; i < correctAnswerButtons.Count; i++)
+        {
+            if (i == selectedButtonIndex)
+                SetButtonVisual(i, 1f, false); // 선택된 버튼은 완전 불투명
+            else
+                SetButtonVisual(i, selectedAlpha, false); // 나머지는 투명도 적용
+        }
+
         if (PlayerManager.instance != null)
             PlayerManager.instance.canMove = false;
     }
-
 }
