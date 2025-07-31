@@ -30,7 +30,7 @@ public class PuzzleManager : MonoBehaviour
     private HashSet<int> pressedIndices = new HashSet<int>();
 
     [Header("선택 강조 투명도 (0.0 ~ 1.0)")]
-    [Range(0f, 1f)] public float selectedAlpha = 0.8f;
+    [Range(0f, 1f)] public float selectedAlpha = 0.6f;
 
     public bool IsPuzzleActive() => _isPuzzleActive;
     public bool IsPuzzleSolved() => _isPuzzleSolved;
@@ -56,20 +56,19 @@ public class PuzzleManager : MonoBehaviour
 
     void MoveSelection(int direction)
     {
-        // 이전 버튼이 눌린 게 아니라면 normal 상태로 복원
+        // 이전 버튼이 눌린 게 아니라면 투명하게 만들기
         if (!pressedIndices.Contains(selectedButtonIndex))
-            SetButtonVisual(selectedButtonIndex, 1f, false);
+            SetButtonVisual(selectedButtonIndex, selectedAlpha, false);
 
         selectedButtonIndex += direction;
         if (selectedButtonIndex < 0) selectedButtonIndex = correctAnswerButtons.Count - 1;
         if (selectedButtonIndex >= correctAnswerButtons.Count) selectedButtonIndex = 0;
 
-        // 새 선택 버튼이 눌린 버튼이 아니라면 alpha로 강조
+        // 새 선택 버튼이 눌린 버튼이 아니라면 완전 불투명하게 강조
         if (!pressedIndices.Contains(selectedButtonIndex))
-            SetButtonVisual(selectedButtonIndex, selectedAlpha, false);
+            SetButtonVisual(selectedButtonIndex, 1f, false);
     }
 
-    // 각 버튼의 AnswerButton에 지정된 스프라이트 사용
     void SetButtonVisual(int index, float alpha, bool pressed = false)
     {
         if (index >= 0 && index < correctAnswerButtons.Count)
@@ -88,21 +87,17 @@ public class PuzzleManager : MonoBehaviour
 
     void PressSelectedButton()
     {
-        // 이미 선택된 버튼이면, 해제
         if (pressedIndices.Contains(selectedButtonIndex))
         {
-            // 시각적으로 해제(강조되었으면 강조로, 아니면 normal로)
             SetButtonVisual(
                 selectedButtonIndex,
-                selectedButtonIndex == this.selectedButtonIndex ? selectedAlpha : 1f,
+                selectedButtonIndex == this.selectedButtonIndex ? 1f : selectedAlpha,
                 false
             );
             pressedIndices.Remove(selectedButtonIndex);
-
-            // playerInputSequence에서 해당 인덱스 모두 지우기 (동일 인덱스 여러 번 들어갈 수 있어 모두 제거)
             playerInputSequence.RemoveAll(x => x == selectedButtonIndex);
         }
-        else // 아직 선택되지 않은 버튼이면, 선택
+        else
         {
             SetButtonVisual(selectedButtonIndex, 1f, true);
             pressedIndices.Add(selectedButtonIndex);
@@ -112,7 +107,6 @@ public class PuzzleManager : MonoBehaviour
             if (btn != null && !string.IsNullOrEmpty(btn.button_sound) && AudioManager.instance != null)
                 AudioManager.instance.Play(btn.button_sound);
 
-            // 정답 개수만큼 다 눌러졌으면 정답체크
             if (playerInputSequence.Count == answerSequence.Count)
             {
                 if (IsCorrect())
@@ -122,7 +116,6 @@ public class PuzzleManager : MonoBehaviour
             }
         }
     }
-
 
     bool IsCorrect()
     {
@@ -177,13 +170,12 @@ public class PuzzleManager : MonoBehaviour
 
         selectedButtonIndex = 0;
 
-        // 버튼 전부 초기화: AnswerButton에 설정된 normalSprite들을 사용
         for (int i = 0; i < correctAnswerButtons.Count; i++)
         {
             if (i == selectedButtonIndex)
-                SetButtonVisual(i, selectedAlpha, false); // 선택 강조
+                SetButtonVisual(i, 1f, false); // 선택된 버튼은 완전 불투명
             else
-                SetButtonVisual(i, 1f, false); // 기본
+                SetButtonVisual(i, selectedAlpha, false); // 나머지는 투명도 적용
         }
 
         if (PlayerManager.instance != null)
