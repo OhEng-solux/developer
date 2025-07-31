@@ -6,6 +6,6 @@ public class CandyUse : ItemUseHandler
 {
     public override void Use()
     {
-        
+        //FindFirstObjectByType<CandyUseManager>()?.ActivateEffect();
     }
 }

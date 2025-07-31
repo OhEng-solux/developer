@@ -19,4 +19,4 @@ MonoBehaviour:
   itemType: 0
   description: "\uBC18\uC9DD\uC784\uC744 \uC751\uCD95\uD55C \uC0AC\uD0D5.\n\uACF5\uD3EC\uC758
     \uADF8\uB9BC\uC790\uB97C \uC7A0\uAE50 \uBA48\uCD9C \uC218 \uC788\uB2E4."
-  useHandler: {fileID: 0}
+  useHandler: {fileID: 11400000, guid: e7d73fb617ea74086a175aad9bb122fa, type: 2}

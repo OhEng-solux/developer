@@ -6,6 +6,6 @@ public class SaltUse : ItemUseHandler
 {
     public override void Use()
     {
-        
+        //FindFirstObjectByType<SaltUseManager>()?.ActivateEffect();
     }
 }

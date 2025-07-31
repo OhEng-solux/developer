@@ -12,10 +12,10 @@ public class Menu : MonoBehaviour
         if (instance == null)
             instance = this;
         else
-            Destroy(gameObject); // Áßº¹ ¹æÁö
+            Destroy(gameObject); // ï¿½ßºï¿½ ï¿½ï¿½ï¿½ï¿½
     }
 
-    public GameObject menuPanel; // ¸Ş´º ÀüÃ¼ ÆĞ³Î
+    public GameObject menuPanel; // ï¿½Ş´ï¿½ ï¿½ï¿½Ã¼ ï¿½Ğ³ï¿½
     public AudioManager theAudio;
 
     public string call_sound;
@@ -24,11 +24,11 @@ public class Menu : MonoBehaviour
 
     public OrderManager theOrder;
 
-    public List<Button> menuButtons; // ¸Ş´º Ç×¸ñ ¹öÆ°µé (ÀÎ½ºÆåÅÍ¿¡ ÇÒ´ç)
+    public List<Button> menuButtons; // ï¿½Ş´ï¿½ ï¿½×¸ï¿½ ï¿½ï¿½Æ°ï¿½ï¿½ (ï¿½Î½ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ ï¿½Ò´ï¿½)
 
     public bool activated;
 
-    private int currentIndex = 0; // ÇöÀç ¼±ÅÃµÈ ¹öÆ° ÀÎµ¦½º
+    private int currentIndex = 0; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ãµï¿½ ï¿½ï¿½Æ° ï¿½Îµï¿½ï¿½ï¿½
 
     void Start()
     {
@@ -36,7 +36,7 @@ public class Menu : MonoBehaviour
         menuPanel.SetActive(false);
         Time.timeScale = 1f;
 
-        // ¹öÆ° »ö»ó ÃÊ±âÈ­
+        // ï¿½ï¿½Æ° ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
         UpdateButtonColors();
     }
 
@@ -44,9 +44,11 @@ public class Menu : MonoBehaviour
     {
         if (DialogueManager.instance == null || !DialogueManager.instance.talking)
         {
-            if (!PopupManager.instance.IsPopupActive()&& !SaveManager.instance.IsSaveActive() && !InventoryManager.instance.IsInventoryActive())
+            if (!PopupManager.instance.IsPopupActive()
+                && !SaveManager.instance.IsSaveActive()
+                && !InventoryManager.instance.IsInventoryActive()
+                && !IsNumberPuzzleActive()) // ìë¬¼ì‡  ê²Œì„ ì¤‘ì´ ì•„ë‹ ë•Œë§Œ ë©”ë‰´ í™œì„±í™” ê°€ëŠ¥
             {
-                // ESC Å°·Î ¸Ş´º ÄÑ°í ²ô±â
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
                     Debug.Log("SaveManager.instance: " + (SaveManager.instance != null));
@@ -54,13 +56,9 @@ public class Menu : MonoBehaviour
                     activated = !activated;
 
                     if (activated)
-                    {
                         OpenMenu();
-                    }
                     else
-                    {
                         CloseMenu();
-                    }
                 }
 
                 if (activated)
@@ -99,12 +97,12 @@ public class Menu : MonoBehaviour
 
     IEnumerator ResetInputsNextFrame()
     {
-        yield return null; // ÇÑ ÇÁ·¹ÀÓ ´ë±â
+        yield return null; // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
         Input.ResetInputAxes();
     }
     void HandleInput()
     {
-        // ¹æÇâÅ° À§/¾Æ·¡·Î ¸Ş´º ¼±ÅÃ º¯°æ
+        // ï¿½ï¿½ï¿½ï¿½Å° ï¿½ï¿½/ï¿½Æ·ï¿½ï¿½ï¿½ ï¿½Ş´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             currentIndex--;
@@ -124,7 +122,7 @@ public class Menu : MonoBehaviour
             UpdateButtonColors();
         }
 
-        // ¼±ÅÃ È®Á¤ : ½ºÆäÀÌ½º ¶Ç´Â ¿£ÅÍ
+        // ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ : ï¿½ï¿½ï¿½ï¿½ï¿½Ì½ï¿½ ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (Input.GetKeyDown(KeyCode.Return))
         {
             theAudio.Play(select_sound);
@@ -140,7 +138,7 @@ public class Menu : MonoBehaviour
 
             cb.normalColor = (i == currentIndex) ? Color.white : Color.gray;
 
-            // ¼±ÅÃµÈ ¹öÆ°À» °­Á¶ÇÏ°í, ³ª¸ÓÁö´Â ºñÈ°¼º »öÀ¸·Î
+            // ï¿½ï¿½ï¿½Ãµï¿½ ï¿½ï¿½Æ°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             cb.highlightedColor = cb.normalColor;
             cb.pressedColor = cb.normalColor;
             cb.selectedColor = cb.normalColor;
@@ -158,7 +156,7 @@ public class Menu : MonoBehaviour
         CloseMenu();
     }
 
-    // ±âÁ¸ ÇÔ¼öµé 
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½ï¿½ï¿½ 
     public void Exit()
     {
         Application.Quit();
@@ -177,19 +175,25 @@ public class Menu : MonoBehaviour
     public void LoadStartScene()
     {
         PopupManager.instance.ShowChoicePopup(
-                "¸Ş´º È­¸éÀ¸·Î ÀÌµ¿ÇÏ½Ã°Ú½À´Ï±î?",
+                "ï¿½Ş´ï¿½ È­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½Ï½Ã°Ú½ï¿½ï¿½Ï±ï¿½?",
                 () =>
                 {
-                    // »ç¿ëÀÚ°¡ '¿¹' ´­·¶À» °æ¿ì ¾À ÀÌµ¿
-                    Debug.Log("¸Ş´º ÀÌµ¿ È®ÀÎ");
+                    // ï¿½ï¿½ï¿½ï¿½Ú°ï¿½ 'ï¿½ï¿½' ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ìµï¿½
+                    Debug.Log("ï¿½Ş´ï¿½ ï¿½Ìµï¿½ È®ï¿½ï¿½");
                     UnityEngine.SceneManagement.SceneManager.LoadScene("Start");
                 },
                 () =>
                 {
-                    // »ç¿ëÀÚ°¡ '¾Æ´Ï¿À' ´­·¶À» °æ¿ì Ãë¼Ò Ã³¸®¸¸
-                    Debug.Log("¸Ş´º ÀÌµ¿ Ãë¼Ò");
-                    // ÆË¾÷ ´İÀ¸¸é ¸Ş´º ±×´ë·Î À¯Áö °¡´É
+                    // ï¿½ï¿½ï¿½ï¿½Ú°ï¿½ 'ï¿½Æ´Ï¿ï¿½' ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½
+                    Debug.Log("ï¿½Ş´ï¿½ ï¿½Ìµï¿½ ï¿½ï¿½ï¿½");
+                    // ï¿½Ë¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ş´ï¿½ ï¿½×´ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                 }
             );
+    }
+
+    private bool IsNumberPuzzleActive() // í¼ì¦ í™œì„±í™” ìƒíƒœ í™•ì¸ í•¨ìˆ˜ ì¶”ê°€
+    {
+        NumberSystem numberSystem = FindFirstObjectByType<NumberSystem>();
+        return numberSystem != null && numberSystem.activated;
     }
 }
