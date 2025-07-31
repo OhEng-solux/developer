@@ -129,10 +129,5 @@ public class HiddenNoteEvent : MonoBehaviour
             DialogueManager.instance.ShowDialogue(endDialogue);
             StartCoroutine(HideImageWhenDialogueEnds());
         }
-        else
-        {
-            PopupManager.instance.ShowPopup("쪽지가 없다면 아무 일도 일어나지 않는다...");
-        }
     }
-
 }

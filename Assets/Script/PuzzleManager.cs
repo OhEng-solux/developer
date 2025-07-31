@@ -38,7 +38,7 @@ public class PuzzleManager : MonoBehaviour
     private void Start()
     {
         dm = FindFirstObjectByType<DialogueManager>();
-        theInventory = FindFirstObjectByType<InventoryManager>();
+        theInventory = FindFirstObjectByType<InventoryManager>(); // InventoryManager 연결
     }
 
     private void Update()
@@ -129,7 +129,7 @@ public class PuzzleManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.3f);
         puzzlePanel.SetActive(false);
         Time.timeScale = 1f;
-        dm.ShowDialogue(successDialogue);
+        dm.ShowDialogue(successDialogue); // 대화 출력
 
         if (rewardItem != null && theInventory != null)
         {
