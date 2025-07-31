@@ -39,7 +39,7 @@ public class PopupManager : MonoBehaviour
 
             //Debug.Log("1. [PopupManager] 팝업 열림, isPopupOpen: " + isPopupOpen );
 
-            if (isChoicePopup)
+        if (isChoicePopup)
         {
             if ((Menu.instance!=null&&Menu.instance.closePopup)||(SaveManager.instance!=null && SaveManager.instance.closePopup))
             {

@@ -2274,11 +2274,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ccaf293e195ff1418dd20d790dbc5a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  closePopup: 0
   savePanel: {fileID: 1566213456}
   slots:
   - {fileID: 92785026}
   - {fileID: 2125346682}
   - {fileID: 32729334}
+  isEnding: 0
 --- !u!114 &490367458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2310,10 +2312,10 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 128
-  walkSound_1: footsteps1
-  walkSound_2: footsteps2
-  walkSound_3: footsteps3
-  walkSound_4: footsteps4
+  walkSound_1: ' '
+  walkSound_2: ' '
+  walkSound_3: ' '
+  walkSound_4: ' '
   animator: {fileID: 490367460}
   currentMapName: Lobby
   currentSceneName: Day6
@@ -2612,11 +2614,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 261066485}
+  - {fileID: 765634334}
   - {fileID: 707620999}
+  - {fileID: 1822587910}
   - {fileID: 1658287552}
   - {fileID: 1570433333}
   - {fileID: 2110604765}
-  - {fileID: 765634334}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5238,7 +5241,6 @@ RectTransform:
   - {fileID: 1861870584}
   - {fileID: 191392588}
   - {fileID: 815300374}
-  - {fileID: 1822587910}
   m_Father: {fileID: 514448979}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -6090,16 +6092,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1822587909}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4961811, y: 0.4961811, z: 1.4551872}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1658287552}
+  m_Father: {fileID: 514448979}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -7.9999995}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1822587911

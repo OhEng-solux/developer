@@ -974,6 +974,7 @@ GameObject:
   - component: {fileID: 593939319}
   - component: {fileID: 593939320}
   - component: {fileID: 593939321}
+  - component: {fileID: 593939322}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1102,11 +1103,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ccaf293e195ff1418dd20d790dbc5a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  closePopup: 0
   savePanel: {fileID: 369165323}
   slots:
   - {fileID: 902773793}
   - {fileID: 1317690941}
   - {fileID: 1140051539}
+  isEnding: 0
 --- !u!114 &593939321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1119,6 +1122,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e539486b427f0aa4da751cbfdd60caa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &593939322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593939314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6cd561c4f2c8449a46a179c9cdbd72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   buttons:
   - {fileID: 707763235}
   - {fileID: 867783716}
@@ -1126,8 +1141,8 @@ MonoBehaviour:
   savePanel: {fileID: 369165323}
   icon: {fileID: 1123897833}
   Panel: {fileID: 1863027365}
-  keySound: enter_sound
-  enterSound: enter_sound
+  keySound: ok_sound
+  enterSound: ok_sound
 --- !u!1 &613139816
 GameObject:
   m_ObjectHideFlags: 0
@@ -3647,15 +3662,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e539486b427f0aa4da751cbfdd60caa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttons:
-  - {fileID: 707763235}
-  - {fileID: 867783716}
-  - {fileID: 868997910}
-  savePanel: {fileID: 369165323}
-  icon: {fileID: 1123897833}
-  Panel: {fileID: 1863027365}
-  keySound: type_sound
-  enterSound: enter_sound
 --- !u!210 &1863027370
 SortingGroup:
   m_ObjectHideFlags: 0

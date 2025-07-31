@@ -28,6 +28,7 @@ public class SaveManager : MonoBehaviour
     private bool isMenu = false;
     private AudioManager audioManager;
     private SaveNLoad saveNLoad;
+    private bool inputBlocked = false;
 
     private PlayerManager playerManager;
     private bool prevIsOpen = false; // 이전 isOpen 상태 저장용
@@ -71,7 +72,7 @@ public class SaveManager : MonoBehaviour
     {
         // 이미지 팝업이 열려있는 동안 대기  
         yield return new WaitWhile(() =>
-            (ImagePopupManager.instance != null && ImagePopupManager.instance.IsImageActive())
+            (ImagePopupManager.instance != null && ImagePopupManager.instance.IsImageActive())&& (PopupManager.instance != null && PopupManager.instance.IsPopupActive())
         );
 
         // 팝업이 모두 닫혔을 때 실행할 작업  
@@ -103,7 +104,15 @@ public class SaveManager : MonoBehaviour
     void Update()
     {
         Debug.Log("Update");
-        
+        if (inputBlocked)
+        {
+            // 엔터키가 올라올 때까지 기다렸다가 입력 가능한 상태로 전환
+            if (Input.GetKeyUp(KeyCode.Return))
+                inputBlocked = false;
+
+            return; // 입력 무시
+        }
+
         string sceneName = gameObject.scene.name;
 
         if (sceneName == "Start")
@@ -127,8 +136,7 @@ public class SaveManager : MonoBehaviour
             Debug.Log("세이브 메니저 팝업");
             if ((isSavePoint) && !isOpen)
             {
-                isOpen = !isOpen;
-                savePanel.SetActive(isOpen);
+                StartCoroutine(OpenSave());
                 //StartCoroutine(WaitForSavePanelClose());//
             }
 
@@ -232,9 +240,11 @@ public class SaveManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return) && (isStartMenu || isMenu|| isEnding))
         {
             string path = Application.persistentDataPath + $"/SaveFile_{currentIndex}.dat";
+            inputBlocked = true;
 
             if (File.Exists(path))
             {
+                Debug.Log("벌써 팝업 한거임?");
                 audioManager.Play(enterSound);
                 PopupManager.instance.ShowChoicePopup(
                     "불러오시겠습니까?",
