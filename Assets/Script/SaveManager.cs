@@ -15,14 +15,16 @@ public class SaveManager : MonoBehaviour
     private string enterSound = "enter_Sound";
     private string openSound = "ok_Sound";
     private string beepSound = "beep_Sound";
-
+    public bool closePopup = false;
     public GameObject savePanel;
     public SaveSlot[] slots; // 슬롯 배열
+
 
     private int currentIndex = 0; // 현재 선택된 슬롯 인덱스
     private bool isOpen = false; // 열림 상태
     private bool isSavePoint = false;
     private bool isStartMenu = false;
+    public bool isEnding = false;
     private bool isMenu = false;
     private AudioManager audioManager;
     private SaveNLoad saveNLoad;
@@ -60,17 +62,16 @@ public class SaveManager : MonoBehaviour
     {
         // 팝업 모두 닫힐 때까지 대기
         yield return WaitForPopupClose();
-
+        Debug.Log("팝업 isOpen ");
         // 대기 후 팝업 토글
-        isOpen = !isOpen;
+        isOpen = true;
         savePanel.SetActive(isOpen);
     }
     private IEnumerator WaitForPopupClose()
     {
-        // 세이브 창이나 이미지 팝업이 열려있는 동안 대기  
+        // 이미지 팝업이 열려있는 동안 대기  
         yield return new WaitWhile(() =>
-            (SaveManager.instance != null && SaveManager.instance.isOpen)
-            || (ImagePopupManager.instance != null && ImagePopupManager.instance.IsImageActive())
+            (ImagePopupManager.instance != null && ImagePopupManager.instance.IsImageActive())
         );
 
         // 팝업이 모두 닫혔을 때 실행할 작업  
@@ -101,6 +102,8 @@ public class SaveManager : MonoBehaviour
 
     void Update()
     {
+        Debug.Log("Update");
+        
         string sceneName = gameObject.scene.name;
 
         if (sceneName == "Start")
@@ -112,7 +115,11 @@ public class SaveManager : MonoBehaviour
         }
 
         if (!isOpen &&( InventoryManager.instance == null || InventoryManager.instance.IsInventoryActive())) return;
-        if (!isOpen && (Menu.instance == null || Menu.instance.activated || ImagePopupManager.instance == null || ImagePopupManager.instance.IsImageActive())) return;
+        
+        if (!isOpen && (Menu.instance == null || Menu.instance.activated)) return;
+
+        if (sceneName=="Day6"&&(ImagePopupManager.instance == null || ImagePopupManager.instance.IsImageActive())) return;
+
 
         // Z키 눌렀을 때 세이브창 열기/닫기 토글 (저장지점 근처일 때만) or 자동 저장
         if (Input.GetKeyDown(KeyCode.Z))
@@ -166,8 +173,9 @@ public class SaveManager : MonoBehaviour
 
 
         // 팝업창이 활성화되어 있으면 입력 무시
-        if (!isOpen || PopupManager.instance == null || PopupManager.instance.IsPopupActive()) return;
 
+        if (!isOpen || PopupManager.instance == null || PopupManager.instance.IsPopupActive()) return;
+        
         // 방향키 입력 처리
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
@@ -221,7 +229,7 @@ public class SaveManager : MonoBehaviour
         }
 
         // 엔터키로 로드 (시작 메뉴 혹은 메뉴에서만)
-        if (Input.GetKeyDown(KeyCode.Return) && (isStartMenu || isMenu))
+        if (Input.GetKeyDown(KeyCode.Return) && (isStartMenu || isMenu|| isEnding))
         {
             string path = Application.persistentDataPath + $"/SaveFile_{currentIndex}.dat";
 
@@ -237,6 +245,7 @@ public class SaveManager : MonoBehaviour
                     () =>
                     {
                         Debug.Log("불러오기 취소");
+                        closePopup = true;
                     }
                 );
             }
