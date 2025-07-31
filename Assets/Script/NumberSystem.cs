@@ -1,68 +1,142 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class NumberSystem : MonoBehaviour
 {
-
     private AudioManager theAudio;
-    public string key_sound; // 방향키 사운드
-    public string enter_sound; // 결정키 사운드
-    public string cancel_sound; // 오답 && 취소키 사운드
-    public string correct_sound; // 정답 사운드
-    public int moveX; // superObject의 x값을 얼마만큼 이동시킬지
 
-    private int count; // 배열의 크기. 몇 자릿수 1000 -> 3
-    private int selectedTextBox; // 선택된 자릿수.
-    private int result; // 플레이어가 도출해낸 값.
-    private int correctNumber; // 정답.
+    public string key_sound;
+    public string enter_sound;
+    public string cancel_sound;
+    public string correct_sound;
 
-    private string tempNumber;
-    [SerializeField] private GameObject dialSystemObject; // NumberSystem이 붙은 오브젝트
+    [SerializeField] private GameObject lockUIPanel; // 자물쇠 이미지가 포함된 캔버스 패널
+    [SerializeField] private Text[] numberTexts; // 4자리 텍스트 UI
 
-    public GameObject superObject; // 화면 가운데 정렬
-    public GameObject[] panel;
-    public Text[] Number_Text;
+    [SerializeField] private SpriteRenderer targetRenderer; // 바꿔줄 대상
+    [SerializeField] private Sprite successSprite;           // 정답 맞췄을 때의 이미지
+    [SerializeField] private Sprite failSprite;
 
-    public Animator anim;
+    private int[] currentDigits = new int[4];
+    private int selectedIndex = 0;
+    private int correctNumber = 2265;
 
-    public bool activated; // return new waitUntil
-    private bool keyInput; // 키처리 활성화, 비활성화.
-    private bool correctFlag; // 정답인지 아닌지 여부
-    private bool wasCancelled = false; // 중도 취소
+    public bool activated { get; private set; } = false;
+    private bool correctFlag = false;
+    private bool wasCancelled = false;
+    private bool inputEnabled = false;
 
     void Start()
     {
         theAudio = FindFirstObjectByType<AudioManager>();
     }
 
+    void Update()
+    {
+        if (!activated || !inputEnabled) return;
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            selectedIndex = (selectedIndex + 1) % 4;
+            theAudio.Play(key_sound);
+            UpdateHighlight();
+        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            selectedIndex = (selectedIndex + 3) % 4;
+            theAudio.Play(key_sound);
+            UpdateHighlight();
+        }
+        else if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            currentDigits[selectedIndex] = (currentDigits[selectedIndex] + 1) % 10;
+            theAudio.Play(key_sound);
+            UpdateNumberTexts();
+        }
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            currentDigits[selectedIndex] = (currentDigits[selectedIndex] + 9) % 10;
+            theAudio.Play(key_sound);
+            UpdateNumberTexts();
+        }
+        else if (Input.GetKeyDown(KeyCode.Return))
+        {
+            theAudio.Play(enter_sound);
+            CheckAnswer();
+        }
+        else if (Input.GetKeyDown(KeyCode.X))
+        {
+            theAudio.Play(cancel_sound);
+            CancelInput();
+        }
+    }
+
     public void ShowNumber(int _correctNumber)
     {
         correctNumber = _correctNumber;
+        currentDigits = new int[4];
+        selectedIndex = 0;
         activated = true;
+        inputEnabled = true;
         correctFlag = false;
+        wasCancelled = false;
 
-        string temp = correctNumber.ToString();
-        count = temp.Length - 1;  //count는 자릿수 - 1로 명시
+        UpdateNumberTexts();
+        UpdateHighlight();
 
-        for (int i = 0; i <= count; i++)
-        {
-            panel[i].SetActive(true);
-            Number_Text[i].text = "0";
-        }
+        if (lockUIPanel != null)
+            lockUIPanel.SetActive(true);
 
-        superObject.transform.position = new Vector3(superObject.transform.position.x + (moveX * count),
-                                                     superObject.transform.position.y,
-                                                     superObject.transform.position.z);
-
-        selectedTextBox = 0;
-        result = 0;
-        SetColor();
-        anim.SetBool("Appear", true);
-        keyInput = true;
+        gameObject.SetActive(true);
+        PlayerManager.instance.canMove = false;
     }
 
+    private void CheckAnswer()
+    {
+        int result = currentDigits[3] * 1000 + currentDigits[2] * 100 + currentDigits[1] * 10 + currentDigits[0];
+        correctFlag = (result == correctNumber);
+        Debug.Log($"[NumberSystem] 입력: {result}, 정답: {correctNumber}, 결과: {correctFlag}");
+
+        theAudio.Play(correctFlag ? correct_sound : cancel_sound);
+
+        if (targetRenderer != null)
+        {
+            if (correctFlag && successSprite != null)
+            {
+                targetRenderer.sprite = successSprite;
+                Debug.Log("[NumberSystem] 정답 → 성공 스프라이트로 변경됨");
+            }
+            else if (!correctFlag && failSprite != null)
+            {
+                targetRenderer.sprite = failSprite;
+                Debug.Log("[NumberSystem] 오답 → 실패 스프라이트로 변경됨");
+            }
+        }
+
+        StartCoroutine(ExitPuzzleRoutine());
+    }
+
+    private void CancelInput()
+    {
+        wasCancelled = true;
+        correctFlag = false;
+        StartCoroutine(ExitPuzzleRoutine());
+    }
+
+    private IEnumerator ExitPuzzleRoutine()
+    {
+        // 정답 판정 이후 변경된 이미지 확인을 위한 지연 시간
+        yield return new WaitForSeconds(1.0f); 
+
+        activated = false;
+        inputEnabled = false;
+
+        if (lockUIPanel != null)
+            lockUIPanel.SetActive(false);
+
+        PlayerManager.instance.canMove = true;
+    }
 
     public bool GetResult()
     {
@@ -74,163 +148,21 @@ public class NumberSystem : MonoBehaviour
         return wasCancelled;
     }
 
-    public void SetNumber(string _arrow)
+    private void UpdateNumberTexts()
     {
-
-        int temp = int.Parse(Number_Text[selectedTextBox].text); // 선택된 자리수의 텍스트를 Integer 숫자 형식으로 강제 형변환.
-
-        if (_arrow == "DOWN")
+        for (int i = 0; i < 4; i++)
         {
-            if (temp == 0)
-                temp = 9;
-            else
-                temp--;
-        }
-        else if (_arrow == "UP")
-        {
-            if (temp == 9)
-                temp = 0;
-            else
-                temp++;
-        }
-        Number_Text[selectedTextBox].text = temp.ToString();
-    }
-
-    public void SetColor()
-    {
-        Color color = Number_Text[0].color;
-        color.a = 0.3f;
-        for (int i = 0; i <= count; i++)
-        {
-            Number_Text[i].color = color;
-        }
-        color.a = 1f;
-        Number_Text[selectedTextBox].color = color;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (keyInput)
-        {
-            if (Input.GetKeyDown(KeyCode.DownArrow))
-            {
-                theAudio.Play(key_sound);
-                SetNumber("DOWN");
-            }
-            else if (Input.GetKeyDown(KeyCode.UpArrow))
-            {
-                theAudio.Play(key_sound);
-                SetNumber("UP");
-            }
-            else if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                theAudio.Play(key_sound);
-                if (selectedTextBox < count)
-                    selectedTextBox++;
-                else
-                    selectedTextBox = 0;
-                SetColor();
-            }
-            else if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                theAudio.Play(key_sound);
-                if (selectedTextBox > 0)
-                    selectedTextBox--;
-                else
-                    selectedTextBox = count;
-                SetColor();
-            }
-            else if (Input.GetKeyDown(KeyCode.Return)) // 결정키
-            {
-                theAudio.Play(key_sound);
-                keyInput = false;
-                StartCoroutine(OXCoroutine());
-
-            }
-            else if (Input.GetKeyDown(KeyCode.Z)) // 취소키
-            {
-                theAudio.Play(cancel_sound);
-                keyInput = false;
-                correctFlag = false; // 취소했으므로 정답 아님 (단, 실패 대사는 X)
-                StartCoroutine(CancelCoroutine());
-            }
-
+            numberTexts[i].text = currentDigits[i].ToString();
         }
     }
 
-    IEnumerator OXCoroutine()
+    private void UpdateHighlight()
     {
-        wasCancelled = false;
-        tempNumber = ""; //초기화
-
-        Color color = Number_Text[0].color;
-        color.a = 1f;
-
-        for (int i = count; i >= 0; i--)
+        for (int i = 0; i < 4; i++)
         {
-            Number_Text[i].color = color;
-            tempNumber += Number_Text[i].text;
+            Color color = numberTexts[i].color;
+            color.a = (i == selectedIndex) ? 1f : 0.4f;
+            numberTexts[i].color = color;
         }
-
-        yield return new WaitForSeconds(1f);
-
-        result = int.Parse(tempNumber);
-
-        if (result == correctNumber)
-        {
-            theAudio.Play(correct_sound);
-            correctFlag = true;
-        }
-        else
-        {
-            theAudio.Play(cancel_sound);
-            correctFlag = false;
-        }
-        Debug.Log("우리가 낸 답 = " + result + "  정답 = " + correctNumber);
-        StartCoroutine(ExitCoroutine());
-
-    }
-    IEnumerator ExitCoroutine()
-    {
-        result = 0;
-        tempNumber = "";
-        anim.SetBool("Appear", false);
-
-        yield return new WaitForSeconds(0.1f);
-
-        for (int i = 0; i <= count; i++)
-        {
-            panel[i].SetActive(false);
-        }
-        superObject.transform.position = new Vector3(superObject.transform.position.x - (moveX * count),
-                                                     superObject.transform.position.y,
-                                                     superObject.transform.position.z);
-
-        activated = false;
-        PlayerManager.instance.canMove = true;   // 이동 다시 허용
-        dialSystemObject.SetActive(false);
-    }
-    
-    IEnumerator CancelCoroutine()
-    {
-        wasCancelled = true;
-        result = 0;
-        tempNumber = "";
-        anim.SetBool("Appear", false);
-
-        yield return new WaitForSeconds(0.1f);
-
-        for (int i = 0; i <= count; i++)
-        {
-            panel[i].SetActive(false);
-        }
-        superObject.transform.position = new Vector3(superObject.transform.position.x - (moveX * count),
-                                                    superObject.transform.position.y,
-                                                    superObject.transform.position.z);
-
-        activated = false;
-        PlayerManager.instance.canMove = true;
-        dialSystemObject.SetActive(false);
     }
 }
