@@ -72,7 +72,7 @@ public class SaveManager : MonoBehaviour
     {
         // 이미지 팝업이 열려있는 동안 대기  
         yield return new WaitWhile(() =>
-            (ImagePopupManager.instance != null && ImagePopupManager.instance.IsImageActive()) && (PopupManager.instance != null && PopupManager.instance.IsPopupActive())
+            (ImagePopupManager.instance != null && ImagePopupManager.instance.IsImageActive()) || (PopupManager.instance != null && PopupManager.instance.IsPopupActive())
         );
 
         // 팝업이 모두 닫혔을 때 실행할 작업  
