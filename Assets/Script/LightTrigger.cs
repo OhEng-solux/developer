@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class LightTrigger : MonoBehaviour
 {
-    public GameObject go; // ¶óÀÌÆ® ¿ÀºêÁ§Æ®
+    public GameObject go; // ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
     private bool flag;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!flag && collision.CompareTag("Player")) // ÇÃ·¹ÀÌ¾îÀÏ °æ¿ì¸¸
+        if (!flag && collision.CompareTag("Player")) // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½ï¿½ì¸¸
         {
-            go.SetActive(true); // ¶óÀÌÆ® ÄÑ±â
+            go.SetActive(true); // ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Ñ±ï¿½
             flag = true;
         }
     }

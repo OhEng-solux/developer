@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [CreateAssetMenu(menuName = "ItemUse/Key")]
-public class KeyeUse : ItemUseHandler
+public class KeyUse : ItemUseHandler
 {
     public override void Use()
     {
