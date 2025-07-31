@@ -41,15 +41,17 @@ public class PopupManager : MonoBehaviour
 
             if (isChoicePopup)
         {
-            if ( Menu.instance.closePopup)
+            if ((Menu.instance!=null&&Menu.instance.closePopup)||(SaveManager.instance!=null && SaveManager.instance.closePopup))
             {
                 popupPanel.SetActive(false);
                 isChoicePopup = false;
-
                 // ▶ 팝업 닫힐 때 플레이어 움직임 다시 허용
                 if (PlayerManager.instance != null)
                     PlayerManager.instance.canMove = true;
-                Menu.instance.closePopup = false;
+                if (Menu.instance != null) 
+                    Menu.instance.closePopup = false;
+                if (SaveManager.instance != null)
+                    SaveManager.instance.closePopup = false;
                 return;
             }
 
@@ -102,8 +104,10 @@ public class PopupManager : MonoBehaviour
 
     private IEnumerator DelayInputForPopup()
     {
-        InventoryManager.instance.BlockInputForPopup(0.2f);  // 0.2초 입력 무시
-        yield return new WaitForSeconds(0.2f);
+        if (InventoryManager.instance != null) InventoryManager.instance.BlockInputForPopup(0.2f);  // 0.2초 입력 무시
+        yield return null;
+        Input.ResetInputAxes();
+
     }
 
     public void ShowPopup(string message)
