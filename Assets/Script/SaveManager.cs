@@ -28,7 +28,7 @@ public class SaveManager : MonoBehaviour
     private bool isMenu = false;
     private AudioManager audioManager;
     private SaveNLoad saveNLoad;
-    private bool inputBlocked = false;
+   // private bool inputBlocked = false;
 
     private PlayerManager playerManager;
     private bool prevIsOpen = false; // 이전 isOpen 상태 저장용
@@ -104,6 +104,7 @@ public class SaveManager : MonoBehaviour
     void Update()
     {
         Debug.Log("Update");
+        /*
         if (inputBlocked)
         {
             // 엔터키가 올라올 때까지 기다렸다가 입력 가능한 상태로 전환
@@ -112,7 +113,7 @@ public class SaveManager : MonoBehaviour
 
             return; // 입력 무시
         }
-
+        */
         string sceneName = gameObject.scene.name;
 
         if (sceneName == "Start")
@@ -239,7 +240,7 @@ public class SaveManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return) && (isStartMenu || isMenu || isEnding))
         {
             string path = Application.persistentDataPath + $"/SaveFile_{currentIndex}.dat";
-            inputBlocked = true;
+           // inputBlocked = true;
 
             if (File.Exists(path))
             {

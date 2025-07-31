@@ -37,7 +37,7 @@ public class StartNEndMenu : MonoBehaviour
     void Update()
     {
         Debug.Log("현재 씬 이름: " + gameObject.scene.name);
-
+        if (!IsPanelActive() && (SaveManager.instance == null || SaveManager.instance.IsSaveActive())) return;
         if (gameObject.scene.name=="Ending_Bad"&&(DialogueManager.instance == null || DialogueManager.instance.talking))
         {
             Panel.gameObject.SetActive(false);
