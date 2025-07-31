@@ -70,7 +70,7 @@ public class StartMenu : MonoBehaviour
                 break;
             case 1: // SavePanel 팝업
                 Debug.Log("세이브 패널 팝업");
-                savePanel.SetActive(true);
+                SaveManager.instance.StartCoroutine(SaveManager.instance.OpenSave());
                 break;
             case 2: // 종료
                 Debug.Log("게임 종료");
