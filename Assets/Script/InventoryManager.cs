@@ -58,7 +58,7 @@ public class InventoryManager : MonoBehaviour
         //Debug.Log("inv  IsPopupActive()"+ PopupManager.instance.IsPopupActive());
         // 방향키 동작 우선순위: 팝업창>인벤토리>이동
 
-        if (PopupManager.instance.IsPopupActive()) return;
+        if (PopupManager.instance.IsPopupActive() || PopupManager.instance == null) return;
         if (!isOpen &&(Menu.instance == null || Menu.instance.activated)) return;
         // X 키를 눌렀을 때 인벤토리 열고 닫기 토글
         if (Input.GetKeyDown(KeyCode.X))
