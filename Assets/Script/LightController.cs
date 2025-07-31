@@ -5,10 +5,14 @@ public class LightController : MonoBehaviour
     private PlayerManager thePlayer;
     private Vector2 vector;
 
+    void Start()
+    {
+        gameObject.SetActive(false); // 처음엔 꺼진 상태
+    }
+    
     void Awake()
     {
         thePlayer = FindFirstObjectByType<PlayerManager>();
-        // gameObject.SetActive(false); // 처음엔 꺼진 상태
     }
 
     void Update()
