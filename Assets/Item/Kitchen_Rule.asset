@@ -17,5 +17,6 @@ MonoBehaviour:
   silhouetteIcon: {fileID: -5273250443779059801, guid: 2156ebee03d4d4e748aa0b3e41e080a6, type: 3}
   isObtained: 0
   itemType: 1
-  description: "\uAD70\uB370\uAD70\uB370 \uBC11\uC904\uC774 \uADF8\uC5B4\uC9C4 \uADDC\uCE59\uBB38.\n\uC789\uD06C
-    \uC544\uB798\uC5D0 \uBB34\uC5B8\uAC00 \uC228\uACA8\uC838 \uC788\uB294 \uB4EF\uD558\uB2E4."
+  description: "\uB0A1\uACE0 \uBC14\uB79C \uC885\uC774.\n\uBE5B\uC744 \uBE44\uCD94\uBA74
+    \uBB34\uC5B8\uAC00\uAC00 \uB4DC\uB7EC\uB09C\uB2E4."
+  useHandler: {fileID: 0}

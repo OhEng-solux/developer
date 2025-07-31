@@ -14,4 +14,5 @@ public class Item : ScriptableObject
     public bool isObtained; // 습득 여부 판단
     public ItemType itemType; // 일회용/다회용 구분
     [TextArea] public string description; // 아이템 설명 
+    public ItemUseHandler useHandler; // 각 아이템의 사용 로직 연결
 }

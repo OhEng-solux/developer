@@ -9,6 +9,9 @@ public class TestNumber : MonoBehaviour
     [SerializeField] private GameObject dialSystemObject; // NumberSystem이 붙은 오브젝트
     [SerializeField] private int correctNumber = 2265; // 정답 숫자
     [SerializeField] private Item rewardItem; // 성공 시 획득할 아이템
+    [SerializeField] private GameObject closedDrawer; // 닫힌 서랍 오브젝트
+    [SerializeField] private GameObject openedDrawer; // 열린 서랍 오브젝트
+
 
     private DialogueManager theDM;
     private OrderManager theOrder;
@@ -90,9 +93,14 @@ public class TestNumber : MonoBehaviour
         if (theNumber.GetResult()) // 정답
         {
             theDM.ShowDialogue(successDialogue);
+            
+            // 서랍 시각적 전환
+            if (closedDrawer != null) closedDrawer.SetActive(false);
+            if (openedDrawer != null) openedDrawer.SetActive(true);
+
             if (rewardItem != null && theInventory != null)
             { // 아이템 획득 처리
-                theInventory.AcquireItem(rewardItem); 
+                theInventory.AcquireItem(rewardItem);
             }
             hasInteracted = true; // 재시도 불가
         }
