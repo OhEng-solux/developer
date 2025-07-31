@@ -17,7 +17,6 @@ public class PuzzleManager : MonoBehaviour
     public GameObject puzzlePanel;
     public Dialogue successDialogue;
     public Dialogue failDialogue;
-    public GameObject keyObject;
     [Header("Item")]
     private InventoryManager theInventory;
     [SerializeField] private Item rewardItem; // 보상 아이템
@@ -40,7 +39,6 @@ public class PuzzleManager : MonoBehaviour
     private void Start()
     {
         dm = FindFirstObjectByType<DialogueManager>();
-        keyObject.SetActive(false);
         theInventory = FindFirstObjectByType<InventoryManager>(); // InventoryManager 연결
     }
 
@@ -118,7 +116,6 @@ public class PuzzleManager : MonoBehaviour
         puzzlePanel.SetActive(false);
         Time.timeScale = 1f;
         dm.ShowDialogue(successDialogue); // 대화 출력
-        keyObject.SetActive(true); // 시각적 보상 오브젝트 표시
 
         // 실제 아이템 획득 처리
         if (rewardItem != null && theInventory != null)
