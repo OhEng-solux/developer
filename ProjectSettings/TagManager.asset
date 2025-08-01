@@ -9,6 +9,7 @@ TagManager:
   - memo
   - SavePoint
   - Start Dialogue
+  - npcs
   layers:
   - Default
   - TransparentFX
