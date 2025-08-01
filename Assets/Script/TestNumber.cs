@@ -11,7 +11,7 @@ public class TestNumber : MonoBehaviour
     [SerializeField] private Item rewardItem; // 성공 시 획득할 아이템
     [SerializeField] private GameObject closedDrawer; // 닫힌 서랍 오브젝트
     [SerializeField] private GameObject openedDrawer; // 열린 서랍 오브젝트
-
+    
 
     private DialogueManager theDM;
     private OrderManager theOrder;
@@ -92,6 +92,7 @@ public class TestNumber : MonoBehaviour
         // 퍼즐 결과에 따라 처리
         if (theNumber.GetResult()) // 정답
         {
+            AudioManager.instance.Play("game_clear");
             theDM.ShowDialogue(successDialogue);
             
             // 서랍 시각적 전환
@@ -106,6 +107,7 @@ public class TestNumber : MonoBehaviour
         }
         else if (!theNumber.WasCancelled()) // 오답
         {
+            AudioManager.instance.Play("game_fail");
             theDM.ShowDialogue(failDialogue);
             hasInteracted = true; // 재시도 불가
         }
