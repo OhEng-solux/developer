@@ -20,7 +20,7 @@ public class BrokenFlowerEffect : MonoBehaviour
             if (flowerPosition != null)
             {
                 Vector3 offset = new Vector3(offsetDistance, 0f, 0f); // 오른쪽으로
-                taejuNPC.transform.position = flowerPosition.position + offset;
+                // taejuNPC.transform.position = flowerPosition.position + offset;
 
                 SpriteRenderer sr = taejuNPC.GetComponent<SpriteRenderer>();
                 if (sr != null && taejuFacingFrontSprite != null)
