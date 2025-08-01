@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 
 public class SaveSlot : MonoBehaviour
@@ -50,7 +50,7 @@ public class SaveSlot : MonoBehaviour
 
     public void SetEmpty()
     {
-        currentPlaceText.text = "ºñ¾î ÀÖÀ½";
+        currentPlaceText.text = "ë¹„ì–´ ìˆìŒ";
         dateText.text = "";
         timeText.text = "";
 
