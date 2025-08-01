@@ -8074,7 +8074,7 @@ MonoBehaviour:
   timeText: {fileID: 1589745004}
   dateText: {fileID: 1594943915}
   dayText: {fileID: 853206126}
-  currentPlaceText: {fileID: 1295039449}
+  nameText: {fileID: 1295039449}
   highlightBorder: {fileID: 1200485216}
 --- !u!114 &579962492
 MonoBehaviour:
@@ -8957,6 +8957,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e293cb625d1c4c659ae075a41a1ac54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myCustomFont: {fileID: 0}
+  defaultFont: {fileID: 0}
   text: {fileID: 1869083072}
   blueText: {fileID: 0}
   yellowText: {fileID: 0}
@@ -24645,6 +24647,7 @@ MonoBehaviour:
     playerEquipItem: 
     mapName: 
     sceneName: 
+    characterName: 
     saveDate: 
     saveTime: 
     targetName: thePlayer
@@ -28058,7 +28061,7 @@ MonoBehaviour:
   timeText: {fileID: 2112904574}
   dateText: {fileID: 1439609432}
   dayText: {fileID: 1400684279}
-  currentPlaceText: {fileID: 48626660}
+  nameText: {fileID: 48626660}
   highlightBorder: {fileID: 1782022143}
 --- !u!114 &1568475003
 MonoBehaviour:
@@ -35181,7 +35184,7 @@ MonoBehaviour:
   timeText: {fileID: 1728335496}
   dateText: {fileID: 1170973835}
   dayText: {fileID: 1327639232}
-  currentPlaceText: {fileID: 2098957122}
+  nameText: {fileID: 2098957122}
   highlightBorder: {fileID: 551130579}
 --- !u!114 &2121280687
 MonoBehaviour:
