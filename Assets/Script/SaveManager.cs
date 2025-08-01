@@ -103,7 +103,7 @@ public class SaveManager : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("Update");
+        // Debug.Log("Update");
         /*
         if (inputBlocked)
         {
@@ -133,13 +133,13 @@ public class SaveManager : MonoBehaviour
         // Z키 눌렀을 때 세이브창 열기/닫기 토글 (저장지점 근처일 때만) or 자동 저장
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            Debug.Log("세이브 메니저 팝업");
+            Debug.Log($"[Z입력] isSavePoint={isSavePoint}, isOpen={isOpen}, Inventory활성={(InventoryManager.instance != null && InventoryManager.instance.IsInventoryActive())}, Menu활성={(Menu.instance != null && Menu.instance.activated)}, StartNEndMenu활성={(StartNEndMenu.instance != null && StartNEndMenu.instance.IsPanelActive())}");
+
             if ((isSavePoint) && !isOpen)
             {
+                Debug.Log("[Z입력] 세이브창 열기 시도");
                 StartCoroutine(OpenSave());
-                //StartCoroutine(WaitForSavePanelClose());//
             }
-
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -317,5 +317,11 @@ public class SaveManager : MonoBehaviour
     public bool IsSaveActive() //팝업이 떠있는지 외부에서 확인할 수 있도록 함
     {
         return savePanel.activeSelf;
+    }
+
+    public void SetSavePoint(bool value)
+    {
+        isSavePoint = value;
+        Debug.Log($"[SaveManager] isSavePoint set to {value}");
     }
 }

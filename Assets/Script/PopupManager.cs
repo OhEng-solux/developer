@@ -35,7 +35,7 @@ public class PopupManager : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("1. [PopupManager] 팝업 열림, isPopupOpen: " + isPopupOpen);
+        // Debug.Log("1. [PopupManager] 팝업 열림, isPopupOpen: " + isPopupOpen);
         if (!popupPanel.activeSelf) return;
 
             //Debug.Log("1. [PopupManager] 팝업 열림, isPopupOpen: " + isPopupOpen );
