@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      toilet_ghost_left_hand_0: -5235236852135786288
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
