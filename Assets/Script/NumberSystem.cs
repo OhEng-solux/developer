@@ -65,7 +65,7 @@ public class NumberSystem : MonoBehaviour
             theAudio.Play(enter_sound);
             CheckAnswer();
         }
-        else if (Input.GetKeyDown(KeyCode.X))
+        else if (Input.GetKeyDown(KeyCode.Escape))
         {
             theAudio.Play(cancel_sound);
             CancelInput();
@@ -114,20 +114,20 @@ public class NumberSystem : MonoBehaviour
             }
         }
 
-        StartCoroutine(ExitPuzzleRoutine());
+        StartCoroutine(ExitPuzzleRoutine(1.0f));
     }
 
     private void CancelInput()
     {
         wasCancelled = true;
         correctFlag = false;
-        StartCoroutine(ExitPuzzleRoutine());
+        StartCoroutine(ExitPuzzleRoutine(0f));
     }
 
-    private IEnumerator ExitPuzzleRoutine()
+    private IEnumerator ExitPuzzleRoutine(float delay)
     {
         // 정답 판정 이후 변경된 이미지 확인을 위한 지연 시간
-        yield return new WaitForSeconds(1.0f); 
+        yield return new WaitForSeconds(delay); 
 
         activated = false;
         inputEnabled = false;

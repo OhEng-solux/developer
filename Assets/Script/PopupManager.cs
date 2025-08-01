@@ -38,7 +38,7 @@ public class PopupManager : MonoBehaviour
         // Debug.Log("1. [PopupManager] 팝업 열림, isPopupOpen: " + isPopupOpen);
         if (!popupPanel.activeSelf) return;
 
-            //Debug.Log("1. [PopupManager] 팝업 열림, isPopupOpen: " + isPopupOpen );
+            // Debug.Log("1. [PopupManager] 팝업 열림, isPopupOpen: " + isPopupOpen );
 
         if (isChoicePopup)
         {
@@ -56,7 +56,7 @@ public class PopupManager : MonoBehaviour
                 return;
             }
 
-            Debug.Log("isChoicePopup 팝업 열림, isChoicePopup: " + isChoicePopup);
+            // Debug.Log("isChoicePopup 팝업 열림, isChoicePopup: " + isChoicePopup);
             // 방향키 선택
             if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
                 selectedIndex = 0;
