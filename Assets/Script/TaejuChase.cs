@@ -17,6 +17,7 @@ public class TaejuChase : MonoBehaviour
     private Queue<Vector3> recordedPositions = new Queue<Vector3>();
     private float timer;
     private bool isChasing = false;
+    private bool pauseChase = false;
 
     void Start()
     {
@@ -44,7 +45,7 @@ public class TaejuChase : MonoBehaviour
 
     void Update()
     {
-        if (!isChasing || player == null) return;
+        if (!isChasing || pauseChase || player == null) return;
 
         timer += Time.deltaTime;
 
@@ -64,7 +65,7 @@ public class TaejuChase : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!isChasing || recordedPositions.Count == 0) return;
+        if (!isChasing || pauseChase || recordedPositions.Count == 0) return;
 
         Vector2 target = recordedPositions.Peek();
         Vector2 current = rb.position;
@@ -112,6 +113,14 @@ public class TaejuChase : MonoBehaviour
     {
         isChasing = false;
         animator.SetBool("Walking", false);
+    }
+
+    public void PauseChase(bool isPaused)
+    {
+        pauseChase = isPaused;
+
+        if (isPaused)
+            animator.SetBool("Walking", false);
     }
 
     public bool IsChasing()

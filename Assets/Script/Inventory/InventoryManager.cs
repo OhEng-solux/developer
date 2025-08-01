@@ -37,6 +37,37 @@ public class InventoryManager : MonoBehaviour
         popupInputBlockedUntil = Time.time + seconds;
     }
 
+    // 인벤토리 열고 닫는 공통 처리 함수
+    void ToggleInventory(bool open)
+    {
+        isOpen = open;
+        inventoryPanel.SetActive(isOpen);
+
+        // 플레이어 이동 제한/허용
+        var player = GameObject.FindWithTag("Player").GetComponent<PlayerManager>();
+        player.canMove = !isOpen;
+
+        // 사운드 재생
+        audioManager.Play(openSound);
+
+        // 디버깅
+        Debug.Log("[인벤토리] 토글됨. isOpen: " + isOpen + ", inventoryPanel.activeSelf: " + inventoryPanel.activeSelf);
+
+        // 추격자 멈춤 / 재개
+        TaejuChase taeju = FindFirstObjectByType<TaejuChase>();
+        if (taeju != null && taeju.IsChasing())
+        {
+            taeju.PauseChase(isOpen);
+        }
+
+        if (isOpen)
+        {
+            UpdateSlots(); // 인벤토리 열렸을 때 슬롯 정보 갱신
+            HighlightSlot(currentIndex);
+            UpdateDescription();
+        }
+    }
+
     void Update()
     {
         if (Time.time < popupInputBlockedUntil)
@@ -59,44 +90,22 @@ public class InventoryManager : MonoBehaviour
 
         if (PopupManager.instance.IsPopupActive() || PopupManager.instance == null) return;
         if (!isOpen &&(Menu.instance == null || Menu.instance.activated)) return;
+
         // X 키를 눌렀을 때 인벤토리 열고 닫기 토글
         if (Input.GetKeyDown(KeyCode.X))
         {
-            isOpen = !isOpen;
-            inventoryPanel.SetActive(isOpen);
-
-            if (isOpen)
-            {
-                audioManager.Play(openSound);
-                UpdateSlots(); // 인벤토리 열렸을 때 슬롯에 아이템 정보 갱신
-                HighlightSlot(currentIndex); // 현재 인덱스에 해당하는 슬롯에만 강조 표시
-                UpdateDescription();
-
-                GameObject.FindWithTag("Player").GetComponent<PlayerManager>().canMove = false; //이동 제한
-                Debug.Log("[인벤토리] X키 눌림. isOpen: " + isOpen + ", inventoryPanel.activeSelf: " + inventoryPanel.activeSelf);
-
-            }
-            else
-            {
-                audioManager.Play(openSound);
-                GameObject.FindWithTag("Player").GetComponent<PlayerManager>().canMove = true;
-                Debug.Log("[인벤토리] X키 눌림. isOpen: " + isOpen + ", inventoryPanel.activeSelf: " + inventoryPanel.activeSelf);
-            }
+            ToggleInventory(!isOpen);
         }
 
+        // ESC 키로 닫기
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isOpen)
             {
-                audioManager.Play(openSound);
-                isOpen = !isOpen;
-                inventoryPanel.SetActive(isOpen);
-                GameObject.FindWithTag("Player").GetComponent<PlayerManager>().canMove = true;
-                Debug.Log("[인벤토리] esc키 눌림. isOpen: " + isOpen + ", inventoryPanel.activeSelf: " + inventoryPanel.activeSelf);
+                ToggleInventory(false);
                 return;
             }
         }
-
 
         // 방향키 동작 우선순위: 팝업창>인벤토리>이동
         if (!isOpen) return;
@@ -176,6 +185,13 @@ public class InventoryManager : MonoBehaviour
         isOpen = false;
         inventoryPanel.SetActive(false);
         GameObject.FindWithTag("Player").GetComponent<PlayerManager>().canMove = true;
+
+        // 추격자 다시 움직이도록 설정
+        TaejuChase taeju = FindFirstObjectByType<TaejuChase>();
+        if (taeju != null && taeju.IsChasing())
+        {
+            taeju.PauseChase(false);
+        }
     }
 
 

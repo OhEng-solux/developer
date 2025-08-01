@@ -21,6 +21,7 @@ public class CandyUseManager : MonoBehaviour
             yield return new WaitForSeconds(stunDuration);
 
             chaser.StartChase();
+            chaser.PauseChase(false); // Candy로 멈춘 후, 일시정지 상태는 강제로 풀어줌
             Debug.Log("[CandyUse] 추격자 정지 해제");
         }
         else
