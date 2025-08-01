@@ -8,7 +8,7 @@ public class TaejuChase : MonoBehaviour
 {
     public Transform player;
     public float moveSpeed = 2.5f;
-    public float delaySeconds = 2f;           // 지연 시간
+    public float delaySeconds = 3f;           // 지연 시간
     public float recordInterval = 0.05f;      // 위치 기록 주기
     public float followThreshold = 0.05f;
 
