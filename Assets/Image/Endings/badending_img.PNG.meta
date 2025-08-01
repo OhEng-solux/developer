@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b5dacb26bc5ff434e8dcc9970f545a70
+guid: d96a0abd6f00947c383157315bc71a08
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7089223783055766360
-    second: day6_basement_clue4_0
+      213: 7945458949661159329
+    second: badending_img_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: day6_basement_clue4_0
+      name: badending_img_0
       rect:
         serializedVersion: 2
-        x: 436
-        y: 75
-        width: 1036
-        height: 992
+        x: 0
+        y: 0
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8acc5b597840e9d90800000000000000
-      internalID: -7089223783055766360
+      spriteID: 1af600061d0f34e60800000000000000
+      internalID: 7945458949661159329
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      day6_basement_clue4_0: -7089223783055766360
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

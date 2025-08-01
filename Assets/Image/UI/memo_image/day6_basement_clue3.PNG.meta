@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      day6_basement_clue3_0: -5477463973130183222
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
