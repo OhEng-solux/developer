@@ -1,16 +1,23 @@
 using UnityEngine;
+using System.Collections;
 
 public class SaltUseManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private float protectionDuration = 5f;
+
+    public void ActivateEffect()
     {
-        
+        StartCoroutine(SaltProtectionCoroutine());
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator SaltProtectionCoroutine()
     {
-        
+        PlayerManager.instance.isProtectedBySalt = true;
+        Debug.Log("[SaltUse] 보호 시작");
+
+        yield return new WaitForSeconds(protectionDuration);
+
+        PlayerManager.instance.isProtectedBySalt = false;
+        Debug.Log("[SaltUse] 보호 종료");
     }
 }

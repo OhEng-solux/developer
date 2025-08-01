@@ -144,6 +144,13 @@ public class TaejuChase : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            if (PlayerManager.instance != null && PlayerManager.instance.isProtectedBySalt)
+            {
+                Debug.Log("[SaltUse] 보호 상태 - 배드엔딩 무시됨");
+                return; // 잡혔지만 배드엔딩은 발생하지 않음
+            }
+
+            Debug.Log("[TaejuChase] 플레이어 잡힘 - 배드엔딩 이동");
             //SceneManager.LoadSceneAsync("Ending_Bad");
         }
     }

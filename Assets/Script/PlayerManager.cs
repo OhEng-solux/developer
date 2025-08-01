@@ -28,6 +28,7 @@ public class PlayerManager : MovingObject
 
     // 추가: queue, currentWalkCount 필드 선언
     private Queue<string> queue;
+    public bool isProtectedBySalt = false; // 추격전 아이템 사용
 
     IEnumerator Start()
     {
