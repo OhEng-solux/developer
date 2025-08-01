@@ -4370,7 +4370,7 @@ GameObject:
   - component: {fileID: 1104828220}
   - component: {fileID: 1104828221}
   m_Layer: 0
-  m_Name: Prologue_Dialogue
+  m_Name: EndingDialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
