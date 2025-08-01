@@ -12,6 +12,7 @@ public class ToiletGhost : MonoBehaviour
     public GameObject right_3;
 
     public float delayBetweenParts = 0.0001f;
+    private bool hasTriggered = false;
 
     void Start()
     {
@@ -25,11 +26,14 @@ public class ToiletGhost : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (hasTriggered) return; 
+
         if (collision.CompareTag("Player"))
         {
+            hasTriggered = true;
             StartCoroutine(ActivateFace());
             StartCoroutine(ActivatePartsSequentially());
-            
+
         }
     }
     private IEnumerator ActivateFace()
@@ -42,6 +46,8 @@ public class ToiletGhost : MonoBehaviour
     private IEnumerator ActivatePartsSequentially()
     {
         yield return new WaitForSeconds(1f);
+        AudioManager.instance.Play("toilet_mirror");
+
         right_1.SetActive(true);
         yield return new WaitForSeconds(0.145f);
 
