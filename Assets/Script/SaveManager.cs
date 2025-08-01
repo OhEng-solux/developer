@@ -205,8 +205,11 @@ public class SaveManager : MonoBehaviour
         }
 
         // 스페이스키로 저장 (게임 중간에서만)
-        if (Input.GetKeyDown(KeyCode.Space) && !isStartMenu)
+        if (Input.GetKeyDown(KeyCode.Return) && !isStartMenu)
         {
+            if (PopupManager.instance != null && PopupManager.instance.IsPopupActive())
+                return;
+
             string path = Application.persistentDataPath + $"/SaveFile_{currentIndex}.dat";
             audioManager.Play(enterSound);
 

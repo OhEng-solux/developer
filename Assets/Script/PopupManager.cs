@@ -65,9 +65,10 @@ public class PopupManager : MonoBehaviour
 
             HighlightButton();
 
-            // 선택 확정
             if (Input.GetKeyDown(KeyCode.Return))
             {
+                Input.ResetInputAxes();
+
                 popupPanel.SetActive(false);
                 isChoicePopup = false;
 
@@ -78,6 +79,7 @@ public class PopupManager : MonoBehaviour
                 if (PlayerManager.instance != null)
                     PlayerManager.instance.canMove = true;
             }
+
         }
 
         else if (isPopupOpen)
