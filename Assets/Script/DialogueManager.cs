@@ -410,19 +410,20 @@ public class DialogueManager : MonoBehaviour
             text.gameObject.SetActive(true);
         }
 
-        // 하드코딩된 스타일 적용: 특정 문장 + 특정 오브젝트에서만 적용
+        // 하드코딩된 스타일 적용: 특정 문장 + 특정 오브젝트에서만 적용 또는 Ending_Bad 씬일 때 적용
         bool isSpecialDialogue = (count == 0 || count == 2 || count == 4 || count == 5 || count == 6 || count == 7);
         bool isFromChase = currentDialogueObjectName.Contains("Chase"); // 부분 일치도 허용
+        bool isEndingBad = SceneManager.GetActiveScene().name == "Ending_Bad";
 
-        Debug.Log($"[DialogueManager] Styling Check — Count: {count}, Object: {currentDialogueObjectName}, ApplyStyle: {isSpecialDialogue && isFromChase}");
+        Debug.Log($"[DialogueManager] Styling Check — Count: {count}, Object: {currentDialogueObjectName}, ApplyStyle: {(isSpecialDialogue && isFromChase) || isEndingBad}");
 
-        if (!useBlue && !useYellow && isSpecialDialogue && isFromChase)
+        if (!useBlue && !useYellow && (isSpecialDialogue && isFromChase || isEndingBad))
         {
             if (text != null)
             {
                 text.font = myCustomFont != null ? myCustomFont : text.font;
-                text.color = Color.red;
-                text.fontSize = 12; // 폰트 크기 조정
+                text.color = new Color32(0xFF, 0x4B, 0x4B, 0xFF); // #FF4B4B
+                text.fontSize = 10;
             }
         }
         else
@@ -431,7 +432,7 @@ public class DialogueManager : MonoBehaviour
             {
                 text.font = defaultFont != null ? defaultFont : text.font;
                 text.color = Color.white;
-                text.fontSize = 9; // 기본 폰트 크기
+                text.fontSize = 9;
             }
         }
 
