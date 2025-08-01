@@ -552,6 +552,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e293cb625d1c4c659ae075a41a1ac54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myCustomFont: {fileID: 0}
+  defaultFont: {fileID: 0}
   text: {fileID: 1296236321}
   blueText: {fileID: 0}
   yellowText: {fileID: 0}
@@ -862,7 +864,9 @@ MonoBehaviour:
     - "\uC548\uC5D0\u2026 \uC544\uC9C1, \uC788\uC5B4."
     - "\uC9C0\uAE08\uB3C4 \uB204\uAD70\uAC00 \uB4E4\uC5B4\uAC00\uBA74..."
     - "\uBE68\uB9AC \uAC00\uC57C \uD558\uB294\uB370\u2026!"
+    - 
     sprites:
+    - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
@@ -894,18 +898,22 @@ MonoBehaviour:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    npcObjects: []
+    - {fileID: 0}
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
   endingCanvas: {fileID: 0}
   backgroundRenderer: {fileID: 1678766115}
   fadeManager: {fileID: 1570433334}
+  startSound: {fileID: 8300000, guid: a788f7938021e4b5eb2634f99c41f290, type: 3}
+  soundVolume: 2
   backgroundChanges:
   - sentenceIndex: 3
     backgroundSprite: {fileID: -2097956982222191459, guid: 63201c8fc57cb488b895adce59a62d0c, type: 3}
   - sentenceIndex: 11
     backgroundSprite: {fileID: -2994148897413253434, guid: 7747606c7d5984ad387080cbc7ec2ab0, type: 3}
+  - sentenceIndex: 15
+    backgroundSprite: {fileID: -4112710993256233742, guid: 1f2a793fed00b44149666b370f118161, type: 3}
 --- !u!114 &1104828222
 MonoBehaviour:
   m_ObjectHideFlags: 0
