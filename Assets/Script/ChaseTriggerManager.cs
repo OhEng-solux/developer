@@ -79,6 +79,7 @@ public class ChaseTriggerManager : MonoBehaviour
         dialogueStarted = true;
         if (DialogueManager.instance != null && currentDialogueIndex < chaseDialogues.Length)
         {
+            DialogueManager.instance.SetCurrentDialogueObjectName("Chase_TaejuDialogue");
             DialogueManager.instance.ShowDialogue(chaseDialogues[currentDialogueIndex]);
             currentDialogueIndex++;
         }
