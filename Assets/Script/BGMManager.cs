@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BGMManager : MonoBehaviour
 {
@@ -29,6 +30,30 @@ public class BGMManager : MonoBehaviour
     void Start()
     {
         source = GetComponent<AudioSource>();
+
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Start")
+        {
+            Play(0); // 0번은 메인 화면 BGM
+        }
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name != "Start")
+        {
+            Stop(); // 메인 화면 아니면 멈춤
+        }
+        else
+        {
+            Play(0); // 메인 화면 돌아오면 다시 재생
+        }
     }
 
     public void Stop()

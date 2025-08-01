@@ -100,8 +100,9 @@ public class ChaseTriggerManager : MonoBehaviour
 
     public void StartChase()
     {
+        HideAllNPCsWithTag();
         Debug.Log("추격 시작!");
-        
+
         GameObject hintTrigger = GameObject.Find("hidden_door");
         if (hintTrigger != null)
         {
@@ -111,6 +112,15 @@ public class ChaseTriggerManager : MonoBehaviour
         else
         {
             Debug.LogWarning("힌트 트리거를 찾을 수 없습니다.");
+        }
+    }
+
+    public void HideAllNPCsWithTag()
+    {
+        GameObject[] npcs = GameObject.FindGameObjectsWithTag("npcs");
+        foreach (var npc in npcs)
+        {
+            npc.SetActive(false);
         }
     }
 }
