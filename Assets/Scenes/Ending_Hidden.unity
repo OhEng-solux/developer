@@ -894,13 +894,14 @@ MonoBehaviour:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
   endingCanvas: {fileID: 0}
   backgroundRenderer: {fileID: 1678766115}
   fadeManager: {fileID: 1570433334}
+  startSound: {fileID: 8300000, guid: a788f7938021e4b5eb2634f99c41f290, type: 3}
+  soundVolume: 2
   backgroundChanges:
   - sentenceIndex: 3
     backgroundSprite: {fileID: -2097956982222191459, guid: 63201c8fc57cb488b895adce59a62d0c, type: 3}

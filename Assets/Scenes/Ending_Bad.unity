@@ -4132,7 +4132,6 @@ MonoBehaviour:
   audioManager: {fileID: 1113897436}
   keySound: type_sound
   enterSound: enter_sound
-  openSound: ok_sound
   beepSound: beep_sound
   inventoryPanel: {fileID: 639303598}
   slots:
@@ -4572,13 +4571,14 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 2a7509f284ae40c4cbc4bd250844e6a5, type: 3}
     - {fileID: 21300000, guid: 2a7509f284ae40c4cbc4bd250844e6a5, type: 3}
     - {fileID: 21300000, guid: 2a7509f284ae40c4cbc4bd250844e6a5, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
   endingCanvas: {fileID: 514448974}
   backgroundRenderer: {fileID: 1678766115}
   fadeManager: {fileID: 1570433334}
+  startSound: {fileID: 8300000, guid: a1f1dfe278deb4f468d1c020178973f4, type: 3}
+  soundVolume: 2
   backgroundChanges:
   - sentenceIndex: 0
     backgroundSprite: {fileID: 7945458949661159329, guid: d96a0abd6f00947c383157315bc71a08, type: 3}
