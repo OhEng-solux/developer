@@ -10,6 +10,7 @@ public class BGMManager : MonoBehaviour
     public AudioClip[] clips; // Inspector에서 mp3를 순서대로 할당
     private AudioSource source;
     private int currentBGM = -1;
+    private bool overrideLock = false;
 
     // 페이드용 대기시간
     private WaitForSeconds waitTime = new WaitForSeconds(0.01f);
@@ -112,9 +113,11 @@ public class BGMManager : MonoBehaviour
 
     public void Play(int _playMusicTrack)
     {
+        if (overrideLock && _playMusicTrack != 2)
+            return; // 오버라이드락 동안엔 2번만 허용
+
         if (_playMusicTrack == currentBGM && source.isPlaying)
         {
-            Debug.Log("[BGMManager] 이미 동일 곡 재생 중 > 스킵!");
             return;
         }
 
@@ -196,6 +199,11 @@ public class BGMManager : MonoBehaviour
     public IEnumerator FadeInMusicCoroutinePublic()
     {
         yield return StartCoroutine(FadeInMusicCoroutine());
+    }
+
+    public void SetOverrideLock(bool value)
+    {
+        overrideLock = value;
     }
 
 }

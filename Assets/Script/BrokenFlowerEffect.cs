@@ -15,18 +15,17 @@ public class BrokenFlowerEffect : MonoBehaviour
     {
         if (taejuNPC != null && taejuNPC.TryGetComponent(out TaejuChase chase))
         {
-            chase.StopChaseAndFreeze();  
+            chase.StopChaseAndFreeze();
+            chase.recordedPositions.Clear();
+            chase.PauseChase(true);
+            chase.DisableColliderTemporarily(999f);
 
-            chase.recordedPositions.Clear(); // 위치 기록 철저히 비우기
-            chase.PauseChase(true);          // pauseChase flag로 완전 멈춤
-            chase.DisableColliderTemporarily(999f); // 콜라이더도 비활성
-
-            // ------------ 여기서만 BGM 코루틴 호출 ----------
+            // ★ 여기서 lock 설정!
             if (BGMManager.instance != null)
             {
+                BGMManager.instance.SetOverrideLock(true);
                 StartCoroutine(chase.BackToDay6BGM());
             }
-            //--------------------------------------------------
 
             if (flowerPosition != null)
             {
@@ -86,5 +85,8 @@ public class BrokenFlowerEffect : MonoBehaviour
 
             taejuNPC.SetActive(false);
         }
+        // ★ lock 해제 추가
+        if (BGMManager.instance != null)
+            BGMManager.instance.SetOverrideLock(false);
     }
 }
