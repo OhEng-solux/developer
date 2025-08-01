@@ -1,16 +1,52 @@
 using UnityEngine;
+using System.Collections;
 
 public class ToiletGhost : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public GameObject face;
+    public GameObject left_1;
+    public GameObject right_1;
+    public GameObject left_2;
+    public GameObject right_2;
+    public GameObject left_3;
+    public GameObject right_3;
+
+    public float delayBetweenParts = 0.0001f;
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.CompareTag("Player"))
+        {
+            StartCoroutine(ActivateFace());
+            StartCoroutine(ActivatePartsSequentially());
+            
+        }
+    }
+    private IEnumerator ActivateFace()
+    {
+        yield return new WaitForSeconds(1f);
+        face.SetActive(true);
+        yield return new WaitForSeconds(1f);
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator ActivatePartsSequentially()
     {
-        
+        yield return new WaitForSeconds(1f);
+        right_1.SetActive(true);
+        yield return new WaitForSeconds(0.145f);
+
+        left_1.SetActive(true);
+        yield return new WaitForSeconds(0.145f);
+
+        right_2.SetActive(true);
+        yield return new WaitForSeconds(0.145f);
+
+        left_2.SetActive(true);
+        yield return new WaitForSeconds(0.145f);
+
+        right_3.SetActive(true);
+        yield return new WaitForSeconds(0.145f);
+
+        left_3.SetActive(true);
     }
 }
