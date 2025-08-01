@@ -335,4 +335,13 @@ public class SaveManager : MonoBehaviour
         isSavePoint = value;
         Debug.Log($"[SaveManager] isSavePoint set to {value}");
     }
+
+    public void CloseSave()
+    {
+        savePanel.SetActive(false);
+        isOpen = false;
+        if (playerManager != null)
+            playerManager.canMove = true;
+    }
+
 }

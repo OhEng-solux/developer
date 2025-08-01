@@ -171,4 +171,11 @@ public class PopupManager : MonoBehaviour
         yesButton.colors = yesColor;
         noButton.colors = noColor;
     }
+
+    public void ClosePopup()
+    {
+        popupPanel.SetActive(false);
+        isChoicePopup = false;
+    }
+
 }
