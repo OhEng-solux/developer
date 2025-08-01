@@ -11,10 +11,10 @@ public class SaveManager : MonoBehaviour
 {
     public static SaveManager instance;
 
-    private string keySound = "type_Sound";
-    private string enterSound = "enter_Sound";
-    private string openSound = "ok_Sound";
-    private string beepSound = "beep_Sound";
+    private string keySound = "type_sound";
+    private string enterSound = "enter_sound";
+    private string openSound = "ok_sound";
+    private string beepSound = "beep_sound";
     public bool closePopup = false;
     public GameObject savePanel;
     public SaveSlot[] slots; // 슬롯 배열
@@ -275,7 +275,7 @@ public class SaveManager : MonoBehaviour
             if (File.Exists(path))
             {
                 SaveNLoad.Data data = LoadSaveDataFromFile(path);
-                slots[i].SetSaveInfo(data.characterName, data.saveDate, data.saveTime, data.sceneName);
+                slots[i].SetSaveInfo(data.mapName, data.saveDate, data.saveTime, data.sceneName);
             }
             else
             {
