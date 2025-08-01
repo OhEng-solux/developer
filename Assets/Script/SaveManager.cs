@@ -275,7 +275,7 @@ public class SaveManager : MonoBehaviour
             if (File.Exists(path))
             {
                 SaveNLoad.Data data = LoadSaveDataFromFile(path);
-                slots[i].SetSaveInfo(data.mapName, data.saveDate, data.saveTime, data.sceneName);
+                slots[i].SetSaveInfo(data.characterName, data.saveDate, data.saveTime, data.sceneName);
             }
             else
             {
