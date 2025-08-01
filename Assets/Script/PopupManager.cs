@@ -35,7 +35,7 @@ public class PopupManager : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("1. [PopupManager] 팝업 열림, isPopupOpen: " + isPopupOpen);
+        // Debug.Log("1. [PopupManager] 팝업 열림, isPopupOpen: " + isPopupOpen);
         if (!popupPanel.activeSelf) return;
 
             //Debug.Log("1. [PopupManager] 팝업 열림, isPopupOpen: " + isPopupOpen );
@@ -65,9 +65,10 @@ public class PopupManager : MonoBehaviour
 
             HighlightButton();
 
-            // 선택 확정
             if (Input.GetKeyDown(KeyCode.Return))
             {
+                Input.ResetInputAxes();
+
                 popupPanel.SetActive(false);
                 isChoicePopup = false;
 
@@ -78,6 +79,7 @@ public class PopupManager : MonoBehaviour
                 if (PlayerManager.instance != null)
                     PlayerManager.instance.canMove = true;
             }
+
         }
 
         else if (isPopupOpen)

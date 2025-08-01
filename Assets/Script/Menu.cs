@@ -44,9 +44,12 @@ public class Menu : MonoBehaviour
     {
         if (DialogueManager.instance == null || !DialogueManager.instance.talking)
         {
-            if (!PopupManager.instance.IsPopupActive()&& !SaveManager.instance.IsSaveActive() && !InventoryManager.instance.IsInventoryActive())
+            bool popupInactive = PopupManager.instance == null || !PopupManager.instance.IsPopupActive();
+            bool saveInactive = SaveManager.instance == null || !SaveManager.instance.IsSaveActive();
+            bool inventoryInactive = InventoryManager.instance == null || !InventoryManager.instance.IsInventoryActive();
+
+            if (popupInactive && saveInactive && inventoryInactive)
             {
-                // ESC 키로 메뉴 켜고 끄기
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
                     Debug.Log("SaveManager.instance: " + (SaveManager.instance != null));
@@ -70,6 +73,7 @@ public class Menu : MonoBehaviour
             }
         }
     }
+
 
     void OpenMenu()
     {
