@@ -128,6 +128,7 @@ public class TaejuChase : MonoBehaviour
     {
         isChasing = false;
         animator.SetBool("Walking", false);
+        StartCoroutine(BackToDay6BGM());
     }
 
     public void PauseChase(bool isPaused)
@@ -217,6 +218,17 @@ public class TaejuChase : MonoBehaviour
         yield return new WaitForSeconds(seconds);
         if (chaseCollider != null)
             chaseCollider.enabled = true;
+    }
+
+
+    private IEnumerator BackToDay6BGM()
+    {
+        if (BGMManager.instance != null)
+        {
+            yield return BGMManager.instance.StartCoroutine(BGMManager.instance.FadeOutMusicCoroutinePublic());
+            BGMManager.instance.Play(3);
+            yield return BGMManager.instance.StartCoroutine(BGMManager.instance.FadeInMusicCoroutinePublic());
+        }
     }
 
 }
