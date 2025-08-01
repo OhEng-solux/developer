@@ -11995,7 +11995,7 @@ GameObject:
   - component: {fileID: 342390019}
   m_Layer: 0
   m_Name: npc_sprout_A
-  m_TagString: Untagged
+  m_TagString: npcs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27351,7 +27351,7 @@ GameObject:
   - component: {fileID: 715098156}
   m_Layer: 0
   m_Name: npc_sun_B
-  m_TagString: Untagged
+  m_TagString: npcs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33050,7 +33050,7 @@ GameObject:
   - component: {fileID: 771285941}
   m_Layer: 0
   m_Name: npc_sun_C
-  m_TagString: Untagged
+  m_TagString: npcs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33405,7 +33405,7 @@ GameObject:
   - component: {fileID: 780213551}
   m_Layer: 0
   m_Name: seoa
-  m_TagString: Untagged
+  m_TagString: npcs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33994,7 +33994,7 @@ GameObject:
   - component: {fileID: 790741698}
   m_Layer: 0
   m_Name: npc_sprout_F
-  m_TagString: Untagged
+  m_TagString: npcs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40992,7 +40992,7 @@ GameObject:
   - component: {fileID: 992325170}
   m_Layer: 3
   m_Name: director
-  m_TagString: npc
+  m_TagString: npcs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43574,7 +43574,7 @@ GameObject:
   - component: {fileID: 1085346671}
   m_Layer: 0
   m_Name: yoonji
-  m_TagString: Untagged
+  m_TagString: npcs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58464,7 +58464,7 @@ GameObject:
   - component: {fileID: 1418908891}
   m_Layer: 0
   m_Name: npc_sprout_D
-  m_TagString: Untagged
+  m_TagString: npcs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59564,7 +59564,7 @@ GameObject:
   - component: {fileID: 1457823606}
   m_Layer: 0
   m_Name: npc_sprout_C
-  m_TagString: Untagged
+  m_TagString: npcs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59758,7 +59758,7 @@ GameObject:
   - component: {fileID: 1460067277}
   m_Layer: 0
   m_Name: hyeonsu
-  m_TagString: Untagged
+  m_TagString: npcs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62129,7 +62129,7 @@ GameObject:
   - component: {fileID: 1541870520}
   m_Layer: 0
   m_Name: npc_sprout_E
-  m_TagString: Untagged
+  m_TagString: npcs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79109,7 +79109,7 @@ GameObject:
   - component: {fileID: 1871895954}
   m_Layer: 0
   m_Name: npc_sun_A
-  m_TagString: Untagged
+  m_TagString: npcs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81428,7 +81428,7 @@ GameObject:
   - component: {fileID: 1934082428}
   m_Layer: 0
   m_Name: npc_adult
-  m_TagString: Untagged
+  m_TagString: npcs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84129,7 +84129,7 @@ GameObject:
   - component: {fileID: 2012316472}
   m_Layer: 0
   m_Name: npc_sprout_B
-  m_TagString: Untagged
+  m_TagString: npcs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
