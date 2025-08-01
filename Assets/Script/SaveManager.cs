@@ -15,17 +15,20 @@ public class SaveManager : MonoBehaviour
     private string enterSound = "enter_Sound";
     private string openSound = "ok_Sound";
     private string beepSound = "beep_Sound";
-
+    public bool closePopup = false;
     public GameObject savePanel;
     public SaveSlot[] slots; // 슬롯 배열
+
 
     private int currentIndex = 0; // 현재 선택된 슬롯 인덱스
     private bool isOpen = false; // 열림 상태
     private bool isSavePoint = false;
     private bool isStartMenu = false;
+    public bool isEnding = false;
     private bool isMenu = false;
     private AudioManager audioManager;
     private SaveNLoad saveNLoad;
+   // private bool inputBlocked = false;
 
     private PlayerManager playerManager;
     private bool prevIsOpen = false; // 이전 isOpen 상태 저장용
@@ -56,6 +59,27 @@ public class SaveManager : MonoBehaviour
         }
     }
 
+    public IEnumerator OpenSave()
+    {
+        // 팝업 모두 닫힐 때까지 대기
+        yield return WaitForPopupClose();
+        Debug.Log("팝업 isOpen ");
+        // 대기 후 팝업 토글
+        isOpen = true;
+        savePanel.SetActive(isOpen);
+    }
+    private IEnumerator WaitForPopupClose()
+    {
+        // 이미지 팝업이 열려있는 동안 대기  
+        yield return new WaitWhile(() =>
+            (ImagePopupManager.instance != null && ImagePopupManager.instance.IsImageActive()) || (PopupManager.instance != null && PopupManager.instance.IsPopupActive())
+        );
+
+        // 팝업이 모두 닫혔을 때 실행할 작업  
+        Debug.Log("팝업 모두 닫힘, 다음 작업 진행");
+    }
+
+
     void Start()
     {
         audioManager = FindFirstObjectByType<AudioManager>();
@@ -67,29 +91,55 @@ public class SaveManager : MonoBehaviour
             playerManager = playerObj.GetComponent<PlayerManager>();
     }
 
+    /*private IEnumerator WaitForSavePanelClose()
+    {
+        // isOpen이 false가 될 때까지 기다림 (즉, 세이브 창이 닫힐 때까지)
+        yield return new WaitWhile(() => isOpen);
+
+        // 세이브 창이 닫힌 이후 실행할 작업 작성
+        Debug.Log("세이브 창 닫힘, 다음 작업 시작");
+    }*/
+
+
     void Update()
     {
+        Debug.Log("Update");
+        /*
+        if (inputBlocked)
+        {
+            // 엔터키가 올라올 때까지 기다렸다가 입력 가능한 상태로 전환
+            if (Input.GetKeyUp(KeyCode.Return))
+                inputBlocked = false;
+
+            return; // 입력 무시
+        }
+        */
         string sceneName = gameObject.scene.name;
 
         if (sceneName == "Start")
         {
             isStartMenu = true;
-            isOpen = true;
             UpdateSlots();
             HighlightSlot(currentIndex);
         }
 
-        if (!isOpen &&( InventoryManager.instance == null || InventoryManager.instance.IsInventoryActive())) return;
+        if (!isOpen && (InventoryManager.instance == null || InventoryManager.instance.IsInventoryActive())) return;
+        if (!isOpen && (StartNEndMenu.instance == null || StartNEndMenu.instance.IsPanelActive())) return;
         if (!isOpen && (Menu.instance == null || Menu.instance.activated)) return;
 
-        // Z키 눌렀을 때 세이브창 열기/닫기 토글 (저장지점 근처일 때만)
+        if (sceneName == "Day6" && (ImagePopupManager.instance == null || ImagePopupManager.instance.IsImageActive())) return;
+
+
+        // Z키 눌렀을 때 세이브창 열기/닫기 토글 (저장지점 근처일 때만) or 자동 저장
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            if (isSavePoint)
+            Debug.Log("세이브 메니저 팝업");
+            if ((isSavePoint) && !isOpen)
             {
-                isOpen = !isOpen;
-                savePanel.SetActive(isOpen);
+                StartCoroutine(OpenSave());
+                //StartCoroutine(WaitForSavePanelClose());//
             }
+
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -131,6 +181,7 @@ public class SaveManager : MonoBehaviour
 
 
         // 팝업창이 활성화되어 있으면 입력 무시
+
         if (!isOpen || PopupManager.instance == null || PopupManager.instance.IsPopupActive()) return;
 
         // 방향키 입력 처리
@@ -186,12 +237,14 @@ public class SaveManager : MonoBehaviour
         }
 
         // 엔터키로 로드 (시작 메뉴 혹은 메뉴에서만)
-        if (Input.GetKeyDown(KeyCode.Return) && (isStartMenu || isMenu))
+        if (Input.GetKeyDown(KeyCode.Return) && (isStartMenu || isMenu || isEnding))
         {
             string path = Application.persistentDataPath + $"/SaveFile_{currentIndex}.dat";
+           // inputBlocked = true;
 
             if (File.Exists(path))
             {
+                Debug.Log("벌써 팝업 한거임?");
                 audioManager.Play(enterSound);
                 PopupManager.instance.ShowChoicePopup(
                     "불러오시겠습니까?",
@@ -202,6 +255,7 @@ public class SaveManager : MonoBehaviour
                     () =>
                     {
                         Debug.Log("불러오기 취소");
+                        closePopup = true;
                     }
                 );
             }

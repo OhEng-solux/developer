@@ -5,12 +5,16 @@ using System.Collections.Generic;
 
 public class EndingManager : MonoBehaviour
 {
+    public GameObject Panel;
+
     [SerializeField] private Dialogue dialogue;                     // 대사 데이터
     [SerializeField] private GameObject endingCanvas;               // 대사 전에 보여줄 UI (선택)
     [SerializeField] private SpriteRenderer backgroundRenderer;     // Background 오브젝트의 SpriteRenderer
     [SerializeField] private FadeManager fadeManager;
 
     [System.Serializable]
+    
+
     public class BackgroundChangeData
     {
         public int sentenceIndex;         // 몇 번째 문장에서
@@ -24,6 +28,7 @@ public class EndingManager : MonoBehaviour
     void Start()
     {
         theDM = Object.FindAnyObjectByType<DialogueManager>();
+        Panel.gameObject.SetActive(false);
     }
 
     void Update()
@@ -70,12 +75,14 @@ public class EndingManager : MonoBehaviour
         }
 
         yield return new WaitForSeconds(0.5f); // 안전 대기
+        SaveManager.instance.isEnding = true;
+        Panel.gameObject.SetActive(true);
 
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit();
-#endif
+        //#if UNITY_EDITOR
+        //        UnityEditor.EditorApplication.isPlaying = false;
+        //#else
+        //Application.Quit();
+        //#endif
     }
 
     // 페이드 전환 효과

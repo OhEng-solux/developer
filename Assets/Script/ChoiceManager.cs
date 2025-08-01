@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
@@ -12,7 +12,7 @@ public class ChoiceManager : MonoBehaviour
     {
         if (instance == null)
         {
-            DontDestroyOnLoad(this.gameObject);
+            //DontDestroyOnLoad(this.gameObject);
             instance = this;
         }
         else
@@ -34,9 +34,9 @@ public class ChoiceManager : MonoBehaviour
 
     public GameObject go;
     public Text question_Text;
-    public Text[] answer_Text;       // °¢ ¼±ÅÃÁö ÅØ½ºÆ®
-    public GameObject[] answer_Panel; // °¢ ¼±ÅÃÁö ÆĞ³Î
-    public RectTransform selectorImage; // "¢º" µî ÇÏ³ª¸¸ ÇÒ´ç
+    public Text[] answer_Text;       // ê° ì„ íƒì§€ í…ìŠ¤íŠ¸
+    public GameObject[] answer_Panel; // ê° ì„ íƒì§€ íŒ¨ë„
+    public RectTransform selectorImage; // "â–¶" ë“± í•˜ë‚˜ë§Œ í• ë‹¹
 
     public Animator anim;
 
@@ -86,7 +86,7 @@ public class ChoiceManager : MonoBehaviour
         lastAnswerIndex = maxAnswers - 1;
 
         anim.SetBool("Appear", true);
-        Selection(); // ¼±ÅÃÁö Ã³À½¿¡ selectorImage À§Ä¡ ¹Ù·Î ¸ÂÃß±â
+        Selection(); // ì„ íƒì§€ ì²˜ìŒì— selectorImage ìœ„ì¹˜ ë°”ë¡œ ë§ì¶”ê¸°
         StartCoroutine(ChoiceCoroutine());
     }
 
@@ -111,7 +111,7 @@ public class ChoiceManager : MonoBehaviour
         anim.SetBool("Appear", false);
         go.SetActive(false);
         choiceIng = false;
-        if (selectorImage != null) selectorImage.gameObject.SetActive(false); // ²¨ÁÖ±â
+        if (selectorImage != null) selectorImage.gameObject.SetActive(false); // êº¼ì£¼ê¸°
         theOrder.Move();
     }
 
@@ -212,17 +212,17 @@ public class ChoiceManager : MonoBehaviour
     {
         if (selectorImage == null)
         {
-            Debug.LogWarning("SelectorImage°¡ ¿¬°áµÇÁö ¾Ê¾Ò½À´Ï´Ù!");
+            Debug.LogWarning("SelectorImageê°€ ì—°ê²°ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤!");
             return;
         }
 
         selectorImage.gameObject.SetActive(true);
         selectorImage.SetParent(answer_Panel[result].transform, false);
 
-        // selectorImage.localScale = Vector3.one; // ¹İµå½Ã 1·Î °íÁ¤
+        // selectorImage.localScale = Vector3.one; // ë°˜ë“œì‹œ 1ë¡œ ê³ ì •
         selectorImage.localRotation = Quaternion.identity;
 
-        selectorImage.anchoredPosition = new Vector2(-25f, 0f); // ÅØ½ºÆ® ¿ŞÂÊ Á¤·Ä
+        selectorImage.anchoredPosition = new Vector2(-25f, 0f); // í…ìŠ¤íŠ¸ ì™¼ìª½ ì •ë ¬
     }
 
 
