@@ -38,12 +38,13 @@ public class CameraManager: MonoBehaviour
     void Start()
     {
         theCamera = Camera.main;
+        Debug.Log("카메라메니저 플레이어 타겟");
 
-        if (bound == null) // bound 체크
-        {
-            return;
-        }
-
+        PlayerManager thePlayer = FindFirstObjectByType<PlayerManager>();
+        target = thePlayer.gameObject;
+        Bound theBound = FindFirstObjectByType<Bound>();
+        theBound.setBound();
+        Debug.Log("Start에서 할당된 target: " + (target != null ? target.name : "null"));
         minBound = bound.bounds.min;
         maxBound = bound.bounds.max;
 
@@ -53,6 +54,12 @@ public class CameraManager: MonoBehaviour
 
     void LateUpdate()
     {
+        PlayerManager thePlayer = FindFirstObjectByType<PlayerManager>();
+        target = thePlayer.gameObject;
+
+        Debug.Log("LateUpdate target: " + (target != null ? target.name : "null"));
+        Debug.Log("LateUpdate bound: " + (bound != null ? bound.name : "null"));
+
         if (target == null || bound == null) return;
 
         Vector3 desired = target.transform.position;

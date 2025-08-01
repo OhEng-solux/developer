@@ -12,6 +12,7 @@ public class Bound : MonoBehaviour
     void Start()
     {
         bound = GetComponent<PolygonCollider2D>();
+        Debug.Log("Bound " + bound);
         var theCamera = FindFirstObjectByType<CameraManager>();
         theCamera.SetBound(bound);
     }

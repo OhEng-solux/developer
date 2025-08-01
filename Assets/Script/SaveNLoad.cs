@@ -23,7 +23,7 @@ public class SaveNLoad : MonoBehaviour
 
         public string saveDate;   
         public string saveTime;
-
+        public string targetName="thePlayer";
     }
 
     private PlayerManager thePlayer;
@@ -123,10 +123,8 @@ public class SaveNLoad : MonoBehaviour
                 thePlayer.currentSceneName = data.sceneName;
                 thePlayer.transform.position = playerPositionToLoad;
             }
-            if (theCam != null)
-            {
-                theCam.target = thePlayer.gameObject;
-            }
+            Debug.Log("OnSceneLoaded");
+
             GameManager theGM = FindFirstObjectByType<GameManager>();
             if (theGM != null)
             {
