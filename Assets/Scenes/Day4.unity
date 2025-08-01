@@ -7588,6 +7588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boundName: Lobby
+  taejuSpawnPoint: {fileID: 0}
 --- !u!60 &721013317
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -13150,7 +13151,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 61d66e1e234b148e1a8d9066f13df469, type: 2}
   descriptionText: {fileID: 1779963122}
   isOpen: 0
-  isChaseMode: 0
 --- !u!1 &922519959
 GameObject:
   m_ObjectHideFlags: 0
@@ -16736,7 +16736,7 @@ RectTransform:
   m_GameObject: {fileID: 1331588659}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1672079419}
@@ -18160,6 +18160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boundName: Sun
+  taejuSpawnPoint: {fileID: 0}
 --- !u!4 &1403641311
 Transform:
   m_ObjectHideFlags: 0
@@ -18339,7 +18340,7 @@ RectTransform:
   m_GameObject: {fileID: 1416341579}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1191100248}
@@ -19768,7 +19769,7 @@ RectTransform:
   m_GameObject: {fileID: 1544800913}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 376356694}
@@ -20806,7 +20807,7 @@ RectTransform:
   m_GameObject: {fileID: 1631649661}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 978215347}
@@ -20970,6 +20971,7 @@ MonoBehaviour:
   cancel_sound: enter_sound
   select_sound: enter_sound
   theOrder: {fileID: 1977217777}
+  ignoreEscOneFrame: 0
   menuButtons:
   - {fileID: 367466979}
   - {fileID: 94043289}
@@ -26358,6 +26360,7 @@ MonoBehaviour:
   canMove: 1
   notMove: 0
   hasEnteredName: 0
+  isProtectedBySalt: 0
 --- !u!95 &1928187255
 Animator:
   serializedVersion: 7
@@ -26557,6 +26560,7 @@ MonoBehaviour:
     sceneName: 
     saveDate: 
     saveTime: 
+    targetName: thePlayer
 --- !u!114 &1928187262
 MonoBehaviour:
   m_ObjectHideFlags: 0
