@@ -16,7 +16,6 @@ public class InventoryManager : MonoBehaviour
     public AudioManager audioManager; // 오디오 매니저 직접 연결
     public string keySound;
     public string enterSound;
-    public string openSound;
     public string beepSound;
 
     public GameObject inventoryPanel;
@@ -48,7 +47,11 @@ public class InventoryManager : MonoBehaviour
         player.canMove = !isOpen;
 
         // 사운드 재생
-        audioManager.Play(openSound);
+        if (open)
+            AudioManager.instance.Play("menu_open");
+        else
+            AudioManager.instance.Play("menu_close");
+
 
         // 디버깅
         Debug.Log("[인벤토리] 토글됨. isOpen: " + isOpen + ", inventoryPanel.activeSelf: " + inventoryPanel.activeSelf);

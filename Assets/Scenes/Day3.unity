@@ -6132,7 +6132,6 @@ MonoBehaviour:
   audioManager: {fileID: 2107776951}
   keySound: type_sound
   enterSound: enter_sound
-  openSound: ok_sound
   beepSound: beep_sound
   inventoryPanel: {fileID: 858217240}
   slots:
@@ -25212,6 +25211,16 @@ MonoBehaviour:
     loop: 0
   - name: game_fail
     clip: {fileID: 8300000, guid: ae7648710c8ab4f9787b5280d70adcf9, type: 3}
+    source: {fileID: 0}
+    Volume: 2
+    loop: 0
+  - name: menu_open
+    clip: {fileID: 8300000, guid: 6c6e9675a7e4d4cf1b96695daad6898b, type: 3}
+    source: {fileID: 0}
+    Volume: 2
+    loop: 0
+  - name: menu_close
+    clip: {fileID: 8300000, guid: 2a7ffea1cd44844d38a76d296e37eb12, type: 3}
     source: {fileID: 0}
     Volume: 2
     loop: 0
