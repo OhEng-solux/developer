@@ -35,6 +35,8 @@ public class ClueManager : MonoBehaviour
             if (clueCount >= clueRead.Length)
             {
                 SaveManager.instance.StartCoroutine(SaveManager.instance.OpenSave());
+                PlayerManager.instance.canMove = false;
+                Debug.Log("플레이어 멈춤");
                 StartCoroutine(DelayedStartChaseDialogue());
                 Debug.Log("모든 단서 확인 완료 → 2초 후 추격 대사 시작");
                 
@@ -56,6 +58,8 @@ public class ClueManager : MonoBehaviour
         {
             Debug.LogError("ChaseTriggerManager를 찾을 수 없습니다.");
         }
+        Debug.Log("플레이어 움직임");
+        PlayerManager.instance.canMove = true;
     }
 
 }
