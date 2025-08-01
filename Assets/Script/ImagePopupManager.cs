@@ -26,7 +26,7 @@ public class ImagePopupManager : MonoBehaviour
     {
         if (popupPanel != null && popupPanel.activeSelf)
         {
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 HidePopup();
             }
