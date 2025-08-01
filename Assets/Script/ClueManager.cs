@@ -31,18 +31,22 @@ public class ClueManager : MonoBehaviour
 
             Debug.Log($"Clue {index} 확인됨. 총 단서 수: {clueCount}");
 
+
             if (clueCount >= clueRead.Length)
             {
-                Debug.Log("모든 단서 확인 완료 → 2초 후 추격 대사 시작");
+                SaveManager.instance.StartCoroutine(SaveManager.instance.OpenSave());
                 StartCoroutine(DelayedStartChaseDialogue());
+                Debug.Log("모든 단서 확인 완료 → 2초 후 추격 대사 시작");
+                
             }
+            
         }
     }
 
     private IEnumerator DelayedStartChaseDialogue()
     {
-        yield return new WaitForSeconds(1.5f);
-
+        yield return new WaitWhile(() => ((SaveManager.instance != null && SaveManager.instance.IsSaveActive())|| (ImagePopupManager.instance != null && ImagePopupManager.instance.IsImageActive())));
+        yield return new WaitForSeconds(2f); // ⏱️ 2초 대기
         var chaseTrigger = FindFirstObjectByType<ChaseTriggerManager>();
         if (chaseTrigger != null)
         {
@@ -53,4 +57,5 @@ public class ClueManager : MonoBehaviour
             Debug.LogError("ChaseTriggerManager를 찾을 수 없습니다.");
         }
     }
+
 }

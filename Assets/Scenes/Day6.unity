@@ -34813,6 +34813,37 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 24.714584, y: 16.008652}
   m_EdgeRadius: 0
+--- !u!1 &827259817
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 827259818}
+  m_Layer: 0
+  m_Name: LightManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &827259818
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827259817}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 73.1, y: -426.8, z: 0}
+  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &837109665
 GameObject:
   m_ObjectHideFlags: 0
@@ -51396,7 +51427,7 @@ Transform:
   m_GameObject: {fileID: 1306316774}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -86.1, y: -289.3, z: 0}
+  m_LocalPosition: {x: 43.1, y: 43.5, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -51562,11 +51593,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ccaf293e195ff1418dd20d790dbc5a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  closePopup: 0
   savePanel: {fileID: 1557405765}
   slots:
   - {fileID: 769315442}
   - {fileID: 1317206798}
   - {fileID: 1802009424}
+  isEnding: 0
 --- !u!114 &1306316784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52305,6 +52338,7 @@ MonoBehaviour:
   - {fileID: 1030386431}
   - {fileID: 474994897}
   activated: 0
+  closePopup: 0
 --- !u!114 &1325817282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71241,8 +71275,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -284738311
-  m_SortingLayer: 5
+  m_SortingLayerID: -516611233
+  m_SortingLayer: 4
   m_SortingOrder: 2
   m_Sprite: {fileID: -155319480, guid: 080654f496d784192bf52c4f694e4c61, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -88105,6 +88139,7 @@ SceneRoots:
   - {fileID: 370457044}
   - {fileID: 2107776952}
   - {fileID: 1712721387}
+  - {fileID: 827259818}
   - {fileID: 29963691}
   - {fileID: 1926663925}
   - {fileID: 1306316776}

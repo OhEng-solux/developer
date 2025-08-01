@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
@@ -12,10 +12,10 @@ public class Menu : MonoBehaviour
         if (instance == null)
             instance = this;
         else
-            Destroy(gameObject); // �ߺ� ����
+            Destroy(gameObject); // 중복 방지
     }
 
-    public GameObject menuPanel; // �޴� ��ü �г�
+    public GameObject menuPanel; // 메뉴 전체 패널
     public AudioManager theAudio;
 
     public string call_sound;
@@ -24,11 +24,11 @@ public class Menu : MonoBehaviour
 
     public OrderManager theOrder;
 
-    public List<Button> menuButtons; // �޴� �׸� ��ư�� (�ν����Ϳ� �Ҵ�)
+    public List<Button> menuButtons; // 메뉴 항목 버튼들 (인스펙터에 할당)
 
     public bool activated;
-
-    private int currentIndex = 0; // ���� ���õ� ��ư �ε���
+    public bool closePopup=false;
+    private int currentIndex = 0; // 현재 선택된 버튼 인덱스
 
     void Start()
     {
@@ -36,7 +36,7 @@ public class Menu : MonoBehaviour
         menuPanel.SetActive(false);
         Time.timeScale = 1f;
 
-        // ��ư ���� �ʱ�ȭ
+        // 버튼 색상 초기화
         UpdateButtonColors();
     }
 
@@ -44,11 +44,9 @@ public class Menu : MonoBehaviour
     {
         if (DialogueManager.instance == null || !DialogueManager.instance.talking)
         {
-            if (!PopupManager.instance.IsPopupActive()
-                && !SaveManager.instance.IsSaveActive()
-                && !InventoryManager.instance.IsInventoryActive()
-                && !IsNumberPuzzleActive()) // 자물쇠 게임 중이 아닐 때만 메뉴 활성화 가능
+            if (!PopupManager.instance.IsPopupActive()&& !SaveManager.instance.IsSaveActive() && !InventoryManager.instance.IsInventoryActive())
             {
+                // ESC 키로 메뉴 켜고 끄기
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
                     Debug.Log("SaveManager.instance: " + (SaveManager.instance != null));
@@ -56,9 +54,13 @@ public class Menu : MonoBehaviour
                     activated = !activated;
 
                     if (activated)
+                    {
                         OpenMenu();
+                    }
                     else
+                    {
                         CloseMenu();
+                    }
                 }
 
                 if (activated)
@@ -97,12 +99,12 @@ public class Menu : MonoBehaviour
 
     IEnumerator ResetInputsNextFrame()
     {
-        yield return null; // �� ������ ���
+        yield return null; // 한 프레임 대기
         Input.ResetInputAxes();
     }
     void HandleInput()
     {
-        // ����Ű ��/�Ʒ��� �޴� ���� ����
+        // 방향키 위/아래로 메뉴 선택 변경
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             currentIndex--;
@@ -122,7 +124,7 @@ public class Menu : MonoBehaviour
             UpdateButtonColors();
         }
 
-        // ���� Ȯ�� : �����̽� �Ǵ� ����
+        // 선택 확정 : 스페이스 또는 엔터
         if (Input.GetKeyDown(KeyCode.Return))
         {
             theAudio.Play(select_sound);
@@ -138,7 +140,7 @@ public class Menu : MonoBehaviour
 
             cb.normalColor = (i == currentIndex) ? Color.white : Color.gray;
 
-            // ���õ� ��ư�� �����ϰ�, �������� ��Ȱ�� ������
+            // 선택된 버튼을 강조하고, 나머지는 비활성 색으로
             cb.highlightedColor = cb.normalColor;
             cb.pressedColor = cb.normalColor;
             cb.selectedColor = cb.normalColor;
@@ -156,7 +158,7 @@ public class Menu : MonoBehaviour
         CloseMenu();
     }
 
-    // ���� �Լ��� 
+    // 기존 함수들 
     public void Exit()
     {
         Application.Quit();
@@ -175,25 +177,19 @@ public class Menu : MonoBehaviour
     public void LoadStartScene()
     {
         PopupManager.instance.ShowChoicePopup(
-                "�޴� ȭ������ �̵��Ͻðڽ��ϱ�?",
+                "메뉴 화면으로 이동하시겠습니까?",
                 () =>
                 {
-                    // ����ڰ� '��' ������ ��� �� �̵�
-                    Debug.Log("�޴� �̵� Ȯ��");
+                    // 사용자가 '예' 눌렀을 경우 씬 이동
+                    Debug.Log("메뉴 이동 확인");
                     UnityEngine.SceneManagement.SceneManager.LoadScene("Start");
                 },
                 () =>
                 {
-                    // ����ڰ� '�ƴϿ�' ������ ��� ��� ó����
-                    Debug.Log("�޴� �̵� ���");
-                    // �˾� ������ �޴� �״�� ���� ����
+                    // 사용자가 '아니오' 눌렀을 경우 취소 처리만
+                    Debug.Log("메뉴 이동 취소");
+                    closePopup = true;
                 }
             );
-    }
-
-    private bool IsNumberPuzzleActive() // 퍼즐 활성화 상태 확인 함수 추가
-    {
-        NumberSystem numberSystem = FindFirstObjectByType<NumberSystem>();
-        return numberSystem != null && numberSystem.activated;
     }
 }
