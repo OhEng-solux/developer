@@ -160,7 +160,7 @@ public class TaejuChase : MonoBehaviour
             }
 
             Debug.Log("[TaejuChase] 플레이어 잡힘 - 배드엔딩 이동");
-            //SceneManager.LoadSceneAsync("Ending_Bad");
+            SceneManager.LoadSceneAsync("Ending_Bad");
         }
     }
 
