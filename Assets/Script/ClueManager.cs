@@ -11,6 +11,7 @@ public class ClueManager : MonoBehaviour
     public bool chaseStarted = false; // 추격 시작 여부
 
     public bool flowerBroken = false; // 꽃병 깨짐 상태
+     public bool endingReady = false; // -> 추격 대사 시작 후 진엔딩 준비 완료 여부
 
     private void Awake()
     {
