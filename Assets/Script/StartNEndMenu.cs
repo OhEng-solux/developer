@@ -13,8 +13,10 @@ public class StartNEndMenu : MonoBehaviour
     private int selectedIndex = 0;
 
     private AudioManager theAudio;
-    public string keySound;
-    public string enterSound;
+    private string keySound = "type_sound";
+    private string enterSound = "enter_sound";
+    private string openSound = "ok_sound";
+    private string beepSound = "beep_sound";
 
     private Color selectedColor = Color.white;
     private Color unselectedColor = Color.gray;
