@@ -6259,6 +6259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boundName: Kitchen
+  taejuSpawnPoint: {fileID: 954515880}
 --- !u!60 &151366517
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -18017,6 +18018,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boundName: outside_toilet
+  taejuSpawnPoint: {fileID: 1891165526}
 --- !u!60 &495379290
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -25564,6 +25566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boundName: Basement
+  taejuSpawnPoint: {fileID: 1051970573}
 --- !u!60 &626540212
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -37816,6 +37819,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boundName: Play_room
+  taejuSpawnPoint: {fileID: 521219813}
 --- !u!60 &880547001
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -38958,6 +38962,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boundName: Sun
+  taejuSpawnPoint: {fileID: 17956025}
 --- !u!4 &930786356
 Transform:
   m_ObjectHideFlags: 0
@@ -43199,6 +43204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boundName: inside_toilet
+  taejuSpawnPoint: {fileID: 440159320}
 --- !u!60 &1067062550
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -48724,8 +48730,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   taejuNPC: {fileID: 1716327531}
-  delayBeforeFade: 0.5
+  flowerPosition: {fileID: 1199260623}
+  offsetDistance: 1.5
   fadeOutDuration: 1.5
+  taejuFacingFrontSprite: {fileID: -155319480, guid: 080654f496d784192bf52c4f694e4c61, type: 3}
+  endingDialogues:
+  - sentences:
+    - "'\uC774\uAC8C... \uD0DC\uC8FC\uC758 \uBCF8\uCCB4\uC57C.'"
+    - "...\uC774\uC81C \uB05D\uB0B4\uC57C \uD574."
+    - "\uC544\uC544\uC544\uC544\uC544...\uC2EB\uC5B4..."
+    - "\uC798 \uBC84\uD168\uC654\uB294\uB370...\uC65C..."
+    - "\uB098...\uBCF5\uC218\uD560\uAC70\uC57C...\uAF2D..."
+    sprites:
+    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: -5220195240741735751, guid: b02bbea4adff641578459667b9f53c98, type: 3}
+    - {fileID: -5220195240741735751, guid: b02bbea4adff641578459667b9f53c98, type: 3}
+    - {fileID: -5220195240741735751, guid: b02bbea4adff641578459667b9f53c98, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    - {fileID: 21300000, guid: a79eda00445f44ae2bec6e030a030aa7, type: 3}
+    - {fileID: 21300000, guid: a79eda00445f44ae2bec6e030a030aa7, type: 3}
+    - {fileID: 21300000, guid: a79eda00445f44ae2bec6e030a030aa7, type: 3}
+    npcObjects: []
+    npcAppearances: []
+    blueSentences: []
+    yellowSentences: []
 --- !u!1 &1205505262
 GameObject:
   m_ObjectHideFlags: 0
@@ -52630,7 +52661,7 @@ Transform:
   m_GameObject: {fileID: 1306316774}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 44, y: 43.5, z: 0}
+  m_LocalPosition: {x: -85, y: -287, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -61478,6 +61509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boundName: Sprout
+  taejuSpawnPoint: {fileID: 962465818}
 --- !u!60 &1520178530
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -62274,6 +62306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boundName: Sleeping_room
+  taejuSpawnPoint: {fileID: 39341253}
 --- !u!1 &1548910714
 GameObject:
   m_ObjectHideFlags: 0
@@ -72638,6 +72671,7 @@ MonoBehaviour:
   delaySeconds: 0.5
   recordInterval: 0.1
   followThreshold: 0.1
+  isFading: 0
 --- !u!114 &1716327538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74713,6 +74747,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boundName: Hallway
+  taejuSpawnPoint: {fileID: 1910921133}
 --- !u!60 &1777138788
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -85328,6 +85363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boundName: eacher_office
+  taejuSpawnPoint: {fileID: 303515484}
 --- !u!60 &2030433066
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -86585,6 +86621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boundName: Lobby
+  taejuSpawnPoint: {fileID: 1530533005}
 --- !u!60 &2104847872
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -86932,6 +86969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boundName: Director_Office
+  taejuSpawnPoint: {fileID: 756594662}
 --- !u!1 &2111525090
 GameObject:
   m_ObjectHideFlags: 0
@@ -89614,8 +89652,6 @@ SceneRoots:
   - {fileID: 2073124388}
   - {fileID: 1331207161}
   - {fileID: 1729596410}
-  - {fileID: 1519425387}
-  - {fileID: 1884847163}
   - {fileID: 777659857}
   - {fileID: 370457044}
   - {fileID: 1712721387}
