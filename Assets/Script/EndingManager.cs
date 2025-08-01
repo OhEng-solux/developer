@@ -28,7 +28,12 @@ public class EndingManager : MonoBehaviour
     void Start()
     {
         theDM = Object.FindAnyObjectByType<DialogueManager>();
-        Panel.gameObject.SetActive(false);
+
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        if (currentSceneName == "Ending_Bad")
+        {
+            Panel.gameObject.SetActive(false);
+        }
     }
 
     void Update()
@@ -75,8 +80,16 @@ public class EndingManager : MonoBehaviour
         }
 
         yield return new WaitForSeconds(0.5f); // 안전 대기
-        SaveManager.instance.isEnding = true;
-        Panel.gameObject.SetActive(true);
+        
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        if (currentSceneName == "Ending_Bad") {
+            SaveManager.instance.isEnding = true;
+            Panel.gameObject.SetActive(true);
+        }
+        else
+        {
+            SceneManager.LoadScene("Start");
+        }
 
         //#if UNITY_EDITOR
         //        UnityEditor.EditorApplication.isPlaying = false;
