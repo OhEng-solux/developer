@@ -1483,7 +1483,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -2095,7 +2094,6 @@ MonoBehaviour:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -3670,7 +3668,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -3937,7 +3934,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -4985,7 +4981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 380857be114b841c8b62481dad25c3f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioManager: {fileID: 2107776951}
+  audioManager: {fileID: 0}
   keySound: type_sound
   enterSound: enter_sound
   beepSound: beep_sound
@@ -5055,7 +5051,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -5368,7 +5363,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -5908,7 +5902,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -6199,7 +6192,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -8446,7 +8438,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -9140,7 +9131,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -9889,7 +9879,6 @@ MonoBehaviour:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: 257174c7cc0623149982ea535b381e8a, type: 3}
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -14271,7 +14260,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: 482e3ba3e31e9e14db6069e44788d7dc, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -16614,7 +16602,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -19042,7 +19029,6 @@ MonoBehaviour:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: 5c033d981e40a4b3c8f10307fc4001b7, type: 3}
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -19319,7 +19305,6 @@ MonoBehaviour:
     dialogueWindows:
     - {fileID: 21300000, guid: 2a7509f284ae40c4cbc4bd250844e6a5, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -20650,7 +20635,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuPanel: {fileID: 1180553510}
-  theAudio: {fileID: 2107776951}
+  theAudio: {fileID: 0}
   call_sound: enter_sound
   cancel_sound: enter_sound
   select_sound: enter_sound
@@ -22086,7 +22071,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -22219,7 +22203,6 @@ MonoBehaviour:
     dialogueWindows:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -26432,7 +26415,6 @@ MonoBehaviour:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: 3ca16878e50ace24d802b634871dbc5f, type: 3}
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -28994,7 +28976,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -30732,7 +30713,6 @@ MonoBehaviour:
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -31073,7 +31053,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -32061,7 +32040,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -32324,7 +32302,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: 89bf9265de5d6794a85684b91898a3a9, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -34602,7 +34579,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: da1f0d29a1b80004397552bf11c75225, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -34947,81 +34923,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2098957120}
   m_CullTransparentMesh: 1
---- !u!1 &2107776950
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2107776952}
-  - component: {fileID: 2107776951}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2107776951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2107776950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86e0eaec9ac3945a29f319dc297ffcff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - name: player_walk
-    clip: {fileID: 8300000, guid: 8added667ffb5436989e24e52c90a4fd, type: 3}
-    source: {fileID: 0}
-    Volume: 0
-    loop: 0
-  - name: player_run
-    clip: {fileID: 8300000, guid: c38f535941b8a41e6a07b3af1553172e, type: 3}
-    source: {fileID: 0}
-    Volume: 0
-    loop: 0
-  - name: button_scroll
-    clip: {fileID: 8300000, guid: 20ba3ebad02ae4c10b926a4e60d0bc3f, type: 3}
-    source: {fileID: 0}
-    Volume: 0
-    loop: 0
-  - name: button_click
-    clip: {fileID: 8300000, guid: 997679a508eac4fd5b9bf78a5ad4e62d, type: 3}
-    source: {fileID: 0}
-    Volume: 0
-    loop: 0
-  - name: menu_open
-    clip: {fileID: 8300000, guid: 6c6e9675a7e4d4cf1b96695daad6898b, type: 3}
-    source: {fileID: 0}
-    Volume: 2
-    loop: 0
-  - name: menu_close
-    clip: {fileID: 8300000, guid: 2a7ffea1cd44844d38a76d296e37eb12, type: 3}
-    source: {fileID: 0}
-    Volume: 2
-    loop: 0
---- !u!4 &2107776952
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2107776950}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 46.337208, y: -37.45698, z: -0.32995316}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2112904572
 GameObject:
   m_ObjectHideFlags: 0
@@ -35552,6 +35453,91 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &2140833501
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2140833503}
+  - component: {fileID: 2140833502}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2140833502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140833501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86e0eaec9ac3945a29f319dc297ffcff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: footsteps1
+    clip: {fileID: 8300000, guid: f4bc9f0dc3b5a8d44b8b26b7037f2df5, type: 3}
+    source: {fileID: 0}
+    Volume: 0.2
+    loop: 0
+  - name: footsteps2
+    clip: {fileID: 8300000, guid: 3815ac593c7329942b9979f270f55470, type: 3}
+    source: {fileID: 0}
+    Volume: 0.1
+    loop: 0
+  - name: footsteps3
+    clip: {fileID: 8300000, guid: 3066da6eaa58bcb48b416f1a6f9bab5c, type: 3}
+    source: {fileID: 0}
+    Volume: 0.2
+    loop: 0
+  - name: footsteps4
+    clip: {fileID: 8300000, guid: 24d812f3be4133e4c9319fe6e8c0314b, type: 3}
+    source: {fileID: 0}
+    Volume: 0.2
+    loop: 0
+  - name: type_sound
+    clip: {fileID: 8300000, guid: 58a5dd5888761af4dbff225d52caf926, type: 3}
+    source: {fileID: 0}
+    Volume: 2
+    loop: 0
+  - name: enter_sound
+    clip: {fileID: 8300000, guid: 4fbc62a75b72f6d42b33069b6c067e1d, type: 3}
+    source: {fileID: 0}
+    Volume: 2
+    loop: 0
+  - name: menu_open
+    clip: {fileID: 8300000, guid: 6c6e9675a7e4d4cf1b96695daad6898b, type: 3}
+    source: {fileID: 0}
+    Volume: 2
+    loop: 0
+  - name: menu_close
+    clip: {fileID: 8300000, guid: 2a7ffea1cd44844d38a76d296e37eb12, type: 3}
+    source: {fileID: 0}
+    Volume: 2
+    loop: 0
+--- !u!4 &2140833503
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140833501}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 46.337208, y: -37.45698, z: -0.32995316}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -35564,7 +35550,7 @@ SceneRoots:
   - {fileID: 652910773}
   - {fileID: 2073124388}
   - {fileID: 1519425387}
-  - {fileID: 2107776952}
+  - {fileID: 2140833503}
   - {fileID: 41451949}
   - {fileID: 1247992606}
   - {fileID: 1793579490}
