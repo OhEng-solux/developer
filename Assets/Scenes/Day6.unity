@@ -58874,6 +58874,7 @@ GameObject:
   - component: {fileID: 1412133882}
   - component: {fileID: 1412133883}
   - component: {fileID: 1412133884}
+  - component: {fileID: 1412133885}
   m_Layer: 0
   m_Name: bm_light
   m_TagString: Untagged
@@ -58955,6 +58956,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   go: {fileID: 29963689}
+--- !u!114 &1412133885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412133879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f87df5c4153e7514280a775f79b8c3dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playMusicTrack: 4
 --- !u!1 &1413082038
 GameObject:
   m_ObjectHideFlags: 0
@@ -83855,7 +83869,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

@@ -1,19 +1,29 @@
+using System.Collections;
 using UnityEngine;
 
 public class BGMTest : MonoBehaviour
 {
     BGMManager BGM;
-
     public int playMusicTrack;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         BGM = FindObjectOfType<BGMManager>();
+        Debug.Log("BGMManager 찾은 결과: " + (BGM == null ? "null" : "OK"));
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // Fade 전환
+        StartCoroutine(ChangeBGMWithFade());
+        this.gameObject.SetActive(false);
+    }
+
+    IEnumerator ChangeBGMWithFade()
+    {
+        BGM.FadeOutMusic();
+        yield return new WaitForSeconds(0.5f); // 페이드아웃(1초) 기다린 뒤
         BGM.Play(playMusicTrack);
-        this.gameObject.SetActive(false); // 컬라이더가 한 번 작동되면 꺼짐 (한 번 재생되면 쭉!)
+        BGM.FadeInMusic();
     }
 }
