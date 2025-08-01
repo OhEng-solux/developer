@@ -156,34 +156,23 @@ public class BGMManager : MonoBehaviour
 
     IEnumerator FadeOutMusicCoroutine()
     {
-        float duration = 1.5f; // 총 페이드 시간
-        float startVolume = source.volume;
-
-        for (float t = 0; t < duration; t += Time.deltaTime)
+        for (float i = source.volume; i >= 0f; i -= 0.02f) // 0.01f → 0.02f로 변경
         {
-            source.volume = Mathf.Lerp(startVolume, 0f, t / duration);
-            yield return null;
+            source.volume = i;
+            yield return waitTime;
         }
-
         source.volume = 0f;
     }
-
 
     IEnumerator FadeInMusicCoroutine()
     {
-        float duration = 1.5f;
-        float targetVolume = 1f;
-        source.volume = 0f;
-
-        for (float t = 0; t < duration; t += Time.deltaTime)
+        for (float i = source.volume; i <= 1f; i += 0.02f) // 0.01f → 0.02f로 변경
         {
-            source.volume = Mathf.Lerp(0f, targetVolume, t / duration);
-            yield return null;
+            source.volume = i;
+            yield return waitTime;
         }
-
-        source.volume = targetVolume;
+        source.volume = 1f;
     }
-
 
     // BGMManager.cs
 
