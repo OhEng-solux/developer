@@ -15,7 +15,8 @@ public class SaltUseManager : MonoBehaviour
     {
         PlayerManager.instance.isProtectedBySalt = true;
         Debug.Log("[SaltUse] 보호 시작");
-
+        AudioManager.instance.Play("salt_use");
+        
         // 이펙트 켜기
         if (shieldEffectObject != null)
             shieldEffectObject.SetActive(true);

@@ -18,6 +18,7 @@ public class CandyUseManager : MonoBehaviour
         {
             chaser.StopChase();
             Debug.Log("[CandyUse] 추격자 정지 시작");
+            AudioManager.instance.Play("candy_use");
 
             // 이펙트 켜기
             if (freezeEffectObject != null)

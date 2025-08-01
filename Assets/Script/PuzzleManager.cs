@@ -140,6 +140,7 @@ public class PuzzleManager : MonoBehaviour
 
         if (rewardItem != null && theInventory != null)
         {
+            AudioManager.instance.Play("game_clear");
             theInventory.AcquireItem(rewardItem);
             Debug.Log("[퍼즐 성공] 아이템 지급 완료: " + rewardItem.itemName);
         }
@@ -157,7 +158,10 @@ public class PuzzleManager : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(0.3f);
         puzzlePanel.SetActive(false);
+
+        AudioManager.instance.Play("game_fail");
         DialogueManager.instance.ShowDialogue(failDialogue);
+        
         _isPuzzleActive = false;
         playerInputSequence.Clear();
         pressedIndices.Clear();

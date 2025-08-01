@@ -65,6 +65,7 @@ public class TestChoice : MonoBehaviour
 
         if (correctCount == choices.Length)
         {
+            AudioManager.instance.Play("game_clear");
             theDM.ShowDialogue(successDialogue);
             yield return new WaitUntil(() => !theDM.talking);
 
@@ -76,6 +77,7 @@ public class TestChoice : MonoBehaviour
         }
         else
         {
+            AudioManager.instance.Play("game_fail");
             npcMoved = false;
             theDM.autoNext = false;
             theDM.OnSentenceFinished += OnSentenceFinishedHandler;
