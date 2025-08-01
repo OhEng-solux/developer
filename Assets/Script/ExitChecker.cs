@@ -1,23 +1,23 @@
-using System.Collections;
+ï»¿using System.Collections;
 using UnityEngine;
 
 public class ExitChecker : MonoBehaviour
 {
-    public Dialogue warningDialogue;        // "¾ÆÁ÷ ´ëÈ­¸¦ ´Ù ³¡³»Áö ¸øÇÑ °Í °°´Ù." ´ë»ç
-    public Transform targetPosition;        // ÀÌµ¿½ÃÅ³ À§Ä¡
-    public string targetMapName;            // ÀÌµ¿ÇÒ ¸Ê ÀÌ¸§
-    public PolygonCollider2D targetBound;   // ÀÌµ¿ÇÒ ¸ÊÀÇ Bound ¿µ¿ª
+    public Dialogue warningDialogue;        // "ì•„ì§ ëŒ€í™”ë¥¼ ë‹¤ ëë‚´ì§€ ëª»í•œ ê²ƒ ê°™ë‹¤." ëŒ€ì‚¬
+    public Transform targetPosition;        // ì´ë™ì‹œí‚¬ ìœ„ì¹˜
+    public string targetMapName;            // ì´ë™í•  ë§µ ì´ë¦„
+    public PolygonCollider2D targetBound;   // ì´ë™í•  ë§µì˜ Bound ì˜ì—­
 
-    [Tooltip("ÇÊ¿äÇÑ ÃÖ¼Ò ´ëÈ­ ÁøÇà ¼ö (±âº» 9)")]
-    public int requiredDialogueCount = 9;   // ±âº»°ª 9
+    [Tooltip("í•„ìš”í•œ ìµœì†Œ ëŒ€í™” ì§„í–‰ ìˆ˜ (ê¸°ë³¸ 9)")]
+    public int requiredDialogueCount = 9;   // ê¸°ë³¸ê°’ 9
 
     private CameraManager theCamera;
     private FadeManager theFade;
     private OrderManager theOrder;
     private PlayerManager thePlayer;
 
-    private float talkCooldown = 1f; // Àç´ëÈ­ °¡´É ½Ã°£ °£°İ (ÃÊ)
-    private float lastTalkTime = -10f; // ¸¶Áö¸· ´ëÈ­ ½Ã°£ ÃÊ±âÈ­
+    private float talkCooldown = 1f; // ì¬ëŒ€í™” ê°€ëŠ¥ ì‹œê°„ ê°„ê²© (ì´ˆ)
+    private float lastTalkTime = -10f; // ë§ˆì§€ë§‰ ëŒ€í™” ì‹œê°„ ì´ˆê¸°í™”
 
     void Start()
     {
@@ -38,12 +38,12 @@ public class ExitChecker : MonoBehaviour
                 if (!DialogueManager.instance.talking && currentTime - lastTalkTime > talkCooldown)
                 {
                     lastTalkTime = currentTime;
-                    DialogueManager.instance.ShowDialogue(warningDialogue, false); // ´ëÈ­¸¸ Ãâ·Â
+                    DialogueManager.instance.ShowDialogue(warningDialogue, false); // ëŒ€í™”ë§Œ ì¶œë ¥
                 }
             }
             else
             {
-                // ÄğÅ¸ÀÓ ¾øÀÌ ¹Ù·Î ÀÌµ¿ Ã³¸®
+                // ì¿¨íƒ€ì„ ì—†ì´ ë°”ë¡œ ì´ë™ ì²˜ë¦¬
                 StartCoroutine(TransferCoroutine());
             }
         }
