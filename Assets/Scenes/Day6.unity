@@ -3149,7 +3149,6 @@ MonoBehaviour:
   audioManager: {fileID: 2107776951}
   keySound: type_sound
   enterSound: enter_sound
-  openSound: ok_sound
   beepSound: beep_sound
   inventoryPanel: {fileID: 163809731}
   slots:
@@ -9982,6 +9981,7 @@ GameObject:
   - component: {fileID: 264756876}
   - component: {fileID: 264756878}
   - component: {fileID: 264756877}
+  - component: {fileID: 264756879}
   m_Layer: 0
   m_Name: TP to Inside tl
   m_TagString: Untagged
@@ -10065,6 +10065,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.7945132, y: 6.2339206}
   m_EdgeRadius: 0
+--- !u!114 &264756879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264756875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c850c4dbd4964664be7d9199096aad9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transferSound: {fileID: 8300000, guid: 8fa07da5914ba442abe48f60ba67c927, type: 3}
 --- !u!1 &267689216
 GameObject:
   m_ObjectHideFlags: 0
@@ -25584,6 +25597,7 @@ GameObject:
   - component: {fileID: 611781443}
   - component: {fileID: 611781445}
   - component: {fileID: 611781444}
+  - component: {fileID: 611781446}
   m_Layer: 0
   m_Name: TP to tl
   m_TagString: Untagged
@@ -25667,6 +25681,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.4063082, y: 6.392845}
   m_EdgeRadius: 0
+--- !u!114 &611781446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611781442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c850c4dbd4964664be7d9199096aad9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transferSound: {fileID: 8300000, guid: caec7c3318f5a46f0b15ba4d6d0e9b39, type: 3}
 --- !u!1 &624006243
 GameObject:
   m_ObjectHideFlags: 0
@@ -53348,7 +53375,7 @@ Transform:
   m_GameObject: {fileID: 1306316774}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -149.8, y: -178.8, z: 0}
+  m_LocalPosition: {x: 16, y: -120, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -80559,6 +80586,7 @@ GameObject:
   - component: {fileID: 1891165526}
   - component: {fileID: 1891165528}
   - component: {fileID: 1891165527}
+  - component: {fileID: 1891165529}
   m_Layer: 0
   m_Name: TP to lb
   m_TagString: Untagged
@@ -80642,6 +80670,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.7945132, y: 5.6730413}
   m_EdgeRadius: 0
+--- !u!114 &1891165529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891165525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c850c4dbd4964664be7d9199096aad9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transferSound: {fileID: 8300000, guid: 908ea3a189ab9432ebe819f1534321e9, type: 3}
 --- !u!1 &1894379186
 GameObject:
   m_ObjectHideFlags: 0
@@ -87955,6 +87996,16 @@ MonoBehaviour:
     loop: 0
   - name: key_use
     clip: {fileID: 8300000, guid: 32453059adcd24abc9c0b3976b4616c4, type: 3}
+    source: {fileID: 0}
+    Volume: 2
+    loop: 0
+  - name: menu_open
+    clip: {fileID: 8300000, guid: 6c6e9675a7e4d4cf1b96695daad6898b, type: 3}
+    source: {fileID: 0}
+    Volume: 2
+    loop: 0
+  - name: menu_close
+    clip: {fileID: 8300000, guid: 2a7ffea1cd44844d38a76d296e37eb12, type: 3}
     source: {fileID: 0}
     Volume: 2
     loop: 0

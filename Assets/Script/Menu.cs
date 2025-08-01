@@ -76,8 +76,6 @@ public class Menu : MonoBehaviour
         }
     }
 
-
-
     void OpenMenu()
     {
         menuPanel.SetActive(true);
@@ -86,7 +84,7 @@ public class Menu : MonoBehaviour
         if (PlayerManager.instance != null)
             PlayerManager.instance.canMove = false;
 
-        theAudio.Play(call_sound);
+        AudioManager.instance.Play("menu_open");
 
         currentIndex = 0;
         UpdateButtonColors();
@@ -100,7 +98,7 @@ public class Menu : MonoBehaviour
         if (PlayerManager.instance != null)
             PlayerManager.instance.canMove = true;
 
-        theAudio.Play(cancel_sound);
+        AudioManager.instance.Play("menu_close");
         StartCoroutine(ResetInputsNextFrame());
     }
 

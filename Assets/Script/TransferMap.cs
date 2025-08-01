@@ -30,6 +30,12 @@ public class TransferMap : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            TransferSoundTrigger soundTrigger = GetComponent<TransferSoundTrigger>();
+            if (soundTrigger != null)
+            {
+                soundTrigger.PlayTransferSoundOnce();
+            }
+            
             Debug.Log("[TransferMap] PLAY 이동 - 코루틴 시작");
             StartCoroutine(TransferCoroutine());
 

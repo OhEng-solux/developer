@@ -1482,6 +1482,16 @@ MonoBehaviour:
     source: {fileID: 0}
     Volume: 1
     loop: 0
+  - name: menu_open
+    clip: {fileID: 8300000, guid: 6c6e9675a7e4d4cf1b96695daad6898b, type: 3}
+    source: {fileID: 0}
+    Volume: 1
+    loop: 0
+  - name: menu_open
+    clip: {fileID: 8300000, guid: 2a7ffea1cd44844d38a76d296e37eb12, type: 3}
+    source: {fileID: 0}
+    Volume: 1
+    loop: 0
 --- !u!4 &158991177
 Transform:
   m_ObjectHideFlags: 0
@@ -13136,7 +13146,6 @@ MonoBehaviour:
   audioManager: {fileID: 158991176}
   keySound: type_sound
   enterSound: enter_sound
-  openSound: ok_sound
   beepSound: beep_sound
   inventoryPanel: {fileID: 308000797}
   slots:
