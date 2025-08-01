@@ -7,8 +7,6 @@ using UnityEngine.SceneManagement;
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance;
-    public Font myCustomFont; // 커스텀 폰트
-    public Font defaultFont; // 기본 폰트
     private Dialogue currentDialogueData; // 현재 대화 데이터 저장용
 
     #region Singleton
@@ -410,29 +408,6 @@ public class DialogueManager : MonoBehaviour
             text.gameObject.SetActive(true);
         }
 
-        // 하드코딩된 스타일 적용: 특정 문장 + 특정 오브젝트에서만 적용
-        bool isSpecialDialogue = (count == 0 || count == 2 || count == 4 || count == 5 || count == 6 || count == 7);
-        bool isFromChase = currentDialogueObjectName.Contains("Chase"); // 부분 일치도 허용
-
-        Debug.Log($"[DialogueManager] Styling Check — Count: {count}, Object: {currentDialogueObjectName}, ApplyStyle: {isSpecialDialogue && isFromChase}");
-
-        if (!useBlue && !useYellow && isSpecialDialogue && isFromChase)
-        {
-            if (text != null)
-            {
-                text.font = myCustomFont != null ? myCustomFont : text.font;
-                text.color = Color.red;
-            }
-        }
-        else
-        {
-            if (text != null)
-            {
-                text.font = defaultFont != null ? defaultFont : text.font;
-                text.color = Color.white;
-            }
-        }
-
         // === 텍스트 타이핑 출력 ===
         for (int i = 0; i < processedLine.Length; i++)
         {
@@ -699,10 +674,9 @@ public class DialogueManager : MonoBehaviour
         ContinueDialogue();
     }
 
-    public void SetCurrentDialogueObjectName(string name)
+    public void SetCurrentDialogueObjectName(string name) //오브젝트 이름 저장용 메소드
     {
         currentDialogueObjectName = name;
-        Debug.Log($"[DialogueManager] SetCurrentDialogueObjectName called with: {name}");
     }
 
     public void HideDialogueUI()
