@@ -7244,7 +7244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4b1df0e4ca355347a05ac2d1b76dbfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popupImage: {fileID: -553273078325290454, guid: 17fa73002fa084864b314d8ab45df661, type: 3}
+  popupImage: {fileID: -7089223783055766360, guid: b5dacb26bc5ff434e8dcc9970f545a70, type: 3}
 --- !u!114 &180102792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44691,7 +44691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4b1df0e4ca355347a05ac2d1b76dbfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popupImage: {fileID: 0}
+  popupImage: {fileID: -5477463973130183222, guid: dec1726e514624076a244a71f85bc536, type: 3}
 --- !u!114 &1109566070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52785,6 +52785,7 @@ MonoBehaviour:
     sceneName: 
     saveDate: 
     saveTime: 
+    targetName: thePlayer
 --- !u!114 &1306316783
 MonoBehaviour:
   m_ObjectHideFlags: 0
