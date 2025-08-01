@@ -36,7 +36,6 @@ public class DialogueManager : MonoBehaviour
     private List<string> listYellowSentences = new List<string>(); // 노란색 대화 문장용
     private List<Sprite> listSprites = new List<Sprite>();
     private List<Sprite> listDialogueWindows = new List<Sprite>();
-    private List<GameObject> listNPCs = new List<GameObject>(); // Day6 전용 NPC 리스트
 
     private int count;
 
@@ -174,10 +173,6 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
-        if (SceneManager.GetActiveScene().name == "Day6" && dialogue.npcObjects != null)
-        {
-            listNPCs.AddRange(dialogue.npcObjects);
-        }
 
         animSprite.SetBool("Appear", true);
         animDialogueWindow.SetBool("Appear", true);
@@ -306,15 +301,6 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator StartDialogueCoroutine()
     {
-        // Day6 전용: NPC 오브젝트 등장 제어
-        if (SceneManager.GetActiveScene().name == "Day6")
-        {
-            for (int i = 0; i < listNPCs.Count; i++)
-            {
-                if (listNPCs[i] != null)
-                    listNPCs[i].SetActive(i == count); // 해당 대사에 맞는 NPC만 활성화
-            }
-        }
 
         if (shouldHideItemPanelNext && itemPanel != null)
         {
