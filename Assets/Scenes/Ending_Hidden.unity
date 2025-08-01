@@ -130,7 +130,6 @@ GameObject:
   - component: {fileID: 50766922}
   - component: {fileID: 50766921}
   - component: {fileID: 50766920}
-  - component: {fileID: 50766919}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -138,22 +137,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &50766919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 50766918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98a3840b38f014940b90a177cba79907, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  moveSpeed: 3
-  bound: {fileID: 0}
-  moveSmoothTime: 0.15
 --- !u!81 &50766920
 AudioListener:
   m_ObjectHideFlags: 0
@@ -445,7 +428,7 @@ SpriteRenderer:
   m_Size: {x: 403, y: 769}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &291626943
@@ -744,7 +727,7 @@ GameObject:
   - component: {fileID: 1104828220}
   - component: {fileID: 1104828221}
   m_Layer: 0
-  m_Name: Prologue_Dialogue
+  m_Name: EndingDialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -777,6 +760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a225450d2f794b6ca8d7a0dcd5abb9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Panel: {fileID: 0}
   dialogue:
     sentences:
     - "\uADF8\uB9BC \uB4A4 \uB0A1\uC740 \uBB38\uC774 \uB9CC\uC838\uC9C4\uB2E4"
@@ -786,18 +770,17 @@ MonoBehaviour:
     - "\u2019\uADF8 \uC9D1\uC5D0\uC11C, \uADF8 \uC544\uC774\uD55C\uD14C\uC11C\u2026\u2019"
     - "\uC9C0\uB098\uAC00\uB294 \uC0AC\uB78C\uC5D0\uAC8C \uB2E4\uAE09\uD558\uAC8C
       \uB2E4\uAC00\uAC04\uB2E4"
-    - "\u201C\uC800\uAE30\uC694! \uC800 \uC5B4\uB9B0\uC774\uC9D1 \uC548\uC5D0\u2026
-      \uAD34\uBB3C\uC774 \uB41C \uC560\uAC00 \uC788\uC5B4\uC694!\u201D"
-    - "\u201C\uC544\uC774\uB4E4\uC774 \uC704\uD5D8\uD574\uC694! \uBE68\uB9AC\u2014\u201D"
-    - "\u201C\uC544\uAC00\uC528, \uAD1C\uCC2E\uC544\uC694\u2026? \uBB34\uC2A8 \uC18C\uB9AC\uC608\uC694\u201D"
-    - "\u201C\uC800 \uC5B4\uB9B0\uC774\uC9D1\uC740 \uC778\uC801 \uB04A\uAE34 \uC9C0
-      \uC624\uB798\uB410\uB294\uB370?\u201D"
-    - "\u201C\uBCD1\uC6D0 \uAC00\uC57C \uD558\uB294 \uAC70 \uC544\uB2C8\uC57C\u2026?\u201D"
-    - "\u201C\u2026\uC544\uC9C1\uB3C4\u2026 \uADF8 \uC544\uC774 \uBAA9\uC18C\uB9AC\uAC00
-      \uB4E4\uB824.\u201D"
-    - "\u201C\uC548\uC5D0\u2026 \uC544\uC9C1, \uC788\uC5B4.\u201D"
-    - "\u201C\uC9C0\uAE08\uB3C4 \uB204\uAD70\uAC00 \uB4E4\uC5B4\uAC00\uBA74\u2026\u201D"
-    - "\u201C\uBE68\uB9AC \uAC00\uC57C \uD558\uB294\uB370\u2026!\u201D"
+    - "\uC800\uAE30\uC694! \uC800 \uC5B4\uB9B0\uC774\uC9D1 \uC548\uC5D0\u2026 \uAD34\uBB3C\uC774
+      \uB41C \uC560\uAC00 \uC788\uC5B4\uC694!"
+    - "\uC544\uC774\uB4E4\uC774 \uC704\uD5D8\uD574\uC694! \uBE68\uB9AC\u2014"
+    - "\uC544\uAC00\uC528, \uAD1C\uCC2E\uC544\uC694\u2026? \uBB34\uC2A8 \uC18C\uB9AC\uC608\uC694"
+    - "\uC800 \uC5B4\uB9B0\uC774\uC9D1\uC740 \uC778\uC801 \uB04A\uAE34 \uC9C0 \uC624\uB798\uB410\uB294\uB370?"
+    - "\uBCD1\uC6D0 \uAC00\uC57C \uD558\uB294 \uAC70 \uC544\uB2C8\uC57C\u2026?"
+    - "\u2026\uC544\uC9C1\uB3C4\u2026 \uADF8 \uC544\uC774 \uBAA9\uC18C\uB9AC\uAC00
+      \uB4E4\uB824."
+    - "\uC548\uC5D0\u2026 \uC544\uC9C1, \uC788\uC5B4."
+    - "\uC9C0\uAE08\uB3C4 \uB204\uAD70\uAC00 \uB4E4\uC5B4\uAC00\uBA74..."
+    - "\uBE68\uB9AC \uAC00\uC57C \uD558\uB294\uB370\u2026!"
     sprites:
     - {fileID: 0}
     - {fileID: 0}
@@ -805,15 +788,15 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
@@ -830,6 +813,8 @@ MonoBehaviour:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    npcObjects: []
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
   endingCanvas: {fileID: 0}
@@ -837,9 +822,9 @@ MonoBehaviour:
   fadeManager: {fileID: 1570433334}
   backgroundChanges:
   - sentenceIndex: 3
-    backgroundSprite: {fileID: 21300000, guid: f4ed98dcbc571ab4bb6e0bb8d22ef0f2, type: 3}
+    backgroundSprite: {fileID: -2097956982222191459, guid: 63201c8fc57cb488b895adce59a62d0c, type: 3}
   - sentenceIndex: 11
-    backgroundSprite: {fileID: 21300000, guid: 646bacec28df4394f8a7a1134a793525, type: 3}
+    backgroundSprite: {fileID: -2994148897413253434, guid: 7747606c7d5984ad387080cbc7ec2ab0, type: 3}
 --- !u!1 &1113897435
 GameObject:
   m_ObjectHideFlags: 0

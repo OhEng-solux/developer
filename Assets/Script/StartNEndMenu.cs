@@ -37,7 +37,7 @@ public class StartNEndMenu : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("현재 씬 이름: " + gameObject.scene.name);
+        // Debug.Log("현재 씬 이름: " + gameObject.scene.name);
 
         // 종료 팝업이 활성 상태면 ESC로 팝업 닫기, 그 외 입력 무시
         if (isQuitPopupActive)
