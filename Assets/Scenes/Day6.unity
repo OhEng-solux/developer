@@ -34196,7 +34196,7 @@ MonoBehaviour:
   timeText: {fileID: 1119464832}
   dateText: {fileID: 581374795}
   dayText: {fileID: 456811712}
-  currentPlaceText: {fileID: 950024199}
+  nameText: {fileID: 0}
   highlightBorder: {fileID: 1108092586}
 --- !u!114 &769315443
 MonoBehaviour:
@@ -50042,7 +50042,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f374ea65779fd4885bdccaaa33c489fe, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -55363,6 +55363,7 @@ MonoBehaviour:
     playerEquipItem: 
     mapName: 
     sceneName: 
+    characterName: 
     saveDate: 
     saveTime: 
     targetName: thePlayer
@@ -55932,7 +55933,7 @@ MonoBehaviour:
   timeText: {fileID: 454412486}
   dateText: {fileID: 938865768}
   dayText: {fileID: 984184866}
-  currentPlaceText: {fileID: 313771570}
+  nameText: {fileID: 0}
   highlightBorder: {fileID: 1067187367}
 --- !u!114 &1317206799
 MonoBehaviour:
@@ -80758,7 +80759,7 @@ MonoBehaviour:
   timeText: {fileID: 258055805}
   dateText: {fileID: 444170600}
   dayText: {fileID: 1800161453}
-  currentPlaceText: {fileID: 928867224}
+  nameText: {fileID: 0}
   highlightBorder: {fileID: 1659399848}
 --- !u!114 &1802009425
 MonoBehaviour:
