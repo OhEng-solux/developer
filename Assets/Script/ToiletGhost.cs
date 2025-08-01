@@ -13,6 +13,16 @@ public class ToiletGhost : MonoBehaviour
 
     public float delayBetweenParts = 0.0001f;
 
+    void Start()
+    {
+        face.SetActive(false); 
+        left_1.SetActive(false);
+        right_1.SetActive(false);
+        left_2.SetActive(false);
+        right_2.SetActive(false);
+        left_3.SetActive(false);
+        right_3.SetActive(false);
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
