@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance;
+    public Font myCustomFont; // 커스텀 폰트
+    public Font defaultFont; // 기본 폰트
     private Dialogue currentDialogueData; // 현재 대화 데이터 저장용
 
     #region Singleton
@@ -261,20 +263,6 @@ public class DialogueManager : MonoBehaviour
                 }
             }
         }
-        if (SceneManager.GetActiveScene().name == "Day5"
-        && DialogueProgressManager.instance.dialogueCount == 5)
-        {
-            GameObject[] npcs = GameObject.FindGameObjectsWithTag("npc");
-            foreach (GameObject npc in npcs)
-            {
-                NPCPathMover mover = npc.GetComponent<NPCPathMover>();
-                if (mover != null)
-                {
-                    Debug.Log("ExitDialogue()에서 StartPath() 호출: " + npc.name);
-                    mover.StartPath();
-                }
-            }
-        }
 
         if (SceneManager.GetActiveScene().name == "Day6")
         {
@@ -420,6 +408,31 @@ public class DialogueManager : MonoBehaviour
         else
         {
             text.gameObject.SetActive(true);
+        }
+
+        // 하드코딩된 스타일 적용: 특정 문장 + 특정 오브젝트에서만 적용
+        bool isSpecialDialogue = (count == 0 || count == 2 || count == 4 || count == 5 || count == 6 || count == 7);
+        bool isFromChase = currentDialogueObjectName.Contains("Chase"); // 부분 일치도 허용
+
+        Debug.Log($"[DialogueManager] Styling Check — Count: {count}, Object: {currentDialogueObjectName}, ApplyStyle: {isSpecialDialogue && isFromChase}");
+
+        if (!useBlue && !useYellow && isSpecialDialogue && isFromChase)
+        {
+            if (text != null)
+            {
+                text.font = myCustomFont != null ? myCustomFont : text.font;
+                text.color = Color.red;
+                text.fontSize = 12; // 폰트 크기 조정
+            }
+        }
+        else
+        {
+            if (text != null)
+            {
+                text.font = defaultFont != null ? defaultFont : text.font;
+                text.color = Color.white;
+                text.fontSize = 9; // 기본 폰트 크기
+            }
         }
 
         // === 텍스트 타이핑 출력 ===
@@ -688,9 +701,10 @@ public class DialogueManager : MonoBehaviour
         ContinueDialogue();
     }
 
-    public void SetCurrentDialogueObjectName(string name) //오브젝트 이름 저장용 메소드
+    public void SetCurrentDialogueObjectName(string name)
     {
         currentDialogueObjectName = name;
+        Debug.Log($"[DialogueManager] SetCurrentDialogueObjectName called with: {name}");
     }
 
     public void HideDialogueUI()

@@ -30,8 +30,6 @@ public class ToiletGhost2 : MonoBehaviour
     {
         isCoroutineRunning = true;
         face.SetActive(true);
-        AudioManager.instance.Play("scream");
-        
         // 얼굴 2배로 초기화
         face.transform.localScale = Vector3.one * startScale;
 
