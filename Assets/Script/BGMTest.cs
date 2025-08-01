@@ -3,27 +3,22 @@ using UnityEngine;
 
 public class BGMTest : MonoBehaviour
 {
-    BGMManager BGM;
+    private BGMManager BGM;
     public int playMusicTrack;
 
     void Start()
     {
-        BGM = FindObjectOfType<BGMManager>();
-        Debug.Log("BGMManager 찾은 결과: " + (BGM == null ? "null" : "OK"));
+        BGM = BGMManager.instance;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Fade 전환
-        StartCoroutine(ChangeBGMWithFade());
-        this.gameObject.SetActive(false);
+        StartCoroutine(SwitchAndDisable());
     }
 
-    IEnumerator ChangeBGMWithFade()
+    IEnumerator SwitchAndDisable()
     {
-        BGM.FadeOutMusic();
-        yield return new WaitForSeconds(0.5f); // 페이드아웃(1초) 기다린 뒤
-        BGM.Play(playMusicTrack);
-        BGM.FadeInMusic();
+        yield return StartCoroutine(BGM.SwitchBGMWithFade(playMusicTrack));
+        this.gameObject.SetActive(false);
     }
 }
