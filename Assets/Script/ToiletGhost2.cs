@@ -30,12 +30,14 @@ public class ToiletGhost2 : MonoBehaviour
     {
         isCoroutineRunning = true;
         face.SetActive(true);
+        AudioManager.instance.Play("toilet_ghost");
+
         // 얼굴 2배로 초기화
         face.transform.localScale = Vector3.one * startScale;
 
         // 스케일 변화 코루틴 시작 (동시에 실행)
         yield return StartCoroutine(ScaleCoroutine());
-
+        yield return new WaitForSeconds(1f);
         // 2초(=duration) 후 얼굴 끄기
         face.SetActive(false);
 
