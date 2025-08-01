@@ -53,6 +53,7 @@ public class BrokenFlowerEffect : MonoBehaviour
             DialogueManager.instance.ShowDialogue(endingDialogues[i], shouldCount: false);
             yield return new WaitUntil(() => !DialogueManager.instance.talking);
         }
+        ClueManager.instance.endingReady = true; // 진엔딩 준비 완료 상태로 설정
 
         yield return FadeOutTaeju();
     }

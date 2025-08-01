@@ -36,7 +36,7 @@ public class TransferMap : MonoBehaviour
             // 태주가 추격 중이면, 2초 후 이 트리거로 워프
             if (chase != null && chase.IsChasing())
             {
-                StartCoroutine(MoveTaejuAfterDelay(2f));
+                StartCoroutine(MoveTaejuAfterDelay(3f));
             }
         }
     }
@@ -60,7 +60,7 @@ public class TransferMap : MonoBehaviour
         if (chase != null && chase.IsChasing() && targetBoundObj != null)
         {
             // 2초 뒤에 한 번만 소환
-            StartCoroutine(MoveTaejuToBoundAfterDelay(chase, targetBoundObj, 2f));
+            StartCoroutine(MoveTaejuToBoundAfterDelay(chase, targetBoundObj, 3f));
         }
 
         if (playerLight != null)
@@ -80,27 +80,24 @@ public class TransferMap : MonoBehaviour
 
         Vector3 taejuSpawn = bound.GetTaejuSpawnPosition();
         chase.transform.position = taejuSpawn;
-        // 반드시 추격 상태 유지!
         chase.StartChase();
     }
 
 
 
 
-    // ---- 추격자도 이 포탈을 밟은 것처럼 처리하는 코루틴 ---- //
     private IEnumerator MoveTaejuAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
 
-        // 태주를 트리거(TransferMap) 좌표로 이동!
+        // 태주를 트리거(TransferMap) 좌표로 이동
         chase.transform.position = this.transform.position;
 
         // 콜라이더가 켜져 있다면 OnTriggerEnter2D를 강제 호출하여
         Collider2D taejuCol = chase.GetComponent<Collider2D>();
         if (taejuCol != null)
         {
-            Debug.Log("[TransferMap] 태주가 늦게 이 포탈을 밟아서 이동!");
-            // Player처럼 똑같이 포탈에 진입!
+            // Player처럼 똑같이 포탈에 진입
             this.OnTriggerEnter2D(taejuCol); // **태주 이동 트리거**
         }
     }
