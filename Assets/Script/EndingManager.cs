@@ -28,7 +28,12 @@ public class EndingManager : MonoBehaviour
     void Start()
     {
         theDM = Object.FindAnyObjectByType<DialogueManager>();
-        Panel.gameObject.SetActive(false);
+
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        if (currentSceneName == "Ending_Bad")
+        {
+            Panel.gameObject.SetActive(false);
+        }
     }
 
     void Update()
