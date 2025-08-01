@@ -181,6 +181,14 @@ public class DialogueManager : MonoBehaviour
 
         animSprite.SetBool("Appear", true);
         animDialogueWindow.SetBool("Appear", true);
+
+        if (rendererDialogueWindow != null)
+        {
+            Color color = rendererDialogueWindow.color;
+            color.a = 0.85f;
+            rendererDialogueWindow.color = color;
+        }
+
         count = 0;
 
         // 대화 UI 캔버스 활성화 (필요시)
