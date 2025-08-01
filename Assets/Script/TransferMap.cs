@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class TransferMap : MonoBehaviour
 {
-    public string transferMapName; // 이동할 맵의 이름
+    public string transferMapName;
     public Transform target;
     public PolygonCollider2D targetBound;
 
@@ -13,12 +13,16 @@ public class TransferMap : MonoBehaviour
     private OrderManager theOrder;
     private GameObject playerLight;
 
+    // 태주 참조
+    private TaejuChase chase;
+
     void Awake()
     {
         thePlayer = FindFirstObjectByType<PlayerManager>();
         theCamera = FindFirstObjectByType<CameraManager>();
         theFade = FindFirstObjectByType<FadeManager>();
         theOrder = FindFirstObjectByType<OrderManager>();
+        chase = FindFirstObjectByType<TaejuChase>();
         playerLight = GameObject.Find("Light");
     }
 
@@ -26,44 +30,78 @@ public class TransferMap : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("[TransferMap] 플레이어가 트리거 진입함, 코루틴 시작"); 
+            Debug.Log("[TransferMap] PLAY 이동 - 코루틴 시작");
             StartCoroutine(TransferCoroutine());
+
+            // 태주가 추격 중이면, 2초 후 이 트리거로 워프
+            if (chase != null && chase.IsChasing())
+            {
+                StartCoroutine(MoveTaejuAfterDelay(2f));
+            }
         }
     }
 
     IEnumerator TransferCoroutine()
     {
-        Debug.Log($"[Light] transferMapName: {transferMapName} → {(transferMapName == "Basement" ? "조명 켜짐" : "조명 꺼짐")}");
-
         theOrder.NotMove();
         theFade.FadeOut();
+        if (chase != null) chase.isFading = true;
+
         yield return new WaitForSeconds(1f);
 
-        // 위치 및 카메라 바운드 설정
+        // 플레이어 이동 처리
         thePlayer.currentMapName = transferMapName;
         theCamera.SetBound(targetBound);
         theCamera.transform.position = new Vector3(target.position.x, target.position.y, theCamera.transform.position.z);
         thePlayer.transform.position = target.position;
 
-        // 조명 처리
+        // === 바운드를 이용한 태주 단발 워프 ===
+        Bound targetBoundObj = targetBound.GetComponent<Bound>();
+        if (chase != null && chase.IsChasing() && targetBoundObj != null)
+        {
+            // 2초 뒤에 한 번만 소환
+            StartCoroutine(MoveTaejuToBoundAfterDelay(chase, targetBoundObj, 2f));
+        }
+
         if (playerLight != null)
-        {
-            bool isBasement = transferMapName.Trim().ToLower() == "basement";
-            playerLight.SetActive(isBasement);
-
-            Debug.Log($"[Light] transferMapName: {transferMapName} → 조명 {(isBasement ? "켜짐" : "꺼짐")}");
-        }
-
-
-        // 추격자 재배치
-        TaejuChase chase = FindFirstObjectByType<TaejuChase>();
-        if (chase != null && chase.IsChasing())
-        {
-            chase.SpawnAtWithDelay(thePlayer.transform.position, 2f);
-        }
+            playerLight.SetActive(transferMapName.Trim().ToLower() == "basement");
 
         theFade.FadeIn();
+        yield return new WaitForSeconds(1f);
+
+        if (chase != null) chase.isFading = false;
         yield return new WaitForSeconds(0.5f);
         theOrder.Move();
+    }
+
+    private IEnumerator MoveTaejuToBoundAfterDelay(TaejuChase chase, Bound bound, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        Vector3 taejuSpawn = bound.GetTaejuSpawnPosition();
+        chase.transform.position = taejuSpawn;
+        // 반드시 추격 상태 유지!
+        chase.StartChase();
+    }
+
+
+
+
+    // ---- 추격자도 이 포탈을 밟은 것처럼 처리하는 코루틴 ---- //
+    private IEnumerator MoveTaejuAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        // 태주를 트리거(TransferMap) 좌표로 이동!
+        chase.transform.position = this.transform.position;
+
+        // 콜라이더가 켜져 있다면 OnTriggerEnter2D를 강제 호출하여
+        Collider2D taejuCol = chase.GetComponent<Collider2D>();
+        if (taejuCol != null)
+        {
+            Debug.Log("[TransferMap] 태주가 늦게 이 포탈을 밟아서 이동!");
+            // Player처럼 똑같이 포탈에 진입!
+            this.OnTriggerEnter2D(taejuCol); // **태주 이동 트리거**
+        }
     }
 }
