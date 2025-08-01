@@ -422,6 +422,7 @@ public class DialogueManager : MonoBehaviour
             {
                 text.font = myCustomFont != null ? myCustomFont : text.font;
                 text.color = Color.red;
+                text.fontSize = 12; // 폰트 크기 조정
             }
         }
         else
@@ -430,6 +431,7 @@ public class DialogueManager : MonoBehaviour
             {
                 text.font = defaultFont != null ? defaultFont : text.font;
                 text.color = Color.white;
+                text.fontSize = 9; // 기본 폰트 크기
             }
         }
 
