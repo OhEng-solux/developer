@@ -670,12 +670,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 52513581}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4961811, y: 0.4961811, z: 1.4551872}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1575881594}
+  m_Children:
+  - {fileID: 1575881594}
+  m_Father: {fileID: 652910773}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7116,7 +7117,7 @@ RectTransform:
   - {fileID: 401057581}
   - {fileID: 309493963}
   - {fileID: 1292866664}
-  - {fileID: 1575881594}
+  - {fileID: 52513582}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -8807,6 +8808,7 @@ MonoBehaviour:
   - {fileID: 148690437}
   - {fileID: 1420643155}
   activated: 0
+  closePopup: 0
 --- !u!114 &873598147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16199,11 +16201,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ccaf293e195ff1418dd20d790dbc5a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  closePopup: 0
   savePanel: {fileID: 282148185}
   slots:
   - {fileID: 1317217007}
   - {fileID: 1946701078}
   - {fileID: 1958736389}
+  isEnding: 0
 --- !u!114 &1306316784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18892,15 +18896,14 @@ RectTransform:
   m_GameObject: {fileID: 1575881593}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.49618113, y: 0.49618113, z: 1.4551872}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1854002210}
   - {fileID: 1743815667}
   - {fileID: 69460100}
   - {fileID: 1496141372}
-  - {fileID: 52513582}
-  m_Father: {fileID: 652910773}
+  m_Father: {fileID: 52513582}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
