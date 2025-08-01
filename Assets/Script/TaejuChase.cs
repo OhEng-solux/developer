@@ -19,10 +19,14 @@ public class TaejuChase : MonoBehaviour
     private bool isChasing = false;
     private bool pauseChase = false;
 
+    private Collider2D chaseCollider;
+    public bool isFading = false;  // 페이드 진행중 체크용 플래그
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        chaseCollider = GetComponent<Collider2D>();
 
         if (player == null)
         {
@@ -132,31 +136,38 @@ public class TaejuChase : MonoBehaviour
     {
         StartCoroutine(SpawnAfterDelay(position, delay));
     }
-
     private IEnumerator SpawnAfterDelay(Vector3 position, float delay)
     {
         var spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer != null)
             spriteRenderer.enabled = false;
 
-        transform.position = position;
+        isFading = true; // 이 동안 잡기 방지
+
+        transform.position = position; // ← 반드시 이 줄이 delay 전에 있나 확인!
 
         yield return new WaitForSeconds(delay);
 
         if (spriteRenderer != null)
             spriteRenderer.enabled = true;
 
+        isFading = false;
         StartChase();
     }
+
+
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            if (isFading) return; // 페이드 진행 중이면 무시
+
             if (PlayerManager.instance != null && PlayerManager.instance.isProtectedBySalt)
             {
                 Debug.Log("[SaltUse] 보호 상태 - 배드엔딩 무시됨");
-                return; // 잡혔지만 배드엔딩은 발생하지 않음
+                return;
             }
 
             Debug.Log("[TaejuChase] 플레이어 잡힘 - 배드엔딩 이동");
@@ -171,4 +182,21 @@ public class TaejuChase : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Kinematic; // 물리 계산 중단
         Debug.Log("태주 멈춤");
     }
+
+    public void DisableColliderTemporarily(float seconds)
+    {
+        if (chaseCollider != null)
+        {
+            chaseCollider.enabled = false;
+            StartCoroutine(ReenableColliderAfterDelay(seconds));
+        }
+    }
+
+    private IEnumerator ReenableColliderAfterDelay(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        if (chaseCollider != null)
+            chaseCollider.enabled = true;
+    }
+
 }
