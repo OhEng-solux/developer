@@ -2288,6 +2288,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e293cb625d1c4c659ae075a41a1ac54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myCustomFont: {fileID: 12800000, guid: a25d602fb9ee940a7ba4f1460af36465, type: 3}
+  defaultFont: {fileID: 12800000, guid: 675d1aed245608440a643034922d27fe, type: 3}
   text: {fileID: 1098847516}
   blueText: {fileID: 0}
   yellowText: {fileID: 0}
@@ -4132,7 +4134,6 @@ MonoBehaviour:
   audioManager: {fileID: 1113897436}
   keySound: type_sound
   enterSound: enter_sound
-  openSound: ok_sound
   beepSound: beep_sound
   inventoryPanel: {fileID: 639303598}
   slots:
@@ -4482,7 +4483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.29411766, b: 0.29411766, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4490,8 +4491,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 675d1aed245608440a643034922d27fe, type: 3}
-    m_FontSize: 10
+    m_Font: {fileID: 12800000, guid: a25d602fb9ee940a7ba4f1460af36465, type: 3}
+    m_FontSize: 11
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -4562,26 +4563,32 @@ MonoBehaviour:
     - "\u201C\uC5B4\uCC28\uD53C\u2026 \uC774\uB807\uAC8C \uB420\uAC78\u2026\u201D"
     - "\u201C\uC624\uB7AB\uB3D9\uC548\u2026 \uBABB \uBA39\uC5B4\uC11C\u201D"
     - "\u201C\uBC30\uACE0\uD320\uB294\uB370\u2026 \uC798\uB410\uB2E4\u2026\u201D"
+    - 
     sprites:
     - {fileID: -5220195240741735751, guid: cfae396231b8b47efa69b110470b5324, type: 3}
     - {fileID: -5220195240741735751, guid: cfae396231b8b47efa69b110470b5324, type: 3}
     - {fileID: -5220195240741735751, guid: cfae396231b8b47efa69b110470b5324, type: 3}
     - {fileID: -5220195240741735751, guid: cfae396231b8b47efa69b110470b5324, type: 3}
+    - {fileID: -5220195240741735751, guid: cfae396231b8b47efa69b110470b5324, type: 3}
     dialogueWindows:
-    - {fileID: 21300000, guid: 2a7509f284ae40c4cbc4bd250844e6a5, type: 3}
-    - {fileID: 21300000, guid: 2a7509f284ae40c4cbc4bd250844e6a5, type: 3}
-    - {fileID: 21300000, guid: 2a7509f284ae40c4cbc4bd250844e6a5, type: 3}
-    - {fileID: 21300000, guid: 2a7509f284ae40c4cbc4bd250844e6a5, type: 3}
-    npcObjects: []
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    - {fileID: 0}
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
   endingCanvas: {fileID: 514448974}
   backgroundRenderer: {fileID: 1678766115}
   fadeManager: {fileID: 1570433334}
+  startSound: {fileID: 8300000, guid: a1f1dfe278deb4f468d1c020178973f4, type: 3}
+  soundVolume: 2
   backgroundChanges:
   - sentenceIndex: 0
     backgroundSprite: {fileID: 7945458949661159329, guid: d96a0abd6f00947c383157315bc71a08, type: 3}
+  - sentenceIndex: 4
+    backgroundSprite: {fileID: 3648201054378967480, guid: c256f8972227745dcb504722ed00c3db, type: 3}
 --- !u!1 &1113897435
 GameObject:
   m_ObjectHideFlags: 0
