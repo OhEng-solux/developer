@@ -102,7 +102,6 @@ public class TaejuChase : MonoBehaviour
             animator.SetFloat("DirY", direction.y > 0 ? 1 : -1);
         }
     }
-
     public void StartChase()
     {
         isChasing = true;
@@ -111,7 +110,19 @@ public class TaejuChase : MonoBehaviour
             spriteRenderer.enabled = true;
 
         animator.SetBool("Walking", true);
+        StartCoroutine(ChangeToChaseBGM());
     }
+
+    private IEnumerator ChangeToChaseBGM()
+    {
+        if (BGMManager.instance != null)
+        {
+            yield return BGMManager.instance.StartCoroutine(BGMManager.instance.FadeOutMusicCoroutinePublic());
+            BGMManager.instance.Play(5); // chase.mp3 인덱스
+            yield return BGMManager.instance.StartCoroutine(BGMManager.instance.FadeInMusicCoroutinePublic());
+        }
+    }
+
 
     public void StopChase()
     {
@@ -156,23 +167,32 @@ public class TaejuChase : MonoBehaviour
     }
 
 
-
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            if (isFading) return; // 페이드 진행 중이면 무시
+            if (isFading) return;
 
             if (PlayerManager.instance != null && PlayerManager.instance.isProtectedBySalt)
             {
                 Debug.Log("[SaltUse] 보호 상태 - 배드엔딩 무시됨");
                 return;
             }
-
-            Debug.Log("[TaejuChase] 플레이어 잡힘 - 배드엔딩 이동");
-            SceneManager.LoadSceneAsync("Ending_Bad");
+            // **여기서 바로 씬 이동하지 말고 페이드 연출 시작**
+            StartCoroutine(BadEndingTransition());
         }
+    }
+
+    private IEnumerator BadEndingTransition()
+    {
+        // 1. BGM 페이드 아웃
+        if (BGMManager.instance != null)
+        {
+            yield return BGMManager.instance.StartCoroutine(BGMManager.instance.FadeOutMusicCoroutinePublic());
+        }
+        // 2. 베드엔딩 씬 이동
+        yield return new WaitForSeconds(0.2f); // 연출상 잠깐 멈추고 싶을 때
+        SceneManager.LoadSceneAsync("Ending_Bad");
     }
 
     public void StopChaseAndFreeze()

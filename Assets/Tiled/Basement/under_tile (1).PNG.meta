@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 08e76fc3062e5f04fba3b2545b01cb97
+guid: ec51190e67dc5e343bf096459ee5acf0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3566777502865455910
-    second: toilet_ghost_right_hand_0
+      213: 4635776856620406868
+    second: under_tile (1)_0
+  - first:
+      213: 4204419760490829444
+    second: under_tile (1)_1
+  - first:
+      213: 6208791839479691398
+    second: under_tile (1)_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -48,10 +54,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
@@ -84,7 +90,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Standalone
+    buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -110,7 +116,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -123,24 +129,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: WindowsStoreApps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -152,13 +145,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: toilet_ghost_right_hand_0
+      name: under_tile (1)_0
       rect:
         serializedVersion: 2
-        x: 289
-        y: 309
-        width: 72
-        height: 72
+        x: 0
+        y: 479
+        width: 1793
+        height: 1569
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,8 +160,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ad489dc32c2408ec0800000000000000
-      internalID: -3566777502865455910
+      spriteID: 45816dc5d76955040800000000000000
+      internalID: 4635776856620406868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: under_tile (1)_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 255
+        width: 33
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48650b60f79195a30800000000000000
+      internalID: 4204419760490829444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: under_tile (1)_2
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 255
+        width: 290
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 688f78c484f0a2650800000000000000
+      internalID: 6208791839479691398
       vertices: []
       indices: 
       edges: []
@@ -187,7 +224,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      toilet_ghost_right_hand_0: -3566777502865455910
+      under_tile (1)_0: 4635776856620406868
+      under_tile (1)_1: 4204419760490829444
+      under_tile (1)_2: 6208791839479691398
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
