@@ -61,9 +61,9 @@ public class BGMManager : MonoBehaviour
             return 2;
         if (sceneName == "Day6")
             return 3;
-        if (sceneName == "TrueEnding")
+        if (sceneName == "Ending_True")
             return 6;
-        if (sceneName == "HiddenEnding")
+        if (sceneName == "Ending_Hidden")
             return 7;
         if (sceneName == "EndingCredit")
             return 8;
