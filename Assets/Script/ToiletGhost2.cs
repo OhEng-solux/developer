@@ -7,6 +7,7 @@ public class ToiletGhost2 : MonoBehaviour
 
     private bool isPlayerInside = false;
     private bool isCoroutineRunning = false;
+    private bool isFirst = true;
 
     public float duration = 2f; // 총 지속 시간
     public float startScale = 2f; // 시작 스케일 (2배)
@@ -19,10 +20,8 @@ public class ToiletGhost2 : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("update 실행중");
-        if (isPlayerInside && !isCoroutineRunning && Input.GetKeyDown(KeyCode.Z))
+        if (isPlayerInside && !isCoroutineRunning && Input.GetKeyDown(KeyCode.Z)&& isFirst==true)
         {
-            Debug.Log("update 내부 실행중");
             StartCoroutine(ActivateFace());
         }
     }
@@ -42,7 +41,7 @@ public class ToiletGhost2 : MonoBehaviour
 
         // 필요하다면 한번 더 쿨다운을 두려면 (예: yield return new WaitForSeconds(2.5f);) 추가
         yield return new WaitForSeconds(0.5f); // 원하는 시간만큼
-
+        isFirst = false;
         isCoroutineRunning = false;
     }
     private IEnumerator ScaleCoroutine()
