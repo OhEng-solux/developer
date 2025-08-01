@@ -303,7 +303,6 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator StartDialogueCoroutine()
     {
-
         if (shouldHideItemPanelNext && itemPanel != null)
         {
             itemPanel.SetActive(false);
@@ -326,6 +325,17 @@ public class DialogueManager : MonoBehaviour
                 rendererDialogueWindow.sprite = listDialogueWindows[count];
                 rendererSprite.sprite = listSprites[count];
                 animDialogueWindow.SetBool("Appear", true);
+                // --- Debug log and checks after triggering Appear animation ---
+                Debug.Log("[DialogueManager] DialogueWindow Appear animation triggered for scene: " + SceneManager.GetActiveScene().name);
+                if (animDialogueWindow == null)
+                {
+                    Debug.LogWarning("[DialogueManager] animDialogueWindow is null.");
+                }
+                else if (!animDialogueWindow.gameObject.activeInHierarchy)
+                {
+                    Debug.LogWarning("[DialogueManager] animDialogueWindow GameObject is not active in hierarchy.");
+                }
+                // -------------------------------------------------------------
                 animSprite.SetBool("Change", false);
             }
             else if (listSprites[count] != listSprites[count - 1])
@@ -344,6 +354,18 @@ public class DialogueManager : MonoBehaviour
         {
             rendererDialogueWindow.sprite = listDialogueWindows[count];
             rendererSprite.sprite = listSprites[count];
+            // --- Debug log and checks after triggering Appear animation ---
+            animDialogueWindow.SetBool("Appear", true);
+            Debug.Log("[DialogueManager] DialogueWindow Appear animation triggered for scene: " + SceneManager.GetActiveScene().name);
+            if (animDialogueWindow == null)
+            {
+                Debug.LogWarning("[DialogueManager] animDialogueWindow is null.");
+            }
+            else if (!animDialogueWindow.gameObject.activeInHierarchy)
+            {
+                Debug.LogWarning("[DialogueManager] animDialogueWindow GameObject is not active in hierarchy.");
+            }
+            // -------------------------------------------------------------
         }
 
         keyActivated = false;
