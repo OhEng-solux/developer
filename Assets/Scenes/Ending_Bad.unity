@@ -4571,10 +4571,10 @@ MonoBehaviour:
     - {fileID: -5220195240741735751, guid: cfae396231b8b47efa69b110470b5324, type: 3}
     - {fileID: -5220195240741735751, guid: cfae396231b8b47efa69b110470b5324, type: 3}
     dialogueWindows:
-    - {fileID: 21300000, guid: 2a7509f284ae40c4cbc4bd250844e6a5, type: 3}
-    - {fileID: 21300000, guid: 2a7509f284ae40c4cbc4bd250844e6a5, type: 3}
-    - {fileID: 21300000, guid: 2a7509f284ae40c4cbc4bd250844e6a5, type: 3}
-    - {fileID: 21300000, guid: 2a7509f284ae40c4cbc4bd250844e6a5, type: 3}
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     - {fileID: 0}
     npcAppearances: []
     blueSentences: []
