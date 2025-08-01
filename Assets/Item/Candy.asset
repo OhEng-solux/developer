@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: "\uBCF4\uC11D \uC0AC\uD0D5"
   obtainedIcon: {fileID: 3022057770043687863, guid: b2924fe9222b9474bbea133b0e89042c, type: 3}
   silhouetteIcon: {fileID: 4593769925483136239, guid: 37f6e41a0a6a0403eae8f39431cc8d09, type: 3}
-  isObtained: 0
+  isObtained: 1
   itemType: 0
   description: "\uBC18\uC9DD\uC784\uC744 \uC751\uCD95\uD55C \uC0AC\uD0D5.\n\uACF5\uD3EC\uC758
     \uADF8\uB9BC\uC790\uB97C \uC7A0\uAE50 \uBA48\uCD9C \uC218 \uC788\uB2E4."
