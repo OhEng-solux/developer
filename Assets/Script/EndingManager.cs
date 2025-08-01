@@ -11,8 +11,6 @@ public class EndingManager : MonoBehaviour
     [SerializeField] private GameObject endingCanvas;               // 대사 전에 보여줄 UI (선택)
     [SerializeField] private SpriteRenderer backgroundRenderer;     // Background 오브젝트의 SpriteRenderer
     [SerializeField] private FadeManager fadeManager;
-    [SerializeField] private AudioClip startSound;   // 엔딩 시작 사운드
-    [SerializeField] private float soundVolume = 2f; // 볼륨 (옵션)
 
     [System.Serializable]
     public class BackgroundChangeData
@@ -32,9 +30,6 @@ public class EndingManager : MonoBehaviour
 
         if (endingCanvas != null)
             endingCanvas.SetActive(false); // 바로 대화를 시작하므로 endingCanvas는 비활성화
-
-        if (startSound != null)
-            AudioSource.PlayClipAtPoint(startSound, Camera.main.transform.position, soundVolume);
 
         Invoke(nameof(StartEndingDialogue), 0.5f); // 자동으로 대화 시작
     }
