@@ -9,10 +9,11 @@ public class LightController : MonoBehaviour
     {
         gameObject.SetActive(false); // 처음엔 꺼진 상태
     }
-    
+
     void Awake()
     {
         thePlayer = FindFirstObjectByType<PlayerManager>();
+        // gameObject.SetActive(false); // 처음엔 꺼진 상태
     }
 
     void Update()

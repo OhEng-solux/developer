@@ -17,6 +17,7 @@ public class TaejuChase : MonoBehaviour
     private Queue<Vector3> recordedPositions = new Queue<Vector3>();
     private float timer;
     private bool isChasing = false;
+    private bool pauseChase = false;
 
     void Start()
     {
@@ -44,7 +45,7 @@ public class TaejuChase : MonoBehaviour
 
     void Update()
     {
-        if (!isChasing || player == null) return;
+        if (!isChasing || pauseChase || player == null) return;
 
         timer += Time.deltaTime;
 
@@ -64,7 +65,7 @@ public class TaejuChase : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!isChasing || recordedPositions.Count == 0) return;
+        if (!isChasing || pauseChase || recordedPositions.Count == 0) return;
 
         Vector2 target = recordedPositions.Peek();
         Vector2 current = rb.position;
@@ -114,6 +115,14 @@ public class TaejuChase : MonoBehaviour
         animator.SetBool("Walking", false);
     }
 
+    public void PauseChase(bool isPaused)
+    {
+        pauseChase = isPaused;
+
+        if (isPaused)
+            animator.SetBool("Walking", false);
+    }
+
     public bool IsChasing()
     {
         return isChasing;
@@ -144,7 +153,13 @@ public class TaejuChase : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("잡힘");
+            if (PlayerManager.instance != null && PlayerManager.instance.isProtectedBySalt)
+            {
+                Debug.Log("[SaltUse] 보호 상태 - 배드엔딩 무시됨");
+                return; // 잡혔지만 배드엔딩은 발생하지 않음
+            }
+
+            Debug.Log("[TaejuChase] 플레이어 잡힘 - 배드엔딩 이동");
             SceneManager.LoadSceneAsync("Ending_Bad");
         }
     }
