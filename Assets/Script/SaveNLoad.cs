@@ -115,15 +115,19 @@ public class SaveNLoad : MonoBehaviour
         // 씬 로드 완료 후 호출됨
         if (scene.name == data.sceneName)
         {
-            PlayerManager thePlayer = FindObjectOfType<PlayerManager>();
+            CameraManager theCam = FindFirstObjectByType<CameraManager>();
+            PlayerManager thePlayer = FindFirstObjectByType<PlayerManager>();
             if (thePlayer != null)
             {
                 thePlayer.currentMapName = data.mapName;
                 thePlayer.currentSceneName = data.sceneName;
                 thePlayer.transform.position = playerPositionToLoad;
             }
-
-            GameManager theGM = FindObjectOfType<GameManager>();
+            if (theCam != null)
+            {
+                theCam.target = thePlayer.gameObject;
+            }
+            GameManager theGM = FindFirstObjectByType<GameManager>();
             if (theGM != null)
             {
                 theGM.LoadStart();
