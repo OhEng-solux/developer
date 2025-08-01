@@ -47,9 +47,11 @@ public class SaveManager : MonoBehaviour
     {
         if (other.CompareTag("SavePoint"))
         {
+            Debug.Log("세이브 포인트에 들어감");
             isSavePoint = true;
         }
     }
+
 
     private void OnTriggerExit2D(Collider2D other)
     {
@@ -103,7 +105,7 @@ public class SaveManager : MonoBehaviour
 
     void Update()
     {
-        //Debug.Log("Update");
+        // Debug.Log("Update");
         /*
         if (inputBlocked)
         {
@@ -124,7 +126,11 @@ public class SaveManager : MonoBehaviour
         }
 
         if (!isOpen && (InventoryManager.instance == null || InventoryManager.instance.IsInventoryActive())) return;
-        if (!isOpen && (StartNEndMenu.instance == null || StartNEndMenu.instance.IsPanelActive())) return;
+        if (!isOpen)
+        {
+            if (StartNEndMenu.instance != null && StartNEndMenu.instance.IsPanelActive())
+                return;
+        }
         if (!isOpen && (Menu.instance == null || Menu.instance.activated)) return;
 
         if (sceneName == "Day6" && (ImagePopupManager.instance == null || ImagePopupManager.instance.IsImageActive())) return;
@@ -133,13 +139,15 @@ public class SaveManager : MonoBehaviour
         // Z키 눌렀을 때 세이브창 열기/닫기 토글 (저장지점 근처일 때만) or 자동 저장
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            Debug.Log("세이브 메니저 팝업");
+            Debug.Log($"[Z입력] isSavePoint={isSavePoint}, isOpen={isOpen}");
+            Debug.Log($"ImagePopup Active: {ImagePopupManager.instance?.IsImageActive()}");
+            Debug.Log($"Popup Active: {PopupManager.instance?.IsPopupActive()}");
+
             if ((isSavePoint) && !isOpen)
             {
+                Debug.Log("[Z입력] 세이브창 열기 시도");
                 StartCoroutine(OpenSave());
-                //StartCoroutine(WaitForSavePanelClose());//
             }
-
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -197,8 +205,11 @@ public class SaveManager : MonoBehaviour
         }
 
         // 스페이스키로 저장 (게임 중간에서만)
-        if (Input.GetKeyDown(KeyCode.Space) && !isStartMenu)
+        if (Input.GetKeyDown(KeyCode.Return) && !isStartMenu)
         {
+            if (PopupManager.instance != null && PopupManager.instance.IsPopupActive())
+                return;
+
             string path = Application.persistentDataPath + $"/SaveFile_{currentIndex}.dat";
             audioManager.Play(enterSound);
 
@@ -317,5 +328,11 @@ public class SaveManager : MonoBehaviour
     public bool IsSaveActive() //팝업이 떠있는지 외부에서 확인할 수 있도록 함
     {
         return savePanel.activeSelf;
+    }
+
+    public void SetSavePoint(bool value)
+    {
+        isSavePoint = value;
+        Debug.Log($"[SaveManager] isSavePoint set to {value}");
     }
 }
