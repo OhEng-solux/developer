@@ -1,16 +1,31 @@
 using UnityEngine;
+using System.Collections;
 
 public class CandyUseManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private float stunDuration = 3f;
+
+    public void ActivateEffect()
     {
-        
+        StartCoroutine(StunChaserCoroutine());
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator StunChaserCoroutine()
     {
-        
+        TaejuChase chaser = FindFirstObjectByType<TaejuChase>();
+        if (chaser != null && chaser.IsChasing())
+        {
+            chaser.StopChase();
+            Debug.Log("[CandyUse] 추격자 정지 시작");
+
+            yield return new WaitForSeconds(stunDuration);
+
+            chaser.StartChase();
+            Debug.Log("[CandyUse] 추격자 정지 해제");
+        }
+        else
+        {
+            Debug.LogWarning("[CandyUse] 추격자가 없거나 추격 중이 아님");
+        }
     }
 }

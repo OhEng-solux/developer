@@ -25,7 +25,6 @@ public class InventoryManager : MonoBehaviour
     public Text descriptionText;
     private int currentIndex = 0; // 현재 선택된 슬롯 인덱스
     public bool isOpen = false; // 인벤토리 열림 상태
-    public bool isChaseMode = false; // 추격전 중 여부
 
     void Start()
     {
@@ -124,7 +123,8 @@ public class InventoryManager : MonoBehaviour
             if (selectedItem.isObtained)
             {
                 // 소모성 아이템(보석사탕, 소금)은 추격전 중에만 사용 가능
-                if (selectedItem.itemType == ItemType.Consumable && !isChaseMode)
+                TaejuChase taeju = FindFirstObjectByType<TaejuChase>();
+                if (selectedItem.itemType == ItemType.Consumable && (taeju == null || !taeju.IsChasing()))
                 {
                     audioManager.Play(beepSound);
                     PopupManager.instance.ShowPopup("아직 사용할 수 없습니다.");

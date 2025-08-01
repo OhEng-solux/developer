@@ -144,7 +144,7 @@ public class TaejuChase : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            SceneManager.LoadSceneAsync("Ending_Bad");
+            //SceneManager.LoadSceneAsync("Ending_Bad");
         }
     }
 

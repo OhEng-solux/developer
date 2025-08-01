@@ -103,7 +103,7 @@ public class SaveManager : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("Update");
+        //Debug.Log("Update");
         /*
         if (inputBlocked)
         {
