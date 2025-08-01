@@ -102,7 +102,6 @@ public class TaejuChase : MonoBehaviour
             animator.SetFloat("DirY", direction.y > 0 ? 1 : -1);
         }
     }
-
     public void StartChase()
     {
         isChasing = true;
@@ -111,7 +110,19 @@ public class TaejuChase : MonoBehaviour
             spriteRenderer.enabled = true;
 
         animator.SetBool("Walking", true);
+        StartCoroutine(ChangeToChaseBGM());
     }
+
+    private IEnumerator ChangeToChaseBGM()
+    {
+        if (BGMManager.instance != null)
+        {
+            yield return BGMManager.instance.StartCoroutine(BGMManager.instance.FadeOutMusicCoroutinePublic());
+            BGMManager.instance.Play(5); // chase.mp3 인덱스
+            yield return BGMManager.instance.StartCoroutine(BGMManager.instance.FadeInMusicCoroutinePublic());
+        }
+    }
+
 
     public void StopChase()
     {
@@ -154,8 +165,6 @@ public class TaejuChase : MonoBehaviour
         isFading = false;
         StartChase();
     }
-
-
 
 
     private void OnTriggerEnter2D(Collider2D collision)
