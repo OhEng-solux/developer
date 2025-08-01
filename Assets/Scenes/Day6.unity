@@ -46643,9 +46643,9 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1149449629}
   m_Enabled: 1
-  m_SortingLayerID: -284738311
-  m_SortingLayer: 5
-  m_SortingOrder: 0
+  m_SortingLayerID: 1814127615
+  m_SortingLayer: 6
+  m_SortingOrder: 3
   m_SortAtRoot: 0
 --- !u!1 &1150055224
 GameObject:
@@ -49324,11 +49324,11 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1199260622}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a511c059fc7a04e7d8770cfadd0b18a5, type: 3}
-  m_Resource: {fileID: 8300000, guid: a511c059fc7a04e7d8770cfadd0b18a5, type: 3}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: f7f94ad1be7734f58b6b4da25f01916a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -53460,7 +53460,7 @@ Transform:
   m_GameObject: {fileID: 1306316774}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 332, y: -107, z: 0}
+  m_LocalPosition: {x: -186.8, y: -179.2, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -88190,6 +88190,21 @@ MonoBehaviour:
     loop: 0
   - name: menu_close
     clip: {fileID: 8300000, guid: 2a7ffea1cd44844d38a76d296e37eb12, type: 3}
+    source: {fileID: 0}
+    Volume: 2
+    loop: 0
+  - name: scream
+    clip: {fileID: 8300000, guid: 5d691169e17f24e19b12b22b629ee0fb, type: 3}
+    source: {fileID: 0}
+    Volume: 2
+    loop: 0
+  - name: mirror_footstep
+    clip: {fileID: 8300000, guid: f040b7f4f3f7d45b89f8ff7c02e8dd5c, type: 3}
+    source: {fileID: 0}
+    Volume: 2
+    loop: 0
+  - name: taeju_break
+    clip: {fileID: 8300000, guid: 52d657caeefaf425ea81e5598d291bd9, type: 3}
     source: {fileID: 0}
     Volume: 2
     loop: 0

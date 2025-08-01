@@ -13,6 +13,8 @@ public class BrokenFlowerEffect : MonoBehaviour
 
     private void OnEnable()
     {
+        AudioManager.instance.Play("taeju_break");
+
         if (taejuNPC != null && taejuNPC.TryGetComponent(out TaejuChase chase))
         {
             chase.StopChaseAndFreeze(); // 추격 중단
