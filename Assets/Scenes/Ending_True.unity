@@ -727,7 +727,7 @@ GameObject:
   - component: {fileID: 1104828220}
   - component: {fileID: 1104828221}
   m_Layer: 0
-  m_Name: Prologue_Dialogue
+  m_Name: EndingDialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -782,14 +782,14 @@ MonoBehaviour:
     sprites:
     - {fileID: 0}
     - {fileID: 0}
-    - {fileID: -4012656024804308703, guid: 0287b2accd48540dfadf0a792713887a, type: 3}
-    - {fileID: -4012656024804308703, guid: 0287b2accd48540dfadf0a792713887a, type: 3}
-    - {fileID: -4012656024804308703, guid: 0287b2accd48540dfadf0a792713887a, type: 3}
-    - {fileID: -4548211720714836524, guid: 0ed4d177aa50249ce841b99197def478, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    - {fileID: -4548211720714836524, guid: 0ed4d177aa50249ce841b99197def478, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     dialogueWindows:
