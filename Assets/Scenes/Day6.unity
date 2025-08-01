@@ -26783,6 +26783,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e293cb625d1c4c659ae075a41a1ac54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myCustomFont: {fileID: 12800000, guid: a25d602fb9ee940a7ba4f1460af36465, type: 3}
+  defaultFont: {fileID: 12800000, guid: 675d1aed245608440a643034922d27fe, type: 3}
   text: {fileID: 1869083072}
   blueText: {fileID: 407252643}
   yellowText: {fileID: 431154579}
@@ -53460,7 +53462,7 @@ Transform:
   m_GameObject: {fileID: 1306316774}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 332, y: -107, z: 0}
+  m_LocalPosition: {x: -143.2, y: -158.9, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
