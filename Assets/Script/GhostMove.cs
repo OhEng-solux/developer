@@ -37,8 +37,8 @@ public class GhostMove : MonoBehaviour
 
         if (animator != null)
         {
-            animator.SetFloat("MoveX", direction.x);
-            animator.SetFloat("MoveY", direction.y);
+            animator.SetFloat("DirX", 1f);
+            animator.SetFloat("DirY", 0f);
         }
 
         // NPC 
