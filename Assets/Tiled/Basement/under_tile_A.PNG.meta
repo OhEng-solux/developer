@@ -1,13 +1,16 @@
 fileFormatVersion: 2
-guid: 44d09597df38e4588b4737d228c2937d
+guid: aad66956dfc014d8ca97994c8e30a1ee
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6918849254247843962
-    second: under_object_0
+      213: 5664372460349057516
+    second: under_tile_0
   - first:
-      213: 9031408214757255597
-    second: under_object_1
+      213: 2667151302224108520
+    second: under_tile_1
+  - first:
+      213: 5537194951297170073
+    second: under_tile_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: under_object_0
+      name: under_tile_0
       rect:
         serializedVersion: 2
-        x: 619
-        y: 2639
-        width: 632
-        height: 392
+        x: 0
+        y: 479
+        width: 1793
+        height: 1569
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +121,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 687b41ac24f4bff90800000000000000
-      internalID: -6918849254247843962
+      spriteID: ce96c96ddb4eb9e40800000000000000
+      internalID: 5664372460349057516
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: under_object_1
+      name: under_tile_1
       rect:
         serializedVersion: 2
-        x: 1639
-        y: 2459
-        width: 72
-        height: 732
+        x: 0
+        y: 255
+        width: 33
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +143,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: da9a62ebbe1065d70800000000000000
-      internalID: 9031408214757255597
+      spriteID: 8ebd94b6aff930520800000000000000
+      internalID: 2667151302224108520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: under_tile_2
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 255
+        width: 290
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99a772c887118dc40800000000000000
+      internalID: 5537194951297170073
       vertices: []
       indices: 
       edges: []
@@ -159,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      under_tile_0: 5664372460349057516
+      under_tile_1: 2667151302224108520
+      under_tile_2: 5537194951297170073
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
