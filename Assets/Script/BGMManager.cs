@@ -82,6 +82,12 @@ public class BGMManager : MonoBehaviour
             return;
         }
 
+        if (bgmIdx == currentBGM && source.isPlaying)
+        {
+            Debug.Log("[BGMManager] 이미 Scene용 곡 재생 중 > 스킵!");
+            return;
+        }
+
         if (currentBGM != bgmIdx)
         {
             if (instantly)
@@ -106,10 +112,16 @@ public class BGMManager : MonoBehaviour
 
     public void Play(int _playMusicTrack)
     {
+        if (_playMusicTrack == currentBGM && source.isPlaying)
+        {
+            Debug.Log("[BGMManager] 이미 동일 곡 재생 중 > 스킵!");
+            return;
+        }
+
         Debug.Log($"[BGMManager] Play() 호출: {_playMusicTrack} / clips length: {clips.Length}");
         if (_playMusicTrack < 0 || _playMusicTrack >= clips.Length)
         {
-            Debug.LogError("[BGMManager] 잘못된 트랙 번호!");
+            Debug.LogError("[BGMManager] 잘못된 트랙 번호");
             return;
         }
         if (clips[_playMusicTrack] == null)

@@ -13,29 +13,38 @@ public class BrokenFlowerEffect : MonoBehaviour
 
     private void OnEnable()
     {
-        AudioManager.instance.Play("vase_break");
         if (taejuNPC != null && taejuNPC.TryGetComponent(out TaejuChase chase))
         {
-            chase.StopChaseAndFreeze(); // 추격 중단
+            chase.StopChaseAndFreeze();  
+
+            chase.recordedPositions.Clear(); // 위치 기록 철저히 비우기
+            chase.PauseChase(true);          // pauseChase flag로 완전 멈춤
+            chase.DisableColliderTemporarily(999f); // 콜라이더도 비활성
+
+            // ------------ 여기서만 BGM 코루틴 호출 ----------
+            if (BGMManager.instance != null)
+            {
+                StartCoroutine(chase.BackToDay6BGM());
+            }
+            //--------------------------------------------------
 
             if (flowerPosition != null)
             {
-                Vector3 offset = new Vector3(offsetDistance, 0f, 0f); // 오른쪽으로
+                // 위치 이동/외형 처리
+                Vector3 offset = new Vector3(offsetDistance, 0f, 0f);
+                // 필요한 경우만 위치 보정
                 // taejuNPC.transform.position = flowerPosition.position + offset;
 
                 SpriteRenderer sr = taejuNPC.GetComponent<SpriteRenderer>();
                 if (sr != null && taejuFacingFrontSprite != null)
-                {
                     sr.sprite = taejuFacingFrontSprite;
-                }
 
                 Animator animator = taejuNPC.GetComponent<Animator>();
                 if (animator != null)
-                {
-                    animator.enabled = false; // Animator 비활성화
-                }
+                    animator.enabled = false;
             }
         }
+
 
         if (endingDialogues != null && endingDialogues.Length > 0)
         {

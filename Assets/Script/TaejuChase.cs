@@ -14,7 +14,7 @@ public class TaejuChase : MonoBehaviour
 
     private Rigidbody2D rb;
     private Animator animator;
-    private Queue<Vector3> recordedPositions = new Queue<Vector3>();
+    public Queue<Vector3> recordedPositions = new Queue<Vector3>();
     private float timer;
     private bool isChasing = false;
     private bool pauseChase = false;
@@ -128,7 +128,7 @@ public class TaejuChase : MonoBehaviour
     {
         isChasing = false;
         animator.SetBool("Walking", false);
-        StartCoroutine(BackToDay6BGM());
+        // StartCoroutine(BackToDay6BGM());
     }
 
     public void PauseChase(bool isPaused)
@@ -170,6 +170,9 @@ public class TaejuChase : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (PlayerManager.instance != null && PlayerManager.instance.isInvincible)
+            return;
+
         if (collision.CompareTag("Player"))
         {
             if (isFading) return;
@@ -199,7 +202,9 @@ public class TaejuChase : MonoBehaviour
     public void StopChaseAndFreeze()
     {
         StopChase();
+        pauseChase = true;             // 이동 차단 플래그 활성화
         rb.linearVelocity = Vector2.zero;
+        rb.angularVelocity = 0f;
         rb.bodyType = RigidbodyType2D.Kinematic; // 물리 계산 중단
         Debug.Log("태주 멈춤");
     }
@@ -221,12 +226,13 @@ public class TaejuChase : MonoBehaviour
     }
 
 
-    private IEnumerator BackToDay6BGM()
+    public IEnumerator BackToDay6BGM()
     {
+        Debug.Log("BackToDay6BGM 호출, BGM 2번 트라이");
         if (BGMManager.instance != null)
         {
             yield return BGMManager.instance.StartCoroutine(BGMManager.instance.FadeOutMusicCoroutinePublic());
-            BGMManager.instance.Play(3);
+            BGMManager.instance.Play(2);
             yield return BGMManager.instance.StartCoroutine(BGMManager.instance.FadeInMusicCoroutinePublic());
         }
     }
