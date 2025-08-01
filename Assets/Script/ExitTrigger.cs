@@ -52,7 +52,19 @@ public class ExitTrigger : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("꽃병 깨짐 상태가 아님");
+                    if (!string.IsNullOrEmpty(warningText) && DialogueManager.instance != null)
+                    {
+                        Dialogue dialogue = new Dialogue();
+                        dialogue.sentences = new string[] { warningText };
+                        dialogue.dialogueWindows = new Sprite[] { warningWindow };
+                        dialogue.sprites = new Sprite[] { null };
+
+                        DialogueManager.instance.ShowDialogue(dialogue, false);
+                    }
+                    else
+                    {
+                        Debug.Log("꽃병 깨짐 상태가 아님");
+                    }
                 }
                 break;
 
@@ -68,6 +80,7 @@ public class ExitTrigger : MonoBehaviour
                         Dialogue dialogue = new Dialogue();
                         dialogue.sentences = new string[] { warningText };
                         dialogue.dialogueWindows = new Sprite[] { warningWindow };
+                        dialogue.sprites = new Sprite[] { null };
 
                         DialogueManager.instance.ShowDialogue(dialogue, false);
                     }
