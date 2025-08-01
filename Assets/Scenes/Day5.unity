@@ -1348,7 +1348,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1285147961}
-  - {fileID: 103949437}
   - {fileID: 261503886}
   - {fileID: 811371038}
   - {fileID: 235364543}
@@ -1508,131 +1507,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100882495}
   m_CullTransparentMesh: 1
---- !u!1 &103949436
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 103949437}
-  - component: {fileID: 103949439}
-  - component: {fileID: 103949438}
-  m_Layer: 0
-  m_Name: Dir_Dialogue
-  m_TagString: npc
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &103949437
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 103949436}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -45.35, y: -68.87, z: 0}
-  m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 0}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 55500104}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &103949438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 103949436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813481dc762d44bca937ff94ce09e711, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    sentences:
-    - "\uC6D0\uC7A5\uC774 \uC785\uAD6C\uB97C \uB9C9\uACE0 \uC11C \uC788\uB2E4."
-    - "..\uC5B4?.. \uC6D0\uC7A5\uB2D8..? \uC65C \uADF8\uB7EC\uC138\uC694?"
-    - "\u2026"
-    - "\u2026\u2026"
-    - "\uC120\uC0DD\uB2D8, \uB180\uB790\uC5B4? \uC7A5\uB09C\uC774\uC57C \u314E\u314E
-      \n\uD45C\uC815\uC774 \uC65C \uADF8\uB807\uAC8C \uAD73\uC5C8\uC5B4~"
-    - "..\uD558\uD558.. \uB124.. \uAE5C\uC9DD \uB180\uB790\uB124\uC694..  \n\uC800
-      \uD1F4\uADFC\uD574 \uBD10\uB3C4 \uB420\uAE4C\uC694?"
-    - "\uC544, \uB0B4\uAC00 \uAE38\uC744 \uB9C9\uACE0 \uC788\uC5C8\uAD6C\uB098. \uBBF8\uC548\uD574\uC694!
-      \n\uC5BC\uB978 \uB4E4\uC5B4\uAC00 \uBD10\uC694."
-    - "\uB124, \uB0B4\uC77C \uBD59\uACA0\uC2B5\uB2C8\uB2E4!"
-    sprites:
-    - {fileID: 0}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    - {fileID: 5306657755654628325, guid: e585bec9f58007d48aa0fc44299ff597, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    - {fileID: 2545363301140921904, guid: 3f62afae316d98c4aa6ade8bc80a4fce, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    - {fileID: 2545363301140921904, guid: 3f62afae316d98c4aa6ade8bc80a4fce, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    dialogueWindows:
-    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    - {fileID: 21300000, guid: 5ae991cb18aff104d8e017ef03c28e9a, type: 3}
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    - {fileID: 21300000, guid: 5ae991cb18aff104d8e017ef03c28e9a, type: 3}
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    - {fileID: 21300000, guid: 5ae991cb18aff104d8e017ef03c28e9a, type: 3}
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    npcAppearances: []
-    blueSentences: []
-    yellowSentences: []
---- !u!61 &103949439
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 103949436}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 3, y: 3}
-  m_EdgeRadius: 0
 --- !u!1 &110653959
 GameObject:
   m_ObjectHideFlags: 0
@@ -3432,8 +3306,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e293cb625d1c4c659ae075a41a1ac54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myCustomFont: {fileID: 0}
-  defaultFont: {fileID: 0}
   text: {fileID: 566881155}
   blueText: {fileID: 0}
   yellowText: {fileID: 0}
@@ -3596,7 +3468,7 @@ GameObject:
   - component: {fileID: 261503894}
   m_Layer: 0
   m_Name: seoa
-  m_TagString: npc
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3610,7 +3482,7 @@ Transform:
   m_GameObject: {fileID: 261503885}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -71.99, y: -43.19, z: 0}
+  m_LocalPosition: {x: -71.19, y: -41.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -3879,7 +3751,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPoint: {fileID: 514003476}
-  moveSpeed: 5
+  moveSpeed: 6
   isMoving: 0
 --- !u!1 &277738836
 GameObject:
@@ -9915,9 +9787,9 @@ GameObject:
   m_Component:
   - component: {fileID: 749243299}
   - component: {fileID: 749243303}
-  - component: {fileID: 749243302}
   - component: {fileID: 749243301}
   - component: {fileID: 749243300}
+  - component: {fileID: 749243304}
   m_Layer: 0
   m_Name: 3stday_end (2)
   m_TagString: Untagged
@@ -9968,28 +9840,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredCount: 5
---- !u!114 &749243302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 749243298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813481dc762d44bca937ff94ce09e711, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    sentences:
-    - "\uC624\uB298\uC740 \uC774\uB9CC\uD558\uBA74 \uB410\uB2E4."
-    sprites:
-    - {fileID: 0}
-    dialogueWindows:
-    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcAppearances: []
-    blueSentences: []
-    yellowSentences: []
 --- !u!61 &749243303
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10036,6 +9886,28 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 30, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &749243304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749243298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78143c981d51e8543bdf826e697c501d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - "\uC624\uB298\uC740 \uC774\uB9CC\uD558\uBA74 \uB410\uB2E4."
+    sprites:
+    - {fileID: 0}
+    dialogueWindows:
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    npcAppearances: []
+    blueSentences: []
+    yellowSentences: []
 --- !u!1 &749801653
 GameObject:
   m_ObjectHideFlags: 0
@@ -14846,7 +14718,7 @@ MonoBehaviour:
   timeText: {fileID: 1904417622}
   dateText: {fileID: 475800126}
   dayText: {fileID: 408947292}
-  nameText: {fileID: 957442407}
+  currentPlaceText: {fileID: 957442407}
   highlightBorder: {fileID: 764484546}
 --- !u!114 &893118195
 MonoBehaviour:
@@ -16643,7 +16515,7 @@ MonoBehaviour:
   timeText: {fileID: 420517591}
   dateText: {fileID: 1997510414}
   dayText: {fileID: 165902701}
-  nameText: {fileID: 671926091}
+  currentPlaceText: {fileID: 671926091}
   highlightBorder: {fileID: 755075567}
 --- !u!114 &1049304625
 MonoBehaviour:
@@ -17632,7 +17504,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1111345909}
   - component: {fileID: 1111345908}
-  - component: {fileID: 1111345907}
+  - component: {fileID: 1111345910}
   m_Layer: 0
   m_Name: Sign_Dialogue
   m_TagString: Untagged
@@ -17640,31 +17512,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1111345907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1111345906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813481dc762d44bca937ff94ce09e711, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    sentences:
-    - "'\uCD9C\uC11D \uC77C\uC9C0\uC5D0 \uC11C\uBA85\uD558\uB77C\uACE0 \uD588\uC5C8\uC9C0'"
-    - "'\uC5BC\uB978 \uC11C\uBA85\uD558\uACE0 \uD1F4\uADFC\uD574\uC57C\uACA0\uB2E4'"
-    sprites:
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
-    dialogueWindows:
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    npcAppearances: []
-    blueSentences: []
-    yellowSentences: []
 --- !u!61 &1111345908
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17726,6 +17573,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1111345910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111345906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78143c981d51e8543bdf826e697c501d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - "'\uCD9C\uC11D \uC77C\uC9C0\uC5D0 \uC11C\uBA85\uD558\uB77C\uACE0 \uD588\uC5C8\uC9C0'"
+    - "'\uC5BC\uB978 \uC11C\uBA85\uD558\uACE0 \uD1F4\uADFC\uD574\uC57C\uACA0\uB2E4'"
+    sprites:
+    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    npcAppearances: []
+    blueSentences: []
+    yellowSentences: []
 --- !u!1 &1119864506
 GameObject:
   m_ObjectHideFlags: 0
@@ -18095,9 +17967,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1149640344}
   - component: {fileID: 1149640348}
-  - component: {fileID: 1149640347}
   - component: {fileID: 1149640346}
   - component: {fileID: 1149640345}
+  - component: {fileID: 1149640349}
   m_Layer: 0
   m_Name: 3stday_end
   m_TagString: Untagged
@@ -18148,28 +18020,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredCount: 5
---- !u!114 &1149640347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1149640343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813481dc762d44bca937ff94ce09e711, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    sentences:
-    - "\uC624\uB298\uC740 \uC774\uB9CC\uD558\uBA74 \uB410\uB2E4."
-    sprites:
-    - {fileID: 0}
-    dialogueWindows:
-    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcAppearances: []
-    blueSentences: []
-    yellowSentences: []
 --- !u!61 &1149640348
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18216,6 +18066,28 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2, y: 20}
   m_EdgeRadius: 0
+--- !u!114 &1149640349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149640343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78143c981d51e8543bdf826e697c501d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - "\uC624\uB298\uC740 \uC774\uB9CC\uD558\uBA74 \uB410\uB2E4."
+    sprites:
+    - {fileID: 0}
+    dialogueWindows:
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    npcAppearances: []
+    blueSentences: []
+    yellowSentences: []
 --- !u!1 &1151459769
 GameObject:
   m_ObjectHideFlags: 0
@@ -19560,6 +19432,8 @@ GameObject:
   - component: {fileID: 1285147964}
   - component: {fileID: 1285147963}
   - component: {fileID: 1285147966}
+  - component: {fileID: 1285147967}
+  - component: {fileID: 1285147968}
   m_Layer: 3
   m_Name: director
   m_TagString: npc
@@ -19576,7 +19450,7 @@ Transform:
   m_GameObject: {fileID: 1285147960}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -46.37, y: -67.13, z: 0.049323015}
+  m_LocalPosition: {x: -46.01, y: -66.58, z: 0.049323015}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19617,7 +19491,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.3881023}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -19627,7 +19501,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3, y: 3}
+  m_Size: {x: 3, y: 3.7762046}
   m_EdgeRadius: 0
 --- !u!95 &1285147964
 Animator:
@@ -19718,6 +19592,69 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e13cf7aa774b3f849ab1c1fd75227e05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1285147967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285147960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a1466f5cd6f24f1ea18fb18990f57c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {x: -23, y: -136}
+  - {x: -28, y: -136}
+  - {x: -27, y: -136}
+  moveSpeed: 8
+--- !u!114 &1285147968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285147960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813481dc762d44bca937ff94ce09e711, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - "\uC6D0\uC7A5\uC774 \uC785\uAD6C\uB97C \uB9C9\uACE0 \uC11C \uC788\uB2E4."
+    - "..\uC5B4?.. \uC6D0\uC7A5\uB2D8..? \uC65C \uADF8\uB7EC\uC138\uC694?"
+    - "\u2026"
+    - "\u2026\u2026"
+    - "\uC120\uC0DD\uB2D8, \uB180\uB790\uC5B4? \uC7A5\uB09C\uC774\uC57C \u314E\u314E
+      \n\uD45C\uC815\uC774 \uC65C \uADF8\uB807\uAC8C \uAD73\uC5C8\uC5B4~"
+    - "..\uD558\uD558.. \uB124.. \uAE5C\uC9DD \uB180\uB790\uB124\uC694..  \n\uC800
+      \uD1F4\uADFC\uD574 \uBD10\uB3C4 \uB420\uAE4C\uC694?"
+    - "\uC544, \uB0B4\uAC00 \uAE38\uC744 \uB9C9\uACE0 \uC788\uC5C8\uAD6C\uB098. \uBBF8\uC548\uD574\uC694!
+      \n\uC5BC\uB978 \uB4E4\uC5B4\uAC00 \uBD10\uC694."
+    - "\uB124, \uB0B4\uC77C \uBD59\uACA0\uC2B5\uB2C8\uB2E4!"
+    sprites:
+    - {fileID: 0}
+    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: 5306657755654628325, guid: e585bec9f58007d48aa0fc44299ff597, type: 3}
+    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: 2545363301140921904, guid: 3f62afae316d98c4aa6ade8bc80a4fce, type: 3}
+    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: 2545363301140921904, guid: 3f62afae316d98c4aa6ade8bc80a4fce, type: 3}
+    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    - {fileID: 21300000, guid: 5ae991cb18aff104d8e017ef03c28e9a, type: 3}
+    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    - {fileID: 21300000, guid: 5ae991cb18aff104d8e017ef03c28e9a, type: 3}
+    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    - {fileID: 21300000, guid: 5ae991cb18aff104d8e017ef03c28e9a, type: 3}
+    - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
+    npcAppearances: []
+    blueSentences: []
+    yellowSentences: []
 --- !u!1 &1286769505
 GameObject:
   m_ObjectHideFlags: 0
@@ -20424,7 +20361,7 @@ Transform:
   m_GameObject: {fileID: 1367804801}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -55.4, y: -14.6, z: 0}
+  m_LocalPosition: {x: -31.2, y: -14.6, z: 0}
   m_LocalScale: {x: 0.7625, y: 0.9, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24434,7 +24371,7 @@ MonoBehaviour:
   timeText: {fileID: 1286893083}
   dateText: {fileID: 131332981}
   dayText: {fileID: 1776165704}
-  nameText: {fileID: 54019309}
+  currentPlaceText: {fileID: 54019309}
   highlightBorder: {fileID: 1946373702}
 --- !u!114 &1818204054
 MonoBehaviour:
@@ -24594,7 +24531,7 @@ Transform:
   m_GameObject: {fileID: 1861718459}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.049323015}
+  m_LocalPosition: {x: 0.05, y: -1.23, z: -0.049323015}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25598,7 +25535,6 @@ MonoBehaviour:
     playerEquipItem: 
     mapName: 
     sceneName: 
-    characterName: 
     saveDate: 
     saveTime: 
     targetName: thePlayer
@@ -27407,7 +27343,7 @@ GameObject:
   - component: {fileID: 2108911943}
   - component: {fileID: 2108911942}
   - component: {fileID: 2108911941}
-  - component: {fileID: 2108911940}
+  - component: {fileID: 2108911944}
   m_Layer: 0
   m_Name: 3stday_end (1)
   m_TagString: Untagged
@@ -27431,28 +27367,6 @@ Transform:
   - {fileID: 1159349942}
   m_Father: {fileID: 430187416}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2108911940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2108911938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813481dc762d44bca937ff94ce09e711, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    sentences:
-    - "\uC624\uB298\uC740 \uC774\uB9CC\uD558\uBA74 \uB410\uB2E4."
-    sprites:
-    - {fileID: 0}
-    dialogueWindows:
-    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcAppearances: []
-    blueSentences: []
-    yellowSentences: []
 --- !u!114 &2108911941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27526,6 +27440,28 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2, y: 20}
   m_EdgeRadius: 0
+--- !u!114 &2108911944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108911938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78143c981d51e8543bdf826e697c501d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - "\uC624\uB298\uC740 \uC774\uB9CC\uD558\uBA74 \uB410\uB2E4."
+    sprites:
+    - {fileID: 0}
+    dialogueWindows:
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    npcAppearances: []
+    blueSentences: []
+    yellowSentences: []
 --- !u!1 &2119429962
 GameObject:
   m_ObjectHideFlags: 0
