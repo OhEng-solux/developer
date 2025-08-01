@@ -4352,21 +4352,28 @@ MonoBehaviour:
     sentences:
     - 
     - 
+    - 
+    - 
     sprites:
+    - {fileID: 0}
+    - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     npcObjects: []
     npcAppearances: []
     blueSentences:
-    - "[\uC77C\uAE30 \uC870\uAC01 - \uC6D0\uC7A5\uB2D8\uC758 \uBA54\uBAA8]\n\n'\uC815\uBB38
-      \uC55E\uC5D0... \uC774\uC0C1\uD55C \uAF43\uBCD1\uC774 \uB193\uC5EC \uC788\uC5C8\uB2E4.\n\uB204\uAC00
-      \uB454 \uAC78\uAE4C... \uC608\uBEE4\uB2E4."
-    - "\uB2E4\uC74C\uB0A0... \uADF8 \uC560\uAC00 \uC788\uC5C8\uB2E4.\n\uD0DC\uC8FC\uB77C\uACE0
-      \uD588\uB358\uAC00...?\n\uADF8\uB7F0\uB370... \uC65C \uB09C,\n\uADF8 \uC560\uAC00
-      \uC6D0\uB798 \uC788\uB358 \uC560\uCC98\uB7FC \uB290\uAEF4\uC9C0\uB294 \uAC78\uAE4C."
+    - "[\uC77C\uAE30 \uC870\uAC01 - \uC6D0\uC7A5\uB2D8\uC758 \uBA54\uBAA8]\n\uC815\uBB38
+      \uC55E\uC5D0... \uC774\uC0C1\uD55C \uAF43\uBCD1\uC774 \uB193\uC5EC \uC788\uC5C8\uB2E4."
+    - "\uB204\uAC00 \uB454 \uAC78\uAE4C... \uC608\uBEE4\uB2E4.\n\uB2E4\uC74C\uB0A0...
+      \uADF8 \uC560\uAC00 \uC788\uC5C8\uB2E4."
+    - "\uD0DC\uC8FC\uB77C\uACE0 \uD588\uB358\uAC00...?"
+    - "\uADF8\uB7F0\uB370... \uC65C \uB09C,\n\uADF8 \uC560\uAC00 \uC6D0\uB798 \uC788\uB358
+      \uC560\uCC98\uB7FC \uB290\uAEF4\uC9C0\uB294 \uAC78\uAE4C."
     yellowSentences: []
 --- !u!61 &125039326
 BoxCollider2D:
@@ -13099,7 +13106,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -28.83, y: -78.7}
+  m_AnchoredPosition: {x: -23.029001, y: -81.201}
   m_SizeDelta: {x: 293.133, y: 39.409}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &407252643
@@ -13253,7 +13260,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -26, y: -78.7}
+  m_AnchoredPosition: {x: -20.199003, y: -81.201}
   m_SizeDelta: {x: 298.79, y: 39.408}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &431154579
@@ -31878,7 +31885,7 @@ Transform:
   m_GameObject: {fileID: 771285935}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -150.16, y: -96.23, z: 0}
+  m_LocalPosition: {x: -150.16, y: -95.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -51427,7 +51434,7 @@ Transform:
   m_GameObject: {fileID: 1306316774}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 43.1, y: 43.5, z: 0}
+  m_LocalPosition: {x: -89, y: -289, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -53206,25 +53213,29 @@ MonoBehaviour:
     sentences:
     - 
     - 
+    - 
     sprites:
     - {fileID: 0}
     - {fileID: 0}
+    - {fileID: 0}
     dialogueWindows:
+    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences:
-    - "[\uC624\uB798\uB41C \uBA54\uBAA8\uC9C0 - \uC5F0\uAD6C \uBB38\uC11C \uC77C\uBD80]\n\n...'\uD0DC\uC8FC'\uB294
+    - "[\uC624\uB798\uB41C \uBA54\uBAA8\uC9C0 - \uC5F0\uAD6C \uBB38\uC11C \uC77C\uBD80]\n...'\uD0DC\uC8FC'\uB294
       \uC804\uD574 \uB0B4\uB824\uC624\uB294 \uC774\uB984 \uC5C6\uB294 \uC544\uAE30
-      \uADC0\uC2E0 \uC911 \uD558\uB098. \n\uBC30\uACE0\uD514\uACFC \uC678\uB85C\uC6C0\uC5D0
-      \uC8FD\uC740 \uD63C\uC774 \uBA38\uBB3C\uBA70,"
-    - "\uB204\uAD70\uAC00\uC758 \uB9C8\uC74C\uC744 \uC7A1\uC544\uBA39\uACE0 \uC790\uB77C\uB09C\uB2E4.\n\uD1A0\uC885
-      \uADC0\uC2E0\uC774\uBA70, \uC774\uB984\uC740 \u2018\uD0DC(\u80CE)\u2019\uC640
+      \uADC0\uC2E0 \uC911 \uD558\uB098. "
+    - "\uBC30\uACE0\uD514\uACFC \uC678\uB85C\uC6C0\uC5D0 \uC8FD\uC740 \uD63C\uC774
+      \uBA38\uBB3C\uBA70,\n\uB204\uAD70\uAC00\uC758 \uB9C8\uC74C\uC744 \uC7A1\uC544\uBA39\uACE0
+      \uC790\uB77C\uB09C\uB2E4."
+    - "\uD1A0\uC885 \uADC0\uC2E0\uC774\uBA70, \uC774\uB984\uC740 \u2018\uD0DC(\u80CE)\u2019\uC640
       \u2018\uC8FC(\u4E3B)\u2019\uC5D0\uC11C \uC720\uB798.\n\uC989, \uD0DC\uC544\uC758
       \uD63C\uB839\uC774\uC790, \uBAB8 \uC548\uC5D0 \uAE43\uB4DC\uB294 \uC874\uC7AC\uB780
-      \uB73B\uC774\uB2E4.\""
+      \uB73B\uC774\uB2E4."
 --- !u!61 &1348053324
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -58428,7 +58439,7 @@ Transform:
   m_GameObject: {fileID: 1460067272}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -152.42, y: -85.3, z: 0}
+  m_LocalPosition: {x: -151.76, y: -85.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -77365,7 +77376,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -26.001, y: -78.699}
+  m_AnchoredPosition: {x: -20.2, y: -81.2}
   m_SizeDelta: {x: 298.793, y: 39.41}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1869083071
