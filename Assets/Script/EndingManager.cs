@@ -13,8 +13,6 @@ public class EndingManager : MonoBehaviour
     [SerializeField] private FadeManager fadeManager;
 
     [System.Serializable]
-    
-
     public class BackgroundChangeData
     {
         public int sentenceIndex;         // 몇 번째 문장에서
@@ -28,28 +26,24 @@ public class EndingManager : MonoBehaviour
     void Start()
     {
         theDM = Object.FindAnyObjectByType<DialogueManager>();
+        Panel.gameObject.SetActive(false);
 
-        string currentSceneName = SceneManager.GetActiveScene().name;
-        if (currentSceneName == "Ending_Bad")
-        {
-            Panel.gameObject.SetActive(false);
-        }
+        if (endingCanvas != null)
+            endingCanvas.SetActive(false); // 바로 대화를 시작하므로 endingCanvas는 비활성화
+
+        Invoke(nameof(StartEndingDialogue), 0.5f); // 자동으로 대화 시작
     }
 
-    void Update()
+    void StartEndingDialogue()
     {
-        if (!hasStarted && Input.GetKeyDown(KeyCode.Space))
+        if (hasStarted) return;
+
+        hasStarted = true;
+
+        if (theDM != null && dialogue != null)
         {
-            hasStarted = true;
-
-            if (endingCanvas != null)
-                endingCanvas.SetActive(false); // 대사 전 임시 UI 비활성화
-
-            if (theDM != null && dialogue != null)
-            {
-                theDM.ShowDialogue(dialogue);
-                StartCoroutine(WaitForDialogueEnd());
-            }
+            theDM.ShowDialogue(dialogue);
+            StartCoroutine(WaitForDialogueEnd());
         }
     }
 
@@ -80,9 +74,10 @@ public class EndingManager : MonoBehaviour
         }
 
         yield return new WaitForSeconds(0.5f); // 안전 대기
-        
+
         string currentSceneName = SceneManager.GetActiveScene().name;
-        if (currentSceneName == "Ending_Bad") {
+        if (currentSceneName == "Ending_Bad")
+        {
             SaveManager.instance.isEnding = true;
             Panel.gameObject.SetActive(true);
         }
@@ -118,11 +113,16 @@ public class EndingManager : MonoBehaviour
     }
 
     // DialogueManager 내부 count 값 가져오기 (private 접근)
-    private int GetCurrentSentenceIndex()
+    public int GetCurrentSentenceIndex()
     {
         var countField = typeof(DialogueManager).GetField("count", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
         if (countField != null)
             return (int)countField.GetValue(theDM);
         return -1;
+    }
+    
+    public bool IsDialoguePlaying()
+    {
+        return theDM != null && theDM.talking;
     }
 }
