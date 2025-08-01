@@ -43,7 +43,7 @@ public class CameraManager: MonoBehaviour
         PlayerManager thePlayer = FindFirstObjectByType<PlayerManager>();
         target = thePlayer.gameObject;
         Bound theBound = FindFirstObjectByType<Bound>();
-        theBound.setBound();
+        if(theBound!=null) theBound.setBound();
         Debug.Log("Start에서 할당된 target: " + (target != null ? target.name : "null"));
         minBound = bound.bounds.min;
         maxBound = bound.bounds.max;
