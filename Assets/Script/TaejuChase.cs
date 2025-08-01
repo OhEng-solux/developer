@@ -153,7 +153,7 @@ public class TaejuChase : MonoBehaviour
     {
         StopChase();
         rb.linearVelocity = Vector2.zero;
-        rb.isKinematic = true; // 물리 계산 중단
+        rb.bodyType = RigidbodyType2D.Kinematic; // 물리 계산 중단
         Debug.Log("태주 멈춤");
     }
 }
