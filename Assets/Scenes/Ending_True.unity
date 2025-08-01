@@ -809,7 +809,7 @@ MonoBehaviour:
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
-  endingCanvas: {fileID: 514448974}
+  endingCanvas: {fileID: 0}
   backgroundRenderer: {fileID: 1678766115}
   fadeManager: {fileID: 1570433334}
   backgroundChanges:
