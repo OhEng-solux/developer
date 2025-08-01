@@ -25,25 +25,26 @@ public class CameraManager: MonoBehaviour
 
     private void Awake()
     {
-        /*
+        
         if(instance!=null){
             Destroy(this.gameObject);
         }
         else{
-            DontDestroyOnLoad(this.gameObject);
+            //DontDestroyOnLoad(this.gameObject);
             instance=this;
         }
-        */
+        
     }
     void Start()
     {
         theCamera = Camera.main;
+        Debug.Log("카메라메니저 플레이어 타겟");
 
-        if (bound == null) // bound 체크
-        {
-            return;
-        }
-
+        PlayerManager thePlayer = FindFirstObjectByType<PlayerManager>();
+        target = thePlayer.gameObject;
+        Bound theBound = FindFirstObjectByType<Bound>();
+        theBound.setBound();
+        Debug.Log("Start에서 할당된 target: " + (target != null ? target.name : "null"));
         minBound = bound.bounds.min;
         maxBound = bound.bounds.max;
 
@@ -53,6 +54,9 @@ public class CameraManager: MonoBehaviour
 
     void LateUpdate()
     {
+        PlayerManager thePlayer = FindFirstObjectByType<PlayerManager>();
+        target = thePlayer.gameObject;
+
         if (target == null || bound == null) return;
 
         Vector3 desired = target.transform.position;

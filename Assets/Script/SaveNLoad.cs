@@ -23,7 +23,7 @@ public class SaveNLoad : MonoBehaviour
 
         public string saveDate;   
         public string saveTime;
-
+        public string targetName="thePlayer";
     }
 
     private PlayerManager thePlayer;
@@ -115,15 +115,17 @@ public class SaveNLoad : MonoBehaviour
         // 씬 로드 완료 후 호출됨
         if (scene.name == data.sceneName)
         {
-            PlayerManager thePlayer = FindObjectOfType<PlayerManager>();
+            CameraManager theCam = FindFirstObjectByType<CameraManager>();
+            PlayerManager thePlayer = FindFirstObjectByType<PlayerManager>();
             if (thePlayer != null)
             {
                 thePlayer.currentMapName = data.mapName;
                 thePlayer.currentSceneName = data.sceneName;
                 thePlayer.transform.position = playerPositionToLoad;
             }
+            Debug.Log("OnSceneLoaded");
 
-            GameManager theGM = FindObjectOfType<GameManager>();
+            GameManager theGM = FindFirstObjectByType<GameManager>();
             if (theGM != null)
             {
                 theGM.LoadStart();
