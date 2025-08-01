@@ -13,4 +13,12 @@ public class LightTrigger : MonoBehaviour
             flag = true;
         }
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            flag = false; // 플레이어가 나가면 flag 초기화
+        }
+    }
 }
