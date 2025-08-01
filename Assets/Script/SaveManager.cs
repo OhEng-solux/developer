@@ -47,9 +47,11 @@ public class SaveManager : MonoBehaviour
     {
         if (other.CompareTag("SavePoint"))
         {
+            Debug.Log("세이브 포인트에 들어감");
             isSavePoint = true;
         }
     }
+
 
     private void OnTriggerExit2D(Collider2D other)
     {
@@ -124,7 +126,11 @@ public class SaveManager : MonoBehaviour
         }
 
         if (!isOpen && (InventoryManager.instance == null || InventoryManager.instance.IsInventoryActive())) return;
-        if (!isOpen && (StartNEndMenu.instance == null || StartNEndMenu.instance.IsPanelActive())) return;
+        if (!isOpen)
+        {
+            if (StartNEndMenu.instance != null && StartNEndMenu.instance.IsPanelActive())
+                return;
+        }
         if (!isOpen && (Menu.instance == null || Menu.instance.activated)) return;
 
         if (sceneName == "Day6" && (ImagePopupManager.instance == null || ImagePopupManager.instance.IsImageActive())) return;
@@ -133,7 +139,9 @@ public class SaveManager : MonoBehaviour
         // Z키 눌렀을 때 세이브창 열기/닫기 토글 (저장지점 근처일 때만) or 자동 저장
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            Debug.Log($"[Z입력] isSavePoint={isSavePoint}, isOpen={isOpen}, Inventory활성={(InventoryManager.instance != null && InventoryManager.instance.IsInventoryActive())}, Menu활성={(Menu.instance != null && Menu.instance.activated)}, StartNEndMenu활성={(StartNEndMenu.instance != null && StartNEndMenu.instance.IsPanelActive())}");
+            Debug.Log($"[Z입력] isSavePoint={isSavePoint}, isOpen={isOpen}");
+            Debug.Log($"ImagePopup Active: {ImagePopupManager.instance?.IsImageActive()}");
+            Debug.Log($"Popup Active: {PopupManager.instance?.IsPopupActive()}");
 
             if ((isSavePoint) && !isOpen)
             {
