@@ -1,73 +1,73 @@
 fileFormatVersion: 2
-guid: 4d8797e6051b18948a3fcf404f3b534f
+guid: 577fd9b8b15af4405b49d061f74cfd49
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6679568043341548433
-    second: ghost_ankle_sprite (1)_0
+      213: -3937794078706655352
+    second: ghost_ankle_sprite_0
   - first:
-      213: -3414601900902892942
-    second: ghost_ankle_sprite (1)_1
+      213: 9070655487816044868
+    second: ghost_ankle_sprite_1
   - first:
-      213: -3654414309206335037
-    second: ghost_ankle_sprite (1)_2
+      213: -1945223914851049563
+    second: ghost_ankle_sprite_2
   - first:
-      213: -2310257081645862966
-    second: ghost_ankle_sprite (1)_3
+      213: -8775154168061240994
+    second: ghost_ankle_sprite_3
   - first:
-      213: -1998205503366388834
-    second: ghost_ankle_sprite (1)_4
+      213: 5886945913419484649
+    second: ghost_ankle_sprite_4
   - first:
-      213: 2876050139550115040
-    second: ghost_ankle_sprite (1)_5
+      213: -112775453790585695
+    second: ghost_ankle_sprite_5
   - first:
-      213: -3761620099131021332
-    second: ghost_ankle_sprite (1)_6
+      213: -7861933321759041424
+    second: ghost_ankle_sprite_6
   - first:
-      213: 6529475278620345734
-    second: ghost_ankle_sprite (1)_7
+      213: -7713807412716293848
+    second: ghost_ankle_sprite_7
   - first:
-      213: -8462334760304047043
-    second: ghost_ankle_sprite (1)_8
+      213: 3903358166754247286
+    second: ghost_ankle_sprite_8
   - first:
-      213: -8680829883617873995
-    second: ghost_ankle_sprite (1)_9
+      213: 8522902296096667922
+    second: ghost_ankle_sprite_9
   - first:
-      213: 5340426766693733235
-    second: ghost_ankle_sprite (1)_10
+      213: -2937714399472952989
+    second: ghost_ankle_sprite_10
   - first:
-      213: -2038969099476465441
-    second: ghost_ankle_sprite (1)_11
+      213: -1499020836417141567
+    second: ghost_ankle_sprite_11
   - first:
-      213: 3933785295962582920
-    second: ghost_ankle_sprite (1)_12
+      213: 1521875941206425291
+    second: ghost_ankle_sprite_12
   - first:
-      213: 5890566933255179253
-    second: ghost_ankle_sprite (1)_13
+      213: 6254157309886360946
+    second: ghost_ankle_sprite_13
   - first:
-      213: 6099089129219819714
-    second: ghost_ankle_sprite (1)_14
+      213: 1245333721156729645
+    second: ghost_ankle_sprite_14
   - first:
-      213: 1694585007720759296
-    second: ghost_ankle_sprite (1)_15
+      213: -2019510709360028597
+    second: ghost_ankle_sprite_15
   - first:
-      213: 6571640021983916168
-    second: ghost_ankle_sprite (1)_16
+      213: 1904399246362218252
+    second: ghost_ankle_sprite_16
   - first:
-      213: 4229243733783923720
-    second: ghost_ankle_sprite (1)_17
+      213: 8269576857588419427
+    second: ghost_ankle_sprite_17
   - first:
-      213: -7939909350706975918
-    second: ghost_ankle_sprite (1)_18
+      213: 4064908887785183467
+    second: ghost_ankle_sprite_18
   - first:
-      213: 6287827350549748326
-    second: ghost_ankle_sprite (1)_19
+      213: 6812457955054765161
+    second: ghost_ankle_sprite_19
   - first:
-      213: -822305794333386622
-    second: ghost_ankle_sprite (1)_20
+      213: 7719244178249334882
+    second: ghost_ankle_sprite_20
   - first:
-      213: 5802222393467792932
-    second: ghost_ankle_sprite (1)_21
+      213: -7629091058296894568
+    second: ghost_ankle_sprite_21
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -159,37 +159,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ghost_ankle_sprite (1)_0
+      name: ghost_ankle_sprite_0
       rect:
         serializedVersion: 2
         x: 0
@@ -204,14 +178,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0325cb9c331828f428d00177fbf9bfc5
-      internalID: -846532066
+      spriteID: c0264470a856e4337bf70ff71196c433
+      internalID: -1054636284
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ghost_ankle_sprite (1)_1
+      name: ghost_ankle_sprite_1
       rect:
         serializedVersion: 2
         x: 480
@@ -226,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b795115269fced428b13d9e3c2e6aa8
-      internalID: 1198606056
+      spriteID: ba43ccd8a26434ea79c3013efcdad46b
+      internalID: 714140305
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ghost_ankle_sprite (1)_2
+      name: ghost_ankle_sprite_2
       rect:
         serializedVersion: 2
         x: 960
@@ -248,14 +222,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0205c6648dbe85d4394fe88f6c903ef1
-      internalID: 1217418825
+      spriteID: 62541c53870584aa185b47e3ca4b25a2
+      internalID: 2105581247
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ghost_ankle_sprite (1)_3
+      name: ghost_ankle_sprite_3
       rect:
         serializedVersion: 2
         x: 0
@@ -270,14 +244,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 787891a3e379c5842bc256f5604ca45e
-      internalID: -1529533327
+      spriteID: 35aafc3ba78774b438f4e73cd008b3af
+      internalID: -1814125457
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ghost_ankle_sprite (1)_4
+      name: ghost_ankle_sprite_4
       rect:
         serializedVersion: 2
         x: 480
@@ -292,14 +266,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4e8879b788ef384e90fb4f73086c3ab
-      internalID: -2064282172
+      spriteID: b698a635723104a4a8dc05a701556421
+      internalID: -454951894
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ghost_ankle_sprite (1)_5
+      name: ghost_ankle_sprite_5
       rect:
         serializedVersion: 2
         x: 960
@@ -314,14 +288,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3f96606a4958984aa4be97bbd961fb2
-      internalID: 2144125073
+      spriteID: 64a3a4ce90856412194145a93f514c15
+      internalID: 1157520817
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ghost_ankle_sprite (1)_6
+      name: ghost_ankle_sprite_6
       rect:
         serializedVersion: 2
         x: 0
@@ -336,14 +310,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3acb2c83f2a361c45a498c6af91e3da4
-      internalID: -366531690
+      spriteID: b7cb0d426492e49c2b4759ea9b6c6d2a
+      internalID: -1049885294
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ghost_ankle_sprite (1)_7
+      name: ghost_ankle_sprite_7
       rect:
         serializedVersion: 2
         x: 480
@@ -358,14 +332,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91cc1d78262956a4499e37a76af3f240
-      internalID: -2104159099
+      spriteID: 9543d36d66f384312bbfacb32e8375fb
+      internalID: -1454554157
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ghost_ankle_sprite (1)_8
+      name: ghost_ankle_sprite_8
       rect:
         serializedVersion: 2
         x: 960
@@ -380,14 +354,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f24a9297b4ff3f41b72bcda3077d1e5
-      internalID: -1024161311
+      spriteID: ca14ae86170c7480f8d312fec1afe9c8
+      internalID: 1435833650
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ghost_ankle_sprite (1)_9
+      name: ghost_ankle_sprite_9
       rect:
         serializedVersion: 2
         x: 0
@@ -402,14 +376,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e9d135d14d90a34bbeb073b9e79df0b
-      internalID: -648864778
+      spriteID: 475dca8c2b4ba428fa3033d0ed85b3dd
+      internalID: -1378473117
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ghost_ankle_sprite (1)_10
+      name: ghost_ankle_sprite_10
       rect:
         serializedVersion: 2
         x: 480
@@ -424,14 +398,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5698dfee90a98324e93980d4e9f825da
-      internalID: -1967870592
+      spriteID: b18fb078c36474baaba3e3fbaa2119dc
+      internalID: -1574166349
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ghost_ankle_sprite (1)_11
+      name: ghost_ankle_sprite_11
       rect:
         serializedVersion: 2
         x: 960
@@ -446,8 +420,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55073e6462b3b8444901175ed377be52
-      internalID: -2026801490
+      spriteID: a06f5ae360a954e9a8c5a42d02b65399
+      internalID: -1286773754
       vertices: []
       indices: 
       edges: []
@@ -456,7 +430,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 52e83bfdc881b0a4c8ede027d5c6eb71
+    spriteID: 9beb9b1dbe0fd4b2e925e42e0fe55f54
     internalID: 0
     vertices: []
     indices: 
@@ -466,18 +440,18 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ghost_ankle_sprite (1)_0: -846532066
-      ghost_ankle_sprite (1)_1: 1198606056
-      ghost_ankle_sprite (1)_10: -1967870592
-      ghost_ankle_sprite (1)_11: -2026801490
-      ghost_ankle_sprite (1)_2: 1217418825
-      ghost_ankle_sprite (1)_3: -1529533327
-      ghost_ankle_sprite (1)_4: -2064282172
-      ghost_ankle_sprite (1)_5: 2144125073
-      ghost_ankle_sprite (1)_6: -366531690
-      ghost_ankle_sprite (1)_7: -2104159099
-      ghost_ankle_sprite (1)_8: -1024161311
-      ghost_ankle_sprite (1)_9: -648864778
+      ghost_ankle_sprite_0: -1054636284
+      ghost_ankle_sprite_1: 714140305
+      ghost_ankle_sprite_10: -1574166349
+      ghost_ankle_sprite_11: -1286773754
+      ghost_ankle_sprite_2: 2105581247
+      ghost_ankle_sprite_3: -1814125457
+      ghost_ankle_sprite_4: -454951894
+      ghost_ankle_sprite_5: 1157520817
+      ghost_ankle_sprite_6: -1049885294
+      ghost_ankle_sprite_7: -1454554157
+      ghost_ankle_sprite_8: 1435833650
+      ghost_ankle_sprite_9: -1378473117
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
