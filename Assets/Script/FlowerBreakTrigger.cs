@@ -13,7 +13,11 @@ public class FlowerBreakTrigger : MonoBehaviour
     {
         if (isPlayerNearby && !hasBroken && Input.GetKeyDown(interactionKey))
         {
-            BreakFlower();
+            // 추격이 시작된 경우에만 꽃병을 깰 수 있음
+            if (ChaseTriggerManager.instance != null && ChaseTriggerManager.instance.isChasing)
+            {
+                BreakFlower();
+            }
         }
     }
 
