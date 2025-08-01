@@ -57,9 +57,6 @@ public class CameraManager: MonoBehaviour
         PlayerManager thePlayer = FindFirstObjectByType<PlayerManager>();
         target = thePlayer.gameObject;
 
-        Debug.Log("LateUpdate target: " + (target != null ? target.name : "null"));
-        Debug.Log("LateUpdate bound: " + (bound != null ? bound.name : "null"));
-
         if (target == null || bound == null) return;
 
         Vector3 desired = target.transform.position;
