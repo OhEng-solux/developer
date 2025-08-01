@@ -48537,6 +48537,7 @@ GameObject:
   - component: {fileID: 1199260623}
   - component: {fileID: 1199260624}
   - component: {fileID: 1199260625}
+  - component: {fileID: 1199260626}
   m_Layer: 0
   m_Name: dir_broken_flower
   m_TagString: Untagged
@@ -48711,6 +48712,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1199260626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199260622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac553b0447f44242a5cbd31483f07c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taejuNPC: {fileID: 1716327531}
+  delayBeforeFade: 0.5
+  fadeOutDuration: 1.5
 --- !u!1 &1205505262
 GameObject:
   m_ObjectHideFlags: 0

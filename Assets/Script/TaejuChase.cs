@@ -144,8 +144,16 @@ public class TaejuChase : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            Debug.Log("잡힘");
             SceneManager.LoadSceneAsync("Ending_Bad");
         }
     }
 
+    public void StopChaseAndFreeze()
+    {
+        StopChase();
+        rb.linearVelocity = Vector2.zero;
+        rb.isKinematic = true; // 물리 계산 중단
+        Debug.Log("태주 멈춤");
+    }
 }
