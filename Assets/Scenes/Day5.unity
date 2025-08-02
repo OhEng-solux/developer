@@ -3306,6 +3306,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e293cb625d1c4c659ae075a41a1ac54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myCustomFont: {fileID: 0}
+  defaultFont: {fileID: 0}
   text: {fileID: 566881155}
   blueText: {fileID: 0}
   yellowText: {fileID: 0}
@@ -14718,7 +14720,7 @@ MonoBehaviour:
   timeText: {fileID: 1904417622}
   dateText: {fileID: 475800126}
   dayText: {fileID: 408947292}
-  currentPlaceText: {fileID: 957442407}
+  nameText: {fileID: 957442407}
   highlightBorder: {fileID: 764484546}
 --- !u!114 &893118195
 MonoBehaviour:
@@ -16515,7 +16517,7 @@ MonoBehaviour:
   timeText: {fileID: 420517591}
   dateText: {fileID: 1997510414}
   dayText: {fileID: 165902701}
-  currentPlaceText: {fileID: 671926091}
+  nameText: {fileID: 671926091}
   highlightBorder: {fileID: 755075567}
 --- !u!114 &1049304625
 MonoBehaviour:
@@ -24371,7 +24373,7 @@ MonoBehaviour:
   timeText: {fileID: 1286893083}
   dateText: {fileID: 131332981}
   dayText: {fileID: 1776165704}
-  currentPlaceText: {fileID: 54019309}
+  nameText: {fileID: 54019309}
   highlightBorder: {fileID: 1946373702}
 --- !u!114 &1818204054
 MonoBehaviour:
@@ -25338,6 +25340,7 @@ MonoBehaviour:
   notMove: 0
   hasEnteredName: 0
   isProtectedBySalt: 0
+  isInvincible: 0
 --- !u!95 &1928187255
 Animator:
   serializedVersion: 7
@@ -25535,6 +25538,7 @@ MonoBehaviour:
     playerEquipItem: 
     mapName: 
     sceneName: 
+    characterName: 
     saveDate: 
     saveTime: 
     targetName: thePlayer
