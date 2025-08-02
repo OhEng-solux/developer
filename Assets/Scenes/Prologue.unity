@@ -424,6 +424,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e293cb625d1c4c659ae075a41a1ac54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myCustomFont: {fileID: 0}
+  defaultFont: {fileID: 0}
   text: {fileID: 719215324}
   blueText: {fileID: 0}
   yellowText: {fileID: 0}
@@ -846,6 +848,8 @@ MonoBehaviour:
   canMove: 1
   notMove: 0
   hasEnteredName: 0
+  isProtectedBySalt: 0
+  isInvincible: 0
 --- !u!95 &1015715349
 Animator:
   serializedVersion: 7
@@ -1141,6 +1145,7 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
+    npcAppearances: []
     blueSentences: []
     yellowSentences: []
   prologueCanvas: {fileID: 0}
