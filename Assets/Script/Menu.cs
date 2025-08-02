@@ -23,6 +23,7 @@ public class Menu : MonoBehaviour
     public string select_sound;
 
     public OrderManager theOrder;
+    public bool ignoreEscOneFrame = false;
 
     public List<Button> menuButtons; // 메뉴 항목 버튼들 (인스펙터에 할당)
 
@@ -42,6 +43,12 @@ public class Menu : MonoBehaviour
 
     void Update()
     {
+        if (ignoreEscOneFrame)
+        {
+            ignoreEscOneFrame = false;
+            return;
+        }
+
         if (DialogueManager.instance == null || !DialogueManager.instance.talking)
         {
             bool popupInactive = PopupManager.instance == null || !PopupManager.instance.IsPopupActive();
@@ -50,30 +57,24 @@ public class Menu : MonoBehaviour
 
             if (popupInactive && saveInactive && inventoryInactive)
             {
+                if (PuzzleManager.instance != null && PuzzleManager.instance.IsPuzzleActive())
+                    return;
+
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
-                    Debug.Log("SaveManager.instance: " + (SaveManager.instance != null));
-                    Debug.Log("IsSaveActive Open: " + SaveManager.instance?.IsSaveActive());
                     activated = !activated;
 
                     if (activated)
-                    {
                         OpenMenu();
-                    }
                     else
-                    {
                         CloseMenu();
-                    }
                 }
 
                 if (activated)
-                {
                     HandleInput();
-                }
             }
         }
     }
-
 
     void OpenMenu()
     {
@@ -83,7 +84,7 @@ public class Menu : MonoBehaviour
         if (PlayerManager.instance != null)
             PlayerManager.instance.canMove = false;
 
-        theAudio.Play(call_sound);
+        AudioManager.instance.Play("menu_open");
 
         currentIndex = 0;
         UpdateButtonColors();
@@ -97,7 +98,7 @@ public class Menu : MonoBehaviour
         if (PlayerManager.instance != null)
             PlayerManager.instance.canMove = true;
 
-        theAudio.Play(cancel_sound);
+        AudioManager.instance.Play("menu_close");
         StartCoroutine(ResetInputsNextFrame());
     }
 

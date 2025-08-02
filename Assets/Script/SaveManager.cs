@@ -11,10 +11,10 @@ public class SaveManager : MonoBehaviour
 {
     public static SaveManager instance;
 
-    private string keySound = "type_Sound";
-    private string enterSound = "enter_Sound";
-    private string openSound = "ok_Sound";
-    private string beepSound = "beep_Sound";
+    private string keySound = "type_sound";
+    private string enterSound = "enter_sound";
+    private string openSound = "ok_sound";
+    private string beepSound = "beep_sound";
     public bool closePopup = false;
     public GameObject savePanel;
     public SaveSlot[] slots; // 슬롯 배열
@@ -65,7 +65,6 @@ public class SaveManager : MonoBehaviour
     {
         // 팝업 모두 닫힐 때까지 대기
         yield return WaitForPopupClose();
-        Debug.Log("팝업 isOpen ");
         // 대기 후 팝업 토글
         isOpen = true;
         savePanel.SetActive(isOpen);
@@ -93,29 +92,10 @@ public class SaveManager : MonoBehaviour
             playerManager = playerObj.GetComponent<PlayerManager>();
     }
 
-    /*private IEnumerator WaitForSavePanelClose()
-    {
-        // isOpen이 false가 될 때까지 기다림 (즉, 세이브 창이 닫힐 때까지)
-        yield return new WaitWhile(() => isOpen);
-
-        // 세이브 창이 닫힌 이후 실행할 작업 작성
-        Debug.Log("세이브 창 닫힘, 다음 작업 시작");
-    }*/
 
 
     void Update()
     {
-        // Debug.Log("Update");
-        /*
-        if (inputBlocked)
-        {
-            // 엔터키가 올라올 때까지 기다렸다가 입력 가능한 상태로 전환
-            if (Input.GetKeyUp(KeyCode.Return))
-                inputBlocked = false;
-
-            return; // 입력 무시
-        }
-        */
         string sceneName = gameObject.scene.name;
 
         if (sceneName == "Start")
@@ -152,6 +132,8 @@ public class SaveManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            CloseSave();
+            /*
             if (isOpen)
             {
                 audioManager.Play(openSound);
@@ -159,6 +141,7 @@ public class SaveManager : MonoBehaviour
                 savePanel.SetActive(isOpen);
                 GameObject.FindWithTag("Player").GetComponent<PlayerManager>().canMove = true;
             }
+            */
         }
 
         // isOpen 상태가 이전 상태와 다를 때만 처리
@@ -179,8 +162,13 @@ public class SaveManager : MonoBehaviour
                 if (playerManager != null)
                 {
                     if (PopupManager.instance == null || !PopupManager.instance.IsPopupActive())
-                        playerManager.canMove = true;
-                    // else 이동 금지 유지!
+                    {
+                        if (playerManager.currentMapName != "Basement")
+                        {
+                            playerManager.canMove = true;
+                        }
+                        // else 이동 금지 유지!
+                    }
                 }
             }
 
@@ -334,5 +322,24 @@ public class SaveManager : MonoBehaviour
     {
         isSavePoint = value;
         Debug.Log($"[SaveManager] isSavePoint set to {value}");
+    }
+
+    public void CloseSave()
+    {
+        audioManager.Play(openSound);
+        savePanel.SetActive(false);
+        isOpen = false;
+        if (playerManager != null)
+        {
+            if (playerManager.currentMapName=="Basement")
+            {
+                playerManager.canMove = false;
+            }
+            else
+            {
+                playerManager.canMove = true;
+            }
+        }
+        return;
     }
 }

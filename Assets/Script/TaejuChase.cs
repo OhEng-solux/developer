@@ -14,15 +14,20 @@ public class TaejuChase : MonoBehaviour
 
     private Rigidbody2D rb;
     private Animator animator;
-    private Queue<Vector3> recordedPositions = new Queue<Vector3>();
+    public Queue<Vector3> recordedPositions = new Queue<Vector3>();
     private float timer;
     private bool isChasing = false;
     private bool pauseChase = false;
+
+    private Collider2D chaseCollider;
+    public bool isFading = false;  // 페이드 진행중 체크용 플래그
+    private bool hasTriggeredBadEnding = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        chaseCollider = GetComponent<Collider2D>();
 
         if (player == null)
         {
@@ -98,7 +103,6 @@ public class TaejuChase : MonoBehaviour
             animator.SetFloat("DirY", direction.y > 0 ? 1 : -1);
         }
     }
-
     public void StartChase()
     {
         isChasing = true;
@@ -107,12 +111,25 @@ public class TaejuChase : MonoBehaviour
             spriteRenderer.enabled = true;
 
         animator.SetBool("Walking", true);
+        StartCoroutine(ChangeToChaseBGM());
     }
+
+    private IEnumerator ChangeToChaseBGM()
+    {
+        if (BGMManager.instance != null)
+        {
+            yield return BGMManager.instance.StartCoroutine(BGMManager.instance.FadeOutMusicCoroutinePublic());
+            BGMManager.instance.Play(5); // chase.mp3 인덱스
+            yield return BGMManager.instance.StartCoroutine(BGMManager.instance.FadeInMusicCoroutinePublic());
+        }
+    }
+
 
     public void StopChase()
     {
         isChasing = false;
         animator.SetBool("Walking", false);
+        // StartCoroutine(BackToDay6BGM());
     }
 
     public void PauseChase(bool isPaused)
@@ -132,35 +149,98 @@ public class TaejuChase : MonoBehaviour
     {
         StartCoroutine(SpawnAfterDelay(position, delay));
     }
-
     private IEnumerator SpawnAfterDelay(Vector3 position, float delay)
     {
         var spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer != null)
             spriteRenderer.enabled = false;
 
-        transform.position = position;
+        isFading = true; // 이 동안 잡기 방지
+
+        transform.position = position; // ← 반드시 이 줄이 delay 전에 있나 확인!
 
         yield return new WaitForSeconds(delay);
 
         if (spriteRenderer != null)
             spriteRenderer.enabled = true;
 
+        isFading = false;
         StartChase();
     }
 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (hasTriggeredBadEnding) return; // 이미 한 번 발동했으면 무시
+        if (PlayerManager.instance != null && PlayerManager.instance.isInvincible)
+            return;
+
         if (collision.CompareTag("Player"))
         {
+            if (isFading) return;
+
             if (PlayerManager.instance != null && PlayerManager.instance.isProtectedBySalt)
             {
                 Debug.Log("[SaltUse] 보호 상태 - 배드엔딩 무시됨");
-                return; // 잡혔지만 배드엔딩은 발생하지 않음
+                return;
             }
 
-            Debug.Log("[TaejuChase] 플레이어 잡힘 - 배드엔딩 이동");
-            SceneManager.LoadSceneAsync("Ending_Bad");
+            hasTriggeredBadEnding = true; // 다시 못 들어오게 플래그
+            StartCoroutine(BadEndingTransition());
+        }
+    }
+
+    private IEnumerator BadEndingTransition()
+    {
+        if (BGMManager.instance != null)
+        {
+            yield return BGMManager.instance.StartCoroutine(BGMManager.instance.FadeOutMusicCoroutinePublic());
+        }
+
+        yield return new WaitForSeconds(0.2f);
+
+        DontDestroyOnLoad(this.gameObject); // 혹시 새 씬 가서도 유지되게 해뒀다면
+
+        SceneManager.LoadScene("Ending_Bad");
+
+        Destroy(gameObject); // 씬 이동 후 바로 자기 자신 파괴
+    }
+
+    public void StopChaseAndFreeze()
+    {
+        StopChase();
+        pauseChase = true;             // 이동 차단 플래그 활성화
+        rb.linearVelocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+        rb.bodyType = RigidbodyType2D.Kinematic; // 물리 계산 중단
+        Debug.Log("태주 멈춤");
+    }
+
+    public void DisableColliderTemporarily(float seconds)
+    {
+        if (chaseCollider != null)
+        {
+            chaseCollider.enabled = false;
+            StartCoroutine(ReenableColliderAfterDelay(seconds));
+        }
+    }
+
+    private IEnumerator ReenableColliderAfterDelay(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        if (chaseCollider != null)
+            chaseCollider.enabled = true;
+    }
+
+
+    public IEnumerator BackToDay6BGM()
+    {
+        Debug.Log("BackToDay6BGM 호출, BGM 2번 트라이");
+        if (BGMManager.instance != null)
+        {
+            yield return BGMManager.instance.StartCoroutine(BGMManager.instance.FadeOutMusicCoroutinePublic());
+            BGMManager.instance.Play(2);
+            yield return BGMManager.instance.StartCoroutine(BGMManager.instance.FadeInMusicCoroutinePublic());
         }
     }
 

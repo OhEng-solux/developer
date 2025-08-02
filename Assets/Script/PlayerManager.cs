@@ -30,6 +30,8 @@ public class PlayerManager : MovingObject
     private Queue<string> queue;
     public bool isProtectedBySalt = false; // 추격전 아이템 사용
 
+    public bool isInvincible = false;
+
     IEnumerator Start()
     {
         if (gameObject.scene.name == "Start" || gameObject.scene.name == "Prologue")

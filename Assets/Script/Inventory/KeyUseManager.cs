@@ -46,6 +46,7 @@ public class KeyUseManager : MonoBehaviour
         if (blockerObject != null)
             blockerObject.SetActive(false); // 벽 제거
 
-        PopupManager.instance?.ShowPopup("문이 열렸습니다!");
+        AudioManager.instance.Play("key_use");
+        PopupManager.instance?.ShowPopup("문이 열렸습니다.");
     }
 }

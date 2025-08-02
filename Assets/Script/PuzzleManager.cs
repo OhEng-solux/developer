@@ -35,6 +35,8 @@ public class PuzzleManager : MonoBehaviour
     public bool IsPuzzleActive() => _isPuzzleActive;
     public bool IsPuzzleSolved() => _isPuzzleSolved;
 
+    public static PuzzleManager instance;
+
     private void Start()
     {
         dm = FindFirstObjectByType<DialogueManager>();
@@ -52,6 +54,11 @@ public class PuzzleManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftArrow)) MoveSelection(-1);
         if (Input.GetKeyDown(KeyCode.RightArrow)) MoveSelection(1);
         if (Input.GetKeyDown(KeyCode.Return)) PressSelectedButton();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            // ESC 누르면 퍼즐 종료 및 창 닫기
+            CancelPuzzle();
+        }
     }
 
     void MoveSelection(int direction)
@@ -133,6 +140,7 @@ public class PuzzleManager : MonoBehaviour
 
         if (rewardItem != null && theInventory != null)
         {
+            AudioManager.instance.Play("game_clear");
             theInventory.AcquireItem(rewardItem);
             Debug.Log("[퍼즐 성공] 아이템 지급 완료: " + rewardItem.itemName);
         }
@@ -150,7 +158,10 @@ public class PuzzleManager : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(0.3f);
         puzzlePanel.SetActive(false);
+
+        AudioManager.instance.Play("game_fail");
         DialogueManager.instance.ShowDialogue(failDialogue);
+        
         _isPuzzleActive = false;
         playerInputSequence.Clear();
         pressedIndices.Clear();
@@ -181,4 +192,35 @@ public class PuzzleManager : MonoBehaviour
         if (PlayerManager.instance != null)
             PlayerManager.instance.canMove = false;
     }
+
+    void CancelPuzzle()
+    {
+        _isPuzzleActive = false;
+        playerInputSequence.Clear();
+        pressedIndices.Clear();
+        Time.timeScale = 1f;
+
+        if (PlayerManager.instance != null)
+            PlayerManager.instance.canMove = true;
+
+        // 먼저 코루틴 실행
+        StartCoroutine(ResetInputsNextFrame());
+
+        // 그 다음에 UI 끄기
+        puzzlePanel.SetActive(false);
+
+        if (Menu.instance != null)
+        {
+            Menu.instance.activated = false;
+            Menu.instance.menuPanel.SetActive(false);
+            Menu.instance.ignoreEscOneFrame = true; // <- 이 줄 추가
+        }
+    }
+
+    IEnumerator ResetInputsNextFrame()
+    {
+        yield return null; // 다음 프레임 대기
+        Input.ResetInputAxes();
+    }
+
 }

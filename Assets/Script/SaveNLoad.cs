@@ -20,10 +20,11 @@ public class SaveNLoad : MonoBehaviour
 
         public string mapName;
         public string sceneName;
+        public string characterName;
 
         public string saveDate;   
         public string saveTime;
-
+        public string targetName="thePlayer";
     }
 
     private PlayerManager thePlayer;
@@ -42,6 +43,7 @@ public class SaveNLoad : MonoBehaviour
         data.playerY = thePlayer.transform.position.y;
         data.playerZ = thePlayer.transform.position.z;
 
+        data.characterName = thePlayer.characterName;
         data.mapName = thePlayer.currentMapName;
         data.sceneName = thePlayer.currentSceneName;
 
@@ -95,7 +97,9 @@ public class SaveNLoad : MonoBehaviour
             thePlayer.currentMapName = data.mapName;
             thePlayer.currentSceneName = data.sceneName;
             playerPositionToLoad = new Vector3(data.playerX, data.playerY, data.playerZ);
-            
+            thePlayer.characterName = data.characterName;
+
+
             Debug.Log($"로드 중..??");
             
             Debug.Log($"로드할 씬 이름: {data.sceneName}");
@@ -115,15 +119,17 @@ public class SaveNLoad : MonoBehaviour
         // 씬 로드 완료 후 호출됨
         if (scene.name == data.sceneName)
         {
-            PlayerManager thePlayer = FindObjectOfType<PlayerManager>();
+            CameraManager theCam = FindFirstObjectByType<CameraManager>();
+            PlayerManager thePlayer = FindFirstObjectByType<PlayerManager>();
             if (thePlayer != null)
             {
                 thePlayer.currentMapName = data.mapName;
                 thePlayer.currentSceneName = data.sceneName;
                 thePlayer.transform.position = playerPositionToLoad;
             }
+            Debug.Log("OnSceneLoaded");
 
-            GameManager theGM = FindObjectOfType<GameManager>();
+            GameManager theGM = FindFirstObjectByType<GameManager>();
             if (theGM != null)
             {
                 theGM.LoadStart();

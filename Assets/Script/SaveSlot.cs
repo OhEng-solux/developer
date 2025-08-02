@@ -1,4 +1,4 @@
-using UnityEngine;
+Ôªøusing UnityEngine;
 using UnityEngine.UI;
 
 public class SaveSlot : MonoBehaviour
@@ -6,21 +6,20 @@ public class SaveSlot : MonoBehaviour
     public Text timeText;
     public Text dateText;
     public Text dayText;
-    public Text currentPlaceText;
+    public Text nameText;
     public GameObject highlightBorder;
 
     public void SetData(SaveNLoad.Data data)
     {
         if (data == null)
         {
-            currentPlaceText.text = "---";
+            nameText.text = "---";//Ïó¨Í∏∞Ïóê Ïù¥Î¶Ñ
             dateText.text = "---";
             timeText.text = "---";
             dayText.text = "---";
             return;
         }
 
-        currentPlaceText.text = data.mapName;
 
         if (!string.IsNullOrEmpty(data.saveDate))
         {
@@ -40,9 +39,9 @@ public class SaveSlot : MonoBehaviour
         highlightBorder.SetActive(isOn);
     }
 
-    public void SetSaveInfo(string mapName, string saveDate, string saveTime,string sceneName)
+    public void SetSaveInfo(string characterName, string saveDate, string saveTime,string sceneName)
     {
-        currentPlaceText.text = mapName;
+        nameText.text = characterName;
         dayText.text = sceneName;
         dateText.text = saveDate;
         timeText.text = saveTime;
@@ -50,7 +49,7 @@ public class SaveSlot : MonoBehaviour
 
     public void SetEmpty()
     {
-        currentPlaceText.text = "∫ÒæÓ ¿÷¿Ω";
+        nameText.text = "ÎπÑÏñ¥ ÏûàÏùå";
         dateText.text = "";
         timeText.text = "";
 

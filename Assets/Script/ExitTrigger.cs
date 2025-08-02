@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,6 +8,10 @@ public class ExitTrigger : MonoBehaviour
     public ExitType exitType;
 
     private bool playerInRange = false;
+
+    [TextArea]
+    public string warningText;
+    public Sprite warningWindow;
 
     void Update()
     {
@@ -47,8 +52,19 @@ public class ExitTrigger : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("꽃병 깨짐 상태가 아님");
-                    // 원하면 화면에 안내 문구 출력할 수도 있음
+                    if (!string.IsNullOrEmpty(warningText) && DialogueManager.instance != null)
+                    {
+                        Dialogue dialogue = new Dialogue();
+                        dialogue.sentences = new string[] { warningText };
+                        dialogue.dialogueWindows = new Sprite[] { warningWindow };
+                        dialogue.sprites = new Sprite[] { null };
+
+                        DialogueManager.instance.ShowDialogue(dialogue, false);
+                    }
+                    else
+                    {
+                        Debug.Log("꽃병 깨짐 상태가 아님");
+                    }
                 }
                 break;
 
@@ -59,7 +75,19 @@ public class ExitTrigger : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("꽃병 깨짐 상태 -> 정문 탈출 유도");
+                    if (!string.IsNullOrEmpty(warningText) && DialogueManager.instance != null)
+                    {
+                        Dialogue dialogue = new Dialogue();
+                        dialogue.sentences = new string[] { warningText };
+                        dialogue.dialogueWindows = new Sprite[] { warningWindow };
+                        dialogue.sprites = new Sprite[] { null };
+
+                        DialogueManager.instance.ShowDialogue(dialogue, false);
+                    }
+                    else
+                    {
+                        Debug.Log("꽃병 깨짐 상태 -> 정문 탈출 유도");
+                    }
                 }
                 break;
         }

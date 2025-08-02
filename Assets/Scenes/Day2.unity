@@ -257,7 +257,7 @@ RectTransform:
   m_GameObject: {fileID: 12480629}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.11890816, y: 0.11890816, z: 0.11890816}
+  m_LocalScale: {x: 0.18150714, y: 0.18150714, z: 0.18150714}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 652910773}
@@ -287,7 +287,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 8098806061875562463, guid: 9b04c5cb4ad35ef4b96dd19475a79ded, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9b04c5cb4ad35ef4b96dd19475a79ded, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -358,7 +358,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -920,7 +919,7 @@ MonoBehaviour:
   timeText: {fileID: 1548460226}
   dateText: {fileID: 381562981}
   dayText: {fileID: 1147081123}
-  currentPlaceText: {fileID: 1588964394}
+  nameText: {fileID: 1588964394}
   highlightBorder: {fileID: 941840616}
 --- !u!114 &72189015
 MonoBehaviour:
@@ -1014,7 +1013,6 @@ MonoBehaviour:
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -4981,18 +4979,17 @@ MonoBehaviour:
       \uB418\uAC8C \uC88B\uB2E4'"
     - "'\uC5B4? \uADF8\uB9BC\uC774 \uB5A8\uC5B4\uC838 \uC788\uB124'"
     - "\uBC14\uB2E5\uC5D0 \uB5A8\uC5B4\uC9C4 \uADF8\uB9BC\uC744 \uC8FC\uC6E0\uB2E4."
-    - "\uADF8\uB9BC\uC774 \uC774\uC0C1\uD55C\uB370..?"
+    - "'\uADF8\uB9BC\uC774 \uC774\uC0C1\uD55C\uB370..?'"
     sprites:
     - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
     - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
     - {fileID: 0}
-    - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
+    - {fileID: -8754820947617847391, guid: aa09272a21d3c6a4eba48ce8efe1e77f, type: 3}
     dialogueWindows:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -9770,6 +9767,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e293cb625d1c4c659ae075a41a1ac54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myCustomFont: {fileID: 0}
+  defaultFont: {fileID: 0}
   text: {fileID: 1869083072}
   blueText: {fileID: 0}
   yellowText: {fileID: 0}
@@ -10085,7 +10084,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -10640,6 +10638,7 @@ MonoBehaviour:
   cancel_sound: enter_sound
   select_sound: enter_sound
   theOrder: {fileID: 1519425386}
+  ignoreEscOneFrame: 0
   menuButtons:
   - {fileID: 1723623819}
   - {fileID: 256320093}
@@ -11746,7 +11745,6 @@ MonoBehaviour:
     - {fileID: -4548211720714836524, guid: 0ed4d177aa50249ce841b99197def478, type: 3}
     dialogueWindows:
     - {fileID: 21300000, guid: 368608f2c7ec24ba6bff5c248ea5a5d8, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -14710,7 +14708,6 @@ MonoBehaviour:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: 81ac32a6702cf0d45957b95862220d27, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -14989,6 +14986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boundName: Play_room
+  taejuSpawnPoint: {fileID: 0}
 --- !u!60 &1099703034
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -15232,7 +15230,6 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 2a7509f284ae40c4cbc4bd250844e6a5, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -15368,7 +15365,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -15795,7 +15791,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -16186,8 +16181,8 @@ Transform:
   m_GameObject: {fileID: 1167036820}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 29.88, y: 17.959995, z: 0}
-  m_LocalScale: {x: 2.4185543, y: 0.6607663, z: 0}
+  m_LocalPosition: {x: 29.88, y: 18.218, z: 0}
+  m_LocalScale: {x: 2.4185543, y: 1.4371667, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1030786}
@@ -16561,7 +16556,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -16716,8 +16710,8 @@ Transform:
   m_GameObject: {fileID: 1232114787}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.5, y: -27.95, z: -5.2063518}
-  m_LocalScale: {x: 1.200744, y: 0.84550005, z: 0}
+  m_LocalPosition: {x: 4.5, y: -27.536, z: -5.2063518}
+  m_LocalScale: {x: 1.200744, y: 1.9235127, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1060474949}
@@ -16788,7 +16782,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -17005,7 +16998,6 @@ MonoBehaviour:
     - {fileID: 1400631562976135681, guid: 02dfd94ab6669427396fd1ed99df1ee3, type: 3}
     dialogueWindows:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -17952,7 +17944,7 @@ RectTransform:
   m_GameObject: {fileID: 1294324977}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1615308189}
@@ -18277,6 +18269,7 @@ MonoBehaviour:
   canMove: 1
   notMove: 0
   hasEnteredName: 1
+  isProtectedBySalt: 0
 --- !u!95 &1306316781
 Animator:
   serializedVersion: 7
@@ -18331,8 +18324,10 @@ MonoBehaviour:
     playerEquipItem: 
     mapName: 
     sceneName: 
+    characterName: 
     saveDate: 
     saveTime: 
+    targetName: thePlayer
 --- !u!114 &1306316784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18469,8 +18464,8 @@ Transform:
   m_GameObject: {fileID: 1315552439}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 63.7, y: -37.8, z: -5.2063518}
-  m_LocalScale: {x: 1.200744, y: 0.84550005, z: 0}
+  m_LocalPosition: {x: 63.424, y: -37.8, z: -5.2063518}
+  m_LocalScale: {x: 1.200744, y: 1.5641751, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1060474949}
@@ -18541,7 +18536,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -18773,7 +18767,7 @@ MonoBehaviour:
   timeText: {fileID: 861192797}
   dateText: {fileID: 2003483675}
   dayText: {fileID: 286402755}
-  currentPlaceText: {fileID: 2031444373}
+  nameText: {fileID: 2031444373}
   highlightBorder: {fileID: 1315887098}
 --- !u!114 &1320860377
 MonoBehaviour:
@@ -19414,7 +19408,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -19517,7 +19510,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -19803,7 +19795,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -20751,7 +20742,6 @@ MonoBehaviour:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -21206,7 +21196,7 @@ RectTransform:
   m_GameObject: {fileID: 1500203478}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1767187954}
@@ -21579,6 +21569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boundName: Lobby
+  taejuSpawnPoint: {fileID: 0}
 --- !u!60 &1526319386
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -23541,8 +23532,8 @@ Transform:
   m_GameObject: {fileID: 1694605733}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 16.03, y: -32.36, z: -5.610704}
-  m_LocalScale: {x: 1.8459998, y: 0.6572, z: 0}
+  m_LocalPosition: {x: 15.85, y: -32.36, z: -5.610704}
+  m_LocalScale: {x: 1.8459998, y: 1.1993899, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 423964670}
@@ -23612,7 +23603,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -23647,7 +23637,7 @@ RectTransform:
   m_GameObject: {fileID: 1703858422}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1248934159}
@@ -24084,7 +24074,7 @@ MonoBehaviour:
   timeText: {fileID: 328485069}
   dateText: {fileID: 738036555}
   dayText: {fileID: 140717159}
-  currentPlaceText: {fileID: 513793035}
+  nameText: {fileID: 513793035}
   highlightBorder: {fileID: 477188971}
 --- !u!114 &1746694823
 MonoBehaviour:
@@ -24371,7 +24361,6 @@ MonoBehaviour:
     - {fileID: 1124596813818630553, guid: 72fd1cd87395a4be0888128d6e27ba67, type: 3}
     dialogueWindows:
     - {fileID: 21300000, guid: 3ca16878e50ace24d802b634871dbc5f, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -24503,7 +24492,7 @@ RectTransform:
   m_GameObject: {fileID: 1794372852}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 939836242}
@@ -28849,7 +28838,6 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 43cd6cfe9eabe46ada07907e4f4dbde2, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -30933,6 +30921,158 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &2000982451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2000982454}
+  - component: {fileID: 2000982453}
+  - component: {fileID: 2000982452}
+  m_Layer: 0
+  m_Name: BGMManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2000982452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000982451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de5bc965316a721459f68fddfabfded4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: a6d30479c0f4bfa4abf034143f6d996a, type: 3}
+  - {fileID: 8300000, guid: 8ec9857caa1bf7e4092dccaf7069aeb5, type: 3}
+  - {fileID: 8300000, guid: 70c2da7d01ed73f43997f2cd34b3fcc3, type: 3}
+  - {fileID: 8300000, guid: 31a8a3410056ca84fb8561704a5992ed, type: 3}
+  - {fileID: 8300000, guid: 6346224d0539af04ab91d7efb0124ee2, type: 3}
+  - {fileID: 8300000, guid: a696fe990a3c8f64d938f0e5abf5cb6e, type: 3}
+  - {fileID: 8300000, guid: 310edfde875fb5647b6450a05320db9e, type: 3}
+  - {fileID: 8300000, guid: 92eaececc276c5a4696089b5f9c78ab5, type: 3}
+  - {fileID: 8300000, guid: 77201aa98539706418ee565a4284fdda, type: 3}
+--- !u!82 &2000982453
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000982451}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &2000982454
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000982451}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 42.5, y: -26.8, z: 1.2692728}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2003483673
 GameObject:
   m_ObjectHideFlags: 0
@@ -31623,6 +31763,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boundName: 
+  taejuSpawnPoint: {fileID: 0}
 --- !u!60 &2036172312
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -31768,7 +31909,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -31984,7 +32124,6 @@ MonoBehaviour:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -32121,7 +32260,6 @@ MonoBehaviour:
     dialogueWindows:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -32555,6 +32693,16 @@ MonoBehaviour:
     source: {fileID: 0}
     Volume: 2
     loop: 0
+  - name: menu_open
+    clip: {fileID: 8300000, guid: 6c6e9675a7e4d4cf1b96695daad6898b, type: 3}
+    source: {fileID: 0}
+    Volume: 2
+    loop: 0
+  - name: menu_close
+    clip: {fileID: 8300000, guid: 2a7ffea1cd44844d38a76d296e37eb12, type: 3}
+    source: {fileID: 0}
+    Volume: 2
+    loop: 0
 --- !u!4 &2107776952
 Transform:
   m_ObjectHideFlags: 0
@@ -32696,7 +32844,6 @@ MonoBehaviour:
   audioManager: {fileID: 2107776951}
   keySound: type_sound
   enterSound: enter_sound
-  openSound: ok_sound
   beepSound: beep_sound
   inventoryPanel: {fileID: 1070673931}
   slots:
@@ -32711,7 +32858,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 61d66e1e234b148e1a8d9066f13df469, type: 2}
   descriptionText: {fileID: 2116682739}
   isOpen: 0
-  isChaseMode: 0
 --- !u!1 &2127036254
 GameObject:
   m_ObjectHideFlags: 0
@@ -32965,6 +33111,7 @@ SceneRoots:
   - {fileID: 1519425387}
   - {fileID: 2107776952}
   - {fileID: 370457044}
+  - {fileID: 2000982454}
   - {fileID: 770917334}
   - {fileID: 954317003}
   - {fileID: 1447501430}

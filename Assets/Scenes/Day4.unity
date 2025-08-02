@@ -303,8 +303,8 @@ Transform:
   m_GameObject: {fileID: 19402709}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -128.2, y: 64.7, z: -5.610704}
-  m_LocalScale: {x: 1.200744, y: 0.6129875, z: 0}
+  m_LocalPosition: {x: -128.2, y: 65.558, z: -5.610704}
+  m_LocalScale: {x: 2.6266277, y: 0.6129875, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1468419365}
@@ -374,7 +374,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -1482,6 +1481,16 @@ MonoBehaviour:
     source: {fileID: 0}
     Volume: 1
     loop: 0
+  - name: menu_open
+    clip: {fileID: 8300000, guid: 6c6e9675a7e4d4cf1b96695daad6898b, type: 3}
+    source: {fileID: 0}
+    Volume: 1
+    loop: 0
+  - name: menu_open
+    clip: {fileID: 8300000, guid: 2a7ffea1cd44844d38a76d296e37eb12, type: 3}
+    source: {fileID: 0}
+    Volume: 1
+    loop: 0
 --- !u!4 &158991177
 Transform:
   m_ObjectHideFlags: 0
@@ -1751,7 +1760,6 @@ MonoBehaviour:
     dialogueWindows:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -2337,7 +2345,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: 55f1520311a244404bdad6f4c7c91932, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -2509,6 +2516,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e293cb625d1c4c659ae075a41a1ac54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myCustomFont: {fileID: 0}
+  defaultFont: {fileID: 0}
   text: {fileID: 566881155}
   blueText: {fileID: 0}
   yellowText: {fileID: 0}
@@ -2873,7 +2882,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 14.9, y: -54.5, z: -5.6107035}
-  m_LocalScale: {x: 2.4185543, y: 0.66076624, z: 0}
+  m_LocalScale: {x: 2.4185543, y: 1.1315622, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1022975092}
@@ -3406,7 +3415,7 @@ MonoBehaviour:
   timeText: {fileID: 629227886}
   dateText: {fileID: 1486987594}
   dayText: {fileID: 1390047615}
-  currentPlaceText: {fileID: 1851058671}
+  nameText: {fileID: 1851058671}
   highlightBorder: {fileID: 336532134}
 --- !u!1 &367466975
 GameObject:
@@ -3582,7 +3591,6 @@ MonoBehaviour:
     dialogueWindows:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -4128,7 +4136,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -5068,7 +5075,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -5171,7 +5177,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -5633,7 +5638,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: b7acfd158106049a6bce1f7690718475, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -5985,7 +5989,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: 74ce371d4810b4298bdabfc03d30ef96, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -7588,6 +7591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boundName: Lobby
+  taejuSpawnPoint: {fileID: 0}
 --- !u!60 &721013317
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -8623,7 +8627,6 @@ MonoBehaviour:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: b8c6bdd4fdb8741e6959f477c68acf4a, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -13135,7 +13138,6 @@ MonoBehaviour:
   audioManager: {fileID: 158991176}
   keySound: type_sound
   enterSound: enter_sound
-  openSound: ok_sound
   beepSound: beep_sound
   inventoryPanel: {fileID: 308000797}
   slots:
@@ -13150,7 +13152,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 61d66e1e234b148e1a8d9066f13df469, type: 2}
   descriptionText: {fileID: 1779963122}
   isOpen: 0
-  isChaseMode: 0
 --- !u!1 &922519959
 GameObject:
   m_ObjectHideFlags: 0
@@ -13308,6 +13309,158 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 00/00/00
+--- !u!1 &938129008
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 938129011}
+  - component: {fileID: 938129010}
+  - component: {fileID: 938129009}
+  m_Layer: 0
+  m_Name: BGMManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &938129009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938129008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de5bc965316a721459f68fddfabfded4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: a6d30479c0f4bfa4abf034143f6d996a, type: 3}
+  - {fileID: 8300000, guid: 8ec9857caa1bf7e4092dccaf7069aeb5, type: 3}
+  - {fileID: 8300000, guid: 70c2da7d01ed73f43997f2cd34b3fcc3, type: 3}
+  - {fileID: 8300000, guid: 31a8a3410056ca84fb8561704a5992ed, type: 3}
+  - {fileID: 8300000, guid: 6346224d0539af04ab91d7efb0124ee2, type: 3}
+  - {fileID: 8300000, guid: a696fe990a3c8f64d938f0e5abf5cb6e, type: 3}
+  - {fileID: 8300000, guid: 310edfde875fb5647b6450a05320db9e, type: 3}
+  - {fileID: 8300000, guid: 92eaececc276c5a4696089b5f9c78ab5, type: 3}
+  - {fileID: 8300000, guid: 77201aa98539706418ee565a4284fdda, type: 3}
+--- !u!82 &938129010
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938129008}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &938129011
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938129008}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 42.5, y: -26.8, z: 1.2692728}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &943971798
 GameObject:
   m_ObjectHideFlags: 0
@@ -13439,7 +13592,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -15352,7 +15504,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -15700,7 +15851,7 @@ MonoBehaviour:
   timeText: {fileID: 45688168}
   dateText: {fileID: 936901845}
   dayText: {fileID: 65824841}
-  currentPlaceText: {fileID: 69095367}
+  nameText: {fileID: 69095367}
   highlightBorder: {fileID: 422172690}
 --- !u!224 &1207864343
 RectTransform:
@@ -16503,7 +16654,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -16736,7 +16886,7 @@ RectTransform:
   m_GameObject: {fileID: 1331588659}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1672079419}
@@ -17937,7 +18087,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -18160,6 +18309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boundName: Sun
+  taejuSpawnPoint: {fileID: 0}
 --- !u!4 &1403641311
 Transform:
   m_ObjectHideFlags: 0
@@ -18339,7 +18489,7 @@ RectTransform:
   m_GameObject: {fileID: 1416341579}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1191100248}
@@ -18745,7 +18895,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -19575,7 +19724,7 @@ MonoBehaviour:
   timeText: {fileID: 1582003480}
   dateText: {fileID: 851303367}
   dayText: {fileID: 892975070}
-  currentPlaceText: {fileID: 58907809}
+  nameText: {fileID: 58907809}
   highlightBorder: {fileID: 1544376340}
 --- !u!1 &1528028530
 GameObject:
@@ -19768,7 +19917,7 @@ RectTransform:
   m_GameObject: {fileID: 1544800913}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 376356694}
@@ -20806,7 +20955,7 @@ RectTransform:
   m_GameObject: {fileID: 1631649661}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 978215347}
@@ -20970,6 +21119,7 @@ MonoBehaviour:
   cancel_sound: enter_sound
   select_sound: enter_sound
   theOrder: {fileID: 1977217777}
+  ignoreEscOneFrame: 0
   menuButtons:
   - {fileID: 367466979}
   - {fileID: 94043289}
@@ -22000,7 +22150,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -23829,7 +23978,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -24090,7 +24238,6 @@ MonoBehaviour:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: 368608f2c7ec24ba6bff5c248ea5a5d8, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -24763,7 +24910,6 @@ MonoBehaviour:
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -24899,7 +25045,6 @@ MonoBehaviour:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: 5c033d981e40a4b3c8f10307fc4001b7, type: 3}
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -25676,7 +25821,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -26358,6 +26502,7 @@ MonoBehaviour:
   canMove: 1
   notMove: 0
   hasEnteredName: 0
+  isProtectedBySalt: 0
 --- !u!95 &1928187255
 Animator:
   serializedVersion: 7
@@ -26555,8 +26700,10 @@ MonoBehaviour:
     playerEquipItem: 
     mapName: 
     sceneName: 
+    characterName: 
     saveDate: 
     saveTime: 
+    targetName: thePlayer
 --- !u!114 &1928187262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27150,7 +27297,6 @@ MonoBehaviour:
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
     - {fileID: 21300000, guid: ec57a2ace20673745b3a190235895980, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -27285,7 +27431,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -28396,7 +28541,6 @@ MonoBehaviour:
     - {fileID: 0}
     dialogueWindows:
     - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    npcObjects: []
     npcAppearances: []
     blueSentences: []
     yellowSentences: []
@@ -28953,6 +29097,7 @@ SceneRoots:
   - {fileID: 1141041556}
   - {fileID: 158991177}
   - {fileID: 899793830}
+  - {fileID: 938129011}
   - {fileID: 1977217778}
   - {fileID: 255334660}
   - {fileID: 1643901441}
