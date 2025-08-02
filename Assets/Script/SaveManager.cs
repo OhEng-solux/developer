@@ -119,10 +119,6 @@ public class SaveManager : MonoBehaviour
         // Z키 눌렀을 때 세이브창 열기/닫기 토글 (저장지점 근처일 때만) or 자동 저장
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            Debug.Log($"[Z입력] isSavePoint={isSavePoint}, isOpen={isOpen}");
-            Debug.Log($"ImagePopup Active: {ImagePopupManager.instance?.IsImageActive()}");
-            Debug.Log($"Popup Active: {PopupManager.instance?.IsPopupActive()}");
-
             if ((isSavePoint) && !isOpen)
             {
                 Debug.Log("[Z입력] 세이브창 열기 시도");
@@ -275,7 +271,7 @@ public class SaveManager : MonoBehaviour
             if (File.Exists(path))
             {
                 SaveNLoad.Data data = LoadSaveDataFromFile(path);
-                slots[i].SetSaveInfo(data.mapName, data.saveDate, data.saveTime, data.sceneName);
+                slots[i].SetSaveInfo(data.characterName, data.saveDate, data.saveTime, data.sceneName);
             }
             else
             {
