@@ -2090,6 +2090,7 @@ MonoBehaviour:
   notMove: 0
   hasEnteredName: 0
   isProtectedBySalt: 0
+  isInvincible: 0
 --- !u!95 &490367460
 Animator:
   serializedVersion: 7

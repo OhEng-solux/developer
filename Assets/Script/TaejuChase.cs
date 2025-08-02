@@ -21,6 +21,7 @@ public class TaejuChase : MonoBehaviour
 
     private Collider2D chaseCollider;
     public bool isFading = false;  // 페이드 진행중 체크용 플래그
+    private bool hasTriggeredBadEnding = false;
 
     void Start()
     {
@@ -170,6 +171,7 @@ public class TaejuChase : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (hasTriggeredBadEnding) return; // 이미 한 번 발동했으면 무시
         if (PlayerManager.instance != null && PlayerManager.instance.isInvincible)
             return;
 
@@ -182,21 +184,26 @@ public class TaejuChase : MonoBehaviour
                 Debug.Log("[SaltUse] 보호 상태 - 배드엔딩 무시됨");
                 return;
             }
-            // **여기서 바로 씬 이동하지 말고 페이드 연출 시작**
+
+            hasTriggeredBadEnding = true; // 다시 못 들어오게 플래그
             StartCoroutine(BadEndingTransition());
         }
     }
 
     private IEnumerator BadEndingTransition()
     {
-        // 1. BGM 페이드 아웃
         if (BGMManager.instance != null)
         {
             yield return BGMManager.instance.StartCoroutine(BGMManager.instance.FadeOutMusicCoroutinePublic());
         }
-        // 2. 베드엔딩 씬 이동
-        yield return new WaitForSeconds(0.2f); // 연출상 잠깐 멈추고 싶을 때
-        SceneManager.LoadSceneAsync("Ending_Bad");
+
+        yield return new WaitForSeconds(0.2f);
+
+        DontDestroyOnLoad(this.gameObject); // 혹시 새 씬 가서도 유지되게 해뒀다면
+
+        SceneManager.LoadScene("Ending_Bad");
+
+        Destroy(gameObject); // 씬 이동 후 바로 자기 자신 파괴
     }
 
     public void StopChaseAndFreeze()
