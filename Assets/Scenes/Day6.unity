@@ -3967,11 +3967,11 @@ MonoBehaviour:
     playerX: 0
     playerY: 0
     playerZ: 0
+    characterName: 
     playerItemNames: []
     playerEquipItem: 
     mapName: 
     sceneName: 
-    characterName: 
     saveDate: 
     saveTime: 
     targetName: thePlayer
@@ -90898,6 +90898,16 @@ MonoBehaviour:
     loop: 0
   - name: enter_sound
     clip: {fileID: 8300000, guid: 4fbc62a75b72f6d42b33069b6c067e1d, type: 3}
+    source: {fileID: 0}
+    Volume: 2
+    loop: 0
+  - name: ok_sound
+    clip: {fileID: 8300000, guid: 997679a508eac4fd5b9bf78a5ad4e62d, type: 3}
+    source: {fileID: 0}
+    Volume: 2
+    loop: 0
+  - name: beep_sound
+    clip: {fileID: 8300000, guid: 20ba3ebad02ae4c10b926a4e60d0bc3f, type: 3}
     source: {fileID: 0}
     Volume: 2
     loop: 0

@@ -1041,7 +1041,7 @@ MonoBehaviour:
   startSound: {fileID: 0}
   soundVolume: 2
   backgroundChanges:
-  - sentenceIndex: 2
+  - sentenceIndex: 0
     backgroundSprite: {fileID: 7397296664026409219, guid: 35aa887f7d3b441dd8c4b054c530c398, type: 3}
   - sentenceIndex: 12
     backgroundSprite: {fileID: 980162996904243978, guid: 340e3d51fcf0643d9860f5cf5c538936, type: 3}
