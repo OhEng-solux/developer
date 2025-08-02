@@ -432,14 +432,16 @@ public class DialogueManager : MonoBehaviour
             text.gameObject.SetActive(true);
         }
 
-        // 하드코딩된 스타일 적용: 특정 문장 + 특정 오브젝트에서만 적용 또는 Ending_Bad 씬일 때 적용
+        // 특정 문장 + 특정 오브젝트 + 특정 장소(basement)에서만 적용 또는 Ending_Bad 씬일 때 적용
         bool isSpecialDialogue = (count == 0 || count == 2 || count == 4 || count == 5 || count == 6 || count == 7);
         bool isFromChase = currentDialogueObjectName.Contains("Chase"); // 부분 일치도 허용
-        bool isEndingBad = SceneManager.GetActiveScene().name == "Ending_Bad";
+        string sceneName = SceneManager.GetActiveScene().name;
+        bool isEndingBad = sceneName == "Ending_Bad";
+        bool isBasement = PlayerManager.instance != null && PlayerManager.instance.currentMapName == "Basement";
 
-        Debug.Log($"[DialogueManager] Styling Check — Count: {count}, Object: {currentDialogueObjectName}, ApplyStyle: {(isSpecialDialogue && isFromChase) || isEndingBad}");
+        Debug.Log($"[DialogueManager] Styling Check — Count: {count}, Object: {currentDialogueObjectName}, Scene: {sceneName}, ApplyStyle: {(isSpecialDialogue && isFromChase && isBasement) || isEndingBad}");
 
-        if (!useBlue && !useYellow && (isSpecialDialogue && isFromChase || isEndingBad))
+        if (!useBlue && !useYellow && ((isSpecialDialogue && isFromChase && isBasement) || isEndingBad))
         {
             if (text != null)
             {
