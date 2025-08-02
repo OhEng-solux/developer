@@ -23,13 +23,13 @@ public class SaveNLoad : MonoBehaviour
         public float playerX;//직렬화 벡터 사용 불가
         public float playerY;//직렬화 벡터 사용 불가
         public float playerZ;//플레이어 위치 저장
+        public string characterName;
 
         public List<string> playerItemNames;
         public List<int> playerEquipItem;//장착 아이템
 
         public string mapName;
         public string sceneName;
-        public string characterName;
 
         public string saveDate;   
         public string saveTime;
@@ -42,6 +42,7 @@ public class SaveNLoad : MonoBehaviour
     private ClueTrigger theCT;
     private DialogueProgressManager theDiaPM;
     private Vector3 playerPositionToLoad;
+
     public Data data;
 
     private Vector3 vector;
@@ -161,7 +162,8 @@ public class SaveNLoad : MonoBehaviour
             {
                 thePlayer.currentMapName = data.mapName;
                 thePlayer.currentSceneName = data.sceneName;
-                
+                thePlayer.characterName = data.characterName;
+
                 if (thePlayer.currentMapName == "Basement")
                 {
                     playerPositionToLoad = new Vector3(data.playerX +2, data.playerY, data.playerZ);
