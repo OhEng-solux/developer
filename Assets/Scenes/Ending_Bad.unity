@@ -1812,6 +1812,69 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &413348747
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 413348749}
+  - component: {fileID: 413348748}
+  m_Layer: 0
+  m_Name: SaveNLoad
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &413348748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413348747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48dbe3b666c255b489c62455df057b24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data:
+    clueCnt: 0
+    DialoguCnt: 1
+    cluesRead: 00000000
+    playerX: -104.140045
+    playerY: -86.30008
+    playerZ: 0.31961352
+    playerItemNames:
+    - "\uC870\uB9AC\uC2E4 \uC0AC\uC6A9 \uADDC\uCE59"
+    - "\uAD75\uC740 \uC18C\uAE08"
+    - "\uBCF4\uC11D \uC0AC\uD0D5"
+    - "\uC9C0\uD558\uC2E4 \uC5F4\uC1E0"
+    playerEquipItem: 
+    mapName: Lobby
+    sceneName: Day1
+    characterName: d
+    saveDate: 2025-08-03
+    saveTime: 03:37:05
+    targetName: thePlayer
+--- !u!4 &413348749
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413348747}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.38846, y: -322.93304, z: 0.06738876}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &414132749
 GameObject:
   m_ObjectHideFlags: 0
@@ -1982,7 +2045,6 @@ GameObject:
   - component: {fileID: 490367459}
   - component: {fileID: 490367458}
   - component: {fileID: 490367457}
-  - component: {fileID: 490367456}
   - component: {fileID: 490367455}
   m_Layer: 3
   m_Name: player
@@ -2003,30 +2065,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e13cf7aa774b3f849ab1c1fd75227e05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &490367456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 490367454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48dbe3b666c255b489c62455df057b24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data:
-    playerX: 0
-    playerY: 0
-    playerZ: 0
-    playerItemNames: []
-    playerEquipItem: 
-    mapName: 
-    sceneName: 
-    characterName: 
-    saveDate: 
-    saveTime: 
-    targetName: thePlayer
 --- !u!114 &490367457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7092,4 +7130,5 @@ SceneRoots:
   - {fileID: 1104828220}
   - {fileID: 1678766116}
   - {fileID: 490367464}
+  - {fileID: 413348749}
   - {fileID: 684682359}

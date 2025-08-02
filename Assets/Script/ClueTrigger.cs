@@ -3,7 +3,7 @@ using UnityEngine;
 public class ClueTrigger : MonoBehaviour
 {
     public int clueIndex; // 0~3
-    private static bool[] viewed = new bool[4];
+    public static bool[] viewed = new bool[4];
     private static int clueViewedCount = 0;
 
     private void OnTriggerEnter2D(Collider2D collision)

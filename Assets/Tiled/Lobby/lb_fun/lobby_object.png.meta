@@ -147,6 +147,32 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -559,7 +585,25 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      lobby_object_0: -2465115849747957294
+      lobby_object_1: 4120790581366709125
+      lobby_object_10: -3257818239553955018
+      lobby_object_11: 6192525386786929632
+      lobby_object_12: -4631987274615117350
+      lobby_object_13: 7049879156044855155
+      lobby_object_14: 97723787909466656
+      lobby_object_15: -8335553029207856700
+      lobby_object_16: -580178463563840284
+      lobby_object_17: 8281031852136810781
+      lobby_object_2: -22718534089009619
+      lobby_object_3: 3106257227877799229
+      lobby_object_4: -4055903630069802136
+      lobby_object_5: 7023290162658892449
+      lobby_object_6: 5831672391863444810
+      lobby_object_7: 7740683601171080682
+      lobby_object_8: 8912673360957941186
+      lobby_object_9: -7691477471749084337
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
