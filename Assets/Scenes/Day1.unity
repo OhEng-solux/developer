@@ -14691,6 +14691,65 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.3492002, y: 2.370463}
   m_EdgeRadius: 0
+--- !u!1 &878430956
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 878430958}
+  - component: {fileID: 878430957}
+  m_Layer: 0
+  m_Name: SaveNLoad
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &878430957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878430956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48dbe3b666c255b489c62455df057b24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data:
+    clueCnt: 0
+    DialoguCnt: 0
+    cluesRead: 00000000
+    playerX: 0
+    playerY: 0
+    playerZ: 0
+    playerItemNames: []
+    playerEquipItem: 
+    mapName: 
+    sceneName: 
+    characterName: 
+    saveDate: 
+    saveTime: 
+    targetName: thePlayer
+--- !u!4 &878430958
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878430956}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.38846, y: -322.93304, z: 0.06738876}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &883850623
 GameObject:
   m_ObjectHideFlags: 0
@@ -24555,7 +24614,6 @@ GameObject:
   - component: {fileID: 1306316780}
   - component: {fileID: 1306316784}
   - component: {fileID: 1306316783}
-  - component: {fileID: 1306316782}
   - component: {fileID: 1306316785}
   m_Layer: 3
   m_Name: player
@@ -24762,32 +24820,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1306316782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1306316774}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48dbe3b666c255b489c62455df057b24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data:
-    clueCnt: 0
-    DialoguCnt: 0
-    playerX: 0
-    playerY: 0
-    playerZ: 0
-    playerItemNames: []
-    playerEquipItem: 
-    mapName: 
-    sceneName: 
-    characterName: 
-    saveDate: 
-    saveTime: 
-    targetName: thePlayer
 --- !u!114 &1306316783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35700,3 +35732,4 @@ SceneRoots:
   - {fileID: 1058683039}
   - {fileID: 97975211}
   - {fileID: 1203184882}
+  - {fileID: 878430958}
