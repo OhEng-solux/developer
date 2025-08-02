@@ -993,8 +993,6 @@ MonoBehaviour:
   Panel: {fileID: 1063513735}
   dialogue:
     sentences:
-    - "'\u2026\uB05D\uB0AC\uB2E4\u2026 \uC774\uC81C \uC9C4\uC9DC\u2026 \uB05D\uB0AC\uC5B4'"
-    - "'\uC774\uC81C \uC815\uBB38\uC774 \uC5F4\uB9AC\uACA0\uC9C0?'"
     - "$playerName \uC120\uC0DD\uB2D8, \uC5B4\uB51C \uB2E4\uB140\uC624\uC2E0 \uAC70\uC608\uC694?
       \uC560\uB4E4\uC774 \uCC3E\uACE0 \uC788\uC5C8\uB294\uAC78\uC694."
     - "\uBC29\uAE08, \uC6D0\uC7A5\uC2E4 \uAF43\uBCD1\uC774 \uC0B0\uC0B0\uC870\uAC01
@@ -1022,11 +1020,7 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
     dialogueWindows:
-    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
-    - {fileID: 21300000, guid: c489ba04eedde894692d4268fc69f3af, type: 3}
     - {fileID: 21300000, guid: a14fe528b952c47fea7b0e374f281365, type: 3}
     - {fileID: 21300000, guid: a14fe528b952c47fea7b0e374f281365, type: 3}
     - {fileID: 21300000, guid: a14fe528b952c47fea7b0e374f281365, type: 3}
