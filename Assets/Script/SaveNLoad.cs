@@ -5,16 +5,20 @@ using System.IO;
 using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine.SceneManagement;
+
 using static SaveNLoad;
 
 
 public class SaveNLoad : MonoBehaviour
 {
+    public static SaveNLoad instance;
     [System.Serializable]//직렬화
     public class Data//모든 세이브 데이터
     {
         public int clueCnt=0;//단서 개수
         public int DialoguCnt=0;//대화 횟수
+        public bool[] cluesRead = new bool[4];
+        public static bool isLoadingDone = false;
 
         public float playerX;//직렬화 벡터 사용 불가
         public float playerY;//직렬화 벡터 사용 불가
@@ -30,17 +34,30 @@ public class SaveNLoad : MonoBehaviour
         public string saveDate;   
         public string saveTime;
         public string targetName="thePlayer";
+
     }
 
     private PlayerManager thePlayer;
     private ClueManager theClue;
+    private ClueTrigger theCT;
     private DialogueProgressManager theDiaPM;
     private Vector3 playerPositionToLoad;
     public Data data;
 
     private Vector3 vector;
 
-
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject); 
+        }
+        else
+        {
+            Destroy(gameObject); 
+        }
+    }
     public void CallSave(int slotIndex)//저장
     {
         data = new Data();
@@ -48,6 +65,7 @@ public class SaveNLoad : MonoBehaviour
         thePlayer = FindFirstObjectByType<PlayerManager>();
         InventoryManager theInventory = FindFirstObjectByType<InventoryManager>();
         theClue= FindFirstObjectByType<ClueManager>();
+        theCT= FindFirstObjectByType<ClueTrigger>();
         theDiaPM = FindFirstObjectByType<DialogueProgressManager>();
 
         data.playerX = thePlayer.transform.position.x;
@@ -57,6 +75,12 @@ public class SaveNLoad : MonoBehaviour
         data.characterName = thePlayer.characterName;
         data.mapName = thePlayer.currentMapName;
         data.sceneName = thePlayer.currentSceneName;
+
+        if (theCT != null)
+        {
+            data.cluesRead = new bool[ClueTrigger.viewed.Length];
+            ClueTrigger.viewed.CopyTo(data.cluesRead, 0);
+        }
         if (theClue != null) { 
             data.clueCnt= theClue.clueCount;//단서 개수
         }
@@ -131,12 +155,18 @@ public class SaveNLoad : MonoBehaviour
             InventoryManager theInventory = FindFirstObjectByType<InventoryManager>();
             theDiaPM = FindFirstObjectByType<DialogueProgressManager>();
             theClue = FindFirstObjectByType<ClueManager>();
-
+            theCT = FindFirstObjectByType<ClueTrigger>();
 
             if (thePlayer != null)
             {
                 thePlayer.currentMapName = data.mapName;
                 thePlayer.currentSceneName = data.sceneName;
+                
+                if (thePlayer.currentMapName == "Basement")
+                {
+                    playerPositionToLoad = new Vector3(data.playerX +2, data.playerY, data.playerZ);
+                    StartCoroutine(DisableClueTriggersNextFrame());
+                }
                 thePlayer.transform.position = playerPositionToLoad;
             }
             Debug.Log("OnSceneLoaded");
@@ -146,6 +176,12 @@ public class SaveNLoad : MonoBehaviour
             {
                 theGM.LoadStart();
             }
+
+            if (theCT != null)
+            {
+                Array.Copy(data.cluesRead, ClueTrigger.viewed, data.cluesRead.Length);
+            }
+
             if (theClue != null)
             {
                 theClue.clueCount = data.clueCnt;//단서 개수
@@ -193,8 +229,23 @@ public class SaveNLoad : MonoBehaviour
             }
         }
 
+
+
         // 이벤트 해제 (중복 실행 방지)
         SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+    private IEnumerator DisableClueTriggersNextFrame()
+    {
+        yield return null; // 한 프레임 대기 (모든 Awake/Start 실행 보장)
+
+        ClueTrigger[] triggers = FindObjectsOfType<ClueTrigger>();
+        foreach (var trigger in triggers)
+        {
+            BoxCollider2D col = trigger.GetComponent<BoxCollider2D>();
+            if (col != null)
+                col.enabled = false;
+        }
+        
     }
 }
     
