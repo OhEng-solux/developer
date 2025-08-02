@@ -264,6 +264,20 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
+        if (SceneManager.GetActiveScene().name == "Day5" && DialogueProgressManager.instance.dialogueCount == 5)
+        {
+            GameObject[] npcs = GameObject.FindGameObjectsWithTag("npc");
+            foreach (GameObject npc in npcs)
+            {
+                NPCPathMover mover = npc.GetComponent<NPCPathMover>();
+                if (mover != null)
+                {
+                    Debug.Log("ExitDialogue()에서 StartPath() 호출: " + npc.name);
+                    mover.StartPath();
+                }
+            }
+        }
+
         if (SceneManager.GetActiveScene().name == "Day6")
         {
             GameObject taejuDemon = GameObject.Find("taeju_demon");
