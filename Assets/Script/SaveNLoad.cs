@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine.SceneManagement;
+using static SaveNLoad;
 
 
 public class SaveNLoad : MonoBehaviour
@@ -11,6 +13,9 @@ public class SaveNLoad : MonoBehaviour
     [System.Serializable]//직렬화
     public class Data//모든 세이브 데이터
     {
+        public int clueCnt=0;//단서 개수
+        public int DialoguCnt=0;//대화 횟수
+
         public float playerX;//직렬화 벡터 사용 불가
         public float playerY;//직렬화 벡터 사용 불가
         public float playerZ;//플레이어 위치 저장
@@ -28,6 +33,8 @@ public class SaveNLoad : MonoBehaviour
     }
 
     private PlayerManager thePlayer;
+    private ClueManager theClue;
+    private DialogueProgressManager theDiaPM;
     private Vector3 playerPositionToLoad;
     public Data data;
 
@@ -36,9 +43,13 @@ public class SaveNLoad : MonoBehaviour
 
     public void CallSave(int slotIndex)//저장
     {
+        data = new Data();
+
         thePlayer = FindFirstObjectByType<PlayerManager>();
         InventoryManager theInventory = FindFirstObjectByType<InventoryManager>();
-        
+        theClue= FindFirstObjectByType<ClueManager>();
+        theDiaPM = FindFirstObjectByType<DialogueProgressManager>();
+
         data.playerX = thePlayer.transform.position.x;
         data.playerY = thePlayer.transform.position.y;
         data.playerZ = thePlayer.transform.position.z;
@@ -46,7 +57,13 @@ public class SaveNLoad : MonoBehaviour
         data.characterName = thePlayer.characterName;
         data.mapName = thePlayer.currentMapName;
         data.sceneName = thePlayer.currentSceneName;
-
+        if (theClue != null) { 
+            data.clueCnt= theClue.clueCount;//단서 개수
+        }
+        if (theDiaPM != null)
+        {
+            data.DialoguCnt = theDiaPM.dialogueCount;//대화 횟수
+        }
         Debug.Log("기초 데이터 성공");
 
         if (theInventory == null)
@@ -91,21 +108,11 @@ public class SaveNLoad : MonoBehaviour
         if (File.Exists(path))//파일 존재시 로드
         {
             data = (Data)bf.Deserialize(file);
-
-            thePlayer = FindFirstObjectByType<PlayerManager>();
-
-            thePlayer.currentMapName = data.mapName;
-            thePlayer.currentSceneName = data.sceneName;
-            playerPositionToLoad = new Vector3(data.playerX, data.playerY, data.playerZ);
-            thePlayer.characterName = data.characterName;
-
-
-            Debug.Log($"로드 중..??");
-            
+                       
             Debug.Log($"로드할 씬 이름: {data.sceneName}");
+            playerPositionToLoad = new Vector3(data.playerX, data.playerY, data.playerZ);
             SceneManager.sceneLoaded += OnSceneLoaded;
             SceneManager.LoadScene(data.sceneName);
-
         }
         else
         {
@@ -121,6 +128,11 @@ public class SaveNLoad : MonoBehaviour
         {
             CameraManager theCam = FindFirstObjectByType<CameraManager>();
             PlayerManager thePlayer = FindFirstObjectByType<PlayerManager>();
+            InventoryManager theInventory = FindFirstObjectByType<InventoryManager>();
+            theDiaPM = FindFirstObjectByType<DialogueProgressManager>();
+            theClue = FindFirstObjectByType<ClueManager>();
+
+
             if (thePlayer != null)
             {
                 thePlayer.currentMapName = data.mapName;
@@ -133,6 +145,51 @@ public class SaveNLoad : MonoBehaviour
             if (theGM != null)
             {
                 theGM.LoadStart();
+            }
+            if (theClue != null)
+            {
+                theClue.clueCount = data.clueCnt;//단서 개수
+            }
+
+            if (theDiaPM != null)
+            {
+                theDiaPM.dialogueCount = data.DialoguCnt;//대화 횟수
+            }
+
+            if (theInventory != null)
+            {
+                // 모든 칸을 null로 초기화
+                Array.Clear(theInventory.items, 0, theInventory.items.Length);
+
+                // 세이브 데이터 개수만큼 반복 (슬롯 개수 초과 방지)
+                int count = Mathf.Min(theInventory.items.Length, data.playerItemNames.Count);
+
+                for (int i = 0; i < count; i++)
+                {
+                    string itemName = data.playerItemNames[i];
+
+                    if (!string.IsNullOrEmpty(itemName))
+                    {
+                        Item loaded = Resources.Load<Item>($"Items/{itemName}");
+                        if (loaded != null)
+                        {
+                            Item instance = Instantiate(loaded);
+                            instance.isObtained = true;
+                            theInventory.items[i] = instance;
+                        }
+                        else
+                        {
+                            // 아이템 에셋 못 찾음
+                            theInventory.items[i] = null;
+                        }
+                    }
+                    else
+                    {
+                        // 저장당시 빈 슬롯
+                        theInventory.items[i] = null;
+                    }
+                }
+                // 만약 인벤토리가 저장 당시보다 슬롯이 더 많다면, 남는 칸도 모두 null 상태
             }
         }
 

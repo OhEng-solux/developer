@@ -6,13 +6,21 @@ public class ClueManager : MonoBehaviour
     public static ClueManager instance;
 
     private bool[] clueRead = new bool[4];
-    private int clueCount = 0;
+    public int clueCount = 0;
 
     public bool chaseStarted = false; // 추격 시작 여부
 
     public bool flowerBroken = false; // 꽃병 깨짐 상태
-     public bool endingReady = false; // -> 추격 대사 시작 후 진엔딩 준비 완료 여부
-
+    public bool endingReady = false; // -> 추격 대사 시작 후 진엔딩 준비 완료 여부
+    private bool flag = true;
+    void Update()
+    {
+        if (clueCount >= 4&&flag==true)
+        {
+            StartCoroutine(DelayedStartChaseDialogue());
+            flag = false;
+        }
+    }
     private void Awake()
     {
         if (instance == null)
@@ -60,7 +68,8 @@ public class ClueManager : MonoBehaviour
             Debug.LogError("ChaseTriggerManager를 찾을 수 없습니다.");
         }
         Debug.Log("플레이어 움직임");
-        PlayerManager.instance.canMove = true;
+        if (PlayerManager.instance != null) 
+           PlayerManager.instance.canMove = true;
     }
 
 }
