@@ -16204,7 +16204,6 @@ GameObject:
   - component: {fileID: 1306316780}
   - component: {fileID: 1306316784}
   - component: {fileID: 1306316783}
-  - component: {fileID: 1306316782}
   - component: {fileID: 1306316785}
   m_Layer: 3
   m_Name: player
@@ -16388,6 +16387,7 @@ MonoBehaviour:
   notMove: 0
   hasEnteredName: 0
   isProtectedBySalt: 0
+  isInvincible: 0
 --- !u!95 &1306316781
 Animator:
   serializedVersion: 7
@@ -16410,30 +16410,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1306316782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1306316774}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48dbe3b666c255b489c62455df057b24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data:
-    playerX: 0
-    playerY: 0
-    playerZ: 0
-    playerItemNames: []
-    playerEquipItem: 
-    mapName: 
-    sceneName: 
-    characterName: 
-    saveDate: 
-    saveTime: 
-    targetName: thePlayer
 --- !u!114 &1306316783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21188,6 +21164,69 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1706862472
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1706862474}
+  - component: {fileID: 1706862473}
+  m_Layer: 0
+  m_Name: SaveNLoad
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1706862473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706862472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48dbe3b666c255b489c62455df057b24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data:
+    clueCnt: 0
+    DialoguCnt: 1
+    cluesRead: 00000000
+    playerX: -104.140045
+    playerY: -86.30008
+    playerZ: 0.31961352
+    playerItemNames:
+    - "\uC870\uB9AC\uC2E4 \uC0AC\uC6A9 \uADDC\uCE59"
+    - "\uAD75\uC740 \uC18C\uAE08"
+    - "\uBCF4\uC11D \uC0AC\uD0D5"
+    - "\uC9C0\uD558\uC2E4 \uC5F4\uC1E0"
+    playerEquipItem: 
+    mapName: Lobby
+    sceneName: Day1
+    characterName: d
+    saveDate: 2025-08-03
+    saveTime: 03:37:05
+    targetName: thePlayer
+--- !u!4 &1706862474
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706862472}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.38846, y: -322.93304, z: 0.06738876}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1707924688
 GameObject:
   m_ObjectHideFlags: 0
@@ -25239,5 +25278,6 @@ SceneRoots:
   - {fileID: 1922282136}
   - {fileID: 479547111}
   - {fileID: 1306316776}
+  - {fileID: 1706862474}
   - {fileID: 1058683039}
   - {fileID: 1996270412}

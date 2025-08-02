@@ -692,6 +692,7 @@ MonoBehaviour:
   notMove: 0
   hasEnteredName: 0
   isProtectedBySalt: 0
+  isInvincible: 0
 --- !u!4 &445141564
 Transform:
   m_ObjectHideFlags: 0
@@ -972,7 +973,6 @@ GameObject:
   - component: {fileID: 593939317}
   - component: {fileID: 593939316}
   - component: {fileID: 593939315}
-  - component: {fileID: 593939319}
   - component: {fileID: 593939320}
   - component: {fileID: 593939323}
   - component: {fileID: 593939324}
@@ -1070,30 +1070,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &593939319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 593939314}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48dbe3b666c255b489c62455df057b24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data:
-    playerX: 0
-    playerY: 0
-    playerZ: 0
-    playerItemNames: []
-    playerEquipItem: 
-    mapName: main
-    sceneName: main
-    characterName: 
-    saveDate: 
-    saveTime: 
-    targetName: thePlayer
 --- !u!114 &593939320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1144,8 +1120,6 @@ MonoBehaviour:
   savePanel: {fileID: 369165323}
   icon: {fileID: 1123897833}
   Panel: {fileID: 1863027365}
-  keySound: ok_sound
-  enterSound: ok_sound
 --- !u!1 &613139816
 GameObject:
   m_ObjectHideFlags: 0
@@ -2640,6 +2614,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1360904380}
   m_CullTransparentMesh: 1
+--- !u!1 &1395772657
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1395772659}
+  - component: {fileID: 1395772658}
+  m_Layer: 0
+  m_Name: SaveNLoad
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1395772658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395772657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48dbe3b666c255b489c62455df057b24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data:
+    clueCnt: 0
+    DialoguCnt: 0
+    cluesRead: 00000000
+    playerX: 0
+    playerY: 0
+    playerZ: 0
+    playerItemNames: []
+    playerEquipItem: 
+    mapName: 
+    sceneName: 
+    characterName: 
+    saveDate: 
+    saveTime: 
+    targetName: thePlayer
+--- !u!4 &1395772659
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395772657}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.38846, y: -322.93304, z: 0.06738876}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1398307937
 GameObject:
   m_ObjectHideFlags: 0
@@ -4692,3 +4725,4 @@ SceneRoots:
   - {fileID: 2084469425}
   - {fileID: 445141564}
   - {fileID: 1476905650}
+  - {fileID: 1395772659}
