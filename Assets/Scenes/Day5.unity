@@ -7017,7 +7017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 502257080}
-  requiredCount: 6
+  requiredCount: 5
 --- !u!1 &440219451
 GameObject:
   m_ObjectHideFlags: 0
