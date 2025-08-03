@@ -1477,7 +1477,7 @@ MonoBehaviour:
     Volume: 2
     loop: 0
   - name: beep_sound
-    clip: {fileID: 8300000, guid: ea8927733f0c2404387b99ad68116e7c, type: 3}
+    clip: {fileID: 8300000, guid: 20ba3ebad02ae4c10b926a4e60d0bc3f, type: 3}
     source: {fileID: 0}
     Volume: 1
     loop: 0
@@ -24393,11 +24393,11 @@ MonoBehaviour:
     playerX: 0
     playerY: 0
     playerZ: 0
+    characterName: 
     playerItemNames: []
     playerEquipItem: 
     mapName: 
     sceneName: 
-    characterName: 
     saveDate: 
     saveTime: 
     targetName: thePlayer

@@ -179,7 +179,7 @@ public class PlayerManager : MovingObject
 
         if (gameObject.scene.name == "Start" || gameObject.scene.name == "Prologue")
         {
-            Debug.Log("시작화면");
+            //Debug.Log("시작화면");
             return;
         }
 

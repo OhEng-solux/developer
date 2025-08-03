@@ -13,8 +13,9 @@ public class SaveManager : MonoBehaviour
 
     private string keySound = "type_sound";
     private string enterSound = "enter_sound";
-    private string openSound = "ok_sound";
-    private string beepSound = "beep_sound";
+    private string openSound = "menu_open";
+    private string closeSound = "menu_close";
+    private string beepSound = "button_beep";
     public bool closePopup = false;
     public GameObject savePanel;
     public SaveSlot[] slots; // 슬롯 배열
@@ -322,7 +323,7 @@ public class SaveManager : MonoBehaviour
 
     public void CloseSave()
     {
-        audioManager.Play(openSound);
+        audioManager.Play(closeSound);
         savePanel.SetActive(false);
         isOpen = false;
         if (playerManager != null)
