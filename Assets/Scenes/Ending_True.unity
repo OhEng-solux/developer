@@ -1043,7 +1043,7 @@ MonoBehaviour:
   backgroundChanges:
   - sentenceIndex: 0
     backgroundSprite: {fileID: 7397296664026409219, guid: 35aa887f7d3b441dd8c4b054c530c398, type: 3}
-  - sentenceIndex: 12
+  - sentenceIndex: 10
     backgroundSprite: {fileID: 980162996904243978, guid: 340e3d51fcf0643d9860f5cf5c538936, type: 3}
 --- !u!1 &1113897435
 GameObject:
