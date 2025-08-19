@@ -6,5 +6,3 @@
 <img width="1084" height="610" alt="스크린샷 2025-08-03 오전 5 15 15" src="https://github.com/user-attachments/assets/af432479-3797-48e5-9640-535528967d23" />
 <img width="1084" height="610" alt="스크린샷 2025-08-03 오전 5 15 19" src="https://github.com/user-attachments/assets/47ea28e8-a00c-4d9a-ad9e-f7d6ed3f8b91" />
 <img width="1084" height="610" alt="스크린샷 2025-08-03 오전 5 15 22" src="https://github.com/user-attachments/assets/0a8816b8-358a-4717-9da9-52f022816ebf" />
-<img width="1084" height="610" alt="스크린샷 2025-08-03 오전 5 15 25" src="https://github.com/user-attachments/assets/417b8f3e-47f2-47cf-89ed-9b6132c6abc6" />
-<img width="1084" height="610" alt="스크린샷 2025-08-03 오전 5 15 34" src="https://github.com/user-attachments/assets/df83911b-eb8f-4116-b9d2-77f5078e952f" />
